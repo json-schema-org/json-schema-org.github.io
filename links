@@ -1,6 +1,6 @@
 {
-    "$schema": "http://json-schema.org/draft-03/hyper-schema#",
-    "id": "http://json-schema.org/draft-03/links#",
+    "$schema": "http://json-schema.org/draft-04/hyper-schema#",
+    "id": "http://json-schema.org/draft-04/links#",
     "title": "Link Description Object",
     "type": "object",
     "required": [ "href", "rel" ],
@@ -19,7 +19,7 @@
         },
         "targetSchema": {
             "description": "JSON Schema describing the link target",
-            "$ref": "#"
+            "$ref": "hyper-schema#"
         },
         "mediaType": {
             "description": "media type (as defined by RFC 2046) describing the link target",
@@ -36,7 +36,7 @@
         },
         "schema": {
             "description": "Schema describing the data to submit along with the request",
-            "$ref": "#"
+            "$ref": "hyper-schema#"
         }
     }
 }
