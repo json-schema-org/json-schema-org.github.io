@@ -156,6 +156,10 @@
     },
     "links": [
         {
+            "rel": "self",
+            "href": "{+id}"
+        },
+        {
             "rel": "full",
             "href": "{+($ref)}"
         }
