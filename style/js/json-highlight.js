@@ -1,3 +1,5 @@
+// License: http://geraintluff.github.io/tv4/LICENSE.txt
+// Basically, you can do anything you like, including removing this license notice and re-licensing it yourself
 	var REGEX = {
 		whitespace: /^([ \r\n\t]|&nbsp;)*/,
 		number: /^-?[0-9]+(\.[0-9]+)?([eE][+\-]?[0-9]+)?/
