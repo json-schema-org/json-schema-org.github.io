@@ -5,11 +5,12 @@
         "post-office-box": { "type": "string" },
         "extended-address": { "type": "string" },
         "street-address": { "type": "string" },
-        "locality":{ "type": "string", "required": true },
-        "region": { "type": "string", "required": true },
+        "locality":{ "type": "string" },
+        "region": { "type": "string" },
         "postal-code": { "type": "string" },
-        "country-name": { "type": "string", "required": true}
+        "country-name": { "type": "string"}
     },
+    "required": ["locality", "region", "country-name"],
     "dependencies": {
         "post-office-box": "street-address",
         "extended-address": "street-address"
