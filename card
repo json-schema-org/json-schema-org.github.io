@@ -1,14 +1,15 @@
 {
-    "$schema": "http://json-schema.org/draft-03/schema#",
+    "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A representation of a person, company, organization, or place",
     "type": "object",
+    "required": ["familyName", "givenName"],
     "properties": {
         "fn": {
             "description": "Formatted Name",
             "type": "string"
         },
-        "familyName": { "type": "string", "required": true },
-        "givenName": { "type": "string", "required": true },
+        "familyName": { "type": "string" },
+        "givenName": { "type": "string" },
         "additionalName": { "type": "array", "items": { "type": "string" } },
         "honorificPrefix": { "type": "array", "items": { "type": "string" } },
         "honorificSuffix": { "type": "array", "items": { "type": "string" } },
