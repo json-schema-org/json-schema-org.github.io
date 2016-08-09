@@ -2,7 +2,7 @@
 	<head>
 		<title>JSON Schema Software</title>
 		<link href="style/css/green-theme.css" rel="stylesheet">
-		<link rel="stylesheet" href="style/css/json-highlight.css"></link>
+		<link rel="stylesheet" href="style/css/json-highlight.css">
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
@@ -42,6 +42,7 @@
 <div class="block" id="validator-list">
 	<h3>JavaScript</h3>
 	<ul>
+		<li><a id="link-impl-jsen" href="https://github.com/bugventure/jsen">JSEN</a> - <em>supports version 4</em> (MIT)</li>
 		<li><a id="link-impl-ajv" href="https://github.com/epoberezkin/ajv">ajv</a> - <em>supports version 4</em> (MIT)</li>
 		<li><a id="link-impl-is-my-json-valid" href="https://github.com/mafintosh/is-my-json-valid">is-my-json-valid</a> - <em>supports version 4</em> (MIT)</li>
 		<li><a id="link-impl-tv4" href="http://geraintluff.github.com/tv4/">tv4</a> - <em>supports version 4</em> (Public Domain)</li>
@@ -58,6 +59,7 @@
 	<h3>Java</h3>
 	<ul>
 		<li><a id="link-impl-fge-json-schema-validator" href="https://github.com/fge/json-schema-validator">json-schema-validator</a> - <em>supports version 4</em> (LGPLv3)</li>
+		<li><a id="link-impl-everit-json-schema" href="https://github.com/everit-org/json-schema">json-schema (implementation based on the org.json API)</a> - <em>supports version 4</em> (Apache License 2.0)</li>
 	</ul>
 
 	<h3>Python</h3>
@@ -118,6 +120,7 @@
 	<h3>Haskell</h3>
 	<ul>
 		<li><a id="link-impl-aeson-schema" href="https://github.com/timjb/aeson-schema">aeson-schema</a> (MIT)</li>
+		<li><a id="link-impl-hjsonschema" href="https://github.com/seagreen/hjsonschema">hjsonschema</a> (MIT)</li>
 	</ul>
 
 	<h3>Erlang</h3>
@@ -132,7 +135,13 @@
 	<h3>Objective-C</h3>
 	<ul>
 		<li><a id="link-impl-kitejsonvalidator" href="https://github.com/samskiter/KiteJSONValidator">KiteJSONValidator</a> (MIT)</li>
+  </ul>
+
+	<h3>Dart</h3>
+	<ul>
+		<li><a id="link-impl-dart-jsonschema" href="https://github.com/patefacio/json_schema">json_schema</a> <em>supports  version 4</em> (BSL-1.0)</li>
 	</ul>
+
 </div>
 
 <div class="show-hide" data-target="schema-generation-list"></div>
@@ -162,6 +171,28 @@
 	<ul>
 		<li><a id="link-impl-jsl" href="https://github.com/aromanovich/jsl">JSL</a> (BSD) - a Python DSL for defining JSON Schemas</li>
 	</ul>
+
+	<h3>Java</h3>
+	<ul>
+		<li><a id="link-impl-java" href="https://github.com/FasterXML/jackson-module-jsonSchema">Jackson JSON Schema Module</a> - (Apache 2.0)</li>
+	</ul>
+	
+	<h3>Haskell</h3>
+	<ul>
+		<li><a id="link-impl-jsonschema-gen" href="https://github.com/yuga/jsonschema-gen">jsonschema-gen</a> (BSD3) -  A generator for JSON Schema from Algebraic Data Type in Haskell.
+</li>
+	</ul>
+</div>
+
+<div class="show-hide" data-target="data-generation-list"></div>
+<h2>Data generation (4)</h2>
+<div class="block" id="data-generation-list">
+	<h3>JavaScript</h3>
+	<ul>
+		<li><a id="link-impl-json-schema-faker" href="https://github.com/json-schema-faker/json-schema-faker">JSON Schema Faker</a> - generates fake data based on JSON Schema</li>
+		<li><a id="link-impl-schematic-ipsum" href="http://schematic-ipsum.herokuapp.com/">Schematic Ipsum</a> (MIT)</li>
+		<li><a id="link-impl-json-schema-instantiator" href="https://github.com/tomarad/JSON-Schema-Instantiator">JSON-Schema-Instantiator</a> (MIT)</li>
+		<li><a id="link-impl-json-schema-random" href="https://github.com/andreineculau/json-schema-random">JSON Schema Random</a> (Apache 2.0)</li>
 </div>
 <div class="show-hide" data-target="code-generation-list"></div>
 <h2>Code generation (1)</h2>
@@ -231,6 +262,16 @@
   <ul>
     <li><a id="link-impl-hyper-brandur-json-schema" href="https://github.com/brandur/json_schema">json_schema</a> <em>supports version 4 and hyperschema</em> (MIT)</li>
   </ul>
+
+  <h3>Python</h3>
+  <ul>
+    <li><a id="link-impl-coreapi-python" href="https://github.com/core-api/python-client">coreapi python</a> - A client library for interacting with APIs using JSON HyperSchema</li>
+  </ul>
+
+  <h3>Command line</h3>
+  <ul>
+    <li><a id="link-impl-coreapi-command-line-client" href="http://www.coreapi.org/tools-and-resources/command-line-client/">coreapi command line client</a> - A command line client for interacting with APIs using JSON HyperSchema.</li>
+  </ul>
 </div>
 
 <div class="show-hide" data-target="documentation-list"></div>
@@ -250,15 +291,12 @@
 </div>
 
 <div class="show-hide" data-target="other-list"></div>
-<h2>Other (5)</h2>
+<h2>Other (2)</h2>
 <div class="block" id="other-list">
 	<h3>JavaScript</h3>
 	<ul>
 		<li><a id="link-impl-orderly" href="http://orderly-json.org">Orderly</a> (BSD)</li>
 		<li><a id="link-impl-dojo" href="http://www.dojotoolkit.org/">Dojo</a> (AFL or BSD) - supports some aspects of JSON Schema</li>
-		<li><a id="link-impl-schematic-ipsum" href="http://schematic-ipsum.herokuapp.com/">Schematic Ipsum</a> (MIT)</li>
-		<li><a id="link-impl-json-schema-instantiator" href="https://github.com/tomarad/JSON-Schema-Instantiator">JSON-Schema-Instantiator</a> (MIT)</li>
-		<li><a id="link-impl-json-schema-random" href="https://github.com/andreineculau/json-schema-random">JSON Schema Random</a> (Apache 2.0)</li>
 	</ul>
 </div>
 			</div>
