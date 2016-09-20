@@ -4,19 +4,7 @@ title: JSON Schema
 permalink: /
 ---
 
-<h2>What does it do?</h2>
-<div class="block">
-	<table class="key-value">
-		<tr>
-			<td class="key">JSON Schema</td>
-			<td class="value">describes your JSON data format</td>
-		</tr>
-		<tr>
-			<td class="key">JSON Hyper-Schema</td>
-			<td class="value">turns your JSON data into hyper-text</td>
-		</tr>
-	</table>
-</div>
+<p><b>JSON Schema</b> is a vocabulary that allows you to <b>annotate</b> and <b>validate</b> JSON documents.</p>
 
 <h2>Advantages</h2>
 <div class="block">
@@ -38,6 +26,25 @@ permalink: /
 		<li>forms - specify a JSON Schema for the desired data</li>
 	</ul>
 </div>
+
+
+<h2>Quickstart</h2>
+
+<p>The JSON document being validated or described we call the _instance_, and the document containing the description is called the _schema_.</p>
+
+<p>The most basic schema is a blank JSON object, which constrains nothing, allows anything, and describes nothing:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>You can apply constraints on an instance by adding validation keywords to the schema. For instance, the "type" keyword can be used to restrict an instance to an object, array, string, number, boolean, or null:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>JSON Schema is hypermedia ready, and ideal for annotating your existing JSON-based HTTP API. JSON Schema documents are identified by URIs, which can be used in HTTP Link headers, and inside JSON Schema documents to allow recursive definitions.</p>
 
 <h2>More</h2>
 <div class="block">
