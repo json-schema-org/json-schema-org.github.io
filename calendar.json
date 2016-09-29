@@ -1,3 +1,6 @@
+---
+redirect_from: "/calendar"
+---
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A representation of an event",

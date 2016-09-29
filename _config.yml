@@ -25,6 +25,9 @@ github_username:  json-schema-org
 markdown: kramdown
 #theme: minima
 
+gems:
+  - jekyll-redirect-from
+
 collections:
   docs:
     output: true
