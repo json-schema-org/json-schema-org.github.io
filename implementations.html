@@ -14,10 +14,9 @@ permalink: /implementations
 	<p>If you have updates to this list, make a pull request on the <a href="https://github.com/json-schema-org/json-schema-org.github.io">GitHub repo</a></p>
 </div>
 
-<div class="show-hide" data-target="validator-list"></div>
-<h2>Validators (33)</h2>
-<div class="block" id="validator-list">
-	<h3>JavaScript</h3>
+<h2>Validators</h2>
+<ul>
+	<li>JavaScript
 	<ul>
 		<li><a id="link-impl-ajv" href="https://github.com/epoberezkin/ajv">ajv</a> for Node.js and the browser - <em>supports version 4, validation keywords and $data reference from <a href="https://github.com/json-schema/json-schema/wiki/v5-Proposals">version 5 proposals</a></em> (MIT)</li>
 		<li><a id="link-impl-is-my-json-valid" href="https://github.com/mafintosh/is-my-json-valid">is-my-json-valid</a> - <em>supports version 4</em> (MIT)</li>
@@ -31,187 +30,189 @@ permalink: /implementations
 		<li><a id="link-impl-json-gate" href="https://github.com/oferei/json-gate">json-gate</a> (MIT)</li>
 		<li><a id="link-impl-jsen" href="https://github.com/bugventure/jsen">JSEN</a> for Node.js - <em>supports version 4</em> (MIT)</li>
 	</ul>
-
-	<h3>JavaScript validators benchmarks</h3>
-	<ul>
-		<li><a id="link-bench-ebdrup" href="https://github.com/ebdrup/json-schema-benchmark">json-schema-benchmark</a> - an independent benchmark for Node.js JSON-schema validators based on JSON-Schema Test Suite (MIT)</li>
-		<li><a id="link-bench-z-schema" href="https://github.com/zaggino/z-schema#benchmarks">z-schema validator benchmark</a> - compares performance in the individual tests from JSON-Schema Test Suite (MIT)</li>
-		<li><a id="link-bench-jsck" href="https://github.com/pandastrike/jsck#benchmarks">JSCK validator benchmark</a> - shows performance for JSON-schemas of different complexity (MIT)</li>
-	</ul>
-
-	<h3>Java</h3>
+	</li>
+	<li>Java
 	<ul>
 		<li><a id="link-impl-fge-json-schema-validator" href="https://github.com/fge/json-schema-validator">json-schema-validator</a> - <em>supports version 4</em> (LGPLv3)</li>
 		<li><a id="link-impl-everit-json-schema" href="https://github.com/everit-org/json-schema">json-schema (implementation based on the org.json API)</a> - <em>supports version 4</em> (Apache License 2.0)</li>
 		<li><a id="link-impl-networknt-json-schema" href="https://github.com/networknt/json-schema-validator">json-schema-validator</a> - <em>supports version 4</em> (Apache License 2.0)</li>
 	</ul>
-
-	<h3>Python</h3>
+	</li>
+	<li>Python
 	<ul>
 		<li><a id="link-impl-jsonschema" href="https://github.com/Julian/jsonschema">jsonschema</a> - <em>supports version 4</em> (MIT)</li>
 		<li><a id="link-impl-zyga-json-schema-validator" href="https://github.com/zyga/json-schema-validator">json-schema-validator</a> (LGPL)</li>
 	</ul>
-
-	<h3>Ruby</h3>
+	</li>
+	<li>Ruby
 	<ul>
 		<li><a id="link-impl-ruby-jsonchema" href="https://github.com/Constellation/ruby-jsonchema">ruby-jsonschema</a> (MIT)</li>
 		<li><a id="link-impl-ruby-hoxworth-json-schema" href="https://github.com/hoxworth/json-schema">json-schema</a> - <em>supports version 4</em> (MIT)</li>
 	</ul>
-
-	<h3>Perl</h3>
+	</li>
+	<li>Perl
 	<ul>
 		<li><a id="link-impl-perl-json-schema" href="https://metacpan.org/module/JSON::Schema">JSON::Schema</a> (MIT)</li>
 	</ul>
-
-	<h3>PHP</h3>
+	</li>
+	<li>PHP
 	<ul>
 		<li><a id="link-impl-jsv4-php" href="https://github.com/geraintluff/jsv4-php">jsv4-php</a> - <em>supports version 4</em>  (Public Domain / MIT)</li>
 		<li><a id="link-impl-php-json-schema" href="https://github.com/hasbridge/php-json-schema">php-json-schema</a> (MIT)</li>
 		<li><a id="link-impl-json-schema" href="https://github.com/justinrainbow/json-schema">json-schema</a> (Berkeley)</li>
 		<li><a id="link-impl-jval" href="https://github.com/stefk/jval">JVal</a> - <em>supports version 4</em>  (MIT)</li>
 	</ul>
-
-	<h3>.NET</h3>
+	</li>
+	<li>.NET
 	<ul>
 		<li><a id="link-impl-json-net" href="http://james.newtonking.com/projects/json-net.aspx">Json.NET</a> (MIT)</li>
 		<li><a id="link-impl-n-json-schema" href="http://NJsonSchema.org">NJsonSchema</a> - <em>supports version 4</em> (Ms-PL)</li>
 	</ul>
-
-	<h3>ActionScript 3</h3>
+	</li>
+	<li>ActionScript 3
 	<ul>
 		<li><a id="link-impl-frigga" href="https://github.com/raulbajales/Frigga">Frigga</a> (MIT)</li>
 	</ul>
-
-	<h3>C</h3>
+	</li>
+	<li>C
 	<ul>
 		<li><a id="link-impl-wjelement" href="https://github.com/netmail-open/wjelement">WJElement</a> (LGPLv3)</li>
 	</ul>
-
-	<h3>C++</h3>
+	</li>
+	<li>C++
 	<ul>
 		<li><a id="link-impl-wjelement" href="https://github.com/petehug/wjelement-cpp">wjelement-cpp</a> - <em>supports version 4</em> (LGPLv3)</li>
 	</ul>
-
-	<h3>Haskell</h3>
+	</li>
+	<li>Haskell
 	<ul>
 		<li><a id="link-impl-aeson-schema" href="https://github.com/timjb/aeson-schema">aeson-schema</a> (MIT)</li>
 		<li><a id="link-impl-hjsonschema" href="https://github.com/seagreen/hjsonschema">hjsonschema</a> - <em>supports version 4</em> (MIT)</li>
 	</ul>
-
-	<h3>Erlang</h3>
+	</li>
+	<li>Erlang
 	<ul>
 		<li><a id="link-impl-jesse" href="https://github.com/klarna/jesse">JeSSE</a> (Apache 2.0)</li>
 	</ul>
-
-	<h3>Go</h3>
+	</li>
+	<li>Go
 	<ul>
 		<li><a id="link-impl-gojsonschema" href="https://github.com/sigu-399/gojsonschema">gojsonschema</a> (Apache 2.0)</li>
 	</ul>
-
-	<h3>Dart</h3>
+	</li>
+	<li>Dart
 	<ul>
 		<li><a id="link-impl-dart-jsonschema" href="https://github.com/patefacio/json_schema">json_schema</a> <em>supports  version 4</em> (BSL-1.0)</li>
 	</ul>
-
-	<h3>Online (web tool)</h3>
+	</li>
+	<li>Online (web tool)
 	<ul>
 		<li><a id="link-impl-schemastore" href="http://schemastore.org/validator/">SchemaStore.org</a> - validate against common JSON Schemas</li>
 	</ul>
-</div>
+</ul>
 
-<div class="show-hide" data-target="schema-generation-list"></div>
-<h2>Schema generation (7)</h2>
-<div class="block" id="schema-generation-list">
-	<h3>.NET</h3>
+
+<h2>Validation benchmarks</h2>
+<ul>
+	<li>JavaScript
+	<ul>
+		<li><a id="link-bench-ebdrup" href="https://github.com/ebdrup/json-schema-benchmark">json-schema-benchmark</a> - an independent benchmark for Node.js JSON-schema validators based on JSON-Schema Test Suite (MIT)</li>
+		<li><a id="link-bench-z-schema" href="https://github.com/zaggino/z-schema#benchmarks">z-schema validator benchmark</a> - compares performance in the individual tests from JSON-Schema Test Suite (MIT)</li>
+		<li><a id="link-bench-jsck" href="https://github.com/pandastrike/jsck#benchmarks">JSCK validator benchmark</a> - shows performance for JSON-schemas of different complexity (MIT)</li>
+	</ul>
+	</li>
+</ul>
+
+<h2>Schema generation</h2>
+<ul>
+	<li>.NET
 	<ul>
 		<li><a id="link-impl-json-net" href="http://james.newtonking.com/projects/json-net.aspx">Json.NET</a> (MIT) - generates schemas from .NET types</li>
 		<li><a id="link-impl-n-json-schema" href="http://NJsonSchema.org">NJsonSchema</a> - <em>supports version 4</em> (Ms-PL) - generates schemas from .NET types</li>
 	</ul>
-
-	<h3>Online (web tool)</h3>
+	</li>
+	<li>Online (web tool)
 	<ul>
 		<li><a href="http://www.jsonschema.net/">jsonschema.net</a> - generates schemas from example data</li>
 		<li><a id="link-impl-guru-ui" href="http://schemaguru.snowplowanalytics.com/">Schema Guru Web UI</a> - derives precise Schemas using several JSON instances. Based on <a href="link-impl-guru">Schema Guru</a></li>
 	</ul>
-
-	<h3>TypeScript</h3>
+	</li>
+	<li>TypeScript
 	<ul>
 		<li><a id="link-impl-typson" href="https://github.com/lbovet/typson">Typson</a> (Apache 2.0)</li>
 	</ul>
-
-	<h3>Visual Studio</h3>
+	</li>
+	<li>Visual Studio
 	<ul>
 		<li><a id="link-impl-vs" href="http://visualstudiogallery.msdn.microsoft.com/b4515ef8-a518-41ca-b48c-bb1fd4e6faf7">JSON Schema Generator</a> - free extension</li>
 	</ul>
-
-	<h3>Python</h3>
+	</li>
+	<li>Python
 	<ul>
 		<li><a id="link-impl-jsl" href="https://github.com/aromanovich/jsl">JSL</a> (BSD) - a Python DSL for defining JSON Schemas</li>
 	</ul>
-
-	<h3>Scala</h3>
+	</li>
+	<li>Scala
 	<ul>
 		<li><a id="link-impl-guru" href="https://github.com/snowplow/schema-guru">Schema Guru</a> (Apache 2.0) - CLI util, Spark Job and Web UI for deriving JSON Schemas out of corpus of JSON instances</li>
 	</ul>
-</div>
+</ul>
 
-<div class="show-hide" data-target="parsing-list"></div>
-<h2>Data parsing (2)</h2>
-<div class="block" id="parsing-list">
-	<h3>Haskell</h3>
+<h2>Data parsing</h2>
+<ul>
+	<li>Haskell
 	<ul>
 		<li><a id="link-impl-aeson-schema" href="https://github.com/timjb/aeson-schema">aeson-schema</a> (MIT) - generates code for a parser</li>
 	</ul>
-
-	<h3>Ruby</h3>
+	</li>
+	<li>Ruby
 	<ul>
 		<li><a id="link-impl-autoparse" href="https://github.com/google/autoparse">autoparse</a> (ASL 2.0)</li>
 	</ul>
-</div>
+</ul>
 
-<div class="show-hide" data-target="ui-tools-list"></div>
-<h2>UI generation (2)</h2>
-<div class="block" id="ui-tools-list">
-	<h3>JavaScript</h3>
+<h2>UI generation</h2>
+<ul>
+	<li>JavaScript
 	<ul>
 		<li><a id="link-impl-jsonary" href="http://jsonary.com/">Jsonary</a> - <em>supports version 4</em> (MIT)</li>
 		<li><a id="link-impl-metawidget" href="http://metawidget.org/">Metawidget</a> (LGPL)</li>
 	</ul>
-</div>
+	</li>
+</ul>
 
-<div class="show-hide" data-target="compatibility-list"></div>
-<h2>Compatibility (1)</h2>
-<div class="block" id="compatibility-list">
-	<h3>JavaScript</h3>
+<h2>Compatibility</h2>
+<ul>
+	<li>JavaScript
 	<ul>
 		<li><a id="link-json-schema-compatibility" href="https://github.com/geraintluff/json-schema-compatability">JSON Schema Compatibility</a> - <em>converts v3 to v4</em> (Public Domain)</li>
 	</ul>
-</div>
+	</li>
+</ul>
 
-<div class="show-hide" data-target="hyper-tools-list"></div>
-<h2>Hyper-schema handling (1)</h2>
-<div class="block" id="hyper-tools-list">
-	<h3>JavaScript</h3>
+<h2>Hyper-schema handling</h2>
+<ul>
+	<li>JavaScript
 	<ul>
 		<li><a id="link-impl-jsonary" href="http://jsonary.com/">Jsonary</a> - <em>supports version 4</em> (MIT)</li>
 	</ul>
-</div>
+	</li>
+</ul>
 
-<div class="show-hide" data-target="documentation-list"></div>
-<h2>Documentation generation (4)</h2>
-<div class="block" id="documentation-list">
-	<h3>JavaScript</h3>
+<h2>Documentation generation</h2>
+<ul>
+	<li>JavaScript
 	<ul>
 		<li><a id="link-impl-matic" href="https://github.com/mattyod/matic">Matic</a> (MIT)</li>
 		<li><a id="link-impl-docson" href="https://github.com/lbovet/docson">Docson</a> (Apache 2.0)</li>
     <li><a id="link-impl-docs-generator" href="https://github.com/cloudflare/json-schema-docs-generator/">json-schema-docs-generator</a> (MIT)</li>
 	</ul>
-</div>
+	</li>
+</ul>
 
-<div class="show-hide" data-target="other-list"></div>
-<h2>Other (5)</h2>
-<div class="block" id="other-list">
-	<h3>JavaScript</h3>
+<h2>Other</h2>
+<ul>
+	<li>JavaScript
 	<ul>
 		<li><a id="link-impl-orderly" href="http://orderly-json.org">Orderly</a> (BSD)</li>
 		<li><a id="link-impl-dojo" href="http://www.dojotoolkit.org/">Dojo</a> (AFL or BSD) - supports some aspects of JSON Schema</li>
@@ -219,4 +220,5 @@ permalink: /implementations
 		<li><a id="link-impl-json-schema-instantiator" href="https://github.com/tomarad/JSON-Schema-Instantiator">JSON-Schema-Instantiator</a> (MIT)</li>
 		<li><a id="link-impl-json-schema-random" href="https://github.com/andreineculau/json-schema-random">JSON Schema Random</a> (Apache 2.0)</li>
 	</ul>
-</div>
+	</li>
+</ul>
