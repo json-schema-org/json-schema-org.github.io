@@ -1,9 +1,9 @@
 {
-    "$schema": "http://json-schema.org/draft-04/hyper-schema#",
-    "id": "http://json-schema.org/draft-04/hyper-schema#",
+    "$schema": "http://json-schema.org/draft-wright-00/hyper-schema#",
+    "id": "http://json-schema.org/draft-wright-00/hyper-schema#",
     "title": "JSON Hyper-Schema",
     "allOf": [
-        {"$ref": "http://json-schema.org/draft-04/schema#"}
+        {"$ref": "http://json-schema.org/draft-wright-00/schema#"}
     ],
     "properties": {
         "additionalItems": {
