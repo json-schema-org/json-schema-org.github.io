@@ -10,7 +10,7 @@ layout: page
     <p>An entry in the fstab file can have many different forms. Here is a possible representation of a
     full fstab:</p>
 
-<pre class="json">
+<pre><code class="language-json">
 {
     "/": {
         "storage": {
@@ -42,7 +42,7 @@ layout: page
         }
     }
 }
-</pre>
+</code></pre>
 
     <p>Not all constraints to an fstab file can be modeled using JSON Schema alone; however, it can
     already represent a good number of them. We will add constraints one after the other until we get to
@@ -62,7 +62,7 @@ layout: page
     <p>We also want the schema to be regarded as a draft v4 schema, we must therefore specify
     <em>$schema</em>:</p>
 
-<pre class="json-schema">
+<pre><code class="language-json">
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
@@ -75,7 +75,7 @@ layout: page
     "additionalProperties": false,
     "required": [ "/" ]
 }
-</pre>
+</code></pre>
 
     <p>Note how the valid paths constraint is enforced here:</p>
 
@@ -100,7 +100,7 @@ layout: page
 <div class="block">
     <p>Here again we will proceed step by step. We will start with the global structure of our schema, which will be as such:</p>
 
-<pre class="json-schema">
+<pre><code class="language-json">
 {
     "id": "http://some.site.somewhere/entry-schema#",
     "$schema": "http://json-schema.org/draft-04/schema#",
@@ -125,7 +125,7 @@ layout: page
         "tmpfs": {}
     }
 }
-</pre>
+</code></pre>
 
     <p>You should already be familiar with some of the constraints:</p>
 
@@ -167,7 +167,7 @@ layout: page
 
     <p>With these added constraints, the schema now looks like this:</p>
 
-<pre class="json-schema">
+<pre><code class="language-json">
 {
     "id": "http://some.site.somewhere/entry-schema#",
     "$schema": "http://json-schema.org/draft-04/schema#",
@@ -202,7 +202,7 @@ layout: page
         "tmpfs": {}
     }
 }
-</pre>
+</code></pre>
 
     <p>For now, all definitions are empty (an empty JSON Schema validates all instances). We will write
     schemas for individual definitions below, and fill these schemas into the entry schema.</p>
@@ -214,7 +214,7 @@ layout: page
     only be <em>disk</em>, and the device must be an absolute path starting with <em>/dev</em>. No other
     properties are allowed:</p>
 
-<pre class="json-schema">
+<pre><code class="language-json">
 {
     "properties": {
         "type": { "enum": [ "disk" ] },
@@ -226,7 +226,7 @@ layout: page
     "required": [ "type", "device" ],
     "additionalProperties": false
 }
-</pre>
+</code></pre>
 
     <p>You will have noted that we need not specify that <em>type</em> must be a string: the constraint
     described by <em>enum</em> is enough.</p>
@@ -238,7 +238,7 @@ layout: page
     <p>This storage type has two required properties, <em>type</em> and <em>label</em>. The type can
     only be <em>disk</em>, and the label must be a valid UUID. No other properties are allowed:</p>
 
-<pre class="json-schema">
+<pre><code class="language-json">
 {
     "properties": {
         "type": { "enum": [ "disk" ] },
@@ -250,7 +250,7 @@ layout: page
     "required": [ "type", "label" ],
     "additionalProperties": false
 }
-</pre>
+</code></pre>
 </div>
 
 <h2>The <em>nfs</em> storage type</h2>
@@ -262,7 +262,7 @@ layout: page
     <p>For the constraints on <em>server</em>, we use a new keyword: <em>format</em>. While it is not
     required that <em>format</em> be supported, we will suppose that it is here:</p>
 
-<pre class="json-schema">
+<pre><code class="language-json">
 {
     "properties": {
         "type": { "enum": [ "nfs" ] },
@@ -282,7 +282,7 @@ layout: page
     "required": [ "type", "server", "remotePath" ],
     "additionalProperties": false
 }
-</pre>
+</code></pre>
 </div>
 
 <h2>The <em>tmpfs</em> storage type</h2>
@@ -291,7 +291,7 @@ layout: page
     only be an integer. What is more, we will require that the size be between 16 and 512,
     inclusive:</p>
 
-<pre class="json-schema">
+<pre><code class="language-json">
 {
     "properties": {
         "type": { "enum": [ "tmpfs" ] },
@@ -304,7 +304,7 @@ layout: page
     "required": [ "type", "sizeInMB" ],
     "additionalProperties": false
 }
-</pre>
+</code></pre>
 </div>
 
 <h2>The full entry schema</h2>
@@ -312,7 +312,7 @@ layout: page
     <p>The resulting schema is quite large:</p>
     <div class="show-hide" data-target="full-entry-schema"></div><br>
 
-<pre class="json-schema" id="full-entry-schema">
+<pre id="full-entry-schema"><code class="language-json">
 {
     "id": "http://some.site.somewhere/entry-schema#",
     "$schema": "http://json-schema.org/draft-04/schema#",
@@ -396,7 +396,7 @@ layout: page
         }
     }
 }
-</pre>
+</code></pre>
 </div>
 
 <h2>Plugging this into our main schema</h2>
@@ -404,7 +404,7 @@ layout: page
     <p>Now that all possible entries have been described, we can refer to the entry schema from our main
     schema. We will, again, use a JSON Reference here: </p>
 
-<pre class="json-schema">
+<pre><code class="language-json">
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
@@ -417,7 +417,7 @@ layout: page
     "additionalProperties": false,
     "required": [ "/" ]
 }
-</pre>
+</code></pre>
 </div>
 
 <h2>Wrapping up</h2>

@@ -37,15 +37,11 @@ permalink: /
 
 <p>The most basic schema is a blank JSON object, which constrains nothing, allows anything, and describes nothing:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{}</span><span class="w">
-</span></code></pre>
-</div>
+<pre><code class="language-json">{}</code></pre>
 
 <p>You can apply constraints on an instance by adding validation keywords to the schema. For instance, the "type" keyword can be used to restrict an instance to an object, array, string, number, boolean, or null:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<pre><code class="language-json">{"type": "string"}</code></pre>
 
 <p>JSON Schema is hypermedia ready, and ideal for annotating your existing JSON-based HTTP API. JSON Schema documents are identified by URIs, which can be used in HTTP Link headers, and inside JSON Schema documents to allow recursive definitions.</p>
 
