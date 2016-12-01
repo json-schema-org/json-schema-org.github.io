@@ -1,7 +1,7 @@
 {
-    "id": "http://json-schema.org/draft-04/schema#",
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "Core schema meta-schema",
+    "id": "http://json-schema.org/draft-04/schema#",
+    "title": "Core schema meta-schema",
     "definitions": {
         "schemaArray": {
             "type": "array",
@@ -13,10 +13,21 @@
             "minimum": 0
         },
         "positiveIntegerDefault0": {
-            "allOf": [ { "$ref": "#/definitions/positiveInteger" }, { "default": 0 } ]
+            "allOf": [
+                { "$ref": "#/definitions/positiveInteger" },
+                { "default": 0 }
+            ]
         },
         "simpleTypes": {
-            "enum": [ "array", "boolean", "integer", "null", "number", "object", "string" ]
+            "enum": [
+                "array",
+                "boolean",
+                "integer",
+                "null",
+                "number",
+                "object",
+                "string"
+            ]
         },
         "stringArray": {
             "type": "array",
@@ -137,6 +148,7 @@
                 }
             ]
         },
+        "format": { "type": "string" },
         "allOf": { "$ref": "#/definitions/schemaArray" },
         "anyOf": { "$ref": "#/definitions/schemaArray" },
         "oneOf": { "$ref": "#/definitions/schemaArray" },
