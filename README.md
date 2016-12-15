@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/json-schema-org/json-schema-org.github.io.png?label=ready&title=Ready)](https://waffle.io/json-schema-org/json-schema-org.github.io)
 ## Repo for the JSON Schema website!
 
 This repo is currently undergoing a complete restructuring and removing of content not related to the website.
