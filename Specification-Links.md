@@ -10,5 +10,10 @@ Validation: [draft-fge-json-schema-validation-00](https://tools.ietf.org/html/dr
 
 ## Draft 5
 
+Core: [draft-wright-json-schema-00](https://tools.ietf.org/html/draft-wright-json-schema-00) ([changes](https://tools.ietf.org/html/draft-wright-json-schema-00#appendix-B))
+
+
+
 ## Draft 6
 
+Unreleased.
