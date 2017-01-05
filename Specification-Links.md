@@ -4,6 +4,8 @@
 
 Core: [draft-zyp-json-schema-03](https://tools.ietf.org/html/draft-zyp-json-schema-03) ([changes](https://tools.ietf.org/html/draft-zyp-json-schema-03#appendix-A))
 
+Validation: N/A (included in Core)
+
 ## Draft 4
 
 Core: [draft-zyp-json-schema-04](https://tools.ietf.org/html/draft-zyp-json-schema-04) ([changes](https://tools.ietf.org/html/draft-zyp-json-schema-04#appendix-A))
