@@ -1,3 +1,5 @@
+(Links on this page should be immutable -- none of them should go to `/latest`, etc.)
+
 ## Draft 3
 
 Core: [draft-zyp-json-schema-03](https://tools.ietf.org/html/draft-zyp-json-schema-03) ([changes](https://tools.ietf.org/html/draft-zyp-json-schema-03#appendix-A))
