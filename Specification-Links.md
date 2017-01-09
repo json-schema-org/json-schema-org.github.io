@@ -12,11 +12,15 @@ Core: [draft-zyp-json-schema-04](https://tools.ietf.org/html/draft-zyp-json-sche
 
 Validation: [draft-fge-json-schema-validation-00](https://tools.ietf.org/html/draft-fge-json-schema-validation-00) ([changes](https://tools.ietf.org/html/draft-fge-json-schema-validation-00#appendix-A))
 
+Hyper-Schema: [draft-luff-json-hyper-schema-00](https://tools.ietf.org/html/draft-luff-json-hyper-schema-00) ([changes](https://tools.ietf.org/html/draft-luff-json-hyper-schema-00#appendix-A))
+
 ## Draft 5
 
 Core: [draft-wright-json-schema-00](https://tools.ietf.org/html/draft-wright-json-schema-00) ([changes](https://tools.ietf.org/html/draft-wright-json-schema-00#appendix-B))
 
 Validation: [draft-wright-json-schema-validation-00](https://tools.ietf.org/html/draft-wright-json-schema-validation-00) ([changes](https://tools.ietf.org/html/draft-wright-json-schema-validation-00#appendix-B))
+
+Hyper-Schema: [draft-wright-json-schema-hyperschema-00](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-00) ([changes](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-00#appendix-B))
 
 ## Draft 6
 
