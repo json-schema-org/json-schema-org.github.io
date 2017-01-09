@@ -6,6 +6,8 @@ Core: [draft-zyp-json-schema-03](https://tools.ietf.org/html/draft-zyp-json-sche
 
 Validation: none (included in Core)
 
+Hyper-Schema: none (included in Core)
+
 ## Draft 4
 
 Core: [draft-zyp-json-schema-04](https://tools.ietf.org/html/draft-zyp-json-schema-04) ([changes](https://tools.ietf.org/html/draft-zyp-json-schema-04#appendix-A))
