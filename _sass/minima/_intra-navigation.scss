@@ -1,0 +1,29 @@
+nav.intra {    
+    margin: 0 25px 15px 25px;
+    padding: 10px 0;
+    > ul {
+        list-style-type: none;
+        margin: 0px;
+        overflow: auto;
+        > li {
+            border-radius: 2px;
+            background-color: $brand-color;
+            float: left;
+            height: 25px;
+            margin: 2px;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 17%;
+        }
+    }
+    a {
+        color: $background-color
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    a:visited {
+        color: $background-color
+    }
+}
