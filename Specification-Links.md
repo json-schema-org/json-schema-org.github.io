@@ -18,7 +18,7 @@ Hyper-Schema: [draft-luff-json-hyper-schema-00](https://tools.ietf.org/html/draf
 
 ## Draft 5
 
-**Note:** Draft 5 was primarily a cleanup of Draft 4 and therefore does not have its own hyper-schema.  The Draft 4 hyper-schema should continue to be used until Draft 6, which will have a new hyper-schema, is available.
+**Note:** Draft 5 was primarily a cleanup of Draft 4 and therefore does not have its own meta-schema.  The Draft 4 meta-schema should continue to be used until Draft 6, which will have a new meta-schema, is available.
 
 Core: [draft-wright-json-schema-00](https://tools.ietf.org/html/draft-wright-json-schema-00) ([changes](https://tools.ietf.org/html/draft-wright-json-schema-00#appendix-B))
 
