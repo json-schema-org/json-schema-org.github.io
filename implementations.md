@@ -22,7 +22,7 @@ Validators
 -   [C](#validator-c)
 -   [C++](#validator-cpp)
 -   [Clojure](#validator-clojure)
--   [Dart](#validator-clojure)
+-   [Dart](#validator-dart)
 -   [Erlang](#validator-erlang)
 -   [Go](#validator-go)
 -   [Haskell](#validator-haskell)
