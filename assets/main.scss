@@ -1,0 +1,48 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Import partials from the `minima` theme.
+@import "minima";
+
+// Import navigation partial for Software page
+@import "intra-navigation";
+
+// _base.scss overrides
+pre,
+code {
+  background-color: inherit;
+}
+
+.wrapper {
+  max-width: 760px;
+}
+
+// _layout.scss overrides
+.site-title {
+    line-height: 46px;
+    margin: 10px 0;
+    padding-left: 56px;
+    background: url(../img/logo.png) center left no-repeat;
+    background-size: contain;
+}
+
+.site-nav {
+    margin: 10px 0;
+}
+
+.footer-col-1 {
+    box-sizing: border-box;
+    width: 45%;
+}
+
+.footer-col-3 {
+    box-sizing: border-box;
+    width: 55%;
+    text-align: right;
+}
+
+// minima.scss overrides
+$spacing-unit:     10px !default;
+$content-width:    960px !default;
