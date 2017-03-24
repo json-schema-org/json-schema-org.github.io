@@ -56,10 +56,10 @@ More
 
 Interested? Check out:
 
--   the [specification](documentation.html)
--   some [examples](examples.html)
+-   the [specification](documentation.md)
+-   some [examples](examples.md)
 -   this [excellent guide](http://spacetelescope.github.io/understanding-json-schema/) for schema authors, from the [Space Telescope Science Institute](http://www.stsci.edu/)
--   the growing list of [JSON (Hyper-)Schema software](implementations.html)
+-   the growing list of [JSON (Hyper-)Schema software](implementations.md)
 
 Questions? Feeling helpful? Get involved on:
 
