@@ -14,7 +14,9 @@ The latest Internet-Draft at the IETF is v5, published 2016-10-13. (Due to a cha
 
 They are also available on the IETF main site: [core (draft-wright-json-schema-00)](http://tools.ietf.org/html/draft-wright-json-schema-00), [validation (draft-wright-json-schema-validation-00)](http://tools.ietf.org/html/draft-wright-json-schema-validation-00) and [hyper-schema (draft-wright-json-schema-hyperschema-00)](http://tools.ietf.org/html/draft-wright-json-schema-hyperschema-00).
 
-For previous versions of the specification, please see the [Specification Links](https://github.com/json-schema-org/json-schema-spec/wiki/Specification-Links) page on our github wiki.
+### Other versions
+
+Please see [Specification Links](specification-links.md) for older versions and the latest unreleased version of the specification.
 
 Meta-schemas
 ------------
