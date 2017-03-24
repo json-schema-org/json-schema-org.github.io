@@ -1,20 +1,8 @@
 (Links on this page should be immutable -- none of them should go to `/latest`, etc.)
 
-## Draft 3
+## Draft 6
 
-Core: [draft-zyp-json-schema-03](https://tools.ietf.org/html/draft-zyp-json-schema-03) ([changes](https://tools.ietf.org/html/draft-zyp-json-schema-03#appendix-A))
-
-Validation: none (included in Core)
-
-Hyper-Schema: none (included in Core)
-
-## Draft 4
-
-Core: [draft-zyp-json-schema-04](https://tools.ietf.org/html/draft-zyp-json-schema-04) ([changes](https://tools.ietf.org/html/draft-zyp-json-schema-04#appendix-A))
-
-Validation: [draft-fge-json-schema-validation-00](https://tools.ietf.org/html/draft-fge-json-schema-validation-00) ([changes](https://tools.ietf.org/html/draft-fge-json-schema-validation-00#appendix-A))
-
-Hyper-Schema: [draft-luff-json-hyper-schema-00](https://tools.ietf.org/html/draft-luff-json-hyper-schema-00) ([changes](https://tools.ietf.org/html/draft-luff-json-hyper-schema-00#appendix-A))
+Unreleased.
 
 ## Draft 5
 
@@ -26,6 +14,19 @@ Validation: [draft-wright-json-schema-validation-00](https://tools.ietf.org/html
 
 Hyper-Schema: [draft-wright-json-schema-hyperschema-00](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-00) ([changes](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-00#appendix-B))
 
-## Draft 6
+## Draft 4
 
-Unreleased.
+Core: [draft-zyp-json-schema-04](https://tools.ietf.org/html/draft-zyp-json-schema-04) ([changes](https://tools.ietf.org/html/draft-zyp-json-schema-04#appendix-A))
+
+Validation: [draft-fge-json-schema-validation-00](https://tools.ietf.org/html/draft-fge-json-schema-validation-00) ([changes](https://tools.ietf.org/html/draft-fge-json-schema-validation-00#appendix-A))
+
+Hyper-Schema: [draft-luff-json-hyper-schema-00](https://tools.ietf.org/html/draft-luff-json-hyper-schema-00) ([changes](https://tools.ietf.org/html/draft-luff-json-hyper-schema-00#appendix-A))
+
+## Draft 3
+
+Core: [draft-zyp-json-schema-03](https://tools.ietf.org/html/draft-zyp-json-schema-03) ([changes](https://tools.ietf.org/html/draft-zyp-json-schema-03#appendix-A))
+
+Validation: none (included in Core)
+
+Hyper-Schema: none (included in Core)
+
