@@ -1,4 +1,12 @@
-(Links on this page should be immutable -- none of them should go to `/latest`, etc.)
+---
+title: Specification Links
+layout: page
+---
+
+<!-- Links on this page should be immutable -- none of them should go to `/latest`, etc. -->
+
+* TOC
+{:toc}
 
 ## Draft 6
 
@@ -30,3 +38,5 @@ Validation: none (included in Core)
 
 Hyper-Schema: none (included in Core)
 
+## Drafts 0/1/2
+These older drafts can be found on GitHub: [Draft 0](https://github.com/json-schema-org/json-schema-org.github.io/tree/master/draft-00), [Draft 1](https://github.com/json-schema-org/json-schema-org.github.io/tree/master/draft-01), [Draft 2](https://github.com/json-schema-org/json-schema-org.github.io/tree/master/draft-02)
