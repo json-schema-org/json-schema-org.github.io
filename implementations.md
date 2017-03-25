@@ -65,6 +65,7 @@ Validators
     -   <a href="https://github.com/networknt/json-schema-validator" id="link-impl-networknt-json-schema">json-schema-validator</a> - *supports version 4* (Apache License 2.0)
 - JavaScript <a id="validator-javascript"></a>
     -   <a href="https://github.com/epoberezkin/ajv" id="link-impl-ajv">ajv</a> for Node.js and browsers - *supports version 4, version 6, [custom keywords](https://github.com/epoberezkin/ajv-keywords) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51)* (MIT)
+    -   <a href="https://github.com/korzio/djv" id="link-impl-djv">djv</a> for Node.js and browsers - *supports version 4* (MIT)
     -   <a href="https://github.com/tdegrunt/jsonschema" id="link-impl-tdegrunt-jsonschema">jsonschema</a> for Node.js - *supports version 4* (MIT)
     -   <a href="https://github.com/mafintosh/is-my-json-valid" id="link-impl-is-my-json-valid">is-my-json-valid</a> - *supports version 4* (MIT)
     -   <a href="http://geraintluff.github.com/tv4/" id="link-impl-tv4">tv4</a> - *supports version 4* (Public Domain)
