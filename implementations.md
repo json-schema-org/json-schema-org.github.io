@@ -150,6 +150,7 @@ UI generation
     -   <a href="http://jsonary.com/" id="link-impl-jsonary">Jsonary</a> - *supports version 4* (MIT)
     -   <a href="http://metawidget.org/" id="link-impl-metawidget">Metawidget</a> (LGPL)
     -   <a href="https://github.com/Limenius/liform-react" id="link-impl-liform-react">Liform-react</a> (MIT)
+    -   <a href="http://jsonforms.io" id="link-impl-jsonforms">JSON Forms</a> (MIT)
 
 Editors
 -------
