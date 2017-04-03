@@ -1,3 +1,7 @@
+***THIS IS A DRAFT!***  For feedback, please comment on issue [#299](https://github.com/json-schema-org/json-schema-spec/issues/299)
+
+This will probably go on json-schema.org once approved.
+
 * [**Q: What are the incompatible changes between draft-04 and draft-06?**](#changes)
 * [**Q: What are key issues under consideraton for draft-07?**](#consideration)
 * [**Q: Why were several major changes made to Hyper-Schema just before publication?**](#publication)
