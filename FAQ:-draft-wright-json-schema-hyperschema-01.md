@@ -104,8 +104,8 @@ A: During final review, it became apparent that there was no consensus on how to
 
 A: While there are [unresolved questions around HTML analogies](https://github.com/json-schema-org/json-schema-spec/issues/294), we came to a consensus that the existing analogies caused more harm than good, for two reasons:
 
-1. The change between draft-03 and draft-04 to let `"method"` indicate any HTTP method instead of HTML's `<form method="...">` "get" and "post" values broke the original analogy to HTML
-2. Only being able to use `"schema"` and `"encType"` for either the URI query string (but no other part of the URI) was or the request body, but not having any way to work with both, was overly restrictive for API design
+1. The change between draft-03 and draft-04 to let `"method"` indicate any HTTP method instead of HTML's `<form method="...">` "get" and "post" values broke the original analogy to HTML, and trying to change it back was not well-received
+2. Only being able to use `"schema"` and `"encType"` for either the URI query string (but no other part of the URI) or the request body, but not having any way to work with both at once, was overly restrictive for API design
 
 #### Splitting `"schema"`
 
