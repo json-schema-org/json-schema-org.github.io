@@ -131,6 +131,8 @@ Schema generation
     -   <a href="http://schemaguru.snowplowanalytics.com/" id="link-impl-guru-ui">Schema Guru Web UI</a> - derives precise Schemas using several JSON instances. Based on [Schema Guru](link-impl-guru)
 -   Visual Studio
     -   <a href="http://visualstudiogallery.msdn.microsoft.com/b4515ef8-a518-41ca-b48c-bb1fd4e6faf7" id="link-impl-vs">JSON Schema Generator</a> - free extension
+-   UML
+    -   <a href="https://github.com/bayeslife/api-add-in" id="link-impl-uml">API-Add-In</a> - Sparx EA extension for exporting JSON Schema from UML models
 
 Data parsing
 ------------
