@@ -1,3 +1,5 @@
+## FAQ for migrating from draft-luff-json-hyper-schema-00 (draft-04) to draft-wright-json-schema-hyperschema-01 (draft-06)
+
 ***THIS IS A DRAFT!***  For feedback, please comment on issue [#299](https://github.com/json-schema-org/json-schema-spec/issues/299)
 
 This will probably go on json-schema.org once approved.
