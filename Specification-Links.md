@@ -1,4 +1,5 @@
 (Links on this page should be immutable -- none of them should go to `/latest`, etc.)
+The latest set of drafts is [Draft 6 / draft-wright-*-01](#draft-06).
 
 ## Draft 3
 
@@ -26,6 +27,7 @@ Validation: [draft-wright-json-schema-validation-00](https://tools.ietf.org/html
 
 Hyper-Schema: [draft-wright-json-schema-hyperschema-00](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-00) ([changes](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-00#appendix-B))
 
+<a id="#draft-06"></a>
 ## Draft 6
 
 Core:
