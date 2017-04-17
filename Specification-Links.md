@@ -28,4 +28,18 @@ Hyper-Schema: [draft-wright-json-schema-hyperschema-00](https://tools.ietf.org/h
 
 ## Draft 6
 
-Unreleased.
+Core:
+* specification: [draft-wright-json-schema-01](https://tools.ietf.org/html/draft-wright-json-schema-01)
+* changes: [Appendix B](https://tools.ietf.org/html/draft-wright-json-schema-01#appendix-B)
+* meta-schema: [draft-06/schema#](http://json-schema.org/draft-06/schema#)
+
+Validation:
+* specification: [draft-wright-json-schema-validation-01](https://tools.ietf.org/html/draft-wright-json-schema-validation-01)
+* changes: [Appendix B](https://tools.ietf.org/html/draft-wright-json-schema-validation-01#appendix-B)
+* meta-schema: [draft-06/schema#](http://json-schema.org/draft-06/schema#)
+
+Hyper-Schema:
+* specification: [draft-wright-json-schema-hyperschema-01](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-01)
+* changes: [Appendix B](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-01#appendix-B)
+* meta-schema: [draft-06/hyper-schema#](http://json-schema.org/draft-06/hyper-schema#)
+* See also the [hyper-schema migration FAQ](https://github.com/json-schema-org/json-schema-spec/wiki/FAQ:-draft-wright-json-schema-hyperschema-01)
