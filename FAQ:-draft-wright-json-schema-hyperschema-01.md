@@ -131,6 +131,8 @@ A: Ideally, this is implicitly conveyed by your link relation type, which is the
 
 Several URI schemes and namespaces, such as the [UUID namespace in the `urn:` scheme](https://tools.ietf.org/html/rfc4122), or the [`tag:` scheme](https://tools.ietf.org/html/rfc4151), are particularly suitable for creating unique identifiers.
 
+And of course, there are ways to detect this at runtime such as HTTP's `"Allow"` response header, or attempting a method and handling a `405 Method Not Allowed` error accordingly.
+
 <a id="explicit"></a>
 ### Q: No, really. How do I _explicitly_ indicate which HTTP methods are supported on a link?
 
