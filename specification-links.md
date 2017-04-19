@@ -8,13 +8,14 @@ layout: page
 * TOC
 {:toc}
 
-## Latest Snapshot
+## Latest Snapshot (work in progress)
 
-The next draft (currently Draft 6) is a work in progress.  You can [give feedback and get involved on GitHub](https://github.com/json-schema-org/json-schema-spec).
+The next unreleased draft is a work in progress.  You can [give feedback and get involved on GitHub](https://github.com/json-schema-org/json-schema-spec).
 
  - Core: [jsonschema-core.xml](https://github.com/json-schema-org/json-schema-spec/blob/master/jsonschema-core.xml)
  - Validation: [jsonschema-validation.xml](https://github.com/json-schema-org/json-schema-spec/blob/master/jsonschema-validation.xml)
  - Hyper-Schema: [jsonschema-hyperschema.xml](https://github.com/json-schema-org/json-schema-spec/blob/master/jsonschema-hyperschema.xml)
+
 
 ## Draft 6
 
