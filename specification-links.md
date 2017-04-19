@@ -16,6 +16,24 @@ The next draft (currently Draft 6) is a work in progress.  You can [give feedbac
  - Validation: [jsonschema-validation.xml](https://github.com/json-schema-org/json-schema-spec/blob/master/jsonschema-validation.xml)
  - Hyper-Schema: [jsonschema-hyperschema.xml](https://github.com/json-schema-org/json-schema-spec/blob/master/jsonschema-hyperschema.xml)
 
+## Draft 6
+
+Core:
+* specification: [draft-wright-json-schema-01](https://tools.ietf.org/html/draft-wright-json-schema-01)
+* changes: [Appendix B](https://tools.ietf.org/html/draft-wright-json-schema-01#appendix-B)
+* meta-schema: [draft-06/schema#](http://json-schema.org/draft-06/schema#)
+
+Validation:
+* specification: [draft-wright-json-schema-validation-01](https://tools.ietf.org/html/draft-wright-json-schema-validation-01)
+* changes: [Appendix B](https://tools.ietf.org/html/draft-wright-json-schema-validation-01#appendix-B)
+* meta-schema: [draft-06/schema#](http://json-schema.org/draft-06/schema#)
+
+Hyper-Schema:
+* specification: [draft-wright-json-schema-hyperschema-01](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-01)
+* changes: [Appendix B](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-01#appendix-B)
+* meta-schema: [draft-06/hyper-schema#](http://json-schema.org/draft-06/hyper-schema#)
+* See also the [hyper-schema migration FAQ](https://github.com/json-schema-org/json-schema-spec/wiki/FAQ:-draft-wright-json-schema-hyperschema-01)
+
 ## Draft 5
 
 **Note:** Draft 5 was primarily a cleanup of Draft 4 and therefore does not have its own meta-schema.  The Draft 4 meta-schema should continue to be used until Draft 6, which will have a new meta-schema, is available.
