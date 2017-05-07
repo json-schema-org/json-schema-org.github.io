@@ -161,6 +161,7 @@ Editors
 -   <a href="https://www.jetbrains.com/resharper/" id="link-impl-resharer">ReSharper 2016.1</a> - *code completion, inspections and quick fixes for JSON schema in Visual Studio 2010 - 2015, including support for JSON Path and regular expressions for schema editing*
 -   <a href="https://code.visualstudio.com/" id="link-impl-vscode">Visual Studio Code</a> - *Schema driven code completion, hovers and validation for editing JSON files (including schemas)*
 -   <a href="http://jsoneditoronline.org" id="link-impl-jsoneditoronline">JSONEditor Online</a> - *View, edit, format, and validate JSON online*
+-   <a href="https://json-schema-editor.tangramjs.com" id="link-impl-jsonschemaeditor">Json Schema Editor</a> - *An intuitive editor for json schema online*
 
 Compatibility
 -------------
