@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 // This file is the same as the one provided by the the minima theme (ie. unmodified),
 // but must be reproduced here because of our custom syntax-highlighting partial
 
@@ -36,6 +38,10 @@ $on-laptop:        800px !default;
   @media screen and (max-width: $device) {
     @content;
   }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
 }
 
 // Import partials.
