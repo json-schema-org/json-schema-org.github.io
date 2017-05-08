@@ -27,15 +27,3 @@ The latest meta-schema is draft-06.
 | [Core/Validation Meta-Schema](http://json-schema.org/schema) | Used for schemas written for pure validation.              |
 | [Hyper Meta-Schema](http://json-schema.org/hyper-schema)     | Used for schemas written for validation and hyper-linking. |
 
-Standard schemas
-----------------
-
-These sample schemas describe simple data structures which can be expressed as JSON:
-
-|-----------------------------------------------------|---------------------------------------------------------------------------------|
-| [Geographic Coordinate](http://json-schema.org/geo) | a location as longitude and latitude                                            |
-| [Card](http://json-schema.org/card)                 | a microformat-style representation of a person, company, organization, or place |
-| [Calendar](http://json-schema.org/calendar)         | a microformat-style representation of an event                                  |
-| [Address](http://json-schema.org/address)           | a microformat-style representation of a street address                          |
-
-
