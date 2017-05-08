@@ -29,3 +29,6 @@ collections:
   docs:
     output: true
     permalink: "/:title:output_ext"
+
+gems:
+  - jekyll-relative-links
