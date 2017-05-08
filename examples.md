@@ -28,6 +28,17 @@ Here is a basic example of a JSON Schema:
 }
 ```
 
+Example schemas
+---------------
+
+These sample schemas describe simple data structures which can be expressed as JSON:
+
+|-----------------------------------------------------|---------------------------------------------------------------------------------|
+| [Geographic Coordinate](http://json-schema.org/geo) | a location as longitude and latitude                                            |
+| [Card](http://json-schema.org/card)                 | a microformat-style representation of a person, company, organization, or place |
+| [Calendar](http://json-schema.org/calendar)         | a microformat-style representation of an event                                  |
+| [Address](http://json-schema.org/address)           | a microformat-style representation of a street address                          |
+
 Walkthroughs
 ------------
 
