@@ -1,9 +1,7 @@
 ---
 layout: page
+title: Building a mount point schema
 ---
-
-Purpose
--------
 
 This example shows a possible JSON representation of a hypothetical machine's mount points as represented in an `/etc/fstab` file.
 

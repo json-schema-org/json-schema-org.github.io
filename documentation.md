@@ -1,9 +1,7 @@
 ---
 layout: page
+title: Specification
 ---
-
-Specification
--------------
 
 The latest Internet-Drafts at the IETF are the draft-wright-json-schema\*-01 documents, which correspond to the draft-06 meta-schemas. These were published on 2017-04-15. (Due to a change in authorship the I-D numbering was reset with the previous draft). The specification is split into three parts, Core, Validation, and Hyper-Schema:
 
