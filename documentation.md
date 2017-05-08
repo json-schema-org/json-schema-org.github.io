@@ -19,11 +19,11 @@ For previous versions of the specification, please see the [Specification Links]
 Meta-schemas
 ------------
 
-The meta-schemas are the schemas which define the JSON Schema and Hyper-Schema formats.
-
+The meta-schemas define the JSON Schema and Hyper-Schema formats using the JSON Schema format.
 The latest meta-schema is draft-06.
 
 |--------------------------------------------------------------|------------------------------------------------------------|
 | [Core/Validation Meta-Schema](http://json-schema.org/schema) | Used for schemas written for pure validation.              |
 | [Hyper Meta-Schema](http://json-schema.org/hyper-schema)     | Used for schemas written for validation and hyper-linking. |
 
+**If you are accessing the above meta-schema links from a web browser, you will need to save the file then open it as a JSON file.**
