@@ -1,9 +1,7 @@
 ---
 layout: page
+title: Building a product schema
 ---
-
-Example data
-------------
 
 Let's pretend we're interacting with a JSON based product catalog. This catalog has a product which has an *id*, a *name*, a *price*, and an optional set of *tags*.
 

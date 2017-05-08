@@ -1,9 +1,7 @@
 ---
 layout: page
+title: Examples
 ---
-
-Basic example
--------------
 
 Here is a basic example of a JSON Schema:
 
