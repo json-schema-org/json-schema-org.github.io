@@ -56,6 +56,7 @@ Validators
     -   <a href="https://github.com/for-GET/jesse" id="link-impl-jesse">JeSSE</a> (Apache 2.0)
 - Go <a name="validator-go"></a>
     -   <a href="https://github.com/sigu-399/gojsonschema" id="link-impl-gojsonschema">gojsonschema</a> (Apache 2.0)
+    -   <a href="https://github.com/santhosh-tekuri/jsonschema" id="link-impl-st-jsonschema">jsonschema</a> *supports version 4* (BSD-3-Clause)
 - Haskell <a id="validator-haskell"></a>
     -   <a href="https://github.com/timjb/aeson-schema" id="link-impl-aeson-schema">aeson-schema</a> (MIT)
     -   <a href="https://github.com/seagreen/hjsonschema" id="link-impl-hjsonschema">hjsonschema</a> - *supports version 4* (MIT)
