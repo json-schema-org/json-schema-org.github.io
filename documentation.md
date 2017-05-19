@@ -25,3 +25,13 @@ The latest meta-schema is draft-06.
 | [Hyper meta-schema](http://json-schema.org/hyper-schema)     | Used for schemas written for validation and hyper-linking. |
 
 **If you are accessing the above meta-schema links from a web browser, you will need to save the file then open it as a JSON file.**
+
+Meta-schemas of previous drafts
+-------------------------------
+
+ * [Draft 04 core and validation schema](http://json-schema.org/draft-04/schema)
+ * [Draft 04 hyper-schema](http://json-schema.org/draft-04/hyper-schema)
+
+
+ * [Draft 03 core and validation schema](http://json-schema.org/draft-03/schema)
+ * [Draft 03 hyper-schema](http://json-schema.org/draft-03/hyper-schema)
