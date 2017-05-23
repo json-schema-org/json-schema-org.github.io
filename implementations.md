@@ -125,7 +125,7 @@ Schema generation
 -   Scala
     -   <a href="https://github.com/snowplow/schema-guru" id="link-impl-guru">Schema Guru</a> (Apache 2.0) - CLI util, Spark Job and Web UI for deriving JSON Schemas out of corpus of JSON instances
 -   JavaScript
-    -   <a href="https://github.com/krg7880/json-schema-generator" id="link-impl-js-json-schema-generator">json-schema-generator</a> (MIT) - Node.js library usable both as a CLI util and as a Node module</a>
+    -   <a href="https://github.com/krg7880/json-schema-generator" id="link-impl-js-json-schema-generator">json-schema-generator</a> (MIT) - Node.js library usable both as a CLI util and as a Node module
 -   TypeScript
     -   <a href="https://github.com/YousefED/typescript-json-schema" id="link-impl-typescript-json-schema">typescript-json-schema</a>
     -   <a href="https://github.com/lbovet/typson" id="link-impl-typson">Typson</a> (Apache 2.0)
