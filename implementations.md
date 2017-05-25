@@ -49,7 +49,7 @@ Validators
     -   [Header-only C++ library for JSON Schema validation](https://github.com/tristanpenman/valijson) - *supports only version 4* (BSD-2-Clause)
     -   [Modern C++ JSON schema validator](https://github.com/pboettch/json-schema-validator) - *supports only version 4* based on JSON for Modern C++ (MIT)
 - Clojure <a id="validator-clojure"></a>
-    -   [scjsv](https://github.com/metosin/scjsv) - *supports version 4* (wrapper for [fge/json-schema-validator](https://github.com/fge/json-schema-validator)) (Eclipse Public License v1.0)
+    -   [scjsv](https://github.com/metosin/scjsv) - *supports version 4* (wrapper for [java-json-tools/json-schema-validator](https://github.com/java-json-tools/json-schema-validator)) (Eclipse Public License v1.0)
 -  Dart <a id="validator-dart"></a>
     -   [json_schema](https://github.com/patefacio/json_schema) *supports version 4* (BSL-1.0)
 - Erlang <a name="validator-erlang"></a>
@@ -61,7 +61,7 @@ Validators
     -   [aeson-schema](https://github.com/timjb/aeson-schema) (MIT)
     -   [hjsonschema](https://github.com/seagreen/hjsonschema) - *supports version 4* (MIT)
 - Java <a id="validator-java"></a>
-    -   [json-schema-validator](https://github.com/fge/json-schema-validator) - *supports version 4* (LGPLv3)
+    -   [json-schema-validator](https://github.com/java-json-tools/json-schema-validator) - *supports version 4* (LGPLv3)
     -   [json-schema (implementation based on the org.json API)](https://github.com/everit-org/json-schema) - *supports version 4* (Apache License 2.0)
     -   [json-schema-validator](https://github.com/networknt/json-schema-validator) - *supports version 4* (Apache License 2.0)
 - JavaScript <a id="validator-javascript"></a>
