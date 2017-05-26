@@ -5,6 +5,8 @@ layout: page
 
 <!-- Links on this page should be immutable -- none of them should go to `/latest`, etc. -->
 
+You can find the latest released draft on the [Specification](/documentation.md) page.  Older drafts are expired, but may be of historical interest.
+
 * TOC
 {:toc}
 
