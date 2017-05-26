@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Software
-permalink: /implementations
+permalink: /implementations.html
 ---
 
 Implementations below are written in different languages, and support part, or all, of the specification.
