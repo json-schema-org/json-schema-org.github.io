@@ -12,7 +12,9 @@ The latest Internet-Drafts at the IETF are the draft-wright-json-schema\*-01 doc
 
 They are also available on the IETF main site: [core (draft-wright-json-schema-01)](http://tools.ietf.org/html/draft-wright-json-schema-01), [validation (draft-wright-json-schema-validation-01)](http://tools.ietf.org/html/draft-wright-json-schema-validation-01) and [hyper-schema (draft-wright-json-schema-hyperschema-01)](http://tools.ietf.org/html/draft-wright-json-schema-hyperschema-01).
 
-For previous versions of the specification, please see the [Specification Links](https://github.com/json-schema-org/json-schema-spec/wiki/Specification-Links) page on our github wiki.
+### Other versions
+
+Please see [Specification Links](specification-links.md) for older versions and the latest unreleased version of the specification.
 
 Meta-schemas
 ------------
