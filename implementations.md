@@ -74,7 +74,7 @@ Validators
     -   [z-schema](https://github.com/zaggino/z-schema) for Node.js - *supports version 4* (MIT)
     -   [direct-schema](http://github.com/IreneKnapp/direct-schema) (BSD)
     -   [JSV](http://github.com/garycourt/JSV) (BSD)
-    -   [json-schema</a> (AFL or BSD) as part of <a href="http://www.persvr.org/" id="link-impl-persvr">Persevere](http://github.com/kriszyp/json-schema)
+    -   [json-schema](https://github.com/kriszyp/json-schema) (AFL or BSD) part of the [Persevere](http://github.com/kriszyp/json-schema) project
     -   [schema.js](https://github.com/akidee/schema.js) (MIT)
     -   [json-gate](https://github.com/oferei/json-gate) (MIT)
     -   [JSEN](https://github.com/bugventure/jsen) for Node.js - *supports version 4* (MIT)
