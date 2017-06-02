@@ -5,6 +5,7 @@
 
 // Import partials from the `minima` theme.
 @import "minima";
+@import "minima/syntax-highlighting";
 
 // Import navigation partial for Software page
 @import "intra-navigation";
@@ -12,7 +13,7 @@
 // _base.scss overrides
 pre,
 code {
-  background-color: inherit;
+  background-color: unset;
 }
 
 .wrapper {
