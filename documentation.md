@@ -14,7 +14,7 @@ They are also available on the IETF main site: [core (draft-wright-json-schema-0
 
 ### Other versions
 
-Please see [Specification Links](specification-links.md) for older versions and the latest unreleased version of the specification.
+Please see [Specification Links](specification-links.md) for older drafts and the latest unreleased version of the specification.
 
 Meta-schemas
 ------------

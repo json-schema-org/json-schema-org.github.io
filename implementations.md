@@ -8,7 +8,7 @@ Implementations below are written in different languages, and support part, or a
 
 Implementations below are classified based on their functionality. When known, the license of the project is also mentioned.
 
-If you have updates to this list, make a pull request on the [GitHub repo](https://github.com/json-schema-org/json-schema-org.github.io)
+If you have updates to this list, make a pull request on the [GitHub repo](https://github.com/json-schema-org/json-schema-org.github.io).
 
 Validators
 ----------
@@ -39,60 +39,60 @@ Validators
 
 - .NET <a id="validator-dotnet"></a>
     -   [Json.NET](http://james.newtonking.com/projects/json-net.aspx) (MIT)
-    -   [NJsonSchema](http://NJsonSchema.org) - *supports version 4* (Ms-PL)
+    -   [NJsonSchema](http://NJsonSchema.org) - *supports draft 4* (Ms-PL)
 - ActionScript 3 <a id="validator-action-script-3"></a>
     -   [Frigga](https://github.com/raulbajales/Frigga) (MIT)
 - C <a id="validator-c"></a>
     -   [WJElement](https://github.com/netmail-open/wjelement) (LGPLv3)
 - C++ <a id="validator-cpp"></a>
-    -   [wjelement-cpp](https://github.com/petehug/wjelement-cpp) - *supports version 4* (LGPLv3)
-    -   [Header-only C++ library for JSON Schema validation](https://github.com/tristanpenman/valijson) - *supports only version 4* (BSD-2-Clause)
-    -   [Modern C++ JSON schema validator](https://github.com/pboettch/json-schema-validator) - *supports only version 4* based on JSON for Modern C++ (MIT)
+    -   [wjelement-cpp](https://github.com/petehug/wjelement-cpp) - *supports draft 4* (LGPLv3)
+    -   [Header-only C++ library for JSON Schema validation](https://github.com/tristanpenman/valijson) - *supports only draft 4* (BSD-2-Clause)
+    -   [Modern C++ JSON schema validator](https://github.com/pboettch/json-schema-validator) - *supports only draft 4* based on JSON for Modern C++ (MIT)
 - Clojure <a id="validator-clojure"></a>
-    -   [scjsv](https://github.com/metosin/scjsv) - *supports version 4* (wrapper for [java-json-tools/json-schema-validator](https://github.com/java-json-tools/json-schema-validator)) (Eclipse Public License v1.0)
+    -   [scjsv](https://github.com/metosin/scjsv) - *supports draft 4* (wrapper for [java-json-tools/json-schema-validator](https://github.com/java-json-tools/json-schema-validator)) (Eclipse Public License v1.0)
 -  Dart <a id="validator-dart"></a>
-    -   [json_schema](https://github.com/patefacio/json_schema) *supports version 4* (BSL-1.0)
+    -   [json_schema](https://github.com/patefacio/json_schema) *supports draft 4* (BSL-1.0)
 - Erlang <a name="validator-erlang"></a>
     -   [JeSSE](https://github.com/for-GET/jesse) (Apache 2.0)
 - Go <a name="validator-go"></a>
     -   [gojsonschema](https://github.com/sigu-399/gojsonschema) (Apache 2.0)
-    -   [jsonschema](https://github.com/santhosh-tekuri/jsonschema) *supports version 4* (BSD-3-Clause)
+    -   [jsonschema](https://github.com/santhosh-tekuri/jsonschema) *supports draft 4* (BSD-3-Clause)
 - Haskell <a id="validator-haskell"></a>
     -   [aeson-schema](https://github.com/timjb/aeson-schema) (MIT)
-    -   [hjsonschema](https://github.com/seagreen/hjsonschema) - *supports version 4* (MIT)
+    -   [hjsonschema](https://github.com/seagreen/hjsonschema) - *supports draft 4* (MIT)
 - Java <a id="validator-java"></a>
-    -   [json-schema-validator](https://github.com/java-json-tools/json-schema-validator) - *supports version 4* (LGPLv3)
-    -   [json-schema (implementation based on the org.json API)](https://github.com/everit-org/json-schema) - *supports version 4* (Apache License 2.0)
-    -   [json-schema-validator](https://github.com/networknt/json-schema-validator) - *supports version 4* (Apache License 2.0)
+    -   [json-schema-validator](https://github.com/java-json-tools/json-schema-validator) - *supports draft 4* (LGPLv3)
+    -   [json-schema (implementation based on the org.json API)](https://github.com/everit-org/json-schema) - *supports draft 4* (Apache License 2.0)
+    -   [json-schema-validator](https://github.com/networknt/json-schema-validator) - *supports draft 4* (Apache License 2.0)
 - JavaScript <a id="validator-javascript"></a>
-    -   [ajv](https://github.com/epoberezkin/ajv) for Node.js and browsers - *supports version 4, version 6, [custom keywords](https://github.com/epoberezkin/ajv-keywords) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51)* (MIT)
-    -   [djv](https://github.com/korzio/djv) for Node.js and browsers - *supports version 4* (MIT)
-    -   [jsonschema](https://github.com/tdegrunt/jsonschema) for Node.js - *supports version 4* (MIT)
-    -   [is-my-json-valid](https://github.com/mafintosh/is-my-json-valid) - *supports version 4* (MIT)
-    -   [tv4](http://geraintluff.github.com/tv4/) - *supports version 4* (Public Domain)
-    -   [JaySchema](https://github.com/natesilva/jayschema) for Node.js - *supports version 4* (BSD)
-    -   [z-schema](https://github.com/zaggino/z-schema) for Node.js - *supports version 4* (MIT)
+    -   [ajv](https://github.com/epoberezkin/ajv) for Node.js and browsers - *supports draft 4, draft 6, [custom keywords](https://github.com/epoberezkin/ajv-keywords) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51)* (MIT)
+    -   [djv](https://github.com/korzio/djv) for Node.js and browsers - *supports draft 4* (MIT)
+    -   [jsonschema](https://github.com/tdegrunt/jsonschema) for Node.js - *supports draft 4* (MIT)
+    -   [is-my-json-valid](https://github.com/mafintosh/is-my-json-valid) - *supports draft 4* (MIT)
+    -   [tv4](http://geraintluff.github.com/tv4/) - *supports draft 4* (Public Domain)
+    -   [JaySchema](https://github.com/natesilva/jayschema) for Node.js - *supports draft 4* (BSD)
+    -   [z-schema](https://github.com/zaggino/z-schema) for Node.js - *supports draft 4* (MIT)
     -   [direct-schema](http://github.com/IreneKnapp/direct-schema) (BSD)
     -   [JSV](http://github.com/garycourt/JSV) (BSD)
     -   [json-schema](https://github.com/kriszyp/json-schema) (AFL or BSD) part of the [Persevere](http://github.com/kriszyp/json-schema) project
     -   [schema.js](https://github.com/akidee/schema.js) (MIT)
     -   [json-gate](https://github.com/oferei/json-gate) (MIT)
-    -   [JSEN](https://github.com/bugventure/jsen) for Node.js - *supports version 4* (MIT)
+    -   [JSEN](https://github.com/bugventure/jsen) for Node.js - *supports draft 4* (MIT)
 - PHP <a id="validator-php"></a>
-    -   [jsv4-php](https://github.com/geraintluff/jsv4-php) - *supports version 4* (Public Domain / MIT)
+    -   [jsv4-php](https://github.com/geraintluff/jsv4-php) - *supports draft 4* (Public Domain / MIT)
     -   [php-json-schema](https://github.com/hasbridge/php-json-schema) (MIT)
     -   [json-schema](https://github.com/justinrainbow/json-schema) (Berkeley)
-    -   [JVal](https://github.com/stefk/jval) - *supports version 4* (MIT)
-    -   [JSON Guard](https://github.com/thephpleague/json-guard) - *supports version 4* (MIT)
+    -   [JVal](https://github.com/stefk/jval) - *supports draft 4* (MIT)
+    -   [JSON Guard](https://github.com/thephpleague/json-guard) - *supports draft 4* (MIT)
 - Perl <a id="validator-perl"></a>
     -   [JSV::Validator](https://metacpan.org/module/JSV::Validator) (MIT)
     -   [JSON::Schema](https://metacpan.org/module/JSON::Schema) (MIT)
 - Python <a id="validator-python"></a>
-    -   [jsonschema](https://github.com/Julian/jsonschema) - *supports version 4* (MIT)
+    -   [jsonschema](https://github.com/Julian/jsonschema) - *supports draft 4* (MIT)
     -   [json-schema-validator](https://github.com/zyga/json-schema-validator) (LGPL)
 - Ruby <a id="validator-ruby"></a>
     -   [ruby-jsonschema](https://github.com/Constellation/ruby-jsonchema) (MIT)
-    -   [json-schema](https://github.com/hoxworth/json-schema) - *supports version 4* (MIT)
+    -   [json-schema](https://github.com/hoxworth/json-schema) - *supports draft 4* (MIT)
 
 ### Online
 
@@ -117,7 +117,7 @@ Schema generation
 
 -   .NET
     -   [Json.NET](http://james.newtonking.com/projects/json-net.aspx) (MIT) - generates schemas from .NET types
-    -   [NJsonSchema](http://NJsonSchema.org) - *supports version 4* (Ms-PL) - generates schemas from .NET types
+    -   [NJsonSchema](http://NJsonSchema.org) - *supports draft 4* (Ms-PL) - generates schemas from .NET types
 -   PHP
     -   [Liform](https://github.com/Limenius/liform) (MIT) - generates schemas from Symfony forms
 -   Python
@@ -143,14 +143,14 @@ Data parsing
 -   Ruby
     -   [autoparse](https://github.com/google/autoparse) (ASL 2.0)
 -   Scala
-    -   [json-schema-codegen](https://github.com/VoxSupplyChain/json-schema-codegen) - Tool and SBT plugin for generating Scala, TypeScript models and parsers from Json-Schema definitions, *supports version 4* (Apache 2.0)
+    -   [json-schema-codegen](https://github.com/VoxSupplyChain/json-schema-codegen) - Tool and SBT plugin for generating Scala, TypeScript models and parsers from Json-Schema definitions, *supports draft 4* (Apache 2.0)
     -   [Argus](https://github.com/aishfenton/argus) (MIT) - Macros for building models from JSON Schemas
 
 UI generation
 -------------
 
 -   JavaScript
-    -   [Jsonary](http://jsonary.com/) - *supports version 4* (MIT)
+    -   [Jsonary](http://jsonary.com/) - *supports draft 4* (MIT)
     -   [Metawidget](http://metawidget.org/) (LGPL)
     -   [Liform-react](https://github.com/Limenius/liform-react) (MIT)
     -   [JSON Forms](http://jsonforms.io) (MIT)
@@ -158,8 +158,8 @@ UI generation
 Editors
 -------
 
--   [Liquid XML Studio 2016](https://www.liquid-technologies.com/json-schema-editor) - *Graphical JSON schema editor for v4, context sensitive intellisense for JSON documents.*
--   [Visual Studio 2013](http://www.visualstudio.com/) - *Auto-completion and tooltips based on JSON schema v3 and v4*
+-   [Liquid XML Studio 2016](https://www.liquid-technologies.com/json-schema-editor) - *Graphical JSON schema editor for draft 4, context sensitive intellisense for JSON documents.*
+-   [Visual Studio 2013](http://www.visualstudio.com/) - *Auto-completion and tooltips based on JSON schema draft 3 and draft 4*
 -   [JSONBuddy](http://www.json-buddy.com/) - *Grid-style JSON editor and context sensitive entry-helpers based on JSON schema*
 -   [ReSharper 2016.1](https://www.jetbrains.com/resharper/) - *code completion, inspections and quick fixes for JSON schema in Visual Studio 2010 - 2015, including support for JSON Path and regular expressions for schema editing*
 -   [Visual Studio Code](https://code.visualstudio.com/) - *Schema driven code completion, hovers and validation for editing JSON files (including schemas)*
@@ -170,15 +170,15 @@ Compatibility
 -------------
 
 -   JavaScript
-    -   [JSON Schema Compatibility](https://github.com/geraintluff/json-schema-compatability) - *converts v3 to v4* (Public Domain)
+    -   [JSON Schema Compatibility](https://github.com/geraintluff/json-schema-compatability) - *converts draft 3 to draft 4* (Public Domain)
 
 Hyper-schema handling
 ---------------------
 
 -   JavaScript
-    -   [Jsonary](http://jsonary.com/) - *supports version 4* (MIT)
+    -   [Jsonary](http://jsonary.com/) - *supports draft 4* (MIT)
 -   Scala
-    -   [json-schema-parser](https://github.com/VoxSupplyChain/json-schema-parser) - Schema parser and validator, *supports version 4* (Apache 2.0)
+    -   [json-schema-parser](https://github.com/VoxSupplyChain/json-schema-parser) - Schema parser and validator, *supports draft 4* (Apache 2.0)
 
 Documentation generation
 ------------------------
