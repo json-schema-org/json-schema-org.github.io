@@ -43,7 +43,8 @@ Validators
 {% for language in site.data.validator-libraries %}
 
 - {{language.name}} <a id="validator-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %}"></a>{% for implementation in language.implementations %}
-    - {{ implementation }}{% endfor %}
+    - [{{ implementation.name }}]({{implementation.url}}) {{implementation.notes}}
+    ({{implementation.license | join: ", "}}){% endfor %}
 
 {% endfor %}
 
