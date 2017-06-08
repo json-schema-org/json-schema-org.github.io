@@ -8,7 +8,6 @@
   implementations:
     - "[Frigga](https://github.com/raulbajales/Frigga) (MIT)"
 - name: C
-  anchor-name: c
   implementations:
     - "[WJElement](https://github.com/netmail-open/wjelement) (LGPLv3)"
 - name: C++
@@ -18,35 +17,28 @@
     - "[Header-only C++ library for JSON Schema validation](https://github.com/tristanpenman/valijson) - *supports only draft 4* (BSD-2-Clause)"
     - "[Modern C++ JSON schema validator](https://github.com/pboettch/json-schema-validator) - *supports only draft 4* based on JSON for Modern C++ (MIT)"
 - name: Clojure
-  anchor-name: clojure
   implementations:
     - "[scjsv](https://github.com/metosin/scjsv) - *supports draft 4* (wrapper for [java-json-tools/json-schema-validator](https://github.com/java-json-tools/json-schema-validator)) (Eclipse Public License v1.0)"
 - name:  Dart
-  anchor-name: dart
   implementations:
     - "[json_schema](https://github.com/patefacio/json_schema) *supports draft 4* (BSL-1.0)"
 - name: Erlang
-  anchor-name: erlang
   implementations:
     - "[JeSSE](https://github.com/for-GET/jesse) (Apache 2.0)"
 - name: Go
-  anchor-name: go
   implementations:
     - "[gojsonschema](https://github.com/sigu-399/gojsonschema) (Apache 2.0)"
     - "[jsonschema](https://github.com/santhosh-tekuri/jsonschema) *supports draft 4, draft 6* (BSD-3-Clause)"
 - name: Haskell
-  anchor-name: haskell
   implementations:
     - "[aeson-schema](https://github.com/timjb/aeson-schema) (MIT)"
     - "[hjsonschema](https://github.com/seagreen/hjsonschema) - *supports draft 4* (MIT)"
 - name: Java
-  anchor-name: java
   implementations:
     - "[json-schema-validator](https://github.com/java-json-tools/json-schema-validator) - *supports draft 4* (LGPLv3)"
     - "[json-schema (implementation based on the org.json API)](https://github.com/everit-org/json-schema) - *supports draft 4* (Apache License 2.0)"
     - "[json-schema-validator](https://github.com/networknt/json-schema-validator) - *supports draft 4* (Apache License 2.0)"
 - name: JavaScript
-  anchor-name: javascript
   implementations:
     - "[ajv](https://github.com/epoberezkin/ajv) for Node.js and browsers - *supports draft 4, draft 6, [custom keywords](https://github.com/epoberezkin/ajv-keywords) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51)* (MIT)"
     - "[djv](https://github.com/korzio/djv) for Node.js and browsers - *supports draft 4* (MIT)"
@@ -62,7 +54,6 @@
     - "[json-gate](https://github.com/oferei/json-gate) (MIT)"
     - "[JSEN](https://github.com/bugventure/jsen) for Node.js - *supports draft 4* (MIT)"
 - name: PHP
-  anchor-name: php
   implementations:
     - "[jsv4-php](https://github.com/geraintluff/jsv4-php) - *supports draft 4* (Public Domain / MIT)"
     - "[php-json-schema](https://github.com/hasbridge/php-json-schema) (MIT)"
@@ -70,17 +61,14 @@
     - "[JVal](https://github.com/stefk/jval) - *supports draft 4* (MIT)"
     - "[JSON Guard](https://github.com/thephpleague/json-guard) - *supports draft 4* (MIT)"
 - name: Perl
-  anchor-name: perl
   implementations:
     - "[JSV::Validator](https://metacpan.org/module/JSV::Validator) (MIT)"
     - "[JSON::Schema](https://metacpan.org/module/JSON::Schema) (MIT)"
 - name: Python
-  anchor-name: python
   implementations:
     - "[jsonschema](https://github.com/Julian/jsonschema) - *supports draft 4* (MIT)"
     - "[json-schema-validator](https://github.com/zyga/json-schema-validator) (LGPL)"
 - name: Ruby
-  anchor-name: ruby
   implementations:
     - "[ruby-jsonschema](https://github.com/Constellation/ruby-jsonchema) (MIT)"
     - "[json-schema](https://github.com/hoxworth/json-schema) - *supports draft 4* (MIT)"
