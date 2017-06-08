@@ -42,15 +42,15 @@ While not technically a change, the behavior of the `"uri"` format was not clear
 
 When a relative path, fragment, or any other style of URI Reference (per RFC 3986) is allowable, use `"uri-reference"`.
 
-Implementations offering a translation from draft-04 to draft-06 may want to offer an option to convert `"uri"` formats to `"uri-reference"`, although any such option should be disable by default for strict conformance.
+Implementations offering a translation from draft-04 to draft-06 may want to offer an option to convert `"uri"` formats to `"uri-reference"`, although any such option should be disabled by default for strict conformance.
 
 ### Q: What happened to draft-05?
 
-The draft-05 core and validation specifications were intended to be more clear and readible rewrites of draft-04, to give us a strong base for draft-06 changes.  Implementors should **not** implement or advertise support for "draft-05".
+The draft-05 core and validation specifications were intended to be more clear and readable rewrites of draft-04, to give us a strong base for draft-06 changes.  Implementors should **not** implement or advertise support for "draft-05".
 
 Implementations that supported "draft-05" by implementing proposals from right after the publication of draft-04 should either remove that support or give it a different name to avoid confusion.
 
-### Q: What happened to all of the discussions around re-using schemas with `"additionalProperties"`?
+### Q: What happened to all the discussions around re-using schemas with `"additionalProperties"`?
 
 There are several competing proposals for making the re-use of schemas that set `"additionalProperties"` to something other than `true`.  Most people specifically care about the case where it is `false`, but the same behavior occurs with any non-`true` value.
 
@@ -80,7 +80,7 @@ The difficulty is that if you attempt to do this:
 }
 ```
 
-validation will always fail for any non-empty object instance.  `"additionalProperties"` only knows about immediately adjacent `"properties"` and `"patternProperties"`, in order to ensure that each subschema means the same thing whether it is being used with another subschema or on its own.
+Validation will always fail for any non-empty object instance.  `"additionalProperties"` only knows about immediately adjacent `"properties"` and `"patternProperties"`, in order to ensure that each subschema means the same thing whether it is being used with another subschema or on its own.
 
 So in this example, if the instance has a "bar" property, it will fail the first subschema because "bar" is not "foo".  If it has a "foo" property, it will fail the second subschema because "foo" is not "bar".  And any other property will fail both schemas.
 
@@ -122,9 +122,9 @@ This will allow an object with either "foo" or "bar" or both, but will fail vali
 
 It does require duplicating the names, and the awkward use of both an `"allOf"` and `"anyOf"`, but it is less repetition than other options, and can be re-used fairly robustly even if the "foo" and "bar" schemas are in separate files managed by a different person or organization.
 
-_*TODO:* Link to all of the discussions about other use cases and proposed solutions._
+_*TODO:* Link to all the discussions about other use cases and proposed solutions._
 
-### Q: What are key issues under consideraton for draft-07?
+### Q: What are key issues under consideration for draft-07?
 
 We are just starting to consider what to prioritize for the next draft.
 

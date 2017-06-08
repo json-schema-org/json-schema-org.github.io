@@ -44,11 +44,11 @@ While `"targetSchema"` did not change its meaning in either recent draft, it has
 
 Due to draft-04 emphasizing individual HTTP methods as `"method"` values, many users interpreted `"targetSchema"` as a hint of the response to the method in `"method"`.  This was never correct; all drafts define this keyword as describing the representation of the target resource, which appears as a response to HTTP GET, but may or may not appear in other responses.
 
-Draft-06 clarfies this usage and provides guidance on its use with different HTTP methods.  This includes using `"targetSchema"` as a request description for PUT and PATCH.  With draft-04, many users used `"schema"` to describe PUT and PATCH requests which is not needed.
+Draft-06 clarifies this usage and provides guidance on its use with different HTTP methods.  This includes using `"targetSchema"` as a request description for PUT and PATCH.  With draft-04, many users used `"schema"` to describe PUT and PATCH requests which is not needed.
 
 However, see also [#296](https://github.com/json-schema-org/json-schema-spec/issues/296) for a proposal for hinting at "Accept-Patch", which is needed to properly use `"targetSchema"` with HTTP PATCH.
 
-### Q: What are key issues under consideraton for draft-07?
+### Q: What are key issues under consideration for draft-07?
 
 There are a number of relatively concrete proposals, although it is unlikely that all will be resolved in draft-07
 
@@ -112,6 +112,6 @@ A: Pick a proposal such as [`"allow"`](https://github.com/json-schema-org/json-s
 
 ### Q: If `"targetSchema"` is not the response, how do I describe responses?
 
-A: You should have hyper-schemas for your various success and error responses, but connecting them to links is is more of a documentation question than a usage question:  each response will indicate its own schema, so you don't need to know it in advance at runtime.
+A: You should have hyper-schemas for your various success and error responses, but connecting them to links is more of a documentation question than a usage question: each response will indicate its own schema, so you don't need to know it in advance at runtime.
 
-There has never been a Hyper-Schema keyword to explicitly associate responses with operations such as HTTP methods.  The use cases for this seem to be about generating API documentation, so this is most likely a candidate for a [JSON Schema API Documentation vocabluary](https://github.com/json-schema-org/json-schema-spec/issues/136).
+There has never been a Hyper-Schema keyword to explicitly associate responses with operations such as HTTP methods.  The use cases for this seem to be about generating API documentation, so this is most likely a candidate for a [JSON Schema API Documentation vocabulary](https://github.com/json-schema-org/json-schema-spec/issues/136).
