@@ -1,32 +1,13 @@
-## FAQ for migrating from draft-luff-json-hyper-schema-00 (draft-04) to draft-wright-json-schema-hyperschema-01 (draft-06)
+---
+title: JSON Hyper-Schema Draft 6 migration FAQ
+layout: page
+---
 
-* [**Q: What are the incompatible changes between draft-04 and draft-06?**](#changes)
-* [**Q: What are key issues under consideraton for draft-07?**](#consideration)
-* [**Q: Why were several major changes made to Hyper-Schema just before publication?**](#publication)
-* [**Q: Why doesn't the spec mention or behave like HTML anymore?**](#html)
-* [**Q: So how do I indicate which HTTP methods are supported on a link?**](#implicit)
-* [**Q: No, really. How do I _explicitly_ indicate which HTTP methods are supported on a link?**](#explicit)
-* [**Q: If `"targetSchema"` is not the response, how do I describe responses?**](#response)
+FAQ for migrating from draft-luff-json-hyper-schema-00 (draft-04) to draft-wright-json-schema-hyperschema-01 (draft-06).
 
-## _A note on draft naming and numbering:_
+* TOC
+{:toc}
 
-IETF Internet-Drafts (I-Ds) are named with the editor's name and a sequential number which resets with each new editor.  Meta-schemas are numbered sequentially.  Additionally, drafts 00-03 used one document for all three current specs.  So, for hyper-schema, the correspondences are:
-
-Hyper-Schema IETF Draft | Hyper-Schema Meta-Schema URI
----- | ----
-[draft-zyp-json-schema-00](https://tools.ietf.org/html/draft-zyp-json-schema-00) | [http://json-schema.org/draft-00/hyper-schema#](http://json-schema.org/draft-00/hyper-schema#)
-[draft-zyp-json-schema-01](https://tools.ietf.org/html/draft-zyp-json-schema-01) | [http://json-schema.org/draft-01/hyper-schema#](http://json-schema.org/draft-01/hyper-schema#)
-[draft-zyp-json-schema-02](https://tools.ietf.org/html/draft-zyp-json-schema-02) | [http://json-schema.org/draft-02/hyper-schema#](http://json-schema.org/draft-02/hyper-schema#)
-[draft-zyp-json-schema-03](https://tools.ietf.org/html/draft-zyp-json-schema-03) | [http://json-schema.org/draft-03/hyper-schema#](http://json-schema.org/draft-03/hyper-schema#)
-[draft-luff-json-hyper-schema-00](https://tools.ietf.org/html/draft-luff-json-hyper-schema-00) | [http://json-schema.org/draft-04/hyper-schema#](http://json-schema.org/draft-04/hyper-schema#)
-[draft-wright-json-schema-hyperschema-00](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-00) | draft-05; [not published](https://github.com/json-schema-org/json-schema-spec/wiki/Specification-Links)
-[draft-wright-json-schema-hyperschema-01](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-01) | [http://json-schema.org/draft-06/hyper-schema#](http://json-schema.org/draft-06/hyper-schema#)
-
-Most people find it easier to remember the sequential meta-schema numbers, so this FAQ will use those, including draft-05 for draft-wright-json-schema-hyperschema-00.
-
-## Questions and Answers
-
-<a id="changes"></a>
 ### Q: What are the incompatible changes between draft-04 and draft-06?
 
 Between drafts 04 and 06 we undertook a major re-examining of Hyper-Schema, which has never been as widely adopted as JSON Schema Validation.
@@ -67,7 +48,6 @@ Draft-06 clarfies this usage and provides guidance on its use with different HTT
 
 However, see also [#296](https://github.com/json-schema-org/json-schema-spec/issues/296) for a proposal for hinting at "Accept-Patch", which is needed to properly use `"targetSchema"` with HTTP PATCH.
 
-<a id="consideration"></a>
 ### Q: What are key issues under consideraton for draft-07?
 
 There are a number of relatively concrete proposals, although it is unlikely that all will be resolved in draft-07
@@ -92,12 +72,10 @@ Additionally, there are two further proposals for JSON Schema vocabularies which
 * [Documentation](https://github.com/json-schema-org/json-schema-spec/issues/136), which could take over some static API description work
 * [UI](https://github.com/json-schema-org/json-schema-spec/issues/67), which would deal with presentation issues for forms
 
-<a id="publication"></a>
 ### Q: Why were several major changes made to Hyper-Schema just before publication?
 
 A: During final review, it became apparent that there was no consensus on how to use the spec as written.  The late changes were necessary to publish a spec with unambiguous meaning, so that we could get feedback on its contents rather than differing interpretations.  Originally we attempted to simply clarify what was there, but then we realized there was no agreement on what was there in the first place.
 
-<a id="html"></a>
 ### Q: Why doesn't the spec mention or behave like HTML anymore?
 
 A: While there are [unresolved questions around HTML analogies](https://github.com/json-schema-org/json-schema-spec/issues/294), we came to a consensus that the existing analogies caused more harm than good, for two reasons:
@@ -120,7 +98,6 @@ Draft-05 tried to restore the draft-03 behavior of `"method"`, but feedback told
 We could have switched by to draft-04's `"method"` behavior, but in addition to producing more confusion from all of the back and forth, the draft-04 approach to `"method"` was not consistent with the rest of the LDO design anyway.  Most notably, it caused problems with the usage of `"targetSchema"` as described above.
 
 
-<a id="implicit"></a>
 ### Q: So how do I indicate which HTTP methods are supported on a link?
 
 A: Ideally, this is implicitly conveyed by your link relation type, which is the primary indicator of semantics across machine-oriented hypermedia in general.  [RFC 5988](https://tools.ietf.org/html/rfc5988) provides guidance on creating custom (a.k.a. "extension") link relations.
@@ -129,12 +106,10 @@ Several URI schemes and namespaces, such as the [UUID namespace in the `urn:` sc
 
 And of course, there are ways to detect this at runtime such as HTTP's `"Allow"` response header, or attempting a method and handling a `405 Method Not Allowed` error accordingly.
 
-<a id="explicit"></a>
 ### Q: No, really. How do I _explicitly_ indicate which HTTP methods are supported on a link?
 
 A: Pick a proposal such as [`"allow"`](https://github.com/json-schema-org/json-schema-spec/issues/73) or [`"usageHints"`](https://github.com/json-schema-org/json-schema-spec/issues/296) to implement as an extension keyword and let us know how it works for you.  This will help us determine the right permanent solution in future drafts.
 
-<a id="response"></a>
 ### Q: If `"targetSchema"` is not the response, how do I describe responses?
 
 A: You should have hyper-schemas for your various success and error responses, but connecting them to links is is more of a documentation question than a usage question:  each response will indicate its own schema, so you don't need to know it in advance at runtime.

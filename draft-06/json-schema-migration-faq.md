@@ -1,28 +1,13 @@
-## FAQ for migrating from zyp-04 and fge-00 (draft-04) to wright-01 (draft-06)
+---
+title: JSON Schema Draft 6 migration FAQ
+layout: page
+---
 
-* [**Q: What are the changes between draft-04 and draft-06?**](#changes)
-* [**Q: What happened to all of the discussions around re-using schemas with `"additionalProperties"`?](#addlprop)
-* [**Q: What are key issues under consideraton for draft-07?**](#consideration)
+FAQ for migrating from zyp-04 and fge-00 (draft-04) to wright-01 (draft-06).
 
-## _A note on draft naming and numbering:_
+* TOC
+{:toc}
 
-IETF Internet-Drafts (I-Ds) are named with the editor's name and a sequential number which resets with each new editor.  Meta-schemas are numbered sequentially.  Additionally, drafts 00-03 used one document for all three current specs.  So, for core and validation, the correspondences are:
-
-Core/Validation IETF Drafts | Meta-Schema URI
----- | ----
-[draft-zyp-json-schema-00](https://tools.ietf.org/html/draft-zyp-json-schema-00) | [http://json-schema.org/draft-00/schema#](http://json-schema.org/draft-00/hyper-schema#)
-[draft-zyp-json-schema-01](https://tools.ietf.org/html/draft-zyp-json-schema-01) | [http://json-schema.org/draft-01/schema#](http://json-schema.org/draft-01/hyper-schema#)
-[draft-zyp-json-schema-02](https://tools.ietf.org/html/draft-zyp-json-schema-02) | [http://json-schema.org/draft-02/schema#](http://json-schema.org/draft-02/hyper-schema#)
-[draft-zyp-json-schema-03](https://tools.ietf.org/html/draft-zyp-json-schema-03) | [http://json-schema.org/draft-03/schema#](http://json-schema.org/draft-03/hyper-schema#)
-[draft-zyp-json-schema-04](https://tools.ietf.org/html/draft-zyp-json-schema-04) and [draft-fge-json-schema-validation-00](https://tools.ietf.org/html/draft-fge-json-schema-validation-00) | [http://json-schema.org/draft-04/hyper-schema#](http://json-schema.org/draft-04/schema#)
-[draft-wright-json-schema-00](https://tools.ietf.org/html/draft-wright-json-schema-00) and [draft-wright-json-schema-validation-00](https://tools.ietf.org/html/draft-wright-json-schema-validation-00) | draft-05; [not published](https://github.com/json-schema-org/json-schema-spec/wiki/Specification-Links)
-[draft-wright-json-schema-01](https://tools.ietf.org/html/draft-wright-json-schema-01) and [draft-wright-json-schema-validation-01](https://tools.ietf.org/html/draft-wright-json-schema-validation-01) | [http://json-schema.org/draft-06/schema#](http://json-schema.org/draft-06/hyper-schema#)
-
-Most people find it easier to remember the sequential meta-schema numbers, so this FAQ will use those, including draft-05 for draft-wright-json-schema-hyperschema-00.
-
-## Questions and Answers
-
-<a id="changes"></a>
 ### Q: What are the changes between draft-04 and draft-06?
 
 #### Backwards-incompatible changes
@@ -59,21 +44,19 @@ When a relative path, fragment, or any other style of URI Reference (per RFC 398
 
 Implementations offering a translation from draft-04 to draft-06 may want to offer an option to convert `"uri"` formats to `"uri-reference"`, although any such option should be disable by default for strict conformance.
 
-<a id="draft05"></a>
 ### Q: What happened to draft-05?
 
 The draft-05 core and validation specifications were intended to be more clear and readible rewrites of draft-04, to give us a strong base for draft-06 changes.  Implementors should **not** implement or advertise support for "draft-05".
 
 Implementations that supported "draft-05" by implementing proposals from right after the publication of draft-04 should either remove that support or give it a different name to avoid confusion.
 
-<a id="addlprop"></a>
 ### Q: What happened to all of the discussions around re-using schemas with `"additionalProperties"`?
 
 There are several competing proposals for making the re-use of schemas that set `"additionalProperties"` to something other than `true`.  Most people specifically care about the case where it is `false`, but the same behavior occurs with any non-`true` value.
 
 The difficulty is that if you attempt to do this:
 
-```JSON
+```json
 {
     "type": "object",
     "allOf": [
@@ -103,7 +86,7 @@ So in this example, if the instance has a "bar" property, it will fail the first
 
 A workaround is available with the new `"propertyNames"` keyword:
 
-```JSON
+```json
 {
     "type": "object",
     "allOf": [
@@ -141,7 +124,6 @@ It does require duplicating the names, and the awkward use of both an `"allOf"` 
 
 _*TODO:* Link to all of the discussions about other use cases and proposed solutions._
 
-<a id="consideration"></a>
 ### Q: What are key issues under consideraton for draft-07?
 
 We are just starting to consider what to prioritize for the next draft.
