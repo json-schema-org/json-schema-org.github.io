@@ -34,6 +34,7 @@ header_pages:
 exclude:
 - README.md
 - Gemfile
+- node_modules
 
 gems:
   - jekyll-relative-links

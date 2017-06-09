@@ -1,3 +1,4 @@
 # Jekyll products
 .sass-cache/
 _site/
+node_modules/

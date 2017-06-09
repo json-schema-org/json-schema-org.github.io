@@ -10,12 +10,7 @@ Let's pretend we're interacting with a JSON based product catalog. This catalog 
 An example product in this API is:
 
 ```json
-{
-    "id": 1,
-    "name": "A green door",
-    "price": 12.50,
-    "tags": ["home", "green"]
-}
+{% include example1/instance.json %}
 ```
 
 While generally straightforward, that example leaves some open questions. For example, one may ask:
@@ -33,12 +28,7 @@ Starting the schema
 To start a schema definition, let's begin with a basic JSON schema:
 
 ```json
-{
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Product",
-    "description": "A product from Acme's catalog",
-    "type": "object"
-}
+{% include example1/schema1.json %}
 ```
 
 The above schema has four properties called *keywords*. The *title* and *description* keywords are descriptive only, in that they do not add constraints to the data being validated. The intent of the schema is stated with these two keywords (that is, this schema describes a product).
@@ -59,19 +49,7 @@ Next let's answer our previous questions about this API, starting with id.
 In JSON Schema terms, we can update our schema to:
 
 ```json
-{
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Product",
-    "description": "A product from Acme's catalog",
-    "type": "object",
-    "properties": {
-        "id": {
-            "description": "The unique identifier for a product",
-            "type": "integer"
-        }
-    },
-    "required": ["id"]
-}
+{% include example1/schema2.json %}
 ```
 
 ### Is name required?
@@ -79,23 +57,7 @@ In JSON Schema terms, we can update our schema to:
 *name* is a string value that describes a product. Since there isn't much to a product without a name, it also is required. Adding this gives us the schema:
 
 ```json
-{
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Product",
-    "description": "A product from Acme's catalog",
-    "type": "object",
-    "properties": {
-        "id": {
-            "description": "The unique identifier for a product",
-            "type": "integer"
-        },
-        "name": {
-            "description": "Name of the product",
-            "type": "string"
-        }
-    },
-    "required": ["id", "name"]
-}
+{% include example1/schema3.json %}
 ```
 
 ### Can price be 0?
@@ -103,28 +65,7 @@ In JSON Schema terms, we can update our schema to:
 According to Acme's docs, there are no free products. In JSON schema a number can have a minimum. By default this minimum is inclusive, so we need to specify *exclusiveMinimum*. Therefore we can update our schema with *price*:
 
 ```json
-{
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Product",
-    "description": "A product from Acme's catalog",
-    "type": "object",
-    "properties": {
-        "id": {
-            "description": "The unique identifier for a product",
-            "type": "integer"
-        },
-        "name": {
-            "description": "Name of the product",
-            "type": "string"
-        },
-        "price": {
-            "type": "number",
-            "minimum": 0,
-            "exclusiveMinimum": true
-        }
-    },
-    "required": ["id", "name", "price"]
-}
+{% include example1/schema4.json %}
 ```
 
 ### Are all tags strings?
@@ -139,36 +80,7 @@ However, Acme's docs add two constraints:
 The first constraint can be added with *minItems*, and the second one by specifying *uniqueItems* as being true:
 
 ```json
-{
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Product",
-    "description": "A product from Acme's catalog",
-    "type": "object",
-    "properties": {
-        "id": {
-            "description": "The unique identifier for a product",
-            "type": "integer"
-        },
-        "name": {
-            "description": "Name of the product",
-            "type": "string"
-        },
-        "price": {
-            "type": "number",
-            "minimum": 0,
-            "exclusiveMinimum": true
-        },
-        "tags": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            },
-            "minItems": 1,
-            "uniqueItems": true
-        }
-    },
-    "required": ["id", "name", "price"]
-}
+{% include example1/schema5.json %}
 ```
 
 Summary
@@ -183,86 +95,11 @@ And also, since JSON Schema defines a reference schema for a geographic location
 ### Set of products:
 
 ```json
-[
-    {
-        "id": 2,
-        "name": "An ice sculpture",
-        "price": 12.50,
-        "tags": ["cold", "ice"],
-        "dimensions": {
-            "length": 7.0,
-            "width": 12.0,
-            "height": 9.5
-        },
-        "warehouseLocation": {
-            "latitude": -78.75,
-            "longitude": 20.4
-        }
-    },
-    {
-        "id": 3,
-        "name": "A blue mouse",
-        "price": 25.50,
-        "dimensions": {
-            "length": 3.1,
-            "width": 1.0,
-            "height": 1.0
-        },
-        "warehouseLocation": {
-            "latitude": 54.4,
-            "longitude": -32.7
-        }
-    }
-]
+{% include example1/set_instance.json %}
 ```
 
 ### Set of products schema:
 
 ```json
-{
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Product set",
-    "type": "array",
-    "items": {
-        "title": "Product",
-        "type": "object",
-        "properties": {
-            "id": {
-                "description": "The unique identifier for a product",
-                "type": "number"
-            },
-            "name": {
-                "type": "string"
-            },
-            "price": {
-                "type": "number",
-                "minimum": 0,
-                "exclusiveMinimum": true
-            },
-            "tags": {
-                "type": "array",
-                "items": {
-                    "type": "string"
-                },
-                "minItems": 1,
-                "uniqueItems": true
-            },
-            "dimensions": {
-                "type": "object",
-                "properties": {
-                    "length": {"type": "number"},
-                    "width": {"type": "number"},
-                    "height": {"type": "number"}
-                },
-                "required": ["length", "width", "height"]
-            },
-            "warehouseLocation": {
-                "description": "Coordinates of the warehouse with the product",
-                "$ref": "http://json-schema.org/geo"
-            }
-        },
-        "required": ["id", "name", "price"]
-    }
-}
+{% include example1/set_schema.json %}
 ```
-
