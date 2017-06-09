@@ -31,6 +31,10 @@ header_pages:
 - examples.md
 - implementations.md
 
+exclude:
+- README.md
+- Gemfile
+
 collections:
   docs:
     output: true
