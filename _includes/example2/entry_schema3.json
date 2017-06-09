@@ -1,6 +1,6 @@
 {
     "id": "http://some.site.somewhere/entry-schema#",
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "http://json-schema.org/draft-06/schema#",
     "description": "schema for an fstab entry",
     "type": "object",
     "required": [ "storage" ],
@@ -58,7 +58,7 @@
                 "server": {
                     "type": "string",
                     "oneOf": [
-                        { "format": "host-name" },
+                        { "format": "hostname" },
                         { "format": "ipv4" },
                         { "format": "ipv6" }
                     ]

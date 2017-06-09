@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "http://json-schema.org/draft-06/schema#",
     "title": "Product set",
     "type": "array",
     "items": {
@@ -15,8 +15,7 @@
             },
             "price": {
                 "type": "number",
-                "minimum": 0,
-                "exclusiveMinimum": true
+                "exclusiveMinimum": 0
             },
             "tags": {
                 "type": "array",

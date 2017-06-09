@@ -35,7 +35,7 @@ The above schema has four properties called *keywords*. The *title* and *descrip
 
 The *type* keyword defines the first constraint on our JSON data: it has to be a JSON Object.
 
-Finally, the *$schema* keyword states that this schema is written according to the draft v4 specification.
+Finally, the *$schema* keyword states that this schema is written according to the draft-06 specification.
 
 Defining the properties
 -----------------------
@@ -62,7 +62,7 @@ In JSON Schema terms, we can update our schema to:
 
 ### Can price be 0?
 
-According to Acme's docs, there are no free products. In JSON schema a number can have a minimum. By default this minimum is inclusive, so we need to specify *exclusiveMinimum*. Therefore we can update our schema with *price*:
+According to Acme's docs, there are no free products. So we need to specify *exclusiveMinimum*. If we wanted to include 0 as a valid price, we would have specified *minimum* instead. Therefore, we can update our schema with *price*:
 
 ```json
 {% include example1/schema4.json %}

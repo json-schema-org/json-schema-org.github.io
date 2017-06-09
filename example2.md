@@ -22,7 +22,7 @@ We will start with a base schema expressing the following constraints:
 -   the member names (or property names) of this object must all be valid, absolute paths;
 -   there must be an entry for the root filesystem (ie, `/`).
 
-We also want the schema to be regarded as a draft v4 schema, we must therefore specify *$schema*:
+We also want the schema to be regarded as a draft v6 schema, we must therefore specify *$schema*:
 
 ```json
 {% include example2/schema1.json %}
@@ -163,6 +163,4 @@ While this is not a concern if you know that the schema you write will be used b
 
 -   *format* support is optional, and as such other tools may ignore this keyword: this can lead to a different validation outcome for the same data;
 -   it uses regular expressions: care should be taken not to use any advanced features (such as lookarounds), since they may not be supported at the other end;
--   it uses *$schema* to express the need to use draft v4 syntax, but not all tools support draft v4 (in fact, most don't support it).
-
-
+-   it uses *$schema* to express the need to use draft v6 compliant processing, but not all tools support draft v6 (in fact, most don't support it).
