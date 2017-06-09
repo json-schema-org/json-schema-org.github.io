@@ -5,13 +5,13 @@ title: Building a mount point schema
 
 This example shows a possible JSON representation of a hypothetical machine's mount points as represented in an `/etc/fstab` file.
 
-An entry in the fstab file can have many different forms. Here is a possible representation of a full fstab:
+An entry in an fstab file can have many different forms. Here is a possible representation of a full fstab:
 
 ```json
 {% include example2/instance.json %}
 ```
 
-Not all constraints to an fstab file can be modeled using JSON Schema alone; however, it can already represent a good number of them. We will add constraints one after the other until we get to a satisfactory result.
+Not all constraints to an fstab file can be modeled using JSON Schema alone; however, it can represent a good number of them. We will add constraints one after the other until we get to a satisfactory result.
 
 Base schema
 -----------
@@ -149,7 +149,7 @@ This is only an example for learning purposes. Some additional constraints could
 -   it makes no sense for `/` to be mounted on a tmpfs filesystem;
 -   it makes no sense to specify the filesystem type if the storage is either NFS or tmpfs.
 
-As an exercise, you can always try and add these constraints. It would probably require splitting the schema further.
+As an exercise, you can always try to add these constraints. It would probably require splitting the schema further.
 
 ### Not all constraints can be expressed
 
@@ -163,4 +163,4 @@ While this is not a concern if you know that the schema you write will be used b
 
 -   *format* support is optional, and as such other tools may ignore this keyword: this can lead to a different validation outcome for the same data;
 -   it uses regular expressions: care should be taken not to use any advanced features (such as lookarounds), since they may not be supported at the other end;
--   it uses *$schema* to express the need to use draft v6 compliant processing, but not all tools support draft v6 (in fact, most don't support it).
+-   it uses *$schema* to express the need to use draft v6 compliant processing, but not all tools support draft v6.

@@ -70,7 +70,7 @@ According to Acme's docs, there are no free products. So we need to specify *exc
 
 ### Are all tags strings?
 
-Finally, we come to the *tags* property. Unlike the previous properties, tags have many values, and is represented as a JSON array. According to Acme's docs, all tags must be strings, but you aren't required to specify tags. We simply leave *tags* out of the list of required properties.
+Finally, we come to the *tags* property. Unlike the previous properties, tags have many values, and is represented as a JSON array. If, according to Acme's docs, all tags must be strings, but you aren't required to specify tags; we would simply leave *tags* out of the list of required properties.
 
 However, Acme's docs add two constraints:
 
