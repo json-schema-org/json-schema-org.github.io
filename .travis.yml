@@ -5,9 +5,7 @@ node_js:
 - node
 before_script:
 - npm install ajv-cli
-- echo node ./node_modules/ajv-cli/index.js \"\$\@\" >> ajv
-- chmod +x ajv
-- PATH=".:$PATH"
+- PATH="./node_modules/.bin/:$PATH"
 script:
 - bundle exec jekyll build
 - ajv test -s schema -d "_includes/person.json" --valid
