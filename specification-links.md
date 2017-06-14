@@ -5,6 +5,8 @@ layout: page
 
 <!-- Links on this page should be immutable -- none of them should go to `/latest`, etc. -->
 
+You can find the latest released draft on the [Specification](/documentation.md) page.  Older drafts are expired, but may be of historical interest.
+
 * TOC
 {:toc}
 
@@ -48,3 +50,12 @@ Hyper-Schema:
  - Core: [draft-zyp-json-schema-04](https://tools.ietf.org/html/draft-zyp-json-schema-04) ([changes](https://tools.ietf.org/html/draft-zyp-json-schema-04#appendix-A))
  - Validation: [draft-fge-json-schema-validation-00](https://tools.ietf.org/html/draft-fge-json-schema-validation-00) ([changes](https://tools.ietf.org/html/draft-fge-json-schema-validation-00#appendix-A))
  - Hyper-Schema: [draft-luff-json-hyper-schema-00](https://tools.ietf.org/html/draft-luff-json-hyper-schema-00) ([changes](https://tools.ietf.org/html/draft-luff-json-hyper-schema-00#appendix-A))
+
+## Draft 3
+
+ - Core: [draft-zyp-json-schema-03](https://tools.ietf.org/html/draft-zyp-json-schema-03) ([changes](https://tools.ietf.org/html/draft-zyp-json-schema-03#appendix-A))
+ - Validation: none (included in Core)
+ - Hyper-Schema: none (included in Core)
+
+## Drafts 0/1/2
+These older drafts can be found on GitHub: [Draft 0](https://github.com/json-schema-org/json-schema-org.github.io/tree/master/draft-00), [Draft 1](https://github.com/json-schema-org/json-schema-org.github.io/tree/master/draft-01), [Draft 2](https://github.com/json-schema-org/json-schema-org.github.io/tree/master/draft-02)
