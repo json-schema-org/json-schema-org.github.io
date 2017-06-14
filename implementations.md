@@ -4,11 +4,15 @@ title: Software
 permalink: /implementations
 ---
 
+* TOC
+{:toc}
+
 Implementations below are written in different languages, and support part, or all, of the specification.
 
-Implementations below are classified based on their functionality. When known, the license of the project is also mentioned.
+Implementations are classified based on their functionality. When known, the license of the project is also mentioned.
 
-If you have updates to this list, make a pull request on the [GitHub repo](https://github.com/json-schema-org/json-schema-org.github.io)
+If you have updates to this list, make a pull request on the [GitHub repo](https://github.com/json-schema-org/json-schema-org.github.io).
+
 
 Validators
 ----------
