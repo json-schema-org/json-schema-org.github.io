@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Software
-permalink: /implementations
+permalink: /implementations.html
 ---
 
 * TOC
