@@ -26,6 +26,11 @@ google_analytics: UA-99695987-1
 markdown: kramdown
 theme: minima
 
+header_pages:
+- documentation.md
+- examples.md
+- implementations.md
+
 collections:
   docs:
     output: true
