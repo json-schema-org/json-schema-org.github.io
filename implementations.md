@@ -102,6 +102,12 @@ Validators
 -   [JSON Schema Lint](http://jsonschemalint.com/) - validate against your own schemas
 -   [SchemaStore.org](http://schemastore.org/validator/) - validate against common JSON Schemas
 
+### Command Line
+
+{% for tool in site.data.validator-cli %}
+- [{{ tool.name }}]({{ tool.url }}) - supports draft {{ tool.draft | join: ", draft " }} ({{ tool.license | join: ", " }}){% endfor %}
+
+
 Validation benchmarks
 ---------------------
 

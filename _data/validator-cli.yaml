@@ -1,0 +1,7 @@
+- name: ajv-cli
+  license: MIT
+  url: https://github.com/jessedc/ajv-cli
+  draft:
+    - 4
+    - 5
+    - 6
