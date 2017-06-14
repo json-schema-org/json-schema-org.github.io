@@ -7,6 +7,9 @@ layout: page
 
 You can find the latest released draft on the [Specification](/documentation.md) page.  Older drafts are expired, but may be of historical interest.
 
+**A note on draft naming and numbering:**  
+IETF Internet-Drafts (I-Ds) are named with the editor's name and a sequential number which resets with each new editor.  Meta-schemas are numbered sequentially.  Additionally, drafts 00-03 used one document for all three current specs.  Most people find it easier to remember the sequential meta-schema numbers, so those are used throughout the site.
+
 * TOC
 {:toc}
 
@@ -23,8 +26,8 @@ The next unreleased draft is a work in progress.  You can [give feedback and get
 ## Draft 6
 
 - Core: [draft-wright-json-schema-01](https://tools.ietf.org/html/draft-wright-json-schema-01) ([changes](https://tools.ietf.org/html/draft-wright-json-schema-01#appendix-B))
-- Validation: [draft-wright-json-schema-validation-01](https://tools.ietf.org/html/draft-wright-json-schema-validation-01) ([changes](https://tools.ietf.org/html/draft-wright-json-schema-validation-01#appendix-B))
-- Hyper-Schema: [draft-wright-json-schema-hyperschema-01](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-01) ([changes](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-01#appendix-B)) ([hyper-schema migration FAQ](https://github.com/json-schema-org/json-schema-spec/wiki/FAQ:-draft-wright-json-schema-hyperschema-01))
+- Validation: [draft-wright-json-schema-validation-01](https://tools.ietf.org/html/draft-wright-json-schema-validation-01) ([changes](https://tools.ietf.org/html/draft-wright-json-schema-validation-01#appendix-B)) ([schema migration FAQ](draft-06/json-schema-migration-faq.html))
+- Hyper-Schema: [draft-wright-json-schema-hyperschema-01](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-01) ([changes](https://tools.ietf.org/html/draft-wright-json-schema-hyperschema-01#appendix-B)) ([hyper-schema migration FAQ](draft-06/json-hyper-schema-migration-faq.html))
 - [JSON Schema meta-schema](http://json-schema.org/draft-06/schema)
 - [JSON Hyper-Schema meta-schema](http://json-schema.org/draft-06/hyper-schema)
 
