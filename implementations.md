@@ -59,7 +59,7 @@ Validators
     -   [JeSSE](https://github.com/for-GET/jesse) (Apache 2.0)
 - Go <a name="validator-go"></a>
     -   [gojsonschema](https://github.com/sigu-399/gojsonschema) (Apache 2.0)
-    -   [jsonschema](https://github.com/santhosh-tekuri/jsonschema) *supports draft 4* (BSD-3-Clause)
+    -   [jsonschema](https://github.com/santhosh-tekuri/jsonschema) *supports draft 4, draft 6* (BSD-3-Clause)
 - Haskell <a id="validator-haskell"></a>
     -   [aeson-schema](https://github.com/timjb/aeson-schema) (MIT)
     -   [hjsonschema](https://github.com/seagreen/hjsonschema) - *supports draft 4* (MIT)
