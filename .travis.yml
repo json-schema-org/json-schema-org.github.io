@@ -1,0 +1,5 @@
+language: ruby
+dist: trusty
+sudo: false
+script:
+- bundle exec jekyll build
