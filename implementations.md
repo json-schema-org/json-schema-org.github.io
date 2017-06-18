@@ -20,27 +20,17 @@ Validators
 
 <nav class="intra" markdown="1">
 
--   [.NET](#validator-dotnet)
--   [Action Script 3](#validator-action-script-3)
--   [C](#validator-c)
--   [C++](#validator-cpp)
--   [Clojure](#validator-clojure)
--   [Dart](#validator-dart)
--   [Erlang](#validator-erlang)
--   [Go](#validator-go)
--   [Haskell](#validator-haskell)
--   [Java](#validator-java)
--   [JavaScript](#validator-javascript)
--   [PHP](#validator-php)
--   [Perl](#validator-perl)
--   [Python](#validator-python)
--   [Ruby](#validator-ruby)
+{% assign validator-libraries = site.data.validator-libraries | sort:"name" %}
+
+{% for language in validator-libraries %}
+-   [{{ language.name }}](#validator-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %})
+{% endfor %}
 
 </nav>
 
 <!-- To add a validator library, add it in _data/validator-libraries.yml -->
 
-{% for language in site.data.validator-libraries %}
+{% for language in validator-libraries %}
 
 - {{language.name}} <a id="validator-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %}"></a>{% for implementation in language.implementations %}
     - [{{ implementation.name }}]({{implementation.url}}) {{implementation.notes}}
