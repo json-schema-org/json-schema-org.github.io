@@ -105,7 +105,7 @@ Validators
 ### Command Line
 
 {% for tool in site.data.validator-cli %}
-- [{{ tool.name }}]({{ tool.url }}) - supports draft {{ tool.draft | join: ", draft " }} ({{ tool.license | join: ", " }}){% if tool.notes %}
+- [{{ tool.name }}]({{ tool.url }}) [draft {{ tool.draft | join: ", draft " }}] ({{ tool.license | join: ", " }}){% if tool.notes %}
   - {{ tool.notes }} {% endif %}{% endfor %}
 
 
