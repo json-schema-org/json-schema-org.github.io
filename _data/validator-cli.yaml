@@ -1,13 +1,13 @@
 - name: ajv-cli
   license: MIT
-  url: 'https://github.com/jessedc/ajv-cli'
+  url: 'https://www.npmjs.com/package/ajv-cli'
   draft:
     - 4
     - 5
     - 6
 - name: Polyglottal JSON Schema Validator
   license: MIT
-  url: 'https://github.com/json-schema-everywhere/pajv'
+  url: 'https://www.npmjs.com/package/pajv'
   draft:
     - 4
     - 5
