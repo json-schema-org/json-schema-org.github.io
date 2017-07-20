@@ -65,7 +65,7 @@ Validators
     -   [hjsonschema](https://github.com/seagreen/hjsonschema) - *supports draft 4* (MIT)
 - Java <a id="validator-java"></a>
     -   [json-schema-validator](https://github.com/java-json-tools/json-schema-validator) - *supports draft 4* (LGPLv3)
-    -   [json-schema (implementation based on the org.json API)](https://github.com/everit-org/json-schema) - *supports draft 4* (Apache License 2.0)
+    -   [json-schema (implementation based on the org.json API)](https://github.com/everit-org/json-schema) - *supports draft 4, draft 6* (Apache License 2.0)
     -   [json-schema-validator](https://github.com/networknt/json-schema-validator) - *supports draft 4* (Apache License 2.0)
 - JavaScript <a id="validator-javascript"></a>
     -   [ajv](https://github.com/epoberezkin/ajv) for Node.js and browsers - *supports draft 4, draft 6, [custom keywords](https://github.com/epoberezkin/ajv-keywords) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51)* (MIT)
