@@ -20,10 +20,16 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 #twitter_username: jekyllrb
 github_username:  json-schema-org
+google_analytics: UA-99695987-1
 
 # Build settings
 markdown: kramdown
 theme: minima
+
+header_pages:
+- documentation.md
+- examples.md
+- implementations.md
 
 collections:
   docs:

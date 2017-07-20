@@ -3,7 +3,9 @@ layout: page
 title: Specification
 ---
 
-The latest Internet-Drafts at the IETF are the draft-wright-json-schema\*-01 documents, which correspond to the draft-06 meta-schemas. These were published on 2017-04-15. (Due to a change in authorship the I-D numbering was reset with the previous draft). The specification is split into three parts, Core, Validation, and Hyper-Schema:
+The latest Internet-Drafts at the IETF are the draft-wright-json-schema\*-01 documents, which correspond to the draft-06 meta-schemas. These were published on 2017-04-15. (Due to a change in authorship the I-D numbering was reset with the previous draft).  Please see the [release notes](draft-06/README.md) for more information on this release and information on migrating from previous drafts.
+
+The specification is split into three parts, Core, Validation, and Hyper-Schema:
 
 |--------------------------------------------------------------|-------------------------------------------------|
 | [JSON Schema Core](latest/json-schema-core.html)             | defines the basic foundation of JSON Schema     |
@@ -12,7 +14,9 @@ The latest Internet-Drafts at the IETF are the draft-wright-json-schema\*-01 doc
 
 They are also available on the IETF main site: [core (draft-wright-json-schema-01)](http://tools.ietf.org/html/draft-wright-json-schema-01), [validation (draft-wright-json-schema-validation-01)](http://tools.ietf.org/html/draft-wright-json-schema-validation-01) and [hyper-schema (draft-wright-json-schema-hyperschema-01)](http://tools.ietf.org/html/draft-wright-json-schema-hyperschema-01).
 
-For previous versions of the specification, please see the [Specification Links](https://github.com/json-schema-org/json-schema-spec/wiki/Specification-Links) page on our github wiki.
+### Other versions
+
+Please see [Specification Links](specification-links.md) for older drafts and the latest unreleased version of the specification.
 
 Meta-schemas
 ------------

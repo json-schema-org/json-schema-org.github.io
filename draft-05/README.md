@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 ## Explanation for lack of draft-05 meta-schemas
 
 "Draft-05" in the sequential meta-schema numbering would have
