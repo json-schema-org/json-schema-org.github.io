@@ -49,6 +49,8 @@ Hyper-Schema:
 
  - Core: [draft-zyp-json-schema-04](https://tools.ietf.org/html/draft-zyp-json-schema-04) ([changes](https://tools.ietf.org/html/draft-zyp-json-schema-04#appendix-A))
  - Validation: [draft-fge-json-schema-validation-00](https://tools.ietf.org/html/draft-fge-json-schema-validation-00) ([changes](https://tools.ietf.org/html/draft-fge-json-schema-validation-00#appendix-A))
+ - Meta-schema: [draft-04/schema#](http://json-schema.org/draft-04/schema#)
+
  - Hyper-Schema: [draft-luff-json-hyper-schema-00](https://tools.ietf.org/html/draft-luff-json-hyper-schema-00) ([changes](https://tools.ietf.org/html/draft-luff-json-hyper-schema-00#appendix-A))
 
 ## Draft 3
