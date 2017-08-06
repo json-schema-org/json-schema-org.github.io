@@ -77,7 +77,7 @@
       license: LGPLv3
     - name: json-schema (implementation based on the org.json API)
       url: https://github.com/everit-org/json-schema
-      notes: "- *supports draft 4*"
+      notes: "- *supports draft 4, draft 6*"
       license: Apache License 2.0
     - name: json-schema-validator
       url: https://github.com/networknt/json-schema-validator
