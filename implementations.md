@@ -168,7 +168,7 @@ Editors
 -   [Visual Studio Code](https://code.visualstudio.com/) - *Schema driven code completion, hovers and validation for editing JSON files (including schemas)*
 -   [JSONEditor Online](http://jsoneditoronline.org) - *View, edit, format, and validate JSON online*
 -   [JSON Schema Editor](https://json-schema-editor.tangramjs.com) - *An intuitive editor for JSON schema online*
--   [JSON Editor](https://json-editor.tangramjs.com) - *An online schema-aware editor for JSON document*
+-   [JSON Editor](https://json-editor.tangramjs.com) - *An online, schema-aware editor for JSON document*
 
 Compatibility
 -------------
