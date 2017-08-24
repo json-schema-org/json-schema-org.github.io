@@ -35,6 +35,7 @@ Validators
 -   [Perl](#validator-perl)
 -   [Python](#validator-python)
 -   [Ruby](#validator-ruby)
+-   [Postgres](#validator-postgres)
 
 </nav>
 
@@ -96,6 +97,8 @@ Validators
 - Ruby <a id="validator-ruby"></a>
     -   [ruby-jsonschema](https://github.com/Constellation/ruby-jsonchema) (MIT)
     -   [json-schema](https://github.com/hoxworth/json-schema) - *supports draft 4* (MIT)
+- Postgres <a id="validator-postgres"></a>
+    -   [postgres-json-schema](https://github.com/gavinwahl/postgres-json-schema) - *draft 4 without remote (http) references* (PostgreSQL)
 
 ### Online
 
