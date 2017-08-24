@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "http://json-schema.org/draft-06/schema#",
     "description": "A representation of an event",
     "type": "object",
     "required": [ "dtstart", "summary" ],
@@ -33,6 +33,6 @@
         },
         "category": { "type": "string" },
         "description": { "type": "string" },
-        "geo": { "$ref": "http: //json-schema.org/geo" }
+        "geo": { "$ref": "http://json-schema.org/geo" }
     }
 }

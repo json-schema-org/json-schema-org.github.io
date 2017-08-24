@@ -1,0 +1,12 @@
+{
+    "properties": {
+        "type": { "enum": [ "tmpfs" ] },
+        "sizeInMB": {
+            "type": "integer",
+            "minimum": 16,
+            "maximum": 512
+        }
+    },
+    "required": [ "type", "sizeInMB" ],
+    "additionalProperties": false
+}
