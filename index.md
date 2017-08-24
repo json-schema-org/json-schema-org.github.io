@@ -43,7 +43,7 @@ The most basic schema is a blank JSON object, which constrains nothing, allows a
 {}
 ```
 
-You can apply constraints on an instance by adding validation keywords to the schema. For instance, the "type" keyword can be used to restrict an instance to an object, array, string, number, boolean, or null:
+You can apply constraints on an instance by adding validation keywords to the schema. For example, the "type" keyword can be used to restrict an instance to an object, array, string, number, boolean, or null:
 
 ```json
 {"type": "string"}
