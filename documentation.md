@@ -14,10 +14,6 @@ The specification is split into three parts, Core, Validation, and Hyper-Schema:
 
 They are also available on the IETF main site: [core (draft-wright-json-schema-01)](http://tools.ietf.org/html/draft-wright-json-schema-01), [validation (draft-wright-json-schema-validation-01)](http://tools.ietf.org/html/draft-wright-json-schema-validation-01) and [hyper-schema (draft-wright-json-schema-hyperschema-01)](http://tools.ietf.org/html/draft-wright-json-schema-hyperschema-01).
 
-### Other versions
-
-Please see [Specification Links](specification-links.md) for older drafts and the latest unreleased version of the specification.
-
 Meta-schemas
 ------------
 
@@ -29,3 +25,8 @@ The latest meta-schema is draft-06.
 | [Hyper meta-schema](http://json-schema.org/hyper-schema)     | Used for schemas written for validation and hyper-linking. |
 
 **If you are accessing the above meta-schema links from a web browser, you will need to save the file then open it as a JSON file.**
+
+Other versions
+--------------
+
+Please see [Specification Links](specification-links.md) for older drafts and the latest unreleased version of the specification.
