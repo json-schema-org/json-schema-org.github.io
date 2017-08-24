@@ -101,6 +101,8 @@ UI generation
     -   [Metawidget](http://metawidget.org/) (LGPL)
     -   [Liform-react](https://github.com/Limenius/liform-react) (MIT)
     -   [JSON Forms](http://jsonforms.io) (MIT)
+    -   [react-jsonschema-form](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
+    -   [JSON Editor](https://github.com/jdorn/json-editor) (MIT)
 
 Editors
 -------
