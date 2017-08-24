@@ -5,43 +5,13 @@ title: Building a mount point schema
 
 This example shows a possible JSON representation of a hypothetical machine's mount points as represented in an `/etc/fstab` file.
 
-An entry in the fstab file can have many different forms. Here is a possible representation of a full fstab:
+An entry in an fstab file can have many different forms. Here is a possible representation of a full fstab:
 
 ```json
-{
-    "/": {
-        "storage": {
-            "type": "disk",
-            "device": "/dev/sda1"
-        },
-        "fstype": "btrfs",
-        "readonly": true
-    },
-    "/var": {
-        "storage": {
-            "type": "disk",
-            "label": "8f3ba6f4-5c70-46ec-83af-0d5434953e5f"
-        },
-        "fstype": "ext4",
-        "options": [ "nosuid" ]
-    },
-    "/tmp": {
-        "storage": {
-            "type": "tmpfs",
-            "sizeInMB": 64
-        }
-    },
-    "/var/www": {
-        "storage": {
-            "type": "nfs",
-            "server": "my.nfs.server",
-            "remotePath": "/exports/mypath"
-        }
-    }
-}
+{% include example2/instance.json %}
 ```
 
-Not all constraints to an fstab file can be modeled using JSON Schema alone; however, it can already represent a good number of them. We will add constraints one after the other until we get to a satisfactory result.
+Not all constraints to an fstab file can be modeled using JSON Schema alone; however, it can represent a good number of them. We will add constraints one after the other until we get to a satisfactory result.
 
 Base schema
 -----------
@@ -52,21 +22,10 @@ We will start with a base schema expressing the following constraints:
 -   the member names (or property names) of this object must all be valid, absolute paths;
 -   there must be an entry for the root filesystem (ie, `/`).
 
-We also want the schema to be regarded as a draft v4 schema, we must therefore specify *$schema*:
+We also want the schema to be regarded as a draft v6 schema, we must therefore specify *$schema*:
 
 ```json
-{
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "type": "object",
-    "properties": {
-        "/": {}
-    },
-    "patternProperties": {
-        "^(/[^/]+)+$": {}
-    },
-    "additionalProperties": false,
-    "required": [ "/" ]
-}
+{% include example2/schema1.json %}
 ```
 
 Note how the valid paths constraint is enforced here:
@@ -85,30 +44,7 @@ The entry schema - starting out
 Here again we will proceed step by step. We will start with the global structure of our schema, which will be as such:
 
 ```json
-{
-    "id": "http://some.site.somewhere/entry-schema#",
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "schema for an fstab entry",
-    "type": "object",
-    "required": [ "storage" ],
-    "properties": {
-        "storage": {
-            "type": "object",
-            "oneOf": [
-                { "$ref": "#/definitions/diskDevice" },
-                { "$ref": "#/definitions/diskUUID" },
-                { "$ref": "#/definitions/nfs" },
-                { "$ref": "#/definitions/tmpfs" }
-            ]
-        }
-    },
-    "definitions": {
-        "diskDevice": {},
-        "diskUUID": {},
-        "nfs": {},
-        "tmpfs": {}
-    }
-}
+{% include example2/entry_schema1.json %}
 ```
 
 You should already be familiar with some of the constraints:
@@ -138,40 +74,7 @@ Let's now extend this skeleton to add constraints to these three properties. Not
 With these added constraints, the schema now looks like this:
 
 ```json
-{
-    "id": "http://some.site.somewhere/entry-schema#",
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "schema for an fstab entry",
-    "type": "object",
-    "required": [ "storage" ],
-    "properties": {
-        "storage": {
-            "type": "object",
-            "oneOf": [
-                { "$ref": "#/definitions/diskDevice" },
-                { "$ref": "#/definitions/diskUUID" },
-                { "$ref": "#/definitions/nfs" },
-                { "$ref": "#/definitions/tmpfs" }
-            ]
-        },
-        "fstype": {
-            "enum": [ "ext3", "ext4", "btrfs" ]
-        },
-        "options": {
-            "type": "array",
-            "minItems": 1,
-            "items": { "type": "string" },
-            "uniqueItems": true
-        },
-        "readonly": { "type": "boolean" }
-    },
-    "definitions": {
-        "diskDevice": {},
-        "diskUUID": {},
-        "nfs": {},
-        "tmpfs": {}
-    }
-}
+{% include example2/entry_schema2.json %}
 ```
 
 For now, all definitions are empty (an empty JSON Schema validates all instances). We will write schemas for individual definitions below, and fill these schemas into the entry schema.
@@ -182,17 +85,7 @@ The *diskDevice* storage type
 This storage type has two required properties, *type* and *device*. The type can only be *disk*, and the device must be an absolute path starting with */dev*. No other properties are allowed:
 
 ```json
-{
-    "properties": {
-        "type": { "enum": [ "disk" ] },
-        "device": {
-            "type": "string",
-            "pattern": "^/dev/[^/]+(/[^/]+)*$"
-        }
-    },
-    "required": [ "type", "device" ],
-    "additionalProperties": false
-}
+{% include example2/storage_schema1.json %}
 ```
 
 You will have noted that we need not specify that *type* must be a string: the constraint described by *enum* is enough.
@@ -203,17 +96,7 @@ The *diskUUID* storage type
 This storage type has two required properties, *type* and *label*. The type can only be *disk*, and the label must be a valid UUID. No other properties are allowed:
 
 ```json
-{
-    "properties": {
-        "type": { "enum": [ "disk" ] },
-        "label": {
-            "type": "string",
-            "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
-        }
-    },
-    "required": [ "type", "label" ],
-    "additionalProperties": false
-}
+{% include example2/storage_schema2.json %}
 ```
 
 The *nfs* storage type
@@ -224,25 +107,7 @@ This storage type has three required properties: *type*, *server* and *remotePat
 For the constraints on *server*, we use a new keyword: *format*. While it is not required that *format* be supported, we will suppose that it is here:
 
 ```json
-{
-    "properties": {
-        "type": { "enum": [ "nfs" ] },
-        "remotePath": {
-            "type": "string",
-            "pattern": "^(/[^/]+)+$"
-        },
-        "server": {
-            "type": "string",
-            "oneOf": [
-                { "format": "host-name" },
-                { "format": "ipv4" },
-                { "format": "ipv6" }
-            ]
-        }
-    },
-    "required": [ "type", "server", "remotePath" ],
-    "additionalProperties": false
-}
+{% include example2/storage_schema3.json %}
 ```
 
 The *tmpfs* storage type
@@ -251,18 +116,7 @@ The *tmpfs* storage type
 This storage type has two required properties: *type* and *sizeInMB*. The size can only be an integer. What is more, we will require that the size be between 16 and 512, inclusive:
 
 ```json
-{
-    "properties": {
-        "type": { "enum": [ "tmpfs" ] },
-        "sizeInMB": {
-            "type": "integer",
-            "minimum": 16,
-            "maximum": 512
-        }
-    },
-    "required": [ "type", "sizeInMB" ],
-    "additionalProperties": false
-}
+{% include example2/storage_schema4.json %}
 ```
 
 The full entry schema
@@ -271,89 +125,7 @@ The full entry schema
 The resulting schema is quite large:
 
 ```json
-{
-    "id": "http://some.site.somewhere/entry-schema#",
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "schema for an fstab entry",
-    "type": "object",
-    "required": [ "storage" ],
-    "properties": {
-        "storage": {
-            "type": "object",
-            "oneOf": [
-                { "$ref": "#/definitions/diskDevice" },
-                { "$ref": "#/definitions/diskUUID" },
-                { "$ref": "#/definitions/nfs" },
-                { "$ref": "#/definitions/tmpfs" }
-            ]
-        },
-        "fstype": {
-            "enum": [ "ext3", "ext4", "btrfs" ]
-        },
-        "options": {
-            "type": "array",
-            "minItems": 1,
-            "items": { "type": "string" },
-            "uniqueItems": true
-        },
-        "readonly": { "type": "boolean" }
-    },
-    "definitions": {
-        "diskDevice": {
-            "properties": {
-                "type": { "enum": [ "disk" ] },
-                "device": {
-                    "type": "string",
-                    "pattern": "^/dev/[^/]+(/[^/]+)*$"
-                }
-            },
-            "required": [ "type", "device" ],
-            "additionalProperties": false
-        },
-        "diskUUID": {
-            "properties": {
-                "type": { "enum": [ "disk" ] },
-                "label": {
-                    "type": "string",
-                    "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
-                }
-            },
-            "required": [ "type", "label" ],
-            "additionalProperties": false
-        },
-        "nfs": {
-            "properties": {
-                "type": { "enum": [ "nfs" ] },
-                "remotePath": {
-                    "type": "string",
-                    "pattern": "^(/[^/]+)+$"
-                },
-                "server": {
-                    "type": "string",
-                    "oneOf": [
-                        { "format": "host-name" },
-                        { "format": "ipv4" },
-                        { "format": "ipv6" }
-                    ]
-                }
-            },
-            "required": [ "type", "server", "remotePath" ],
-            "additionalProperties": false
-        },
-        "tmpfs": {
-            "properties": {
-                "type": { "enum": [ "tmpfs" ] },
-                "sizeInMB": {
-                    "type": "integer",
-                    "minimum": 16,
-                    "maximum": 512
-                }
-            },
-            "required": [ "type", "sizeInMB" ],
-            "additionalProperties": false
-        }
-    }
-}
+{% include example2/entry_schema3.json %}
 ```
 
 Plugging this into our main schema
@@ -362,18 +134,7 @@ Plugging this into our main schema
 Now that all possible entries have been described, we can refer to the entry schema from our main schema. We will, again, use a JSON Reference here:
 
 ```json
-{
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "type": "object",
-    "properties": {
-        "/": { "$ref": "http://some.site.somewhere/entry-schema#" }
-    },
-    "patternProperties": {
-        "^(/[^/]+)+$": { "$ref": "http://some.site.somewhere/entry-schema#" }
-    },
-    "additionalProperties": false,
-    "required": [ "/" ]
-}
+{% include example2/schema2.json %}
 ```
 
 Wrapping up
@@ -388,7 +149,7 @@ This is only an example for learning purposes. Some additional constraints could
 -   it makes no sense for `/` to be mounted on a tmpfs filesystem;
 -   it makes no sense to specify the filesystem type if the storage is either NFS or tmpfs.
 
-As an exercise, you can always try and add these constraints. It would probably require splitting the schema further.
+As an exercise, you can always try to add these constraints. It would probably require splitting the schema further.
 
 ### Not all constraints can be expressed
 
@@ -402,6 +163,4 @@ While this is not a concern if you know that the schema you write will be used b
 
 -   *format* support is optional, and as such other tools may ignore this keyword: this can lead to a different validation outcome for the same data;
 -   it uses regular expressions: care should be taken not to use any advanced features (such as lookarounds), since they may not be supported at the other end;
--   it uses *$schema* to express the need to use draft v4 syntax, but not all tools support draft v4 (in fact, most don't support it).
-
-
+-   it uses *$schema* to express the need to use draft v6 compliant processing, but not all tools support draft v6.
