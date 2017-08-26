@@ -46,6 +46,8 @@ Validators
 
 ### Command Line
 
+<!-- To add a validator library, add it in _data/validator-libraries.yml -->
+
 {% for tool in site.data.validator-cli %}
 - [{{ tool.name }}]({{ tool.url }}) [draft {{ tool.draft | join: ", draft " }}] ({{ tool.license | join: ", " }}){% if tool.notes %}
   - {{ tool.notes }} {% endif %}{% endfor %}
@@ -141,8 +143,6 @@ Hyper-schema handling
 
 -   JavaScript
     -   [Jsonary](http://jsonary.com/) - *supports draft 4* (MIT)
--   Scala
-    -   [json-schema-parser](https://github.com/VoxSupplyChain/json-schema-parser) - Schema parser and validator, *supports draft 4* (Apache 2.0)
 
 Documentation generation
 ------------------------
