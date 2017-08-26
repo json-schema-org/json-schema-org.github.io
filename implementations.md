@@ -30,13 +30,29 @@ Validators
 
 <!-- To add a validator library, add it in _data/validator-libraries.yml -->
 
-{% for language in validator-libraries %}
+<ul>
+  {% for language in validator-libraries %}
+  <li>
+    {{language.name}} <a id="validator-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %}"></a>
+    <ul>
+    {% for implementation in language.implementations %}
+        <li>
+        <a href="{{implementation.url}}">{{ implementation.name }}</a>
+        
+        {% if implementation.draft %}
+            <em>supports draft {{ implementation.draft | join: ", draft " }}</em>
+        {% endif %}
 
-- {{language.name}} <a id="validator-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %}"></a>{% for implementation in language.implementations %}
-    - [{{ implementation.name }}]({{implementation.url}}) {{implementation.notes}}
-    ({{implementation.license | join: ", "}}){% endfor %}
+        {{implementation.notes | markdownify | remove: '<p>' | remove: '</p>'}}
+        ({{ implementation.license | join: ", " }})
 
-{% endfor %}
+        </li>
+    {% endfor %}
+    </ul>
+  </li>
+  {% endfor %}
+</ul>
+
 
 
 ### Online
