@@ -179,3 +179,9 @@
       url: https://github.com/hoxworth/json-schema
       notes: "- *supports draft 4*"
       license: MIT
+- name: Scala
+  implementations:
+    - name: json-schema-parser
+      url: https://github.com/VoxSupplyChain/json-schema-parser
+      notes: "- Schema parser and validator, *supports draft 4*"
+      license: Apache 2.0
