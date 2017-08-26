@@ -99,7 +99,7 @@
     - name: ajv
       url: https://github.com/epoberezkin/ajv
       notes: "for Node.js and browsers - *supports [custom keywords](https://github.com/epoberezkin/ajv-keywords) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51)*"
-      draft: [4, 5, 6]
+      draft: [4, 6]
       license: MIT
     - name: djv
       url: https://github.com/korzio/djv

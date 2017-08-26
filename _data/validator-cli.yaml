@@ -3,13 +3,11 @@
   url: 'https://www.npmjs.com/package/ajv-cli'
   draft:
     - 4
-    - 5
     - 6
 - name: Polyglottal JSON Schema Validator
   license: MIT
   url: 'https://www.npmjs.com/package/pajv'
   draft:
     - 4
-    - 5
     - 6
   notes: can be used with YAML and many other formats besides JSON
