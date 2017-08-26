@@ -179,6 +179,12 @@
       url: https://github.com/hoxworth/json-schema
       notes: "- *supports draft 4*"
       license: MIT
+- name: Rust
+  implementations:
+    - name: valico
+      url: https://github.com/rustless/valico
+      notes: "- *supports draft 4*"
+      license: MIT
 - name: Scala
   implementations:
     - name: json-schema-parser
