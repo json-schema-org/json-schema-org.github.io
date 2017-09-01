@@ -1,6 +1,3 @@
-[submodule "current"]
-	path = current
-	url = https://github.com/json-schema-org/json-schema-spec.git
 [submodule "_includes/draft-00"]
 	path = _includes/draft-00
 	url = https://github.com/json-schema-org/json-schema-spec.git
