@@ -147,6 +147,7 @@ Editors
 -   [JSONEditor Online](http://jsoneditoronline.org) - *View, edit, format, and validate JSON online*
 -   [JSON Schema Editor](https://json-schema-editor.tangramjs.com) - *An intuitive editor for JSON schema online*
 -   [JSON Editor](https://json-editor.tangramjs.com) - *An online, schema-aware editor for JSON document*
+-   [Eclipse IDE](https://www.eclipse.org/downloads/eclipse-packages) - *Rich JSON edition supporting schema for instantaneous validation and error reporting, completion, documentation.*
 
 Compatibility
 -------------
