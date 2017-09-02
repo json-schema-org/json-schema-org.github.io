@@ -217,3 +217,10 @@
       notes: "Schema parser and validator"
       draft: [4]
       license: Apache 2.0
+- name: PostgreSQL
+  implementations:
+    - name: postgres-json-schema
+      url: https://github.com/gavinwahl/postgres-json-schema
+      notes: "PL/pgSQL implementation, no remote (http) references"
+      draft: [4]
+      license: PostgreSQL
