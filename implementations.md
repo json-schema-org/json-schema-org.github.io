@@ -117,6 +117,8 @@ Data parsing
 -   Scala
     -   [json-schema-codegen](https://github.com/VoxSupplyChain/json-schema-codegen) - Tool and SBT plugin for generating Scala, TypeScript models and parsers from Json-Schema definitions, *supports draft 4* (Apache 2.0)
     -   [Argus](https://github.com/aishfenton/argus) (MIT) - Macros for building models from JSON Schemas
+-   Swift
+    -   [Bric-à-brac](https://github.com/glimpseio/BricBrac) (MIT) - generates idiomatic swift structs and parser/serializer from JSON schemas
 
 UI generation
 -------------
