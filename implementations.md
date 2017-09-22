@@ -111,7 +111,9 @@ Data parsing
 ------------
 
 -   Delphi
-    - [DJsonSchema](https://github.com/schlothauer-wauer/DJsonSchema) (MIT) - Command line tool to generate Delphi classes which include boilerplate code to read and write JSON data.
+    - [DJsonSchema](https://github.com/schlothauer-wauer/DJsonSchema) (MIT) - JSON Schema reader and code generator for Delphi.
+-   Groovy
+    - [jsonCodeGen](https://github.com/schlothauer-wauer/jsoncodegen) (MIT) - Groovy based generation tasks from JSON schema. Already includes generators for Java Beans, Swagger specification files and PlantUML diagrams.
 -   Haskell
     -   [aeson-schema](https://github.com/timjb/aeson-schema) (MIT) - generates code for a parser
 -   Ruby
