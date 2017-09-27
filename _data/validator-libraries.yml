@@ -104,7 +104,7 @@
     - name: djv
       url: https://github.com/korzio/djv
       notes: "for Node.js and browsers"
-      draft: [4]
+      draft: [4, 6]
       license: MIT
     - name: jsonschema
       url: https://github.com/tdegrunt/jsonschema
