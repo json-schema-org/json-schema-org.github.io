@@ -24,9 +24,10 @@ Advantages
 
 ### JSON Hyper-Schema
 
--   describes your existing API - no new structures required
--   links (including [URI Templates](http://tools.ietf.org/html/rfc6570) for target URIs)
--   forms - specify a JSON Schema for the desired data
+-   make any JSON format a hypermedia format - no constraints on document structure
+-   use [URI Templates](https://tools.ietf.org/html/rfc6570) with instance data
+-   describe client data for use with links using JSON Schema
+-   recognize collections and collection items _coming soon!_
 
 </div>
 
@@ -58,13 +59,13 @@ Interested? Check out:
 
 -   the [specification](documentation.md)
 -   some [examples](examples.md)
--   this [excellent guide](http://spacetelescope.github.io/understanding-json-schema/) for schema authors, from the [Space Telescope Science Institute](http://www.stsci.edu/)
 -   the growing list of [JSON (Hyper-)Schema software](implementations.md)
+
+We encourage updating to the latest specification, as described by the draft-06 meta-schemas.  However, if you are still on draft-04, you be be interested in:
+-   this [excellent guide](http://spacetelescope.github.io/understanding-json-schema/) for schema authors, from the [Space Telescope Science Institute](http://www.stsci.edu/)
 
 Questions? Feeling helpful? Get involved on:
 
 -   the [GitHub repo](http://github.com/json-schema-org/json-schema-spec)
 -   the [Google Group](https://groups.google.com/forum/#!forum/json-schema)
 -   the [IRC channel](irc://chat.freenode.net/json-schema) ([Freenode Webchat](https://webchat.freenode.net/?channels=json-schema))
-
-
