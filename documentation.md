@@ -26,6 +26,14 @@ The latest meta-schema is draft-06.
 
 **If you are accessing the above meta-schema links from a web browser, you will need to save the file then open it as a JSON file.**
 
+Migrating from draft-04
+-------------
+
+The release notes discuss the changes impacting users and implementors:
+
+- [JSON Schema Core and Validation](draft-06/json-schema-migration-faq.md)
+- [JSON Hyper-Schema](draft-06/json-hyper-schema-migration-faq.md)
+
 Other versions
 --------------
 
