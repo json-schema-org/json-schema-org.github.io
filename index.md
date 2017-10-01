@@ -31,6 +31,18 @@ Advantages
 
 </div>
 
+Project Status
+--------------
+
+Publication of Internet-Draft documents can be tracked through the IETF:
+- [JSON Schema (core)](https://datatracker.ietf.org/doc/draft-wright-json-schema/)
+- [JSON Schema Validation](https://datatracker.ietf.org/doc/draft-wright-json-schema-validation/)
+- [JSON Hyper-Schema](https://datatracker.ietf.org/doc/draft-wright-json-schema-hyperschema/)
+
+Internet-Drafts expire after six months, so our goal is to publish often enough to always have a set of unexpired drafts available.  There may be brief gaps as we wrap up each draft and finalize the text.
+
+Progress on the next set of Internet-Drafts can be tracked on GitHub.  The current milestone is [draft-07 (wright-\*-02)](https://github.com/json-schema-org/json-schema-spec/milestone/5)
+
 <div style="clear:both"></div>
 
 Quickstart
