@@ -12,7 +12,7 @@ FAQ for migrating from draft-luff-json-hyper-schema-00 (draft-04) to draft-wrigh
 
 Between drafts 04 and 06 we undertook a major re-examining of Hyper-Schema, which has never been as widely adopted as JSON Schema Validation.
 
-You will notice that some things are still in flight and under discussion for draft-07.  We feel that draft-06 is a good set of changes for collecting feedback, with the most notable compatibility gaps easily addressed as extension keywords in the meantime.
+You will notice that some things are still in flight and under discussion for [draft-07](https://github.com/json-schema-org/json-schema-spec/milestone/5).  We feel that draft-06 is a good set of changes for collecting feedback, with the most notable compatibility gaps easily addressed as extension keywords in the meantime.
 
 #### Changes from draft-04 to draft-05
 
@@ -46,31 +46,13 @@ Due to draft-04 emphasizing individual HTTP methods as `"method"` values, many u
 
 Draft-06 clarifies this usage and provides guidance on its use with different HTTP methods.  This includes using `"targetSchema"` as a request description for PUT and PATCH.  With draft-04, many users used `"schema"` to describe PUT and PATCH requests which is not needed.
 
-However, see also [#296](https://github.com/json-schema-org/json-schema-spec/issues/296) for a proposal for hinting at "Accept-Patch", which is needed to properly use `"targetSchema"` with HTTP PATCH.
+However, the [`"targetHints"` proposal](https://github.com/json-schema-org/json-schema-spec/issues/296) has been accepted into draft-07.  Among other things, it enables hinting at "Accept-Patch", which is needed to properly use `"targetSchema"` with HTTP PATCH.  There will be examples and detailed guidance in draft-07.
 
 ### Q: What are key issues under consideration for draft-07?
 
-There are a number of relatively concrete proposals, although it is unlikely that all will be resolved in draft-07
+You can follow draft-07's progress under the [draft-07 (wright-\*-02) milestone](https://github.com/json-schema-org/json-schema-spec/milestone/5).  Hyper-Schema has been the primary focus of draft-07, including a likely top-to-bottom rewrite for clarity.  No features from draft-06 seem likely to be removed, but keyword names are being made more consistent, and significant features are being added.
 
-* [#73](https://github.com/json-schema-org/json-schema-spec/issues/73) `"allow"` for HTTP method hints, proposed as its own keyword
-* [#296](https://github.com/json-schema-org/json-schema-spec/issues/296) `"usageHints"` for general protocol usage hints, including HTTP "Allow" and "Accept-Patch"
-* [#295](https://github.com/json-schema-org/json-schema-spec/issues/295) clarifying usage of "collection" and "item" in `application/schema+json`
-* [#140](https://github.com/json-schema-org/json-schema-spec/issues/140) `"anchor"` and `"anchorPointer"` for adjusting the link's context URI
-* [#74](https://github.com/json-schema-org/json-schema-spec/issues/74) `"deprecation"` property
-* [#51](https://github.com/json-schema-org/json-schema-spec/issues/51) `"$data"`, particularly for use with `"const"` and/or `"default"` in `"hrefSchema"` and `"submissionSchema"`
-* [#204](https://github.com/json-schema-org/json-schema-spec/issues/204) includes specific possible uses of `"default"` related to Hyper-Schema
-
-There are some important philosophical discussions about the scope and goals of Hyper-Schema, which hopefully will be resolved to help us make the right decisions for draft-07 and beyond:
-
-* [#294](https://github.com/json-schema-org/json-schema-spec/issues/294) how analogous Hyper-Schema should or shouldn't be to HTML, particularly in regard to forms vs anchor semantics
-* [#288](https://github.com/json-schema-org/json-schema-spec/issues/288) whether link URI Templates must be resolvable without knowing whether input data will be used
-* [#226](https://github.com/json-schema-org/json-schema-spec/issues/226) whether and how to handle APIs that do not strictly conform to HTTP semantics
-
-
-Additionally, there are two further proposals for JSON Schema vocabularies which could impact or complement Hyper-Schema:
-
-* [Documentation](https://github.com/json-schema-org/json-schema-spec/issues/136), which could take over some static API description work
-* [UI](https://github.com/json-schema-org/json-schema-spec/issues/67), which would deal with presentation issues for forms
+Additionally, there are proposals for [additional JSON Schema vocabularies](https://github.com/json-schema-org/json-schema-vocabularies), which could impact or complement Hyper-Schema.
 
 ### Q: Why were several major changes made to Hyper-Schema just before publication?
 
@@ -78,7 +60,7 @@ A: During final review, it became apparent that there was no consensus on how to
 
 ### Q: Why doesn't the spec mention or behave like HTML anymore?
 
-A: While there are [unresolved questions around HTML analogies](https://github.com/json-schema-org/json-schema-spec/issues/294), we came to a consensus that the existing analogies caused more harm than good, for two reasons:
+A: We came to a consensus that the existing analogies caused more harm than good, for two reasons:
 
 1. The change between draft-03 and draft-04 to let `"method"` indicate any HTTP method instead of HTML's `<form method="...">` "get" and "post" values broke the original analogy to HTML, and trying to change it back was not well-received
 2. Only being able to use `"schema"` and `"encType"` for either the URI query string (but no other part of the URI) or the request body, but not having any way to work with both at once, was overly restrictive for API design
@@ -97,7 +79,6 @@ Draft-05 tried to restore the draft-03 behavior of `"method"`, but feedback told
 
 We could have switched by to draft-04's `"method"` behavior, but in addition to producing more confusion from all of the back and forth, the draft-04 approach to `"method"` was not consistent with the rest of the LDO design anyway.  Most notably, it caused problems with the usage of `"targetSchema"` as described above.
 
-
 ### Q: So how do I indicate which HTTP methods are supported on a link?
 
 A: Ideally, this is implicitly conveyed by your link relation type, which is the primary indicator of semantics across machine-oriented hypermedia in general.  [RFC 5988](https://tools.ietf.org/html/rfc5988) provides guidance on creating custom (a.k.a. "extension") link relations.
@@ -108,10 +89,10 @@ And of course, there are ways to detect this at runtime such as HTTP's `"Allow"`
 
 ### Q: No, really. How do I _explicitly_ indicate which HTTP methods are supported on a link?
 
-A: Pick a proposal such as [`"allow"`](https://github.com/json-schema-org/json-schema-spec/issues/73) or [`"usageHints"`](https://github.com/json-schema-org/json-schema-spec/issues/296) to implement as an extension keyword and let us know how it works for you.  This will help us determine the right permanent solution in future drafts.
+A: The [`"targetHints"` proposal](https://github.com/json-schema-org/json-schema-spec/issues/296) has been accepted into draft-07, so using it as an extension to draft-06 in the meantime is the best option.
 
 ### Q: If `"targetSchema"` is not the response, how do I describe responses?
 
 A: You should have hyper-schemas for your various success and error responses, but connecting them to links is more of a documentation question than a usage question: each response will indicate its own schema, so you don't need to know it in advance at runtime.
 
-There has never been a Hyper-Schema keyword to explicitly associate responses with operations such as HTTP methods.  The use cases for this seem to be about generating API documentation, so this is most likely a candidate for a [JSON Schema API Documentation vocabulary](https://github.com/json-schema-org/json-schema-spec/issues/136).
+There has never been a Hyper-Schema keyword to explicitly associate responses with operations such as HTTP methods.  The use cases for this seem to be about generating API documentation, so this is most likely a candidate for a [JSON Schema API Documentation vocabulary](https://github.com/json-schema-org/json-schema-vocabularies/issues/1).
