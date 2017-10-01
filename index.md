@@ -61,7 +61,7 @@ Interested? Check out:
 -   some [examples](examples.md)
 -   the growing list of [JSON (Hyper-)Schema software](implementations.md)
 
-We encourage updating to the latest specification, as described by the draft-06 meta-schemas.  However, if you are still on draft-04, you be be interested in:
+We encourage updating to the latest specification, as described by the draft-06 meta-schemas.  However, if you are still using draft-04, you may be interested in:
 -   this [excellent guide](http://spacetelescope.github.io/understanding-json-schema/) for schema authors, from the [Space Telescope Science Institute](http://www.stsci.edu/)
 
 Questions? Feeling helpful? Get involved on:
