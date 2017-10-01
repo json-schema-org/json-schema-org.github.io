@@ -54,6 +54,8 @@ Implementations that supported "draft-05" by implementing proposals from right a
 
 There are several competing proposals for making the re-use of schemas that set `"additionalProperties"` to something other than `true`.  Most people specifically care about the case where it is `false`, but the same behavior occurs with any non-`true` value.
 
+[All of the proposals in this area](https://github.com/json-schema-org/json-schema-spec/issues?q=is%3Aissue+is%3Aopen+label%3A%22re-use+%2F+addlProps%22) will be the focus of [draft-08](https://github.com/json-schema-org/json-schema-spec/milestone/6).  While we made progress in eliminating some options during draft-07, the remaining divisions are deep enough to warrant making it the primary focus of a draft ([draft-07](https://github.com/json-schema-org/json-schema-spec/milestone/5)'s primary focus is Hyper-Schema).
+
 The difficulty is that if you attempt to do this:
 
 ```json
@@ -122,12 +124,8 @@ This will allow an object with either "foo" or "bar" or both, but will fail vali
 
 It does require duplicating the names, and the awkward use of both an `"allOf"` and `"anyOf"`, but it is less repetition than other options, and can be re-used fairly robustly even if the "foo" and "bar" schemas are in separate files managed by a different person or organization.
 
-_*TODO:* Link to all the discussions about other use cases and proposed solutions._
-
 ### Q: What are key issues under consideration for draft-07?
 
-We are just starting to consider what to prioritize for the next draft.
+You can follow draft-07 progress by looking at the [draft-07 (wright-\*-02) milestone](https://github.com/json-schema-org/json-schema-spec/milestone/5).
 
-There are only some fairly minor items to consider for the core specification, so we'd like to wrap that up and get it ready for submission to a working group.  The question of which link relation to use for connecting schemas to instances is the main one.
-
-For validation, there are a number of competing proposals.  We will update this document as we get agreement on priorities.
+The likely contents for the validation specification are `"if"`/`"then"`/`"else"` and numerous additional or restored formats.  Most work for draft-07 is focused on JSON Hyper-Schema.  More validation work is likely to take place in [draft-08](https://github.com/json-schema-org/json-schema-spec/milestone/6).
