@@ -34,12 +34,25 @@ Advantages
 Project Status
 --------------
 
-Publication of Internet-Draft documents can be tracked through the IETF:
+The JSON Schema project intends to shepherd the Core, Validation, and Hyper-Schema specifications
+to RFC status.  Currently, we are continuing to improve our self-published Internet-Drafts.
+The next step will be to get the drafts adopted by an IETF Working Group.
+
+In the meantime, publication of Internet-Draft documents can be tracked through the IETF:
 - [JSON Schema (core)](https://datatracker.ietf.org/doc/draft-wright-json-schema/)
 - [JSON Schema Validation](https://datatracker.ietf.org/doc/draft-wright-json-schema-validation/)
 - [JSON Hyper-Schema](https://datatracker.ietf.org/doc/draft-wright-json-schema-hyperschema/)
 
-Internet-Drafts expire after six months, so our goal is to publish often enough to always have a set of unexpired drafts available.  There may be brief gaps as we wrap up each draft and finalize the text.
+Internet-Drafts expire after six months, so our goal is to publish often enough to always have
+a set of unexpired drafts available.  There may be brief gaps as we wrap up each draft and finalize
+the text.
+
+_\[**NOTE**: There is likely to be a one to two month gap before the publication of the
+draft-07 documents\]_
+
+The intention, particularly for vocabularies such as validation which have been widely
+implemented, is to remain as compatible as possible from draft to draft.  However, these are still
+drafts, and given a clear enough need validated with the user community, major changes can occur.
 
 Progress on the next set of Internet-Drafts can be tracked on GitHub.  The current milestone is [draft-07 (wright-\*-02)](https://github.com/json-schema-org/json-schema-spec/milestone/5)
 
