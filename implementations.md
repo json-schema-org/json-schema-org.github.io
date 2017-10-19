@@ -174,6 +174,7 @@ Documentation generation
     -   [Matic](https://github.com/mattyod/matic) (MIT)
     -   [Docson](https://github.com/lbovet/docson) (Apache 2.0)
     -   [doca](https://github.com/cloudflare/doca/) (BSD)
+    -   [prmd](https://github.com/interagent/prmd) (MIT)
 
 Other
 -----
