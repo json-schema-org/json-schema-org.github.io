@@ -1,6 +1,6 @@
 {
-    "$schema": "http://json-schema.org/draft-07-wip/schema#",
-    "$id": "http://json-schema.org/draft-07-wip/schema#",
+    "$schema": "http://json-schema.org/WORK-IN-PROGRESS/schema#",
+    "$id": "http://json-schema.org/WORK-IN-PROGRESS/schema#",
     "title": "Core schema meta-schema",
     "definitions": {
         "schemaArray": {
