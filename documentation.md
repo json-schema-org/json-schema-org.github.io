@@ -3,6 +3,8 @@ layout: page
 title: Specification
 ---
 
+<span style="color:red">***The next draft is [ready for pre-publication feedback](/work-in-progress/)!***</span>
+
 The latest Internet-Drafts at the IETF are the draft-wright-json-schema\*-01 documents, which correspond to the draft-06 meta-schemas. These were published on 2017-04-15. (Due to a change in authorship the I-D numbering was reset with the previous draft).
 
 Please see the **[migration notes](draft-06/README.md)** for more information on this release and on migrating from draft-04.

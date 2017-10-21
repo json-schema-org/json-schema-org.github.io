@@ -6,6 +6,8 @@ permalink: /
 
 **JSON Schema** is a vocabulary that allows you to **annotate** and **validate** JSON documents.
 
+<span style="color:red">***The next draft is [ready for pre-publication feedback](/work-in-progress/)!***</span>
+
 Advantages
 ----------
 
