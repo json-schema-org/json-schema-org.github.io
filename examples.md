@@ -17,10 +17,10 @@ way to reference the schema in a ``$ref``, but is not friendly to web browsers.
 The larger links use ".json" for browser compatibility.
 
 |------------------------------------------------------------------------------|-----------------------------------------------------------------|
-| [Geographic Coordinate](geo.json) <br> [<small>(canonical url)</small>](geo) | a location as longitude and latitude                            |
-| [Card](card.json) <br> [<small>(canonical url)</small>](card)                | a microformat-style representation of a person, company, organization, or place |
-| [Calendar](cal.json) <br> [<small>(canonical url)</small>](cal)              | a microformat-style representation of an event                  |
-| [Address](addr.json) <br> [<small>(canonical url)</small>](addr)             | a microformat-style representation of a street address          |
+| [Geographic Coordinate](example/geo.json) <br> [<small>(canonical url)</small>](geo) | a location as longitude and latitude                            |
+| [Card](example/card.json) <br> [<small>(canonical url)</small>](card)                | a microformat-style representation of a person, company, organization, or place |
+| [Calendar](example/calendar.json) <br> [<small>(canonical url)</small>](calendar)              | a microformat-style representation of an event                  |
+| [Address](example/address.json) <br> [<small>(canonical url)</small>](address)             | a microformat-style representation of a street address          |
 
 Walkthroughs
 ------------
