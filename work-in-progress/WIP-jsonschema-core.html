@@ -576,7 +576,7 @@
 </dl>
 
 <p> </p>
-<p id="rfc.section.4.2.1.p.3">Whitespace and formatting concerns are thus outside the scope of JSON Schema.  </p>
+<p id="rfc.section.4.2.1.p.3">Whitespace and formatting concerns, including different lexical representations of numbers that are equal within the data model, are thus outside the scope of JSON Schema.  JSON Schema vocabularies that wish to work with such differences in lexical representations SHOULD define keywords to precisely interpret formatted strings within the data model rather than relying on having the original JSON representation Unicode characters available.  </p>
 <p id="rfc.section.4.2.1.p.4">Since an object cannot have two properties with the same key, behavior for a JSON document that tries to define two properties (the "member" production) with the same key (the "string" production) in a single object is undefined.  </p>
 <h1 id="rfc.section.4.2.2"><a href="#rfc.section.4.2.2">4.2.2.</a> Instance media types</h1>
 <p id="rfc.section.4.2.2.p.1">JSON Schema is designed to fully work with "application/json" documents, as well as media types using the "+json" structured syntax suffix.  </p>
@@ -741,10 +741,10 @@
 <h1 id="rfc.section.10"><a href="#rfc.section.10">10.</a> Comments with "$comment"</h1>
 <p id="rfc.section.10.p.1">This keyword is reserved for comments from schema authors to readers or maintainers of the schema.  The value of this keyword MUST be a string. Implementations MUST NOT present this string to end users.  Tools for editing schemas SHOULD support displaying and editing this keyword.  The value of this keyword MAY be used in debug or error output which is intended for developers making use of schemas.  Schema vocabularies SHOULD allow "$comment" within any object containing vocabulary keywords.  Implementations MAY assume "$comment" is allowed unless the vocabulary specifically forbids it.  Vocabularies MUST NOT specify any effect of "$comment" beyond what is described in this specification.  Tools that translate other media types or programming languages to and from application/schema+json MAY choose to convert that media type or programming language's native comments to or from "$comment" values.  The behavior of such translation when both native comments and "$comment" properties are present is implementation-dependent.  Implementations SHOULD treat "$comment" identically to an unknown extension keyword.  They MAY strip "$comment" values at any point during processing.  In particular, this allows for shortening schemas when the size of deployed schemas is a concern.  Implementations MUST NOT take any other action based on the presence, absence, or contents of "$comment" properties.  </p>
 <h1 id="rfc.section.11"><a href="#rfc.section.11">11.</a> Usage for hypermedia</h1>
-<p id="rfc.section.11.p.1">JSON has been adopted widely by HTTP servers for automated APIs and robots. This section describes how to enhance processing of JSON documents in a more RESTful manner when used with protocols that support media types and <a href="#RFC5988">Web linking</a> <cite title="NONE">[RFC5988]</cite>.  </p>
+<p id="rfc.section.11.p.1">JSON has been adopted widely by HTTP servers for automated APIs and robots. This section describes how to enhance processing of JSON documents in a more RESTful manner when used with protocols that support media types and <a href="#RFC8288">Web linking</a> <cite title="NONE">[RFC8288]</cite>.  </p>
 <h1 id="rfc.section.11.1"><a href="#rfc.section.11.1">11.1.</a> Linking to a schema</h1>
 <p id="rfc.section.11.1.p.1">It is RECOMMENDED that instances described by a schema provide a link to a downloadable JSON Schema using the link relation "describedby", as defined by <a href="#W3C.REC-ldp-20150226">Linked Data Protocol 1.0, section 8.1</a> <cite title="NONE">[W3C.REC-ldp-20150226]</cite>.  </p>
-<p id="rfc.section.11.1.p.2">In HTTP, such links can be attached to any response using the <a href="#RFC5988">Link header</a> <cite title="NONE">[RFC5988]</cite>. An example of such a header would be: </p>
+<p id="rfc.section.11.1.p.2">In HTTP, such links can be attached to any response using the <a href="#RFC8288">Link header</a> <cite title="NONE">[RFC8288]</cite>. An example of such a header would be: </p>
 <pre>
 
 Link: &lt;http://example.com/my-hyper-schema#&gt;; rel="describedby"
@@ -867,12 +867,6 @@ User-Agent: product-name/5.4.1 so-cool-json-schema/1.0.2 curl/7.43.0
   <tbody>
     <tr>
       <td class="reference">
-        <b id="RFC5988">[RFC5988]</b>
-      </td>
-      <td class="top"><a>Nottingham, M.</a>, "<a href="http://tools.ietf.org/html/rfc5988">Web Linking</a>", RFC 5988, DOI 10.17487/RFC5988, October 2010.</td>
-    </tr>
-    <tr>
-      <td class="reference">
         <b id="RFC7049">[RFC7049]</b>
       </td>
       <td class="top"><a>Bormann, C.</a> and <a>P. Hoffman</a>, "<a href="http://tools.ietf.org/html/rfc7049">Concise Binary Object Representation (CBOR)</a>", RFC 7049, DOI 10.17487/RFC7049, October 2013.</td>
@@ -882,6 +876,12 @@ User-Agent: product-name/5.4.1 so-cool-json-schema/1.0.2 curl/7.43.0
         <b id="RFC7231">[RFC7231]</b>
       </td>
       <td class="top"><a>Fielding, R.</a> and <a>J. Reschke</a>, "<a href="http://tools.ietf.org/html/rfc7231">Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</a>", RFC 7231, DOI 10.17487/RFC7231, June 2014.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC8288">[RFC8288]</b>
+      </td>
+      <td class="top"><a>Nottingham, M.</a>, "<a href="http://tools.ietf.org/html/rfc8288">Web Linking</a>", RFC 8288, DOI 10.17487/RFC8288, October 2017.</td>
     </tr>
     <tr>
       <td class="reference">
