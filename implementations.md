@@ -59,6 +59,7 @@ Validators
 
 -   [JSON Schema Lint](http://jsonschemalint.com/) - validate against your own schemas
 -   [SchemaStore.org](http://schemastore.org/validator/) - validate against common JSON Schemas
+-   [Json2Gostruct](http://json.golang.chinazt.cc) - Convert JSON to Golang struct
 
 ### Command Line
 
