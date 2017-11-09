@@ -166,6 +166,8 @@ Hyper-schema handling
 
 -   JavaScript
     -   [Jsonary](http://jsonary.com/) - *supports draft 4* (MIT)
+-   Python
+    -   [Core API Hyper-Schema codec](https://github.com/core-api/python-jsonhyperschema-codec) - *supports draft 4* (BSD-2-Clause)
 
 Documentation generation
 ------------------------
