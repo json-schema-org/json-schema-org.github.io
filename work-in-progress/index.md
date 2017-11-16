@@ -125,7 +125,7 @@ Basically everything is different.  It's probably best to just read it top to bo
 and pretend you've never heard of it before.
 
 * Added overview explaining the general purpose and scope
-* Aligned LDO with how links are described in [RFC 5988bis](https://mnot.github.io/I-D/rfc5988bis/)
+* Aligned LDO with how links are described in [RFC 8288](https://tools.ietf.org/html/rfc8288)
 * Context adjustment with `anchor` and `anchorPointers`
 * Pseudocode specification for URI Template resolution
 * `templatePointers` and `templateRequired` added to URI Template resolution process
