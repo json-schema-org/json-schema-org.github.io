@@ -5,7 +5,7 @@
 <head profile="http://www.w3.org/2006/03/hcard http://dublincore.org/documents/2008/08/04/dc-html/">
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
 
-  <title>FOR PRE-PUBLICATION REVIEW ONLY: JSON Schema Validation: A Vocabulary for Structural Validation of JSON </title>
+  <title>JSON Schema Validation: A Vocabulary for Structural Validation of JSON </title>
 
   <style type="text/css" title="Xml2Rfc (sans serif)">
   /*<![CDATA[*/
@@ -462,12 +462,12 @@
 <link href="#rfc.authors" rel="Chapter"/>
 
 
-  <meta name="generator" content="xml2rfc version 2.5.1 - http://tools.ietf.org/tools/xml2rfc" />
+  <meta name="generator" content="xml2rfc version 2.5.2 - http://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Andrews, H., Ed., Wright, A., Ed., and G. Luff" />
-  <meta name="dct.identifier" content="urn:ietf:id:draft-TO-BE-DETERMINED-json-schema-validation-NN" />
-  <meta name="dct.issued" scheme="ISO8601" content="2017-10-20" />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-handrews-json-schema-validation-00" />
+  <meta name="dct.issued" scheme="ISO8601" content="2017-11-16" />
   <meta name="dct.abstract" content="JSON Schema (application/schema+json) has several purposes, one of which is JSON instance validation.  This document specifies a vocabulary for JSON Schema to describe the meaning of JSON documents, provide hints for user interfaces working with JSON data, and to make assertions about what a valid document must look like.  " />
   <meta name="description" content="JSON Schema (application/schema+json) has several purposes, one of which is JSON instance validation.  This document specifies a vocabulary for JSON Schema to describe the meaning of JSON documents, provide hints for user interfaces working with JSON data, and to make assertions about what a valid document must look like.  " />
 
@@ -491,7 +491,7 @@
   <td class="right">A. Wright, Ed.</td>
 </tr>
 <tr>
-  <td class="left">Expires: April 23, 2018</td>
+  <td class="left">Expires: May 20, 2018</td>
   <td class="right"></td>
 </tr>
 <tr>
@@ -500,15 +500,15 @@
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">October 20, 2017</td>
+  <td class="right">November 16, 2017</td>
 </tr>
 
     	
     </tbody>
   </table>
 
-  <p class="title">FOR PRE-PUBLICATION REVIEW ONLY: JSON Schema Validation: A Vocabulary for Structural Validation of JSON <br />
-  <span class="filename">draft-TO-BE-DETERMINED-json-schema-validation-NN</span></p>
+  <p class="title">JSON Schema Validation: A Vocabulary for Structural Validation of JSON <br />
+  <span class="filename">draft-handrews-json-schema-validation-00</span></p>
   
   <h1 id="rfc.abstract">
   <a href="#rfc.abstract">Abstract</a>
@@ -526,7 +526,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on April 23, 2018.</p>
+<p>This Internet-Draft will expire on May 20, 2018.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -636,7 +636,7 @@
 <p id="rfc.section.2.p.2">This specification uses the term "container instance" to refer to both array and object instances. It uses the term "children instances" to refer to array elements or object member values.  </p>
 <p id="rfc.section.2.p.3">Elements in an array value are said to be unique if no two elements of this array are <a href="#json-schema">equal</a> <cite title="NONE">[json-schema]</cite>.  </p>
 <h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> Overview</h1>
-<p id="rfc.section.3.p.1">JSON Schema validation applies schemas to locations within the instance, and asserts constraints on the structure of the data at each location.  An instance location that satisfies all asserted constraints is then annotated with any keywords that contain non-assertion information, such as desciptive metadata and usage hints.  If all locations within the instance satisfy all asserted constraints, then the instance is said to be valid against the schema.  </p>
+<p id="rfc.section.3.p.1">JSON Schema validation applies schemas to locations within the instance, and asserts constraints on the structure of the data at each location.  An instance location that satisfies all asserted constraints is then annotated with any keywords that contain non-assertion information, such as descriptive metadata and usage hints.  If all locations within the instance satisfy all asserted constraints, then the instance is said to be valid against the schema.  </p>
 <p id="rfc.section.3.p.2">Each schema object is independently evaluated against each instance location to which it applies.  This greatly simplifies the implementation requirements for validators by ensuring that they do not need to maintain state across the document-wide validation process.  </p>
 <h1 id="rfc.section.3.1"><a href="#rfc.section.3.1">3.1.</a> Applicability</h1>
 <p id="rfc.section.3.1.p.1">Validation begins by applying the root schema to the complete instance document.  From there, various keywords are used to determine which additional subschemas are applied to either the current location, or a child location.  These keywords also define whether and how subschema assertion results are modified and/or combined.  Such keywords do not assert conditions on their own.  Rather, they control how assertions are applied and evaluated.  </p>
@@ -667,7 +667,7 @@
 <h1 id="rfc.section.3.3.1"><a href="#rfc.section.3.3.1">3.3.1.</a> Negated Schemas</h1>
 <p id="rfc.section.3.3.1.p.1">Annotations in a subschema contained within a "not", at any depth, including any number of intervening additional "not" subschemas, MUST be ignored.  Similarly, annotations within a failing branch of a "oneOf", "anyOf", "then", or "else" MUST be ignored.  </p>
 <h1 id="rfc.section.3.3.2"><a href="#rfc.section.3.3.2">3.3.2.</a> Annotations and Short-Circuit Validation</h1>
-<p id="rfc.section.3.3.2.p.1">Annotation keywords MUST be applied to all possible sub-instances.  even if such application can be short-circuited when only assertion evaluation is needed.  For instance, the "contains" keyword need only be checked for assertions until at least one array item proves valid.  However, when working with annotations, all items in the array must be evaluated to determine all items with which the annotations should be associated.  </p>
+<p id="rfc.section.3.3.2.p.1">Annotation keywords MUST be applied to all possible sub-instances.  Even if such application can be short-circuited when only assertion evaluation is needed.  For instance, the "contains" keyword need only be checked for assertions until at least one array item proves valid.  However, when working with annotations, all items in the array must be evaluated to determine all items with which the annotations should be associated.  </p>
 <h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> Interoperability Considerations</h1>
 <h1 id="rfc.section.4.1"><a href="#rfc.section.4.1">4.1.</a> Validation of String Instances</h1>
 <p id="rfc.section.4.1.p.1">It should be noted that the nul character (\u0000) is valid in a JSON string. An instance to validate may contain a string value with this character, regardless of the ability of the underlying programming language to deal with such data.  </p>
@@ -834,7 +834,7 @@
 <p id="rfc.section.7.1.p.1">Structural validation alone may be insufficient to validate that an instance meets all the requirements of an application. The "format" keyword is defined to allow interoperable semantic validation for a fixed subset of values which are accurately described by authoritative resources, be they RFCs or other external specifications.  </p>
 <p id="rfc.section.7.1.p.2">The value of this keyword is called a format attribute. It MUST be a string. A format attribute can generally only validate a given set of instance types. If the type of the instance to validate is not in this set, validation for this format attribute and instance SHOULD succeed.  </p>
 <h1 id="rfc.section.7.2"><a href="#rfc.section.7.2">7.2.</a> Implementation Requirements</h1>
-<p id="rfc.section.7.2.p.1">The "format" keyword functions as both an annotation (<a href="#annotations">Section 3.3</a>) and as an assertion (<a href="#assertions">Section 3.2</a>).  While no special effort is required to implement it as an annotation convenying semantic meaning, implementing validation is non-trivial.  </p>
+<p id="rfc.section.7.2.p.1">The "format" keyword functions as both an annotation (<a href="#annotations">Section 3.3</a>) and as an assertion (<a href="#assertions">Section 3.2</a>).  While no special effort is required to implement it as an annotation conveying semantic meaning, implementing validation is non-trivial.  </p>
 <p id="rfc.section.7.2.p.2">Implementations MAY support the "format" keyword as a validation assertion.  Should they choose to do so: </p>
 
 <ul class="empty">
@@ -938,7 +938,7 @@
 <p id="rfc.section.8.1.p.1">Properties defined in this section indicate that an instance contains non-JSON data encoded in a JSON string.  They describe the type of content and how it is encoded.  </p>
 <p id="rfc.section.8.1.p.2">These properties provide additional information required to interpret JSON data as rich multimedia documents.  </p>
 <h1 id="rfc.section.8.2"><a href="#rfc.section.8.2">8.2.</a> Implementation Requirements</h1>
-<p id="rfc.section.8.2.p.1">The content keywords function as both annotations (<a href="#annotations">Section 3.3</a>) and as assertions (<a href="#assertions">Section 3.2</a>).  While no special effort is required to implement them as annotations convenying how applications can interpret the data in the string, implementing validation of conformance to the media type and encoding is non-trivial.  </p>
+<p id="rfc.section.8.2.p.1">The content keywords function as both annotations (<a href="#annotations">Section 3.3</a>) and as assertions (<a href="#assertions">Section 3.2</a>).  While no special effort is required to implement them as annotations conveying how applications can interpret the data in the string, implementing validation of conformance to the media type and encoding is non-trivial.  </p>
 <p id="rfc.section.8.2.p.2">Implementations MAY support the "contentMediaType" and "contentEncoding" keywords as validation assertions.  Should they choose to do so, they SHOULD offer an option to disable validation for these keywords.  </p>
 <h1 id="rfc.section.8.3"><a href="#rfc.section.8.3">8.3.</a> contentEncoding</h1>
 <p id="rfc.section.8.3.p.1">If the instance value is a string, this property defines that the string SHOULD be interpreted as binary data and decoded using the encoding named by this property.  <a href="#RFC2045">RFC 2045, Sec 6.1</a> <cite title="NONE">[RFC2045]</cite> lists the possible values for this property.  </p>
@@ -1014,6 +1014,8 @@
 <h1 id="rfc.section.11"><a href="#rfc.section.11">11.</a> Security Considerations</h1>
 <p id="rfc.section.11.p.1">JSON Schema validation defines a vocabulary for JSON Schema core and concerns all the security considerations listed there.  </p>
 <p id="rfc.section.11.p.2">JSON Schema validation allows the use of Regular Expressions, which have numerous different (often incompatible) implementations.  Some implementations allow the embedding of arbitrary code, which is outside the scope of JSON Schema and MUST NOT be permitted.  Regular expressions can often also be crafted to be extremely expensive to compute (with so-called "catastrophic backtracking"), resulting in a denial-of-service attack.  </p>
+<p id="rfc.section.11.p.3">Implementations that support validating or otherwise evaluating instance string data based on "contentEncoding" and/or "contentMediaType" are at risk of evaluating data in an unsafe way based on misleading information.  Applications can mitigate this risk by only performing such processing when a relationship between the schema and instance is established (e.g., they share the same authority).  </p>
+<p id="rfc.section.11.p.4">Processing a media type or encoding is subject to the security considerations of that media type or encoding.  For example, the security considerations of <a href="#RFC4329">RFC 4329 Scripting Media Types</a> <cite title="NONE">[RFC4329]</cite> apply when processing JavaScript or ECMAScript encoded within a JSON string.  </p>
 <h1 id="rfc.references"><a href="#rfc.references">12.</a> References</h1>
 <h1 id="rfc.references.1"><a href="#rfc.references.1">12.1.</a> Normative References</h1>
 <table>
@@ -1080,6 +1082,12 @@
     </tr>
     <tr>
       <td class="reference">
+        <b id="RFC4329">[RFC4329]</b>
+      </td>
+      <td class="top"><a>Hoehrmann, B.</a>, "<a href="http://tools.ietf.org/html/rfc4329">Scripting Media Types</a>", RFC 4329, DOI 10.17487/RFC4329, April 2006.</td>
+    </tr>
+    <tr>
+      <td class="reference">
         <b id="RFC5890">[RFC5890]</b>
       </td>
       <td class="top"><a>Klensin, J.</a>, "<a href="http://tools.ietf.org/html/rfc5890">Internationalized Domain Names for Applications (IDNA): Definitions and Document Framework</a>", RFC 5890, DOI 10.17487/RFC5890, August 2010.</td>
@@ -1137,7 +1145,7 @@
 <p/>
 
 <dl>
-  <dt>draft-TO-BE-DETERMINED-json-schema-validation-NN</dt>
+  <dt>draft-handrews-json-schema-validation-00</dt>
   <dd style="margin-left: 8">
     <ul>
       <li>Added "if"/"then"/"else"</li>
