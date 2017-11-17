@@ -123,6 +123,8 @@ Data parsing
     -   [Argus](https://github.com/aishfenton/argus) (MIT) - Macros for building models from JSON Schemas
 -   Swift
     -   [Bric-à-brac](https://github.com/glimpseio/BricBrac) (MIT) - generates idiomatic swift structs and parser/serializer from JSON schemas
+-   Golang
+    -  [gojsonschema](https://github.com/andy-zhangtao/gojsonschema)(Apache 2.0) - golang package for generating golang struct *supports Draft 4*. [Demo](http://json.golang.chinazt.cc)
 
 UI generation
 -------------
