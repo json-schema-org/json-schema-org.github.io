@@ -25,6 +25,15 @@ The next unreleased draft is a work in progress.  You can [give feedback and get
 - [JSON Schema meta-schema](https://github.com/json-schema-org/json-schema-spec/blob/master/schema.json)
 - [JSON Hyper-Schema meta-schema](https://github.com/json-schema-org/json-schema-spec/blob/master/hyper-schema.json)
 
+## Draft 7
+
+- Core: [draft-handrews-json-schema-00](https://tools.ietf.org/html/draft-handrews-json-schema-00) ([changes](https://tools.ietf.org/html/draft-handrews-json-schema-00#appendix-B))
+- Validation: [draft-handrews-json-schema-validation-00](https://tools.ietf.org/html/draft-handrews-json-schema-validation-00) ([changes](https://tools.ietf.org/html/draft-handrews-json-schema-validation-00#appendix-B))
+- Hyper-Schema: [draft-handrews-json-schema-hyperschema-00](https://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-00) ([changes](https://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-00#appendix-B))
+- [JSON Schema meta-schema](http://json-schema.org/draft-07/schema)
+- [JSON Hyper-Schema meta-schema](http://json-schema.org/draft-07/hyper-schema)
+- Relative JSON Pointers: [draft-handrews-relative-json-pointer-00](https://tools.ietf.org/html/draft-handrews-relative-json-pointer-00) ([changes](https://tools.ietf.org/html/draft-handrews-relative-json-pointer-00#appendix-B))
+
 ## Draft 6
 
 - Core: [draft-wright-json-schema-01](https://tools.ietf.org/html/draft-wright-json-schema-01) ([changes](https://tools.ietf.org/html/draft-wright-json-schema-01#appendix-B))

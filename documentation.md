@@ -3,26 +3,25 @@ layout: page
 title: Specification
 ---
 
-<span style="color:red">***The next draft is [ready for pre-publication feedback](/work-in-progress)!***</span>
-
-The latest Internet-Drafts at the IETF are the draft-wright-json-schema\*-01 documents, which correspond to the draft-06 meta-schemas. These were published on 2017-04-15. (Due to a change in authorship the I-D numbering was reset with the previous draft).
+The latest Internet-Drafts at the IETF are the draft-handrews-json-schema\*-00 documents, which correspond to the draft-07 meta-schemas. These were published on 2017-04-15. (Due to a change in author/editorship the I-D numbering was reset to -00 again).
 
 Please see the **[migration notes](draft-06/README.md)** for more information on this release and on migrating from draft-04.
 
-The specification is split into three parts, Core, Validation, and Hyper-Schema:
+The specification is split into three parts, Core, Validation, and Hyper-Schema, along with a related specification, Relative JSON Pointers:
 
-|--------------------------------------------------------------|-------------------------------------------------|
-| [JSON Schema Core](latest/json-schema-core.html)             | defines the basic foundation of JSON Schema     |
-| [JSON Schema Validation](latest/json-schema-validation.html) | defines the validation keywords of JSON Schema  |
-| [JSON Hyper-Schema](latest/json-schema-hypermedia.html)      | defines the hyper-media keywords of JSON Schema |
+|--------------------------------------------------------------|-------------------------------------------------------|
+| [JSON Schema Core](latest/json-schema-core.html)             | defines the basic foundation of JSON Schema           |
+| [JSON Schema Validation](latest/json-schema-validation.html) | defines the validation keywords of JSON Schema        |
+| [JSON Hyper-Schema](latest/json-schema-hypermedia.html)      | defines the hyper-media keywords of JSON Schema       |
+| [Relative JSON Pointers](latest/relative-json-pointer.html)  | extends the JSON Pointer sytnax for relative pointers |
 
-They are also available on the IETF main site: [core (draft-wright-json-schema-01)](http://tools.ietf.org/html/draft-wright-json-schema-01), [validation (draft-wright-json-schema-validation-01)](http://tools.ietf.org/html/draft-wright-json-schema-validation-01) and [hyper-schema (draft-wright-json-schema-hyperschema-01)](http://tools.ietf.org/html/draft-wright-json-schema-hyperschema-01).
+They are also available on the IETF main site: [core (draft-handrews-json-schema-00)](http://tools.ietf.org/html/draft-handrews-json-schema-00), [validation (draft-handrews-json-schema-validation-00)](http://tools.ietf.org/html/draft-handrews-json-schema-validation-00), [hyper-schema (draft-handrews-json-schema-hyperschema-00)](http://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-00), and [relative-json-pointer](https://tools.ietf.org/html/draft-handrews-relative-json-pointer-00).
 
 Meta-schemas
 ------------
 
 The meta-schemas are schemas against which other schemas can be validated. They are self-descriptive: the JSON Schema meta-schema validates itself, while the JSON Hyper-Schema meta-schema both validates itself and defines its own "self" link.
-The latest meta-schema is draft-06.
+The latest meta-schema is draft-07.
 
 |--------------------------------------------------------------|------------------------------------------------------------|
 | [Core/Validation meta-schema](http://json-schema.org/schema) | Used for schemas written for pure validation.              |
@@ -32,6 +31,8 @@ _If you are accessing the above meta-schema links **from a web browser**, you wi
 
 Migrating from draft-04
 -------------
+
+_**NOTE:** The release notes will be updatead for draft-07 soon_
 
 The release notes discuss the changes impacting users and implementors:
 
