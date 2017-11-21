@@ -29,7 +29,7 @@ Advantages
 -   make any JSON format a hypermedia format - no constraints on document structure
 -   use [URI Templates](https://tools.ietf.org/html/rfc6570) with instance data
 -   describe client data for use with links using JSON Schema
--   recognize collections and collection items _coming soon!_
+-   recognize collections and collection items
 
 </div>
 
