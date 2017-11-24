@@ -7,6 +7,12 @@ permalink: /draft-06/json-hyper-schema-release-notes.html
 
 Release notes for migrating from draft-luff-json-hyper-schema-00 (draft-04) to draft-wright-json-schema-hyperschema-01 (draft-06).
 
+<span style="color: red; font-size: 200%">**NOTE**: draft-07 has been released</span>
+
+_The [migration notes for draft-07](../draft-07/json-hyper-schema-release-notes.html) give a much more straightforward overview of migrating from draft-04 to draft-07 by skipping the complicated intermediate states of draft-05 and draft-06.  This page has been retained for historical interest, but it is not recommened for those who just want to get going with the latest draft._
+
+_**For implementors:** We recommend just implementing draft-07, and not draft-06 or earlier._
+
 * TOC
 {:toc}
 
@@ -14,7 +20,7 @@ Release notes for migrating from draft-luff-json-hyper-schema-00 (draft-04) to d
 
 Between drafts 04 and 06 we undertook a major re-examining of Hyper-Schema, which has never been as widely adopted as JSON Schema Validation.
 
-You will notice that some things are still in flight and under discussion for [draft-07](https://github.com/json-schema-org/json-schema-spec/milestone/5).  We feel that draft-06 is a good set of changes for collecting feedback, with the most notable compatibility gaps easily addressed as extension keywords in the meantime.
+While we knew that there were still major gaps in draft-06, we felt that it was a good set of changes for collecting feedback.  With draft-07 published, that draft or later should be used, and draft-06 becomes an historical curiosity.
 
 #### Changes from draft-04 to draft-05
 
@@ -50,13 +56,7 @@ Draft-06 clarifies this usage and provides guidance on its use with different HT
 
 However, the [`"targetHints"` proposal](https://github.com/json-schema-org/json-schema-spec/issues/296) has been accepted into draft-07.  Among other things, it enables hinting at "Accept-Patch", which is needed to properly use `"targetSchema"` with HTTP PATCH.  There will be examples and detailed guidance in draft-07.
 
-### Q: What are key issues under consideration for draft-07?
-
-You can follow draft-07's progress under the [draft-07 (wright-\*-02) milestone](https://github.com/json-schema-org/json-schema-spec/milestone/5).  Hyper-Schema has been the primary focus of draft-07, including a likely top-to-bottom rewrite for clarity.  No features from draft-06 seem likely to be removed, but keyword names are being made more consistent, and significant features are being added.
-
-Additionally, there are proposals for [additional JSON Schema vocabularies](https://github.com/json-schema-org/json-schema-vocabularies), which could impact or complement Hyper-Schema.
-
-### Q: Why were several major changes made to Hyper-Schema just before publication?
+### Q: Why were several major changes made to Hyper-Schema just before draft-06's publication?
 
 A: During final review, it became apparent that there was no consensus on how to use the spec as written.  The late changes were necessary to publish a spec with unambiguous meaning, so that we could get feedback on its contents rather than differing interpretations.  Originally we attempted to simply clarify what was there, but then we realized there was no agreement on what was there in the first place.
 
@@ -91,7 +91,7 @@ And of course, there are ways to detect this at runtime such as HTTP's `"Allow"`
 
 ### Q: No, really. How do I _explicitly_ indicate which HTTP methods are supported on a link?
 
-A: The [`"targetHints"` proposal](https://github.com/json-schema-org/json-schema-spec/issues/296) has been accepted into draft-07, so using it as an extension to draft-06 in the meantime is the best option.
+A: The [`"targetHints"` proposal](https://github.com/json-schema-org/json-schema-spec/issues/296) is part of draft-07, so using it as an extension to draft-06 is an option, but we recommend simply using draft-07 at this point.
 
 ### Q: If `"targetSchema"` is not the response, how do I describe responses?
 

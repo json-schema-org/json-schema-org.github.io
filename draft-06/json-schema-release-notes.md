@@ -7,6 +7,11 @@ permalink: /draft-06/json-schema-release-notes.html
 
 Release notes for migrating from zyp-04 and fge-00 (draft-04) to wright-01 (draft-06).
 
+<span style="color: red; font-size: 200%">**NOTE**: draft-07 has been released</span>
+
+_Note that draft-07 core and validation are backwards-compatible with draft-06.
+For more information, see that draft's [migration notes](../draft-07/json-schema-release-notes.html)._
+
 * TOC
 {:toc}
 
@@ -125,9 +130,3 @@ A workaround is available with the new `"propertyNames"` keyword:
 This will allow an object with either "foo" or "bar" or both, but will fail validation if any other property is present.  The `"allOf"` ensures that "foo" and "bar" will each be validated correctly if present, while the `"anyOf"` allows for properties with names in either allowed set, but forbids properties that are not listed in at least one set.
 
 It does require duplicating the names, and the awkward use of both an `"allOf"` and `"anyOf"`, but it is less repetition than other options, and can be re-used fairly robustly even if the "foo" and "bar" schemas are in separate files managed by a different person or organization.
-
-### Q: What are key issues under consideration for draft-07?
-
-You can follow draft-07 progress by looking at the [draft-07 (wright-\*-02) milestone](https://github.com/json-schema-org/json-schema-spec/milestone/5).
-
-The likely contents for the validation specification are `"if"`/`"then"`/`"else"` and numerous additional or restored formats.  Most work for draft-07 is focused on JSON Hyper-Schema.  More validation work is likely to take place in [draft-08](https://github.com/json-schema-org/json-schema-spec/milestone/6).
