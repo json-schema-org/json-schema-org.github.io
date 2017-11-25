@@ -28,8 +28,8 @@ The meta-schemas are schemas against which other schemas can be validated. They 
 The latest meta-schema is **draft-07**.
 
 |--------------------------------------------------------------|------------------------------------------------------------|
-| [Core/Validation meta-schema](http://json-schema.org/schema) | Used for schemas written for pure validation.              |
-| [Hyper meta-schema](http://json-schema.org/hyper-schema)     | Used for schemas written for validation and hyper-linking. |
+| [Core/Validation meta-schema](http://json-schema.org/draft-07/schema) | Used for schemas written for pure validation.              |
+| [Hyper meta-schema](http://json-schema.org/draft-07/hyper-schema)     | Used for schemas written for validation and hyper-linking. |
 
 _If you are accessing the above meta-schema links **from a web browser**, you will need to **save the file** then open it as a JSON document._
 
