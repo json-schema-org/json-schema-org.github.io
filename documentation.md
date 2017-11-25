@@ -12,7 +12,7 @@ The specification is split into three parts, Core, Validation, and Hyper-Schema,
 |--------------------------------------------------------------|-------------------------------------------------------|
 | [JSON Schema Core](latest/json-schema-core.html)             | defines the basic foundation of JSON Schema           |
 | [JSON Schema Validation](latest/json-schema-validation.html) | defines the validation keywords of JSON Schema        |
-| [JSON Hyper-Schema](latest/json-schema-hypermedia.html)      | defines the hyper-media keywords of JSON Schema       |
+| [JSON Hyper-Schema](latest/json-schema-hypermedia.html) ([errata](https://github.com/json-schema-org/json-schema-spec/pull/508))     | defines the hyper-media keywords of JSON Schema       |
 | [Relative JSON Pointers](latest/relative-json-pointer.html)  | extends the JSON Pointer sytnax for relative pointers |
 
 They are also available on the IETF main site:
