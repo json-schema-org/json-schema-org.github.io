@@ -1,0 +1,1193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head profile="http://www.w3.org/2006/03/hcard http://dublincore.org/documents/2008/08/04/dc-html/">
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+
+  <title>JSON Hyper-Schema: A Vocabulary for Hypermedia Annotation of JSON </title>
+
+  <style type="text/css" title="Xml2Rfc (sans serif)">
+  /*<![CDATA[*/
+	  a {
+	  text-decoration: none;
+	  }
+      /* info code from SantaKlauss at http://www.madaboutstyle.com/tooltip2.html */
+      a.info {
+          /* This is the key. */
+          position: relative;
+          z-index: 24;
+          text-decoration: none;
+      }
+      a.info:hover {
+          z-index: 25;
+          color: #FFF; background-color: #900;
+      }
+      a.info span { display: none; }
+      a.info:hover span.info {
+          /* The span will display just on :hover state. */
+          display: block;
+          position: absolute;
+          font-size: smaller;
+          top: 2em; left: -5em; width: 15em;
+          padding: 2px; border: 1px solid #333;
+          color: #900; background-color: #EEE;
+          text-align: left;
+      }
+	  a.smpl {
+	  color: black;
+	  }
+	  a:hover {
+	  text-decoration: underline;
+	  }
+	  a:active {
+	  text-decoration: underline;
+	  }
+	  address {
+	  margin-top: 1em;
+	  margin-left: 2em;
+	  font-style: normal;
+	  }
+	  body {
+	  color: black;
+	  font-family: verdana, helvetica, arial, sans-serif;
+	  font-size: 10pt;
+	  max-width: 55em;
+	  
+	  }
+	  cite {
+	  font-style: normal;
+	  }
+	  dd {
+	  margin-right: 2em;
+	  }
+	  dl {
+	  margin-left: 2em;
+	  }
+	
+	  ul.empty {
+	  list-style-type: none;
+	  }
+	  ul.empty li {
+	  margin-top: .5em;
+	  }
+	  dl p {
+	  margin-left: 0em;
+	  }
+	  dt {
+	  margin-top: .5em;
+	  }
+	  h1 {
+	  font-size: 14pt;
+	  line-height: 21pt;
+	  page-break-after: avoid;
+	  }
+	  h1.np {
+	  page-break-before: always;
+	  }
+	  h1 a {
+	  color: #333333;
+	  }
+	  h2 {
+	  font-size: 12pt;
+	  line-height: 15pt;
+	  page-break-after: avoid;
+	  }
+	  h3, h4, h5, h6 {
+	  font-size: 10pt;
+	  page-break-after: avoid;
+	  }
+	  h2 a, h3 a, h4 a, h5 a, h6 a {
+	  color: black;
+	  }
+	  img {
+	  margin-left: 3em;
+	  }
+	  li {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  ol {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  ol p {
+	  margin-left: 0em;
+	  }
+	  p {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  pre {
+	  margin-left: 3em;
+	  background-color: lightyellow;
+	  padding: .25em;
+	  }
+	  pre.text2 {
+	  border-style: dotted;
+	  border-width: 1px;
+	  background-color: #f0f0f0;
+	  width: 69em;
+	  }
+	  pre.inline {
+	  background-color: white;
+	  padding: 0em;
+	  }
+	  pre.text {
+	  border-style: dotted;
+	  border-width: 1px;
+	  background-color: #f8f8f8;
+	  width: 69em;
+	  }
+	  pre.drawing {
+	  border-style: solid;
+	  border-width: 1px;
+	  background-color: #f8f8f8;
+	  padding: 2em;
+	  }
+	  table {
+	  margin-left: 2em;
+	  }
+	  table.tt {
+	  vertical-align: top;
+	  }
+	  table.full {
+	  border-style: outset;
+	  border-width: 1px;
+	  }
+	  table.headers {
+	  border-style: outset;
+	  border-width: 1px;
+	  }
+	  table.tt td {
+	  vertical-align: top;
+	  }
+	  table.full td {
+	  border-style: inset;
+	  border-width: 1px;
+	  }
+	  table.tt th {
+	  vertical-align: top;
+	  }
+	  table.full th {
+	  border-style: inset;
+	  border-width: 1px;
+	  }
+	  table.headers th {
+	  border-style: none none inset none;
+	  border-width: 1px;
+	  }
+	  table.left {
+	  margin-right: auto;
+	  }
+	  table.right {
+	  margin-left: auto;
+	  }
+	  table.center {
+	  margin-left: auto;
+	  margin-right: auto;
+	  }
+	  caption {
+	  caption-side: bottom;
+	  font-weight: bold;
+	  font-size: 9pt;
+	  margin-top: .5em;
+	  }
+	
+	  table.header {
+	  border-spacing: 1px;
+	  width: 95%;
+	  font-size: 10pt;
+	  color: white;
+	  }
+	  td.top {
+	  vertical-align: top;
+	  }
+	  td.topnowrap {
+	  vertical-align: top;
+	  white-space: nowrap; 
+	  }
+	  table.header td {
+	  background-color: gray;
+	  width: 50%;
+	  }
+	  table.header a {
+	  color: white;
+	  }
+	  td.reference {
+	  vertical-align: top;
+	  white-space: nowrap;
+	  padding-right: 1em;
+	  }
+	  thead {
+	  display:table-header-group;
+	  }
+	  ul.toc, ul.toc ul {
+	  list-style: none;
+	  margin-left: 1.5em;
+	  margin-right: 0em;
+	  padding-left: 0em;
+	  }
+	  ul.toc li {
+	  line-height: 150%;
+	  font-weight: bold;
+	  font-size: 10pt;
+	  margin-left: 0em;
+	  margin-right: 0em;
+	  }
+	  ul.toc li li {
+	  line-height: normal;
+	  font-weight: normal;
+	  font-size: 9pt;
+	  margin-left: 0em;
+	  margin-right: 0em;
+	  }
+	  li.excluded {
+	  font-size: 0pt;
+	  }
+	  ul p {
+	  margin-left: 0em;
+	  }
+	
+	  .comment {
+	  background-color: yellow;
+	  }
+	  .center {
+	  text-align: center;
+	  }
+	  .error {
+	  color: red;
+	  font-style: italic;
+	  font-weight: bold;
+	  }
+	  .figure {
+	  font-weight: bold;
+	  text-align: center;
+	  font-size: 9pt;
+	  }
+	  .filename {
+	  color: #333333;
+	  font-weight: bold;
+	  font-size: 12pt;
+	  line-height: 21pt;
+	  text-align: center;
+	  }
+	  .fn {
+	  font-weight: bold;
+	  }
+	  .hidden {
+	  display: none;
+	  }
+	  .left {
+	  text-align: left;
+	  }
+	  .right {
+	  text-align: right;
+	  }
+	  .title {
+	  color: #990000;
+	  font-size: 18pt;
+	  line-height: 18pt;
+	  font-weight: bold;
+	  text-align: center;
+	  margin-top: 36pt;
+	  }
+	  .vcardline {
+	  display: block;
+	  }
+	  .warning {
+	  font-size: 14pt;
+	  background-color: yellow;
+	  }
+	
+	
+	  @media print {
+	  .noprint {
+		display: none;
+	  }
+	
+	  a {
+		color: black;
+		text-decoration: none;
+	  }
+	
+	  table.header {
+		width: 90%;
+	  }
+	
+	  td.header {
+		width: 50%;
+		color: black;
+		background-color: white;
+		vertical-align: top;
+		font-size: 12pt;
+	  }
+	
+	  ul.toc a::after {
+		content: leader('.') target-counter(attr(href), page);
+	  }
+	
+	  ul.ind li li a {
+		content: target-counter(attr(href), page);
+	  }
+	
+	  .print2col {
+		column-count: 2;
+		-moz-column-count: 2;
+		column-fill: auto;
+	  }
+	  }
+	
+	  @page {
+	  @top-left {
+		   content: "Internet-Draft"; 
+	  } 
+	  @top-right {
+		   content: "December 2010"; 
+	  } 
+	  @top-center {
+		   content: "Abbreviated Title";
+	  } 
+	  @bottom-left {
+		   content: "Doe"; 
+	  } 
+	  @bottom-center {
+		   content: "Expires June 2011"; 
+	  } 
+	  @bottom-right {
+		   content: "[Page " counter(page) "]"; 
+	  } 
+	  }
+	
+	  @page:first { 
+		@top-left {
+		  content: normal;
+		}
+		@top-right {
+		  content: normal;
+		}
+		@top-center {
+		  content: normal;
+		}
+	  }
+  /*]]>*/
+  </style>
+
+  <link href="#rfc.toc" rel="Contents"/>
+<link href="#rfc.section.1" rel="Chapter" title="1 Introduction"/>
+<link href="#rfc.section.2" rel="Chapter" title="2 Conventions and Terminology"/>
+<link href="#rfc.section.3" rel="Chapter" title="3 Overview"/>
+<link href="#rfc.section.3.1" rel="Chapter" title="3.1 Interaction with validation"/>
+<link href="#rfc.section.4" rel="Chapter" title="4 Meta-schema"/>
+<link href="#rfc.section.5" rel="Chapter" title="5 Schema keywords"/>
+<link href="#rfc.section.5.1" rel="Chapter" title="5.1 base"/>
+<link href="#rfc.section.5.2" rel="Chapter" title="5.2 links"/>
+<link href="#rfc.section.5.3" rel="Chapter" title="5.3 media"/>
+<link href="#rfc.section.5.3.1" rel="Chapter" title="5.3.1 Properties of &quot;media&quot;"/>
+<link href="#rfc.section.5.3.2" rel="Chapter" title="5.3.2 Example"/>
+<link href="#rfc.section.5.4" rel="Chapter" title="5.4 readOnly"/>
+<link href="#rfc.section.6" rel="Chapter" title="6 Link Description Object"/>
+<link href="#rfc.section.6.1" rel="Chapter" title="6.1 Links, operations, and data"/>
+<link href="#rfc.section.6.1.1" rel="Chapter" title="6.1.1 Resolving templated URIs"/>
+<link href="#rfc.section.6.1.2" rel="Chapter" title="6.1.2 Manipulating the target resource representation"/>
+<link href="#rfc.section.6.1.3" rel="Chapter" title="6.1.3 Submitting data for processing"/>
+<link href="#rfc.section.6.2" rel="Chapter" title="6.2 href"/>
+<link href="#rfc.section.6.2.1" rel="Chapter" title="6.2.1 URI Templating"/>
+<link href="#rfc.section.6.3" rel="Chapter" title="6.3 hrefSchema"/>
+<link href="#rfc.section.6.4" rel="Chapter" title="6.4 rel"/>
+<link href="#rfc.section.6.4.1" rel="Chapter" title="6.4.1 Security Considerations for &quot;self&quot; links"/>
+<link href="#rfc.section.6.5" rel="Chapter" title="6.5 title"/>
+<link href="#rfc.section.6.6" rel="Chapter" title="6.6 targetSchema"/>
+<link href="#rfc.section.6.6.1" rel="Chapter" title="6.6.1 &quot;targetSchema&quot; and HTTP"/>
+<link href="#rfc.section.6.6.2" rel="Chapter" title="6.6.2 Security Considerations for &quot;targetSchema&quot;"/>
+<link href="#rfc.section.6.7" rel="Chapter" title="6.7 mediaType"/>
+<link href="#rfc.section.6.7.1" rel="Chapter" title="6.7.1 Security concerns for &quot;mediaType&quot;"/>
+<link href="#rfc.section.6.8" rel="Chapter" title="6.8 submissionEncType"/>
+<link href="#rfc.section.6.9" rel="Chapter" title="6.9 submissionSchema"/>
+<link href="#rfc.references" rel="Chapter" title="7 References"/>
+<link href="#rfc.references.1" rel="Chapter" title="7.1 Normative References"/>
+<link href="#rfc.references.2" rel="Chapter" title="7.2 Informative References"/>
+<link href="#rfc.appendix.A" rel="Chapter" title="A Acknowledgments"/>
+<link href="#rfc.appendix.B" rel="Chapter" title="B Change Log"/>
+<link href="#rfc.authors" rel="Chapter"/>
+
+
+  <meta name="generator" content="xml2rfc version 2.5.1 - http://tools.ietf.org/tools/xml2rfc" />
+  <link rel="schema.dct" href="http://purl.org/dc/terms/" />
+
+  <meta name="dct.creator" content="Wright, A., Ed., Andrews, H., Ed., and G. Luff" />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-wright-json-schema-hyperschema-01" />
+  <meta name="dct.issued" scheme="ISO8601" content="2017-4-21" />
+  <meta name="dct.abstract" content="JSON Schema is a JSON based format for defining the structure of JSON data.  This document specifies hyperlink- and hypermedia-related keywords of JSON Schema for annotating JSON documents with hyperlinks and instructions for processing and manipulating remote JSON resources through hypermedia environments like HTTP.  " />
+  <meta name="description" content="JSON Schema is a JSON based format for defining the structure of JSON data.  This document specifies hyperlink- and hypermedia-related keywords of JSON Schema for annotating JSON documents with hyperlinks and instructions for processing and manipulating remote JSON resources through hypermedia environments like HTTP.  " />
+
+</head>
+
+<body>
+
+  <table class="header">
+    <tbody>
+    
+    	<tr>
+  <td class="left">Internet Engineering Task Force</td>
+  <td class="right">A. Wright, Ed.</td>
+</tr>
+<tr>
+  <td class="left">Internet-Draft</td>
+  <td class="right"></td>
+</tr>
+<tr>
+  <td class="left">Intended status: Informational</td>
+  <td class="right">H. Andrews, Ed.</td>
+</tr>
+<tr>
+  <td class="left">Expires: October 23, 2017</td>
+  <td class="right">Cloudflare, Inc.</td>
+</tr>
+<tr>
+  <td class="left"></td>
+  <td class="right">G. Luff</td>
+</tr>
+<tr>
+  <td class="left"></td>
+  <td class="right">April 21, 2017</td>
+</tr>
+
+    	
+    </tbody>
+  </table>
+
+  <p class="title">JSON Hyper-Schema: A Vocabulary for Hypermedia Annotation of JSON <br />
+  <span class="filename">draft-wright-json-schema-hyperschema-01</span></p>
+  
+  <h1 id="rfc.abstract">
+  <a href="#rfc.abstract">Abstract</a>
+</h1>
+<p>JSON Schema is a JSON based format for defining the structure of JSON data.  This document specifies hyperlink- and hypermedia-related keywords of JSON Schema for annotating JSON documents with hyperlinks and instructions for processing and manipulating remote JSON resources through hypermedia environments like HTTP.  </p>
+<h1>
+  <a>Note to Readers</a>
+</h1>
+<p>The issues list for this draft can be found at <span>&lt;</span><a href="https://github.com/json-schema-org/json-schema-spec/issues">https://github.com/json-schema-org/json-schema-spec/issues</a><span>&gt;</span>.  </p>
+<p>For additional information, see <span>&lt;</span><a href="http://json-schema.org/">http://json-schema.org/</a><span>&gt;</span>.  </p>
+<p>To provide feedback, use this issue tracker, the communication methods listed on the homepage, or email the document editors.  </p>
+<h1 id="rfc.status">
+  <a href="#rfc.status">Status of This Memo</a>
+</h1>
+<p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
+<p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
+<p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
+<p>This Internet-Draft will expire on October 23, 2017.</p>
+<h1 id="rfc.copyrightnotice">
+  <a href="#rfc.copyrightnotice">Copyright Notice</a>
+</h1>
+<p>Copyright (c) 2017 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
+<p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (http://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
+
+  
+  <hr class="noprint" />
+  <h1 class="np" id="rfc.toc"><a href="#rfc.toc">Table of Contents</a></h1>
+  <ul class="toc">
+
+  	<li>1.   <a href="#rfc.section.1">Introduction</a></li>
+<li>2.   <a href="#rfc.section.2">Conventions and Terminology</a></li>
+<li>3.   <a href="#rfc.section.3">Overview</a></li>
+<ul><li>3.1.   <a href="#rfc.section.3.1">Interaction with validation</a></li>
+</ul><li>4.   <a href="#rfc.section.4">Meta-schema</a></li>
+<li>5.   <a href="#rfc.section.5">Schema keywords</a></li>
+<ul><li>5.1.   <a href="#rfc.section.5.1">base</a></li>
+<li>5.2.   <a href="#rfc.section.5.2">links</a></li>
+<li>5.3.   <a href="#rfc.section.5.3">media</a></li>
+<ul><li>5.3.1.   <a href="#rfc.section.5.3.1">Properties of "media"</a></li>
+<li>5.3.2.   <a href="#rfc.section.5.3.2">Example</a></li>
+</ul><li>5.4.   <a href="#rfc.section.5.4">readOnly</a></li>
+</ul><li>6.   <a href="#rfc.section.6">Link Description Object</a></li>
+<ul><li>6.1.   <a href="#rfc.section.6.1">Links, operations, and data</a></li>
+<ul><li>6.1.1.   <a href="#rfc.section.6.1.1">Resolving templated URIs</a></li>
+<li>6.1.2.   <a href="#rfc.section.6.1.2">Manipulating the target resource representation</a></li>
+<li>6.1.3.   <a href="#rfc.section.6.1.3">Submitting data for processing</a></li>
+</ul><li>6.2.   <a href="#rfc.section.6.2">href</a></li>
+<ul><li>6.2.1.   <a href="#rfc.section.6.2.1">URI Templating</a></li>
+</ul><li>6.3.   <a href="#rfc.section.6.3">hrefSchema</a></li>
+<li>6.4.   <a href="#rfc.section.6.4">rel</a></li>
+<ul><li>6.4.1.   <a href="#rfc.section.6.4.1">Security Considerations for "self" links</a></li>
+</ul><li>6.5.   <a href="#rfc.section.6.5">title</a></li>
+<li>6.6.   <a href="#rfc.section.6.6">targetSchema</a></li>
+<ul><li>6.6.1.   <a href="#rfc.section.6.6.1">"targetSchema" and HTTP</a></li>
+<li>6.6.2.   <a href="#rfc.section.6.6.2">Security Considerations for "targetSchema"</a></li>
+</ul><li>6.7.   <a href="#rfc.section.6.7">mediaType</a></li>
+<ul><li>6.7.1.   <a href="#rfc.section.6.7.1">Security concerns for "mediaType"</a></li>
+</ul><li>6.8.   <a href="#rfc.section.6.8">submissionEncType</a></li>
+<li>6.9.   <a href="#rfc.section.6.9">submissionSchema</a></li>
+</ul><li>7.   <a href="#rfc.references">References</a></li>
+<ul><li>7.1.   <a href="#rfc.references.1">Normative References</a></li>
+<li>7.2.   <a href="#rfc.references.2">Informative References</a></li>
+</ul><li>Appendix A.   <a href="#rfc.appendix.A">Acknowledgments</a></li>
+<li>Appendix B.   <a href="#rfc.appendix.B">Change Log</a></li>
+<li><a href="#rfc.authors">Authors' Addresses</a></li>
+
+
+  </ul>
+
+  <h1 id="rfc.section.1"><a href="#rfc.section.1">1.</a> Introduction</h1>
+<p id="rfc.section.1.p.1">JSON Schema is a JSON based format for defining the structure of JSON data.  This document specifies hyperlink- and hypermedia-related keywords of JSON Schema.  </p>
+<p id="rfc.section.1.p.2">The term JSON Hyper-Schema is used to refer to a JSON Schema that uses these keywords.  </p>
+<p id="rfc.section.1.p.3">This specification will use the terminology defined by the <a href="#json-schema">JSON Schema core specification</a> <cite title="NONE">[json-schema]</cite>. It is advised that readers have a copy of this specification.  </p>
+<h1 id="rfc.section.2"><a href="#rfc.section.2">2.</a> Conventions and Terminology</h1>
+<p id="rfc.section.2.p.1">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="#RFC2119">RFC 2119</a> <cite title="NONE">[RFC2119]</cite>.  </p>
+<p id="rfc.section.2.p.2">The terms "schema" and "instance" are to be interpreted as defined in the <a href="#json-schema">JSON Schema core specification</a> <cite title="NONE">[json-schema]</cite>.  </p>
+<h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> Overview</h1>
+<p id="rfc.section.3.p.1">This document describes how JSON Schema can be used to define hyperlinks on instance data.  It also defines how to provide additional information required to interpret JSON data as rich multimedia documents.  </p>
+<p id="rfc.section.3.p.2">As with all JSON Schema keywords, all the keywords described in the "Schema Keywords" section are optional. The minimal valid JSON Hyper-schema is the blank object.  </p>
+<p>Here is an example JSON Schema defining hyperlinks, and providing a multimedia interpretation for the "imgData" property: </p>
+<pre>
+
+{
+    "title": "Written Article",
+    "type": "object",
+    "properties": {
+        "id": {
+            "title": "Article Identifier",
+            "type": "number",
+            "readOnly": true
+        },
+        "title": {
+            "title": "Article Title",
+            "type": "string"
+        },
+        "authorId": {
+            "type": "integer"
+        },
+        "imgData": {
+            "title": "Article Illustration (thumbnail)",
+            "type": "string",
+            "media": {
+                "binaryEncoding": "base64",
+                "type": "image/png"
+            }
+        }
+    },
+    "required" : ["id", "title", "authorId"],
+    "links": [
+        {
+            "rel": "self",
+            "href": "/article{?id}"
+        },
+        {
+            "rel": "author",
+            "href": "/user?id={authorId}"
+        }
+    ]
+}
+
+                </pre>
+<p>This example schema defines the properties of the instance. For the "imgData" property, it specifies that that it should be base64-decoded and the resulting binary data treated as a PNG image.  It also defines link relations for the instance, with URIs incorporating values from the instance.  <a id="CREF1" class="info">[CREF1]<span class="info">"id" probably should not normally be a required keyword, since new instances will have an unknown "id" property until is it assigned by the server.  However, this property is used in a link, and without it, multiple different instances would be given the same rel=self URI! </span></a> </p>
+<p>An example of a JSON instance described by the above schema might be: </p>
+<pre>
+
+{
+    "id": 15,
+    "title": "Example data",
+    "authorId": 105,
+    "imgData": "iVBORw...kJggg=="
+}
+
+                </pre>
+<p>The base-64 data has been abbreviated for readability.  </p>
+<h1 id="rfc.section.3.1"><a href="#rfc.section.3.1">3.1.</a> Interaction with validation</h1>
+<p id="rfc.section.3.1.p.1">Hyper-schemas MUST NOT be applied to an instance if the instance fails to validate against the validation keywords within or containing the hyper-schema.  Hyper-schema keywords in branches of an "anyOf" or "oneOf" that do not validate, or in a "dependencies" subschema that is not relevant to the instance, MUST be ignored.  </p>
+<p id="rfc.section.3.1.p.2">Hyper-schema keywords in a subschema contained within a "not", at any depth, including any number of intervening additional "not" subschemas, MUST be ignored.  </p>
+<p id="rfc.section.3.1.p.3">If the subschema for a "contains" keyword contains hyper-schema keywords they MUST be applied to all array elements that validate against the schema.  While finding a single validating element is sufficient to determine the validation outcome, when hyper-schema keywords are present, the subschema MUST be evaluated against all array elements.  </p>
+<h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> Meta-schema</h1>
+<p id="rfc.section.4.p.1">The current URI for the JSON Schema Validation is &lt;http://json-schema.org/draft-06/hyper-schema#&gt;.  </p>
+<h1 id="rfc.section.5"><a href="#rfc.section.5">5.</a> Schema keywords</h1>
+<h1 id="rfc.section.5.1"><a href="#rfc.section.5.1">5.1.</a> base</h1>
+<p id="rfc.section.5.1.p.1">If present, this keyword is resolved against the current URI base that the entire instance is found within, and sets the new URI base for URI references within the instance.  It is therefore the first URI Reference resolved, regardless of which order it was found in.  </p>
+<p id="rfc.section.5.1.p.2">The URI is computed from the provided URI template using the same process described for the <a href="#href">"href"</a> <cite title="NONE">[href]</cite> property of a Link Description Object.  </p>
+<p>An example of a JSON schema using "base": </p>
+<pre>
+
+{
+    "base": "/object/{id}",
+    "links": [
+        {
+            "rel": "self",
+            "href": ""
+        },
+        {
+            "rel": "next",
+            "href": "{nextId}"
+        }
+    ]
+}
+
+                    </pre>
+<p>An example of a JSON instance using this schema to produce rel="self" and rel="next" links: </p>
+<pre>
+
+{
+    "id": 41,
+    "nextId": 42
+}
+
+                    </pre>
+<p id="rfc.section.5.1.p.3">If the document URI is &lt;http://example.com/?id=41&gt;, then the new URI base becomes &lt;http://example.com/object/41&gt; </p>
+<p id="rfc.section.5.1.p.4">Resolving the two Link Description Objects against this URI base creates two links exactly equivalent to these absolute-form HTTP Link headers: </p>
+
+<ul>
+  <li>Link: &lt;http://example.com/object/41&gt;;rel=self</li>
+  <li>Link: &lt;http://example.com/object/42&gt;;rel=next</li>
+</ul>
+
+<p> </p>
+<h1 id="rfc.section.5.2"><a href="#rfc.section.5.2">5.2.</a> links</h1>
+<p id="rfc.section.5.2.p.1">The "links" property of schemas is used to associate Link Description Objects with instances.  The value of this property MUST be an array, and the items in the array must be Link Description Objects, as defined below.  </p>
+<p>An example schema using the "links" keyword could be: </p>
+<pre>
+{
+    "title": "Schema defining links",
+    "links": [
+        {
+            "rel": "self",
+            "href": "{id}"
+        },
+        {
+            "rel": "parent",
+            "href": "{parent}"
+        }
+    ]
+}
+                    </pre>
+<h1 id="rfc.section.5.3"><a href="#rfc.section.5.3">5.3.</a> media</h1>
+<p id="rfc.section.5.3.p.1">The "media" property indicates that this instance contains non-JSON data encoded in a JSON string.  It describes the type of content and how it is encoded.  </p>
+<p id="rfc.section.5.3.p.2">The value of this property MUST be an object.  The value of this property SHOULD be ignored if the instance described is not a string.  </p>
+<h1 id="rfc.section.5.3.1"><a href="#rfc.section.5.3.1">5.3.1.</a> Properties of "media"</h1>
+<p id="rfc.section.5.3.1.p.1">The value of the "media" keyword MAY contain any of the following properties: </p>
+<h1 id="rfc.section.5.3.1.1"><a href="#rfc.section.5.3.1.1">5.3.1.1.</a> binaryEncoding</h1>
+<p id="rfc.section.5.3.1.1.p.1">If the instance value is a string, this property defines that the string SHOULD be interpreted as binary data and decoded using the encoding named by this property.  <a href="#RFC2045">RFC 2045, Sec 6.1</a> <cite title="NONE">[RFC2045]</cite> lists the possible values for this property.  </p>
+<h1 id="rfc.section.5.3.1.2"><a href="#rfc.section.5.3.1.2">5.3.1.2.</a> type</h1>
+<p id="rfc.section.5.3.1.2.p.1">The value of this property must be a media type, as defined by <a href="#RFC2046">RFC 2046</a> <cite title="NONE">[RFC2046]</cite>. This property defines the media type of instances which this schema defines.  </p>
+<p id="rfc.section.5.3.1.2.p.2">If the "binaryEncoding" property is not set, but the instance value is a string, then the value of this property SHOULD specify a text document type, and the character set SHOULD be the character set into which the JSON string value was decoded (for which the default is Unicode).  </p>
+<h1 id="rfc.section.5.3.2"><a href="#rfc.section.5.3.2">5.3.2.</a> Example</h1>
+<p>Here is an example schema, illustrating the use of "media": </p>
+<pre>
+
+{
+    "type": "string",
+    "media": {
+        "binaryEncoding": "base64",
+        "type": "image/png"
+    }
+}
+
+                        </pre>
+<p>Instances described by this schema should be strings, and their values should be interpretable as base64-encoded PNG images.  </p>
+<p>Another example: </p>
+<pre>
+
+{
+    "type": "string",
+    "media": {
+        "type": "text/html"
+    }
+}
+
+                        </pre>
+<p>Instances described by this schema should be strings containing HTML, using whatever character set the JSON string was decoded into (default is Unicode).  </p>
+<h1 id="rfc.section.5.4"><a href="#rfc.section.5.4">5.4.</a> readOnly</h1>
+<p id="rfc.section.5.4.p.1">If it has a value of boolean true, this keyword indicates that the value of the instance is managed exclusively by the server or the owning authority, and attempts by a user agent to modify the value of this property are expected to be ignored or rejected by a server.  </p>
+<p id="rfc.section.5.4.p.2">For example, this property would be used to mark a server-generated serial number as read-only.  </p>
+<p id="rfc.section.5.4.p.3">The value of this keyword MUST be a boolean.  The default value is false.  </p>
+<h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> Link Description Object</h1>
+<p id="rfc.section.6.p.1">A Link Description Object (LDO) is used to describe a single link relation from the instance to another resource.  A Link Description Object must be an object.  </p>
+<p id="rfc.section.6.p.2">The link description format can be used without JSON Schema, and use of this format can be declared by referencing the normative link description schema as the schema for the data structure that uses the links.  The URI of the normative link description schema is: <a href="http://json-schema.org/draft-06/links">http://json-schema.org/draft-06/links</a> (draft-06 version).  </p>
+<h1 id="rfc.section.6.1"><a href="#rfc.section.6.1">6.1.</a> Links, operations, and data</h1>
+<p><a id="CREF2" class="info">[CREF2]<span class="info">Note that while the current draft does not provide a way to explicity indicate HTTP method support, some way of providing a non-authoritative hint may be added in a future draft (see issue #73 in the GitHub repository).  </span></a> </p>
+<p id="rfc.section.6.1.p.2">There are several ways that a client can use data can with a link: </p>
+
+<ul class="empty">
+  <li>URI Template variables resolved from server-supplied instance data </li>
+  <li>URI Template variables resolved from user agent data </li>
+  <li>Replacing or modifying the target resource's representation </li>
+  <li>Submitting data for processing, where the data has no inherent relation to the target resource's representation</li>
+</ul>
+
+<p> The three ways to use client-supplied data are each addressed by a separate schema keyword within the link description object.  Link operations ignore schemas that are not relevant to their semantics.  </p>
+<p id="rfc.section.6.1.p.3">Link Description Objects do not directly indicate what operations, such as HTTP methods, are supported by the target resource.  Instead, operations should be inferred primarily from link <a href="#rel">relation types</a> <cite title="NONE">[rel]</cite> and URI schemes.  Note, however, that a resource may always decline an operation at runtime, for instance due to application state that controls the operation's availability.  </p>
+<h1 id="rfc.section.6.1.1"><a href="#rfc.section.6.1.1">6.1.1.</a> Resolving templated URIs</h1>
+<p id="rfc.section.6.1.1.p.1">URI Template variables in <a href="#href">"href"</a> <cite title="NONE">[href]</cite> resolve from server-supplied instance data by default.  <a href="#hrefSchema">"hrefSchema"</a> <cite title="NONE">[hrefSchema]</cite> allows a link to specify a schema for resolving template variables from client-supplied data.  Regular JSON Schema validation features can be used to require resolution from user agent data, forbid it, or allow user agent data while falling back to server-supplied instance data if no user agent data is provided.  </p>
+<p id="rfc.section.6.1.1.p.2">The common pattern of resolving a templated path component with server-supplied instance data while accepting user agent data to build a query string can be implemented by setting the "hrefSchema" subschemas for the path template variables to false, while giving the query string template variables names that do not appear in the instance.  This ensures that the path variables can only be resolved from the instance, and the query string variables can only be resolved from user agent data.  See the "hrefSchema" section for an example of this approach.  </p>
+<h1 id="rfc.section.6.1.2"><a href="#rfc.section.6.1.2">6.1.2.</a> Manipulating the target resource representation</h1>
+<p id="rfc.section.6.1.2.p.1">In JSON Hyper-Schema, <a href="#targetSchema">"targetSchema"</a> <cite title="NONE">[targetSchema]</cite> supplies a non-authoritative description of the target resource's representation. A client can use "targetSchema" to structure input for replacing or modifying the representation.  Alternatively, if "targetSchema" is absent or if the client prefers to only use authoritative information, it can interact with the target resource to confirm or discover its representation structure.  </p>
+<p id="rfc.section.6.1.2.p.2">"targetSchema" is not intended to describe link operation responses, except when the response semantics indicate that it is a representation of the target resource.  In all cases, the schema indicated by the response itself is authoritative.  See the <a href="#targetHTTP">Section 6.6.1</a> for guidance specific to each HTTP method when using "targetSchema" with HTTP URIs.  </p>
+<h1 id="rfc.section.6.1.3"><a href="#rfc.section.6.1.3">6.1.3.</a> Submitting data for processing</h1>
+<p id="rfc.section.6.1.3.p.1">The <a href="#submissionSchema">"submissionSchema"</a> <cite title="NONE">[submissionSchema]</cite> and <a href="#submissionEncType">"submissionEncType"</a> <cite title="NONE">[submissionEncType]</cite> keywords describe the domain of the processing function implemented by the target resource. Otherwise, as noted above, the submission schema and encoding are ignored for operations to which they are not relevant.  </p>
+<h1 id="rfc.section.6.2"><a href="#rfc.section.6.2">6.2.</a> <a href="#href" id="href">href</a></h1>
+<p id="rfc.section.6.2.p.1">The value of the "href" link description property is a template used to determine the target URI of the related resource.  The value of the instance property MUST be resolved as a <a href="#RFC3986">URI-reference</a> <cite title="NONE">[RFC3986]</cite> against the base URI of the instance.  </p>
+<p id="rfc.section.6.2.p.2">This property is REQUIRED.  </p>
+<h1 id="rfc.section.6.2.1"><a href="#rfc.section.6.2.1">6.2.1.</a> URI Templating</h1>
+<p><a id="CREF3" class="info">[CREF3]<span class="info">The pre-processing rules present in earlier drafts have been removed due to their complexity and inability to address all limitations with URI templating.  This section is subject to significant change in upcoming drafts to replace the old pre-processing with a comprehensive solution.  </span></a> </p>
+<p id="rfc.section.6.2.1.p.2">The value of "href" is to be used as a URI Template, as defined in <a href="#RFC6570">RFC 6570</a> <cite title="NONE">[RFC6570]</cite>.  However, some special considerations apply: </p>
+<h1 id="rfc.section.6.2.1.1"><a href="#rfc.section.6.2.1.1">6.2.1.1.</a> Values for substitution</h1>
+<p id="rfc.section.6.2.1.1.p.1">The URI Template is filled out using data from some combination of an external source and the instance.  Where either instance data or user agent data may be used, this section will refer simply to "data" or to a "value".  When the source is important, it is specified explicitly.  To allow the use of any object property (including the empty string) or array index, the following rules are defined: </p>
+<p id="rfc.section.6.2.1.1.p.2">For a given variable name in the URI Template, the value to use is determined as follows: </p>
+
+<ul class="empty">
+  <li>If the data is an array, and the variable name is a representation of a non-negative integer, then the value at the corresponding array index MUST be used (if it exists).  </li>
+  <li>Otherwise, the variable name should be percent-decoded, and the corresponding object property MUST be used (if it exists).  </li>
+</ul>
+
+<p> </p>
+<p id="rfc.section.6.2.1.1.p.3">If <a href="#hrefSchema">"hrefSchema"</a> <cite title="NONE">[hrefSchema]</cite> is present and user agent data is provided, the data MUST be a valid instance according to the value of "hrefSchema".  Template variables, after the process listed above, MUST first be resolved from the user agent data instance.  Any variables left unresolved MUST be resolved from the resource instance data.  </p>
+<h1 id="rfc.section.6.2.1.1.1"><a href="#rfc.section.6.2.1.1.1">6.2.1.1.1.</a> Converting to strings</h1>
+<p id="rfc.section.6.2.1.1.1.p.1">When any value referenced by the URI template is null, a boolean or a number, then it should first be converted into a string as follows: </p>
+
+<ul class="empty">
+  <li>null values SHOULD be replaced by the text "null" </li>
+  <li>boolean values SHOULD be replaced by their lower-case equivalents: "true" or "false" </li>
+  <li>numbers SHOULD be replaced with their original JSON representation.  </li>
+</ul>
+
+<p> </p>
+<p id="rfc.section.6.2.1.1.1.p.2">In some software environments the original JSON representation of a number will not be available (there is no way to tell the difference between 1.0 and 1), so any reasonable representation should be used.  Schema and API authors should bear this in mind, and use other types (such as string or boolean) if the exact representation is important.  </p>
+<h1 id="rfc.section.6.2.1.2"><a href="#rfc.section.6.2.1.2">6.2.1.2.</a> Missing values</h1>
+<p id="rfc.section.6.2.1.2.p.1">Sometimes, the appropriate values will not be available.  For example, the template might specify the use of object properties, but no such data was provided (or "hrefSchema" is not present), and the instance is an array or a string.  </p>
+<p id="rfc.section.6.2.1.2.p.2">If any of the values required for the template are neither present in the user agent data (if relevant) nor the JSON instance, then substitute values MAY be provided from another source (such as default values).  Otherwise, the link definition SHOULD be considered not to apply to the instance.  </p>
+<h1 id="rfc.section.6.3"><a href="#rfc.section.6.3">6.3.</a> <a href="#hrefSchema" id="hrefSchema">hrefSchema</a></h1>
+<p id="rfc.section.6.3.p.1">The value of the "hrefSchema" link description property MUST be a valid JSON Schema.  This schema is used to validate user input or other user agent data for filling out the URI Template in <a href="#href">"href"</a> <cite title="NONE">[href]</cite>, as described in that section.  </p>
+<p id="rfc.section.6.3.p.2">Omitting "hrefSchema" or setting the entire schema to "false" prevents any user agent data from being accepted.  </p>
+<p id="rfc.section.6.3.p.3">Implementations MUST NOT attempt to validate values resolved from resource instance data with "hrefSchema".  This allows for different validation rules for user agent data, such as supporting spelled-out months for date-time input but using the standard date-time format for storage.  </p>
+<p>For example, this defines a schema for each of the query string parameters in the URI template: </p>
+<pre>
+{
+    "href": "/foos{?condition,count,query}",
+    "hrefSchema": {
+        "properties": {
+            "condition": {
+                "type": "boolean",
+                "default": true
+            },
+            "count": {
+                "type": "integer",
+                "minimum": 0,
+                "default": 0
+            },
+            "query": {
+                "type": "string"
+            }
+        }
+    }
+}
+                    </pre>
+<p>In this example, the schema for "extra" is given as a reference to keep the user agent data validation constraints identical to the instance validation constraints for the corresponding property, while "id" is given a false schema to prevent user agent data for that variable.  </p>
+<pre>
+{
+    "definitions": {
+        "extra": {
+            "type": "string",
+            "maxLength": 32
+        }
+    },
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "minimum": 1,
+            "readOnly": true
+        },
+        "extra": {"$ref": "#/definitions/extra"}
+    },
+    "links": [{
+        "rel": "self",
+        "href": "/things/{id}{?extra}",
+        "hrefSchema": {
+            "properties": {
+                "id": false,
+                "extra": {"$ref": "#/definitions/extra"}
+            }
+        }
+    }]
+}
+                    </pre>
+<p><a id="CREF4" class="info">[CREF4]<span class="info">The above example simulates the behavior handled in earlier drafts with a "method" of "get" by using the new "hrefSchema" keyword.  </span></a> </p>
+<h1 id="rfc.section.6.4"><a href="#rfc.section.6.4">6.4.</a> <a href="#rel" id="rel">rel</a></h1>
+<p id="rfc.section.6.4.p.1">The value of the "rel" property indicates the name of the relation to the target resource. The value MUST be a registered link relation from the <a href="#RFC5988">IANA Link Relation Type Registry established in RFC 5988</a> <cite title="NONE">[RFC5988]</cite>, or a normalized URI following the <a href="#RFC3986">URI production of RFC 3986</a> <cite title="NONE">[RFC3986]</cite>.  </p>
+<p id="rfc.section.6.4.p.2">The relation to the target is interpreted as from the instance that the schema (or sub-schema) applies to, not any larger document that the instance may have been found in.  </p>
+<p id="rfc.section.6.4.p.3">Relationship definitions are not normally media type dependent, and users are encouraged to utilize existing accepted relation definitions.  </p>
+<p>For example, if a hyper-schema is defined: </p>
+<pre>
+{
+    "type": "array",
+    "items": {
+        "links": [{
+            "rel": "item",
+            "href": "{id}"
+        }, {
+            "rel": "up",
+            "href": "{upId}"
+        }]
+    }
+}
+                    </pre>
+<p>And if a collection of instance resources were retrieved with JSON representation: </p>
+<pre>
+GET /Resource/
+
+[{
+    "id": "thing",
+    "upId": "parent"
+}, {
+    "id": "thing2",
+    "upId": "parent"
+}]
+                    </pre>
+<p>This would indicate that for the first item in the collection, its URI as its own resource would resolve to "/Resource/thing" and the first item's "up" relation SHOULD be resolved to the resource at "/Resource/parent".  </p>
+<p id="rfc.section.6.4.p.4">Note that these relationship values are case-insensitive, consistent with their use in HTML and the <a href="#RFC5988">HTTP Link header</a> <cite title="NONE">[RFC5988]</cite>.  </p>
+<h1 id="rfc.section.6.4.1"><a href="#rfc.section.6.4.1">6.4.1.</a> Security Considerations for "self" links</h1>
+<p id="rfc.section.6.4.1.p.1">When link relation of "self" is used to denote a full representation of an object, the user agent SHOULD NOT consider the representation to be the authoritative representation of the resource denoted by the target URI if the target URI is not equivalent to or a sub-path of the URI used to request the resource representation which contains the target URI with the "self" link.  </p>
+
+<p>For example, if a hyper-schema was defined: </p>
+<pre>
+{
+    "links": [{
+        "rel": "self",
+        "href": "{id}"
+    }]
+}
+                            </pre>
+<p>And a resource was requested from somesite.com: </p>
+<pre>
+
+GET /foo/
+
+                            </pre>
+<p>With a response of (with newlines and whitespace added): </p>
+<pre>
+Content-Type: application/json; profile="http://example.com/alpha"
+
+[{
+    "id": "bar",
+    "name": "This representation can be safely treated
+             as authoritative "
+}, {
+    "id": "/baz",
+    "name": "This representation should not be treated as
+             authoritative the user agent should make request the
+             resource from '/baz' to ensure it has the authoritative
+             representation"
+}, {
+    "id": "http://othersite.com/something",
+    "name": "This representation
+             should also not be treated as authoritative and the
+             target resource representation should be retrieved
+             for the authoritative representation"
+}]
+                            </pre>
+<h1 id="rfc.section.6.5"><a href="#rfc.section.6.5">6.5.</a> title</h1>
+<p id="rfc.section.6.5.p.1">This property defines a title for the link.  The value must be a string.  </p>
+<p id="rfc.section.6.5.p.2">User agents MAY use this title when presenting the link to the user.  </p>
+<h1 id="rfc.section.6.6"><a href="#rfc.section.6.6">6.6.</a> <a href="#targetSchema" id="targetSchema">targetSchema</a></h1>
+<p id="rfc.section.6.6.p.1">This property provides a schema that is expected to describe the link target's representation.  Depending on the protocol, the schema may or may not describe the response to any particular request sent to the link.  This property is advisory only.  </p>
+<h1 id="rfc.section.6.6.1"><a href="#rfc.section.6.6.1">6.6.1.</a> <a href="#targetHTTP" id="targetHTTP">"targetSchema" and HTTP</a></h1>
+<p id="rfc.section.6.6.1.p.1">The relationship between a resource's representation and HTTP requests and responses is determined by <a href="#RFC7231">RFC 7231, section 4.3.1 - "GET", section 4.3.4 "PUT", and section 3.1.4.2, "Content-Location"</a> <cite title="NONE">[RFC7231]</cite>. In particular, "targetSchema" suggests what a client can expect for the response to an HTTP GET or any response for which the "Content-Location" header is equal to the request URI, and what a client should send if it replaces the resource in an HTTP PUT request. Per <a href="#RFC5789">RFC 5789</a> <cite title="NONE">[RFC5789]</cite>, the request structure for an HTTP PATCH is determined by the combination of "targetSchema" and the request media type.  </p>
+<h1 id="rfc.section.6.6.2"><a href="#rfc.section.6.6.2">6.6.2.</a> Security Considerations for "targetSchema"</h1>
+<p id="rfc.section.6.6.2.p.1">This property has similar security concerns to that of "mediaType".  Clients MUST NOT use the value of this property to aid in the interpretation of the data received in response to following the link, as this leaves "safe" data open to re-interpretation.  </p>
+<p/>
+
+<p>For example, suppose two programmers are having a discussion about web security using a text-only message board.  Here is some data from that conversation, with a URI of: http://forum.example.com/topics/152/comments/13 </p>
+<pre>
+{
+    "topicId": 152,
+    "commentId": 13,
+    "from": {
+        "name": "Jane",
+        "id": 5
+    },
+    "to": {
+        "name": "Jason",
+        "id": 8
+    },
+    "message": "It's easy, just add some HTML like
+         this: &lt;script&gt;doSomethingEvil()&lt;/script&gt;"
+}
+                            </pre>
+<p>The message string was split over two lines for readability.  </p>
+<pre>
+{
+    "rel": "evil-attack",
+    "href": "http://forum.example.com/topics/152/comments/13",
+    "targetSchema": {
+        "properties": {
+            "message": {
+                "description": "Re-interpret `message` as HTML",
+                "media": {
+                    "type": "text/html"
+                }
+            }
+        }
+    }
+}
+                            </pre>
+<p id="rfc.section.6.6.2.p.3">A third party might then provide the following Link Description Object at another location: </p>
+
+<p>If the client used this "targetSchema" value when interpreting the above data, then it might display the contents of "message" as HTML.  At this point, the JavaScript embedded in the message might be executed (in the context of the "forum.example.com" domain).  </p>
+<h1 id="rfc.section.6.7"><a href="#rfc.section.6.7">6.7.</a> mediaType</h1>
+<p id="rfc.section.6.7.p.1">The value of this property is advisory only, and represents the media type <a href="#RFC2046">RFC 2046</a> <cite title="NONE">[RFC2046]</cite>, that is expected to be returned when fetching this resource.  This property value MAY be a media range instead, using the same pattern defined in <a href="#RFC7231">RFC 7231, section 5.3.2 - HTTP "Accept" header</a> <cite title="NONE">[RFC7231]</cite>.  </p>
+<p id="rfc.section.6.7.p.2">This property is analogous to the "type" property of &lt;a&gt; elements in HTML (advisory content type), or the "type" parameter in the <a href="#RFC5988">HTTP Link header</a> <cite title="NONE">[RFC5988]</cite>.  User agents MAY use this information to inform the interface they present to the user before the link is followed, but this information MUST NOT use this information in the interpretation of the resulting data.  When deciding how to interpret data obtained through following this link, the behaviour of user agents MUST be identical regardless of the value of the this property.  </p>
+<p id="rfc.section.6.7.p.3">If this property's value is specified, and the link's target is to be obtained using any protocol that supports the HTTP/1.1 "Accept" header <a href="#RFC7231">RFC 7231, section 5.3.2</a> <cite title="NONE">[RFC7231]</cite>, then user agents MAY use the value of this property to aid in the assembly of that header when making the request to the server.  </p>
+<p id="rfc.section.6.7.p.4">If this property's value is not specified, then the value should be taken to be "application/json".  </p>
+<p>For example, if a schema is defined: </p>
+<pre>
+
+{
+    "links": [{
+        "rel": "self",
+        "href": "/{id}/json"
+    }, {
+        "rel": "alternate",
+        "href": "/{id}/html",
+        "mediaType": "text/html"
+    }, {
+        "rel": "alternate",
+        "href": "/{id}/rss",
+        "mediaType": "application/rss+xml"
+    }, {
+        "rel": "icon",
+        "href": "{id}/icon",
+        "mediaType": "image/*"
+    }]
+}
+
+                    </pre>
+<p>A suitable instance described by this schema would have four links defined.  The link with a "rel" value of "self" would have an expected MIME type of "application/json" (the default).  The two links with a "rel" value of "alternate" specify the locations of HTML and RSS versions of the current item.  The link with a "rel" value of "icon" links to an image, but does not specify the exact format.  </p>
+<p id="rfc.section.6.7.p.5">A visual user agent displaying the item from the above example might present a button representing an RSS feed, which when pressed passes the target URI (calculated "href" value) to an view more suited to displaying it, such as a news feed aggregator tab.  </p>
+<p id="rfc.section.6.7.p.6">Note that presenting the link in the above manner, or passing the URI to a news feed aggregator view does not constitute interpretation of the data, but an interpretation of the link.  The interpretation of the data itself is performed by the news feed aggregator, which SHOULD reject any data that would not have also been interpreted as a news feed, had it been displayed in the main view.  </p>
+<h1 id="rfc.section.6.7.1"><a href="#rfc.section.6.7.1">6.7.1.</a> Security concerns for "mediaType"</h1>
+<p id="rfc.section.6.7.1.p.1">The "mediaType" property in link definitions defines the expected format of the link's target.  However, this is advisory only, and MUST NOT be considered authoritative.  </p>
+<p id="rfc.section.6.7.1.p.2">When choosing how to interpret data, the type information provided by the server (or inferred from the filename, or any other usual method) MUST be the only consideration, and the "mediaType" property of the link MUST NOT be used.  User agents MAY use this information to determine how they represent the link or where to display it (for example hover-text, opening in a new tab).  If user agents decide to pass the link to an external program, they SHOULD first verify that the data is of a type that would normally be passed to that external program.  </p>
+<p id="rfc.section.6.7.1.p.3">This is to guard against re-interpretation of "safe" data, similar to the precautions for "targetSchema".  </p>
+<h1 id="rfc.section.6.8"><a href="#rfc.section.6.8">6.8.</a> <a href="#submissionEncType" id="submissionEncType">submissionEncType</a></h1>
+<p id="rfc.section.6.8.p.1">If present, this property indicates the media type format the client should use for the request payload described by <a href="#submissionSchema">"submissionSchema"</a> <cite title="NONE">[submissionSchema]</cite>.  </p>
+<p id="rfc.section.6.8.p.2">Omitting this keyword has the same behavior as a value of application/json.  </p>
+<p id="rfc.section.6.8.p.3">Note that "submissionEncType" and "submissionSchema" are not restricted to HTTP URIs.  </p>
+
+<p>For example, this link indicates that if you want to send an email to the author of the context resource, your client needs to ask for both a plain text and an HTML representation.  </p>
+<pre>
+{
+    "links": [{
+        "submissionEncType": "multipart/alternative; boundary=ab12",
+        "rel": "author",
+        "href": "mailto:someone@example.com{?subject}",
+        "hrefSchema": {
+            "type": "object",
+            "properties": {
+                "subject": { "type": "string" }
+            },
+            "required": ["subject"]
+        },
+        "submissionSchema": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "string",
+                    "media": { "type": "text/plain; charset=utf8" }
+                },
+                {
+                    "type": "string",
+                    "media": { "type": "text/html" }
+                }
+            ],
+            "minItems": 2
+        }
+    }]
+}
+                        </pre>
+<h1 id="rfc.section.6.9"><a href="#rfc.section.6.9">6.9.</a> <a href="#submissionSchema" id="submissionSchema">submissionSchema</a></h1>
+<p id="rfc.section.6.9.p.1">This property contains a schema which defines the acceptable structure of the document to be encoded according to the "submissionEncType" property and sent to the target resource for processing.  This can be viewed as describing the domain of the processing function implemented by the target resource.  </p>
+<p id="rfc.section.6.9.p.2">This is a separate concept from the <a href="#targetSchema">"targetSchema"</a> <cite title="NONE">[targetSchema]</cite> property, which is describing the target information resource (including for replacing the contents of the resource in a PUT request), unlike "submissionSchema" which describes the user-submitted request data to be evaluated by the resource. "submissionSchema" is intended for use with requests that have payloads that are not defined in terms of the target representation.  </p>
+<p id="rfc.section.6.9.p.3">Omitting "submissionSchema" or setting the entire schema to "false" prevents any user agent data from being accepted.  </p>
+<h1 id="rfc.references"><a href="#rfc.references">7.</a> References</h1>
+<h1 id="rfc.references.1"><a href="#rfc.references.1">7.1.</a> Normative References</h1>
+<table>
+  <tbody>
+    <tr>
+      <td class="reference">
+        <b id="RFC2045">[RFC2045]</b>
+      </td>
+      <td class="top"><a>Freed, N.</a> and <a>N. Borenstein</a>, "<a href="http://tools.ietf.org/html/rfc2045">Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies</a>", RFC 2045, DOI 10.17487/RFC2045, November 1996.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC2119">[RFC2119]</b>
+      </td>
+      <td class="top"><a>Bradner, S.</a>, "<a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>", BCP 14, RFC 2119, DOI 10.17487/RFC2119, March 1997.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC3986">[RFC3986]</b>
+      </td>
+      <td class="top"><a>Berners-Lee, T.</a>, <a>Fielding, R.</a> and <a>L. Masinter</a>, "<a href="http://tools.ietf.org/html/rfc3986">Uniform Resource Identifier (URI): Generic Syntax</a>", STD 66, RFC 3986, DOI 10.17487/RFC3986, January 2005.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC6570">[RFC6570]</b>
+      </td>
+      <td class="top"><a>Gregorio, J.</a>, <a>Fielding, R.</a>, <a>Hadley, M.</a>, <a>Nottingham, M.</a> and <a>D. Orchard</a>, "<a href="http://tools.ietf.org/html/rfc6570">URI Template</a>", RFC 6570, DOI 10.17487/RFC6570, March 2012.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="json-schema">[json-schema]</b>
+      </td>
+      <td class="top"><a>Wright, A.</a>, "<a href="http://tools.ietf.org/html/draft-wright-json-schema-00">JSON Schema: A Media Type for Describing JSON Documents</a>", Internet-Draft draft-wright-json-schema-00, October 2016.</td>
+    </tr>
+  </tbody>
+</table>
+<h1 id="rfc.references.2"><a href="#rfc.references.2">7.2.</a> Informative References</h1>
+<table>
+  <tbody>
+    <tr>
+      <td class="reference">
+        <b id="RFC2046">[RFC2046]</b>
+      </td>
+      <td class="top"><a>Freed, N.</a> and <a>N. Borenstein</a>, "<a href="http://tools.ietf.org/html/rfc2046">Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types</a>", RFC 2046, DOI 10.17487/RFC2046, November 1996.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC5789">[RFC5789]</b>
+      </td>
+      <td class="top"><a>Dusseault, L.</a> and <a>J. Snell</a>, "<a href="http://tools.ietf.org/html/rfc5789">PATCH Method for HTTP</a>", RFC 5789, DOI 10.17487/RFC5789, March 2010.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC5988">[RFC5988]</b>
+      </td>
+      <td class="top"><a>Nottingham, M.</a>, "<a href="http://tools.ietf.org/html/rfc5988">Web Linking</a>", RFC 5988, DOI 10.17487/RFC5988, October 2010.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC7231">[RFC7231]</b>
+      </td>
+      <td class="top"><a>Fielding, R.</a> and <a>J. Reschke</a>, "<a href="http://tools.ietf.org/html/rfc7231">Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</a>", RFC 7231, DOI 10.17487/RFC7231, June 2014.</td>
+    </tr>
+  </tbody>
+</table>
+<h1 id="rfc.appendix.A"><a href="#rfc.appendix.A">Appendix A.</a> Acknowledgments</h1>
+<p id="rfc.section.A.p.1">Thanks to Gary Court, Francis Galiegue, Kris Zyp, and Geraint Luff for their work on the initial drafts of JSON Schema.  </p>
+<p id="rfc.section.A.p.2">Thanks to Jason Desrosiers, Daniel Perrett, Erik Wilde, Ben Hutton, Evgeny Poberezkin, Brad Bowman, Gowry Sankar, Donald Pipowitch, Dave Finlay, and Denis Laxalde for their submissions and patches to the document.  </p>
+<h1 id="rfc.appendix.B"><a href="#rfc.appendix.B">Appendix B.</a> Change Log</h1>
+<p><a id="CREF5" class="info">[CREF5]<span class="info">This section to be removed before leaving Internet-Draft status.</span></a> </p>
+<p/>
+
+<dl>
+  <dt>draft-wright-json-schema-hyperschema-01</dt>
+  <dd style="margin-left: 8">
+    <ul>
+      <li>Fixed examples</li>
+      <li>Added "hrefSchema" for user input to "href" URI Templates</li>
+      <li>Removed URI Template pre-processing</li>
+      <li>Clarified how links and data submission work</li>
+      <li>Clarified how validation keywords apply hyper-schema keywords and links</li>
+      <li>Clarified HTTP use with "targetSchema"</li>
+      <li>Renamed "schema" to "submissionSchema"</li>
+      <li>Renamed "encType" to "submissionEncType"</li>
+      <li>Removed "method"</li>
+    </ul>
+    <p> </p>
+  </dd>
+  <dt>draft-wright-json-schema-hyperschema-00</dt>
+  <dd style="margin-left: 8">
+    <ul>
+      <li>"rel" is now optional</li>
+      <li>rel="self" no longer changes URI base</li>
+      <li>Added "base" keyword to change instance URI base</li>
+      <li>Removed "root" link relation</li>
+      <li>Removed "create" link relation</li>
+      <li>Removed "full" link relation</li>
+      <li>Removed "instances" link relation</li>
+      <li>Removed special behavior for "describedBy" link relation</li>
+      <li>Removed "pathStart" keyword</li>
+      <li>Removed "fragmentResolution" keyword</li>
+      <li>Updated references to JSON Pointer, HTML</li>
+      <li>Changed behavior of "method" property to align with hypermedia best current practices</li>
+    </ul>
+    <p> </p>
+  </dd>
+  <dt>draft-luff-json-hyper-schema-01</dt>
+  <dd style="margin-left: 8">
+    <ul>
+      <li>Split from main specification.</li>
+    </ul>
+    <p> </p>
+  </dd>
+</dl>
+
+<p> </p>
+<h1 id="rfc.authors">
+  <a href="#rfc.authors">Authors' Addresses</a>
+</h1>
+<div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Austin Wright</span> (editor)
+	  <span class="n hidden">
+		<span class="family-name">Wright</span>
+	  </span>
+	</span>
+	<span class="org vcardline"></span>
+	<span class="adr">
+	  
+	  <span class="vcardline">
+		<span class="locality"></span> 
+		<span class="region"></span>
+		<span class="code"></span>
+	  </span>
+	  <span class="country-name vcardline"></span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:aaa@bzfx.net">aaa@bzfx.net</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Henry Andrews</span> (editor)
+	  <span class="n hidden">
+		<span class="family-name">Andrews</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Cloudflare, Inc.</span>
+	<span class="adr">
+	  
+	  <span class="vcardline">
+		<span class="locality"></span> 
+		<span class="region"></span>
+		<span class="code"></span>
+	  </span>
+	  <span class="country-name vcardline"></span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:henry@cloudflare.com">henry@cloudflare.com</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Geraint Luff</span> 
+	  <span class="n hidden">
+		<span class="family-name">Luff</span>
+	  </span>
+	</span>
+	<span class="org vcardline"></span>
+	<span class="adr">
+	  
+	  <span class="vcardline">
+		<span class="locality">Cambridge</span>,  
+		<span class="region"></span>
+		<span class="code"></span>
+	  </span>
+	  <span class="country-name vcardline">UK</span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:luffgd@gmail.com">luffgd@gmail.com</a></span>
+
+  </address>
+</div>
+
+</body>
+</html>
