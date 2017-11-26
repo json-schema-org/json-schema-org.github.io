@@ -5,7 +5,7 @@ title: Specification
 
 The latest Internet-Drafts at the IETF are the **draft-handrews-json-schema\*-00** documents, which correspond to the **draft-07** meta-schemas. These were published on **2017-11-19**. (Due to a change in author/editorship the I-D numbering was reset to -00 again).
 
-Please see the **[migration notes](draft-06/README.md)** (which will soon be updated for draft-07) for more information on this release and on migrating from draft-04.
+Please see the **[release notes](draft-07/README.html)** for more information on this release and on migrating from draft-06 or draft-04.
 
 The specification is split into three parts, Core, Validation, and Hyper-Schema, along with a related specification, Relative JSON Pointers:
 
@@ -33,15 +33,13 @@ The latest meta-schema is **draft-07**.
 
 _If you are accessing the above meta-schema links **from a web browser**, you will need to **save the file** then open it as a JSON document._
 
-Migrating from draft-04
+Migrating from draft-04 or draft-06
 -------------
-
-_**NOTE:** The release notes will be updatead for draft-07 soon_
 
 The release notes discuss the changes impacting users and implementors:
 
-- [JSON Schema Core and Validation](draft-06/json-schema-migration-faq.md)
-- [JSON Hyper-Schema](draft-06/json-hyper-schema-migration-faq.md)
+- [JSON Schema Core and Validation](draft-07/json-schema-release-notes.html)
+- [JSON Hyper-Schema](draft-07/json-hyper-schema-release-notes.html)
 
 Older drafts
 ------------
