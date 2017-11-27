@@ -43,9 +43,19 @@ for information related to draft-05.
 
 ### Migrating from draft-04
 
-For an overview of why the way `method` and `targetSchema` were typically used
-in draft-04 poses a challenge for migrating to more recent drafts, see
-the [draft-06 release notes](../draft-06/json-hyper-schema-migration-faq.html).
+In the ideal draft-07 world, links and
+[operations](http://json-schema.org/draft-07/json-schema-hypermedia.html#rfc.section.3.1)
+are not the same concept.  Using terminology borrowed from
+[OpenAPI's Operation Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#operationObject), HTTP methods are operations, and each
+link (as described by a single LDO) can support multiple operations.
+
+Therefore, unlike draft-04, draft-07 hyper-schemas
+[do not have separate links for each operation](json-schema-hypermedia.html#rfc.section.8.1).  This makes the migration guidelines below approximate at best.
+
+For a more detailed explanation of how draft-04's `method` and `targetSchema`
+were typically used to create single-operation links, and how that poses
+a challenge for migrating to multi-operation links, see the
+[draft-06 release notes](../draft-06/json-hyper-schema-migration-faq.html).
 Those release notes also explain what happened to the link relations defined
 in draft-04 and subsequently removed, and the changes in how the instance
 base URI is determined.
@@ -55,6 +65,7 @@ following lines, although the
 [intentional lack of explicit response descriptions](json-schema-hypermedia.html#rfc.appendix.A.2)
 (except when the response happens to be a representation of the target resource)
 means that some uses of draft-04 do not have direct analogues in draft-07.
+
 Any keyword not mentioned in a list below is unchanged for that link operation.
 
 #### GET
