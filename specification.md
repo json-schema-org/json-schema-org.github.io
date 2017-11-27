@@ -1,5 +1,7 @@
 ---
 layout: page
+redirect_from: "/documentation.html"
+permalink: /specification.html
 title: Specification
 ---
 

@@ -27,7 +27,7 @@ markdown: kramdown
 theme: minima
 
 header_pages:
-- documentation.md
+- specification.md
 - examples.md
 - implementations.md
 
@@ -36,5 +36,6 @@ exclude:
 - Gemfile
 - node_modules
 
-gems:
+plugins:
   - jekyll-relative-links
+  - jekyll-redirect-from
