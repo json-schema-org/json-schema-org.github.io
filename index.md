@@ -4,7 +4,7 @@ title: JSON Schema
 permalink: /
 ---
 
-***Draft-07 has been [published](documentation.md)!***
+***Draft-07 has been [published](specification.html)!***
 {: style="color:gray; font-size: 150%; text-align: center;"}
 
 **JSON Schema** is a vocabulary that allows you to **annotate** and **validate** JSON documents.
@@ -86,9 +86,9 @@ More
 
 Interested? Check out:
 
--   the [specification](documentation.md)
+-   the [specification](specification.html)
 -   some [examples](examples.md)
--   the growing list of [JSON (Hyper-)Schema software](implementations.md)
+-   the growing list of [JSON (Hyper-)Schema software](implementations.html)
 
 We encourage updating to the latest specification, as described by the draft-07 meta-schemas.  However, if you are still using draft-04, you may be interested in:
 -   this [excellent guide](http://spacetelescope.github.io/understanding-json-schema/) for schema authors, from the [Space Telescope Science Institute](http://www.stsci.edu/)

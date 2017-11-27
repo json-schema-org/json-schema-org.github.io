@@ -5,7 +5,7 @@ layout: page
 
 <!-- Links on this page should be immutable - none of them should go to `/latest`, etc. -->
 
-You can find the latest released draft on the [Specification](/documentation.md) page.  Older drafts are expired, but may be of historical interest.
+You can find the latest released draft on the [Specification](/specification.html) page.  Older drafts are expired, but may be of historical interest.
 
 **A note on draft naming and numbering:**  
 IETF Internet-Drafts (I-Ds) are named with the editor's name and a sequential number which resets with each new editor.  Meta-schemas are numbered sequentially.  Additionally, drafts 00-03 used one document for all three current specs.  Most people find it easier to remember the sequential meta-schema numbers, so those are used throughout the site.
