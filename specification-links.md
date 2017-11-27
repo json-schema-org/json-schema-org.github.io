@@ -3,11 +3,9 @@ title: Specification Links
 layout: page
 ---
 
-<!-- Links on this page should be immutable -- none of them should go to `/latest`, etc. -->
+<!-- Links on this page should be immutable - none of them should go to `/latest`, etc. -->
 
 You can find the latest released draft on the [Specification](/documentation.md) page.  Older drafts are expired, but may be of historical interest.
-
-<span style="color:red">***The next draft is [ready for pre-publication feedback](/work-in-progress)!***</span>
 
 **A note on draft naming and numbering:**  
 IETF Internet-Drafts (I-Ds) are named with the editor's name and a sequential number which resets with each new editor.  Meta-schemas are numbered sequentially.  Additionally, drafts 00-03 used one document for all three current specs.  Most people find it easier to remember the sequential meta-schema numbers, so those are used throughout the site.
@@ -24,6 +22,9 @@ The next unreleased draft is a work in progress.  You can [give feedback and get
  - Hyper-Schema: [jsonschema-hyperschema.xml](https://github.com/json-schema-org/json-schema-spec/blob/master/jsonschema-hyperschema.xml)
 - [JSON Schema meta-schema](https://github.com/json-schema-org/json-schema-spec/blob/master/schema.json)
 - [JSON Hyper-Schema meta-schema](https://github.com/json-schema-org/json-schema-spec/blob/master/hyper-schema.json)
+- [JSON Hyper-Schema Link Description Object meta-schema](https://github.com/json-schema-org/json-schema-spec/blob/master/links.json)
+- [JSON Hyper-Schema recommended output schema](https://github.com/json-schema-org/json-schema-spec/blob/master/hyper-schema-output.json)
+- Relative JSON Pointers: [relative-json-pointer.xml](https://github.com/json-schema-org/json-schema-spec/blob/master/relative-json-pointer.xml)
 
 ## Draft 7
 
@@ -32,6 +33,8 @@ The next unreleased draft is a work in progress.  You can [give feedback and get
 - Hyper-Schema: [draft-handrews-json-schema-hyperschema-00](https://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-00) ([changes](https://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-00#appendix-B))
 - [JSON Schema meta-schema](http://json-schema.org/draft-07/schema)
 - [JSON Hyper-Schema meta-schema](http://json-schema.org/draft-07/hyper-schema)
+- [JSON Hyper-Schema Link Description Object meta-schema](http://json-schema.org/draft-07/links)
+- [JSON Hyper-Schema recommended output schema](http://json-schema.org/draft-07/hyper-schema-output)
 - Relative JSON Pointers: [draft-handrews-relative-json-pointer-00](https://tools.ietf.org/html/draft-handrews-relative-json-pointer-00) ([changes](https://tools.ietf.org/html/draft-handrews-relative-json-pointer-00#appendix-B))
 
 ## Draft 6
