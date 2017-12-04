@@ -224,6 +224,11 @@
       notes: 
       draft: [4]
       license: "MIT"
+    - name: Opis Json Schema
+      url: https://github.com/opis/json-schema
+      notes: 
+      draft: [6, 7]
+      license: "Apache License 2.0"
 - name: Perl
   implementations:
     - name: JSV::Validator
