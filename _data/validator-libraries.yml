@@ -7,7 +7,7 @@
       license: "MIT"
     - name: Manatee.Json
       url: https://github.com/gregsdennis/Manatee.Json
-      draft: [4, 6]
+      draft: [4, 6, 7]
       license: MIT
     - name: NJsonSchema
       url: http://NJsonSchema.org
