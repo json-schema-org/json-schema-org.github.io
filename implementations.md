@@ -59,6 +59,7 @@ Validators
 
 -   [JSON Schema Lint](http://jsonschemalint.com/) - validate against your own schemas
 -   [SchemaStore.org](http://schemastore.org/validator/) - validate against common JSON Schemas
+-   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema 
 
 ### Command Line
 
