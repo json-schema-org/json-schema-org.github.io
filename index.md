@@ -97,4 +97,4 @@ Questions? Feeling helpful? Get involved on:
 
 -   the [GitHub repo](http://github.com/json-schema-org/json-schema-spec)
 -   the [Google Group](https://groups.google.com/forum/#!forum/json-schema)
--   the [IRC channel](irc://chat.freenode.net/json-schema) ([Freenode Webchat](https://webchat.freenode.net/?channels=json-schema))
+-   the [Slack channel](https://join.slack.com/t/json-schema/shared_invite/enQtMjk1NDcyNDI2NTAwLTcyYmYwMjdmMmUxNzZjYzIxNGU2YjdkNzdlOGZiNjIwNDI2M2Y3NmRkYjA4YmMwODMwYjgyOTFlNWZjZjAyNjg)
