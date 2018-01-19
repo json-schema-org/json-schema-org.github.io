@@ -396,8 +396,8 @@
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Luff, G. and H. Andrews, Ed." />
-  <meta name="dct.identifier" content="urn:ietf:id:draft-handrews-relative-json-pointer-00" />
-  <meta name="dct.issued" scheme="ISO8601" content="2017-11-20" />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-handrews-relative-json-pointer-01" />
+  <meta name="dct.issued" scheme="ISO8601" content="2018-1-19" />
   <meta name="dct.abstract" content="JSON Pointer is a syntax for specifying locations in a JSON document, starting from the document root.  This document defines an extension to the JSON Pointer syntax, allowing relative locations from within the document.  " />
   <meta name="description" content="JSON Pointer is a syntax for specifying locations in a JSON document, starting from the document root.  This document defines an extension to the JSON Pointer syntax, allowing relative locations from within the document.  " />
 
@@ -421,12 +421,12 @@
   <td class="right">H. Andrews, Ed.</td>
 </tr>
 <tr>
-  <td class="left">Expires: May 24, 2018</td>
+  <td class="left">Expires: July 23, 2018</td>
   <td class="right">Cloudflare, Inc.</td>
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">November 20, 2017</td>
+  <td class="right">January 19, 2018</td>
 </tr>
 
     	
@@ -434,7 +434,7 @@
   </table>
 
   <p class="title">Relative JSON Pointers<br />
-  <span class="filename">draft-handrews-relative-json-pointer-00</span></p>
+  <span class="filename">draft-handrews-relative-json-pointer-01</span></p>
   
   <h1 id="rfc.abstract">
   <a href="#rfc.abstract">Abstract</a>
@@ -446,11 +446,11 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on May 24, 2018.</p>
+<p>This Internet-Draft will expire on July 23, 2018.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
-<p>Copyright (c) 2017 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
+<p>Copyright (c) 2018 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (http://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
 
   
@@ -483,22 +483,22 @@
 <h1 id="rfc.section.2"><a href="#rfc.section.2">2.</a> Conventions and Terminology</h1>
 <p id="rfc.section.2.p.1">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="#RFC2119">RFC 2119</a> <cite title="NONE">[RFC2119]</cite>.  </p>
 <h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> Syntax</h1>
-<p id="rfc.section.3.p.1">A Relative JSON Pointer is a Unicode string (see RFC 4627, <a href="#RFC4627">Section 3</a> <cite title="NONE">[RFC4627]</cite>), comprising a positive integer, followed by either a '#' (%x23) character or a JSON Pointer (<a href="#RFC6901">RFC 6901</a> <cite title="NONE">[RFC6901]</cite>).  </p>
+<p id="rfc.section.3.p.1">A Relative JSON Pointer is a Unicode string (see RFC 4627, <a href="#RFC4627">Section 3</a> <cite title="NONE">[RFC4627]</cite>), comprising a non-negative integer, followed by either a '#' (%x23) character or a JSON Pointer (<a href="#RFC6901">RFC 6901</a> <cite title="NONE">[RFC6901]</cite>).  </p>
 <p id="rfc.section.3.p.2">The separation between the integer prefix and the JSON Pointer will always be unambiguous, because a JSON Pointer must be either zero- length or start with a '/' (%x2F).  Similarly, a JSON Pointer will never be ambiguous with the '#'.  </p>
 <p>The ABNF syntax of a Relative JSON Pointer is: </p>
 <pre>
 
-      relative-json-pointer =  positive-integer &amp;lt;json-pointer&amp;gt;
-      relative-json-pointer =/ positive-integer "#"
-      positive-integer      =  %x30 / %x31-39 *( %x30-39 )
-              ; "0", or digits without a leading "0"
+   relative-json-pointer =  non-negative-integer &amp;lt;json-pointer&amp;gt;
+   relative-json-pointer =/ non-negative-integer "#"
+   non-negative-integer      =  %x30 / %x31-39 *( %x30-39 )
+           ; "0", or digits without a leading "0"
 
                 </pre>
 <p>where &lt;json-pointer&gt; follows the production defined in <a href="#RFC6901">RFC 6901, Section&#160;3</a> <cite title="NONE">[RFC6901]</cite> ("Syntax").  </p>
 <p/>
 <h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> Evaluation</h1>
 <p id="rfc.section.4.p.1">Evaluation of a Relative JSON Pointer begins with a reference to a value within a JSON document, and completes with either a value within that document, a string corresponding to an object member, or integer value representing an array index.  </p>
-<p id="rfc.section.4.p.2">Evaluation begins by processing the positive-integer prefix.  This can be found by taking the longest continuous sequence of decimal digits available, starting from the beginning of the string, taking the decimal numerical value.  If this value is more than zero, then the following steps are repeated that number of times: <a href="#RFC6901">RFC 6901, Section 4</a> <cite title="NONE">[RFC6901]</cite> ("Evaluation"), with the modification that the initial reference being used is the reference currently being held (which may not be root of the document).  </p>
+<p id="rfc.section.4.p.2">Evaluation begins by processing the non-negative-integer prefix.  This can be found by taking the longest continuous sequence of decimal digits available, starting from the beginning of the string, taking the decimal numerical value.  If this value is more than zero, then the following steps are repeated that number of times: <a href="#RFC6901">RFC 6901, Section 4</a> <cite title="NONE">[RFC6901]</cite> ("Evaluation"), with the modification that the initial reference being used is the reference currently being held (which may not be root of the document).  </p>
 
 <ul class="empty">
   <li>If the current referenced value is the root of the document, then evaluation fails (see below).  </li>
@@ -600,6 +600,13 @@
 <p/>
 
 <dl>
+  <dt>draft-handrews-relative-json-pointer-01</dt>
+  <dd style="margin-left: 8">
+    <ul>
+      <li>The initial number is "non-negative", not "positive"</li>
+    </ul>
+    <p> </p>
+  </dd>
   <dt>draft-handrews-relative-json-pointer-00</dt>
   <dd style="margin-left: 8">
     <ul>

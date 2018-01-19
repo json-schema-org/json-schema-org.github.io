@@ -20,6 +20,12 @@ to the key _changes_.  The additions, which are much more numerous,
 should be learned directly from the new specification until we can provide
 tutorials.
 
+_Note that draft-handrews-json-schema-hyperschema-00 has been replaced
+by draft-handrews-json-schema-hyperschema-01 in order to fix confusing
+bugs.  The newer -01 draft is **still considered to be draft-07**.
+It now references the draft-07 meta-schema with the correct URI, among
+other typo fixes.  There are no funcitonal changes between -00 and -01._
+
 * TOC
 {:toc}
 

@@ -10,6 +10,7 @@ You can find the latest released draft on the [Specification](/specification.htm
 **A note on draft naming and numbering:**  
 IETF Internet-Drafts (I-Ds) are named with the editor's name and a sequential number which resets with each new editor.  Meta-schemas are numbered sequentially.  Additionally, drafts 00-03 used one document for all three current specs.  Most people find it easier to remember the sequential meta-schema numbers, so those are used throughout the site.
 
+IETF draft documents do not correspond directly with meta-schema draft numbers, as a new IETF draft may be published to fix bugs in a previous document without changing implementation requirements or moving to a new meta-schema.  This is because it is not possible to edit drafts once they are published, it is only possible to replace them with a new corrected draft.
 * TOC
 {:toc}
 
@@ -30,11 +31,18 @@ The next unreleased draft is a work in progress.  You can [give feedback and get
 
 - Core: [draft-handrews-json-schema-00](https://tools.ietf.org/html/draft-handrews-json-schema-00) ([changes](https://tools.ietf.org/html/draft-handrews-json-schema-00#appendix-B))
 - Validation: [draft-handrews-json-schema-validation-00](https://tools.ietf.org/html/draft-handrews-json-schema-validation-00) ([changes](https://tools.ietf.org/html/draft-handrews-json-schema-validation-00#appendix-B))
-- Hyper-Schema: [draft-handrews-json-schema-hyperschema-00](https://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-00) ([changes](https://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-00#appendix-B))
+- Hyper-Schema: [draft-handrews-json-schema-hyperschema-01](https://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-01) ([changes](https://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-01#appendix-B))
 - [JSON Schema meta-schema](http://json-schema.org/draft-07/schema)
 - [JSON Hyper-Schema meta-schema](http://json-schema.org/draft-07/hyper-schema)
 - [JSON Hyper-Schema Link Description Object meta-schema](http://json-schema.org/draft-07/links)
 - [JSON Hyper-Schema recommended output schema](http://json-schema.org/draft-07/hyper-schema-output)
+- Relative JSON Pointers: [draft-handrews-relative-json-pointer-01](https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01) ([changes](https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01#appendix-B))
+
+### Obsolete Draft 7 Documents
+
+Play "spot the bugs"!
+
+- Hyper-Schema: [draft-handrews-json-schema-hyperschema-00](https://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-00) ([changes](https://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-00#appendix-B))
 - Relative JSON Pointers: [draft-handrews-relative-json-pointer-00](https://tools.ietf.org/html/draft-handrews-relative-json-pointer-00) ([changes](https://tools.ietf.org/html/draft-handrews-relative-json-pointer-00#appendix-B))
 
 ## Draft 6

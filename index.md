@@ -4,7 +4,7 @@ title: JSON Schema
 permalink: /
 ---
 
-***Draft-07 has been [published](specification.html)!***
+***The current version is [draft-07](specification.html)!***
 {: style="color:gray; font-size: 150%; text-align: center;"}
 
 **JSON Schema** is a vocabulary that allows you to **annotate** and **validate** JSON documents.
