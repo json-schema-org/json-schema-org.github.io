@@ -142,6 +142,7 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [Jsonary](http://jsonary.com/) (MIT)
     -   [Liform-react](https://github.com/Limenius/liform-react) (MIT)
     -   [Metawidget](http://metawidget.org/) (LGPL)
+    -   [pure-form webcomponent](https://github.com/john-doherty/pure-form) (MIT)
     -   [React JSON Schema Form](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
     -   [React Schema Form](https://github.com/networknt/react-schema-form) (MIT)
 
