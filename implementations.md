@@ -189,6 +189,8 @@ Other
 -----
 
 -   JavaScript
+    -   [json-schema-merge-allof](https://github.com/mokkabonna/json-schema-merge-allof) (MIT)
+    -   [json-schema-compare](https://github.com/mokkabonna/json-schema-compare) (MIT)
     -   [Orderly](http://orderly-json.org) (BSD)
     -   [Dojo](http://www.dojotoolkit.org/) (AFL or BSD) - supports some aspects of JSON Schema
     -   [Schematic Ipsum](http://schematic-ipsum.herokuapp.com/) (MIT)
