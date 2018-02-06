@@ -199,6 +199,10 @@
       url: https://github.com/ericgj/json-schema-valid
       draft: [4]
       license: MIT
+    - name: vue-vuelidate-jsonschema
+      url: https://github.com/mokkabonna/vue-vuelidate-jsonschema
+      draft: [6]
+      license: MIT
 - name: PHP
   implementations:
     - name: jsv4-php
