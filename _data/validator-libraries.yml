@@ -229,6 +229,11 @@
       notes: 
       draft: [6, 7]
       license: "Apache License 2.0"
+    - name: Swaggest Json Schema
+      url: https://github.com/swaggest/php-json-schema
+      notes:
+      draft: [4, 6, 7]
+      license: "MIT"
 - name: Perl
   implementations:
     - name: JSV::Validator
