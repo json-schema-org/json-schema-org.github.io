@@ -1,0 +1,78 @@
+- name: .NET
+  anchor-name: dotnet
+  implementations:
+    - name: Json.NET Schema
+      url: https://www.newtonsoft.com/jsonschema
+      draft: [7, 6, 4, 3]
+      license: "AGPL-3.0-only"
+    - name: Manatee.Json
+      url: https://github.com/gregsdennis/Manatee.Json
+      draft: [7, 6, 4]
+      license: MIT
+- name: Elixir
+  implementations:
+    - name: Elixir JSON Schema validator
+      url: https://github.com/jonasschmidt/ex_json_schema
+      draft: [4]
+      notes: Support for more recent drafts in progress
+      license: MIT
+- name: Go
+  implementations:
+    - name: gojsonschema
+      url: https://github.com/xeipuuv/gojsonschema
+      draft: [7, 6, 4]
+      license: "Apache 2.0"
+    - name: jsonschema
+      url: https://github.com/santhosh-tekuri/jsonschema
+      notes:
+      draft: [7, 6, 4]
+      license: BSD-3-Clause
+- name: Java
+  implementations:
+    - name: everit-org/json-schema
+      url: https://github.com/everit-org/json-schema
+      notes:
+      draft: [7, 6, 4]
+      license: Apache License 2.0
+- name: JavaScript
+  implementations:
+    - name: ajv
+      url: https://github.com/epoberezkin/ajv
+      notes: "for Node.js and browsers - *supports [custom keywords](https://github.com/epoberezkin/ajv-keywords) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51)*"
+      draft: [7, 6, 4]
+      license: MIT
+    - name: djv
+      url: https://github.com/korzio/djv
+      notes: "for Node.js and browsers"
+      draft: [6, 4]
+      license: MIT
+    - name: vue-vuelidate-jsonschema
+      url: https://github.com/mokkabonna/vue-vuelidate-jsonschema
+      draft: [6]
+      license: MIT
+- name: PHP
+  implementations:
+    - name: Opis Json Schema
+      url: https://github.com/opis/json-schema
+      notes:
+      draft: [7, 6]
+      license: "Apache License 2.0"
+    - name: Swaggest Json Schema
+      url: https://github.com/swaggest/php-json-schema
+      notes:
+      draft: [7, 6, 4]
+      license: "MIT"
+- name: Python
+  implementations:
+    - name: jsonschema
+      url: https://github.com/Julian/jsonschema
+      notes: Support for draft-06 nearing beta
+      draft: [4, 3]
+      license: "MIT"
+- name: Ruby
+  implementations:
+    - name: JSONSchemer
+      url: https://github.com/davishmcclurg/json_schemer
+      notes:
+      draft: [7, 6, 4]
+      license: MIT
