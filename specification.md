@@ -16,13 +16,13 @@ The specification is split into three parts, Core, Validation, and Hyper-Schema,
 |--------------------------------------------------------------|-------------------------------------------------------|
 | [JSON Schema Core](latest/json-schema-core.html)             | defines the basic foundation of JSON Schema           |
 | [JSON Schema Validation](latest/json-schema-validation.html) | defines the validation keywords of JSON Schema        |
-| [JSON Hyper-Schema](latest/json-schema-hypermedia.html)      | defines the hyper-media keywords of JSON Schema       |
+| [JSON Hyper-Schema](latest/json-schema-hypermedia.html) ([errata](https://github.com/json-schema-org/json-schema-spec/issues?q=label%3Aerrata+label%3Ahypermedia))     | defines the hyper-media keywords of JSON Schema       |
 | [Relative JSON Pointers](latest/relative-json-pointer.html)  | extends the JSON Pointer sytnax for relative pointers |
 
 They are also available on the IETF main site:
 * [draft-handrews-json-schema-00 (core)](http://tools.ietf.org/html/draft-handrews-json-schema-00)
 * [draft-handrews-json-schema-validation-00](http://tools.ietf.org/html/draft-handrews-json-schema-validation-00)
-* [draft-handrews-json-schema-hyperschema-01](http://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-01)
+* [draft-handrews-json-schema-hyperschema-01](http://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-01) ([errata](https://github.com/json-schema-org/json-schema-spec/issues?q=label%3Aerrata+label%3Ahypermedia))
 * [draft-handrews-relative-json-pointer-01](https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01)
 
 Meta-schemas
