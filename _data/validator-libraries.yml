@@ -4,7 +4,7 @@
     - name: Json.NET Schema
       url: https://www.newtonsoft.com/jsonschema
       draft: [3, 4, 6, 7]
-      license: "MIT"
+      license: "AGPL-3.0-only"
     - name: Manatee.Json
       url: https://github.com/gregsdennis/Manatee.Json
       draft: [4, 6, 7]
@@ -115,10 +115,10 @@
       notes: "includes draft-04 hype-schema syntax support"
       draft: [4]
       license: LGPLv3
-    - name: json-schema (implementation based on the org.json API)
+    - name: everit-org/json-schema
       url: https://github.com/everit-org/json-schema
       notes: 
-      draft: [4, 6]
+      draft: [4, 6, 7]
       license: Apache License 2.0
     - name: json-schema-validator
       url: https://github.com/networknt/json-schema-validator
