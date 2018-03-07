@@ -70,6 +70,21 @@ Validators
 - [{{ tool.name }}]({{ tool.url }}) [draft {{ tool.draft | join: ", draft " }}] ({{ tool.license | join: ", " }}){% if tool.notes %}
   - {{ tool.notes }} {% endif %}{% endfor %}
 
+### Benchmarks
+
+-   Java
+    -   [json-schema-validator-benchmark](https://github.com/networknt/json-schema-validator-perftest) - compares performance of three JSON schema validator implementations in Java(Apache 2.0)
+
+<!-- -->
+
+-   JavaScript
+    -   [json-schema-benchmark](https://github.com/ebdrup/json-schema-benchmark) - an independent benchmark for Node.js JSON-schema validators based on JSON-Schema Test Suite (MIT)
+    -   [z-schema validator benchmark](https://github.com/zaggino/z-schema#benchmarks) - compares performance in the individual tests from JSON-Schema Test Suite (MIT)
+    -   [JSCK validator benchmark](https://github.com/pandastrike/jsck#benchmarks) - shows performance for JSON-schemas of different complexity (MIT)
+
+-   PHP
+    -   [php-json-schema-bench](https://github.com/swaggest/php-json-schema-bench) - comparative benchmark for JSON-schema PHP validators using JSON-Schema Test Suite and z-schema/JSCK (MIT)
+
 Hyper-Schema
 ---------------------
 
@@ -108,22 +123,6 @@ Hyper-Schema
   {% endfor %}
 </ul>
 
-
-Validation benchmarks
----------------------
-
--   Java
-    -   [json-schema-validator-benchmark](https://github.com/networknt/json-schema-validator-perftest) - compares performance of three JSON schema validator implementations in Java(Apache 2.0)
-
-<!-- -->
-
--   JavaScript
-    -   [json-schema-benchmark](https://github.com/ebdrup/json-schema-benchmark) - an independent benchmark for Node.js JSON-schema validators based on JSON-Schema Test Suite (MIT)
-    -   [z-schema validator benchmark](https://github.com/zaggino/z-schema#benchmarks) - compares performance in the individual tests from JSON-Schema Test Suite (MIT)
-    -   [JSCK validator benchmark](https://github.com/pandastrike/jsck#benchmarks) - shows performance for JSON-schemas of different complexity (MIT)
-
--   PHP
-    -   [php-json-schema-bench](https://github.com/swaggest/php-json-schema-bench) - comparative benchmark for JSON-schema PHP validators using JSON-Schema Test Suite and z-schema/JSCK (MIT)
 
 Schema generation
 -----------------
