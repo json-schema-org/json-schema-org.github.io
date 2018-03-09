@@ -70,9 +70,7 @@ Validators
 - [{{ tool.name }}]({{ tool.url }}) [draft {{ tool.draft | join: ", draft " }}] ({{ tool.license | join: ", " }}){% if tool.notes %}
   - {{ tool.notes }} {% endif %}{% endfor %}
 
-
-Validation benchmarks
----------------------
+### Benchmarks
 
 -   Java
     -   [json-schema-validator-benchmark](https://github.com/networknt/json-schema-validator-perftest) - compares performance of three JSON schema validator implementations in Java(Apache 2.0)
@@ -86,6 +84,45 @@ Validation benchmarks
 
 -   PHP
     -   [php-json-schema-bench](https://github.com/swaggest/php-json-schema-bench) - comparative benchmark for JSON-schema PHP validators using JSON-Schema Test Suite and z-schema/JSCK (MIT)
+
+Hyper-Schema
+---------------------
+
+<nav class="intra" markdown="1">
+
+{% assign hyper-schema-libraries = site.data.hyper-schema-libraries | sort:"name" %}
+
+{% for language in hyper-schema-libraries %}
+-   [{{ language.name }}](#hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %})
+{% endfor %}
+
+</nav>
+
+<!-- To add a hyper-schema library, add it in _data/hyper-schema-libraries.yml -->
+
+<ul>
+  {% for language in hyper-schema-libraries %}
+  <li>
+    {{language.name}} <a id="hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %}"></a>
+    <ul>
+    {% for implementation in language.implementations %}
+        <li>
+        <a href="{{implementation.url}}">{{ implementation.name }}</a>
+        
+        {% if implementation.draft %}
+            <em>supports draft {{ implementation.draft | join: ", draft " }}</em>
+        {% endif %}
+
+        {{implementation.notes | markdownify | remove: '<p>' | remove: '</p>'}}
+        ({{ implementation.license | join: ", " }})
+
+        </li>
+    {% endfor %}
+    </ul>
+  </li>
+  {% endfor %}
+</ul>
+
 
 Schema generation
 -----------------
@@ -168,14 +205,6 @@ Compatibility
 
 -   JavaScript
     -   [JSON Schema Compatibility](https://github.com/geraintluff/json-schema-compatability) - *converts draft 3 to draft 4* (Public Domain)
-
-Hyper-schema handling
----------------------
-
--   JavaScript
-    -   [Jsonary](http://jsonary.com/) - *supports draft 4* (MIT)
--   Python
-    -   [Core API Hyper-Schema codec](https://github.com/core-api/python-jsonhyperschema-codec) - *supports draft 4* (BSD-2-Clause)
 
 Documentation generation
 ------------------------

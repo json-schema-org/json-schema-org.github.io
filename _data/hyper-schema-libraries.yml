@@ -1,0 +1,16 @@
+- name: JavaScript
+  implementations:
+    - name: mokkabonna/json-hyper-schema
+      url: "https://github.com/mokkabonna/json-hyper-schema"
+      license: MIT
+      draft: [7]
+    - name: Jsonary
+      url: "http://jsonary.com/"
+      license: MIT
+      draft: [4]
+- name: Python
+  implementations:
+    - name: Core API Hyper-Schema codec
+      url: "https://github.com/core-api/python-jsonhyperschema-codec"
+      draft: [4]
+      license: BSD-2-Clause
