@@ -93,7 +93,7 @@ Hyper-Schema
 
 <nav class="intra" markdown="1">
 
-{% assign hyper-schema-libraries = site.data.hyper-schema-libraries | sort:"name" %}
+{% assign hyper-schema-libraries = site.data.hyper-libraries-modern | sort:"name" %}
 
 {% for language in hyper-schema-libraries %}
 -   [{{ language.name }}](#hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %})
@@ -111,7 +111,7 @@ Hyper-Schema
     {% for implementation in language.implementations %}
         <li>
         <a href="{{implementation.url}}">{{ implementation.name }}</a>
-        
+
         {% if implementation.draft %}
             <em>supports draft {{ implementation.draft | join: ", draft " }}</em>
         {% endif %}
