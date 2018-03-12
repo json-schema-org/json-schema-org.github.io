@@ -5,11 +5,18 @@ permalink: /specification.html
 title: Specification
 ---
 
+* TOC
+{:toc}
+
+Draft numbering
+---------------
+
 The latest Internet-Drafts at the IETF are the **draft-handrews-json-schema\*-00** (Core and Validation) and **draft-handrews-json-schema\*-01** (Hyper-Schema and Relative JSON Pointer) documents, which correspond to the **draft-07** meta-schemas. These were published on **2017-11-19** (-00) and **2018-01-19** (-01).
 
 Due to a change in author/editorship the I-D numbering was reset to -00 again.  Due to bugs in the -00 Hyper-Schema and Relative JSON Pointer specifications, they have been replaced with -01, but are still considered draft-07 as there is no functional change.
 
-Please see the **[migration notes](draft-07/README.md)** (which will soon be updated for draft-07) for more information on this release and on migrating from draft-04.
+Specification documents
+-----------------------
 
 The specification is split into three parts, Core, Validation, and Hyper-Schema, along with a related specification, Relative JSON Pointers:
 
@@ -42,8 +49,12 @@ Migrating from draft-04 or draft-06
 
 The release notes discuss the changes impacting users and implementors:
 
-- [JSON Schema Core and Validation](draft-07/json-schema-release-notes.html)
-- [JSON Hyper-Schema](draft-07/json-hyper-schema-release-notes.html)
+- JSON Schema Core and Validation
+    - [Draft-06 to Draft-07](draft-07/json-schema-release-notes.html)
+    - [Draft-04 to Draft-06](draft-06/json-schema-release-notes.html)
+- JSON Hyper-Schema
+    - [Draft-04 to Draft-07](draft-07/json-hyper-schema-release-notes.html)
+    - [Draft-04 to Draft-06](draft-06/json-hyper-schema-release-notes.html)
 
 Older drafts
 ------------

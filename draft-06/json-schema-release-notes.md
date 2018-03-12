@@ -1,9 +1,11 @@
 ---
-title: JSON Schema Draft 6 migration FAQ
+title: JSON Schema Draft-06 Release Notes
 layout: page
+redirect_from: "/draft-06/json-schema-migration-faq.html"
+permalink: /draft-06/json-schema-release-notes.html
 ---
 
-FAQ for migrating from zyp-04 and fge-00 (draft-04) to wright-01 (draft-06).
+Release notes for migrating from zyp-04 and fge-00 (draft-04) to wright-01 (draft-06).
 
 * TOC
 {:toc}

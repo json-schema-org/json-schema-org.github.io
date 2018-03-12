@@ -1,9 +1,11 @@
 ---
-title: JSON Hyper-Schema Draft 6 migration FAQ
+title: JSON Hyper-Schema Draft-06 Release Notes
 layout: page
+redirect_from: "/draft-06/json-hyper-schema-migration-faq.html"
+permalink: /draft-06/json-hyper-schema-release-notes.html
 ---
 
-FAQ for migrating from draft-luff-json-hyper-schema-00 (draft-04) to draft-wright-json-schema-hyperschema-01 (draft-06).
+Release notes for migrating from draft-luff-json-hyper-schema-00 (draft-04) to draft-wright-json-schema-hyperschema-01 (draft-06).
 
 * TOC
 {:toc}

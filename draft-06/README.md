@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Draft 6 Release Notes
+# Draft-06 Release Notes
 
-- [JSON Schema Release FAQ](json-schema-migration-faq.md)
-- [JSON Hyper-Schema Release FAQ](json-hyper-schema-migration-faq.md)
+- [JSON Schema Release Notes](json-schema-release-notes.md)
+- [JSON Hyper-Schema Release Notes](json-hyper-schema-release-notes.md)
