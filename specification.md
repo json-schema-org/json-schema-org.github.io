@@ -44,7 +44,7 @@ The latest meta-schema is **draft-07**.
 
 _If you are accessing the above meta-schema links **from a web browser**, you will need to **save the file** then open it as a JSON document._
 
-Migrating from draft-04 or draft-06
+Migrating from older drafts
 -------------
 
 The release notes discuss the changes impacting users and implementors:
