@@ -378,7 +378,8 @@
 <link href="#rfc.section.2" rel="Chapter" title="2 Conventions and Terminology"/>
 <link href="#rfc.section.3" rel="Chapter" title="3 Overview"/>
 <link href="#rfc.section.3.1" rel="Chapter" title="3.1 Validation"/>
-<link href="#rfc.section.3.2" rel="Chapter" title="3.2 Hypermedia and Linking"/>
+<link href="#rfc.section.3.2" rel="Chapter" title="3.2 Annotation"/>
+<link href="#rfc.section.3.3" rel="Chapter" title="3.3 Hypermedia and Linking"/>
 <link href="#rfc.section.4" rel="Chapter" title="4 Definitions"/>
 <link href="#rfc.section.4.1" rel="Chapter" title="4.1 JSON Document"/>
 <link href="#rfc.section.4.2" rel="Chapter" title="4.2 Instance"/>
@@ -396,35 +397,39 @@
 <link href="#rfc.section.6.3" rel="Chapter" title="6.3 Mathematical Integers"/>
 <link href="#rfc.section.6.4" rel="Chapter" title="6.4 Extending JSON Schema"/>
 <link href="#rfc.section.7" rel="Chapter" title="7 The &quot;$schema&quot; Keyword"/>
-<link href="#rfc.section.8" rel="Chapter" title="8 Schema References With &quot;$ref&quot;"/>
-<link href="#rfc.section.9" rel="Chapter" title="9 Base URI and Dereferencing"/>
-<link href="#rfc.section.9.1" rel="Chapter" title="9.1 Initial Base URI"/>
-<link href="#rfc.section.9.2" rel="Chapter" title="9.2 The &quot;$id&quot; Keyword"/>
-<link href="#rfc.section.9.2.1" rel="Chapter" title="9.2.1 Internal References"/>
-<link href="#rfc.section.9.2.2" rel="Chapter" title="9.2.2 External References"/>
-<link href="#rfc.section.10" rel="Chapter" title="10 Comments With &quot;$comment&quot;"/>
-<link href="#rfc.section.11" rel="Chapter" title="11 Usage for Hypermedia"/>
-<link href="#rfc.section.11.1" rel="Chapter" title="11.1 Linking to a Schema"/>
-<link href="#rfc.section.11.2" rel="Chapter" title="11.2 Identifying a Schema via a Media Type Parameter"/>
-<link href="#rfc.section.11.3" rel="Chapter" title="11.3 Usage Over HTTP"/>
-<link href="#rfc.section.12" rel="Chapter" title="12 Security Considerations"/>
-<link href="#rfc.section.13" rel="Chapter" title="13 IANA Considerations"/>
-<link href="#rfc.section.13.1" rel="Chapter" title="13.1 application/schema+json"/>
-<link href="#rfc.section.13.2" rel="Chapter" title="13.2 application/schema-instance+json"/>
-<link href="#rfc.references" rel="Chapter" title="14 References"/>
-<link href="#rfc.references.1" rel="Chapter" title="14.1 Normative References"/>
-<link href="#rfc.references.2" rel="Chapter" title="14.2 Informative References"/>
+<link href="#rfc.section.8" rel="Chapter" title="8 Base URI and Dereferencing"/>
+<link href="#rfc.section.8.1" rel="Chapter" title="8.1 Initial Base URI"/>
+<link href="#rfc.section.8.2" rel="Chapter" title="8.2 The &quot;$id&quot; Keyword"/>
+<link href="#rfc.section.8.2.1" rel="Chapter" title="8.2.1 Identifying the root schema"/>
+<link href="#rfc.section.8.2.2" rel="Chapter" title="8.2.2 Changing the base URI within a schema file"/>
+<link href="#rfc.section.8.2.3" rel="Chapter" title="8.2.3 Location-independent identifiers"/>
+<link href="#rfc.section.8.2.4" rel="Chapter" title="8.2.4 Schema identification examples"/>
+<link href="#rfc.section.8.3" rel="Chapter" title="8.3 Schema References With &quot;$ref&quot;"/>
+<link href="#rfc.section.8.3.1" rel="Chapter" title="8.3.1 Loading a referenced schema"/>
+<link href="#rfc.section.8.3.2" rel="Chapter" title="8.3.2 Dereferencing"/>
+<link href="#rfc.section.9" rel="Chapter" title="9 Comments With &quot;$comment&quot;"/>
+<link href="#rfc.section.10" rel="Chapter" title="10 Usage for Hypermedia"/>
+<link href="#rfc.section.10.1" rel="Chapter" title="10.1 Linking to a Schema"/>
+<link href="#rfc.section.10.2" rel="Chapter" title="10.2 Identifying a Schema via a Media Type Parameter"/>
+<link href="#rfc.section.10.3" rel="Chapter" title="10.3 Usage Over HTTP"/>
+<link href="#rfc.section.11" rel="Chapter" title="11 Security Considerations"/>
+<link href="#rfc.section.12" rel="Chapter" title="12 IANA Considerations"/>
+<link href="#rfc.section.12.1" rel="Chapter" title="12.1 application/schema+json"/>
+<link href="#rfc.section.12.2" rel="Chapter" title="12.2 application/schema-instance+json"/>
+<link href="#rfc.references" rel="Chapter" title="13 References"/>
+<link href="#rfc.references.1" rel="Chapter" title="13.1 Normative References"/>
+<link href="#rfc.references.2" rel="Chapter" title="13.2 Informative References"/>
 <link href="#rfc.appendix.A" rel="Chapter" title="A Acknowledgments"/>
 <link href="#rfc.appendix.B" rel="Chapter" title="B ChangeLog"/>
 <link href="#rfc.authors" rel="Chapter"/>
 
 
-  <meta name="generator" content="xml2rfc version 2.5.2 - http://tools.ietf.org/tools/xml2rfc" />
+  <meta name="generator" content="xml2rfc version 2.5.1 - http://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Wright, A., Ed. and H. Andrews, Ed." />
-  <meta name="dct.identifier" content="urn:ietf:id:draft-handrews-json-schema-00" />
-  <meta name="dct.issued" scheme="ISO8601" content="2017-11-20" />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-handrews-json-schema-01" />
+  <meta name="dct.issued" scheme="ISO8601" content="2018-3-19" />
   <meta name="dct.abstract" content="JSON Schema defines the media type &quot;application/schema+json&quot;, a JSON-based format for describing the structure of JSON data.  JSON Schema asserts what a JSON document must look like, ways to extract information from it, and how to interact with it.  The &quot;application/schema-instance+json&quot; media type provides additional feature-rich integration with &quot;application/schema+json&quot; beyond what can be offered for &quot;application/json&quot; documents.  " />
   <meta name="description" content="JSON Schema defines the media type &quot;application/schema+json&quot;, a JSON-based format for describing the structure of JSON data.  JSON Schema asserts what a JSON document must look like, ways to extract information from it, and how to interact with it.  The &quot;application/schema-instance+json&quot; media type provides additional feature-rich integration with &quot;application/schema+json&quot; beyond what can be offered for &quot;application/json&quot; documents.  " />
 
@@ -448,12 +453,12 @@
   <td class="right">H. Andrews, Ed.</td>
 </tr>
 <tr>
-  <td class="left">Expires: May 24, 2018</td>
+  <td class="left">Expires: September 20, 2018</td>
   <td class="right">Cloudflare, Inc.</td>
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">November 20, 2017</td>
+  <td class="right">March 19, 2018</td>
 </tr>
 
     	
@@ -461,7 +466,7 @@
   </table>
 
   <p class="title">JSON Schema: A Media Type for Describing JSON Documents<br />
-  <span class="filename">draft-handrews-json-schema-00</span></p>
+  <span class="filename">draft-handrews-json-schema-01</span></p>
   
   <h1 id="rfc.abstract">
   <a href="#rfc.abstract">Abstract</a>
@@ -479,11 +484,11 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on May 24, 2018.</p>
+<p>This Internet-Draft will expire on September 20, 2018.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
-<p>Copyright (c) 2017 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
+<p>Copyright (c) 2018 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (http://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
 
   
@@ -495,7 +500,8 @@
 <li>2.   <a href="#rfc.section.2">Conventions and Terminology</a></li>
 <li>3.   <a href="#rfc.section.3">Overview</a></li>
 <ul><li>3.1.   <a href="#rfc.section.3.1">Validation</a></li>
-<li>3.2.   <a href="#rfc.section.3.2">Hypermedia and Linking</a></li>
+<li>3.2.   <a href="#rfc.section.3.2">Annotation</a></li>
+<li>3.3.   <a href="#rfc.section.3.3">Hypermedia and Linking</a></li>
 </ul><li>4.   <a href="#rfc.section.4">Definitions</a></li>
 <ul><li>4.1.   <a href="#rfc.section.4.1">JSON Document</a></li>
 <li>4.2.   <a href="#rfc.section.4.2">Instance</a></li>
@@ -513,24 +519,28 @@
 <li>6.3.   <a href="#rfc.section.6.3">Mathematical Integers</a></li>
 <li>6.4.   <a href="#rfc.section.6.4">Extending JSON Schema</a></li>
 </ul><li>7.   <a href="#rfc.section.7">The "$schema" Keyword</a></li>
-<li>8.   <a href="#rfc.section.8">Schema References With "$ref"</a></li>
-<li>9.   <a href="#rfc.section.9">Base URI and Dereferencing</a></li>
-<ul><li>9.1.   <a href="#rfc.section.9.1">Initial Base URI</a></li>
-<li>9.2.   <a href="#rfc.section.9.2">The "$id" Keyword</a></li>
-<ul><li>9.2.1.   <a href="#rfc.section.9.2.1">Internal References</a></li>
-<li>9.2.2.   <a href="#rfc.section.9.2.2">External References</a></li>
-</ul></ul><li>10.   <a href="#rfc.section.10">Comments With "$comment"</a></li>
-<li>11.   <a href="#rfc.section.11">Usage for Hypermedia</a></li>
-<ul><li>11.1.   <a href="#rfc.section.11.1">Linking to a Schema</a></li>
-<li>11.2.   <a href="#rfc.section.11.2">Identifying a Schema via a Media Type Parameter</a></li>
-<li>11.3.   <a href="#rfc.section.11.3">Usage Over HTTP</a></li>
-</ul><li>12.   <a href="#rfc.section.12">Security Considerations</a></li>
-<li>13.   <a href="#rfc.section.13">IANA Considerations</a></li>
-<ul><li>13.1.   <a href="#rfc.section.13.1">application/schema+json</a></li>
-<li>13.2.   <a href="#rfc.section.13.2">application/schema-instance+json</a></li>
-</ul><li>14.   <a href="#rfc.references">References</a></li>
-<ul><li>14.1.   <a href="#rfc.references.1">Normative References</a></li>
-<li>14.2.   <a href="#rfc.references.2">Informative References</a></li>
+<li>8.   <a href="#rfc.section.8">Base URI and Dereferencing</a></li>
+<ul><li>8.1.   <a href="#rfc.section.8.1">Initial Base URI</a></li>
+<li>8.2.   <a href="#rfc.section.8.2">The "$id" Keyword</a></li>
+<ul><li>8.2.1.   <a href="#rfc.section.8.2.1">Identifying the root schema</a></li>
+<li>8.2.2.   <a href="#rfc.section.8.2.2">Changing the base URI within a schema file</a></li>
+<li>8.2.3.   <a href="#rfc.section.8.2.3">Location-independent identifiers</a></li>
+<li>8.2.4.   <a href="#rfc.section.8.2.4">Schema identification examples</a></li>
+</ul><li>8.3.   <a href="#rfc.section.8.3">Schema References With "$ref"</a></li>
+<ul><li>8.3.1.   <a href="#rfc.section.8.3.1">Loading a referenced schema</a></li>
+<li>8.3.2.   <a href="#rfc.section.8.3.2">Dereferencing</a></li>
+</ul></ul><li>9.   <a href="#rfc.section.9">Comments With "$comment"</a></li>
+<li>10.   <a href="#rfc.section.10">Usage for Hypermedia</a></li>
+<ul><li>10.1.   <a href="#rfc.section.10.1">Linking to a Schema</a></li>
+<li>10.2.   <a href="#rfc.section.10.2">Identifying a Schema via a Media Type Parameter</a></li>
+<li>10.3.   <a href="#rfc.section.10.3">Usage Over HTTP</a></li>
+</ul><li>11.   <a href="#rfc.section.11">Security Considerations</a></li>
+<li>12.   <a href="#rfc.section.12">IANA Considerations</a></li>
+<ul><li>12.1.   <a href="#rfc.section.12.1">application/schema+json</a></li>
+<li>12.2.   <a href="#rfc.section.12.2">application/schema-instance+json</a></li>
+</ul><li>13.   <a href="#rfc.references">References</a></li>
+<ul><li>13.1.   <a href="#rfc.references.1">Normative References</a></li>
+<li>13.2.   <a href="#rfc.references.2">Informative References</a></li>
 </ul><li>Appendix A.   <a href="#rfc.appendix.A">Acknowledgments</a></li>
 <li>Appendix B.   <a href="#rfc.appendix.B">ChangeLog</a></li>
 <li><a href="#rfc.authors">Authors' Addresses</a></li>
@@ -550,9 +560,12 @@
 <h1 id="rfc.section.3.1"><a href="#rfc.section.3.1">3.1.</a> Validation</h1>
 <p id="rfc.section.3.1.p.1">JSON Schema describes the structure of a JSON document (for instance, required properties and length limitations).  Applications can use this information to validate instances (check that constraints are met), or inform interfaces to collect user input such that the constraints are satisfied.  </p>
 <p id="rfc.section.3.1.p.2">Validation behaviour and keywords are specified in <a href="#json-schema-validation">a separate document</a> <cite title="NONE">[json-schema-validation]</cite>.  </p>
-<h1 id="rfc.section.3.2"><a href="#rfc.section.3.2">3.2.</a> Hypermedia and Linking</h1>
-<p id="rfc.section.3.2.p.1">JSON Hyper-Schema describes the hypertext structure of a JSON document.  This includes link relations from the instance to other resources, interpretation of instances as multimedia data, and submission data required to use an API.  </p>
-<p id="rfc.section.3.2.p.2">Hyper-schema behaviour and keywords are specified in <a href="#json-hyper-schema">a separate document</a> <cite title="NONE">[json-hyper-schema]</cite>.  </p>
+<h1 id="rfc.section.3.2"><a href="#rfc.section.3.2">3.2.</a> Annotation</h1>
+<p id="rfc.section.3.2.p.1">JSON Schema can annotate an instance with information, whenever the instance validates against the schema object containing the annotation, and all of its parent schema objects.  </p>
+<p id="rfc.section.3.2.p.2">Detailed annotation behavior, along with a small set of basic annotation keywords are defined in <a href="#json-schema-validation">the validation specification</a> <cite title="NONE">[json-schema-validation]</cite>.  </p>
+<h1 id="rfc.section.3.3"><a href="#rfc.section.3.3">3.3.</a> Hypermedia and Linking</h1>
+<p id="rfc.section.3.3.p.1">JSON Hyper-Schema describes the hypertext structure of a JSON document.  This includes link relations from the instance to other resources, interpretation of instances as multimedia data, and submission data required to use an API.  </p>
+<p id="rfc.section.3.3.p.2">Hyper-schema behaviour and keywords are specified in <a href="#json-hyper-schema">a separate document</a> <cite title="NONE">[json-hyper-schema]</cite>.  </p>
 <h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> Definitions</h1>
 <h1 id="rfc.section.4.1"><a href="#rfc.section.4.1">4.1.</a> JSON Document</h1>
 <p id="rfc.section.4.1.p.1">A JSON document is an information resource (series of octets) described by the application/json media type.  </p>
@@ -565,17 +578,17 @@
 <p id="rfc.section.4.2.1.p.2">An instance has one of six primitive types, and a range of possible values depending on the type: </p>
 
 <dl>
-  <dt>null</dt>
+  <dt>null:</dt>
   <dd style="margin-left: 8">A JSON "null" production</dd>
-  <dt>boolean</dt>
+  <dt>boolean:</dt>
   <dd style="margin-left: 8">A "true" or "false" value, from the JSON "true" or "false" productions</dd>
-  <dt>object</dt>
+  <dt>object:</dt>
   <dd style="margin-left: 8">An unordered set of properties mapping a string to an instance, from the JSON "object" production</dd>
-  <dt>array</dt>
+  <dt>array:</dt>
   <dd style="margin-left: 8">An ordered list of instances, from the JSON "array" production</dd>
-  <dt>number</dt>
+  <dt>number:</dt>
   <dd style="margin-left: 8">An arbitrary-precision, base-10 decimal number value, from the JSON "number" production</dd>
-  <dt>string</dt>
+  <dt>string:</dt>
   <dd style="margin-left: 8">A string of Unicode code points, from the JSON "string" production</dd>
 </dl>
 
@@ -609,9 +622,9 @@
 <p id="rfc.section.4.3.1.p.2">Object properties that are applied to the instance are called keywords, or schema keywords.  Broadly speaking, keywords fall into one or both of two categories: </p>
 
 <dl>
-  <dt>assertions</dt>
+  <dt>assertions:</dt>
   <dd style="margin-left: 8">produce a boolean result when applied to an instance </dd>
-  <dt>annotations</dt>
+  <dt>annotations:</dt>
   <dd style="margin-left: 8">attach information to an instance for application use </dd>
 </dl>
 
@@ -620,9 +633,9 @@
 <p id="rfc.section.4.3.1.p.4">The boolean schema values "true" and "false" are trivial assertions that always return themselves regardless of the instance value.  As an example, in terms of the validation vocabulary, boolean schemas are equivalent to the following behaviors: </p>
 
 <dl>
-  <dt>true</dt>
+  <dt>true:</dt>
   <dd style="margin-left: 8">Always passes validation, as if the empty schema {} </dd>
-  <dt>false</dt>
+  <dt>false:</dt>
   <dd style="margin-left: 8">Always fails validation, as if the schema { "not":{} } </dd>
 </dl>
 
@@ -675,22 +688,24 @@
 <p id="rfc.section.7.p.4">The "$schema" keyword SHOULD be used in a root schema.  It MUST NOT appear in subschemas.  </p>
 <p><a id="CREF2" class="info">[CREF2]<span class="info">Using multiple "$schema" keywords in the same document would imply that the vocabulary and therefore behavior can change within a document.  This would necessitate resolving a number of implementation concerns that have not yet been clearly defined.  So, while the pattern of using "$schema" only in root schemas is likely to remain the best practice for schema authoring, implementation behavior is subject to be revised or liberalized in future drafts.  </span></a> </p>
 <p id="rfc.section.7.p.6">Values for this property are defined in other documents and by other parties.  JSON Schema implementations SHOULD implement support for current and previous published drafts of JSON Schema vocabularies as deemed reasonable.  </p>
-<h1 id="rfc.section.8"><a href="#rfc.section.8">8.</a> Schema References With "$ref"</h1>
-<p id="rfc.section.8.p.1">The "$ref" keyword is used to reference a schema, and provides the ability to validate recursive structures through self-reference.  </p>
-<p id="rfc.section.8.p.2">An object schema with a "$ref" property MUST be interpreted as a "$ref" reference.  The value of the "$ref" property MUST be a URI Reference.  Resolved against the current URI base, it identifies the URI of a schema to use.  All other properties in a "$ref" object MUST be ignored.  </p>
-<p id="rfc.section.8.p.3">The URI is not a network locator, only an identifier. A schema need not be downloadable from the address if it is a network-addressable URL, and implementations SHOULD NOT assume they should perform a network operation when they encounter a network-addressable URI.  </p>
-<p id="rfc.section.8.p.4">A schema MUST NOT be run into an infinite loop against a schema. For example, if two schemas "#alice" and "#bob" both have an "allOf" property that refers to the other, a naive validator might get stuck in an infinite recursive loop trying to validate the instance.  Schemas SHOULD NOT make use of infinite recursive nesting like this; the behavior is undefined.  </p>
-<h1 id="rfc.section.9"><a href="#rfc.section.9">9.</a> Base URI and Dereferencing</h1>
-<h1 id="rfc.section.9.1"><a href="#rfc.section.9.1">9.1.</a> Initial Base URI</h1>
+<h1 id="rfc.section.8"><a href="#rfc.section.8">8.</a> Base URI and Dereferencing</h1>
+<p id="rfc.section.8.p.1">To differentiate between schemas in a vast ecosystem, schemas are identified by <a href="#RFC3986">URI</a> <cite title="NONE">[RFC3986]</cite>, and can embed references to other schemas by specifying their URI.  </p>
+<h1 id="rfc.section.8.1"><a href="#rfc.section.8.1">8.1.</a> Initial Base URI</h1>
 <p><a href="#RFC3986">RFC3986 Section 5.1</a> <cite title="NONE">[RFC3986]</cite> defines how to determine the default base URI of a document.  </p>
-<p id="rfc.section.9.1.p.2">Informatively, the initial base URI of a schema is the URI at which it was found, or a suitable substitute URI if none is known.  </p>
-<h1 id="rfc.section.9.2"><a href="#rfc.section.9.2">9.2.</a> <a href="#id-keyword" id="id-keyword">The "$id" Keyword</a></h1>
-<p id="rfc.section.9.2.p.1">The "$id" keyword defines a URI for the schema, and the base URI that other URI references within the schema are resolved against.  A subschema's "$id" is resolved against the base URI of its parent schema.  If no parent sets an explicit base with "$id", the base URI is that of the entire document, as determined per <a href="#RFC3986">RFC 3986 section 5</a> <cite title="NONE">[RFC3986]</cite>.  </p>
-<p id="rfc.section.9.2.p.2">If present, the value for this keyword MUST be a string, and MUST represent a valid <a href="#RFC3986">URI-reference</a> <cite title="NONE">[RFC3986]</cite>.  This value SHOULD be normalized, and SHOULD NOT be an empty fragment &lt;#&gt; or an empty string &lt;&gt;.  </p>
-<p id="rfc.section.9.2.p.3">The root schema of a JSON Schema document SHOULD contain an "$id" keyword with a URI (containing a scheme).  This URI SHOULD either not have a fragment, or have one that is an empty string.  <a id="CREF3" class="info">[CREF3]<span class="info">How should an "$id" URI reference containing a fragment with other components be interpreted?  There are two cases:  when the other components match the current base URI and when they change the base URI.  </span></a> </p>
-<p id="rfc.section.9.2.p.4">To name subschemas in a JSON Schema document, subschemas can use "$id" to give themselves a document-local identifier.  This is done by setting "$id" to a URI reference consisting only of a plain name fragment (not a JSON Pointer fragment).  The fragment identifier MUST begin with a letter ([A-Za-z]), followed by any number of letters, digits ([0-9]), hyphens ("-"), underscores ("_"), colons (":"), or periods (".").  </p>
-<p id="rfc.section.9.2.p.5">Providing a plain name fragment enables a subschema to be relocated within a schema without requiring that JSON Pointer references are updated.  </p>
-<p id="rfc.section.9.2.p.6">The effect of defining a fragment-only "$id" URI reference that neither matches the above requirements nor is a valid JSON pointer is not defined.  </p>
+<p id="rfc.section.8.1.p.2">Informatively, the initial base URI of a schema is the URI at which it was found, or a suitable substitute URI if none is known.  </p>
+<h1 id="rfc.section.8.2"><a href="#rfc.section.8.2">8.2.</a> <a href="#id-keyword" id="id-keyword">The "$id" Keyword</a></h1>
+<p id="rfc.section.8.2.p.1">The "$id" keyword defines a URI for the schema, and the base URI that other URI references within the schema are resolved against.  A subschema's "$id" is resolved against the base URI of its parent schema.  If no parent sets an explicit base with "$id", the base URI is that of the entire document, as determined per <a href="#RFC3986">RFC 3986 section 5</a> <cite title="NONE">[RFC3986]</cite>.  </p>
+<p id="rfc.section.8.2.p.2">If present, the value for this keyword MUST be a string, and MUST represent a valid <a href="#RFC3986">URI-reference</a> <cite title="NONE">[RFC3986]</cite>.  This value SHOULD be normalized, and SHOULD NOT be an empty fragment &lt;#&gt; or an empty string &lt;&gt;.  </p>
+<h1 id="rfc.section.8.2.1"><a href="#rfc.section.8.2.1">8.2.1.</a> Identifying the root schema</h1>
+<p id="rfc.section.8.2.1.p.1">The root schema of a JSON Schema document SHOULD contain an "$id" keyword with an <a href="#RFC3986">absolute-URI</a> <cite title="NONE">[RFC3986]</cite> (containing a scheme, but no fragment), or this absolute URI but with an empty fragment.  </p>
+<h1 id="rfc.section.8.2.2"><a href="#rfc.section.8.2.2">8.2.2.</a> Changing the base URI within a schema file</h1>
+<p id="rfc.section.8.2.2.p.1">When an "$id" sets the base URI, the object containing that "$id" and all of its subschemas can be identified by using a JSON Pointer fragment starting from that location.  This is true even of subschemas that further change the base URI.  Therefore, a single subschema may be accessible by multiple URIs, each consisting of base URI declared in the subschema or a parent, along with a JSON Pointer fragment identifying the path from the schema object that declares the base to the subschema being identified.  Examples of this are shown in section <a href="#idExamples">8.2.4</a>.  </p>
+<h1 id="rfc.section.8.2.3"><a href="#rfc.section.8.2.3">8.2.3.</a> Location-independent identifiers</h1>
+<p id="rfc.section.8.2.3.p.1">Using JSON Pointer fragments requires knowledge of the structure of the schema.  When writing schema documents with the intention to provide re-usable schemas, it may be preferable to use a plain name fragment that is not tied to any particular structural location.  This allows a subschema to be relocated without requiring JSON Pointer references to be updated.  </p>
+<p id="rfc.section.8.2.3.p.2">To specify such a subschema identifier, the "$id" keyword is set to a URI reference with a plain name fragment (not a JSON Pointer fragment).  This value MUST begin with the number sign that specifies a fragment ("#"), then a letter ([A-Za-z]), followed by any number of letters, digits ([0-9]), hyphens ("-"), underscores ("_"), colons (":"), or periods (".").  </p>
+<p id="rfc.section.8.2.3.p.3">The effect of using a fragment in "$id" that isn't blank or doesn't follow the plain name syntax is undefined.  <a id="CREF3" class="info">[CREF3]<span class="info">How should an "$id" URI reference containing a fragment with other components be interpreted?  There are two cases:  when the other components match the current base URI and when they change the base URI.  </span></a> </p>
+<h1 id="rfc.section.8.2.4"><a href="#rfc.section.8.2.4">8.2.4.</a> <a href="#idExamples" id="idExamples">Schema identification examples</a></h1>
+<p>Consider the following schema, which shows "$id" being used to identify the root schema, change the base URI for subschemas, and assign plain name fragments to subschemas: </p>
 <pre>
 
 {
@@ -711,30 +726,97 @@
 }
 
                         </pre>
-<p id="rfc.section.9.2.p.7">For example: </p>
-<p id="rfc.section.9.2.p.8">The schemas at the following URI-encoded <a href="#RFC6901">JSON Pointers</a> <cite title="NONE">[RFC6901]</cite> (relative to the root schema) have the following base URIs, and are identifiable by either URI in accordance with Section <a href="#fragments">5</a> above: </p>
+<p id="rfc.section.8.2.4.p.1">The schemas at the following URI-encoded <a href="#RFC6901">JSON Pointers</a> <cite title="NONE">[RFC6901]</cite> (relative to the root schema) have the following base URIs, and are identifiable by any listed URI in accordance with Section <a href="#fragments">5</a> above: </p>
 <p/>
 
 <dl>
   <dt># (document root)</dt>
-  <dd style="margin-left: 8">http://example.com/root.json#</dd>
+  <dd style="margin-left: 8">
+    <dl>
+      <dt></dt>
+      <dd style="margin-left: 8">http://example.com/root.json</dd>
+      <dt></dt>
+      <dd style="margin-left: 8">http://example.com/root.json#</dd>
+    </dl>
+    <p> </p>
+  </dd>
   <dt>#/definitions/A</dt>
-  <dd style="margin-left: 8">http://example.com/root.json#foo</dd>
+  <dd style="margin-left: 8">
+    <dl>
+      <dt></dt>
+      <dd style="margin-left: 8">http://example.com/root.json#foo</dd>
+      <dt></dt>
+      <dd style="margin-left: 8">http://example.com/root.json#/definitions/A</dd>
+    </dl>
+    <p> </p>
+  </dd>
   <dt>#/definitions/B</dt>
-  <dd style="margin-left: 8">http://example.com/other.json</dd>
+  <dd style="margin-left: 8">
+    <dl>
+      <dt></dt>
+      <dd style="margin-left: 8">http://example.com/other.json</dd>
+      <dt></dt>
+      <dd style="margin-left: 8">http://example.com/other.json#</dd>
+      <dt></dt>
+      <dd style="margin-left: 8">http://example.com/root.json#/definitions/B</dd>
+    </dl>
+    <p> </p>
+  </dd>
   <dt>#/definitions/B/definitions/X</dt>
-  <dd style="margin-left: 8">http://example.com/other.json#bar</dd>
+  <dd style="margin-left: 8">
+    <dl>
+      <dt></dt>
+      <dd style="margin-left: 8">http://example.com/other.json#bar</dd>
+      <dt></dt>
+      <dd style="margin-left: 8">http://example.com/other.json#/definitions/X</dd>
+      <dt></dt>
+      <dd style="margin-left: 8">http://example.com/root.json#/definitions/B/definitions/X</dd>
+    </dl>
+    <p> </p>
+  </dd>
   <dt>#/definitions/B/definitions/Y</dt>
-  <dd style="margin-left: 8">http://example.com/t/inner.json</dd>
+  <dd style="margin-left: 8">
+    <dl>
+      <dt></dt>
+      <dd style="margin-left: 8">http://example.com/t/inner.json</dd>
+      <dt></dt>
+      <dd style="margin-left: 8">http://example.com/t/inner.json#</dd>
+      <dt></dt>
+      <dd style="margin-left: 8">http://example.com/other.json#/definitions/Y</dd>
+      <dt></dt>
+      <dd style="margin-left: 8">http://example.com/root.json#/definitions/B/definitions/Y</dd>
+    </dl>
+    <p> </p>
+  </dd>
   <dt>#/definitions/C</dt>
-  <dd style="margin-left: 8">urn:uuid:ee564b8a-7a87-4125-8c96-e9f123d6766f</dd>
+  <dd style="margin-left: 8">
+    <dl>
+      <dt></dt>
+      <dd style="margin-left: 8">urn:uuid:ee564b8a-7a87-4125-8c96-e9f123d6766f</dd>
+      <dt></dt>
+      <dd style="margin-left: 8">urn:uuid:ee564b8a-7a87-4125-8c96-e9f123d6766f#</dd>
+      <dt></dt>
+      <dd style="margin-left: 8">http://example.com/root.json#/definitions/C</dd>
+    </dl>
+    <p> </p>
+  </dd>
 </dl>
 
 <p> </p>
-<h1 id="rfc.section.9.2.1"><a href="#rfc.section.9.2.1">9.2.1.</a> Internal References</h1>
-<p id="rfc.section.9.2.1.p.1">Schemas can be identified by any URI that has been given to them, including a JSON Pointer or their URI given directly by "$id".  </p>
-<p id="rfc.section.9.2.1.p.2">Tools SHOULD take note of the URIs that schemas, including subschemas, provide for themselves using "$id". This is known as "Internal referencing".  </p>
-<p id="rfc.section.9.2.1.p.3">For example, consider this schema: </p>
+<h1 id="rfc.section.8.3"><a href="#rfc.section.8.3">8.3.</a> Schema References With "$ref"</h1>
+<p id="rfc.section.8.3.p.1">The "$ref" keyword is used to reference a schema, and provides the ability to validate recursive structures through self-reference.  </p>
+<p id="rfc.section.8.3.p.2">An object schema with a "$ref" property MUST be interpreted as a "$ref" reference.  The value of the "$ref" property MUST be a URI Reference.  Resolved against the current URI base, it identifies the URI of a schema to use.  All other properties in a "$ref" object MUST be ignored.  </p>
+<p id="rfc.section.8.3.p.3">The URI is not a network locator, only an identifier. A schema need not be downloadable from the address if it is a network-addressable URL, and implementations SHOULD NOT assume they should perform a network operation when they encounter a network-addressable URI.  </p>
+<p id="rfc.section.8.3.p.4">A schema MUST NOT be run into an infinite loop against a schema. For example, if two schemas "#alice" and "#bob" both have an "allOf" property that refers to the other, a naive validator might get stuck in an infinite recursive loop trying to validate the instance.  Schemas SHOULD NOT make use of infinite recursive nesting like this; the behavior is undefined.  </p>
+<h1 id="rfc.section.8.3.1"><a href="#rfc.section.8.3.1">8.3.1.</a> Loading a referenced schema</h1>
+<p id="rfc.section.8.3.1.p.1">The use of URIs to identify remote schemas does not necessarily mean anything is downloaded, but instead JSON Schema implementations SHOULD understand ahead of time which schemas they will be using, and the URIs that identify them.  </p>
+<p id="rfc.section.8.3.1.p.2">When schemas are downloaded, for example by a generic user-agent that doesn't know until runtime which schemas to download, see <a href="#hypermedia">Usage for Hypermedia</a> <cite title="NONE">[hypermedia]</cite>.  </p>
+<p id="rfc.section.8.3.1.p.3">Implementations SHOULD be able to associate arbitrary URIs with an arbitrary schema and/or automatically associate a schema's "$id"-given URI, depending on the trust that the validator has in the schema.  Such URIs and schemas can be supplied to an implementation prior to processing instances, or may be noted within a schema document as it is processed, producing associations as shown in section <a href="#idExamples">8.2.4</a>.  </p>
+<p id="rfc.section.8.3.1.p.4">A schema MAY (and likely will) have multiple URIs, but there is no way for a URI to identify more than one schema. When multiple schemas try to identify as the same URI, validators SHOULD raise an error condition.  </p>
+<h1 id="rfc.section.8.3.2"><a href="#rfc.section.8.3.2">8.3.2.</a> Dereferencing</h1>
+<p id="rfc.section.8.3.2.p.1">Schemas can be identified by any URI that has been given to them, including a JSON Pointer or their URI given directly by "$id".  In all cases, dereferencing a "$ref" reference involves first resolving its value as a URI reference against the current base URI per <a href="#RFC3986">RFC 3986</a> <cite title="NONE">[RFC3986]</cite>.  </p>
+<p id="rfc.section.8.3.2.p.2">If the resulting URI identifies a schema within the current document, or within another schema document that has been made available to the implementation, then that schema SHOULD be used automatically.  </p>
+<p id="rfc.section.8.3.2.p.3">For example, consider this schema: </p>
 <pre>
 
 {
@@ -746,102 +828,100 @@
     "definitions": {
         "single": {
             "$id": "#item",
-            "type": "integer"
+            "type": "object",
+            "additionalProperties": { "$ref": "other.json" }
         }
     }
 }
 
                         </pre>
-<p id="rfc.section.9.2.1.p.4">When an implementation encounters the &lt;#/definitions/single&gt; schema, it resolves the "$id" URI reference against the current base URI to form &lt;http://example.net/root.json#item&gt;.  </p>
-<p id="rfc.section.9.2.1.p.5">When an implementation then looks inside the &lt;#/items&gt; schema, it encounters the &lt;#item&gt; reference, and resolves this to &lt;http://example.net/root.json#item&gt; which is understood as the schema defined elsewhere in the same document without needing to resolve the fragment against the base URI.  </p>
-<h1 id="rfc.section.9.2.2"><a href="#rfc.section.9.2.2">9.2.2.</a> External References</h1>
-<p id="rfc.section.9.2.2.p.1">To differentiate schemas between each other in a vast ecosystem, schemas are identified by URI. As specified above, this does not necessarily mean anything is downloaded, but instead JSON Schema implementations SHOULD already understand the schemas they will be using, including the URIs that identify them.  </p>
-<p id="rfc.section.9.2.2.p.2">Implementations SHOULD be able to associate arbitrary URIs with an arbitrary schema and/or automatically associate a schema's "$id"-given URI, depending on the trust that the validator has in the schema.  </p>
-<p id="rfc.section.9.2.2.p.3">A schema MAY (and likely will) have multiple URIs, but there is no way for a URI to identify more than one schema. When multiple schemas try to identify with the same URI, validators SHOULD raise an error condition.  </p>
-<h1 id="rfc.section.10"><a href="#rfc.section.10">10.</a> Comments With "$comment"</h1>
-<p id="rfc.section.10.p.1">This keyword is reserved for comments from schema authors to readers or maintainers of the schema.  The value of this keyword MUST be a string. Implementations MUST NOT present this string to end users.  Tools for editing schemas SHOULD support displaying and editing this keyword.  The value of this keyword MAY be used in debug or error output which is intended for developers making use of schemas.  Schema vocabularies SHOULD allow "$comment" within any object containing vocabulary keywords.  Implementations MAY assume "$comment" is allowed unless the vocabulary specifically forbids it.  Vocabularies MUST NOT specify any effect of "$comment" beyond what is described in this specification.  Tools that translate other media types or programming languages to and from application/schema+json MAY choose to convert that media type or programming language's native comments to or from "$comment" values.  The behavior of such translation when both native comments and "$comment" properties are present is implementation-dependent.  Implementations SHOULD treat "$comment" identically to an unknown extension keyword.  They MAY strip "$comment" values at any point during processing.  In particular, this allows for shortening schemas when the size of deployed schemas is a concern.  Implementations MUST NOT take any other action based on the presence, absence, or contents of "$comment" properties.  </p>
-<h1 id="rfc.section.11"><a href="#rfc.section.11">11.</a> Usage for Hypermedia</h1>
-<p id="rfc.section.11.p.1">JSON has been adopted widely by HTTP servers for automated APIs and robots. This section describes how to enhance processing of JSON documents in a more RESTful manner when used with protocols that support media types and <a href="#RFC8288">Web linking</a> <cite title="NONE">[RFC8288]</cite>.  </p>
-<h1 id="rfc.section.11.1"><a href="#rfc.section.11.1">11.1.</a> Linking to a Schema</h1>
-<p id="rfc.section.11.1.p.1">It is RECOMMENDED that instances described by a schema provide a link to a downloadable JSON Schema using the link relation "describedby", as defined by <a href="#W3C.REC-ldp-20150226">Linked Data Protocol 1.0, section 8.1</a> <cite title="NONE">[W3C.REC-ldp-20150226]</cite>.  </p>
-<p id="rfc.section.11.1.p.2">In HTTP, such links can be attached to any response using the <a href="#RFC8288">Link header</a> <cite title="NONE">[RFC8288]</cite>. An example of such a header would be: </p>
+<p id="rfc.section.8.3.2.p.4">When an implementation encounters the &lt;#/definitions/single&gt; schema, it resolves the "$id" URI reference against the current base URI to form &lt;http://example.net/root.json#item&gt;.  </p>
+<p id="rfc.section.8.3.2.p.5">When an implementation then looks inside the &lt;#/items&gt; schema, it encounters the &lt;#item&gt; reference, and resolves this to &lt;http://example.net/root.json#item&gt;, which it has seen defined in this same document and can therefore use automatically.  </p>
+<p id="rfc.section.8.3.2.p.6">When an implementation encounters the reference to "other.json", it resolves this to &lt;http://example.net/other.json&gt;, which is not defined in this document.  If a schema with that identifier has otherwise been supplied to the implementation, it can also be used automatically.  <a id="CREF4" class="info">[CREF4]<span class="info">What should implementations do when the referenced schema is not known? Are there circumstances in which automatic network dereferencing is allowed?  A same origin policy?  A user-configurable option?  In the case of an evolving API described by Hyper-Schema, it is expected that new schemas will be added to the system dynamically, so placing an absolute requirement of pre-loading schema documents is not feasible.  </span></a> </p>
+<h1 id="rfc.section.9"><a href="#rfc.section.9">9.</a> Comments With "$comment"</h1>
+<p id="rfc.section.9.p.1">This keyword is reserved for comments from schema authors to readers or maintainers of the schema.  The value of this keyword MUST be a string. Implementations MUST NOT present this string to end users.  Tools for editing schemas SHOULD support displaying and editing this keyword.  The value of this keyword MAY be used in debug or error output which is intended for developers making use of schemas.  Schema vocabularies SHOULD allow "$comment" within any object containing vocabulary keywords.  Implementations MAY assume "$comment" is allowed unless the vocabulary specifically forbids it.  Vocabularies MUST NOT specify any effect of "$comment" beyond what is described in this specification.  Tools that translate other media types or programming languages to and from application/schema+json MAY choose to convert that media type or programming language's native comments to or from "$comment" values.  The behavior of such translation when both native comments and "$comment" properties are present is implementation-dependent.  Implementations SHOULD treat "$comment" identically to an unknown extension keyword.  They MAY strip "$comment" values at any point during processing.  In particular, this allows for shortening schemas when the size of deployed schemas is a concern.  Implementations MUST NOT take any other action based on the presence, absence, or contents of "$comment" properties.  </p>
+<h1 id="rfc.section.10"><a href="#rfc.section.10">10.</a> <a href="#hypermedia" id="hypermedia">Usage for Hypermedia</a></h1>
+<p id="rfc.section.10.p.1">JSON has been adopted widely by HTTP servers for automated APIs and robots. This section describes how to enhance processing of JSON documents in a more RESTful manner when used with protocols that support media types and <a href="#RFC8288">Web linking</a> <cite title="NONE">[RFC8288]</cite>.  </p>
+<h1 id="rfc.section.10.1"><a href="#rfc.section.10.1">10.1.</a> Linking to a Schema</h1>
+<p id="rfc.section.10.1.p.1">It is RECOMMENDED that instances described by a schema provide a link to a downloadable JSON Schema using the link relation "describedby", as defined by <a href="#W3C.REC-ldp-20150226">Linked Data Protocol 1.0, section 8.1</a> <cite title="NONE">[W3C.REC-ldp-20150226]</cite>.  </p>
+<p id="rfc.section.10.1.p.2">In HTTP, such links can be attached to any response using the <a href="#RFC8288">Link header</a> <cite title="NONE">[RFC8288]</cite>. An example of such a header would be: </p>
 <pre>
 
 Link: &lt;http://example.com/my-hyper-schema#&gt;; rel="describedby"
 
                     </pre>
-<h1 id="rfc.section.11.2"><a href="#rfc.section.11.2">11.2.</a> <a href="#parameter" id="parameter">Identifying a Schema via a Media Type Parameter</a></h1>
-<p id="rfc.section.11.2.p.1">Media types MAY allow for a "schema" media type parameter, which gives HTTP servers the ability to perform Content-Type Negotiation based on schema.  The media-type parameter MUST be a whitespace-separated list of URIs (i.e. relative references are invalid).  </p>
-<p id="rfc.section.11.2.p.2">When using the media type application/schema-instance+json, the "schema" parameter MUST be supplied.  </p>
-<p id="rfc.section.11.2.p.3">The schema URI is opaque and SHOULD NOT automatically be dereferenced.  If the implementation does not understand the semantics of the provided schema, the implementation can instead follow the "describedby" links, if any, which may provide information on how to handle the schema.  Since "schema" doesn't necessarily point to a network location, the "describedby" relation is used for linking to a downloadable schema.  However, for simplicity, schema authors should make these URIs point to the same resource when possible.  </p>
-<p id="rfc.section.11.2.p.4">In HTTP, the media-type parameter would be sent inside the Content-Type header: </p>
+<h1 id="rfc.section.10.2"><a href="#rfc.section.10.2">10.2.</a> <a href="#parameter" id="parameter">Identifying a Schema via a Media Type Parameter</a></h1>
+<p id="rfc.section.10.2.p.1">Media types MAY allow for a "schema" media type parameter, which gives HTTP servers the ability to perform Content-Type Negotiation based on schema.  The media-type parameter MUST be a whitespace-separated list of URIs (i.e. relative references are invalid).  </p>
+<p id="rfc.section.10.2.p.2">When using the media type application/schema-instance+json, the "schema" parameter MUST be supplied.  </p>
+<p id="rfc.section.10.2.p.3">The schema URI is opaque and SHOULD NOT automatically be dereferenced.  If the implementation does not understand the semantics of the provided schema, the implementation can instead follow the "describedby" links, if any, which may provide information on how to handle the schema.  Since "schema" doesn't necessarily point to a network location, the "describedby" relation is used for linking to a downloadable schema.  However, for simplicity, schema authors should make these URIs point to the same resource when possible.  </p>
+<p id="rfc.section.10.2.p.4">In HTTP, the media-type parameter would be sent inside the Content-Type header: </p>
 <pre>
 
 Content-Type: application/json;
           schema="http://example.com/my-hyper-schema#"
 
                     </pre>
-<p id="rfc.section.11.2.p.5">Multiple schemas are whitespace separated: </p>
+<p id="rfc.section.10.2.p.5">Multiple schemas are whitespace separated: </p>
 <pre>
 
 Content-Type: application/json;
           schema="http://example.com/alice http://example.com/bob"
 
                     </pre>
-<p><a id="CREF4" class="info">[CREF4]<span class="info">This paragraph assumes that we can register a "schema" link relation.  Should we instead specify something like "tag:json-schema.org,2017:schema" for now? </span></a> HTTP can also send the "schema" in a Link, though this may impact media-type semantics and Content-Type negotiation if this replaces the media-type parameter entirely: </p>
+<p><a id="CREF5" class="info">[CREF5]<span class="info">This paragraph assumes that we can register a "schema" link relation.  Should we instead specify something like "tag:json-schema.org,2017:schema" for now? </span></a> HTTP can also send the "schema" in a Link, though this may impact media-type semantics and Content-Type negotiation if this replaces the media-type parameter entirely: </p>
 <pre>
 
 Link: &lt;/alice&gt;;rel="schema", &lt;/bob&gt;;rel="schema"
 
                     </pre>
-<h1 id="rfc.section.11.3"><a href="#rfc.section.11.3">11.3.</a> Usage Over HTTP</h1>
-<p id="rfc.section.11.3.p.1">When used for hypermedia systems over a network, <a href="#RFC7231">HTTP</a> <cite title="NONE">[RFC7231]</cite> is frequently the protocol of choice for distributing schemas. Misbehaving clients can pose problems for server maintainers if they pull a schema over the network more frequently than necessary, when it's instead possible to cache a schema for a long period of time.  </p>
-<p id="rfc.section.11.3.p.2">HTTP servers SHOULD set long-lived caching headers on JSON Schemas.  HTTP clients SHOULD observe caching headers and not re-request documents within their freshness period.  Distributed systems SHOULD make use of a shared cache and/or caching proxy.  </p>
+<h1 id="rfc.section.10.3"><a href="#rfc.section.10.3">10.3.</a> Usage Over HTTP</h1>
+<p id="rfc.section.10.3.p.1">When used for hypermedia systems over a network, <a href="#RFC7231">HTTP</a> <cite title="NONE">[RFC7231]</cite> is frequently the protocol of choice for distributing schemas. Misbehaving clients can pose problems for server maintainers if they pull a schema over the network more frequently than necessary, when it's instead possible to cache a schema for a long period of time.  </p>
+<p id="rfc.section.10.3.p.2">HTTP servers SHOULD set long-lived caching headers on JSON Schemas.  HTTP clients SHOULD observe caching headers and not re-request documents within their freshness period.  Distributed systems SHOULD make use of a shared cache and/or caching proxy.  </p>
 <pre>
 
 User-Agent: product-name/5.4.1 so-cool-json-schema/1.0.2 curl/7.43.0
 
                         </pre>
-<p id="rfc.section.11.3.p.3">Clients SHOULD set or prepend a User-Agent header specific to the JSON Schema implementation or software product. Since symbols are listed in decreasing order of significance, the JSON Schema library name/version should precede the more generic HTTP library name (if any). For example: </p>
-<p id="rfc.section.11.3.p.4">Clients SHOULD be able to make requests with a "From" header so that server operators can contact the owner of a potentially misbehaving script.  </p>
-<h1 id="rfc.section.12"><a href="#rfc.section.12">12.</a> <a href="#security" id="security">Security Considerations</a></h1>
-<p id="rfc.section.12.p.1">Both schemas and instances are JSON values. As such, all security considerations defined in <a href="#RFC7159">RFC 7159</a> <cite title="NONE">[RFC7159]</cite> apply.  </p>
-<p id="rfc.section.12.p.2">Instances and schemas are both frequently written by untrusted third parties, to be deployed on public Internet servers.  Validators should take care that the parsing of schemas doesn't consume excessive system resources.  Validators MUST NOT fall into an infinite loop.  </p>
-<p id="rfc.section.12.p.3">Servers need to take care that malicious parties can't change the functionality of existing schemas by uploading a schema with an pre-existing or very similar "$id".  </p>
-<p id="rfc.section.12.p.4">Individual JSON Schema vocabularies are liable to also have their own security considerations. Consult the respective specifications for more information.  </p>
-<p id="rfc.section.12.p.5">Schema authors should take care with "$comment" contents, as a malicious implementation can display them to end-users in violation of a spec, or fail to strip them if such behavior is expected.  </p>
-<p id="rfc.section.12.p.6">A malicious schema author could place executable code or other dangerous material within a "$comment".  Implementations MUST NOT parse or otherwise take action based on "$comment" contents.  </p>
-<h1 id="rfc.section.13"><a href="#rfc.section.13">13.</a> IANA Considerations</h1>
-<h1 id="rfc.section.13.1"><a href="#rfc.section.13.1">13.1.</a> application/schema+json</h1>
-<p id="rfc.section.13.1.p.1">The proposed MIME media type for JSON Schema is defined as follows: </p>
+<p id="rfc.section.10.3.p.3">Clients SHOULD set or prepend a User-Agent header specific to the JSON Schema implementation or software product. Since symbols are listed in decreasing order of significance, the JSON Schema library name/version should precede the more generic HTTP library name (if any). For example: </p>
+<p id="rfc.section.10.3.p.4">Clients SHOULD be able to make requests with a "From" header so that server operators can contact the owner of a potentially misbehaving script.  </p>
+<h1 id="rfc.section.11"><a href="#rfc.section.11">11.</a> <a href="#security" id="security">Security Considerations</a></h1>
+<p id="rfc.section.11.p.1">Both schemas and instances are JSON values. As such, all security considerations defined in <a href="#RFC7159">RFC 7159</a> <cite title="NONE">[RFC7159]</cite> apply.  </p>
+<p id="rfc.section.11.p.2">Instances and schemas are both frequently written by untrusted third parties, to be deployed on public Internet servers.  Validators should take care that the parsing and validating against schemas doesn't consume excessive system resources.  Validators MUST NOT fall into an infinite loop.  </p>
+<p id="rfc.section.11.p.3">Servers MUST ensure that malicious parties can't change the functionality of existing schemas by uploading a schema with an pre-existing or very similar "$id".  </p>
+<p id="rfc.section.11.p.4">Individual JSON Schema vocabularies are liable to also have their own security considerations. Consult the respective specifications for more information.  </p>
+<p id="rfc.section.11.p.5">Schema authors should take care with "$comment" contents, as a malicious implementation can display them to end-users in violation of a spec, or fail to strip them if such behavior is expected.  </p>
+<p id="rfc.section.11.p.6">A malicious schema author could place executable code or other dangerous material within a "$comment".  Implementations MUST NOT parse or otherwise take action based on "$comment" contents.  </p>
+<h1 id="rfc.section.12"><a href="#rfc.section.12">12.</a> IANA Considerations</h1>
+<h1 id="rfc.section.12.1"><a href="#rfc.section.12.1">12.1.</a> application/schema+json</h1>
+<p id="rfc.section.12.1.p.1">The proposed MIME media type for JSON Schema is defined as follows: </p>
 
 <ul class="empty">
   <li>Type name: application</li>
   <li>Subtype name: schema+json</li>
   <li>Required parameters: N/A</li>
   <li>Encoding considerations: Encoding considerations are identical to those specified for the "application/json" media type.  See <a href="#RFC7159">JSON</a> <cite title="NONE">[RFC7159]</cite>.  </li>
-  <li>Security considerations: See Section <a href="#security">12</a> above.  </li>
+  <li>Security considerations: See Section <a href="#security">11</a> above.  </li>
   <li>Interoperability considerations: See Sections <a href="#language">6.2</a> and <a href="#integers">6.3</a> above.  </li>
   <li>Fragment identifier considerations: See Section <a href="#fragments">5</a> </li>
 </ul>
 
 <p> </p>
-<h1 id="rfc.section.13.2"><a href="#rfc.section.13.2">13.2.</a> application/schema-instance+json</h1>
-<p id="rfc.section.13.2.p.1">The proposed MIME media type for JSON Schema Instances that require a JSON Schema-specific media type is defined as follows: </p>
+<h1 id="rfc.section.12.2"><a href="#rfc.section.12.2">12.2.</a> application/schema-instance+json</h1>
+<p id="rfc.section.12.2.p.1">The proposed MIME media type for JSON Schema Instances that require a JSON Schema-specific media type is defined as follows: </p>
 
 <ul class="empty">
   <li>Type name: application</li>
   <li>Subtype name: schema-instance+json</li>
-  <li>Required parameters: <dl><dt>schema</dt><dd style="margin-left: 8">A non-empty list of space-separated URIs, each identifying a JSON Schema resource.  The instance SHOULD successfully validate against at least one of these schemas.  Non-validating schemas MAY be included for purposes such as allowing clients to make use of older versions of a schema as long as the runtime instance validates against that older version.  </dd></dl><p> </p></li>
+  <li>Required parameters: <dl><dt>schema:</dt><dd style="margin-left: 8">A non-empty list of space-separated URIs, each identifying a JSON Schema resource.  The instance SHOULD successfully validate against at least one of these schemas.  Non-validating schemas MAY be included for purposes such as allowing clients to make use of older versions of a schema as long as the runtime instance validates against that older version.  </dd></dl><p> </p></li>
   <li>Encoding considerations: Encoding considerations are identical to those specified for the "application/json" media type.  See <a href="#RFC7159">JSON</a> <cite title="NONE">[RFC7159]</cite>.  </li>
-  <li>Security considerations: See Section <a href="#security">12</a> above.  </li>
+  <li>Security considerations: See Section <a href="#security">11</a> above.  </li>
   <li>Interoperability considerations: See Sections <a href="#language">6.2</a> and <a href="#integers">6.3</a> above.  </li>
   <li>Fragment identifier considerations: See Section <a href="#fragments">5</a> </li>
 </ul>
 
 <p> </p>
-<h1 id="rfc.references"><a href="#rfc.references">14.</a> References</h1>
-<h1 id="rfc.references.1"><a href="#rfc.references.1">14.1.</a> Normative References</h1>
+<h1 id="rfc.references"><a href="#rfc.references">13.</a> References</h1>
+<h1 id="rfc.references.1"><a href="#rfc.references.1">13.1.</a> Normative References</h1>
 <table>
   <tbody>
     <tr>
@@ -882,7 +962,7 @@ User-Agent: product-name/5.4.1 so-cool-json-schema/1.0.2 curl/7.43.0
     </tr>
   </tbody>
 </table>
-<h1 id="rfc.references.2"><a href="#rfc.references.2">14.2.</a> Informative References</h1>
+<h1 id="rfc.references.2"><a href="#rfc.references.2">13.2.</a> Informative References</h1>
 <table>
   <tbody>
     <tr>
@@ -913,13 +993,13 @@ User-Agent: product-name/5.4.1 so-cool-json-schema/1.0.2 curl/7.43.0
       <td class="reference">
         <b id="json-schema-validation">[json-schema-validation]</b>
       </td>
-      <td class="top"><a>Wright, A.</a>, <a title="Cloudflare, Inc.">Andrews, H.</a> and <a>G. Luff</a>, "<a href="http://tools.ietf.org/html/draft-handrews-json-schema-validation-00">JSON Schema Validation: A Vocabulary for Structural Validation of JSON</a>", Internet-Draft draft-handrews-json-schema-validation-00, November 2017.</td>
+      <td class="top"><a>Wright, A.</a>, <a title="Cloudflare, Inc.">Andrews, H.</a> and <a>G. Luff</a>, "<a href="http://tools.ietf.org/html/draft-handrews-json-schema-validation-01">JSON Schema Validation: A Vocabulary for Structural Validation of JSON</a>", Internet-Draft draft-handrews-json-schema-validation-01, November 2017.</td>
     </tr>
     <tr>
       <td class="reference">
         <b id="json-hyper-schema">[json-hyper-schema]</b>
       </td>
-      <td class="top"><a title="Cloudflare, Inc.">Andrews, H.</a> and <a>A. Wright</a>, "<a href="http://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-00">JSON Hyper-Schema: A Vocabulary for Hypermedia Annotation of JSON</a>", Internet-Draft draft-handrews-json-schema-hyperschema-00, November 2017.</td>
+      <td class="top"><a title="Cloudflare, Inc.">Andrews, H.</a> and <a>A. Wright</a>, "<a href="http://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-01">JSON Hyper-Schema: A Vocabulary for Hypermedia Annotation of JSON</a>", Internet-Draft draft-handrews-json-schema-hyperschema-01, November 2017.</td>
     </tr>
   </tbody>
 </table>
@@ -927,10 +1007,24 @@ User-Agent: product-name/5.4.1 so-cool-json-schema/1.0.2 curl/7.43.0
 <p id="rfc.section.A.p.1">Thanks to Gary Court, Francis Galiegue, Kris Zyp, and Geraint Luff for their work on the initial drafts of JSON Schema.  </p>
 <p id="rfc.section.A.p.2">Thanks to Jason Desrosiers, Daniel Perrett, Erik Wilde, Ben Hutton, Evgeny Poberezkin, Brad Bowman, Gowry Sankar, Donald Pipowitch, and Dave Finlay for their submissions and patches to the document.  </p>
 <h1 id="rfc.appendix.B"><a href="#rfc.appendix.B">Appendix B.</a> ChangeLog</h1>
-<p><a id="CREF5" class="info">[CREF5]<span class="info">This section to be removed before leaving Internet-Draft status.</span></a> </p>
+<p><a id="CREF6" class="info">[CREF6]<span class="info">This section to be removed before leaving Internet-Draft status.</span></a> </p>
 <p/>
 
 <dl>
+  <dt>draft-handrews-json-schema-01</dt>
+  <dd style="margin-left: 8">
+    <ul>
+      <li>This draft is purely a clarification with no functional changes</li>
+      <li>Emphasized annotations as a primary usage of JSON Schema</li>
+      <li>Clarified $id by use cases</li>
+      <li>Exhaustive schema identification examples</li>
+      <li>Replaced "external referencing" with how and when an implementation might know of a schema from another doucment</li>
+      <li>Replaced "internal referencing" with how an implementation should recognized schema identifiers during parsing</li>
+      <li>Dereferencing the former "internal" or "external" references is always the same process</li>
+      <li>Minor formatting improvements</li>
+    </ul>
+    <p> </p>
+  </dd>
   <dt>draft-handrews-json-schema-00</dt>
   <dd style="margin-left: 8">
     <ul>
@@ -980,7 +1074,13 @@ User-Agent: product-name/5.4.1 so-cool-json-schema/1.0.2 curl/7.43.0
   <dt>draft-zyp-json-schema-04</dt>
   <dd style="margin-left: 8">
     <ul>
-      <li>Split validation keywords into separate document</li>
+      <li>Salvaged from draft v3.</li>
+      <li>Split validation keywords into separate document.</li>
+      <li>Split hypermedia keywords into separate document.</li>
+      <li>Initial post-split draft.</li>
+      <li>Mandate the use of JSON Reference, JSON Pointer.</li>
+      <li>Define the role of "id". Define URI resolution scope.</li>
+      <li>Add interoperability considerations.</li>
     </ul>
     <p> </p>
   </dd>
@@ -988,10 +1088,6 @@ User-Agent: product-name/5.4.1 so-cool-json-schema/1.0.2 curl/7.43.0
   <dd style="margin-left: 8">
     <ul>
       <li>Initial draft.</li>
-      <li>Salvaged from draft v3.</li>
-      <li>Mandate the use of JSON Reference, JSON Pointer.</li>
-      <li>Define the role of "id". Define URI resolution scope.</li>
-      <li>Add interoperability considerations.</li>
     </ul>
     <p> </p>
   </dd>

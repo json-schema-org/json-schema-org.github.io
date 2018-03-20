@@ -382,7 +382,7 @@
 <link href="#rfc.section.3.2" rel="Chapter" title="3.2 Assertions"/>
 <link href="#rfc.section.3.2.1" rel="Chapter" title="3.2.1 Assertions and Instance Primitive Types"/>
 <link href="#rfc.section.3.3" rel="Chapter" title="3.3 Annotations"/>
-<link href="#rfc.section.3.3.1" rel="Chapter" title="3.3.1 Negated Schemas"/>
+<link href="#rfc.section.3.3.1" rel="Chapter" title="3.3.1 Annotations and Validation Outcomes"/>
 <link href="#rfc.section.3.3.2" rel="Chapter" title="3.3.2 Annotations and Short-Circuit Validation"/>
 <link href="#rfc.section.4" rel="Chapter" title="4 Interoperability Considerations"/>
 <link href="#rfc.section.4.1" rel="Chapter" title="4.1 Validation of String Instances"/>
@@ -462,12 +462,12 @@
 <link href="#rfc.authors" rel="Chapter"/>
 
 
-  <meta name="generator" content="xml2rfc version 2.5.2 - http://tools.ietf.org/tools/xml2rfc" />
+  <meta name="generator" content="xml2rfc version 2.5.1 - http://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Wright, A., Ed., Andrews, H., Ed., and G. Luff" />
-  <meta name="dct.identifier" content="urn:ietf:id:draft-handrews-json-schema-validation-00" />
-  <meta name="dct.issued" scheme="ISO8601" content="2017-11-20" />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-handrews-json-schema-validation-01" />
+  <meta name="dct.issued" scheme="ISO8601" content="2018-3-19" />
   <meta name="dct.abstract" content="JSON Schema (application/schema+json) has several purposes, one of which is JSON instance validation.  This document specifies a vocabulary for JSON Schema to describe the meaning of JSON documents, provide hints for user interfaces working with JSON data, and to make assertions about what a valid document must look like.  " />
   <meta name="description" content="JSON Schema (application/schema+json) has several purposes, one of which is JSON instance validation.  This document specifies a vocabulary for JSON Schema to describe the meaning of JSON documents, provide hints for user interfaces working with JSON data, and to make assertions about what a valid document must look like.  " />
 
@@ -491,7 +491,7 @@
   <td class="right">H. Andrews, Ed.</td>
 </tr>
 <tr>
-  <td class="left">Expires: May 24, 2018</td>
+  <td class="left">Expires: September 20, 2018</td>
   <td class="right">Cloudflare, Inc.</td>
 </tr>
 <tr>
@@ -500,7 +500,7 @@
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">November 20, 2017</td>
+  <td class="right">March 19, 2018</td>
 </tr>
 
     	
@@ -508,7 +508,7 @@
   </table>
 
   <p class="title">JSON Schema Validation: A Vocabulary for Structural Validation of JSON <br />
-  <span class="filename">draft-handrews-json-schema-validation-00</span></p>
+  <span class="filename">draft-handrews-json-schema-validation-01</span></p>
   
   <h1 id="rfc.abstract">
   <a href="#rfc.abstract">Abstract</a>
@@ -526,11 +526,11 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on May 24, 2018.</p>
+<p>This Internet-Draft will expire on September 20, 2018.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
-<p>Copyright (c) 2017 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
+<p>Copyright (c) 2018 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (http://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
 
   
@@ -546,7 +546,7 @@
 </ul><li>3.2.   <a href="#rfc.section.3.2">Assertions</a></li>
 <ul><li>3.2.1.   <a href="#rfc.section.3.2.1">Assertions and Instance Primitive Types</a></li>
 </ul><li>3.3.   <a href="#rfc.section.3.3">Annotations</a></li>
-<ul><li>3.3.1.   <a href="#rfc.section.3.3.1">Negated Schemas</a></li>
+<ul><li>3.3.1.   <a href="#rfc.section.3.3.1">Annotations and Validation Outcomes</a></li>
 <li>3.3.2.   <a href="#rfc.section.3.3.2">Annotations and Short-Circuit Validation</a></li>
 </ul></ul><li>4.   <a href="#rfc.section.4">Interoperability Considerations</a></li>
 <ul><li>4.1.   <a href="#rfc.section.4.1">Validation of String Instances</a></li>
@@ -664,8 +664,10 @@
 <p id="rfc.section.3.3.p.1">In addition to assertions, this specification provides a small vocabulary of metadata keywords that can be used to annotate the JSON instance with useful information.  The <a href="#format">Section 7</a> and <a href="#content">Section 8</a> keywords are also useful as annotations as well as being optional assertions, as they convey additional usage guidance for the instance data.  </p>
 <p id="rfc.section.3.3.p.2">A schema that is applicable to a particular location in the instance, against which the instance location is valid, attaches its annotations to that location in the instance.  Since many subschemas can be applicable to any single location, annotation keywords need to specify any unusual handling of multiple applicable occurrences of the keyword with different values.  The default behavior is simply to collect all values.  </p>
 <p id="rfc.section.3.3.p.3">Additional vocabularies SHOULD make use of this mechanism for applying their own annotations to instances.  </p>
-<h1 id="rfc.section.3.3.1"><a href="#rfc.section.3.3.1">3.3.1.</a> Negated Schemas</h1>
-<p id="rfc.section.3.3.1.p.1">Annotations in a subschema contained within a "not", at any depth, including any number of intervening additional "not" subschemas, MUST be ignored.  Similarly, annotations within a failing branch of a "oneOf", "anyOf", "then", or "else" MUST be ignored.  </p>
+<h1 id="rfc.section.3.3.1"><a href="#rfc.section.3.3.1">3.3.1.</a> Annotations and Validation Outcomes</h1>
+<p id="rfc.section.3.3.1.p.1">Annotations are collected whenever an instance is valid against a schema object, and all of that schema object's parent schemas.  </p>
+<p id="rfc.section.3.3.1.p.2">In particular, annotations in a subschema contained within a "not", at any depth, including any number of intervening additional "not" subschemas, MUST be ignored.  If the instance was valid against the "not" subschema, then by definition it is not valid against the schema that contains the "not", so the "not" subschema's annotations are not used.  </p>
+<p id="rfc.section.3.3.1.p.3">Similarly, annotations within a failing branch of a "oneOf", "anyOf", "then", or "else" MUST be ignored even when the instance successfully validates against the complete schema document.  </p>
 <h1 id="rfc.section.3.3.2"><a href="#rfc.section.3.3.2">3.3.2.</a> Annotations and Short-Circuit Validation</h1>
 <p id="rfc.section.3.3.2.p.1">Annotation keywords MUST be applied to all possible sub-instances.  Even if such application can be short-circuited when only assertion evaluation is needed.  For instance, the "contains" keyword need only be checked for assertions until at least one array item proves valid.  However, when working with annotations, all items in the array must be evaluated to determine all items with which the annotations should be associated.  </p>
 <h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> Interoperability Considerations</h1>
@@ -790,7 +792,7 @@
 <p id="rfc.section.6.5.6.p.4">For all such properties, validation succeeds if the child instance validates against the "additionalProperties" schema.  </p>
 <p id="rfc.section.6.5.6.p.5">Omitting this keyword has the same behavior as an empty schema.  </p>
 <h1 id="rfc.section.6.5.7"><a href="#rfc.section.6.5.7">6.5.7.</a> dependencies</h1>
-<p><a id="CREF1" class="info">[CREF1]<span class="info">Now that "if", "then", and "else" are keywords, it is not clear whether there is any benefit in keeping the schema form of "dependencies".  It is frequently misunderstood, and having a form that takes a subschema as well as a form that takes a primitive value is particularly confusing.  And it seems to be rarely used.  Depending on feedback with "if", "then", and "else", the schema form of this keyword may well be removed in a future draft.  Current thought is that the string form (giving property names in an array) is a useful shortcut.  </span></a> </p>
+<p><a id="CREF1" class="info">[CREF1]<span class="info">This keyword may be split into two, with the variation that uses an array of property names rather than a subschema getting a new name.  The dual behavior is confusing and relatively difficult to implement.  In the previous draft, we proposed dropping the keyword altogether, or dropping one of its forms, but we received feedback in support of keeping it.  See issues #442 and #528 at &lt;https://github.com/json-schema-org/json-schema-spec/issues&gt; for further discussion.  Further feedback is encouraged.  </span></a> </p>
 <p id="rfc.section.6.5.7.p.2">This keyword specifies rules that are evaluated if the instance is an object and contains a certain property.  </p>
 <p id="rfc.section.6.5.7.p.3">This keyword's value MUST be an object. Each property specifies a dependency.  Each dependency value MUST be an array or a valid JSON Schema.  </p>
 <p id="rfc.section.6.5.7.p.4">If the dependency value is a subschema, and the dependency key is a property in the instance, the entire instance must validate against the dependency value.  </p>
@@ -803,19 +805,21 @@
 <h1 id="rfc.section.6.6"><a href="#rfc.section.6.6">6.6.</a> <a href="#conditional" id="conditional">Keywords for Applying Subschemas Conditionally</a></h1>
 <p id="rfc.section.6.6.p.1">These keywords work together to implement conditional application of a subschema based on the outcome of another subschema.  </p>
 <p id="rfc.section.6.6.p.2">These keywords MUST NOT interact with each other across subschema boundaries.  In other words, an "if" in one branch of an "allOf" MUST NOT have an impact on a "then" or "else" in another branch.  </p>
+<p id="rfc.section.6.6.p.3">There is no default behavior for any of these keywords when they are not present.  In particular, they MUST NOT be treated as if present with an empty schema, and when "if" is not present, both "then" and "else" MUST be entirely ignored.  </p>
 <h1 id="rfc.section.6.6.1"><a href="#rfc.section.6.6.1">6.6.1.</a> if</h1>
 <p id="rfc.section.6.6.1.p.1">This keyword's value MUST be a valid JSON Schema.  </p>
-<p id="rfc.section.6.6.1.p.2">Instances that successfully validate against this keyword's subschema MUST also be valid against the subschema value of the "then" keyword, if present.  </p>
-<p id="rfc.section.6.6.1.p.3">Instances that fail to validate against this keyword's subschema MUST also be valid against the subschema value of the "else" keyword.  </p>
-<p id="rfc.section.6.6.1.p.4">Validation of the instance against this keyword on its own always succeeds, regardless of the validation outcome of against its subschema.  </p>
+<p id="rfc.section.6.6.1.p.2">This validation outcome of this keyword's subschema has no direct effect on the overall validation result.  Rather, it controls which of the "then" or "else" keywords are evaluated.  </p>
+<p id="rfc.section.6.6.1.p.3">Instances that successfully validate against this keyword's subschema MUST also be valid against the subschema value of the "then" keyword, if present.  </p>
+<p id="rfc.section.6.6.1.p.4">Instances that fail to validate against this keyword's subschema MUST also be valid against the subschema value of the "else" keyword, if present.  </p>
+<p id="rfc.section.6.6.1.p.5">If <a href="#annotations">annotations</a> <cite title="NONE">[annotations]</cite> are being collected, they are collected from this keyword's subschema in the usual way, including when the keyword is present without either "then" or "else".  </p>
 <h1 id="rfc.section.6.6.2"><a href="#rfc.section.6.6.2">6.6.2.</a> then</h1>
 <p id="rfc.section.6.6.2.p.1">This keyword's value MUST be a valid JSON Schema.  </p>
-<p id="rfc.section.6.6.2.p.2">When present alongside of "if", the instance successfully validates against this keyword if it validates against both the "if"'s subschema and this keyword's subschema.  </p>
-<p id="rfc.section.6.6.2.p.3">When "if" is absent, or the instance fails to validate against its subschema, validation against this keyword always succeeds.  Implementations SHOULD avoid attempting to validate against the subschema in these cases.  </p>
+<p id="rfc.section.6.6.2.p.2">When "if" is present, and the instance successfully validates against its subschema, then valiation succeeds against this keyword if the instance also successfully validates against this keyword's subschema.  </p>
+<p id="rfc.section.6.6.2.p.3">This keyword has no effect when "if" is absent, or when the instance fails to validate against its subschema.  Implementations MUST NOT evaluate the instance against this keyword, for either validation or annotation collection purposes, in such cases.  </p>
 <h1 id="rfc.section.6.6.3"><a href="#rfc.section.6.6.3">6.6.3.</a> else</h1>
 <p id="rfc.section.6.6.3.p.1">This keyword's value MUST be a valid JSON Schema.  </p>
-<p id="rfc.section.6.6.3.p.2">When present alongside of "if", the instance successfully validates against this keyword if it fails to validate against the "if"'s subschema, and successfully validates against this keyword's subschema.  </p>
-<p id="rfc.section.6.6.3.p.3">When "if" is absent, or the instance successfully validates against its subschema, validation against this keyword always succeeds.  Implementations SHOULD avoid attempting to validate against the subschema in these cases.  </p>
+<p id="rfc.section.6.6.3.p.2">When "if" is present, and the instance fails to validate against its subschema, then valiation succeeds against this keyword if the instance successfully validates against this keyword's subschema.  </p>
+<p id="rfc.section.6.6.3.p.3">This keyword has no effect when "if" is absent, or when the instance successfully validates against its subschema.  Implementations MUST NOT evaluate the instance against this keyword, for either validation or annotation collection purposes, in such cases.  </p>
 <h1 id="rfc.section.6.7"><a href="#rfc.section.6.7">6.7.</a> <a href="#logic" id="logic">Keywords for Applying Subschemas With Boolean Logic</a></h1>
 <h1 id="rfc.section.6.7.1"><a href="#rfc.section.6.7.1">6.7.1.</a> allOf</h1>
 <p id="rfc.section.6.7.1.p.1">This keyword's value MUST be a non-empty array.  Each item of the array MUST be a valid JSON Schema.  </p>
@@ -851,11 +855,11 @@
 <p id="rfc.section.7.3.1.p.3">Implementations supporting formats SHOULD implement support for the following attributes: </p>
 
 <dl>
-  <dt>date-time</dt>
+  <dt>date-time:</dt>
   <dd style="margin-left: 8">A string instance is valid against this attribute if it is a valid representation according to the "date-time" production.  </dd>
-  <dt>date</dt>
+  <dt>date:</dt>
   <dd style="margin-left: 8">A string instance is valid against this attribute if it is a valid representation according to the "full-date" production.  </dd>
-  <dt>time</dt>
+  <dt>time:</dt>
   <dd style="margin-left: 8">A string instance is valid against this attribute if it is a valid representation according to the "full-time" production.  </dd>
 </dl>
 
@@ -866,9 +870,9 @@
 <p id="rfc.section.7.3.2.p.2">A string instance is valid against these attributes if it is a valid Internet email address as follows: </p>
 
 <dl>
-  <dt>email</dt>
+  <dt>email:</dt>
   <dd style="margin-left: 8">As defined by <a href="#RFC5322">RFC 5322, section 3.4.1</a> <cite title="NONE">[RFC5322]</cite>.  </dd>
-  <dt>idn-email</dt>
+  <dt>idn-email:</dt>
   <dd style="margin-left: 8">As defined by <a href="#RFC6531">RFC 6531</a> <cite title="NONE">[RFC6531]</cite> </dd>
 </dl>
 
@@ -878,9 +882,9 @@
 <p id="rfc.section.7.3.3.p.2">A string instance is valid against these attributes if it is a valid representation for an Internet hostname as follows: </p>
 
 <dl>
-  <dt>hostname</dt>
+  <dt>hostname:</dt>
   <dd style="margin-left: 8">As defined by <a href="#RFC1034">RFC 1034, section 3.1</a> <cite title="NONE">[RFC1034]</cite>, including host names produced using the Punycode algorithm specified in <a href="#RFC5891">RFC 5891, section 4.4</a> <cite title="NONE">[RFC5891]</cite>.  </dd>
-  <dt>idn-hostname</dt>
+  <dt>idn-hostname:</dt>
   <dd style="margin-left: 8">As defined by either RFC 1034 as for hostname, or an internationalized hostname as defined by <a href="#RFC5890">RFC 5890, section 2.3.2.3</a> <cite title="NONE">[RFC5890]</cite>.  </dd>
 </dl>
 
@@ -890,9 +894,9 @@
 <p id="rfc.section.7.3.4.p.2">A string instance is valid against these attributes if it is a valid representation of an IP address as follows: </p>
 
 <dl>
-  <dt>ipv4</dt>
+  <dt>ipv4:</dt>
   <dd style="margin-left: 8">An IPv4 address according to the "dotted-quad" ABNF syntax as defined in <a href="#RFC2673">RFC 2673, section 3.2</a> <cite title="NONE">[RFC2673]</cite>.  </dd>
-  <dt>ipv6</dt>
+  <dt>ipv6:</dt>
   <dd style="margin-left: 8">An IPv6 address as defined in <a href="#RFC4291">RFC 4291, section 2.2</a> <cite title="NONE">[RFC4291]</cite>.  </dd>
 </dl>
 
@@ -902,13 +906,13 @@
 <p/>
 
 <dl>
-  <dt>uri</dt>
+  <dt>uri:</dt>
   <dd style="margin-left: 8">A string instance is valid against this attribute if it is a valid URI, according to <a href="#RFC3986">[RFC3986]</a>.  </dd>
-  <dt>uri-reference</dt>
+  <dt>uri-reference:</dt>
   <dd style="margin-left: 8">A string instance is valid against this attribute if it is a valid URI Reference (either a URI or a relative-reference), according to <a href="#RFC3986">[RFC3986]</a>.  </dd>
-  <dt>iri</dt>
+  <dt>iri:</dt>
   <dd style="margin-left: 8">A string instance is valid against this attribute if it is a valid IRI, according to <a href="#RFC3987">[RFC3987]</a>.  </dd>
-  <dt>iri-reference</dt>
+  <dt>iri-reference:</dt>
   <dd style="margin-left: 8">A string instance is valid against this attribute if it is a valid IRI Reference (either an IRI or a relative-reference), according to <a href="#RFC3987">[RFC3987]</a>.  </dd>
 </dl>
 
@@ -922,9 +926,9 @@
 <p/>
 
 <dl>
-  <dt>json-pointer</dt>
+  <dt>json-pointer:</dt>
   <dd style="margin-left: 8">A string instance is valid against this attribute if it is a valid JSON string representation of a JSON Pointer, according to <a href="#RFC6901">RFC 6901, section 5</a> <cite title="NONE">[RFC6901]</cite>.  </dd>
-  <dt>relative-json-pointer</dt>
+  <dt>relative-json-pointer:</dt>
   <dd style="margin-left: 8">A string instance is valid against this attribute if it is a valid <a href="#relative-json-pointer">Relative JSON Pointer</a> <cite title="NONE">[relative-json-pointer]</cite>.  </dd>
 </dl>
 
@@ -990,7 +994,7 @@
                     </pre>
 <p id="rfc.section.9.p.3">As an example, here is a schema describing an array of positive integers, where the positive integer constraint is a subschema in "definitions": </p>
 <h1 id="rfc.section.10"><a href="#rfc.section.10">10.</a> Schema Annotations</h1>
-<p id="rfc.section.10.p.1">Schema validation is a useful mechanism for annotating instance data with additional information.  The rules for determining when and how annotations are associated with an instance are outlined in this specification's overview.  </p>
+<p id="rfc.section.10.p.1">Schema validation is a useful mechanism for annotating instance data with additional information.  The rules for determining when and how annotations are associated with an instance are outlined in section <a href="#annotations">3.3</a>.  </p>
 <p id="rfc.section.10.p.2">These general-purpose annotation keywords provide commonly used information for documentation and user interface display purposes.  They are not intended to form a comprehensive set of features.  Rather, additional vocabularies can be defined for more complex annotation-based applications.  </p>
 <h1 id="rfc.section.10.1"><a href="#rfc.section.10.1">10.1.</a> "title" and "description"</h1>
 <p id="rfc.section.10.1.p.1">The value of both of these keywords MUST be a string.  </p>
@@ -1121,13 +1125,13 @@
       <td class="reference">
         <b id="relative-json-pointer">[relative-json-pointer]</b>
       </td>
-      <td class="top"><a>Luff, G.</a> and <a title="Cloudflare, Inc.">H. Andrews</a>, "<a href="http://tools.ietf.org/html/draft-handrews-relative-json-pointer-00">Relative JSON Pointers</a>", Internet-Draft draft-handrews-relative-json-pointer-00, November 2017.</td>
+      <td class="top"><a>Luff, G.</a> and <a title="Cloudflare, Inc.">H. Andrews</a>, "<a href="http://tools.ietf.org/html/draft-handrews-relative-json-pointer-01">Relative JSON Pointers</a>", Internet-Draft draft-handrews-relative-json-pointer-01, November 2017.</td>
     </tr>
     <tr>
       <td class="reference">
         <b id="json-schema">[json-schema]</b>
       </td>
-      <td class="top"><a>Wright, A.</a> and <a title="Cloudflare, Inc.">H. Andrews</a>, "<a href="http://tools.ietf.org/html/draft-handrews-json-schema-00">JSON Schema: A Media Type for Describing JSON Documents</a>", Internet-Draft draft-handrews-json-schema-00, November 2017.</td>
+      <td class="top"><a>Wright, A.</a> and <a title="Cloudflare, Inc.">H. Andrews</a>, "<a href="http://tools.ietf.org/html/draft-handrews-json-schema-01">JSON Schema: A Media Type for Describing JSON Documents</a>", Internet-Draft draft-handrews-json-schema-01, November 2017.</td>
     </tr>
   </tbody>
 </table>
@@ -1150,6 +1154,17 @@
 <p/>
 
 <dl>
+  <dt>draft-handrews-json-schema-validation-01</dt>
+  <dd style="margin-left: 8">
+    <ul>
+      <li>This draft is purely a clarification with no functional changes</li>
+      <li>Provided the general principle behind ignoring annotations under "not" and similar cases</li>
+      <li>Clarified "if"/"then"/"else" validation interactions</li>
+      <li>Clarified "if"/"then"/"else" behavior for annotation</li>
+      <li>Minor formatting and cross-referencing improvements</li>
+    </ul>
+    <p> </p>
+  </dd>
   <dt>draft-handrews-json-schema-validation-00</dt>
   <dd style="margin-left: 8">
     <ul>
@@ -1173,7 +1188,7 @@
   <dt>draft-wright-json-schema-validation-01</dt>
   <dd style="margin-left: 8">
     <ul>
-      <li>Standardized on hyphenated format names ("uriref" becomes "uri-ref")</li>
+      <li>Standardized on hyphenated format names with full words ("uriref" becomes "uri-reference")</li>
       <li>Add the formats "uri-template" and "json-pointer"</li>
       <li>Changed "exclusiveMaximum"/"exclusiveMinimum" from boolean modifiers of "maximum"/"minimum" to independent numeric fields.</li>
       <li>Split the additionalItems/items into two sections</li>
@@ -1197,7 +1212,7 @@
     </ul>
     <p> </p>
   </dd>
-  <dt>draft-fge-json-schema-validation-01</dt>
+  <dt>draft-fge-json-schema-validation-00</dt>
   <dd style="margin-left: 8">
     <ul>
       <li>Initial draft.</li>

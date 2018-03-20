@@ -11,9 +11,9 @@ title: Specification
 Draft numbering
 ---------------
 
-The latest Internet-Drafts at the IETF are the **draft-handrews-json-schema\*-00** (Core and Validation) and **draft-handrews-json-schema\*-01** (Hyper-Schema and Relative JSON Pointer) documents, which correspond to the **draft-07** meta-schemas. These were published on **2017-11-19** (-00) and **2018-01-19** (-01).
+The latest Internet-Drafts at the IETF are the **draft-handrews-json-schema\*-01** documents, which correspond to the **draft-07** meta-schemas. These were published on **2018-03-19** (Core and Validation) and **2018-01-19** (Hyper-Schema and Relative JSON Pointer).
 
-Due to a change in author/editorship the I-D numbering was reset to -00 again.  Due to bugs in the -00 Hyper-Schema and Relative JSON Pointer specifications, they have been replaced with -01, but are still considered draft-07 as there is no functional change.
+Due to a change in author/editorship the I-D numbering was reset to -00 again.  Due to bugs in the draft-handrews-\*-00 specifications, they have been replaced with -01, but are still considered draft-07 as there is no functional change.
 
 Specification documents
 -----------------------
@@ -27,8 +27,8 @@ The specification is split into three parts, Core, Validation, and Hyper-Schema,
 | [Relative JSON Pointers](latest/relative-json-pointer.html)  | extends the JSON Pointer sytnax for relative pointers |
 
 They are also available on the IETF main site:
-* [draft-handrews-json-schema-00 (core)](http://tools.ietf.org/html/draft-handrews-json-schema-00)
-* [draft-handrews-json-schema-validation-00](http://tools.ietf.org/html/draft-handrews-json-schema-validation-00)
+* [draft-handrews-json-schema-01 (core)](http://tools.ietf.org/html/draft-handrews-json-schema-01)
+* [draft-handrews-json-schema-validation-01](http://tools.ietf.org/html/draft-handrews-json-schema-validation-01)
 * [draft-handrews-json-schema-hyperschema-01](http://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-01) ([errata](https://github.com/json-schema-org/json-schema-spec/issues?q=label%3Aerrata+label%3Ahypermedia))
 * [draft-handrews-relative-json-pointer-01](https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01)
 
