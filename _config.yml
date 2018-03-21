@@ -35,6 +35,7 @@ exclude:
 - README.md
 - Gemfile
 - node_modules
+- vendor
 
 plugins:
   - jekyll-relative-links
