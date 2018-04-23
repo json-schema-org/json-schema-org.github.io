@@ -91,7 +91,7 @@
     - name: jsonschema
       url: https://github.com/santhosh-tekuri/jsonschema
       notes: 
-      draft: [4, 6]
+      draft: [4, 6, 7]
       license: BSD-3-Clause
     - name: validate-json
       url: https://github.com/cesanta/validate-json
