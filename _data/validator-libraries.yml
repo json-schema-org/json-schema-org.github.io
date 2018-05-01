@@ -1,6 +1,6 @@
 - name: .NET
   anchor-name: dotnet
-  implementations: 
+  implementations:
     - name: Json.NET Schema
       url: https://www.newtonsoft.com/jsonschema
       draft: [3, 4, 6, 7]
@@ -11,7 +11,7 @@
       license: MIT
     - name: NJsonSchema
       url: http://NJsonSchema.org
-      notes: 
+      notes:
       draft: [4]
       license: Ms-PL
 - name: ActionScript 3
@@ -33,12 +33,12 @@
   implementations:
     - name: wjelement-cpp
       url: https://github.com/petehug/wjelement-cpp
-      notes: 
+      notes:
       draft: [4]
       license: LGPLv3
     - name: Header-only C++ library for JSON Schema validation
       url: https://github.com/tristanpenman/valijson
-      notes: 
+      notes:
       draft: [4]
       license: BSD-2-Clause
     - name: Modern C++ JSON schema validator
@@ -67,7 +67,7 @@
   implementations:
     - name: json_schema
       url: https://github.com/patefacio/json_schema
-      notes: 
+      notes:
       draft: [4]
       license: BSL-1.0
 - name: Elixir
@@ -90,7 +90,7 @@
       license: "Apache 2.0"
     - name: jsonschema
       url: https://github.com/santhosh-tekuri/jsonschema
-      notes: 
+      notes:
       draft: [4, 6, 7]
       license: BSD-3-Clause
     - name: validate-json
@@ -105,7 +105,7 @@
       license: MIT
     - name: hjsonschema
       url: https://github.com/seagreen/hjsonschema
-      notes: 
+      notes:
       draft: [4]
       license: MIT
 - name: Java
@@ -117,12 +117,12 @@
       license: LGPLv3
     - name: everit-org/json-schema
       url: https://github.com/everit-org/json-schema
-      notes: 
+      notes:
       draft: [4, 6, 7]
       license: Apache License 2.0
     - name: json-schema-validator
       url: https://github.com/networknt/json-schema-validator
-      notes: 
+      notes:
       draft: [4]
       license: Apache License 2.0
 - name: JavaScript
@@ -144,12 +144,12 @@
       license: MIT
     - name: is-my-json-valid
       url: https://github.com/mafintosh/is-my-json-valid
-      notes: 
+      notes:
       draft: [4]
       license: MIT
     - name: tv4
       url: http://geraintluff.github.com/tv4/
-      notes: 
+      notes:
       draft: [4]
       license: [Public Domain, MIT]
     - name: JaySchema
@@ -207,7 +207,7 @@
   implementations:
     - name: jsv4-php
       url: https://github.com/geraintluff/jsv4-php
-      notes: 
+      notes:
       draft: [4]
       license: [Public Domain, MIT]
     - name: php-json-schema
@@ -220,17 +220,17 @@
       license: "Berkeley"
     - name: JVal
       url: https://github.com/stefk/jval
-      notes: 
+      notes:
       draft: [4]
       license: "MIT"
     - name: JSON Guard
       url: https://github.com/thephpleague/json-guard
-      notes: 
+      notes:
       draft: [4]
       license: "MIT"
     - name: Opis Json Schema
       url: https://github.com/opis/json-schema
-      notes: 
+      notes:
       draft: [6, 7]
       license: "Apache License 2.0"
     - name: Swaggest Json Schema
@@ -259,7 +259,7 @@
   implementations:
     - name: jsonschema
       url: https://github.com/Julian/jsonschema
-      notes: 
+      notes:
       draft: [3, 4]
       license: "MIT"
     - name: json-schema-validator
@@ -268,20 +268,21 @@
       license: "LGPL"
 - name: Ruby
   implementations:
-    - name: ruby-jsonschema
-      url: https://github.com/Constellation/ruby-jsonchema
-      draft: [2]
-      license: "MIT"
+    - name: json_schema
+      url: https://github.com/brandur/json_schema
+      notes: "Schema parser and validator, with hyper-schema support"
+      draft: [4]
+      license: MIT
     - name: json-schema
       url: https://github.com/hoxworth/json-schema
-      notes: 
+      notes:
       draft: [1, 2, 3, 4]
       license: MIT
 - name: Rust
   implementations:
     - name: valico
       url: https://github.com/rustless/valico
-      notes: 
+      notes:
       draft: [4]
       license: MIT
 - name: Scala
