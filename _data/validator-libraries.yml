@@ -85,8 +85,8 @@
 - name: Go
   implementations:
     - name: gojsonschema
-      url: https://github.com/sigu-399/gojsonschema
-      draft: [4]
+      url: https://github.com/xeipuuv/gojsonschema
+      draft: [4, 6, 7]
       license: "Apache 2.0"
     - name: jsonschema
       url: https://github.com/santhosh-tekuri/jsonschema
