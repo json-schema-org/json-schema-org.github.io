@@ -4,6 +4,12 @@ title: Obsolete Implementations
 permalink: /obsolete-implementations.html
 ---
 
+_**NOTE:** Due to the long gap after draft-04, many projects that implemented that draft became inactive by the time draft-06 was published, or are looking for new contributors to move forward.  Such projects are listed here_
+
+_For implementations supporting (or actively working towards) draft-06 or later, see the main [Implementations](implementations) page._
+
+_Projects supporting only draft-03 or earlier are no longer listed._
+
 * TOC
 {:toc}
 
@@ -73,7 +79,7 @@ Validators
 ### Benchmarks
 
 -   Java
-    -   [json-schema-validator-benchmark](https://github.com/networknt/json-schema-validator-perftest) - compares performance of three JSON schema validator implementations in Java(Apache 2.0)
+    -   [json-schema-validator-benchmark](https://github.com/networknt/json-schema-validator-perftest) - compares performance of three JSON schema validator implementations (only one of which supports draft-06+) in Java(Apache 2.0)
 
 <!-- -->
 
@@ -126,23 +132,12 @@ Hyper-Schema
 Schema generation
 -----------------
 
--   .NET
-    -   [Json.NET](http://james.newtonking.com/projects/json-net.aspx) (MIT) - generates schemas from .NET types
-    -   [NJsonSchema](http://NJsonSchema.org) - *supports draft 4* (Ms-PL) - generates schemas from .NET types
--   PHP
-    -   [Liform](https://github.com/Limenius/liform) (MIT) - generates schemas from Symfony forms
 -   Python
     -   [JSL](https://github.com/aromanovich/jsl) (BSD) - a Python DSL for defining JSON Schemas
--   Scala
-    -   [Schema Guru](https://github.com/snowplow/schema-guru) (Apache 2.0) - CLI util, Spark Job and Web UI for deriving JSON Schemas out of corpus of JSON instances
 -   JavaScript
     -   [json-schema-generator](https://github.com/krg7880/json-schema-generator) (MIT) - Node.js library usable both as a CLI util and as a Node module
 -   TypeScript
-    -   [typescript-json-schema](https://github.com/YousefED/typescript-json-schema)
     -   [Typson](https://github.com/lbovet/typson) (Apache 2.0)
--   Online (web tool)
-    -   [jsonschema.net](http://www.jsonschema.net/) - generates schemas from example data
-    -   [Schema Guru Web UI](http://schemaguru.snowplowanalytics.com/) - derives precise Schemas using several JSON instances. Based on [Schema Guru](link-impl-guru)
 -   Visual Studio
     -   [JSON Schema Generator](http://visualstudiogallery.msdn.microsoft.com/b4515ef8-a518-41ca-b48c-bb1fd4e6faf7) - free extension
 -   Sparx Enterprise Architect
@@ -169,6 +164,9 @@ Data parsing and code generation
 
 UI generation
 -------------
+
+_TODO: Sort by draft support._
+
 Various levels of support for UI generation primarily from the validation vocabulary or combined with UI specific definition.
 
 -   JavaScript
@@ -188,6 +186,8 @@ Various levels of support for UI generation primarily from the validation vocabu
 
 Editors
 -------
+
+_TODO: Sort by draft support._
 
 -   [Liquid XML Studio 2016](https://www.liquid-technologies.com/json-schema-editor) - *Graphical JSON schema editor for draft 4, context sensitive intellisense for JSON documents.*
 -   [Visual Studio 2013](http://www.visualstudio.com/) - *Auto-completion and tooltips based on JSON schema draft 3 and draft 4*
@@ -212,17 +212,14 @@ Documentation generation
 -   JavaScript
     -   [Matic](https://github.com/mattyod/matic) (MIT)
     -   [Docson](https://github.com/lbovet/docson) (Apache 2.0)
-    -   [doca](https://github.com/cloudflare/doca/) (BSD)
+    -   [doca](https://github.com/cloudflare/doca/) (BSD) See [@cloudflare/doca](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/doca) for draft-06+ support
     -   [prmd](https://github.com/interagent/prmd) (MIT)
 
 Other
 -----
 
 -   JavaScript
-    -   [Orderly](https://github.com/lloyd/orderly) (BSD-3-Clause)
     -   [Dojo](http://www.dojotoolkit.org/) (AFL or BSD) - supports some aspects of JSON Schema
-    -   [Schematic Ipsum](http://schematic-ipsum.herokuapp.com/) (MIT)
-    -   [JSON-Schema-Instantiator](https://github.com/tomarad/JSON-Schema-Instantiator) (MIT)
     -   [JSON Schema Random](https://github.com/andreineculau/json-schema-random) (Apache 2.0)
     -   [json-schema-merge-allof](https://github.com/mokkabonna/json-schema-merge-allof) (MIT)
     -   [json-schema-compare](https://github.com/mokkabonna/json-schema-compare) (MIT)

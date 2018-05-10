@@ -4,7 +4,7 @@ title: Implementations
 permalink: /implementations.html
 ---
 
-_**NOTE:** This page lists implementations supporting draft-06 or later._
+_**NOTE:** This page lists implementations with (or actively working towards) support for draft-06 or later._
 
 _For implementations supporting only draft-04 or older, see the [Obsolete Implementations](obsolete-implementations) page._
 
@@ -77,10 +77,7 @@ Validators
 
 ### Benchmarks
 
--   Java
-    -   [json-schema-validator-benchmark](https://github.com/networknt/json-schema-validator-perftest) - compares performance of three JSON schema validator implementations in Java(Apache 2.0)
-
-<!-- -->
+Benchmarks that compare at least two implementations supporting draft-06+ may be listed here.
 
 -   JavaScript
     -   [json-schema-benchmark](https://github.com/ebdrup/json-schema-benchmark) - an independent benchmark for Node.js JSON-schema validators based on JSON-Schema Test Suite (MIT)
@@ -130,31 +127,33 @@ Hyper-Schema
 Schema generation
 -----------------
 
+Generators that produce schemas that are compatible with draft-06+ (e.g. no boolean `exlusiveMaximum`/`exclusiveMinimum`, no `id`, no hardwired draft-04 `$schema`) may be listed here.  Such tools need not necessarily be able to generate every keyword from recent drafts.
+
 -   .NET
     -   [Json.NET](https://www.newtonsoft.com/jsonschema) (AGPL-3.0) - generates schemas from .NET types
+    -   [NJsonSchema](http://NJsonSchema.org) - (Ms-PL) - generates schemas from .NET types, see issue [574](https://github.com/RSuter/NJsonSchema/issues/574) for draft-06+ support progress
+-   Orderly
+    -   [Orderly](https://github.com/lloyd/orderly) (BSD-3-Clause)
 -   PHP
     -   [Liform](https://github.com/Limenius/liform) (MIT) - generates schemas from Symfony forms
 -   Scala
-    -   [Schema Guru](https://github.com/snowplow/schema-guru) (Apache 2.0) - CLI util, Spark Job and Web UI for deriving JSON Schemas out of corpus of JSON instances
+    -   [Schema Guru](https://github.com/snowplow/schema-guru) (Apache 2.0) - CLI util, Spark Job and Web UI for deriving JSON Schemas out of corpus of JSON instances; see issue [178](https://github.com/snowplow/schema-guru/issues/178) for progress towards draft-06+ support
 -   TypeScript
     -   [typescript-json-schema](https://github.com/YousefED/typescript-json-schema)
 -   Online (web tool)
-    -   [jsonschema.net](http://jsonschema.net/) - generates schemas from example data
+    -   [jsonschema.net](http://www.jsonschema.net) - generates schemas from example data
 
 Data parsing and code generation
 --------------------------------
 
--   Scala
-    -   [json-schema-codegen](https://github.com/VoxSupplyChain/json-schema-codegen) - Tool and SBT plugin for generating Scala, TypeScript models and parsers from Json-Schema definitions, *supports draft 4* (Apache 2.0)
-    -   [Argus](https://github.com/aishfenton/argus) (MIT) - Macros for building models from JSON Schemas
--   Swift
-    -   [Bric-à-brac](https://github.com/glimpseio/BricBrac) (MIT) - generates idiomatic swift structs and parser/serializer from JSON schemas
 -   Golang
-    -  [gojsonschema](https://github.com/andy-zhangtao/gojsonschema)(Apache 2.0) - golang package for generating golang struct *supports Draft 4*. [Demo](http://json.golang.chinazt.cc)
     -  [jsonschema](https://github.com/qri-io/jsonschema)(MIT) - idiomatic go implementation with custom validator support, coding to and from json, rich error returns *supports Draft 7*
 
 UI generation
 -------------
+
+_TODO: Sort by draft support._
+
 Various levels of support for UI generation primarily from the validation vocabulary or combined with UI specific definition.
 
 -   JavaScript
@@ -175,6 +174,8 @@ Various levels of support for UI generation primarily from the validation vocabu
 Editors
 -------
 
+_TODO: Sort by draft support._
+
 -   [Liquid XML Studio 2016](https://www.liquid-technologies.com/json-schema-editor) - *Graphical JSON schema editor for draft 4, context sensitive intellisense for JSON documents.*
 -   [Visual Studio 2013](http://www.visualstudio.com/) - *Auto-completion and tooltips based on JSON schema draft 3 and draft 4*
 -   [JSONBuddy](http://www.json-buddy.com/) - *Grid-style JSON editor and context sensitive entry-helpers based on JSON schema*
@@ -189,29 +190,26 @@ Editors
 Compatibility
 -------------
 
--   JavaScript
-    -   [JSON Schema Compatibility](https://github.com/geraintluff/json-schema-compatability) - *converts draft 3 to draft 4* (Public Domain)
+Do you know of a tool that converts any version of JSON Schema to draft-07 or later?  If so, please open a PR!
 
 Documentation generation
 ------------------------
 
 -   JavaScript
-    -   [Matic](https://github.com/mattyod/matic) (MIT)
-    -   [Docson](https://github.com/lbovet/docson) (Apache 2.0)
-    -   [doca](https://github.com/cloudflare/doca/) (BSD)
-    -   [prmd](https://github.com/interagent/prmd) (MIT)
+    -   [@cloudflare/json-schema-apidoc-loader](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-apidoc-loader) Back-end for [@cloudflare/doca](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/doca), supporting draft-04, -06, -07, and Doca extensions (UI forthcoming)
 
 Other
 -----
 
 -   JavaScript
-    -   [Orderly](https://github.com/lloyd/orderly) (BSD-3-Clause)
-    -   [Dojo](http://www.dojotoolkit.org/) (AFL or BSD) - supports some aspects of JSON Schema
-    -   [Schematic Ipsum](http://schematic-ipsum.herokuapp.com/) (MIT)
-    -   [JSON-Schema-Instantiator](https://github.com/tomarad/JSON-Schema-Instantiator) (MIT)
-    -   [JSON Schema Random](https://github.com/andreineculau/json-schema-random) (Apache 2.0)
+    -   [JSON Schema Tools](https://github.com/cloudflare/json-schema-tools) (BSD-3-Clause) Monorepo for various JSON Schema-related packages, including:
+        -   [@cloudflare/json-schema-walker](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-walker) (BSD-3-Clause) Walks schemas (draft-04, -06, 07, and Cloudflare's Doca extensions) and runs pre- and post-walk callbacks.  Can modify schemas in place.
+        -   [@cloudflare/json-schema-transform](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-transform) (BSD-3-Clause) Utilities using @cloudflare/json-schema-walker for transformations including `allOf` merging and example roll-up.
+        -   [@cloudflare/json-schema-ref-loader](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-ref-loader) (BSD-3-Clause) Webpack loader for dereference-able schemas in JSON, JSON5, YAML, or JavaScript
+        -   [@cloudflare/json-hyper-schema](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-hyper-schema) (BSD-3-Clause) Utilities for working with Link Description Objects
     -   [json-schema-merge-allof](https://github.com/mokkabonna/json-schema-merge-allof) (MIT)
     -   [json-schema-compare](https://github.com/mokkabonna/json-schema-compare) (MIT)
+    -   [JSON-Schema-Instantiator](https://github.com/tomarad/JSON-Schema-Instantiator) (MIT)
 
 ### Schema Repositories
 -   [SchemaStore.org](http://schemastore.org/json/) - validate against common JSON Schemas
