@@ -14,7 +14,7 @@
     - name: Elixir JSON Schema validator
       url: https://github.com/jonasschmidt/ex_json_schema
       draft: [4]
-      notes: Support for more recent drafts in progress
+      notes: "Draft-06+ progress: issue [24](https://github.com/jonasschmidt/ex_json_schema/issues/24); branch [multi-draft-support](https://github.com/jonasschmidt/ex_json_schema/tree/multi-draft-support)"
       license: MIT
 - name: Go
   implementations:
@@ -66,7 +66,7 @@
   implementations:
     - name: jsonschema
       url: https://github.com/Julian/jsonschema
-      notes: Support for draft-06 nearing beta
+      notes: "Draft-06+ progress: issues [337](https://github.com/Julian/jsonschema/issues/337), [400](https://github.com/Julian/jsonschema/issues/400); branches [draft6](https://github.com/Julian/jsonschema/tree/draft6), [draft7](https://github.com/Julian/jsonschema/tree/draft7)"
       draft: [4, 3]
       license: "MIT"
 - name: Ruby
