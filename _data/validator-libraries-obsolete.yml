@@ -1,26 +1,11 @@
 - name: .NET
   anchor-name: dotnet
   implementations:
-    - name: Json.NET Schema
-      url: https://www.newtonsoft.com/jsonschema
-      draft: [3, 4, 6, 7]
-      license: "AGPL-3.0-only"
-    - name: Manatee.Json
-      url: https://github.com/gregsdennis/Manatee.Json
-      draft: [4, 6, 7]
-      license: MIT
     - name: NJsonSchema
       url: http://NJsonSchema.org
       notes:
       draft: [4]
       license: Ms-PL
-- name: ActionScript 3
-  anchor-name: action-script-3
-  implementations:
-    - name: Frigga
-      url: https://github.com/raulbajales/Frigga
-      draft: [3]
-      license: "MIT"
 - name: C
   implementations:
     - name: WJElement
@@ -39,7 +24,7 @@
     - name: Header-only C++ library for JSON Schema validation
       url: https://github.com/tristanpenman/valijson
       notes:
-      draft: [4]
+      draft: [4, 3]
       license: BSD-2-Clause
     - name: Modern C++ JSON schema validator
       url: https://github.com/pboettch/json-schema-validator
@@ -61,7 +46,7 @@
   implementations:
     - name: JSCK
       url: https://github.com/pandastrike/jsck
-      draft: [3, 4]
+      draft: [4, 3]
       license: MIT
 - name:  Dart
   implementations:
@@ -70,39 +55,20 @@
       notes:
       draft: [4]
       license: BSL-1.0
-- name: Elixir
-  implementations:
-    - name: Elixir JSON Schema validator
-      url: https://github.com/jonasschmidt/ex_json_schema
-      draft: [4]
-      license: MIT
 - name: Erlang
   implementations:
     - name: JeSSE
       url: https://github.com/for-GET/jesse
-      draft: [3, 4]
+      draft: [4, 3]
       license: "Apache 2.0"
 - name: Go
   implementations:
-    - name: gojsonschema
-      url: https://github.com/sigu-399/gojsonschema
-      draft: [4]
-      license: "Apache 2.0"
-    - name: jsonschema
-      url: https://github.com/santhosh-tekuri/jsonschema
-      notes:
-      draft: [4, 6, 7]
-      license: BSD-3-Clause
     - name: validate-json
       url: https://github.com/cesanta/validate-json
       draft: [4]
       license: GPLv2
 - name: Haskell
   implementations:
-    - name: aeson-schema
-      url: https://github.com/Fuuzetsu/aeson-schema
-      draft: [3]
-      license: MIT
     - name: hjsonschema
       url: https://github.com/seagreen/hjsonschema
       notes:
@@ -112,14 +78,8 @@
   implementations:
     - name: json-schema-validator
       url: https://github.com/java-json-tools/json-schema-validator
-      notes: "includes draft-04 hype-schema syntax support"
       draft: [4]
       license: LGPLv3
-    - name: everit-org/json-schema
-      url: https://github.com/everit-org/json-schema
-      notes:
-      draft: [4, 6, 7]
-      license: Apache License 2.0
     - name: json-schema-validator
       url: https://github.com/networknt/json-schema-validator
       notes:
@@ -127,24 +87,9 @@
       license: Apache License 2.0
 - name: JavaScript
   implementations:
-    - name: ajv
-      url: https://github.com/epoberezkin/ajv
-      notes: "for Node.js and browsers - *supports [custom keywords](https://github.com/epoberezkin/ajv-keywords) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51)*"
-      draft: [4, 6]
-      license: MIT
-    - name: djv
-      url: https://github.com/korzio/djv
-      notes: "for Node.js and browsers"
-      draft: [4, 6]
-      license: MIT
     - name: jsonschema
       url: https://github.com/tdegrunt/jsonschema
       notes: "for Node.js"
-      draft: [4]
-      license: MIT
-    - name: is-my-json-valid
-      url: https://github.com/mafintosh/is-my-json-valid
-      notes:
       draft: [4]
       license: MIT
     - name: tv4
@@ -152,6 +97,11 @@
       notes:
       draft: [4]
       license: [Public Domain, MIT]
+    - name: is-my-json-valid
+      url: https://github.com/mafintosh/is-my-json-valid
+      notes:
+      draft: [4]
+      license: MIT
     - name: JaySchema
       url: https://github.com/natesilva/jayschema
       notes: "for Node.js"
@@ -199,25 +149,17 @@
       url: https://github.com/ericgj/json-schema-valid
       draft: [4]
       license: MIT
-    - name: vue-vuelidate-jsonschema
-      url: https://github.com/mokkabonna/vue-vuelidate-jsonschema
-      draft: [6]
-      license: MIT
 - name: PHP
   implementations:
+    - name: json-schema
+      url: https://github.com/justinrainbow/json-schema
+      draft: [4, 3]
+      license: "Berkeley"
     - name: jsv4-php
       url: https://github.com/geraintluff/jsv4-php
       notes:
       draft: [4]
       license: [Public Domain, MIT]
-    - name: php-json-schema
-      url: https://github.com/hasbridge/php-json-schema
-      draft: [3]
-      license: "MIT"
-    - name: json-schema
-      url: https://github.com/justinrainbow/json-schema
-      draft: [3, 4]
-      license: "Berkeley"
     - name: JVal
       url: https://github.com/stefk/jval
       notes:
@@ -228,25 +170,16 @@
       notes:
       draft: [4]
       license: "MIT"
-    - name: Opis Json Schema
-      url: https://github.com/opis/json-schema
-      notes:
-      draft: [6, 7]
-      license: "Apache License 2.0"
     - name: Swaggest Json Schema
       url: https://github.com/swaggest/php-json-schema
       notes:
-      draft: [4, 6, 7]
+      draft: [4]
       license: "MIT"
 - name: Perl
   implementations:
     - name: JSV::Validator
       url: https://metacpan.org/module/JSV::Validator
       draft: [4]
-      license: "MIT"
-    - name: JSON::Schema
-      url: https://metacpan.org/module/JSON::Schema
-      draft: [3]
       license: "MIT"
 - name: PostgreSQL
   implementations:
@@ -255,17 +188,6 @@
       notes: "PL/pgSQL implementation, no remote (http) references"
       draft: [4]
       license: PostgreSQL
-- name: Python
-  implementations:
-    - name: jsonschema
-      url: https://github.com/Julian/jsonschema
-      notes:
-      draft: [3, 4]
-      license: "MIT"
-    - name: json-schema-validator
-      url: https://github.com/zyga/json-schema-validator
-      draft: [2]
-      license: "LGPL"
 - name: Ruby
   implementations:
     - name: json_schema
@@ -276,7 +198,7 @@
     - name: json-schema
       url: https://github.com/hoxworth/json-schema
       notes:
-      draft: [1, 2, 3, 4]
+      draft: [4, 3, 2, 1]
       license: MIT
 - name: Rust
   implementations:

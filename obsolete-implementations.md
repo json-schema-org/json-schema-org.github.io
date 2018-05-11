@@ -1,19 +1,19 @@
 ---
 layout: page
-title: Implementations
-permalink: /implementations.html
+title: Obsolete Implementations
+permalink: /obsolete-implementations.html
 ---
 
-_**NOTE:** This page lists implementations with (or actively working towards) support for draft-06 or later._
+_**NOTE:** Due to the long gap after draft-04, many projects that implemented that draft became inactive by the time draft-06 was published, or are looking for new contributors to move forward.  Such projects are listed here_
 
-_For implementations supporting only draft-04 or older, see the [Obsolete Implementations](obsolete-implementations) page._
+_For implementations supporting (or actively working towards) draft-06 or later, see the main [Implementations](implementations) page._
 
+_Projects supporting only draft-03 or earlier are no longer listed._
 
 * TOC
 {:toc}
 
-Implementations below are written in different languages, and support part, or all, of at least one recent version of the specification.
-
+Implementations below are written in different languages, and support part, or all, of the specification.
 
 Implementations are classified based on their functionality. When known, the license of the project is also mentioned.
 
@@ -26,7 +26,7 @@ Validators
 
 <nav class="intra" markdown="1">
 
-{% assign validator-libraries = site.data.validator-libraries-modern | sort:"name" %}
+{% assign validator-libraries = site.data.validator-libraries-obsolete | sort:"name" %}
 
 {% for language in validator-libraries %}
 -   [{{ language.name }}](#validator-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %})
@@ -34,7 +34,7 @@ Validators
 
 </nav>
 
-<!-- To add a validator library, add it in _data/validator-libraries-modern.yml -->
+<!-- To add a validator library, add it in _data/validator-libraries-obsolete.yml -->
 
 <ul>
   {% for language in validator-libraries %}
@@ -46,7 +46,7 @@ Validators
         <a href="{{implementation.url}}">{{ implementation.name }}</a>
 
         {% if implementation.draft %}
-            <em>supports draft-0{{ implementation.draft | join: ", draft-0" }}</em>
+            <em>supports draft {{ implementation.draft | join: ", draft " }}</em>
         {% endif %}
 
         {{implementation.notes | markdownify | remove: '<p>' | remove: '</p>'}}
@@ -63,24 +63,30 @@ Validators
 
 ### Online
 
--   [JSON Schema Validator](https://www.jsonschemavalidator.net/) - validate against your own schemas
 -   [JSON Schema Lint](http://jsonschemalint.com/) - validate against your own schemas
+-   [SchemaStore.org](http://schemastore.org/validator/) - validate against common JSON Schemas
 -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 
 ### Command Line
 
-<!-- To add a validator library, add it in _data/validator-libraries-modern.yml -->
+<!-- To add a validator library, add it in _data/validator-libraries-obsolete.yml -->
 
 {% for tool in site.data.validator-cli %}
-- [{{ tool.name }}]({{ tool.url }}) <em>[draft-0{{ tool.draft | join: ", draft-0" }}]</em> ({{ tool.license | join: ", " }}){% if tool.notes %}
+- [{{ tool.name }}]({{ tool.url }}) [draft {{ tool.draft | join: ", draft " }}] ({{ tool.license | join: ", " }}){% if tool.notes %}
   - {{ tool.notes }} {% endif %}{% endfor %}
+
 
 ### Benchmarks
 
-Benchmarks that compare at least two implementations supporting draft-06+ may be listed here.
+-   Java
+    -   [json-schema-validator-benchmark](https://github.com/networknt/json-schema-validator-perftest) - compares performance of three JSON schema validator implementations (only one of which supports draft-06+) in Java(Apache 2.0)
+
+<!-- -->
 
 -   JavaScript
     -   [json-schema-benchmark](https://github.com/ebdrup/json-schema-benchmark) - an independent benchmark for Node.js JSON-schema validators based on JSON-Schema Test Suite (MIT)
+    -   [z-schema validator benchmark](https://github.com/zaggino/z-schema#benchmarks) - compares performance in the individual tests from JSON-Schema Test Suite (MIT)
+    -   [JSCK validator benchmark](https://github.com/pandastrike/jsck#benchmarks) - shows performance for JSON-schemas of different complexity (MIT)
 
 -   PHP
     -   [php-json-schema-bench](https://github.com/swaggest/php-json-schema-bench) - comparative benchmark for JSON-schema PHP validators using JSON-Schema Test Suite and z-schema/JSCK (MIT)
@@ -90,7 +96,7 @@ Hyper-Schema
 
 <nav class="intra" markdown="1">
 
-{% assign hyper-schema-libraries = site.data.hyper-libraries-modern | sort:"name" %}
+{% assign hyper-schema-libraries = site.data.hyper-libraries-obsolete | sort:"name" %}
 
 {% for language in hyper-schema-libraries %}
 -   [{{ language.name }}](#hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %})
@@ -123,31 +129,38 @@ Hyper-Schema
   {% endfor %}
 </ul>
 
-
 Schema generation
 -----------------
 
-Generators that produce schemas that are compatible with draft-06+ (e.g. no boolean `exlusiveMaximum`/`exclusiveMinimum`, no `id`, no hardwired draft-04 `$schema`) may be listed here.  Such tools need not necessarily be able to generate every keyword from recent drafts.
-
--   .NET
-    -   [Json.NET](https://www.newtonsoft.com/jsonschema) (AGPL-3.0) - generates schemas from .NET types
-    -   [NJsonSchema](http://NJsonSchema.org) - (Ms-PL) - generates schemas from .NET types, see issue [574](https://github.com/RSuter/NJsonSchema/issues/574) for draft-06+ support progress
--   Orderly
-    -   [Orderly](https://github.com/lloyd/orderly) (BSD-3-Clause)
--   PHP
-    -   [Liform](https://github.com/Limenius/liform) (MIT) - generates schemas from Symfony forms
--   Scala
-    -   [Schema Guru](https://github.com/snowplow/schema-guru) (Apache 2.0) - CLI util, Spark Job and Web UI for deriving JSON Schemas out of corpus of JSON instances; see issue [178](https://github.com/snowplow/schema-guru/issues/178) for progress towards draft-06+ support
+-   Python
+    -   [JSL](https://github.com/aromanovich/jsl) (BSD) - a Python DSL for defining JSON Schemas
+-   JavaScript
+    -   [json-schema-generator](https://github.com/krg7880/json-schema-generator) (MIT) - Node.js library usable both as a CLI util and as a Node module
 -   TypeScript
-    -   [typescript-json-schema](https://github.com/YousefED/typescript-json-schema)
--   Online (web tool)
-    -   [jsonschema.net](http://www.jsonschema.net) - generates schemas from example data
+    -   [Typson](https://github.com/lbovet/typson) (Apache 2.0)
+-   Visual Studio
+    -   [JSON Schema Generator](http://visualstudiogallery.msdn.microsoft.com/b4515ef8-a518-41ca-b48c-bb1fd4e6faf7) - free extension
+-   Sparx Enterprise Architect
+    -   [API-Add-In](https://github.com/bayeslife/api-add-in) - Sparx EA extension for exporting JSON Schema from UML models
 
 Data parsing and code generation
 --------------------------------
 
+-   Delphi
+    - [DJsonSchema](https://github.com/schlothauer-wauer/DJsonSchema) (MIT) - JSON Schema reader and code generator for Delphi.
+-   Groovy
+    - [jsonCodeGen](https://github.com/schlothauer-wauer/jsoncodegen) (MIT) - Groovy based generation tasks from JSON schema. Already includes generators for Java Beans, Swagger specification files and PlantUML diagrams.
+-   Haskell
+    -   [aeson-schema](https://github.com/Fuuzetsu/aeson-schema) (MIT) - generates code for a parser
+-   Ruby
+    -   [autoparse](https://github.com/google/autoparse) (ASL 2.0)
+-   Scala
+    -   [json-schema-codegen](https://github.com/VoxSupplyChain/json-schema-codegen) - Tool and SBT plugin for generating Scala, TypeScript models and parsers from Json-Schema definitions, *supports draft 4* (Apache 2.0)
+    -   [Argus](https://github.com/aishfenton/argus) (MIT) - Macros for building models from JSON Schemas
+-   Swift
+    -   [Bric-à-brac](https://github.com/glimpseio/BricBrac) (MIT) - generates idiomatic swift structs and parser/serializer from JSON schemas
 -   Golang
-    -  [jsonschema](https://github.com/qri-io/jsonschema)(MIT) - idiomatic go implementation with custom validator support, coding to and from json, rich error returns *supports Draft 7*
+    -  [gojsonschema](https://github.com/andy-zhangtao/gojsonschema)(Apache 2.0) - golang package for generating golang struct *supports Draft 4*. [Demo](http://json.golang.chinazt.cc)
 
 UI generation
 -------------
@@ -185,31 +198,28 @@ _TODO: Sort by draft support._
 -   [JSON Schema Editor](https://json-schema-editor.tangramjs.com) - *An intuitive editor for JSON schema online*
 -   [JSON Editor](https://json-editor.tangramjs.com) - *An online, schema-aware editor for JSON document*
 -   [Eclipse IDE](https://www.eclipse.org/downloads/eclipse-packages) - *Rich JSON edition supporting schema for instantaneous validation and error reporting, completion, documentation.*
--   [WebStorm](https://www.jetbrains.com/webstorm/), [IntelliJ IDEA](https://www.jetbrains.com/idea/), and other [JetBrains IDEs](https://www.jetbrains.com/products.html?fromMenu#type=ide) - *Code completion, documentation, and validation for JSON files using JSON Schema*
 
 Compatibility
 -------------
 
-Do you know of a tool that converts any version of JSON Schema to draft-07 or later?  If so, please open a PR!
+-   JavaScript
+    -   [JSON Schema Compatibility](https://github.com/geraintluff/json-schema-compatability) - *converts draft 3 to draft 4* (Public Domain)
+
 
 Documentation generation
 ------------------------
 
 -   JavaScript
-    -   [@cloudflare/json-schema-apidoc-loader](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-apidoc-loader) Back-end for [@cloudflare/doca](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/doca), supporting draft-04, -06, -07, and Doca extensions (UI forthcoming)
+    -   [Matic](https://github.com/mattyod/matic) (MIT)
+    -   [Docson](https://github.com/lbovet/docson) (Apache 2.0)
+    -   [doca](https://github.com/cloudflare/doca/) (BSD) See [@cloudflare/doca](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/doca) for draft-06+ support
+    -   [prmd](https://github.com/interagent/prmd) (MIT)
 
 Other
 -----
 
 -   JavaScript
-    -   [JSON Schema Tools](https://github.com/cloudflare/json-schema-tools) (BSD-3-Clause) Monorepo for various JSON Schema-related packages, including:
-        -   [@cloudflare/json-schema-walker](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-walker) (BSD-3-Clause) Walks schemas (draft-04, -06, 07, and Cloudflare's Doca extensions) and runs pre- and post-walk callbacks.  Can modify schemas in place.
-        -   [@cloudflare/json-schema-transform](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-transform) (BSD-3-Clause) Utilities using @cloudflare/json-schema-walker for transformations including `allOf` merging and example roll-up.
-        -   [@cloudflare/json-schema-ref-loader](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-ref-loader) (BSD-3-Clause) Webpack loader for dereference-able schemas in JSON, JSON5, YAML, or JavaScript
-        -   [@cloudflare/json-hyper-schema](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-hyper-schema) (BSD-3-Clause) Utilities for working with Link Description Objects
+    -   [Dojo](http://www.dojotoolkit.org/) (AFL or BSD) - supports some aspects of JSON Schema
+    -   [JSON Schema Random](https://github.com/andreineculau/json-schema-random) (Apache 2.0)
     -   [json-schema-merge-allof](https://github.com/mokkabonna/json-schema-merge-allof) (MIT)
     -   [json-schema-compare](https://github.com/mokkabonna/json-schema-compare) (MIT)
-    -   [JSON-Schema-Instantiator](https://github.com/tomarad/JSON-Schema-Instantiator) (MIT)
-
-### Schema Repositories
--   [SchemaStore.org](http://schemastore.org/json/) - validate against common JSON Schemas

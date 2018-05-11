@@ -1,0 +1,6 @@
+- name: JavaScript
+  implementations:
+    - name: Jsonary
+      url: "http://jsonary.com/"
+      license: MIT
+      draft: [4]
