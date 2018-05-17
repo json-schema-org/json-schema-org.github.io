@@ -22,11 +22,9 @@ If you have updates to this list, make a pull request on the [GitHub repo](https
 Validators
 ----------
 
-### Libraries
-
 <nav class="intra" markdown="1">
 
-{% assign validator-libraries = site.data.validator-libraries-modern | sort:"name" %}
+{% assign validator-libraries = site.data.validator-libraries-modern %}
 
 {% for language in validator-libraries %}
 -   [{{ language.name }}](#validator-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %})
@@ -34,7 +32,7 @@ Validators
 
 </nav>
 
-<!-- To add a validator library, add it in _data/validator-libraries-modern.yml -->
+<!-- To add a validator, add it in _data/validator-libraries-modern.yml -->
 
 <ul>
   {% for language in validator-libraries %}
@@ -46,11 +44,14 @@ Validators
         <a href="{{implementation.url}}">{{ implementation.name }}</a>
 
         {% if implementation.draft %}
-            <em>supports draft-0{{ implementation.draft | join: ", draft-0" }}</em>
+            <em>draft-0{{ implementation.draft | join: ", -0" }}</em>
         {% endif %}
 
         {{implementation.notes | markdownify | remove: '<p>' | remove: '</p>'}}
-        ({{ implementation.license | join: ", " }})
+
+        {% if implementation.license %}
+            ({{ implementation.license | join: ", " }})
+        {% endif %}
 
         </li>
     {% endfor %}
@@ -58,22 +59,6 @@ Validators
   </li>
   {% endfor %}
 </ul>
-
-
-
-### Online
-
--   [JSON Schema Validator](https://www.jsonschemavalidator.net/) - validate against your own schemas
--   [JSON Schema Lint](http://jsonschemalint.com/) - validate against your own schemas
--   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
-
-### Command Line
-
-<!-- To add a validator library, add it in _data/validator-libraries-modern.yml -->
-
-{% for tool in site.data.validator-cli %}
-- [{{ tool.name }}]({{ tool.url }}) <em>[draft-0{{ tool.draft | join: ", draft-0" }}]</em> ({{ tool.license | join: ", " }}){% if tool.notes %}
-  - {{ tool.notes }} {% endif %}{% endfor %}
 
 ### Benchmarks
 
@@ -142,6 +127,7 @@ Generators that produce schemas that are compatible with draft-06+ (e.g. no bool
     -   [typescript-json-schema](https://github.com/YousefED/typescript-json-schema)
 -   Online (web tool)
     -   [jsonschema.net](http://www.jsonschema.net) - generates schemas from example data
+    -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 
 Data parsing and code generation
 --------------------------------
