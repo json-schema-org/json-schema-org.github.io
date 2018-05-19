@@ -60,7 +60,7 @@ Validators
   {% endfor %}
 </ul>
 
-### Benchmarks
+#### Benchmarks
 
 Benchmarks that compare at least two implementations supporting draft-06+ may be listed here.
 
@@ -108,35 +108,70 @@ Hyper-Schema
   {% endfor %}
 </ul>
 
+#### API documentation
 
-Schema generation
+-   JavaScript
+    -   [@cloudflare/doca](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/doca) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), _draft-04, -06, -07, and Doca extensions_ (UI forthcoming)
+
+#### Link Description Object utilities
+
+-   JavaScript
+    -   [@cloudflare/json-hyper-schema](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-hyper-schema) _draft-07, -06, -04_ (BSD-3-Clause)
+
+
+Schema generators
 -----------------
 
-Generators that produce schemas that are compatible with draft-06+ (e.g. no boolean `exlusiveMaximum`/`exclusiveMinimum`, no `id`, no hardwired draft-04 `$schema`) may be listed here.  Such tools need not necessarily be able to generate every keyword from recent drafts.
+Schema generators need not support generating every schema keyword.
+For schema generators, compatibility with a draft means that either:
+
+* Schemas produced explicitly set the draft with `$schema`
+* Schemas produced lack `$schema` but are valid against the appropriate meta-schema
+
+For example, the only incompatibilities between draft-04 and draft-06 involve `exclusiveMinimum`, `exclusiveMaximum`, and `id` vs `$id`.  If a generator does not set `$schema` and does not ever emit those keywords, then it is compatible with draft-06 even if it was written with draft-04 in mind.
+
+#### From code
 
 -   .NET
     -   [Json.NET](https://www.newtonsoft.com/jsonschema) (AGPL-3.0) - generates schemas from .NET types
     -   [NJsonSchema](http://NJsonSchema.org) - (Ms-PL) - generates schemas from .NET types, see issue [574](https://github.com/RSuter/NJsonSchema/issues/574) for draft-06+ support progress
--   Orderly
-    -   [Orderly](https://github.com/lloyd/orderly) (BSD-3-Clause)
 -   PHP
     -   [Liform](https://github.com/Limenius/liform) (MIT) - generates schemas from Symfony forms
--   Scala
-    -   [Schema Guru](https://github.com/snowplow/schema-guru) (Apache 2.0) - CLI util, Spark Job and Web UI for deriving JSON Schemas out of corpus of JSON instances; see issue [178](https://github.com/snowplow/schema-guru/issues/178) for progress towards draft-06+ support
 -   TypeScript
     -   [typescript-json-schema](https://github.com/YousefED/typescript-json-schema)
+
+#### From data
+
+-   Scala
+    -   [Schema Guru](https://github.com/snowplow/schema-guru) (Apache 2.0) - CLI util, Spark Job and Web UI for deriving JSON Schemas out of corpus of JSON instances; see issue [178](https://github.com/snowplow/schema-guru/issues/178) for progress towards draft-06+ support
 -   Online (web tool)
     -   [jsonschema.net](http://www.jsonschema.net) - generates schemas from example data
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 
-Data parsing and code generation
---------------------------------
+
+Generators from schemas
+-----------------------
+
+Tools that generate artifacts from schemas need not support every keyword,
+as not all keywords work well for generative use cases.
+
+Generators are considered compatible with a draft if they support (or benignly
+ignore) the appropriate `$schema` value, and interpret the keywords that they
+do support according to that draft.
+
+For example, if a generator that was originally written for draft-04 does not
+support `id`, `exclusiveMinimum`, or `exclusiveMaxium`, then as long as it does
+not require a draft-04 `$schema`, it is compatible with draft-06 since those
+are the only keywords that changed.
+
+#### Code generation
 
 -   Golang
     -  [jsonschema](https://github.com/qri-io/jsonschema)(MIT) - idiomatic go implementation with custom validator support, coding to and from json, rich error returns *supports Draft 7*
+-   Online (web tool)
+    -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 
-UI generation
--------------
+#### Web UI generation
 
 _TODO: Sort by draft support._
 
@@ -157,8 +192,42 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [React JSON Schema Form](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
     -   [React Schema Form](https://github.com/networknt/react-schema-form) (MIT)
 
-Editors
--------
+#### Data from schemas
+
+_None currently support draft-06 or later._
+
+Utilities
+---------
+
+Draft compatibility for utilities is generally specific to the purpose of
+the utility, and decided on a case-by-case basis.
+
+#### General processing
+
+-   JavaScript
+    -   [@cloudflare/json-schema-walker](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-walker) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), _draft-07, -06, -04, and Cloudflare's Doca extensions_ Walks schemas and runs pre- and post-walk callbacks.  Can modify schemas in place. (BSD-3-Clause)
+
+#### Schema to Schema
+
+-   JavaScript
+    -   [@cloudflare/json-schema-transform](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-transform) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), (BSD-3-Clause) Utilities using @cloudflare/json-schema-walker for transformations including `allOf` merging and example roll-up.
+    -   [json-schema-merge-allof](https://github.com/mokkabonna/json-schema-merge-allof) (MIT)
+    -   [json-schema-compare](https://github.com/mokkabonna/json-schema-compare) (MIT)
+    -   [JSON-Schema-Instantiator](https://github.com/tomarad/JSON-Schema-Instantiator) (MIT)
+
+#### Schema draft migration
+
+_None currently support draft-06 or later._
+
+#### Format converters
+
+-   Orderly
+    -   [Orderly](https://github.com/lloyd/orderly) (BSD-3-Clause)
+-   Webpack
+    -   [@cloudflare/json-schema-ref-loader](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-ref-loader) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), (BSD-3-Clause) Webpack loader for dereference-able schemas in JSON, JSON5, YAML, or JavaScript
+    -   [@cloudflare/json-schema-apidoc-loader](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-apidoc-loader) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), Back-end for [@cloudflare/doca](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/doca), _draft-04, -06, -07, and Doca extensions_
+
+#### Editors
 
 _TODO: Sort by draft support._
 
@@ -173,29 +242,8 @@ _TODO: Sort by draft support._
 -   [Eclipse IDE](https://www.eclipse.org/downloads/eclipse-packages) - *Rich JSON edition supporting schema for instantaneous validation and error reporting, completion, documentation.*
 -   [WebStorm](https://www.jetbrains.com/webstorm/), [IntelliJ IDEA](https://www.jetbrains.com/idea/), and other [JetBrains IDEs](https://www.jetbrains.com/products.html?fromMenu#type=ide) - *Code completion, documentation, and validation for JSON files using JSON Schema*
 
-Compatibility
--------------
 
-Do you know of a tool that converts any version of JSON Schema to draft-07 or later?  If so, please open a PR!
+Schema Repositories
+-------------------
 
-Documentation generation
-------------------------
-
--   JavaScript
-    -   [@cloudflare/json-schema-apidoc-loader](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-apidoc-loader) Back-end for [@cloudflare/doca](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/doca), supporting draft-04, -06, -07, and Doca extensions (UI forthcoming)
-
-Other
------
-
--   JavaScript
-    -   [JSON Schema Tools](https://github.com/cloudflare/json-schema-tools) (BSD-3-Clause) Monorepo for various JSON Schema-related packages, including:
-        -   [@cloudflare/json-schema-walker](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-walker) (BSD-3-Clause) Walks schemas (draft-04, -06, 07, and Cloudflare's Doca extensions) and runs pre- and post-walk callbacks.  Can modify schemas in place.
-        -   [@cloudflare/json-schema-transform](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-transform) (BSD-3-Clause) Utilities using @cloudflare/json-schema-walker for transformations including `allOf` merging and example roll-up.
-        -   [@cloudflare/json-schema-ref-loader](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-ref-loader) (BSD-3-Clause) Webpack loader for dereference-able schemas in JSON, JSON5, YAML, or JavaScript
-        -   [@cloudflare/json-hyper-schema](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-hyper-schema) (BSD-3-Clause) Utilities for working with Link Description Objects
-    -   [json-schema-merge-allof](https://github.com/mokkabonna/json-schema-merge-allof) (MIT)
-    -   [json-schema-compare](https://github.com/mokkabonna/json-schema-compare) (MIT)
-    -   [JSON-Schema-Instantiator](https://github.com/tomarad/JSON-Schema-Instantiator) (MIT)
-
-### Schema Repositories
 -   [SchemaStore.org](http://schemastore.org/json/) - validate against common JSON Schemas
