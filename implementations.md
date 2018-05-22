@@ -95,11 +95,14 @@ Hyper-Schema
         <a href="{{implementation.url}}">{{ implementation.name }}</a>
 
         {% if implementation.draft %}
-            <em>supports draft {{ implementation.draft | join: ", draft " }}</em>
+            <em>draft-0{{ implementation.draft | join: ", -0" }}</em>
         {% endif %}
 
         {{implementation.notes | markdownify | remove: '<p>' | remove: '</p>'}}
-        ({{ implementation.license | join: ", " }})
+
+        {% if implementation.license %}
+            ({{ implementation.license | join: ", " }})
+        {% endif %}
 
         </li>
     {% endfor %}
@@ -205,6 +208,7 @@ the utility, and decided on a case-by-case basis.
 #### General processing
 
 -   JavaScript
+    -   [json-schema-ref-parser](https://github.com/BigstickCarpet/json-schema-ref-parser) (MIT) Tools for dereferencing non-cyclic schemas, bundling referenced schemas into a single file, and other `$ref` processing.
     -   [@cloudflare/json-schema-walker](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-walker) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), _draft-07, -06, -04, and Cloudflare's Doca extensions_ Walks schemas and runs pre- and post-walk callbacks.  Can modify schemas in place. (BSD-3-Clause)
 
 #### Schema to Schema
@@ -213,6 +217,7 @@ the utility, and decided on a case-by-case basis.
     -   [@cloudflare/json-schema-transform](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-transform) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), (BSD-3-Clause) Utilities using @cloudflare/json-schema-walker for transformations including `allOf` merging and example roll-up.
     -   [json-schema-merge-allof](https://github.com/mokkabonna/json-schema-merge-allof) (MIT)
     -   [json-schema-compare](https://github.com/mokkabonna/json-schema-compare) (MIT)
+    -   [json-schema-resolve-allof](https://github.com/loganvolkers/json-schema-resolve-allof) (_license not stated_)
     -   [JSON-Schema-Instantiator](https://github.com/tomarad/JSON-Schema-Instantiator) (MIT)
 
 #### Schema draft migration
@@ -221,12 +226,20 @@ _None currently support draft-06 or later._
 
 #### Format converters
 
+-   OpenAPI
+    -   [JSON Schema to OpenAPI Schema](https://github.com/wework/json-schema-to-openapi-schema) _draft-04_ Draft-06 and -07 planned per README (_license not stated_)
 -   Orderly
     -   [Orderly](https://github.com/lloyd/orderly) (BSD-3-Clause)
+-   RAML
+    -   [ramldt2jsonschema](https://github.com/raml-org/ramldt2jsonschema) _draft-06, 04_ (Apache-2.0)
 -   Webpack
     -   [@cloudflare/json-schema-ref-loader](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-ref-loader) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), (BSD-3-Clause) Webpack loader for dereference-able schemas in JSON, JSON5, YAML, or JavaScript
     -   [@cloudflare/json-schema-apidoc-loader](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-apidoc-loader) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), Back-end for [@cloudflare/doca](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/doca), _draft-04, -06, -07, and Doca extensions_
 
+#### Testing
+
+-   Python
+    -   [hypo\_schema](https://github.com/mlakewood/hypo_schema) (BSD-2-Clause) Creates generators for Hypothesis from JSON Schema
 #### Editors
 
 _TODO: Sort by draft support._
