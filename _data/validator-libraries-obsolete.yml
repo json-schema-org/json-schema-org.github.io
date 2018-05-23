@@ -6,13 +6,6 @@
       notes:
       draft: [4]
       license: Ms-PL
-- name: C
-  implementations:
-    - name: WJElement
-      url: https://github.com/netmail-open/wjelement
-      notes: "partial draft-04 support"
-      draft: [3]
-      license: "LGPLv3"
 - name: C++
   anchor-name: cpp
   implementations:
