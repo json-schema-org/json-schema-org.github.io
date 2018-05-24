@@ -173,6 +173,8 @@ are the only keywords that changed.
     -  [jsonschema](https://github.com/qri-io/jsonschema)(MIT) - idiomatic go implementation with custom validator support, coding to and from json, rich error returns *supports Draft 7*
 -   Online (web tool)
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
+-   PHP
+    -  [php-code-builder](https://github.com/swaggest/php-code-builder)(MIT) - generates PHP mapping structures defined by JSON schema using [`swaggest/json-schema`](https://github.com/swaggest/php-json-schema) *supports Draft 7*
 
 #### Web UI generation
 
