@@ -22,7 +22,7 @@
       url: https://github.com/xeipuuv/gojsonschema
       draft: [7, 6, 4]
       license: "Apache 2.0"
-    - name: jsonschema
+    - name: santhosh-tekuri/jsonschema
       url: https://github.com/santhosh-tekuri/jsonschema
       notes:
       draft: [7, 6, 4]

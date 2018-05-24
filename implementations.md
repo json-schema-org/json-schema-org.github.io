@@ -138,6 +138,8 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
 -   .NET
     -   [Json.NET](https://www.newtonsoft.com/jsonschema) (AGPL-3.0) - generates schemas from .NET types
     -   [NJsonSchema](http://NJsonSchema.org) - (Ms-PL) - generates schemas from .NET types, see issue [574](https://github.com/RSuter/NJsonSchema/issues/574) for draft-06+ support progress
+-   Golang
+    -  [qri-io/jsonschema](https://github.com/qri-io/jsonschema)(MIT) - idiomatic go implementation with custom validator support, coding to and from json, rich error returns *supports Draft 7*
 -   PHP
     -   [Liform](https://github.com/Limenius/liform) (MIT) - generates schemas from Symfony forms
 -   TypeScript
@@ -169,12 +171,10 @@ are the only keywords that changed.
 
 #### Code generation
 
--   Golang
-    -  [jsonschema](https://github.com/qri-io/jsonschema)(MIT) - idiomatic go implementation with custom validator support, coding to and from json, rich error returns *supports Draft 7*
 -   Online (web tool)
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 -   PHP
-    -  [php-code-builder](https://github.com/swaggest/php-code-builder)(MIT) - generates PHP mapping structures defined by JSON schema using [`swaggest/json-schema`](https://github.com/swaggest/php-json-schema) *supports Draft 7*
+    -  [php-code-builder](https://github.com/swaggest/php-code-builder)(MIT) - generates PHP mapping structures defined by JSON schema using [swaggest/json-schema](https://github.com/swaggest/php-json-schema) *supports Draft 7*
 
 #### Web UI generation
 
@@ -187,15 +187,15 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [Angular Schema Form](https://github.com/json-schema-form/angular-schema-form) (MIT)
     -   [Angular2 Schema Form](https://github.com/makinacorpus/angular2-schema-form) *unrelated to Angular Schema Form* (MIT)
     -   [JSON Editor](https://github.com/jdorn/json-editor) (MIT)
-    -   [JSON Form](https://github.com/joshfire/jsonform) (joshfire) (MIT)
-    -   [Json Forms](https://github.com/brutusin/json-forms) (brutusin) (MIT)
-    -   [JSONForms](http://jsonforms.io) (EclipseSource) (MIT)
+    -   [JSON Form (joshfire)](https://github.com/joshfire/jsonform) (joshfire) (MIT)
+    -   [Json Forms (brutusin)](https://github.com/brutusin/json-forms) (brutusin) (MIT)
+    -   [JSONForms (jsonforms.io)](http://jsonforms.io) (EclipseSource) (MIT)
     -   [Jsonary](http://jsonary.com/) (MIT)
     -   [Liform-react](https://github.com/Limenius/liform-react) (MIT)
     -   [Metawidget](http://metawidget.org/) (LGPL)
     -   [pure-form webcomponent](https://github.com/john-doherty/pure-form) (MIT)
-    -   [React JSON Schema Form](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
-    -   [React Schema Form](https://github.com/networknt/react-schema-form) (MIT)
+    -   [React JSON Schema Form (mozilla)](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
+    -   [React Schema Form (networknt)](https://github.com/networknt/react-schema-form) (MIT)
 
 #### Data from schemas
 
@@ -217,9 +217,9 @@ the utility, and decided on a case-by-case basis.
 
 -   JavaScript
     -   [@cloudflare/json-schema-transform](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-transform) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), (BSD-3-Clause) Utilities using @cloudflare/json-schema-walker for transformations including `allOf` merging and example roll-up.
-    -   [json-schema-merge-allof](https://github.com/mokkabonna/json-schema-merge-allof) (MIT)
-    -   [json-schema-compare](https://github.com/mokkabonna/json-schema-compare) (MIT)
-    -   [json-schema-resolve-allof](https://github.com/loganvolkers/json-schema-resolve-allof) (_license not stated_)
+    -   [mokkabanna/json-schema-merge-allof](https://github.com/mokkabonna/json-schema-merge-allof) (MIT)
+    -   [mokkabanna/json-schema-compare](https://github.com/mokkabonna/json-schema-compare) (MIT)
+    -   [loganvolkers/json-schema-resolve-allof](https://github.com/loganvolkers/json-schema-resolve-allof) (_license not stated_)
     -   [JSON-Schema-Instantiator](https://github.com/tomarad/JSON-Schema-Instantiator) (MIT)
 
 #### Schema draft migration
