@@ -9,6 +9,13 @@
       url: https://github.com/gregsdennis/Manatee.Json
       draft: [7, 6, 4]
       license: MIT
+- name: C
+  implementations:
+    - name: WJElement
+      url: https://github.com/netmail-open/wjelement
+      draft: [4, 3]
+      license: LGPL-3.0
+      notes: "Draft-06+ progress: issue [17](https://github.com/netmail-open/wjelement/issues/17#issuecomment-390899432)"
 - name: Elixir
   implementations:
     - name: Elixir JSON Schema validator
