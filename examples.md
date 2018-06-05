@@ -3,26 +3,163 @@ layout: page
 title: Examples
 ---
 
-Here is a basic example of a JSON Schema:
+## Basic
+
+This example provides a typical minimum you are going to see in JSON Schema. It contains:
+
+* [`$id` keyword](http://json-schema.org/latest/json-schema-core.html#rfc.section.8.2)
+* [`$schema` keyword](http://json-schema.org/latest/json-schema-core.html#rfc.section.7)
+* [`title` link target attribute](http://json-schema.org/latest/json-schema-hypermedia.html#rfc.section.6.5.1)
+* [`type` instance data model](http://json-schema.org/latest/json-schema-core.html#rfc.section.4.2.1)
+* [`properties` object validation keyword](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.4)
+* Three keys: `firstName`, `lastName` and `age` each with their own:
+  * [`description` annotation](http://json-schema.org/latest/json-schema-validation.html#rfc.section.10.1)
+  * `type` instance data model (see above).
+* [`minimum` validation keyword](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.4) on the `age` key.
 
 ```json
-{% include person.json%}
+{
+  "$id": "https://example.com/person.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Person",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "description": "The person's first name."
+    },
+    "lastName": {
+      "type": "string",
+      "description": "The person's last name."
+    },
+    "age": {
+      "description": "Age in years which must be equal to or greater than zero.",
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}
 ```
 
-Example schemas
----------------
+**Data**
 
-These sample schemas describe simple data structures which can be expressed as JSON.  The "canonical url" links omit the ".json" extension, which is the correct
-way to reference the schema in a ``$ref``, but is not friendly to web browsers.
-The larger links use ".json" for browser compatibility.
+```json
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "age": 21
+}
+```
 
-|------------------------------------------------------------------------------|-----------------------------------------------------------------|
-| [Geographic Coordinate](example/geo.json) <br> [<small>(canonical url)</small>](geo) | a location as longitude and latitude                            |
-| [Card](example/card.json) <br> [<small>(canonical url)</small>](card)                | a microformat-style representation of a person, company, organization, or place |
-| [Calendar](example/calendar.json) <br> [<small>(canonical url)</small>](calendar)              | a microformat-style representation of an event                  |
-| [Address](example/address.json) <br> [<small>(canonical url)</small>](address)             | a microformat-style representation of a street address          |
+## Describing geographical coordinates.
 
-Walkthroughs
+This example introduces:
+
+* [`required` object validation keyword](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.3)
+* [`minimum` validation keyword](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.4)
+* [`maximum` validation keyword](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.2)
+
+
+```json
+{
+  "id": "https://example.com/geographical-location.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Longitude and Latitude Values",
+  "description": "A geographical coordinate.",
+  "required": [ "latitude", "longitude" ],
+  "type": "object",
+  "properties": {
+    "latitude": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90
+    },
+    "longitude": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180
+    }
+  }
+}
+```
+
+**Data**
+
+```json
+{
+  "latitude": 48.858093,
+  "longitude": 2.294694
+}
+```
+
+## Arrays of things
+
+Arrays are fundamental structures in JSON -- here we demonstrate a couple of ways they can be described:
+
+* An array of string values.
+* An array of objects.
+
+We also introduce the following with this example:
+
+* [`definitions` keyword](http://json-schema.org/latest/json-schema-validation.html#rfc.section.9)
+* [`$ref` keyword](http://json-schema.org/latest/json-schema-core.html#rfc.section.8.3)
+
+```json
+{
+  "id": "https://example.com/arrays.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "A representation of a person, company, organization, or place",
+  "type": "object",
+  "properties": {
+    "fruits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "vegetables": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/veggie" }
+    }
+  },
+  "definitions": {
+    "veggie": {
+      "type": "object",
+      "required": [ "veggieName", "veggieLike" ],
+      "properties": {
+        "veggieName": {
+          "type": "string",
+          "description": "The name of the vegetable."
+        },
+        "veggieLike": {
+          "type": "boolean",
+          "description": "Do I like this vegetable?"
+        }
+      }
+    }
+  }
+}
+```
+
+**Data**
+
+```json
+{
+  "fruits": [ "apple", "orange", "pear" ],
+  "vegetables": [
+    {
+      "veggieName": "potato",
+      "veggieLike": true
+    },
+    {
+      "veggieName": "broccoli",
+      "veggieLike": false
+    }
+  ]
+}
+```
+
+## Walkthroughs
 ------------
 
 The two examples below are step-by-step guides into building a schema:
