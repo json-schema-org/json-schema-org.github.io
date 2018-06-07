@@ -8,7 +8,6 @@ before_script:
 - PATH="./node_modules/.bin/:$PATH"
 script:
 - bundle exec jekyll build
-- ajv test -s schema -d "_includes/person.json" --valid
 - ajv test -s schema -d "_includes/example1/schema*.json" --valid
 - ajv test -s _includes/example1/schema1.json -d _includes/example1/instance.json --valid
 - ajv test -s _includes/example1/schema2.json -d _includes/example1/instance.json --valid
