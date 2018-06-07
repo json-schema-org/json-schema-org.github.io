@@ -9,3 +9,4 @@ before_script:
 script:
 - bundle exec jekyll build
 - ajv test -s schema -d address -d calendar -d card -d geo --valid
+- ajv test -s schema -d "_includes/example/*.json" --valid
