@@ -8,17 +8,4 @@ before_script:
 - PATH="./node_modules/.bin/:$PATH"
 script:
 - bundle exec jekyll build
-- ajv test -s schema -d "_includes/example1/schema*.json" --valid
-- ajv test -s _includes/example1/schema1.json -d _includes/example1/instance.json --valid
-- ajv test -s _includes/example1/schema2.json -d _includes/example1/instance.json --valid
-- ajv test -s _includes/example1/schema3.json -d _includes/example1/instance.json --valid
-- ajv test -s _includes/example1/schema4.json -d _includes/example1/instance.json --valid
-- ajv test -s _includes/example1/schema5.json -d _includes/example1/instance.json --valid
-- ajv test -s schema -d _includes/example1/set_schema.json --valid
-- ajv test -s _includes/example1/set_schema.json -d _includes/example1/set_instance.json -r geo --valid
-- ajv test -s schema -d "_includes/example2/schema*.json" --valid
-- ajv test -s schema -d "_includes/example2/entry_schema*.json" --valid
-- ajv test -s schema -d "_includes/example2/storage_schema*.json" --valid
-- ajv test -s _includes/example2/schema1.json -d _includes/example2/instance.json --valid
-- ajv test -s _includes/example2/schema2.json -d _includes/example2/instance.json -r _includes/example2/entry_schema3.json --valid
 - ajv test -s schema -d address -d calendar -d card -d geo --valid
