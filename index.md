@@ -21,6 +21,7 @@ permalink: /
 * Validates data which is useful for:
     * Automated testing.
     * Ensuring quality of client submitted data.
+
 </div>
 
 <div class="block" style="float:right;width:50%;" markdown="1">
