@@ -1,21 +1,21 @@
 ---
 layout: page
-title: Examples
+title: Miscellaneous Examples
 ---
 
 ## Basic
 
-This example provides a typical minimum you are going to see in JSON Schema. It contains:
+This example provides a typical minimum you are likely to see in JSON Schema. It contains:
 
-* [`$id` keyword](http://json-schema.org/latest/json-schema-core.html#rfc.section.8.2)
-* [`$schema` keyword](http://json-schema.org/latest/json-schema-core.html#rfc.section.7)
-* [`title` link target attribute](http://json-schema.org/latest/json-schema-hypermedia.html#rfc.section.6.5.1)
-* [`type` instance data model](http://json-schema.org/latest/json-schema-core.html#rfc.section.4.2.1)
-* [`properties` object validation keyword](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.4)
+* [`$id`](http://json-schema.org/latest/json-schema-core.html#rfc.section.8.2) keyword
+* [`$schema`](http://json-schema.org/latest/json-schema-core.html#rfc.section.7) keyword
+* [`title`](http://json-schema.org/latest/json-schema-hypermedia.html#rfc.section.6.5.1) annotation keyword
+* [`type`](http://json-schema.org/latest/json-schema-core.html#rfc.section.4.2.1) instance data model
+* [`properties`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.4) validation keyword
 * Three keys: `firstName`, `lastName` and `age` each with their own:
-  * [`description` annotation](http://json-schema.org/latest/json-schema-validation.html#rfc.section.10.1)
+  * [`description`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.10.1) annotation keyword.
   * `type` instance data model (see above).
-* [`minimum` validation keyword](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.4) on the `age` key.
+* [`minimum`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.4) validation keyword on the `age` key.
 
 ```json
 {
@@ -55,10 +55,9 @@ This example provides a typical minimum you are going to see in JSON Schema. It 
 
 This example introduces:
 
-* [`required` object validation keyword](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.3)
-* [`minimum` validation keyword](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.4)
-* [`maximum` validation keyword](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.2)
-
+* [`required`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.3) validation keyword
+* [`minimum`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.4) validation keyword
+* [`maximum`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.2) validation keyword
 
 ```json
 {
@@ -101,8 +100,8 @@ Arrays are fundamental structures in JSON -- here we demonstrate a couple of way
 
 We also introduce the following with this example:
 
-* [`definitions` keyword](http://json-schema.org/latest/json-schema-validation.html#rfc.section.9)
-* [`$ref` keyword](http://json-schema.org/latest/json-schema-core.html#rfc.section.8.3)
+* [`definitions`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.9) keyword
+* [`$ref`](http://json-schema.org/latest/json-schema-core.html#rfc.section.8.3) keyword
 
 ```json
 {
@@ -158,13 +157,3 @@ We also introduce the following with this example:
   ]
 }
 ```
-
-## Walkthroughs
-------------
-
-The two examples below are step-by-step guides into building a schema:
-
--   [a simple example](example1.md) which covers a classical product catalog description.
--   [a more advanced example](example2.md), using JSON Schema to describe filesystem entries in a Unix-like /etc/fstab file.
-
-The [Space Telescope Science Institute](http://www.stsci.edu/) has also published a [guide aimed at schema authors](http://spacetelescope.github.io/understanding-json-schema/).

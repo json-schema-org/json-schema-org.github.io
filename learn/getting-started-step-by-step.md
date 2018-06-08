@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Building a product schema
+title: Getting Started Step-By-Step
 ---
 
 * [Introduction](#intro)
