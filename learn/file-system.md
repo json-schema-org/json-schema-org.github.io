@@ -1,11 +1,13 @@
 ---
 layout: page
-title: Building a mount point schema
+title: Modeling a file system with JSON Schema
 ---
 
-This example shows a possible JSON representation of a hypothetical machine's mount points as represented in an `/etc/fstab` file.
+> Not all constraints to an fstab file can be modeled using JSON Schema alone; however, it can represent a good number of them and the exercise is useful to demonstrate how constraints work.
 
-An entry in an fstab file can have many different forms. Here is a possible representation of a full fstab:
+This example shows a possible JSON Schema representation of file system mount points as represented in an [`/etc/fstab`](https://en.wikipedia.org/wiki/Fstab) file.
+
+An entry in an fstab file can have many different forms; Here is an example:
 
 ```json
 {
@@ -41,23 +43,33 @@ An entry in an fstab file can have many different forms. Here is a possible repr
 }
 ```
 
-Not all constraints to an fstab file can be modeled using JSON Schema alone; however, it can represent a good number of them. We will add constraints one after the other until we get to a satisfactory result.
+## Creating the schema outline
 
-Base schema
------------
+We will start with a base JSON Schema expressing the following constraints:
 
-We will start with a base schema expressing the following constraints:
+* the list of entries is a JSON object;
+* the member names (or property names) of this object must all be valid, absolute paths;
+* there must be an entry for the root filesystem (ie, `/`).
 
--   the list of entries is a JSON object;
--   the member names (or property names) of this object must all be valid, absolute paths;
--   there must be an entry for the root filesystem (ie, `/`).
+Building out our JSON Schema from top to bottom:
 
-We also want the schema to be regarded as a draft v6 schema, we must therefore specify *$schema*:
+* The [`$id`](http://json-schema.org/latest/json-schema-core.html#rfc.section.8.2) keyword.
+* The [`$schema`](http://json-schema.org/latest/json-schema-core.html#rfc.section.7) keyword.
+* The [`type`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.1.1) validation keyword.
+* The [`required`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.3) validation keyword.
+* The [`properties`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.4) validation keyword with only a `/` entry.
+* The [`patternProperties`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.5) validation keyword to match other property names via a regular expression. Note: it does not match `/`).
+* The [`additionalProperties`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.6) validation keyword.
+  * The value here is `false` to constrain object properties to be either `/` or to match the regular expression.
+
+> You will notice that the regular expression is explicitly anchored (with `^` and `$`): in JSON Schema, regular expressions (in `patternProperties` and in `pattern`) are not anchored by default.
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "http://example.com/fstab",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
+  "required": [ "/" ],
   "properties": {
     "/": {}
   },
@@ -65,30 +77,29 @@ We also want the schema to be regarded as a draft v6 schema, we must therefore s
     "^(/[^/]+)+$": {}
   },
   "additionalProperties": false,
-  "required": [ "/" ]
 }
 ```
 
-Note how the valid paths constraint is enforced here:
+## Starting an entry
 
--   we have a *properties* keyword with only a `/` entry;
--   we use *patternProperties* to match other property names via a regular expression (note that it does not match `/`);
--   as *additionalProperties* is false, it constrains object properties to be either `/` or to match the regular expression.
+We will start with an outline of the JSON schema which adds new concepts to what we've already demonstrated.
 
-You will notice that the regular expression is explicitly anchored (with `^` and `$`): in JSON Schema, regular expressions (in *patternProperties* and in *pattern*) are not anchored by default.
+We saw these keywords in the prior exercise: `$id`, `$schema`, `type`, `required` and `properties`.
 
-For now, the schemas describing individual entries are empty: we will start describing the constraints in the following paragraphs, using another schema, which we will reference from the main schema when we are ready.
+To this we add:
 
-The entry schema - starting out
--------------------------------
-
-Here again we will proceed step by step. We will start with the global structure of our schema, which will be as such:
+* The [`description`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.10.1) annotation keyword.
+* The [`oneOf`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.7.3) keyword.
+* The [`$ref`](http://json-schema.org/latest/json-schema-core.html#rfc.section.8.3) keyword.
+  * In this case, all references used are local to the schema using a relative fragment URI (`#/...`).
+* The [`definitions`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.9) keyword.
+  * Including several key names which we will define later.
 
 ```json
 {
-  "id": "http://some.site.somewhere/entry-schema#",
-  "$schema": "http://json-schema.org/draft-06/schema#",
-  "description": "schema for an fstab entry",
+  "id": "http://example.com/entry-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "JSON Schema for an fstab entry",
   "type": "object",
   "required": [ "storage" ],
   "properties": {
@@ -111,37 +122,26 @@ Here again we will proceed step by step. We will start with the global structure
 }
 ```
 
-You should already be familiar with some of the constraints:
+## Constraining entries
 
--   an fstab entry must be an object (`"type": "object"`);
--   it must have one property with name *storage* (`"required": [ "storage" ]`);
--   the *storage* property must also be an object.
+Let's now extend this skeleton to add constraints to some of the properties.
 
-There are a couple of novelties:
-
--   you will notice the appearance of JSON References, via the *$ref* keyword; here, all references used are local to the schema, and the fragment part is a URI encoded JSON Pointer;
--   you will notice the appearance of an *id*: this is the URI of this resource; we assume here that this URI is the actual URI of this schema;
--   the *oneOf* keyword is new in draft v4; its value is an array of schemas, and an instance is valid if and only if it is valid against exactly one of these schemas;
--   finally, the *definitions* keyword is a standardized placeholder in which you can define inline subschemas to be used in a schema.
-
-### The *fstype*, *options* and *readonly* properties
-
-The entry schema - adding constraints
--------------------------------------
-
-Let's now extend this skeleton to add constraints to these three properties. Note that none of them are required:
-
--   we will pretend that we only support `ext3`, `ext4` and `btrfs` as filesystem types;
--   *options* must be an array, and the items in this array must be strings; moreover, there must be at least one item, and all items should be unique;
--   *readonly* must be a boolean.
+* Our `fstype` key uses the [`enum`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.1.2) validation keyword.
+* Our `options` key uses the following:
+  * The `type` validation keyword (see above).
+  * The [`minItems`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.4.4) validation keyword.
+  * The [`items`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.4.1) validation keyword.
+  * The [`uniqueItems`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.4.5) validation keyword.
+  * Together these say: `options` must be an array, and the items therein must be strings, there must be at least one item, and all items should be unique.
+* We have a `readonly` key.
 
 With these added constraints, the schema now looks like this:
 
 ```json
 {
-  "id": "http://some.site.somewhere/entry-schema#",
-  "$schema": "http://json-schema.org/draft-06/schema#",
-  "description": "schema for an fstab entry",
+  "id": "http://example.com/entry-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "JSON Schema for an fstab entry",
   "type": "object",
   "required": [ "storage" ],
   "properties": {
@@ -160,10 +160,14 @@ With these added constraints, the schema now looks like this:
     "options": {
       "type": "array",
       "minItems": 1,
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "uniqueItems": true
     },
-    "readonly": { "type": "boolean" }
+    "readonly": {
+      "type": "boolean"
+    }
   },
   "definitions": {
     "diskDevice": {},
@@ -174,106 +178,117 @@ With these added constraints, the schema now looks like this:
 }
 ```
 
-For now, all definitions are empty (an empty JSON Schema validates all instances). We will write schemas for individual definitions below, and fill these schemas into the entry schema.
+## The `diskDevice` definition
 
-The *diskDevice* storage type
------------------------------
+One new keyword is introduced here:
 
-This storage type has two required properties, *type* and *device*. The type can only be *disk*, and the device must be an absolute path starting with */dev*. No other properties are allowed:
-
-```json
-{
-  "properties": {
-    "type": { "enum": [ "disk" ] },
-    "device": {
-      "type": "string",
-      "pattern": "^/dev/[^/]+(/[^/]+)*$"
-    }
-  },
-  "required": [ "type", "device" ],
-  "additionalProperties": false
-}
-```
-
-You will have noted that we need not specify that *type* must be a string: the constraint described by *enum* is enough.
-
-The *diskUUID* storage type
----------------------------
-
-This storage type has two required properties, *type* and *label*. The type can only be *disk*, and the label must be a valid UUID. No other properties are allowed:
+* The [`pattern`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.3.3) validation keyword notes the `device` key must be an absolute path starting with */dev*.
 
 ```json
 {
-  "properties": {
-    "type": { "enum": [ "disk" ] },
-    "label": {
-      "type": "string",
-      "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
-    }
-  },
-  "required": [ "type", "label" ],
-  "additionalProperties": false
-}
-```
-
-The *nfs* storage type
-----------------------
-
-This storage type has three required properties: *type*, *server* and *remotePath*. What is more, the server may be either a host name, an IPv4 address or an IPv6 address.
-
-For the constraints on *server*, we use a new keyword: *format*. While it is not required that *format* be supported, we will suppose that it is here:
-
-```json
-{
-  "properties": {
-    "type": { "enum": [ "nfs" ] },
-    "remotePath": {
-      "type": "string",
-      "pattern": "^(/[^/]+)+$"
+  "diskDevice": {
+    "properties": {
+      "type": {
+        "enum": [ "disk" ]
+      },
+      "device": {
+        "type": "string",
+        "pattern": "^/dev/[^/]+(/[^/]+)*$"
+      }
     },
-    "server": {
-      "type": "string",
-      "oneOf": [
-        { "format": "hostname" },
-        { "format": "ipv4" },
-        { "format": "ipv6" }
-      ]
-    }
-  },
-  "required": [ "type", "server", "remotePath" ],
-  "additionalProperties": false
+    "required": [ "type", "device" ],
+    "additionalProperties": false
+  }
 }
 ```
 
-The *tmpfs* storage type
-------------------------
+## The `diskUUID` definition
 
-This storage type has two required properties: *type* and *sizeInMB*. The size can only be an integer. What is more, we will require that the size be between 16 and 512, inclusive:
+No new keywords are introduced here.
+
+We do have a new key: `label` and the `pattern` validation keyword states it must be a valid UUID.
 
 ```json
 {
-  "properties": {
-    "type": { "enum": [ "tmpfs" ] },
-    "sizeInMB": {
-      "type": "integer",
-      "minimum": 16,
-      "maximum": 512
-    }
-  },
-  "required": [ "type", "sizeInMB" ],
-  "additionalProperties": false
+  "diskUUID": {
+    "properties": {
+      "type": {
+        "enum": [ "disk" ]
+      },
+      "label": {
+        "type": "string",
+        "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
+      }
+    },
+    "required": [ "type", "label" ],
+    "additionalProperties": false
+  }
 }
 ```
 
-The full entry schema
----------------------
+## The `nfs` definition
+
+We find another new keyword:
+
+* The [`format`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.7) annotation and assertion keyword.
+
+```json
+{
+  "nfs": {
+    "properties": {
+      "type": { "enum": [ "nfs" ] },
+      "remotePath": {
+        "type": "string",
+        "pattern": "^(/[^/]+)+$"
+      },
+      "server": {
+        "type": "string",
+        "oneOf": [
+          { "format": "hostname" },
+          { "format": "ipv4" },
+          { "format": "ipv6" }
+        ]
+      }
+    },
+    "required": [ "type", "server", "remotePath" ],
+    "additionalProperties": false
+  }
+}
+```
+
+## The *tmpfs* definition
+
+Our last definition introduces two new keywords:
+
+* The [`minimum`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.4) validation keyword.
+* The [`maximum`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.2) validation keword.
+* Together these require the size be between 16 and 512, inclusive.
+
+```json
+{
+  "tmpfs": {
+    "properties": {
+      "type": { "enum": [ "tmpfs" ] },
+      "sizeInMB": {
+        "type": "integer",
+        "minimum": 16,
+        "maximum": 512
+      }
+    },
+    "required": [ "type", "sizeInMB" ],
+    "additionalProperties": false
+  }
+}
+```
+
+## The full entry schema
 
 The resulting schema is quite large:
 
 ```json
 {
   "id": "http://some.site.somewhere/entry-schema#",
-  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "schema for an fstab entry",
   "type": "object",
   "required": [ "storage" ],
@@ -356,14 +371,13 @@ The resulting schema is quite large:
 }
 ```
 
-Plugging this into our main schema
-----------------------------------
+## Plugging this into our main schema
 
 Now that all possible entries have been described, we can refer to the entry schema from our main schema. We will, again, use a JSON Reference here:
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "properties": {
     "/": { "$ref": "http://some.site.somewhere/entry-schema#" }
@@ -376,8 +390,7 @@ Now that all possible entries have been described, we can refer to the entry sch
 }
 ```
 
-Wrapping up
------------
+## Wrapping up
 
 This example is much more advanced than the previous example; you will have learned of schema referencing and identification, you will have been introduced to other keywords. There are also a few additional points to consider.
 
@@ -385,8 +398,8 @@ This example is much more advanced than the previous example; you will have lear
 
 This is only an example for learning purposes. Some additional constraints could be described. For instance:
 
--   it makes no sense for `/` to be mounted on a tmpfs filesystem;
--   it makes no sense to specify the filesystem type if the storage is either NFS or tmpfs.
+* it makes no sense for `/` to be mounted on a tmpfs filesystem;
+* it makes no sense to specify the filesystem type if the storage is either NFS or tmpfs.
 
 As an exercise, you can always try to add these constraints. It would probably require splitting the schema further.
 
@@ -400,6 +413,6 @@ If we take an NFS entry as an example, JSON Schema alone cannot check that the s
 
 While this is not a concern if you know that the schema you write will be used by you alone, you should keep this in mind if you write a schema which other people can potentially use. The schema we have written here has some features which can be problematic for portability:
 
--   *format* support is optional, and as such other tools may ignore this keyword: this can lead to a different validation outcome for the same data;
--   it uses regular expressions: care should be taken not to use any advanced features (such as lookarounds), since they may not be supported at the other end;
--   it uses *$schema* to express the need to use draft v6 compliant processing, but not all tools support draft v6.
+* *format* support is optional, and as such other tools may ignore this keyword: this can lead to a different validation outcome for the same data;
+* it uses regular expressions: care should be taken not to use any advanced features (such as lookarounds), since they may not be supported at the other end;
+* it uses *$schema* to express the need to use draft v6 compliant processing, but not all tools support draft v6.
