@@ -115,7 +115,7 @@ should almost certainly be dropped.  Other than that:
 
 #### PATCH
 
-It was never entirely clear how to model a propert PATCH (that uses
+It was never entirely clear how to model a proper PATCH (that uses
 a patch media type rather than `application/json` in the request) in Hyper-Schema.
 One option was to treat it identically to PUT except with the patch media type
 in `encType`.  Assuming that approach (and the same `taregetSchema`/`mediaType`
