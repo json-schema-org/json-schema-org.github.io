@@ -27,9 +27,9 @@ The specification is split into three parts, Core, Validation, and Hyper-Schema,
 | [Relative JSON Pointers](latest/relative-json-pointer.html)  | extends the JSON Pointer syntax for relative pointers |
 
 They are also available on the IETF main site:
-* [draft-handrews-json-schema-01 (core)](http://tools.ietf.org/html/draft-handrews-json-schema-01)
-* [draft-handrews-json-schema-validation-01](http://tools.ietf.org/html/draft-handrews-json-schema-validation-01)
-* [draft-handrews-json-schema-hyperschema-01](http://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-01) ([errata](https://github.com/json-schema-org/json-schema-spec/issues?q=label%3Aerrata+label%3Ahypermedia))
+* [draft-handrews-json-schema-01 (core)](https://tools.ietf.org/html/draft-handrews-json-schema-01)
+* [draft-handrews-json-schema-validation-01](https://tools.ietf.org/html/draft-handrews-json-schema-validation-01)
+* [draft-handrews-json-schema-hyperschema-01](https://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-01) ([errata](https://github.com/json-schema-org/json-schema-spec/issues?q=label%3Aerrata+label%3Ahypermedia))
 * [draft-handrews-relative-json-pointer-01](https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01)
 
 Meta-schemas
@@ -47,7 +47,7 @@ _If you are accessing the above meta-schema links **from a web browser**, you wi
 Migrating from older drafts
 -------------
 
-The release notes discuss the changes impacting users and implementors:
+The release notes discuss the changes impacting users and implementers:
 
 - JSON Schema Core and Validation
     - [Draft-06 to Draft-07](draft-07/json-schema-release-notes.html)
