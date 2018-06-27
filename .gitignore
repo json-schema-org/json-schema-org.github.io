@@ -2,3 +2,6 @@
 .sass-cache/
 _site/
 node_modules/
+
+# Other
+.gitignore
