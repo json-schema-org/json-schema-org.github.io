@@ -28,7 +28,7 @@ theme: minima
 
 header_pages:
 - specification.md
-- examples.md
+- learn/index.md
 - implementations.md
 
 exclude:
