@@ -276,7 +276,7 @@ So far our JSON schema has been wholly self contained. It is very common to shar
 
 For this example we introduce a new JSON Schema resource and for both properties therein:
 * We use the `minimum` validation keyword noted earlier.
-* We add the http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.2 validation keyword.
+* We add the [`maximum`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.2) validation keyword.
 * Combined, these give us a range to use in validation.
 
 ```json
