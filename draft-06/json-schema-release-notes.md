@@ -1,9 +1,16 @@
 ---
-title: JSON Schema Draft 6 migration FAQ
+title: JSON Schema Draft-06 Release Notes
 layout: page
+redirect_from: "/draft-06/json-schema-migration-faq.html"
+permalink: /draft-06/json-schema-release-notes.html
 ---
 
-FAQ for migrating from zyp-04 and fge-00 (draft-04) to wright-01 (draft-06).
+Release notes for migrating from zyp-04 and fge-00 (draft-04) to wright-01 (draft-06).
+
+<span style="color: red; font-size: 200%">**NOTE**: draft-07 has been released</span>
+
+_Note that draft-07 core and validation are backwards-compatible with draft-06.
+For more information, see that draft's [migration notes](../draft-07/json-schema-release-notes.html)._
 
 * TOC
 {:toc}
@@ -53,6 +60,8 @@ Implementations that supported "draft-05" by implementing proposals from right a
 ### Q: What happened to all the discussions around re-using schemas with `"additionalProperties"`?
 
 There are several competing proposals for making the re-use of schemas that set `"additionalProperties"` to something other than `true`.  Most people specifically care about the case where it is `false`, but the same behavior occurs with any non-`true` value.
+
+[All of the proposals in this area](https://github.com/json-schema-org/json-schema-spec/issues?q=is%3Aissue+is%3Aopen+label%3A%22re-use+%2F+addlProps%22) will be the focus of [draft-08](https://github.com/json-schema-org/json-schema-spec/milestone/6).  While we made progress in eliminating some options during draft-07, the remaining divisions are deep enough to warrant making it the primary focus of a draft ([draft-07](https://github.com/json-schema-org/json-schema-spec/milestone/5)'s primary focus is Hyper-Schema).
 
 The difficulty is that if you attempt to do this:
 
@@ -121,13 +130,3 @@ A workaround is available with the new `"propertyNames"` keyword:
 This will allow an object with either "foo" or "bar" or both, but will fail validation if any other property is present.  The `"allOf"` ensures that "foo" and "bar" will each be validated correctly if present, while the `"anyOf"` allows for properties with names in either allowed set, but forbids properties that are not listed in at least one set.
 
 It does require duplicating the names, and the awkward use of both an `"allOf"` and `"anyOf"`, but it is less repetition than other options, and can be re-used fairly robustly even if the "foo" and "bar" schemas are in separate files managed by a different person or organization.
-
-_*TODO:* Link to all the discussions about other use cases and proposed solutions._
-
-### Q: What are key issues under consideration for draft-07?
-
-We are just starting to consider what to prioritize for the next draft.
-
-There are only some fairly minor items to consider for the core specification, so we'd like to wrap that up and get it ready for submission to a working group.  The question of which link relation to use for connecting schemas to instances is the main one.
-
-For validation, there are a number of competing proposals.  We will update this document as we get agreement on priorities.

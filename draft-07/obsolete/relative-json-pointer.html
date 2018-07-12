@@ -1,0 +1,669 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head profile="http://www.w3.org/2006/03/hcard http://dublincore.org/documents/2008/08/04/dc-html/">
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+
+  <title>Relative JSON Pointers</title>
+
+  <style type="text/css" title="Xml2Rfc (sans serif)">
+  /*<![CDATA[*/
+	  a {
+	  text-decoration: none;
+	  }
+      /* info code from SantaKlauss at http://www.madaboutstyle.com/tooltip2.html */
+      a.info {
+          /* This is the key. */
+          position: relative;
+          z-index: 24;
+          text-decoration: none;
+      }
+      a.info:hover {
+          z-index: 25;
+          color: #FFF; background-color: #900;
+      }
+      a.info span { display: none; }
+      a.info:hover span.info {
+          /* The span will display just on :hover state. */
+          display: block;
+          position: absolute;
+          font-size: smaller;
+          top: 2em; left: -5em; width: 15em;
+          padding: 2px; border: 1px solid #333;
+          color: #900; background-color: #EEE;
+          text-align: left;
+      }
+	  a.smpl {
+	  color: black;
+	  }
+	  a:hover {
+	  text-decoration: underline;
+	  }
+	  a:active {
+	  text-decoration: underline;
+	  }
+	  address {
+	  margin-top: 1em;
+	  margin-left: 2em;
+	  font-style: normal;
+	  }
+	  body {
+	  color: black;
+	  font-family: verdana, helvetica, arial, sans-serif;
+	  font-size: 10pt;
+	  max-width: 55em;
+	  
+	  }
+	  cite {
+	  font-style: normal;
+	  }
+	  dd {
+	  margin-right: 2em;
+	  }
+	  dl {
+	  margin-left: 2em;
+	  }
+	
+	  ul.empty {
+	  list-style-type: none;
+	  }
+	  ul.empty li {
+	  margin-top: .5em;
+	  }
+	  dl p {
+	  margin-left: 0em;
+	  }
+	  dt {
+	  margin-top: .5em;
+	  }
+	  h1 {
+	  font-size: 14pt;
+	  line-height: 21pt;
+	  page-break-after: avoid;
+	  }
+	  h1.np {
+	  page-break-before: always;
+	  }
+	  h1 a {
+	  color: #333333;
+	  }
+	  h2 {
+	  font-size: 12pt;
+	  line-height: 15pt;
+	  page-break-after: avoid;
+	  }
+	  h3, h4, h5, h6 {
+	  font-size: 10pt;
+	  page-break-after: avoid;
+	  }
+	  h2 a, h3 a, h4 a, h5 a, h6 a {
+	  color: black;
+	  }
+	  img {
+	  margin-left: 3em;
+	  }
+	  li {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  ol {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  ol p {
+	  margin-left: 0em;
+	  }
+	  p {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  pre {
+	  margin-left: 3em;
+	  background-color: lightyellow;
+	  padding: .25em;
+	  }
+	  pre.text2 {
+	  border-style: dotted;
+	  border-width: 1px;
+	  background-color: #f0f0f0;
+	  width: 69em;
+	  }
+	  pre.inline {
+	  background-color: white;
+	  padding: 0em;
+	  }
+	  pre.text {
+	  border-style: dotted;
+	  border-width: 1px;
+	  background-color: #f8f8f8;
+	  width: 69em;
+	  }
+	  pre.drawing {
+	  border-style: solid;
+	  border-width: 1px;
+	  background-color: #f8f8f8;
+	  padding: 2em;
+	  }
+	  table {
+	  margin-left: 2em;
+	  }
+	  table.tt {
+	  vertical-align: top;
+	  }
+	  table.full {
+	  border-style: outset;
+	  border-width: 1px;
+	  }
+	  table.headers {
+	  border-style: outset;
+	  border-width: 1px;
+	  }
+	  table.tt td {
+	  vertical-align: top;
+	  }
+	  table.full td {
+	  border-style: inset;
+	  border-width: 1px;
+	  }
+	  table.tt th {
+	  vertical-align: top;
+	  }
+	  table.full th {
+	  border-style: inset;
+	  border-width: 1px;
+	  }
+	  table.headers th {
+	  border-style: none none inset none;
+	  border-width: 1px;
+	  }
+	  table.left {
+	  margin-right: auto;
+	  }
+	  table.right {
+	  margin-left: auto;
+	  }
+	  table.center {
+	  margin-left: auto;
+	  margin-right: auto;
+	  }
+	  caption {
+	  caption-side: bottom;
+	  font-weight: bold;
+	  font-size: 9pt;
+	  margin-top: .5em;
+	  }
+	
+	  table.header {
+	  border-spacing: 1px;
+	  width: 95%;
+	  font-size: 10pt;
+	  color: white;
+	  }
+	  td.top {
+	  vertical-align: top;
+	  }
+	  td.topnowrap {
+	  vertical-align: top;
+	  white-space: nowrap; 
+	  }
+	  table.header td {
+	  background-color: gray;
+	  width: 50%;
+	  }
+	  table.header a {
+	  color: white;
+	  }
+	  td.reference {
+	  vertical-align: top;
+	  white-space: nowrap;
+	  padding-right: 1em;
+	  }
+	  thead {
+	  display:table-header-group;
+	  }
+	  ul.toc, ul.toc ul {
+	  list-style: none;
+	  margin-left: 1.5em;
+	  margin-right: 0em;
+	  padding-left: 0em;
+	  }
+	  ul.toc li {
+	  line-height: 150%;
+	  font-weight: bold;
+	  font-size: 10pt;
+	  margin-left: 0em;
+	  margin-right: 0em;
+	  }
+	  ul.toc li li {
+	  line-height: normal;
+	  font-weight: normal;
+	  font-size: 9pt;
+	  margin-left: 0em;
+	  margin-right: 0em;
+	  }
+	  li.excluded {
+	  font-size: 0pt;
+	  }
+	  ul p {
+	  margin-left: 0em;
+	  }
+	
+	  .comment {
+	  background-color: yellow;
+	  }
+	  .center {
+	  text-align: center;
+	  }
+	  .error {
+	  color: red;
+	  font-style: italic;
+	  font-weight: bold;
+	  }
+	  .figure {
+	  font-weight: bold;
+	  text-align: center;
+	  font-size: 9pt;
+	  }
+	  .filename {
+	  color: #333333;
+	  font-weight: bold;
+	  font-size: 12pt;
+	  line-height: 21pt;
+	  text-align: center;
+	  }
+	  .fn {
+	  font-weight: bold;
+	  }
+	  .hidden {
+	  display: none;
+	  }
+	  .left {
+	  text-align: left;
+	  }
+	  .right {
+	  text-align: right;
+	  }
+	  .title {
+	  color: #990000;
+	  font-size: 18pt;
+	  line-height: 18pt;
+	  font-weight: bold;
+	  text-align: center;
+	  margin-top: 36pt;
+	  }
+	  .vcardline {
+	  display: block;
+	  }
+	  .warning {
+	  font-size: 14pt;
+	  background-color: yellow;
+	  }
+	
+	
+	  @media print {
+	  .noprint {
+		display: none;
+	  }
+	
+	  a {
+		color: black;
+		text-decoration: none;
+	  }
+	
+	  table.header {
+		width: 90%;
+	  }
+	
+	  td.header {
+		width: 50%;
+		color: black;
+		background-color: white;
+		vertical-align: top;
+		font-size: 12pt;
+	  }
+	
+	  ul.toc a::after {
+		content: leader('.') target-counter(attr(href), page);
+	  }
+	
+	  ul.ind li li a {
+		content: target-counter(attr(href), page);
+	  }
+	
+	  .print2col {
+		column-count: 2;
+		-moz-column-count: 2;
+		column-fill: auto;
+	  }
+	  }
+	
+	  @page {
+	  @top-left {
+		   content: "Internet-Draft"; 
+	  } 
+	  @top-right {
+		   content: "December 2010"; 
+	  } 
+	  @top-center {
+		   content: "Abbreviated Title";
+	  } 
+	  @bottom-left {
+		   content: "Doe"; 
+	  } 
+	  @bottom-center {
+		   content: "Expires June 2011"; 
+	  } 
+	  @bottom-right {
+		   content: "[Page " counter(page) "]"; 
+	  } 
+	  }
+	
+	  @page:first { 
+		@top-left {
+		  content: normal;
+		}
+		@top-right {
+		  content: normal;
+		}
+		@top-center {
+		  content: normal;
+		}
+	  }
+  /*]]>*/
+  </style>
+
+  <link href="#rfc.toc" rel="Contents"/>
+<link href="#rfc.section.1" rel="Chapter" title="1 Introduction"/>
+<link href="#rfc.section.2" rel="Chapter" title="2 Conventions and Terminology"/>
+<link href="#rfc.section.3" rel="Chapter" title="3 Syntax"/>
+<link href="#rfc.section.4" rel="Chapter" title="4 Evaluation"/>
+<link href="#rfc.section.5" rel="Chapter" title="5 JSON String Representation"/>
+<link href="#rfc.section.5.1" rel="Chapter" title="5.1 Examples"/>
+<link href="#rfc.section.6" rel="Chapter" title="6 Non-use in URI Fragment Identifiers"/>
+<link href="#rfc.section.7" rel="Chapter" title="7 Error Handling"/>
+<link href="#rfc.section.8" rel="Chapter" title="8 Relationship to JSON Pointer"/>
+<link href="#rfc.section.9" rel="Chapter" title="9 Acknowledgements"/>
+<link href="#rfc.section.10" rel="Chapter" title="10 Security Considerations"/>
+<link href="#rfc.references" rel="Chapter" title="11 References"/>
+<link href="#rfc.references.1" rel="Chapter" title="11.1 Normative References"/>
+<link href="#rfc.references.2" rel="Chapter" title="11.2 Informative References"/>
+<link href="#rfc.appendix.A" rel="Chapter" title="A ChangeLog"/>
+<link href="#rfc.authors" rel="Chapter"/>
+
+
+  <meta name="generator" content="xml2rfc version 2.5.2 - http://tools.ietf.org/tools/xml2rfc" />
+  <link rel="schema.dct" href="http://purl.org/dc/terms/" />
+
+  <meta name="dct.creator" content="Luff, G. and H. Andrews, Ed." />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-handrews-relative-json-pointer-00" />
+  <meta name="dct.issued" scheme="ISO8601" content="2017-11-20" />
+  <meta name="dct.abstract" content="JSON Pointer is a syntax for specifying locations in a JSON document, starting from the document root.  This document defines an extension to the JSON Pointer syntax, allowing relative locations from within the document.  " />
+  <meta name="description" content="JSON Pointer is a syntax for specifying locations in a JSON document, starting from the document root.  This document defines an extension to the JSON Pointer syntax, allowing relative locations from within the document.  " />
+
+</head>
+
+<body>
+
+  <table class="header">
+    <tbody>
+    
+    	<tr>
+  <td class="left">Internet Engineering Task Force</td>
+  <td class="right">G. Luff</td>
+</tr>
+<tr>
+  <td class="left">Internet-Draft</td>
+  <td class="right"></td>
+</tr>
+<tr>
+  <td class="left">Intended status: Informational</td>
+  <td class="right">H. Andrews, Ed.</td>
+</tr>
+<tr>
+  <td class="left">Expires: May 24, 2018</td>
+  <td class="right">Cloudflare, Inc.</td>
+</tr>
+<tr>
+  <td class="left"></td>
+  <td class="right">November 20, 2017</td>
+</tr>
+
+    	
+    </tbody>
+  </table>
+
+  <p class="title">Relative JSON Pointers<br />
+  <span class="filename">draft-handrews-relative-json-pointer-00</span></p>
+  
+  <h1 id="rfc.abstract">
+  <a href="#rfc.abstract">Abstract</a>
+</h1>
+<p>JSON Pointer is a syntax for specifying locations in a JSON document, starting from the document root.  This document defines an extension to the JSON Pointer syntax, allowing relative locations from within the document.  </p>
+<h1 id="rfc.status">
+  <a href="#rfc.status">Status of This Memo</a>
+</h1>
+<p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
+<p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
+<p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
+<p>This Internet-Draft will expire on May 24, 2018.</p>
+<h1 id="rfc.copyrightnotice">
+  <a href="#rfc.copyrightnotice">Copyright Notice</a>
+</h1>
+<p>Copyright (c) 2017 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
+<p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (http://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
+
+  
+  <hr class="noprint" />
+  <h1 class="np" id="rfc.toc"><a href="#rfc.toc">Table of Contents</a></h1>
+  <ul class="toc">
+
+  	<li>1.   <a href="#rfc.section.1">Introduction</a></li>
+<li>2.   <a href="#rfc.section.2">Conventions and Terminology</a></li>
+<li>3.   <a href="#rfc.section.3">Syntax</a></li>
+<li>4.   <a href="#rfc.section.4">Evaluation</a></li>
+<li>5.   <a href="#rfc.section.5">JSON String Representation</a></li>
+<ul><li>5.1.   <a href="#rfc.section.5.1">Examples</a></li>
+</ul><li>6.   <a href="#rfc.section.6">Non-use in URI Fragment Identifiers</a></li>
+<li>7.   <a href="#rfc.section.7">Error Handling</a></li>
+<li>8.   <a href="#rfc.section.8">Relationship to JSON Pointer</a></li>
+<li>9.   <a href="#rfc.section.9">Acknowledgements</a></li>
+<li>10.   <a href="#rfc.section.10">Security Considerations</a></li>
+<li>11.   <a href="#rfc.references">References</a></li>
+<ul><li>11.1.   <a href="#rfc.references.1">Normative References</a></li>
+<li>11.2.   <a href="#rfc.references.2">Informative References</a></li>
+</ul><li>Appendix A.   <a href="#rfc.appendix.A">ChangeLog</a></li>
+<li><a href="#rfc.authors">Authors' Addresses</a></li>
+
+
+  </ul>
+
+  <h1 id="rfc.section.1"><a href="#rfc.section.1">1.</a> Introduction</h1>
+<p id="rfc.section.1.p.1">JSON Pointer (<a href="#RFC6901">RFC 6901</a> <cite title="NONE">[RFC6901]</cite>) is a syntax for specifying locations in a JSON document, starting from the document root.  This document defines a related syntax allowing identification of relative locations from within the document.  </p>
+<h1 id="rfc.section.2"><a href="#rfc.section.2">2.</a> Conventions and Terminology</h1>
+<p id="rfc.section.2.p.1">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="#RFC2119">RFC 2119</a> <cite title="NONE">[RFC2119]</cite>.  </p>
+<h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> Syntax</h1>
+<p id="rfc.section.3.p.1">A Relative JSON Pointer is a Unicode string (see RFC 4627, <a href="#RFC4627">Section 3</a> <cite title="NONE">[RFC4627]</cite>), comprising a positive integer, followed by either a '#' (%x23) character or a JSON Pointer (<a href="#RFC6901">RFC 6901</a> <cite title="NONE">[RFC6901]</cite>).  </p>
+<p id="rfc.section.3.p.2">The separation between the integer prefix and the JSON Pointer will always be unambiguous, because a JSON Pointer must be either zero- length or start with a '/' (%x2F).  Similarly, a JSON Pointer will never be ambiguous with the '#'.  </p>
+<p>The ABNF syntax of a Relative JSON Pointer is: </p>
+<pre>
+
+      relative-json-pointer =  positive-integer &amp;lt;json-pointer&amp;gt;
+      relative-json-pointer =/ positive-integer "#"
+      positive-integer      =  %x30 / %x31-39 *( %x30-39 )
+              ; "0", or digits without a leading "0"
+
+                </pre>
+<p>where &lt;json-pointer&gt; follows the production defined in <a href="#RFC6901">RFC 6901, Section&#160;3</a> <cite title="NONE">[RFC6901]</cite> ("Syntax").  </p>
+<p/>
+<h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> Evaluation</h1>
+<p id="rfc.section.4.p.1">Evaluation of a Relative JSON Pointer begins with a reference to a value within a JSON document, and completes with either a value within that document, a string corresponding to an object member, or integer value representing an array index.  </p>
+<p id="rfc.section.4.p.2">Evaluation begins by processing the positive-integer prefix.  This can be found by taking the longest continuous sequence of decimal digits available, starting from the beginning of the string, taking the decimal numerical value.  If this value is more than zero, then the following steps are repeated that number of times: <a href="#RFC6901">RFC 6901, Section 4</a> <cite title="NONE">[RFC6901]</cite> ("Evaluation"), with the modification that the initial reference being used is the reference currently being held (which may not be root of the document).  </p>
+
+<ul class="empty">
+  <li>If the current referenced value is the root of the document, then evaluation fails (see below).  </li>
+  <li>If the referenced value is an item within an array, then the new referenced value is that array.  </li>
+  <li>If the referenced value is an object member within an object, then the new referenced value is that object.  </li>
+</ul>
+
+<p> If the remainder of the Relative JSON Pointer is a JSON Pointer, then evaluation proceeds as per </p>
+<p id="rfc.section.4.p.3">Otherwise (when the remainder of the Relative JSON Pointer is the character '#'), the final result is determined as follows: </p>
+
+<ul class="empty">
+  <li>If the current referenced value is the root of the document, then evaluation fails (see below).  </li>
+  <li>If the referenced value is an item within an array, then the final evaluation result is the value's index position within the array.  </li>
+  <li>If the referenced value is an object member within an object, then the new referenced value is the corresponding member name.  </li>
+</ul>
+
+<p> </p>
+<h1 id="rfc.section.5"><a href="#rfc.section.5">5.</a> JSON String Representation</h1>
+<p id="rfc.section.5.p.1">The concerns surrounding JSON String representation of a Relative JSON Pointer are identical to those laid out in <a href="#RFC6901">RFC 6901, Section 5</a> <cite title="NONE">[RFC6901]</cite>.  </p>
+<h1 id="rfc.section.5.1"><a href="#rfc.section.5.1">5.1.</a> Examples</h1>
+<p>For example, given the JSON document: </p>
+<pre>
+
+                      {
+                         "foo": ["bar", "baz"],
+                         "highly": {
+                            "nested": {
+                               "objects": true
+                            }
+                         }
+                      }
+
+                    </pre>
+<p>Starting from the value "baz" (inside "foo"), the following JSON strings evaluate to the accompanying values: </p>
+<pre>
+
+                  "0"                         "baz"
+                  "1/0"                       "bar"
+                  "2/highly/nested/objects"   true
+                  "0#"                        1
+                  "1#"                        "foo"
+
+                    </pre>
+<p>Starting from the value {"objects":true} (corresponding to the member key "nested"), the following JSON strings evaluate to the accompanying values: </p>
+<pre>
+
+                "0/objects"                 true
+                "1/nested/objects"          true
+                "2/foo/0"                   "bar"
+                "0#"                        "nested"
+                "1#"                        "highly"
+
+                    </pre>
+<h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> Non-use in URI Fragment Identifiers</h1>
+<p id="rfc.section.6.p.1">Unlike a JSON Pointer, a Relative JSON Pointer can not be used in a URI fragment identifier.  Such fragments specify exact positions within a document, and therefore Relative JSON Pointers are not suitable.  </p>
+<h1 id="rfc.section.7"><a href="#rfc.section.7">7.</a> Error Handling</h1>
+<p id="rfc.section.7.p.1">In the event of an error condition, evaluation of the JSON Pointer fails to complete.  </p>
+<p id="rfc.section.7.p.2">Evaluation may fail due to invalid syntax, or referencing a non- existent value.  This specification does not define how errors are handled.  An application of JSON Relative Pointer SHOULD specify the impact and handling of each type of error.  </p>
+<h1 id="rfc.section.8"><a href="#rfc.section.8">8.</a> Relationship to JSON Pointer</h1>
+<p id="rfc.section.8.p.1">Relative JSON Pointers are intended as a companion to JSON Pointers.  Applications MUST specify the use of each syntax separately.  Defining either JSON Pointer or Relative JSON Pointer as an acceptable syntax does not imply that the other syntax is also acceptable.  </p>
+<h1 id="rfc.section.9"><a href="#rfc.section.9">9.</a> Acknowledgements</h1>
+<p id="rfc.section.9.p.1">The language and structure of this specification are based heavily on <a href="#RFC6901">[RFC6901]</a>, sometimes quoting it outright.  </p>
+<p id="rfc.section.9.p.2">This draft remains primarily as written and published by Geraint Luff, with only minor subsequent alterations under new editorship.  </p>
+<h1 id="rfc.section.10"><a href="#rfc.section.10">10.</a> Security Considerations</h1>
+<p id="rfc.section.10.p.1">Evaluation of a given Relative JSON Pointer is not guaranteed to reference an actual JSON value.  Applications using Relative JSON Pointer should anticipate this situation by defining how a pointer that does not resolve ought to be handled.  </p>
+<p id="rfc.section.10.p.2">As part of processing, a composite data structure may be assembled from multiple JSON documents (in part or in full).  In such cases, applications SHOULD ensure that a Relative JSON Pointer does not evaluate to a value outside the document for which is was written.  </p>
+<p id="rfc.section.10.p.3">Note that JSON pointers can contain the NUL (Unicode U+0000) character.  Care is needed not to misinterpret this character in programming languages that use NUL to mark the end of a string.  </p>
+<h1 id="rfc.references"><a href="#rfc.references">11.</a> References</h1>
+<h1 id="rfc.references.1"><a href="#rfc.references.1">11.1.</a> Normative References</h1>
+<table>
+  <tbody>
+    <tr>
+      <td class="reference">
+        <b id="RFC2119">[RFC2119]</b>
+      </td>
+      <td class="top"><a>Bradner, S.</a>, "<a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>", BCP 14, RFC 2119, DOI 10.17487/RFC2119, March 1997.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC6901">[RFC6901]</b>
+      </td>
+      <td class="top"><a>Bryan, P.</a>, <a>Zyp, K.</a> and <a>M. Nottingham</a>, "<a href="http://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>", RFC 6901, DOI 10.17487/RFC6901, April 2013.</td>
+    </tr>
+  </tbody>
+</table>
+<h1 id="rfc.references.2"><a href="#rfc.references.2">11.2.</a> Informative References</h1>
+<table>
+  <tbody>
+    <tr>
+      <td class="reference">
+        <b id="RFC4627">[RFC4627]</b>
+      </td>
+      <td class="top"><a>Crockford, D.</a>, "<a href="http://tools.ietf.org/html/rfc4627">The application/json Media Type for JavaScript Object Notation (JSON)</a>", RFC 4627, DOI 10.17487/RFC4627, July 2006.</td>
+    </tr>
+  </tbody>
+</table>
+<h1 id="rfc.appendix.A"><a href="#rfc.appendix.A">Appendix A.</a> ChangeLog</h1>
+<p><a id="CREF1" class="info">[CREF1]<span class="info">This section to be removed before leaving Internet-Draft status.</span></a> </p>
+<p/>
+
+<dl>
+  <dt>draft-handrews-relative-json-pointer-00</dt>
+  <dd style="margin-left: 8">
+    <ul>
+      <li>Revived draft with identical wording and structure.</li>
+      <li>Clarified how to use alongside JSON Pointer.</li>
+    </ul>
+    <p> </p>
+  </dd>
+  <dt>draft-luff-relative-json-pointer-00</dt>
+  <dd style="margin-left: 8">
+    <ul>
+      <li>Initial draft.</li>
+    </ul>
+    <p> </p>
+  </dd>
+</dl>
+
+<p> </p>
+<h1 id="rfc.authors">
+  <a href="#rfc.authors">Authors' Addresses</a>
+</h1>
+<div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Geraint Luff</span> 
+	  <span class="n hidden">
+		<span class="family-name">Luff</span>
+	  </span>
+	</span>
+	<span class="org vcardline"></span>
+	<span class="adr">
+	  
+	  <span class="vcardline">
+		<span class="locality">Cambridge</span>,  
+		<span class="region"></span>
+		<span class="code"></span>
+	  </span>
+	  <span class="country-name vcardline">UK</span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:luffgd@gmail.com">luffgd@gmail.com</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Henry Andrews</span> (editor)
+	  <span class="n hidden">
+		<span class="family-name">Andrews</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Cloudflare, Inc.</span>
+	<span class="adr">
+	  
+	  <span class="vcardline">
+		<span class="locality">San Francisco</span>,  
+		<span class="region">CA</span> 
+		<span class="code"></span>
+	  </span>
+	  <span class="country-name vcardline">USA</span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:henry@cloudflare.com">henry@cloudflare.com</a></span>
+
+  </address>
+</div>
+
+</body>
+</html>

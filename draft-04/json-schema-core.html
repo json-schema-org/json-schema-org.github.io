@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -425,6 +428,10 @@
   <meta name="dct.issued" scheme="ISO8601" content="2013" />
   <meta name="dct.abstract" content="JSON Schema defines the media type &quot;application/schema+json&quot;, a JSON based format for defining the structure of JSON data. JSON Schema provides a contract for what JSON data is required for a given application and how to interact with it. JSON Schema is intended to define validation, documentation, hyperlink navigation, and interaction control of JSON data.  " />
   <meta name="description" content="JSON Schema defines the media type &quot;application/schema+json&quot;, a JSON based format for defining the structure of JSON data. JSON Schema provides a contract for what JSON data is required for a given application and how to interact with it. JSON Schema is intended to define validation, documentation, hyperlink navigation, and interaction control of JSON data.  " />
+
+  {% if jekyll.environment == 'production' and site.google_analytics %}
+  {% include google-analytics.html %}
+  {% endif %}
 
 </head>
 

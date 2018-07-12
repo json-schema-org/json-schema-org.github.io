@@ -1,0 +1,1035 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head profile="http://www.w3.org/2006/03/hcard http://dublincore.org/documents/2008/08/04/dc-html/">
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+
+  <title>JSON Schema Validation: A Vocabulary for Structural Validation of JSON </title>
+
+  <style type="text/css" title="Xml2Rfc (sans serif)">
+  /*<![CDATA[*/
+	  a {
+	  text-decoration: none;
+	  }
+      /* info code from SantaKlauss at http://www.madaboutstyle.com/tooltip2.html */
+      a.info {
+          /* This is the key. */
+          position: relative;
+          z-index: 24;
+          text-decoration: none;
+      }
+      a.info:hover {
+          z-index: 25;
+          color: #FFF; background-color: #900;
+      }
+      a.info span { display: none; }
+      a.info:hover span.info {
+          /* The span will display just on :hover state. */
+          display: block;
+          position: absolute;
+          font-size: smaller;
+          top: 2em; left: -5em; width: 15em;
+          padding: 2px; border: 1px solid #333;
+          color: #900; background-color: #EEE;
+          text-align: left;
+      }
+	  a.smpl {
+	  color: black;
+	  }
+	  a:hover {
+	  text-decoration: underline;
+	  }
+	  a:active {
+	  text-decoration: underline;
+	  }
+	  address {
+	  margin-top: 1em;
+	  margin-left: 2em;
+	  font-style: normal;
+	  }
+	  body {
+	  color: black;
+	  font-family: verdana, helvetica, arial, sans-serif;
+	  font-size: 10pt;
+	  max-width: 55em;
+	  
+	  }
+	  cite {
+	  font-style: normal;
+	  }
+	  dd {
+	  margin-right: 2em;
+	  }
+	  dl {
+	  margin-left: 2em;
+	  }
+	
+	  ul.empty {
+	  list-style-type: none;
+	  }
+	  ul.empty li {
+	  margin-top: .5em;
+	  }
+	  dl p {
+	  margin-left: 0em;
+	  }
+	  dt {
+	  margin-top: .5em;
+	  }
+	  h1 {
+	  font-size: 14pt;
+	  line-height: 21pt;
+	  page-break-after: avoid;
+	  }
+	  h1.np {
+	  page-break-before: always;
+	  }
+	  h1 a {
+	  color: #333333;
+	  }
+	  h2 {
+	  font-size: 12pt;
+	  line-height: 15pt;
+	  page-break-after: avoid;
+	  }
+	  h3, h4, h5, h6 {
+	  font-size: 10pt;
+	  page-break-after: avoid;
+	  }
+	  h2 a, h3 a, h4 a, h5 a, h6 a {
+	  color: black;
+	  }
+	  img {
+	  margin-left: 3em;
+	  }
+	  li {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  ol {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  ol p {
+	  margin-left: 0em;
+	  }
+	  p {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  pre {
+	  margin-left: 3em;
+	  background-color: lightyellow;
+	  padding: .25em;
+	  }
+	  pre.text2 {
+	  border-style: dotted;
+	  border-width: 1px;
+	  background-color: #f0f0f0;
+	  width: 69em;
+	  }
+	  pre.inline {
+	  background-color: white;
+	  padding: 0em;
+	  }
+	  pre.text {
+	  border-style: dotted;
+	  border-width: 1px;
+	  background-color: #f8f8f8;
+	  width: 69em;
+	  }
+	  pre.drawing {
+	  border-style: solid;
+	  border-width: 1px;
+	  background-color: #f8f8f8;
+	  padding: 2em;
+	  }
+	  table {
+	  margin-left: 2em;
+	  }
+	  table.tt {
+	  vertical-align: top;
+	  }
+	  table.full {
+	  border-style: outset;
+	  border-width: 1px;
+	  }
+	  table.headers {
+	  border-style: outset;
+	  border-width: 1px;
+	  }
+	  table.tt td {
+	  vertical-align: top;
+	  }
+	  table.full td {
+	  border-style: inset;
+	  border-width: 1px;
+	  }
+	  table.tt th {
+	  vertical-align: top;
+	  }
+	  table.full th {
+	  border-style: inset;
+	  border-width: 1px;
+	  }
+	  table.headers th {
+	  border-style: none none inset none;
+	  border-width: 1px;
+	  }
+	  table.left {
+	  margin-right: auto;
+	  }
+	  table.right {
+	  margin-left: auto;
+	  }
+	  table.center {
+	  margin-left: auto;
+	  margin-right: auto;
+	  }
+	  caption {
+	  caption-side: bottom;
+	  font-weight: bold;
+	  font-size: 9pt;
+	  margin-top: .5em;
+	  }
+	
+	  table.header {
+	  border-spacing: 1px;
+	  width: 95%;
+	  font-size: 10pt;
+	  color: white;
+	  }
+	  td.top {
+	  vertical-align: top;
+	  }
+	  td.topnowrap {
+	  vertical-align: top;
+	  white-space: nowrap; 
+	  }
+	  table.header td {
+	  background-color: gray;
+	  width: 50%;
+	  }
+	  table.header a {
+	  color: white;
+	  }
+	  td.reference {
+	  vertical-align: top;
+	  white-space: nowrap;
+	  padding-right: 1em;
+	  }
+	  thead {
+	  display:table-header-group;
+	  }
+	  ul.toc, ul.toc ul {
+	  list-style: none;
+	  margin-left: 1.5em;
+	  margin-right: 0em;
+	  padding-left: 0em;
+	  }
+	  ul.toc li {
+	  line-height: 150%;
+	  font-weight: bold;
+	  font-size: 10pt;
+	  margin-left: 0em;
+	  margin-right: 0em;
+	  }
+	  ul.toc li li {
+	  line-height: normal;
+	  font-weight: normal;
+	  font-size: 9pt;
+	  margin-left: 0em;
+	  margin-right: 0em;
+	  }
+	  li.excluded {
+	  font-size: 0pt;
+	  }
+	  ul p {
+	  margin-left: 0em;
+	  }
+	
+	  .comment {
+	  background-color: yellow;
+	  }
+	  .center {
+	  text-align: center;
+	  }
+	  .error {
+	  color: red;
+	  font-style: italic;
+	  font-weight: bold;
+	  }
+	  .figure {
+	  font-weight: bold;
+	  text-align: center;
+	  font-size: 9pt;
+	  }
+	  .filename {
+	  color: #333333;
+	  font-weight: bold;
+	  font-size: 12pt;
+	  line-height: 21pt;
+	  text-align: center;
+	  }
+	  .fn {
+	  font-weight: bold;
+	  }
+	  .hidden {
+	  display: none;
+	  }
+	  .left {
+	  text-align: left;
+	  }
+	  .right {
+	  text-align: right;
+	  }
+	  .title {
+	  color: #990000;
+	  font-size: 18pt;
+	  line-height: 18pt;
+	  font-weight: bold;
+	  text-align: center;
+	  margin-top: 36pt;
+	  }
+	  .vcardline {
+	  display: block;
+	  }
+	  .warning {
+	  font-size: 14pt;
+	  background-color: yellow;
+	  }
+	
+	
+	  @media print {
+	  .noprint {
+		display: none;
+	  }
+	
+	  a {
+		color: black;
+		text-decoration: none;
+	  }
+	
+	  table.header {
+		width: 90%;
+	  }
+	
+	  td.header {
+		width: 50%;
+		color: black;
+		background-color: white;
+		vertical-align: top;
+		font-size: 12pt;
+	  }
+	
+	  ul.toc a::after {
+		content: leader('.') target-counter(attr(href), page);
+	  }
+	
+	  ul.ind li li a {
+		content: target-counter(attr(href), page);
+	  }
+	
+	  .print2col {
+		column-count: 2;
+		-moz-column-count: 2;
+		column-fill: auto;
+	  }
+	  }
+	
+	  @page {
+	  @top-left {
+		   content: "Internet-Draft"; 
+	  } 
+	  @top-right {
+		   content: "December 2010"; 
+	  } 
+	  @top-center {
+		   content: "Abbreviated Title";
+	  } 
+	  @bottom-left {
+		   content: "Doe"; 
+	  } 
+	  @bottom-center {
+		   content: "Expires June 2011"; 
+	  } 
+	  @bottom-right {
+		   content: "[Page " counter(page) "]"; 
+	  } 
+	  }
+	
+	  @page:first { 
+		@top-left {
+		  content: normal;
+		}
+		@top-right {
+		  content: normal;
+		}
+		@top-center {
+		  content: normal;
+		}
+	  }
+  /*]]>*/
+  </style>
+
+  <link href="#rfc.toc" rel="Contents"/>
+<link href="#rfc.section.1" rel="Chapter" title="1 Introduction"/>
+<link href="#rfc.section.2" rel="Chapter" title="2 Conventions and Terminology"/>
+<link href="#rfc.section.3" rel="Chapter" title="3 Interoperability considerations"/>
+<link href="#rfc.section.3.1" rel="Chapter" title="3.1 Validation of string instances"/>
+<link href="#rfc.section.3.2" rel="Chapter" title="3.2 Validation of numeric instances"/>
+<link href="#rfc.section.3.3" rel="Chapter" title="3.3 Regular expressions"/>
+<link href="#rfc.section.4" rel="Chapter" title="4 General validation considerations"/>
+<link href="#rfc.section.4.1" rel="Chapter" title="4.1 Keywords and instance primitive types"/>
+<link href="#rfc.section.4.2" rel="Chapter" title="4.2 Validation of primitive types and child values"/>
+<link href="#rfc.section.4.3" rel="Chapter" title="4.3 Constraints and missing keywords"/>
+<link href="#rfc.section.4.4" rel="Chapter" title="4.4 Keyword independence"/>
+<link href="#rfc.section.5" rel="Chapter" title="5 Meta-schema"/>
+<link href="#rfc.section.6" rel="Chapter" title="6 Validation keywords"/>
+<link href="#rfc.section.6.1" rel="Chapter" title="6.1 multipleOf"/>
+<link href="#rfc.section.6.2" rel="Chapter" title="6.2 maximum"/>
+<link href="#rfc.section.6.3" rel="Chapter" title="6.3 exclusiveMaximum"/>
+<link href="#rfc.section.6.4" rel="Chapter" title="6.4 minimum"/>
+<link href="#rfc.section.6.5" rel="Chapter" title="6.5 exclusiveMinimum"/>
+<link href="#rfc.section.6.6" rel="Chapter" title="6.6 maxLength"/>
+<link href="#rfc.section.6.7" rel="Chapter" title="6.7 minLength"/>
+<link href="#rfc.section.6.8" rel="Chapter" title="6.8 pattern"/>
+<link href="#rfc.section.6.9" rel="Chapter" title="6.9 items"/>
+<link href="#rfc.section.6.10" rel="Chapter" title="6.10 additionalItems"/>
+<link href="#rfc.section.6.11" rel="Chapter" title="6.11 maxItems"/>
+<link href="#rfc.section.6.12" rel="Chapter" title="6.12 minItems"/>
+<link href="#rfc.section.6.13" rel="Chapter" title="6.13 uniqueItems"/>
+<link href="#rfc.section.6.14" rel="Chapter" title="6.14 contains"/>
+<link href="#rfc.section.6.15" rel="Chapter" title="6.15 maxProperties"/>
+<link href="#rfc.section.6.16" rel="Chapter" title="6.16 minProperties"/>
+<link href="#rfc.section.6.17" rel="Chapter" title="6.17 required"/>
+<link href="#rfc.section.6.18" rel="Chapter" title="6.18 properties"/>
+<link href="#rfc.section.6.19" rel="Chapter" title="6.19 patternProperties"/>
+<link href="#rfc.section.6.20" rel="Chapter" title="6.20 additionalProperties"/>
+<link href="#rfc.section.6.21" rel="Chapter" title="6.21 dependencies"/>
+<link href="#rfc.section.6.22" rel="Chapter" title="6.22 propertyNames"/>
+<link href="#rfc.section.6.23" rel="Chapter" title="6.23 enum"/>
+<link href="#rfc.section.6.24" rel="Chapter" title="6.24 const"/>
+<link href="#rfc.section.6.25" rel="Chapter" title="6.25 type"/>
+<link href="#rfc.section.6.26" rel="Chapter" title="6.26 allOf"/>
+<link href="#rfc.section.6.27" rel="Chapter" title="6.27 anyOf"/>
+<link href="#rfc.section.6.28" rel="Chapter" title="6.28 oneOf"/>
+<link href="#rfc.section.6.29" rel="Chapter" title="6.29 not"/>
+<link href="#rfc.section.7" rel="Chapter" title="7 Metadata keywords"/>
+<link href="#rfc.section.7.1" rel="Chapter" title="7.1 definitions"/>
+<link href="#rfc.section.7.2" rel="Chapter" title="7.2 &quot;title&quot; and &quot;description&quot;"/>
+<link href="#rfc.section.7.3" rel="Chapter" title="7.3 &quot;default&quot;"/>
+<link href="#rfc.section.7.4" rel="Chapter" title="7.4 &quot;examples&quot;"/>
+<link href="#rfc.section.8" rel="Chapter" title="8 Semantic validation with &quot;format&quot;"/>
+<link href="#rfc.section.8.1" rel="Chapter" title="8.1 Foreword"/>
+<link href="#rfc.section.8.2" rel="Chapter" title="8.2 Implementation requirements"/>
+<link href="#rfc.section.8.3" rel="Chapter" title="8.3 Defined formats"/>
+<link href="#rfc.section.8.3.1" rel="Chapter" title="8.3.1 date-time"/>
+<link href="#rfc.section.8.3.2" rel="Chapter" title="8.3.2 email"/>
+<link href="#rfc.section.8.3.3" rel="Chapter" title="8.3.3 hostname"/>
+<link href="#rfc.section.8.3.4" rel="Chapter" title="8.3.4 ipv4"/>
+<link href="#rfc.section.8.3.5" rel="Chapter" title="8.3.5 ipv6"/>
+<link href="#rfc.section.8.3.6" rel="Chapter" title="8.3.6 uri"/>
+<link href="#rfc.section.8.3.7" rel="Chapter" title="8.3.7 uri-reference"/>
+<link href="#rfc.section.8.3.8" rel="Chapter" title="8.3.8 uri-template"/>
+<link href="#rfc.section.8.3.9" rel="Chapter" title="8.3.9 json-pointer"/>
+<link href="#rfc.section.9" rel="Chapter" title="9 Security considerations"/>
+<link href="#rfc.references" rel="Chapter" title="10 References"/>
+<link href="#rfc.references.1" rel="Chapter" title="10.1 Normative References"/>
+<link href="#rfc.references.2" rel="Chapter" title="10.2 Informative References"/>
+<link href="#rfc.appendix.A" rel="Chapter" title="A Acknowledgments"/>
+<link href="#rfc.appendix.B" rel="Chapter" title="B ChangeLog"/>
+<link href="#rfc.authors" rel="Chapter"/>
+
+
+  <meta name="generator" content="xml2rfc version 2.5.1 - http://tools.ietf.org/tools/xml2rfc" />
+  <link rel="schema.dct" href="http://purl.org/dc/terms/" />
+
+  <meta name="dct.creator" content="Wright, A., Ed., Luff, G., and H. Andrews, Ed." />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-wright-json-schema-validation-01" />
+  <meta name="dct.issued" scheme="ISO8601" content="2017-4-21" />
+  <meta name="dct.abstract" content="JSON Schema (application/schema+json) has several purposes, one of which is JSON instance validation.  This document specifies a vocabulary for JSON Schema to describe the meaning of JSON documents, provide hints for user interfaces working with JSON data, and to make assertions about what a valid document must look like.  " />
+  <meta name="description" content="JSON Schema (application/schema+json) has several purposes, one of which is JSON instance validation.  This document specifies a vocabulary for JSON Schema to describe the meaning of JSON documents, provide hints for user interfaces working with JSON data, and to make assertions about what a valid document must look like.  " />
+
+</head>
+
+<body>
+
+  <table class="header">
+    <tbody>
+    
+    	<tr>
+  <td class="left">Internet Engineering Task Force</td>
+  <td class="right">A. Wright, Ed.</td>
+</tr>
+<tr>
+  <td class="left">Internet-Draft</td>
+  <td class="right"></td>
+</tr>
+<tr>
+  <td class="left">Intended status: Informational</td>
+  <td class="right">G. Luff</td>
+</tr>
+<tr>
+  <td class="left">Expires: October 23, 2017</td>
+  <td class="right"></td>
+</tr>
+<tr>
+  <td class="left"></td>
+  <td class="right">H. Andrews, Ed.</td>
+</tr>
+<tr>
+  <td class="left"></td>
+  <td class="right">Cloudflare, Inc.</td>
+</tr>
+<tr>
+  <td class="left"></td>
+  <td class="right">April 21, 2017</td>
+</tr>
+
+    	
+    </tbody>
+  </table>
+
+  <p class="title">JSON Schema Validation: A Vocabulary for Structural Validation of JSON <br />
+  <span class="filename">draft-wright-json-schema-validation-01</span></p>
+  
+  <h1 id="rfc.abstract">
+  <a href="#rfc.abstract">Abstract</a>
+</h1>
+<p>JSON Schema (application/schema+json) has several purposes, one of which is JSON instance validation.  This document specifies a vocabulary for JSON Schema to describe the meaning of JSON documents, provide hints for user interfaces working with JSON data, and to make assertions about what a valid document must look like.  </p>
+<h1>
+  <a>Note to Readers</a>
+</h1>
+<p>The issues list for this draft can be found at <span>&lt;</span><a href="https://github.com/json-schema-org/json-schema-spec/issues">https://github.com/json-schema-org/json-schema-spec/issues</a><span>&gt;</span>.  </p>
+<p>For additional information, see <span>&lt;</span><a href="http://json-schema.org/">http://json-schema.org/</a><span>&gt;</span>.  </p>
+<p>To provide feedback, use this issue tracker, the communication methods listed on the homepage, or email the document editors.  </p>
+<h1 id="rfc.status">
+  <a href="#rfc.status">Status of This Memo</a>
+</h1>
+<p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
+<p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
+<p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
+<p>This Internet-Draft will expire on October 23, 2017.</p>
+<h1 id="rfc.copyrightnotice">
+  <a href="#rfc.copyrightnotice">Copyright Notice</a>
+</h1>
+<p>Copyright (c) 2017 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
+<p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (http://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
+
+  
+  <hr class="noprint" />
+  <h1 class="np" id="rfc.toc"><a href="#rfc.toc">Table of Contents</a></h1>
+  <ul class="toc">
+
+  	<li>1.   <a href="#rfc.section.1">Introduction</a></li>
+<li>2.   <a href="#rfc.section.2">Conventions and Terminology</a></li>
+<li>3.   <a href="#rfc.section.3">Interoperability considerations</a></li>
+<ul><li>3.1.   <a href="#rfc.section.3.1">Validation of string instances</a></li>
+<li>3.2.   <a href="#rfc.section.3.2">Validation of numeric instances</a></li>
+<li>3.3.   <a href="#rfc.section.3.3">Regular expressions</a></li>
+</ul><li>4.   <a href="#rfc.section.4">General validation considerations</a></li>
+<ul><li>4.1.   <a href="#rfc.section.4.1">Keywords and instance primitive types</a></li>
+<li>4.2.   <a href="#rfc.section.4.2">Validation of primitive types and child values</a></li>
+<li>4.3.   <a href="#rfc.section.4.3">Constraints and missing keywords</a></li>
+<li>4.4.   <a href="#rfc.section.4.4">Keyword independence</a></li>
+</ul><li>5.   <a href="#rfc.section.5">Meta-schema</a></li>
+<li>6.   <a href="#rfc.section.6">Validation keywords</a></li>
+<ul><li>6.1.   <a href="#rfc.section.6.1">multipleOf</a></li>
+<li>6.2.   <a href="#rfc.section.6.2">maximum</a></li>
+<li>6.3.   <a href="#rfc.section.6.3">exclusiveMaximum</a></li>
+<li>6.4.   <a href="#rfc.section.6.4">minimum</a></li>
+<li>6.5.   <a href="#rfc.section.6.5">exclusiveMinimum</a></li>
+<li>6.6.   <a href="#rfc.section.6.6">maxLength</a></li>
+<li>6.7.   <a href="#rfc.section.6.7">minLength</a></li>
+<li>6.8.   <a href="#rfc.section.6.8">pattern</a></li>
+<li>6.9.   <a href="#rfc.section.6.9">items</a></li>
+<li>6.10.   <a href="#rfc.section.6.10">additionalItems</a></li>
+<li>6.11.   <a href="#rfc.section.6.11">maxItems</a></li>
+<li>6.12.   <a href="#rfc.section.6.12">minItems</a></li>
+<li>6.13.   <a href="#rfc.section.6.13">uniqueItems</a></li>
+<li>6.14.   <a href="#rfc.section.6.14">contains</a></li>
+<li>6.15.   <a href="#rfc.section.6.15">maxProperties</a></li>
+<li>6.16.   <a href="#rfc.section.6.16">minProperties</a></li>
+<li>6.17.   <a href="#rfc.section.6.17">required</a></li>
+<li>6.18.   <a href="#rfc.section.6.18">properties</a></li>
+<li>6.19.   <a href="#rfc.section.6.19">patternProperties</a></li>
+<li>6.20.   <a href="#rfc.section.6.20">additionalProperties</a></li>
+<li>6.21.   <a href="#rfc.section.6.21">dependencies</a></li>
+<li>6.22.   <a href="#rfc.section.6.22">propertyNames</a></li>
+<li>6.23.   <a href="#rfc.section.6.23">enum</a></li>
+<li>6.24.   <a href="#rfc.section.6.24">const</a></li>
+<li>6.25.   <a href="#rfc.section.6.25">type</a></li>
+<li>6.26.   <a href="#rfc.section.6.26">allOf</a></li>
+<li>6.27.   <a href="#rfc.section.6.27">anyOf</a></li>
+<li>6.28.   <a href="#rfc.section.6.28">oneOf</a></li>
+<li>6.29.   <a href="#rfc.section.6.29">not</a></li>
+</ul><li>7.   <a href="#rfc.section.7">Metadata keywords</a></li>
+<ul><li>7.1.   <a href="#rfc.section.7.1">definitions</a></li>
+<li>7.2.   <a href="#rfc.section.7.2">"title" and "description"</a></li>
+<li>7.3.   <a href="#rfc.section.7.3">"default"</a></li>
+<li>7.4.   <a href="#rfc.section.7.4">"examples"</a></li>
+</ul><li>8.   <a href="#rfc.section.8">Semantic validation with "format"</a></li>
+<ul><li>8.1.   <a href="#rfc.section.8.1">Foreword</a></li>
+<li>8.2.   <a href="#rfc.section.8.2">Implementation requirements</a></li>
+<li>8.3.   <a href="#rfc.section.8.3">Defined formats</a></li>
+<ul><li>8.3.1.   <a href="#rfc.section.8.3.1">date-time</a></li>
+<li>8.3.2.   <a href="#rfc.section.8.3.2">email</a></li>
+<li>8.3.3.   <a href="#rfc.section.8.3.3">hostname</a></li>
+<li>8.3.4.   <a href="#rfc.section.8.3.4">ipv4</a></li>
+<li>8.3.5.   <a href="#rfc.section.8.3.5">ipv6</a></li>
+<li>8.3.6.   <a href="#rfc.section.8.3.6">uri</a></li>
+<li>8.3.7.   <a href="#rfc.section.8.3.7">uri-reference</a></li>
+<li>8.3.8.   <a href="#rfc.section.8.3.8">uri-template</a></li>
+<li>8.3.9.   <a href="#rfc.section.8.3.9">json-pointer</a></li>
+</ul></ul><li>9.   <a href="#rfc.section.9">Security considerations</a></li>
+<li>10.   <a href="#rfc.references">References</a></li>
+<ul><li>10.1.   <a href="#rfc.references.1">Normative References</a></li>
+<li>10.2.   <a href="#rfc.references.2">Informative References</a></li>
+</ul><li>Appendix A.   <a href="#rfc.appendix.A">Acknowledgments</a></li>
+<li>Appendix B.   <a href="#rfc.appendix.B">ChangeLog</a></li>
+<li><a href="#rfc.authors">Authors' Addresses</a></li>
+
+
+  </ul>
+
+  <h1 id="rfc.section.1"><a href="#rfc.section.1">1.</a> Introduction</h1>
+<p id="rfc.section.1.p.1">JSON Schema can be used to require that a given JSON document (an instance) satisfies a certain number of criteria. These criteria are asserted by using keywords described in this specification. In addition, a set of keywords is also defined to assist in interactive user interface instance generation.  </p>
+<p id="rfc.section.1.p.2">This specification will use the terminology defined by the <a href="#json-schema">JSON Schema core</a> <cite title="NONE">[json-schema]</cite> specification.  </p>
+<h1 id="rfc.section.2"><a href="#rfc.section.2">2.</a> Conventions and Terminology</h1>
+<p id="rfc.section.2.p.1">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="#RFC2119">RFC 2119</a> <cite title="NONE">[RFC2119]</cite>.  </p>
+<p id="rfc.section.2.p.2">This specification uses the term "container instance" to refer to both array and object instances. It uses the term "children instances" to refer to array elements or object member values.  </p>
+<p id="rfc.section.2.p.3">Elements in an array value are said to be unique if no two elements of this array are <a href="#json-schema">equal</a> <cite title="NONE">[json-schema]</cite>.  </p>
+<h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> Interoperability considerations</h1>
+<h1 id="rfc.section.3.1"><a href="#rfc.section.3.1">3.1.</a> Validation of string instances</h1>
+<p id="rfc.section.3.1.p.1">It should be noted that the nul character (\u0000) is valid in a JSON string. An instance to validate may contain a string value with this character, regardless of the ability of the underlying programming language to deal with such data.  </p>
+<h1 id="rfc.section.3.2"><a href="#rfc.section.3.2">3.2.</a> Validation of numeric instances</h1>
+<p id="rfc.section.3.2.p.1">The JSON specification allows numbers with arbitrary precision, and JSON Schema does not add any such bounds.  This means that numeric instances processed by JSON Schema can be arbitrarily large and/or have an arbitrarily long decimal part, regardless of the ability of the underlying programming language to deal with such data.  </p>
+<h1 id="rfc.section.3.3"><a href="#rfc.section.3.3">3.3.</a> Regular expressions</h1>
+<p id="rfc.section.3.3.p.1">Two validation keywords, "pattern" and "patternProperties", use regular expressions to express constraints. These regular expressions SHOULD be valid according to the <a href="#ecma262">ECMA 262</a> <cite title="NONE">[ecma262]</cite> regular expression dialect.  </p>
+<p id="rfc.section.3.3.p.2">Furthermore, given the high disparity in regular expression constructs support, schema authors SHOULD limit themselves to the following regular expression tokens: </p>
+
+<ul class="empty">
+  <li>individual Unicode characters, as defined by the <a href="#RFC7159">JSON specification</a> <cite title="NONE">[RFC7159]</cite>;</li>
+  <li>simple character classes ([abc]), range character classes ([a-z]);</li>
+  <li>complemented character classes ([^abc], [^a-z]);</li>
+  <li>simple quantifiers: "+" (one or more), "*" (zero or more), "?" (zero or one), and their lazy versions ("+?", "*?", "??");</li>
+  <li>range quantifiers: "{x}" (exactly x occurrences), "{x,y}" (at least x, at most y, occurrences), {x,} (x occurrences or more), and their lazy versions;</li>
+  <li>the beginning-of-input ("^") and end-of-input ("$") anchors;</li>
+  <li>simple grouping ("(...)") and alternation ("|").</li>
+</ul>
+
+<p> </p>
+<p id="rfc.section.3.3.p.3">Finally, implementations MUST NOT take regular expressions to be anchored, neither at the beginning nor at the end. This means, for instance, the pattern "es" matches "expression".  </p>
+<h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> General validation considerations</h1>
+<h1 id="rfc.section.4.1"><a href="#rfc.section.4.1">4.1.</a> Keywords and instance primitive types</h1>
+<p id="rfc.section.4.1.p.1">Most validation keywords only constrain values within a certain primitive type.  When the type of the instance is not of the type targeted by the keyword, the validation succeeds.  </p>
+<p id="rfc.section.4.1.p.2">For example, the "maxLength" keyword will only restrict certain strings (that are too long) from being valid.  If the instance is a number, boolean, null, array, or object, the keyword passes validation.  </p>
+<h1 id="rfc.section.4.2"><a href="#rfc.section.4.2">4.2.</a> Validation of primitive types and child values</h1>
+<p id="rfc.section.4.2.p.1">Two of the primitive types, array and object, allow for child values.  The validation of the primitive type is considered separately from the validation of child instances.  </p>
+<p id="rfc.section.4.2.p.2">For arrays, primitive type validation consists of validating restrictions on length with "minItems" and "maxItems", while "items" and "additionalItems" determine which subschemas apply to which elements of the array.  In addition, "uniqueItems" and "contains" validate array contents as a whole.  </p>
+<p id="rfc.section.4.2.p.3">For objects, primitive type validation consists of validating restrictions on which and how many properties appear with "required", "minProperties", "maxProperties", "propertyNames", and the string array form of "dependencies", while "properties", "patternProperties", and "additionalProperties" determine which subschemas apply to which object property values.  In addition, the schema form of "dependencies" validates the object as a whole based on the presence of specific property names.  </p>
+<h1 id="rfc.section.4.3"><a href="#rfc.section.4.3">4.3.</a> Constraints and missing keywords</h1>
+<p id="rfc.section.4.3.p.1">Each JSON Schema validation keyword adds constraints that an instance must satisfy in order to successfully validate.  </p>
+<p id="rfc.section.4.3.p.2">Validation keywords that are missing never restrict validation.  In some cases, this no-op behavior is identical to a keyword that exists with certain values, and these values are noted where known.  </p>
+<h1 id="rfc.section.4.4"><a href="#rfc.section.4.4">4.4.</a> Keyword independence</h1>
+<p id="rfc.section.4.4.p.1">Validation keywords typically operate independently, without affecting each other's outcomes.  </p>
+<p id="rfc.section.4.4.p.2">For schema author convenience, there are some exceptions: </p>
+
+<ul class="empty">
+  <li>"additionalProperties", whose behavior is defined in terms of "properties" and "patternProperties"; and </li>
+  <li>"additionalItems", whose behavior is defined in terms of "items".  </li>
+</ul>
+
+<p> </p>
+<h1 id="rfc.section.5"><a href="#rfc.section.5">5.</a> Meta-schema</h1>
+<p id="rfc.section.5.p.1">The current URI for the JSON Schema Validation is &lt;http://json-schema.org/draft-06/schema#&gt;.  </p>
+<h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> Validation keywords</h1>
+<p id="rfc.section.6.p.1">Validation keywords in a schema impose requirements for successful validation of an instance.  </p>
+<h1 id="rfc.section.6.1"><a href="#rfc.section.6.1">6.1.</a> multipleOf</h1>
+<p id="rfc.section.6.1.p.1">The value of "multipleOf" MUST be a number, strictly greater than 0.  </p>
+<p id="rfc.section.6.1.p.2">A numeric instance is valid only if division by this keyword's value results in an integer.  </p>
+<h1 id="rfc.section.6.2"><a href="#rfc.section.6.2">6.2.</a> maximum</h1>
+<p id="rfc.section.6.2.p.1">The value of "maximum" MUST be a number, representing an inclusive upper limit for a numeric instance.  </p>
+<p id="rfc.section.6.2.p.2">If the instance is a number, then this keyword validates only if the instance is less than or exactly equal to "maximum".  </p>
+<h1 id="rfc.section.6.3"><a href="#rfc.section.6.3">6.3.</a> exclusiveMaximum</h1>
+<p id="rfc.section.6.3.p.1">The value of "exclusiveMaximum" MUST be number, representing an exclusive upper limit for a numeric instance.  </p>
+<p id="rfc.section.6.3.p.2">If the instance is a number, then the instance is valid only if it has a value strictly less than (not equal to) "exclusiveMaximum".  </p>
+<h1 id="rfc.section.6.4"><a href="#rfc.section.6.4">6.4.</a> minimum</h1>
+<p id="rfc.section.6.4.p.1">The value of "minimum" MUST be a number, representing an inclusive upper limit for a numeric instance.  </p>
+<p id="rfc.section.6.4.p.2">If the instance is a number, then this keyword validates only if the instance is greater than or exactly equal to "minimum".  </p>
+<h1 id="rfc.section.6.5"><a href="#rfc.section.6.5">6.5.</a> exclusiveMinimum</h1>
+<p id="rfc.section.6.5.p.1">The value of "exclusiveMinimum" MUST be number, representing an exclusive upper limit for a numeric instance.  </p>
+<p id="rfc.section.6.5.p.2">If the instance is a number, then the instance is valid only if it has a value strictly greater than (not equal to) "exclusiveMinimum".  </p>
+<h1 id="rfc.section.6.6"><a href="#rfc.section.6.6">6.6.</a> maxLength</h1>
+<p id="rfc.section.6.6.p.1">The value of this keyword MUST be a non-negative integer.</p>
+<p id="rfc.section.6.6.p.2">A string instance is valid against this keyword if its length is less than, or equal to, the value of this keyword.  </p>
+<p id="rfc.section.6.6.p.3">The length of a string instance is defined as the number of its characters as defined by <a href="#RFC7159">RFC 7159</a> <cite title="NONE">[RFC7159]</cite>.  </p>
+<h1 id="rfc.section.6.7"><a href="#rfc.section.6.7">6.7.</a> minLength</h1>
+<p id="rfc.section.6.7.p.1">The value of this keyword MUST be a non-negative integer.  </p>
+<p id="rfc.section.6.7.p.2">A string instance is valid against this keyword if its length is greater than, or equal to, the value of this keyword.  </p>
+<p id="rfc.section.6.7.p.3">The length of a string instance is defined as the number of its characters as defined by <a href="#RFC7159">RFC 7159</a> <cite title="NONE">[RFC7159]</cite>.  </p>
+<p id="rfc.section.6.7.p.4">Omitting this keyword has the same behavior as a value of 0.  </p>
+<h1 id="rfc.section.6.8"><a href="#rfc.section.6.8">6.8.</a> pattern</h1>
+<p id="rfc.section.6.8.p.1">The value of this keyword MUST be a string. This string SHOULD be a valid regular expression, according to the ECMA 262 regular expression dialect.  </p>
+<p id="rfc.section.6.8.p.2">A string instance is considered valid if the regular expression matches the instance successfully. Recall: regular expressions are not implicitly anchored.  </p>
+<h1 id="rfc.section.6.9"><a href="#rfc.section.6.9">6.9.</a> items</h1>
+<p id="rfc.section.6.9.p.1">The value of "items" MUST be either a valid JSON Schema or an array of valid JSON Schemas.  </p>
+<p id="rfc.section.6.9.p.2">This keyword determines how child instances validate for arrays, and does not directly validate the immediate instance itself.  </p>
+<p id="rfc.section.6.9.p.3">If "items" is a schema, validation succeeds if all elements in the array successfully validate against that schema.  </p>
+<p id="rfc.section.6.9.p.4">If "items" is an array of schemas, validation succeeds if each element of the instance validates against the schema at the same position, if any.  </p>
+<p id="rfc.section.6.9.p.5">Omitting this keyword has the same behavior as an empty schema.  </p>
+<h1 id="rfc.section.6.10"><a href="#rfc.section.6.10">6.10.</a> additionalItems</h1>
+<p id="rfc.section.6.10.p.1">The value of "additionalItems" MUST be a valid JSON Schema.  </p>
+<p id="rfc.section.6.10.p.2">This keyword determines how child instances validate for arrays, and does not directly validate the immediate instance itself.  </p>
+<p id="rfc.section.6.10.p.3">If "items" is an array of schemas, validation succeeds if every instance element at a position greater than the size of "items" validates against "additionalItems".  </p>
+<p id="rfc.section.6.10.p.4">Otherwise, "additionalItems" MUST be ignored, as the "items" schema (possibly the default value of an empty schema) is applied to all elements.  </p>
+<p id="rfc.section.6.10.p.5">Omitting this keyword has the same behavior as an empty schema.  </p>
+<h1 id="rfc.section.6.11"><a href="#rfc.section.6.11">6.11.</a> maxItems</h1>
+<p id="rfc.section.6.11.p.1">The value of this keyword MUST be a non-negative integer.  </p>
+<p id="rfc.section.6.11.p.2">An array instance is valid against "maxItems" if its size is less than, or equal to, the value of this keyword.  </p>
+<h1 id="rfc.section.6.12"><a href="#rfc.section.6.12">6.12.</a> minItems</h1>
+<p id="rfc.section.6.12.p.1">The value of this keyword MUST be a non-negative integer.  </p>
+<p id="rfc.section.6.12.p.2">An array instance is valid against "minItems" if its size is greater than, or equal to, the value of this keyword.  </p>
+<p id="rfc.section.6.12.p.3">Omitting this keyword has the same behavior as a value of 0.  </p>
+<h1 id="rfc.section.6.13"><a href="#rfc.section.6.13">6.13.</a> uniqueItems</h1>
+<p id="rfc.section.6.13.p.1">The value of this keyword MUST be a boolean.  </p>
+<p id="rfc.section.6.13.p.2">If this keyword has boolean value false, the instance validates successfully. If it has boolean value true, the instance validates successfully if all of its elements are unique.  </p>
+<p id="rfc.section.6.13.p.3">Omitting this keyword has the same behavior as a value of false.  </p>
+<h1 id="rfc.section.6.14"><a href="#rfc.section.6.14">6.14.</a> contains</h1>
+<p id="rfc.section.6.14.p.1">The value of this keyword MUST be a valid JSON Schema.  </p>
+<p id="rfc.section.6.14.p.2">An array instance is valid against "contains" if at least one of its elements is valid against the given schema.  </p>
+<h1 id="rfc.section.6.15"><a href="#rfc.section.6.15">6.15.</a> maxProperties</h1>
+<p id="rfc.section.6.15.p.1">The value of this keyword MUST be a non-negative integer.  </p>
+<p id="rfc.section.6.15.p.2">An object instance is valid against "maxProperties" if its number of properties is less than, or equal to, the value of this keyword.  </p>
+<h1 id="rfc.section.6.16"><a href="#rfc.section.6.16">6.16.</a> minProperties</h1>
+<p id="rfc.section.6.16.p.1">The value of this keyword MUST be a non-negative integer.  </p>
+<p id="rfc.section.6.16.p.2">An object instance is valid against "minProperties" if its number of properties is greater than, or equal to, the value of this keyword.  </p>
+<p id="rfc.section.6.16.p.3">Omitting this keyword has the same behavior as a value of 0.  </p>
+<h1 id="rfc.section.6.17"><a href="#rfc.section.6.17">6.17.</a> required</h1>
+<p id="rfc.section.6.17.p.1">The value of this keyword MUST be an array.  Elements of this array, if any, MUST be strings, and MUST be unique.  </p>
+<p id="rfc.section.6.17.p.2">An object instance is valid against this keyword if every item in the array is the name of a property in the instance.  </p>
+<p id="rfc.section.6.17.p.3">Omitting this keyword has the same behavior as an empty array.  </p>
+<h1 id="rfc.section.6.18"><a href="#rfc.section.6.18">6.18.</a> properties</h1>
+<p id="rfc.section.6.18.p.1">The value of "properties" MUST be an object.  Each value of this object MUST be a valid JSON Schema.  </p>
+<p id="rfc.section.6.18.p.2">This keyword determines how child instances validate for objects, and does not directly validate the immediate instance itself.  </p>
+<p id="rfc.section.6.18.p.3">Validation succeeds if, for each name that appears in both the instance and as a name within this keyword's value, the child instance for that name successfully validates against the corresponding schema.  </p>
+<p id="rfc.section.6.18.p.4">Omitting this keyword has the same behavior as an empty object.  </p>
+<h1 id="rfc.section.6.19"><a href="#rfc.section.6.19">6.19.</a> patternProperties</h1>
+<p id="rfc.section.6.19.p.1">The value of "patternProperties" MUST be an object. Each property name of this object SHOULD be a valid regular expression, according to the ECMA 262 regular expression dialect. Each property value of this object MUST be a valid JSON Schema.  </p>
+<p id="rfc.section.6.19.p.2">This keyword determines how child instances validate for objects, and does not directly validate the immediate instance itself.  Validation of the primitive instance type against this keyword always succeeds.  </p>
+<p id="rfc.section.6.19.p.3">Validation succeeds if, for each instance name that matches any regular expressions that appear as a property name in this keyword's value, the child instance for that name successfully validates against each schema that corresponds to a matching regular expression.  </p>
+<p id="rfc.section.6.19.p.4">Omitting this keyword has the same behavior as an empty object.  </p>
+<h1 id="rfc.section.6.20"><a href="#rfc.section.6.20">6.20.</a> additionalProperties</h1>
+<p id="rfc.section.6.20.p.1">The value of "additionalProperties" MUST be a valid JSON Schema.  </p>
+<p id="rfc.section.6.20.p.2">This keyword determines how child instances validate for objects, and does not directly validate the immediate instance itself.  </p>
+<p id="rfc.section.6.20.p.3">Validation with "additionalProperties" applies only to the child values of instance names that do not match any names in "properties", and do not match any regular expression in "patternProperties".  </p>
+<p id="rfc.section.6.20.p.4">For all such properties, validation succeeds if the child instance validates against the "additionalProperties" schema.  </p>
+<p id="rfc.section.6.20.p.5">Omitting this keyword has the same behavior as an empty schema.  </p>
+<h1 id="rfc.section.6.21"><a href="#rfc.section.6.21">6.21.</a> dependencies</h1>
+<p id="rfc.section.6.21.p.1">This keyword specifies rules that are evaluated if the instance is an object and contains a certain property.  </p>
+<p id="rfc.section.6.21.p.2">This keyword's value MUST be an object. Each property specifies a dependency.  Each dependency value MUST be an array or a valid JSON Schema.  </p>
+<p id="rfc.section.6.21.p.3">If the dependency value is a subschema, and the dependency key is a property in the instance, the entire instance must validate against the dependency value.  </p>
+<p id="rfc.section.6.21.p.4">If the dependency value is an array, each element in the array, if any, MUST be a string, and MUST be unique. If the dependency key is a property in the instance, each of the items in the dependency value must be a property that exists in the instance.  </p>
+<p id="rfc.section.6.21.p.5">Omitting this keyword has the same behavior as an empty object.  </p>
+<h1 id="rfc.section.6.22"><a href="#rfc.section.6.22">6.22.</a> propertyNames</h1>
+<p id="rfc.section.6.22.p.1">The value of "propertyNames" MUST be a valid JSON Schema.  </p>
+<p id="rfc.section.6.22.p.2">If the instance is an object, this keyword validates if every property name in the instance validates against the provided schema.  Note the property name that the schema is testing will always be a string.  </p>
+<p id="rfc.section.6.22.p.3">Omitting this keyword has the same behavior as an empty schema.  </p>
+<h1 id="rfc.section.6.23"><a href="#rfc.section.6.23">6.23.</a> enum</h1>
+<p id="rfc.section.6.23.p.1">The value of this keyword MUST be an array. This array SHOULD have at least one element. Elements in the array SHOULD be unique.  </p>
+<p id="rfc.section.6.23.p.2">An instance validates successfully against this keyword if its value is equal to one of the elements in this keyword's array value.  </p>
+<p id="rfc.section.6.23.p.3">Elements in the array might be of any value, including null.  </p>
+<h1 id="rfc.section.6.24"><a href="#rfc.section.6.24">6.24.</a> const</h1>
+<p id="rfc.section.6.24.p.1">The value of this keyword MAY be of any type, including null.  </p>
+<p id="rfc.section.6.24.p.2">An instance validates successfully against this keyword if its value is equal to the value of the keyword.  </p>
+<h1 id="rfc.section.6.25"><a href="#rfc.section.6.25">6.25.</a> type</h1>
+<p id="rfc.section.6.25.p.1">The value of this keyword MUST be either a string or an array. If it is an array, elements of the array MUST be strings and MUST be unique.  </p>
+<p id="rfc.section.6.25.p.2">String values MUST be one of the six primitive types ("null", "boolean", "object", "array", "number", or "string"), or "integer" which matches any number with a zero fractional part.  </p>
+<p id="rfc.section.6.25.p.3">An instance validates if and only if the instance is in any of the sets listed for this keyword.  </p>
+<h1 id="rfc.section.6.26"><a href="#rfc.section.6.26">6.26.</a> allOf</h1>
+<p id="rfc.section.6.26.p.1">This keyword's value MUST be a non-empty array.  Each item of the array MUST be a valid JSON Schema.  </p>
+<p id="rfc.section.6.26.p.2">An instance validates successfully against this keyword if it validates successfully against all schemas defined by this keyword's value.  </p>
+<h1 id="rfc.section.6.27"><a href="#rfc.section.6.27">6.27.</a> anyOf</h1>
+<p id="rfc.section.6.27.p.1">This keyword's value MUST be a non-empty array.  Each item of the array MUST be a valid JSON Schema.  </p>
+<p id="rfc.section.6.27.p.2">An instance validates successfully against this keyword if it validates successfully against at least one schema defined by this keyword's value.  </p>
+<h1 id="rfc.section.6.28"><a href="#rfc.section.6.28">6.28.</a> oneOf</h1>
+<p id="rfc.section.6.28.p.1">This keyword's value MUST be a non-empty array.  Each item of the array MUST be a valid JSON Schema.  </p>
+<p id="rfc.section.6.28.p.2">An instance validates successfully against this keyword if it validates successfully against exactly one schema defined by this keyword's value.  </p>
+<h1 id="rfc.section.6.29"><a href="#rfc.section.6.29">6.29.</a> not</h1>
+<p id="rfc.section.6.29.p.1">This keyword's value MUST be a valid JSON Schema.  </p>
+<p id="rfc.section.6.29.p.2">An instance is valid against this keyword if it fails to validate successfully against the schema defined by this keyword.  </p>
+<h1 id="rfc.section.7"><a href="#rfc.section.7">7.</a> Metadata keywords</h1>
+<h1 id="rfc.section.7.1"><a href="#rfc.section.7.1">7.1.</a> definitions</h1>
+<p id="rfc.section.7.1.p.1">This keyword's value MUST be an object.  Each member value of this object MUST be a valid JSON Schema.  </p>
+<p id="rfc.section.7.1.p.2">This keyword plays no role in validation per se. Its role is to provide a standardized location for schema authors to inline JSON Schemas into a more general schema.  </p>
+<pre>
+
+{
+    "type": "array",
+    "items": { "$ref": "#/definitions/positiveInteger" },
+    "definitions": {
+        "positiveInteger": {
+            "type": "integer",
+            "exclusiveMinimum": 0
+        }
+    }
+}
+
+                        </pre>
+<p id="rfc.section.7.1.p.3">As an example, here is a schema describing an array of positive integers, where the positive integer constraint is a subschema in "definitions": </p>
+<h1 id="rfc.section.7.2"><a href="#rfc.section.7.2">7.2.</a> "title" and "description"</h1>
+<p id="rfc.section.7.2.p.1">The value of both of these keywords MUST be a string.  </p>
+<p id="rfc.section.7.2.p.2">Both of these keywords can be used to decorate a user interface with information about the data produced by this user interface. A title will preferably be short, whereas a description will provide explanation about the purpose of the instance described by this schema.  </p>
+<h1 id="rfc.section.7.3"><a href="#rfc.section.7.3">7.3.</a> "default"</h1>
+<p id="rfc.section.7.3.p.1">There are no restrictions placed on the value of this keyword.  </p>
+<p id="rfc.section.7.3.p.2">This keyword can be used to supply a default JSON value associated with a particular schema. It is RECOMMENDED that a default value be valid against the associated schema.  </p>
+<h1 id="rfc.section.7.4"><a href="#rfc.section.7.4">7.4.</a> "examples"</h1>
+<p id="rfc.section.7.4.p.1">The value of this keyword MUST be an array.  There are no restrictions placed on the values within the array.  </p>
+<p id="rfc.section.7.4.p.2">This keyword can be used to provide sample JSON values associated with a particular schema, for the purpose of illustrating usage.  It is RECOMMENDED that these values be valid against the associated schema.  </p>
+<p id="rfc.section.7.4.p.3">Implementations MAY use the value of "default", if present, as an additional example.  If "examples" is absent, "default" MAY still be used in this manner.  </p>
+<h1 id="rfc.section.8"><a href="#rfc.section.8">8.</a> Semantic validation with "format"</h1>
+<h1 id="rfc.section.8.1"><a href="#rfc.section.8.1">8.1.</a> Foreword</h1>
+<p id="rfc.section.8.1.p.1">Structural validation alone may be insufficient to validate that an instance meets all the requirements of an application. The "format" keyword is defined to allow interoperable semantic validation for a fixed subset of values which are accurately described by authoritative resources, be they RFCs or other external specifications.  </p>
+<p id="rfc.section.8.1.p.2">The value of this keyword is called a format attribute. It MUST be a string. A format attribute can generally only validate a given set of instance types. If the type of the instance to validate is not in this set, validation for this format attribute and instance SHOULD succeed.  </p>
+<h1 id="rfc.section.8.2"><a href="#rfc.section.8.2">8.2.</a> Implementation requirements</h1>
+<p id="rfc.section.8.2.p.1">Implementations MAY support the "format" keyword. Should they choose to do so: </p>
+
+<ul class="empty">
+  <li>they SHOULD implement validation for attributes defined below;</li>
+  <li>they SHOULD offer an option to disable validation for this keyword.</li>
+</ul>
+
+<p> </p>
+<p id="rfc.section.8.2.p.2">Implementations MAY add custom format attributes. Save for agreement between parties, schema authors SHALL NOT expect a peer implementation to support this keyword and/or custom format attributes.  </p>
+<h1 id="rfc.section.8.3"><a href="#rfc.section.8.3">8.3.</a> Defined formats</h1>
+<h1 id="rfc.section.8.3.1"><a href="#rfc.section.8.3.1">8.3.1.</a> date-time</h1>
+<p id="rfc.section.8.3.1.p.1">This attribute applies to string instances.  </p>
+<p id="rfc.section.8.3.1.p.2">A string instance is valid against this attribute if it is a valid date representation as defined by <a href="#RFC3339">RFC 3339, section 5.6</a> <cite title="NONE">[RFC3339]</cite>.  </p>
+<h1 id="rfc.section.8.3.2"><a href="#rfc.section.8.3.2">8.3.2.</a> email</h1>
+<p id="rfc.section.8.3.2.p.1">This attribute applies to string instances.  </p>
+<p id="rfc.section.8.3.2.p.2">A string instance is valid against this attribute if it is a valid Internet email address as defined by <a href="#RFC5322">RFC 5322, section 3.4.1</a> <cite title="NONE">[RFC5322]</cite>.  </p>
+<h1 id="rfc.section.8.3.3"><a href="#rfc.section.8.3.3">8.3.3.</a> hostname</h1>
+<p id="rfc.section.8.3.3.p.1">This attribute applies to string instances.  </p>
+<p id="rfc.section.8.3.3.p.2">A string instance is valid against this attribute if it is a valid representation for an Internet host name, as defined by <a href="#RFC1034">RFC 1034, section 3.1</a> <cite title="NONE">[RFC1034]</cite>.  </p>
+<h1 id="rfc.section.8.3.4"><a href="#rfc.section.8.3.4">8.3.4.</a> ipv4</h1>
+<p id="rfc.section.8.3.4.p.1">This attribute applies to string instances.  </p>
+<p id="rfc.section.8.3.4.p.2">A string instance is valid against this attribute if it is a valid representation of an IPv4 address according to the "dotted-quad" ABNF syntax as defined in <a href="#RFC2673">RFC 2673, section 3.2</a> <cite title="NONE">[RFC2673]</cite>.  </p>
+<h1 id="rfc.section.8.3.5"><a href="#rfc.section.8.3.5">8.3.5.</a> ipv6</h1>
+<p id="rfc.section.8.3.5.p.1">This attribute applies to string instances.  </p>
+<p id="rfc.section.8.3.5.p.2">A string instance is valid against this attribute if it is a valid representation of an IPv6 address as defined in <a href="#RFC2373">RFC 2373, section 2.2</a> <cite title="NONE">[RFC2373]</cite>.  </p>
+<h1 id="rfc.section.8.3.6"><a href="#rfc.section.8.3.6">8.3.6.</a> uri</h1>
+<p id="rfc.section.8.3.6.p.1">This attribute applies to string instances.  </p>
+<p id="rfc.section.8.3.6.p.2">A string instance is valid against this attribute if it is a valid URI, according to <a href="#RFC3986">[RFC3986]</a>.  </p>
+<h1 id="rfc.section.8.3.7"><a href="#rfc.section.8.3.7">8.3.7.</a> uri-reference</h1>
+<p id="rfc.section.8.3.7.p.1">This attribute applies to string instances.  </p>
+<p id="rfc.section.8.3.7.p.2">A string instance is valid against this attribute if it is a valid URI Reference (either a URI or a relative-reference), according to <a href="#RFC3986">[RFC3986]</a>.  </p>
+<h1 id="rfc.section.8.3.8"><a href="#rfc.section.8.3.8">8.3.8.</a> uri-template</h1>
+<p id="rfc.section.8.3.8.p.1">This attribute applies to string instances.  </p>
+<p id="rfc.section.8.3.8.p.2">A string instance is valid against this attribute if it is a valid URI Template (of any level), according to <a href="#RFC6570">[RFC6570]</a>.  </p>
+<h1 id="rfc.section.8.3.9"><a href="#rfc.section.8.3.9">8.3.9.</a> json-pointer</h1>
+<p id="rfc.section.8.3.9.p.1">This attribute applies to string instances.  </p>
+<p id="rfc.section.8.3.9.p.2">A string instance is valid against this attribute if it is a valid JSON Pointer, according to <a href="#RFC6901">[RFC6901]</a> </p>
+<h1 id="rfc.section.9"><a href="#rfc.section.9">9.</a> Security considerations</h1>
+<p id="rfc.section.9.p.1">JSON Schema validation defines a vocabulary for JSON Schema core and concerns all the security considerations listed there.  </p>
+<p id="rfc.section.9.p.2">JSON Schema validation allows the use of Regular Expressions, which have numerous different (often incompatible) implementations.  Some implementations allow the embedding of arbitrary code, which is outside the scope of JSON Schema and MUST NOT be permitted.  Regular expressions can often also be crafted to be extremely expensive to compute (with so-called "catastrophic backtracking"), resulting in a denial-of-service attack.  </p>
+<h1 id="rfc.references"><a href="#rfc.references">10.</a> References</h1>
+<h1 id="rfc.references.1"><a href="#rfc.references.1">10.1.</a> Normative References</h1>
+<table>
+  <tbody>
+    <tr>
+      <td class="reference">
+        <b id="RFC2119">[RFC2119]</b>
+      </td>
+      <td class="top"><a>Bradner, S.</a>, <a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>", BCP 14, RFC 2119, DOI 10.17487/RFC2119, March 1997.</td>
+    </tr>
+    <tr><td class="reference"><b id="json-schema">[json-schema]</b></td><td class="top"><a href="http://tools.ietf.org/html/draft-wright-json-schema-00">JSON Schema: A Media Type for Describing JSON Documents</a>", Internet-Draft draft-wright-json-schema-00, October 2016.</td>, "</tr>
+  </tbody>
+</table>
+<h1 id="rfc.references.2"><a href="#rfc.references.2">10.2.</a> Informative References</h1>
+<table>
+  <tbody>
+    <tr>
+      <td class="reference">
+        <b id="RFC1034">[RFC1034]</b>
+      </td>
+      <td class="top"><a>Mockapetris, P.</a>, "<a href="http://tools.ietf.org/html/rfc1034">Domain names - concepts and facilities</a>", STD 13, RFC 1034, DOI 10.17487/RFC1034, November 1987.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC2373">[RFC2373]</b>
+      </td>
+      <td class="top"><a>Hinden, R.</a> and <a>S. Deering</a>, "<a href="http://tools.ietf.org/html/rfc2373">IP Version 6 Addressing Architecture</a>", RFC 2373, DOI 10.17487/RFC2373, July 1998.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC2673">[RFC2673]</b>
+      </td>
+      <td class="top"><a>Crawford, M.</a>, "<a href="http://tools.ietf.org/html/rfc2673">Binary Labels in the Domain Name System</a>", RFC 2673, DOI 10.17487/RFC2673, August 1999.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC3339">[RFC3339]</b>
+      </td>
+      <td class="top"><a>Klyne, G.</a> and <a>C. Newman</a>, "<a href="http://tools.ietf.org/html/rfc3339">Date and Time on the Internet: Timestamps</a>", RFC 3339, DOI 10.17487/RFC3339, July 2002.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC3986">[RFC3986]</b>
+      </td>
+      <td class="top"><a>Berners-Lee, T.</a>, <a>Fielding, R.</a> and <a>L. Masinter</a>, "<a href="http://tools.ietf.org/html/rfc3986">Uniform Resource Identifier (URI): Generic Syntax</a>", STD 66, RFC 3986, DOI 10.17487/RFC3986, January 2005.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC6570">[RFC6570]</b>
+      </td>
+      <td class="top"><a>Gregorio, J.</a>, <a>Fielding, R.</a>, <a>Hadley, M.</a>, <a>Nottingham, M.</a> and <a>D. Orchard</a>, "<a href="http://tools.ietf.org/html/rfc6570">URI Template</a>", RFC 6570, DOI 10.17487/RFC6570, March 2012.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC6901">[RFC6901]</b>
+      </td>
+      <td class="top"><a>Bryan, P.</a>, <a>Zyp, K.</a> and <a>M. Nottingham</a>, "<a href="http://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>", RFC 6901, DOI 10.17487/RFC6901, April 2013.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC7159">[RFC7159]</b>
+      </td>
+      <td class="top"><a>Bray, T.</a>, "<a href="http://tools.ietf.org/html/rfc7159">The JavaScript Object Notation (JSON) Data Interchange Format</a>", RFC 7159, DOI 10.17487/RFC7159, March 2014.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC5322">[RFC5322]</b>
+      </td>
+      <td class="top"><a>Resnick, P.</a>, <a href="http://tools.ietf.org/html/rfc5322">Internet Message Format</a>", RFC 5322, DOI 10.17487/RFC5322, October 2008.</td>
+    </tr>
+    <tr><td class="reference"><b id="ecma262">[ecma262]</b></td><td class="top"><a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">ECMA 262 specification</a>"</td>, "</tr>
+  </tbody>
+</table>
+<h1 id="rfc.appendix.A"><a href="#rfc.appendix.A">Appendix A.</a> Acknowledgments</h1>
+<p id="rfc.section.A.p.1">Thanks to Gary Court, Francis Galiegue, Kris Zyp, and Geraint Luff for their work on the initial drafts of JSON Schema.  </p>
+<p id="rfc.section.A.p.2">Thanks to Jason Desrosiers, Daniel Perrett, Erik Wilde, Ben Hutton, Evgeny Poberezkin, Brad Bowman, Gowry Sankar, Donald Pipowitch, and Dave Finlay for their submissions and patches to the document.  </p>
+<h1 id="rfc.appendix.B"><a href="#rfc.appendix.B">Appendix B.</a> ChangeLog</h1>
+<p><a id="CREF1" class="info">[CREF1]<span class="info">This section to be removed before leaving Internet-Draft status.</span></a> </p>
+<p/>
+
+<dl>
+  <dt>draft-wright-json-schema-validation-01</dt>
+  <dd style="margin-left: 8">
+    <ul>
+      <li>Standardized on hyphenated format names ("uriref" becomes "uri-ref")</li>
+      <li>Add the formats "uri-template" and "json-pointer"</li>
+      <li>Changed "exclusiveMaximum"/"exclusiveMinimum" from boolean modifiers of "maximum"/"minimum" to independent numeric fields.</li>
+      <li>Split the additionalItems/items into two sections</li>
+      <li>Reworked properties/patternProperties/additionalProperties definition</li>
+      <li>Added "examples" keyword</li>
+      <li>Added "contains" keyword</li>
+      <li>Allow empty "required" and "dependencies" arrays</li>
+      <li>Fixed "type" reference to primitive types</li>
+      <li>Added "const" keyword</li>
+      <li>Added "propertyNames" keyword</li>
+    </ul>
+    <p> </p>
+  </dd>
+  <dt>draft-wright-json-schema-validation-00</dt>
+  <dd style="margin-left: 8">
+    <ul>
+      <li>Added additional security considerations</li>
+      <li>Removed reference to "latest version" meta-schema, use numbered version instead</li>
+      <li>Rephrased many keyword definitions for brevity</li>
+      <li>Added "uriref" format that also allows relative URI references</li>
+    </ul>
+    <p> </p>
+  </dd>
+  <dt>draft-fge-json-schema-validation-01</dt>
+  <dd style="margin-left: 8">
+    <ul>
+      <li>Initial draft.</li>
+      <li>Salvaged from draft v3.</li>
+      <li>Redefine the "required" keyword.</li>
+      <li>Remove "extends", "disallow"</li>
+      <li>Add "anyOf", "allOf", "oneOf", "not", "definitions", "minProperties", "maxProperties".</li>
+      <li>"dependencies" member values can no longer be single strings; at least one element is required in a property dependency array.</li>
+      <li>Rename "divisibleBy" to "multipleOf".</li>
+      <li>"type" arrays can no longer have schemas; remove "any" as a possible value.</li>
+      <li>Rework the "format" section; make support optional.</li>
+      <li>"format": remove attributes "phone", "style", "color"; rename "ip-address" to "ipv4"; add references for all attributes.</li>
+      <li>Provide algorithms to calculate schema(s) for array/object instances.</li>
+      <li>Add interoperability considerations.</li>
+    </ul>
+    <p> </p>
+  </dd>
+</dl>
+
+<p> </p>
+<h1 id="rfc.authors">
+  <a href="#rfc.authors">Authors' Addresses</a>
+</h1>
+<div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Austin Wright</span> (editor)
+	  <span class="n hidden">
+		<span class="family-name">Wright</span>
+	  </span>
+	</span>
+	<span class="org vcardline"></span>
+	<span class="adr">
+	  
+	  <span class="vcardline">
+		<span class="locality"></span> 
+		<span class="region"></span>
+		<span class="code"></span>
+	  </span>
+	  <span class="country-name vcardline"></span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:aaa@bzfx.net">aaa@bzfx.net</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Geraint Luff</span> 
+	  <span class="n hidden">
+		<span class="family-name">Luff</span>
+	  </span>
+	</span>
+	<span class="org vcardline"></span>
+	<span class="adr">
+	  
+	  <span class="vcardline">
+		<span class="locality"></span> 
+		<span class="region"></span>
+		<span class="code"></span>
+	  </span>
+	  <span class="country-name vcardline"></span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:luffgd@gmail.com">luffgd@gmail.com</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Henry Andrews</span> (editor)
+	  <span class="n hidden">
+		<span class="family-name">Andrews</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Cloudflare, Inc.</span>
+	<span class="adr">
+	  
+	  <span class="vcardline">
+		<span class="locality"></span> 
+		<span class="region"></span>
+		<span class="code"></span>
+	  </span>
+	  <span class="country-name vcardline"></span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:henry@cloudflare.com">henry@cloudflare.com</a></span>
+
+  </address>
+</div>
+
+</body>
+</html>

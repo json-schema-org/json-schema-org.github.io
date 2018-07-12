@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -421,6 +424,9 @@
   <meta name="dct.abstract" content="JSON Schema is a JSON based format for defining the structure of JSON data.  This document specifies hyperlink- and hypermedia-related keywords of JSON Schema.  " />
   <meta name="description" content="JSON Schema is a JSON based format for defining the structure of JSON data.  This document specifies hyperlink- and hypermedia-related keywords of JSON Schema.  " />
 
+  {% if jekyll.environment == 'production' and site.google_analytics %}
+  {% include google-analytics.html %}
+  {% endif %}
 </head>
 
 <body>
@@ -763,6 +769,7 @@
 <p>For example, here are some possible values for "href", followed by the results after pre-processing:</p>
 <pre>
 
+{% raw %}
 Input                    Output
 -----------------------------------------
 "no change"              "no change"
@@ -777,7 +784,7 @@ Input                    Output
 "{()}"                   "{%65mpty}
 "{+$*}"                   "{+%73elf*}
 "{+($)*}"                 "{+%24*}
-
+{% endraw %}
                                     </pre>
 <p>Note that in the final example, because the "+" was outside the brackets, it remained unescaped, whereas in the fourth example the "+" was escaped.  </p>
 <h1 id="rfc.section.5.1.1.2"><a href="#rfc.section.5.1.1.2">5.1.1.2.</a> Values for substitution</h1>

@@ -27,14 +27,16 @@ markdown: kramdown
 theme: minima
 
 header_pages:
-- documentation.md
-- examples.md
+- specification.md
+- learn/index.md
 - implementations.md
 
-collections:
-  docs:
-    output: true
-    permalink: "/:title:output_ext"
+exclude:
+- README.md
+- Gemfile
+- node_modules
+- vendor
 
-gems:
+plugins:
   - jekyll-relative-links
+  - jekyll-redirect-from

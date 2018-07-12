@@ -1,5 +1,11 @@
 language: ruby
 dist: trusty
 sudo: false
+node_js:
+- node
+before_script:
+- npm install ajv-cli
+- PATH="./node_modules/.bin/:$PATH"
 script:
 - bundle exec jekyll build
+- ajv test -s schema -d "learn/examples/*.json" --valid

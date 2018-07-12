@@ -1,0 +1,215 @@
+- name: .NET
+  anchor-name: dotnet
+  implementations:
+    - name: NJsonSchema
+      url: http://NJsonSchema.org
+      notes:
+      draft: [4]
+      license: Ms-PL
+- name: C++
+  anchor-name: cpp
+  implementations:
+    - name: wjelement-cpp
+      url: https://github.com/petehug/wjelement-cpp
+      notes:
+      draft: [4]
+      license: LGPLv3
+    - name: Header-only C++ library for JSON Schema validation
+      url: https://github.com/tristanpenman/valijson
+      notes:
+      draft: [4, 3]
+      license: BSD-2-Clause
+    - name: Modern C++ JSON schema validator
+      url: https://github.com/pboettch/json-schema-validator
+      notes: "based on JSON for Modern C++"
+      draft: [4]
+      license: "MIT"
+- name: Clojure
+  implementations:
+    - name: scjsv
+      url: https://github.com/metosin/scjsv
+      notes: "(wrapper for [java-json-tools/json-schema-validator](https://github.com/java-json-tools/json-schema-validator))"
+      draft: [4]
+      license: Eclipse Public License v1.0
+    - name: json-schema validator
+      url: https://github.com/tatut/json-schema
+      draft: [3, 4]
+      license: MIT
+- name:  CoffeeScript
+  implementations:
+    - name: JSCK
+      url: https://github.com/pandastrike/jsck
+      draft: [4, 3]
+      license: MIT
+- name:  Dart
+  implementations:
+    - name: json_schema
+      url: https://github.com/patefacio/json_schema
+      notes:
+      draft: [4]
+      license: BSL-1.0
+- name: Erlang
+  implementations:
+    - name: JeSSE
+      url: https://github.com/for-GET/jesse
+      draft: [4, 3]
+      license: "Apache 2.0"
+- name: Go
+  implementations:
+    - name: validate-json
+      url: https://github.com/cesanta/validate-json
+      draft: [4]
+      license: GPLv2
+- name: Haskell
+  implementations:
+    - name: hjsonschema
+      url: https://github.com/seagreen/hjsonschema
+      notes:
+      draft: [4]
+      license: MIT
+- name: Java
+  implementations:
+    - name: json-schema-validator
+      url: https://github.com/java-json-tools/json-schema-validator
+      draft: [4]
+      license: LGPLv3
+    - name: json-schema-validator
+      url: https://github.com/networknt/json-schema-validator
+      notes:
+      draft: [4]
+      license: Apache License 2.0
+- name: JavaScript
+  implementations:
+    - name: jsonschema
+      url: https://github.com/tdegrunt/jsonschema
+      notes: "for Node.js"
+      draft: [4]
+      license: MIT
+    - name: tv4
+      url: http://geraintluff.github.com/tv4/
+      notes:
+      draft: [4]
+      license: [Public Domain, MIT]
+    - name: is-my-json-valid
+      url: https://github.com/mafintosh/is-my-json-valid
+      notes:
+      draft: [4]
+      license: MIT
+    - name: JaySchema
+      url: https://github.com/natesilva/jayschema
+      notes: "for Node.js"
+      draft: [4]
+      license: BSD
+    - name: z-schema
+      url: https://github.com/zaggino/z-schema
+      notes: "for Node.js"
+      draft: [4]
+      license: MIT
+    - name: direct-schema
+      url: http://github.com/IreneKnapp/direct-schema
+      license: "BSD"
+    - name: JSV
+      url: http://github.com/garycourt/JSV
+      draft: [1, 2, 3]
+      license: "BSD"
+    - name: json-schema
+      url: https://github.com/kriszyp/json-schema
+      draft: [4]
+      notes: "part of the [Persevere](http://github.com/kriszyp/json-schema) project"
+      license: [AFL, BSD]
+    - name: schema.js
+      url: https://github.com/akidee/schema.js
+      draft: [2]
+      license: "MIT"
+    - name: json-gate
+      url: https://github.com/oferei/json-gate
+      draft: [3]
+      license: "MIT"
+    - name: JSEN
+      url: https://github.com/bugventure/jsen
+      notes: "for Node.js"
+      draft: [4]
+      license: "MIT"
+    - name: Skeemas
+      url: https://github.com/ericgj/json-schema-valid
+      draft: [3, 4]
+      license: MIT
+    - name: Jassi
+      url: https://github.com/iclanzan/jassi
+      draft: [4]
+      license: GPLv3
+    - name: json-schema-valid
+      url: https://github.com/ericgj/json-schema-valid
+      draft: [4]
+      license: MIT
+- name: PHP
+  implementations:
+    - name: json-schema
+      url: https://github.com/justinrainbow/json-schema
+      draft: [4, 3]
+      license: "Berkeley"
+    - name: jsv4-php
+      url: https://github.com/geraintluff/jsv4-php
+      notes:
+      draft: [4]
+      license: [Public Domain, MIT]
+    - name: JVal
+      url: https://github.com/stefk/jval
+      notes:
+      draft: [4]
+      license: "MIT"
+    - name: JSON Guard
+      url: https://github.com/thephpleague/json-guard
+      notes:
+      draft: [4]
+      license: "MIT"
+    - name: Swaggest Json Schema
+      url: https://github.com/swaggest/php-json-schema
+      notes:
+      draft: [4]
+      license: "MIT"
+- name: Perl
+  implementations:
+    - name: JSV::Validator
+      url: https://metacpan.org/module/JSV::Validator
+      draft: [4]
+      license: "MIT"
+- name: PostgreSQL
+  implementations:
+    - name: postgres-json-schema
+      url: https://github.com/gavinwahl/postgres-json-schema
+      notes: "PL/pgSQL implementation, no remote (http) references"
+      draft: [4]
+      license: PostgreSQL
+- name: Ruby
+  implementations:
+    - name: json_schema
+      url: https://github.com/brandur/json_schema
+      notes: "Schema parser and validator, with hyper-schema support"
+      draft: [4]
+      license: MIT
+    - name: json-schema
+      url: https://github.com/hoxworth/json-schema
+      notes:
+      draft: [4, 3, 2, 1]
+      license: MIT
+- name: Rust
+  implementations:
+    - name: valico
+      url: https://github.com/rustless/valico
+      notes:
+      draft: [4]
+      license: MIT
+- name: Scala
+  implementations:
+    - name: json-schema-parser
+      url: https://github.com/VoxSupplyChain/json-schema-parser
+      notes: "Schema parser and validator"
+      draft: [4]
+      license: Apache 2.0
+- name: Swift
+  implementations:
+    - name: JSONSchema
+      url: https://github.com/kylef/JSONSchema.swift
+      draft: [4]
+      license: BSD-3-Clause
