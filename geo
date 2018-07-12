@@ -1,1 +1,1 @@
-example/geo.json
+learn/examples/geographical-location.schema.json
