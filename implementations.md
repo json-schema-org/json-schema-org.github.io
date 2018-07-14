@@ -256,6 +256,7 @@ _TODO: Sort by draft support._
 -   [JSON Editor](https://json-editor.tangramjs.com) - *An online, schema-aware editor for JSON document*
 -   [Eclipse IDE](https://www.eclipse.org/downloads/eclipse-packages) - *Rich JSON edition supporting schema for instantaneous validation and error reporting, completion, documentation.*
 -   [WebStorm](https://www.jetbrains.com/webstorm/), [IntelliJ IDEA](https://www.jetbrains.com/idea/), and other [JetBrains IDEs](https://www.jetbrains.com/products.html?fromMenu#type=ide) - *Code completion, documentation, and validation for JSON files using JSON Schema*
+-   [React JSON Schema Editor](https://github.com/thomas4019/json-schema-editor) - React.js editor for creating/modifying JSON schema files based on draft 4.
 
 
 Schema Repositories
