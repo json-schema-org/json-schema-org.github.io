@@ -242,6 +242,7 @@ _None currently support draft-06 or later._
 
 -   Python
     -   [hypo\_schema](https://github.com/mlakewood/hypo_schema) (BSD-2-Clause) Creates generators for Hypothesis from JSON Schema
+    
 #### Editors
 
 _TODO: Sort by draft support._
