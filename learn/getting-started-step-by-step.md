@@ -281,7 +281,7 @@ For this example we introduce a new JSON Schema resource and for both properties
 
 ```json
 {
-  "id": "https://example.com/geographical-location.schema.json",
+  "$id": "https://example.com/geographical-location.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Longitude and Latitude",
   "description": "A geographical coordinate on a planet (most commonly Earth).",
