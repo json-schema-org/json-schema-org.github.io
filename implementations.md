@@ -175,6 +175,8 @@ are the only keywords that changed.
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 -   PHP
     -  [php-code-builder](https://github.com/swaggest/php-code-builder)(MIT) - generates PHP mapping structures defined by JSON schema using [swaggest/json-schema](https://github.com/swaggest/php-json-schema) *supports Draft 7*
+-   Online free (web tool)
+    -   [jsoncafe.com](http://www.jsoncafe.com/) - template driven code generator from JSON to Swift, C#, PHP, JAVA or any language.   
 
 #### Web UI generation
 
