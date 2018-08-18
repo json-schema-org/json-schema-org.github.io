@@ -346,53 +346,52 @@ The resulting schema is quite large:
       },
       "required": [ "type", "device" ],
       "additionalProperties": false
+    },
+    "diskUUID": {
+      "properties": {
+        "type": {
+          "enum": [ "disk" ]
+        },
+        "label": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
+        }
+      },
+      "required": [ "type", "label" ],
+      "additionalProperties": false
+    },
+    "nfs": {
+      "properties": {
+        "type": { "enum": [ "nfs" ] },
+        "remotePath": {
+          "type": "string",
+          "pattern": "^(/[^/]+)+$"
+        },
+        "server": {
+          "type": "string",
+          "oneOf": [
+            { "format": "hostname" },
+            { "format": "ipv4" },
+            { "format": "ipv6" }
+          ]
+        }
+      },
+      "required": [ "type", "server", "remotePath" ],
+      "additionalProperties": false
+    },
+    "tmpfs": {
+      "properties": {
+        "type": { "enum": [ "tmpfs" ] },
+        "sizeInMB": {
+          "type": "integer",
+          "minimum": 16,
+          "maximum": 512
+        }
+      },
+      "required": [ "type", "sizeInMB" ],
+      "additionalProperties": false
     }
-  },
-  "diskUUID": {
-    "properties": {
-      "type": {
-        "enum": [ "disk" ]
-      },
-      "label": {
-        "type": "string",
-        "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
-      }
-    },
-    "required": [ "type", "label" ],
-    "additionalProperties": false
-  },
-  "nfs": {
-    "properties": {
-      "type": { "enum": [ "nfs" ] },
-      "remotePath": {
-        "type": "string",
-        "pattern": "^(/[^/]+)+$"
-      },
-      "server": {
-        "type": "string",
-        "oneOf": [
-          { "format": "hostname" },
-          { "format": "ipv4" },
-          { "format": "ipv6" }
-        ]
-      }
-    },
-    "required": [ "type", "server", "remotePath" ],
-    "additionalProperties": false
-  },
-  "tmpfs": {
-    "properties": {
-      "type": { "enum": [ "tmpfs" ] },
-      "sizeInMB": {
-        "type": "integer",
-        "minimum": 16,
-        "maximum": 512
-      }
-    },
-    "required": [ "type", "sizeInMB" ],
-    "additionalProperties": false
   }
-}
 }
 ```
 
