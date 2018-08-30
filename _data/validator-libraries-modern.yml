@@ -88,6 +88,13 @@
       notes:
       draft: [7, 6, 4]
       license: MIT
+- name: Objective-C
+  implementations:
+    - name: DSJSONSchemaValidation
+      url: https://github.com/dashevo/JSONSchemaValidation
+      notes:
+      draft: [7, 6, 4]
+      license: MIT
 - name: Web (Online)
   implementations:
     - name: JSON Schema Validator
