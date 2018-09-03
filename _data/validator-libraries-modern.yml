@@ -16,6 +16,12 @@
       draft: [4, 3]
       license: LGPL-3.0
       notes: "Draft-06+ progress: issue [17](https://github.com/netmail-open/wjelement/issues/17#issuecomment-390899432)"
+- name: C++
+  implementations:
+    - name: f5-json-schema
+      url: https://github.com/KayEss/json-schema
+      draft: [7]
+      license: Boost Software License 1.0
 - name: Elixir
   implementations:
     - name: Elixir JSON Schema validator
