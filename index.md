@@ -37,7 +37,19 @@ permalink: /
 
 ## Project Status
 
-The JSON Schema project intends to shepherd the Core, Validation, and Hyper-Schema specifications to RFC status.  Currently, we are continuing to improve our self-published Internet-Drafts. The next step will be to get the drafts adopted by an IETF Working Group.
+### Update as of 9 September 2018
+
+We expect to publish a new round of drafts (Core, Validation, Hyper-Schema, Relative JSON Pointer) before the end of the year.  While Hyper-Schema and Relative JSON Pointer are currently expired, they are just as much under active development as Core and Validation (which expire in October).
+
+There are several major PRs that still need to be written for Core and Hyper-Schema.  Major changes generally require a minimum two-week review period.  Once all major changes are in-place, there is a four-week final review period before publication.  For these reasons, the earliest likely date for the next round of drafts is **November 2018**.
+
+Progress on the next set of Internet-Drafts can be tracked on GitHub. The [draft-08](https://github.com/json-schema-org/json-schema-spec/milestone/6) milestone will track the evolving scope of the draft (although see [issue #612](https://github.com/json-schema-org/json-schema-spec/issues/612) for a discussion of whether "draft-08" is the right name for this milestone).
+
+### The Path to Standardization
+
+The JSON Schema project intends to shepherd all four draft series to RFC status.  Currently, we are continuing to improve our self-published Internet-Drafts. The next step will be to get the drafts adopted by an IETF Working Group.  We are actively investigating how to accomplish this.
+
+If you have experience with such things and would like to help, please contact us!
 
 In the meantime, publication of Internet-Draft documents can be tracked through the IETF:
 * [JSON Schema (core)](https://datatracker.ietf.org/doc/draft-handrews-json-schema/)
@@ -48,8 +60,6 @@ In the meantime, publication of Internet-Draft documents can be tracked through 
 Internet-Drafts expire after six months, so our goal is to publish often enough to always have a set of unexpired drafts available.  There may be brief gaps as we wrap up each draft and finalize the text.
 
 The intention, particularly for vocabularies such as validation which have been widely implemented, is to remain as compatible as possible from draft to draft.  However, these are still drafts, and given a clear enough need validated with the user community, major changes can occur.
-
-Progress on the next set of Internet-Drafts can be tracked on GitHub. The [draft-08](https://github.com/json-schema-org/json-schema-spec/milestone/6) milestone will track the evolving scope of the draft
 
 ## Quickstart
 
