@@ -197,6 +197,7 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [pure-form webcomponent](https://github.com/john-doherty/pure-form) (MIT)
     -   [React JSON Schema Form (mozilla)](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
     -   [React Schema Form (networknt)](https://github.com/networknt/react-schema-form) (MIT)
+    -   [uniforms (Vazco)](https://github.com/vazco/uniforms) (MIT)
 
 #### Data from schemas
 
