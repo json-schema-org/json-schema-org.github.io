@@ -120,3 +120,10 @@
       url: 'https://www.npmjs.com/package/pajv'
       draft: [6, 4]
       notes: can be used with YAML and many other formats besides JSON
+- name: Semantic
+  implementations:
+    - name: jsontron
+      url: https://www.npmjs.com/package/jsontron
+      notes: Schematron based JSON Semantic (Co-constraints) Validator
+      draft: [7, 6, 4]
+      license: MIT
