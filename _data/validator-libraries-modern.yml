@@ -84,8 +84,8 @@
   implementations:
     - name: jsonschema
       url: https://github.com/Julian/jsonschema
-      notes: "Draft-06+ progress: issues [337](https://github.com/Julian/jsonschema/issues/337), [400](https://github.com/Julian/jsonschema/issues/400); branches [draft6](https://github.com/Julian/jsonschema/tree/draft6), [draft7](https://github.com/Julian/jsonschema/tree/draft7)"
-      draft: [4, 3]
+      notes:
+      draft: [7, 6, 4, 3]
       license: "MIT"
 - name: Ruby
   implementations:
