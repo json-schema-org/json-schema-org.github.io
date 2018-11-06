@@ -37,11 +37,11 @@ permalink: /
 
 ## Project Status
 
-### Update as of 9 September 2018
+### Update as of 5 November 2018
 
-We expect to publish a new round of drafts (Core, Validation, Hyper-Schema, Relative JSON Pointer) before the end of the year.  While Hyper-Schema and Relative JSON Pointer are currently expired, they are just as much under active development as Core and Validation (which expire in October).
+We expect to publish a new round of drafts (Core, Validation, Hyper-Schema, Relative JSON Pointer) before the end of the year, and are actively working on the last few PRs.  While the drafts are currently expired, they are still under active development.  This project is staffed by volunteers, and life occasionally disregards IETF expiration schedules.
 
-There are several major PRs that still need to be written for Core and Hyper-Schema.  Major changes generally require a minimum two-week review period.  Once all major changes are in-place, there is a four-week final review period before publication.  For these reasons, the earliest likely date for the next round of drafts is **November 2018**.
+Once the major PRs have been written, there will be a four-week final review period before publication.  Therefore, the likely publication date will be in **December 2018**.  Although the holiday season may delay this until January depending on how much feedback arrives during final review.
 
 Progress on the next set of Internet-Drafts can be tracked on GitHub. The [draft-08](https://github.com/json-schema-org/json-schema-spec/milestone/6) milestone will track the evolving scope of the draft (although see [issue #612](https://github.com/json-schema-org/json-schema-spec/issues/612) for a discussion of whether "draft-08" is the right name for this milestone).
 
