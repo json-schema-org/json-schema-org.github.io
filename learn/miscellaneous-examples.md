@@ -61,7 +61,7 @@ This example introduces:
 
 ```json
 {
-  "id": "https://example.com/geographical-location.schema.json",
+  "$id": "https://example.com/geographical-location.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Longitude and Latitude Values",
   "description": "A geographical coordinate.",
@@ -105,7 +105,7 @@ We also introduce the following with this example:
 
 ```json
 {
-  "id": "https://example.com/arrays.schema.json",
+  "$id": "https://example.com/arrays.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "A representation of a person, company, organization, or place",
   "type": "object",
