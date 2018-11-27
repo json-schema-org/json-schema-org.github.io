@@ -50,7 +50,7 @@ We start with four properties called **keywords** which are expressed as [JSON](
 
 > Yes. the standard uses a JSON data document to describe data documents, most often that are also JSON data documents but could be in any number of other content types like `text/xml`.
 
-* The [`$schema`](http://json-schema.org/latest/json-schema-core.html#rfc.section.7) keyword states that this schema is written according to the a specific draft of the standard and used for a variety of reasons, primarily version control.
+* The [`$schema`](http://json-schema.org/latest/json-schema-core.html#rfc.section.7) keyword states that this schema is written according to a specific draft of the standard and used for a variety of reasons, primarily version control.
 * The [`$id`](http://json-schema.org/latest/json-schema-core.html#rfc.section.8.2) keyword defines a URI for the schema, and the base URI that other URI references within the schema are resolved against.
 * The [`title`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.10.1) and [`description`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.10.1) annotation keywords are descriptive only. They do not add constraints to the data being validated. The intent of the schema is stated with these two keywords.
 * The [`type`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.1.1) validation keyword defines the first constraint on our JSON data and in this case it has to be a JSON Object.
