@@ -57,7 +57,7 @@ compatibility.
 ### Classification of Keywords
 
 While it does not have a direct impact on the validation process, this set
-of drafts classifies kewyords by their behavior.  The names of these
+of drafts classifies keywords by their behavior.  The names of these
 classifications are used throughout the documents, so they are useful
 to know:
 
