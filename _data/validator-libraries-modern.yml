@@ -52,6 +52,11 @@
       notes:
       draft: [7, 6, 4]
       license: Apache License 2.0
+    - name: Justify
+      url: https://github.com/leadpony/justify
+      notes:
+      draft: [7]
+      license: Apache License 2.0
 - name: JavaScript
   implementations:
     - name: ajv
