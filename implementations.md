@@ -116,6 +116,9 @@ Hyper-Schema
 -   JavaScript
     -   [@cloudflare/doca](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/doca) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), _draft-04, -06, -07, and Doca extensions_ (UI forthcoming)
 
+-   Python
+    -   [FastAPI](https://github.com/tiangolo/fastapi) (MIT) is an API framework based on Python 3.6+ types that generates **OpenAPI 3** schemas, including **JSON Schemas** for all the models declared.
+
 #### Link Description Object utilities
 
 -   JavaScript
@@ -144,6 +147,8 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
     -   [Liform](https://github.com/Limenius/liform) (MIT) - generates schemas from Symfony forms
 -   TypeScript
     -   [typescript-json-schema](https://github.com/YousefED/typescript-json-schema)
+-   Python
+    -   [Pydantic](https://pydantic-docs.helpmanual.io/) (MIT) - generates schemas from Python models based on Python 3.6+ type hints.
 
 #### From data
 
