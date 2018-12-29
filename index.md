@@ -41,7 +41,7 @@ permalink: /
 
 We expect to publish a new round of drafts (Core, Validation, Hyper-Schema, Relative JSON Pointer) in early 2019, and are actively working on the last few PRs.  While the drafts are currently expired, they are still under active development.  This project is staffed by volunteers, and life occasionally disregards IETF expiration schedules.
 
-The last two major PRs (for modular vocabularies and a standardized output format) are under review and have gotten several rounds of feedback.  Once those are complete, there will be a four-week final review period during which we will take feedback on the overall flow and content before publication.  Therefore, the likely publication date will be in **January or Feburary 2018**.  We had hoped for December but the holiday season and other life events have prevented that.
+The last two major PRs (for modular vocabularies and a standardized output format) are under review and have gotten several rounds of feedback.  Once those are complete, there will be a four-week final review period during which we will take feedback on the overall flow and content before publication.  Therefore, the likely publication date will be in **January or Feburary 2019**.  We had hoped for December but the holiday season and other life events have prevented that.
 
 This draft has taken more time than expected because it tackles deep, long-term issues that have long been a challenge for JSON Schema.  This includes building in a formal extensibility mechanism so that we can more easily draw a line to finalize the contents of the Core and Validation specifications.
 
