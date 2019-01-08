@@ -92,6 +92,11 @@
       notes:
       draft: [7, 6, 4, 3]
       license: "MIT"
+    - name: fastjsonschema
+      url: https://github.com/horejsek/python-fastjsonschema
+      notes:
+      draft: [7, 6, 4]
+      license: "BSD"
 - name: Ruby
   implementations:
     - name: JSONSchemer
