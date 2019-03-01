@@ -85,6 +85,7 @@ JSON Schema is hypermedia ready, and ideal for annotating your existing JSON-bas
 
 Interested? Check out:
 
+* [Understanding JSON Schema](/understanding-json-schema/)
 * The [specification](./specification.md)
 * [Learning resources](./learn/index.md)
 * the growing list of [JSON (Hyper-)Schema software](./implementations.md)
