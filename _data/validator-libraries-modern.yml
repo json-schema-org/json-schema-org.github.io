@@ -22,6 +22,12 @@
       url: https://github.com/KayEss/json-schema
       draft: [7]
       license: Boost Software License 1.0
+- name: Clojure
+  implementations:
+    - name: json-schema
+      url: https://github.com/luposlip/json-schema
+      draft: [7]
+      license: Eclipse Public License 2.0
 - name: Elixir
   implementations:
     - name: Elixir JSON Schema validator
