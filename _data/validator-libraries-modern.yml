@@ -57,6 +57,13 @@
       notes:
       draft: [7]
       license: Apache License 2.0
+- name: Kotlin
+  implementations:
+    - name: Medeia-validator
+      url: https://github.com/worldturner/medeia-validator
+      notes: streaming validator for Kotlin and Java clients; works with Jackson and Gson
+      draft: [7, 6, 4]
+      license: Apache License 2.0
 - name: JavaScript
   implementations:
     - name: ajv
