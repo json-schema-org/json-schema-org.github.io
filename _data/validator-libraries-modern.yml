@@ -35,6 +35,10 @@
       draft: [4]
       notes: "Draft-06+ progress: issue [24](https://github.com/jonasschmidt/ex_json_schema/issues/24); branch [multi-draft-support](https://github.com/jonasschmidt/ex_json_schema/tree/multi-draft-support)"
       license: MIT
+    - name: JsonXema
+      url: https://github.com/hrzndhrn/json_xema
+      draft: [7, 6, 4]
+      license: MIT
 - name: Go
   implementations:
     - name: gojsonschema
