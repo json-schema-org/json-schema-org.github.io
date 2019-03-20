@@ -116,6 +116,9 @@ Hyper-Schema
 -   JavaScript
     -   [@cloudflare/doca](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/doca) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), _draft-04, -06, -07, and Doca extensions_ (UI forthcoming)
 
+-   Python
+    -   [FastAPI](https://github.com/tiangolo/fastapi) (MIT) is an API framework based on Python 3.6+ types that generates **OpenAPI 3** schemas, including **JSON Schemas** for all the models declared.
+
 #### Link Description Object utilities
 
 -   JavaScript
@@ -137,20 +140,22 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
 
 -   .NET
     -   [Json.NET](https://www.newtonsoft.com/jsonschema) (AGPL-3.0) - generates schemas from .NET types
-    -   [NJsonSchema](http://NJsonSchema.org) - (Ms-PL) - generates schemas from .NET types, see issue [574](https://github.com/RSuter/NJsonSchema/issues/574) for draft-06+ support progress
+    -   [NJsonSchema](https://github.com/RSuter/NJsonSchema/) - (Ms-PL) - generates schemas from .NET types, see issue [574](https://github.com/RSuter/NJsonSchema/issues/574) for draft-06+ support progress
 -   Golang
     -  [qri-io/jsonschema](https://github.com/qri-io/jsonschema)(MIT) - idiomatic go implementation with custom validator support, coding to and from json, rich error returns *supports Draft 7*
 -   PHP
     -   [Liform](https://github.com/Limenius/liform) (MIT) - generates schemas from Symfony forms
 -   TypeScript
     -   [typescript-json-schema](https://github.com/YousefED/typescript-json-schema)
+-   Python
+    -   [Pydantic](https://pydantic-docs.helpmanual.io/) (MIT) - generates schemas from Python models based on Python 3.6+ type hints.
 
 #### From data
 
 -   Scala
     -   [Schema Guru](https://github.com/snowplow/schema-guru) (Apache 2.0) - CLI util, Spark Job and Web UI for deriving JSON Schemas out of corpus of JSON instances; see issue [178](https://github.com/snowplow/schema-guru/issues/178) for progress towards draft-06+ support
 -   Online (web tool)
-    -   [jsonschema.net](http://www.jsonschema.net) - generates schemas from example data
+    -   [jsonschema.net](https://www.jsonschema.net/) - generates schemas from example data
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 
 
@@ -186,16 +191,18 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [Alpaca Forms](http://www.alpacajs.org/) (ASL 2.0)
     -   [Angular Schema Form](https://github.com/json-schema-form/angular-schema-form) (MIT)
     -   [Angular2 Schema Form](https://github.com/makinacorpus/angular2-schema-form) *unrelated to Angular Schema Form* (MIT)
+    -   [Angular6-json-schema-form](https://github.com/hamzahamidi/Angular6-json-schema-form) (MIT)
     -   [JSON Editor](https://github.com/jdorn/json-editor) (MIT)
     -   [JSON Form (joshfire)](https://github.com/joshfire/jsonform) (joshfire) (MIT)
     -   [Json Forms (brutusin)](https://github.com/brutusin/json-forms) (brutusin) (MIT)
-    -   [JSONForms (jsonforms.io)](http://jsonforms.io) (EclipseSource) (MIT)
-    -   [Jsonary](http://jsonary.com/) (MIT)
+    -   [JSONForms (jsonforms.io)](https://jsonforms.io/) (EclipseSource) (MIT)
+    -   [Jsonary](https://github.com/jsonary-js/) (MIT)
     -   [Liform-react](https://github.com/Limenius/liform-react) (MIT)
-    -   [Metawidget](http://metawidget.org/) (LGPL)
+    -   [Metawidget](https://metawidget.org/) (LGPL)
     -   [pure-form webcomponent](https://github.com/john-doherty/pure-form) (MIT)
     -   [React JSON Schema Form (mozilla)](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
     -   [React Schema Form (networknt)](https://github.com/networknt/react-schema-form) (MIT)
+    -   [uniforms (Vazco)](https://github.com/vazco/uniforms) (MIT)
 
 #### Data from schemas
 
@@ -242,20 +249,22 @@ _None currently support draft-06 or later._
 
 -   Python
     -   [hypo\_schema](https://github.com/mlakewood/hypo_schema) (BSD-2-Clause) Creates generators for Hypothesis from JSON Schema
+    
 #### Editors
 
 _TODO: Sort by draft support._
 
 -   [Liquid XML Studio 2016](https://www.liquid-technologies.com/json-schema-editor) - *Graphical JSON schema editor for draft 4, context sensitive intellisense for JSON documents.*
--   [Visual Studio 2013](http://www.visualstudio.com/) - *Auto-completion and tooltips based on JSON schema draft 3 and draft 4*
+-   [Visual Studio 2013](https://www.visualstudio.com/) - *Auto-completion and tooltips based on JSON schema draft 3 and draft 4*
 -   [JSONBuddy](http://www.json-buddy.com/) - *Text and grid-style JSON editor and validator with context sensitive entry-helpers and sample data generation based on JSON schema. Support for draft 4 and draft 6.*
 -   [ReSharper 2016.1](https://www.jetbrains.com/resharper/) - *code completion, inspections and quick fixes for JSON schema in Visual Studio 2010 - 2015, including support for JSON Path and regular expressions for schema editing*
 -   [Visual Studio Code](https://code.visualstudio.com/) - *Schema driven code completion, hovers and validation for editing JSON files (including schemas)*
--   [JSONEditor Online](http://jsoneditoronline.org) - *View, edit, format, and validate JSON online*
+-   [JSONEditor Online](https://jsoneditoronline.org/) - *View, edit, format, and validate JSON online*
 -   [JSON Schema Editor](https://json-schema-editor.tangramjs.com) - *An intuitive editor for JSON schema online*
 -   [JSON Editor](https://json-editor.tangramjs.com) - *An online, schema-aware editor for JSON document*
 -   [Eclipse IDE](https://www.eclipse.org/downloads/eclipse-packages) - *Rich JSON edition supporting schema for instantaneous validation and error reporting, completion, documentation.*
 -   [WebStorm](https://www.jetbrains.com/webstorm/), [IntelliJ IDEA](https://www.jetbrains.com/idea/), and other [JetBrains IDEs](https://www.jetbrains.com/products.html?fromMenu#type=ide) - *Code completion, documentation, and validation for JSON files using JSON Schema*
+-   [JsonDraft](https://jsondraft.com/) - *Tree view JSON and JSON Schema editor online. Create and Save reusable components, Share JSON.*
 
 
 Schema Repositories

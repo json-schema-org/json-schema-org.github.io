@@ -16,12 +16,28 @@
       draft: [4, 3]
       license: LGPL-3.0
       notes: "Draft-06+ progress: issue [17](https://github.com/netmail-open/wjelement/issues/17#issuecomment-390899432)"
+- name: C++
+  implementations:
+    - name: f5-json-schema
+      url: https://github.com/KayEss/json-schema
+      draft: [7]
+      license: Boost Software License 1.0
+- name: Clojure
+  implementations:
+    - name: json-schema
+      url: https://github.com/luposlip/json-schema
+      draft: [7]
+      license: Eclipse Public License 2.0
 - name: Elixir
   implementations:
     - name: Elixir JSON Schema validator
       url: https://github.com/jonasschmidt/ex_json_schema
       draft: [4]
       notes: "Draft-06+ progress: issue [24](https://github.com/jonasschmidt/ex_json_schema/issues/24); branch [multi-draft-support](https://github.com/jonasschmidt/ex_json_schema/tree/multi-draft-support)"
+      license: MIT
+    - name: JsonXema
+      url: https://github.com/hrzndhrn/json_xema
+      draft: [7, 6, 4]
       license: MIT
 - name: Go
   implementations:
@@ -44,6 +60,18 @@
     - name: everit-org/json-schema
       url: https://github.com/everit-org/json-schema
       notes:
+      draft: [7, 6, 4]
+      license: Apache License 2.0
+    - name: Justify
+      url: https://github.com/leadpony/justify
+      notes:
+      draft: [7]
+      license: Apache License 2.0
+- name: Kotlin
+  implementations:
+    - name: Medeia-validator
+      url: https://github.com/worldturner/medeia-validator
+      notes: streaming validator for Kotlin and Java clients; works with Jackson and Gson
       draft: [7, 6, 4]
       license: Apache License 2.0
 - name: JavaScript
@@ -78,13 +106,20 @@
   implementations:
     - name: jsonschema
       url: https://github.com/Julian/jsonschema
-      notes: "Draft-06+ progress: issues [337](https://github.com/Julian/jsonschema/issues/337), [400](https://github.com/Julian/jsonschema/issues/400); branches [draft6](https://github.com/Julian/jsonschema/tree/draft6), [draft7](https://github.com/Julian/jsonschema/tree/draft7)"
-      draft: [4, 3]
+      notes:
+      draft: [7, 6, 4, 3]
       license: "MIT"
 - name: Ruby
   implementations:
     - name: JSONSchemer
       url: https://github.com/davishmcclurg/json_schemer
+      notes:
+      draft: [7, 6, 4]
+      license: MIT
+- name: Objective-C
+  implementations:
+    - name: DSJSONSchemaValidation
+      url: https://github.com/dashevo/JSONSchemaValidation
       notes:
       draft: [7, 6, 4]
       license: MIT

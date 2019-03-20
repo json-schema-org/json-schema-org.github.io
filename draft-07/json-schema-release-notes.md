@@ -23,7 +23,7 @@ more clearly than before.
 
 keyword | change | notes
 ---- | ---- | ----
-[`"$comment"`](json-schema-core.html#rfc.section.10) | added to Core | Intended for notes to schema maintainers, as opposed to [`"description"`](json-schema-validation.html#rfc.section.10.1) which is suitable for display to end users
+[`"$comment"`](json-schema-core.html#rfc.section.9) | added to Core | Intended for notes to schema maintainers, as opposed to [`"description"`](json-schema-validation.html#rfc.section.10.1) which is suitable for display to end users
 [`"if"`, `"then"`, `"else"`](json-schema-validation.html#rfc.section.6.6) | added to Validation | explicit conditional schema evaluation 
 [`"readOnly"`](json-schema-validation.html#rfc.section.10.3) | moved from Hyper-Schema to Validation | not limited to hypermedia environments
 [`"writeOnly"`](json-schema-validation.html#rfc.section.10.3) | added to Validation | general write-only fields, including but not limited to passwords
@@ -57,7 +57,7 @@ compatibility.
 ### Classification of Keywords
 
 While it does not have a direct impact on the validation process, this set
-of drafts classifies kewyords by their behavior.  The names of these
+of drafts classifies keywords by their behavior.  The names of these
 classifications are used throughout the documents, so they are useful
 to know:
 
