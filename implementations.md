@@ -203,6 +203,7 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [React JSON Schema Form (mozilla)](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
     -   [React Schema Form (networknt)](https://github.com/networknt/react-schema-form) (MIT)
     -   [uniforms (Vazco)](https://github.com/vazco/uniforms) (MIT)
+    -   [FormSchema (demsking)](https://gitlab.com/formschema/native) *Generate a form using JSON Schema and Vue.js* (MIT)
 
 #### Data from schemas
 
