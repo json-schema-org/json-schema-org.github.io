@@ -22,6 +22,10 @@
       url: https://github.com/KayEss/json-schema
       draft: [7]
       license: Boost Software License 1.0
+    - name: JSON schema validator for JSON for Modern C++
+      url: https://github.com/pboettch/json-schema-validator
+      draft: [7]
+      license: MIT
 - name: Clojure
   implementations:
     - name: json-schema
