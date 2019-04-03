@@ -231,7 +231,8 @@ the utility, and decided on a case-by-case basis.
 
 #### Schema draft migration
 
-_None currently support draft-06 or later._
+-   Python
+    -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  creates [Hypothesis](https://hypothesis.works/) strategies for documents which match any schema, even with complex and interacting constraints.
 
 #### Format converters
 
@@ -248,6 +249,7 @@ _None currently support draft-06 or later._
 #### Testing
 
 -   Python
+    -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  creates [Hypothesis](https://hypothesis.works/) strategies for documents which match any schema, even with complex and interacting constraints.
     -   [hypo\_schema](https://github.com/mlakewood/hypo_schema) (BSD-2-Clause) Creates generators for Hypothesis from JSON Schema
     
 #### Editors
