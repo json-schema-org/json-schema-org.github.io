@@ -256,6 +256,7 @@ the utility, and decided on a case-by-case basis.
 
 _TODO: Sort by draft support._
 
+-   [Altova XMLSpy 2019r3](https://www.altova.com/xmlspy-xml-editor#json_schema) - *Graphical JSON Schema editor for draft-06 and draft-7, as well as validation of JSON files based on JSON Schema*
 -   [Liquid XML Studio 2016](https://www.liquid-technologies.com/json-schema-editor) - *Graphical JSON schema editor for draft 4, context sensitive intellisense for JSON documents.*
 -   [Visual Studio 2013](https://www.visualstudio.com/) - *Auto-completion and tooltips based on JSON schema draft 3 and draft 4*
 -   [JSONBuddy](https://www.json-buddy.com/) - *Text and grid-style JSON editor and validator with context sensitive entry-helpers and sample data generation based on JSON schema. Support for draft 4, draft 6 and draft 7.*
