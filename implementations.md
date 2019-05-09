@@ -273,3 +273,9 @@ Schema Repositories
 -------------------
 
 -   [SchemaStore.org](http://schemastore.org/json/) - validate against common JSON Schemas
+
+
+Schema Linter
+-------------
+
+-   [json-schema-linter](https://www.json-schema-linter.com/) - Lint/validate/parse json-schema itself and find out out typo, missing properties, missing required keys etc. Supports draft 4, 6, and 7.
