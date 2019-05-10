@@ -31,7 +31,7 @@
     - name: json-schema
       url: https://github.com/luposlip/json-schema
       draft: [7]
-      license: Eclipse Public License 2.0
+      license: Apache License, Version 2.0
 - name: Elixir
   implementations:
     - name: Elixir JSON Schema validator
