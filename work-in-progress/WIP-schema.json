@@ -1,13 +1,13 @@
 {
-    "$schema": "http://json-schema.org/draft/2019-04/schema#",
-    "$id": "http://json-schema.org/draft/2019-04/schema#",
+    "$schema": "http://json-schema.org/draft/2019-WIP/schema#",
+    "$id": "http://json-schema.org/draft/2019-WIP/schema#",
     "$vocabulary": {
-        "https://json-schema.org/draft/2019-04/vocab/core": true,
-        "https://json-schema.org/draft/2019-04/vocab/applicator": true,
-        "https://json-schema.org/draft/2019-04/vocab/validation": true,
-        "https://json-schema.org/draft/2019-04/vocab/meta-data": true,
-        "https://json-schema.org/draft/2019-04/vocab/format": true,
-        "https://json-schema.org/draft/2019-04/vocab/content": true
+        "https://json-schema.org/draft/2019-WIP/vocab/core": true,
+        "https://json-schema.org/draft/2019-WIP/vocab/applicator": true,
+        "https://json-schema.org/draft/2019-WIP/vocab/validation": true,
+        "https://json-schema.org/draft/2019-WIP/vocab/meta-data": true,
+        "https://json-schema.org/draft/2019-WIP/vocab/format": true,
+        "https://json-schema.org/draft/2019-WIP/vocab/content": true
     },
     "$recursiveAnchor": true,
 
