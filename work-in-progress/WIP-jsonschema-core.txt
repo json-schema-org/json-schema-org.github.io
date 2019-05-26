@@ -13,7 +13,7 @@ Expires: November 26, 2019                           Riverbed Technology
 
 
         JSON Schema: A Media Type for Describing JSON Documents
-                     draft-handrews-json-schema-02
+                     draft-handrews-json-schema-WIP
 
 Abstract
 
@@ -3404,7 +3404,7 @@ Internet-Draft                 JSON Schema                      May 2019
    [json-schema-validation]
               Wright, A., Andrews, H., and G. Luff, "JSON Schema
               Validation: A Vocabulary for Structural Validation of
-              JSON", draft-handrews-json-schema-validation-02 (work in
+              JSON", draft-handrews-json-schema-validation-WIP (work in
               progress), November 2017.
 
    [RFC7049]  Bormann, C. and P. Hoffman, "Concise Binary Object
@@ -3488,7 +3488,7 @@ Appendix B.  ChangeLog
    [[CREF9: This section to be removed before leaving Internet-Draft
    status.]]
 
-   draft-handrews-json-schema-02
+   draft-handrews-json-schema-WIP
 
       *  Update to RFC 8359 for JSON specification
 

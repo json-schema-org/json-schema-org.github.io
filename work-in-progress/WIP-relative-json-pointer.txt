@@ -10,7 +10,7 @@ Expires: November 26, 2019                           Riverbed Technology
 
 
                          Relative JSON Pointers
-                draft-handrews-relative-json-pointer-02
+                draft-handrews-relative-json-pointer-WIP
 
 Abstract
 
@@ -343,7 +343,7 @@ Appendix A.  ChangeLog
    [[CREF1: This section to be removed before leaving Internet-Draft
    status.]]
 
-   draft-handrews-relative-json-pointer-02
+   draft-handrews-relative-json-pointer-WIP
 
       *  Update to the latest JSON RFC
 
