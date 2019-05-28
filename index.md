@@ -7,7 +7,7 @@ permalink: /
 ***The current version is [draft-07](specification.html)!***
 {: style="color:gray; font-size: 150%; text-align: center;"}
 
-***The next draft work-in-progres is [in final review](work-in-progress/)!***
+***The next draft work-in-progres is [in final review](work-in-progress)!***
 {: style="color:red; font-size: 150%; text-align: center;"}
 
 **JSON Schema** is a vocabulary that allows you to **annotate** and **validate** JSON documents.
@@ -42,7 +42,7 @@ permalink: /
 
 ### Update as of 27 May 2019
 
-**The forthcoming draft is in [final review](work-in-progress/).**
+**The forthcoming draft is in [final review](work-in-progress).**
 
 This draft has also taken more time than expected because it tackles deep, long-term issues that have long been a challenge for JSON Schema.  This includes building in a formal extensibility mechanism so that we can more easily draw a line to finalize the contents of the Core and Validation specifications.
 
