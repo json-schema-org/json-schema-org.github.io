@@ -32,7 +32,7 @@ incrementing the draft number for meta-schemas regardless of the IETF identifier
 However, this is frowned upon by the IETF and has in fact been a source of confusion.
 It worked well up to and including `draft-04`, as even after the split into multiple
 documents, `draft-zyp-json-schema-04` (the core spec) at least ended in `-04`!
-Unfortnately, after that point, the numbers stopped matching in any way.
+Unfortunately, after that point, the numbers stopped matching in any way.
 
 Assuming this new draft gets published more or less as presented in this WIP,
 and by the end of June, it will be:
