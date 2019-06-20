@@ -473,12 +473,12 @@
 <link href="#rfc.authors" rel="Chapter">
 
 
-  <meta name="generator" content="xml2rfc version 2.20.1 - https://tools.ietf.org/tools/xml2rfc" />
+  <meta name="generator" content="xml2rfc version 2.22.3 - https://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Wright, A., Ed., Andrews, H., Ed., Hutton, B., Ed., and G. Dennis" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-handrews-json-schema-WIP" />
-  <meta name="dct.issued" scheme="ISO8601" content="2019-25" />
+  <meta name="dct.issued" scheme="ISO8601" content="2019-18" />
   <meta name="dct.abstract" content="JSON Schema defines the media type &quot;application/schema+json&quot;, a JSON-based format for describing the structure of JSON data.  JSON Schema asserts what a JSON document must look like, ways to extract information from it, and how to interact with it.  The &quot;application/schema-instance+json&quot; media type provides additional feature-rich integration with &quot;application/schema+json&quot; beyond what can be offered for &quot;application/json&quot; documents.  " />
   <meta name="description" content="JSON Schema defines the media type &quot;application/schema+json&quot;, a JSON-based format for describing the structure of JSON data.  JSON Schema asserts what a JSON document must look like, ways to extract information from it, and how to interact with it.  The &quot;application/schema-instance+json&quot; media type provides additional feature-rich integration with &quot;application/schema+json&quot; beyond what can be offered for &quot;application/json&quot; documents.  " />
 
@@ -502,7 +502,7 @@
 <td class="right">H. Andrews, Ed.</td>
 </tr>
 <tr>
-<td class="left">Expires: November 26, 2019</td>
+<td class="left">Expires: December 20, 2019</td>
 <td class="right">Riverbed Technology</td>
 </tr>
 <tr>
@@ -519,7 +519,7 @@
 </tr>
 <tr>
 <td class="left"></td>
-<td class="right">May 25, 2019</td>
+<td class="right">June 18, 2019</td>
 </tr>
 
     	
@@ -539,7 +539,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on November 26, 2019.</p>
+<p>This Internet-Draft will expire on December 20, 2019.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
 <p>Copyright (c) 2019 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
@@ -1078,11 +1078,12 @@
 <a href="#rfc.section.8.1">8.1.</a> Initial Base URI</h1>
 <p><a href="#RFC3986" class="xref">RFC3986 Section 5.1</a> defines how to determine the default base URI of a document.  </p>
 <p id="rfc.section.8.1.p.2">Informatively, the initial base URI of a schema is the URI at which it was found, whether that was a network location, a local filesystem, or any other situation identifiable by a URI of any known scheme.  </p>
-<p id="rfc.section.8.1.p.3">If no source is known, or no URI scheme is known for the source, a suitable implementation-specific default URI MAY be used as described in <a href="#RFC3986" class="xref">RFC 3986 Section 5.1.4</a>.  It is RECOMMENDED that implementations document any default base URI that they assume.  </p>
+<p id="rfc.section.8.1.p.3">If a schema document defines no explicit base URI with "$id" (embedded in content), the base URI is that determined per <a href="#RFC3986" class="xref">RFC 3986 section 5</a>.  </p>
+<p id="rfc.section.8.1.p.4">If no source is known, or no URI scheme is known for the source, a suitable implementation-specific default URI MAY be used as described in <a href="#RFC3986" class="xref">RFC 3986 Section 5.1.4</a>.  It is RECOMMENDED that implementations document any default base URI that they assume.  </p>
 <h1 id="rfc.section.8.2">
 <a href="#rfc.section.8.2">8.2.</a> <a href="#id-keyword" id="id-keyword">The "$id" Keyword</a>
 </h1>
-<p id="rfc.section.8.2.p.1">The "$id" keyword defines a URI for the schema, and the base URI that other URI references within the schema are resolved against.  A subschema's "$id" is resolved against the base URI of its parent schema.  If no parent sets an explicit base with "$id", the base URI is that of the entire document, as determined per <a href="#RFC3986" class="xref">RFC 3986 section 5</a>.  </p>
+<p id="rfc.section.8.2.p.1">The "$id" keyword defines a URI for the schema, and the base URI that other URI references within the schema are resolved against.  A subschema's "$id" is resolved against the base URI of its parent schema.  If no parent schema defines an explicit base URI with "$id", the base URI is that of the entire document, as determined per <a href="#RFC3986" class="xref">RFC 3986 section 5</a>.  </p>
 <p id="rfc.section.8.2.p.2">If present, the value for this keyword MUST be a string, and MUST represent a valid <a href="#RFC3986" class="xref">URI-reference</a>.  This value SHOULD be normalized, and SHOULD NOT be an empty fragment &lt;#&gt; or an empty string &lt;&gt;.  </p>
 <h1 id="rfc.section.8.2.1">
 <a href="#rfc.section.8.2.1">8.2.1.</a> Identifying the root schema</h1>
@@ -1718,7 +1719,7 @@ http://json-schema.org/draft/2019-04/schema#/$defs/nonNegativeInteger/minimum
 <li>There are only two vertices, but three are required.  </li>
 </ul>
 
-<p> Note that neither the error message property nor its wording as depicted in these examples is not a requirement of this specification.  Implementations SHOULD craft error messages tailored for their audience.  </p>
+<p> Note that the error message wording as depicted in these examples is not a requirement of this specification.  Implementations SHOULD craft error messages tailored for their audience or provide a templating mechanism that allows their users to craft their own messages.  </p>
 <h1 id="rfc.section.12.4.1">
 <a href="#rfc.section.12.4.1">12.4.1.</a> Flag</h1>
 <p id="rfc.section.12.4.1.p.1">In the simplest case, merely the boolean result for the "valid" valid property needs to be fulfilled.  </p>
@@ -1746,21 +1747,21 @@ http://json-schema.org/draft/2019-04/schema#/$defs/nonNegativeInteger/minimum
     {
       "keywordLocation": "#/items/$ref",
       "absoluteKeywordLocation":
-        "http://example.com/polygon#/definitions/point",
+        "http://example.com/polygon#/$defs/point",
       "instanceLocation": "#/1",
       "error": "A subschema had errors."
     },
     {
       "keywordLocation": "#/items/$ref/required",
       "absoluteKeywordLocation":
-        "http://example.com/polygon#/definitions/point/required",
+        "http://example.com/polygon#/$defs/point/required",
       "instanceLocation": "#/1",
       "error": "Required property 'y' not found."
     },
     {
       "keywordLocation": "#/items/$ref/additionalProperties",
       "absoluteKeywordLocation":
-        "http://example.com/polygon#/definitions/point/additionalProperties",
+        "http://example.com/polygon#/$defs/point/additionalProperties",
       "instanceLocation": "#/1/z",
       "error": "Additional property 'z' found but was invalid."
     },
@@ -1796,14 +1797,14 @@ http://json-schema.org/draft/2019-04/schema#/$defs/nonNegativeInteger/minimum
       "valid": false,
       "keywordLocation": "#/items/$ref",
       "absoluteKeywordLocation":
-        "http://example.com/polygon#/definitions/point",
+        "http://example.com/polygon#/$defs/point",
       "instanceLocation": "#/1",
       "errors": [
         {
           "valid": false,
           "keywordLocation": "#/items/$ref/required",
           "absoluteKeywordLocation":
-            "http://example.com/polygon#/definitions/point/required",
+            "http://example.com/polygon#/$defs/point/required",
           "instanceLocation": "#/1",
           "error": "Required property 'y' not found."
         },
@@ -1811,7 +1812,7 @@ http://json-schema.org/draft/2019-04/schema#/$defs/nonNegativeInteger/minimum
           "valid": false,
           "keywordLocation": "#/items/$ref/additionalProperties",
           "absoluteKeywordLocation":
-            "http://example.com/polygon#/definitions/point/additionalProperties",
+            "http://example.com/polygon#/$defs/point/additionalProperties",
           "instanceLocation": "#/1/z",
           "error": "Additional property 'z' found but was invalid."
         }
@@ -2088,7 +2089,7 @@ User-Agent: product-name/5.4.1 so-cool-json-schema/1.0.2 curl/7.43.0
 <dt>draft-handrews-json-schema-WIP</dt>
 <dd style="margin-left: 8">
 <ul>
-<li>Update to RFC 8359 for JSON specification</li>
+<li>Update to RFC 8259 for JSON specification</li>
 <li>Moved "definitions" from the Validation specification here as "$defs"</li>
 <li>Moved applicator keywords from the Validation specification as their own vocabulary</li>
 <li>Moved the schema form of "dependencies" from the Validation specification as "dependentSchemas"</li>
@@ -2251,6 +2252,8 @@ User-Agent: product-name/5.4.1 so-cool-json-schema/1.0.2 curl/7.43.0
 	  <span class="country-name vcardline"></span>
 	</span>
 	<span class="vcardline">EMail: <a href="mailto:bh7@sanger.ac.uk">bh7@sanger.ac.uk</a></span>
+
+<span class="vcardline">URI: <a href="https://jsonschema.dev">https://jsonschema.dev</a></span>
 
   </address>
 </div><div class="avoidbreak">
