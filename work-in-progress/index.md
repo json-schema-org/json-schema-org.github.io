@@ -15,9 +15,9 @@ period before publication.  This final review will last from May 27th to June 24
 The timeline may be compressed if, after at least two weeks, there is a clear consensus that
 the drafts are solid and it would be best to publish sooner rather than later.
 
-***UPDATE:** As of July 2nd, We are incorporating feedback from the review period.
-There will be an update, followed by a brief period to review the update, and then
-hopefully publication.***
+_**UPDATE:** As of July 2nd, We are incorporating feedback from the review period._
+_There will be an update, followed by a brief period to review the update, and then_
+_hopefully publication._
 
 The following sorts of feedback are particularly desired:
 
