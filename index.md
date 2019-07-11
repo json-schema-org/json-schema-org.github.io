@@ -97,4 +97,4 @@ Questions? Feeling helpful? Get involved on:
 
 * [GitHub](http://github.com/json-schema-org/json-schema-spec)
 * [Google Groups](https://groups.google.com/forum/#!forum/json-schema)
-* [Slack](https://join.slack.com/t/json-schema/shared_invite/enQtMjk1NDcyNDI2NTAwLTcyYmYwMjdmMmUxNzZjYzIxNGU2YjdkNzdlOGZiNjIwNDI2M2Y3NmRkYjA4YmMwODMwYjgyOTFlNWZjZjAyNjg)
+* [Slack](https://join.slack.com/t/json-schema/shared_invite/enQtNjc5NTk0MzkzODg5LTVlZGIxNmVhMGY2MWFlYTdiNDQ5NWFiZGUwOThhNmYxZDE0YzA5YjRiOTA5MGY4ZTZlZGZhZDFmYTY4NWM2N2Y)
