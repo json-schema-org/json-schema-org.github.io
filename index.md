@@ -7,7 +7,7 @@ permalink: /
 ***The current version is [draft-07](specification.html)!***
 {: style="color:gray; font-size: 150%; text-align: center;"}
 
-***The next draft work-in-progres is [in final review](work-in-progress)!***
+***The next draft work-in-progress is [in final review](work-in-progress)!***
 {: style="color:red; font-size: 150%; text-align: center;"}
 
 **JSON Schema** is a vocabulary that allows you to **annotate** and **validate** JSON documents.
