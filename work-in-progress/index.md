@@ -9,15 +9,9 @@ permalink: /work-in-progress
 
 ## The Next Draft (by whatever name) Is Ready for Final Pre-Publication Review!
 
-The forthcoming draft is now feature-frozen and entering the final four-week feedback
-period before publication.  This final review will last from May 27th to June 24th, 2019.
+The forthcoming draft is now feature-frozen and has gone through the initial four-week pre-publication review period.
 
-The timeline may be compressed if, after at least two weeks, there is a clear consensus that
-the drafts are solid and it would be best to publish sooner rather than later.
-
-_**UPDATE:** As of July 2nd, We are incorporating feedback from the review period._
-_There will be an update, followed by a brief period to review the update, and then_
-_hopefully publication._
+_**UPDATE: July 28th, 2019** We continue to incorporate feedback and clarify sections of the new draft.  We expect to finally publish the draft during August._
 
 The following sorts of feedback are particularly desired:
 
@@ -42,7 +36,7 @@ Assuming this new draft gets published more or less as presented in this WIP,
 and by the end of June, it will be:
 
 * IETF identifiers: `draft-handrews-*-02`
-* Meta-schema identifiers: `draft/2019-06`
+* Meta-schema identifiers: `draft/2019-08`
 
 Meta-schemas will now be identified with dates, which can be correlated with the publication
 and expiration dates of the IETF documents.  This will make it more clear when a bugfix
