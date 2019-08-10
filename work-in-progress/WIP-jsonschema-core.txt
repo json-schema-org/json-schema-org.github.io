@@ -13,7 +13,7 @@ Expires: February 11, 2020
 
 
         JSON Schema: A Media Type for Describing JSON Documents
-                     draft-handrews-json-schema-02
+                     draft-handrews-json-schema-WIP
 
 Abstract
 
@@ -3398,13 +3398,13 @@ Internet-Draft                 JSON Schema                   August 2019
    [json-hyper-schema]
               Andrews, H. and A. Wright, "JSON Hyper-Schema: A
               Vocabulary for Hypermedia Annotation of JSON", draft-
-              handrews-json-schema-hyperschema-02 (work in progress),
+              handrews-json-schema-hyperschema-WIP (work in progress),
               November 2017.
 
    [json-schema-validation]
               Wright, A., Andrews, H., and G. Luff, "JSON Schema
               Validation: A Vocabulary for Structural Validation of
-              JSON", draft-handrews-json-schema-validation-02 (work in
+              JSON", draft-handrews-json-schema-validation-WIP (work in
               progress), November 2017.
 
    [RFC7049]  Bormann, C. and P. Hoffman, "Concise Binary Object
@@ -3488,7 +3488,7 @@ Appendix B.  ChangeLog
    [[CREF8: This section to be removed before leaving Internet-Draft
    status.]]
 
-   draft-handrews-json-schema-02
+   draft-handrews-json-schema-WIP
 
       *  Update to RFC 8259 for JSON specification
 

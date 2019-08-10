@@ -12,7 +12,7 @@ Expires: February 11, 2020
 
 
  JSON Schema Validation: A Vocabulary for Structural Validation of JSON
-                draft-handrews-json-schema-validation-02
+                draft-handrews-json-schema-validation-WIP
 
 Abstract
 
@@ -1275,7 +1275,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
    [json-schema]
               Wright, A. and H. Andrews, "JSON Schema: A Media Type for
-              Describing JSON Documents", draft-handrews-json-schema-02
+              Describing JSON Documents", draft-handrews-json-schema-WIP
               (work in progress), November 2017.
 
    [relative-json-pointer]
@@ -1463,7 +1463,7 @@ Appendix C.  ChangeLog
    [[CREF8: This section to be removed before leaving Internet-Draft
    status.]]
 
-   draft-handrews-json-schema-validation-02
+   draft-handrews-json-schema-validation-WIP
 
       *  Grouped keywords into formal vocabuarlies
 

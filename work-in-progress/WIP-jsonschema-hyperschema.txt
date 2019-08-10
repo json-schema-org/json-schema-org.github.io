@@ -9,7 +9,7 @@ Expires: February 11, 2020                               August 10, 2019
 
 
    JSON Hyper-Schema: A Vocabulary for Hypermedia Annotation of JSON
-               draft-handrews-json-schema-hyperschema-02
+               draft-handrews-json-schema-hyperschema-WIP
 
 Abstract
 
@@ -2818,13 +2818,13 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
    [json-schema]
               Wright, A. and H. Andrews, "JSON Schema: A Media Type for
-              Describing JSON Documents", draft-handrews-json-schema-02
+              Describing JSON Documents", draft-handrews-json-schema-WIP
               (work in progress), November 2017.
 
    [json-schema-validation]
               Wright, A., Andrews, H., and G. Luff, "JSON Schema
               Validation: A Vocabulary for Structural Validation of
-              JSON", draft-handrews-json-schema-validation-02 (work in
+              JSON", draft-handrews-json-schema-validation-WIP (work in
               progress), November 2017.
 
    [relative-json-pointer]
@@ -3052,7 +3052,7 @@ Appendix B.  ChangeLog
    [[CREF13: This section to be removed before leaving Internet-Draft
    status.]]
 
-   draft-handrews-json-schema-hyperschema-02
+   draft-handrews-json-schema-hyperschema-WIP
 
       *  Allow multiple values for "rel"
 
