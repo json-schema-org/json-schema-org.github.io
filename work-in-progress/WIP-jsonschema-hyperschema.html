@@ -449,12 +449,12 @@
 <link href="#rfc.authors" rel="Chapter">
 
 
-  <meta name="generator" content="xml2rfc version 2.22.3 - https://tools.ietf.org/tools/xml2rfc" />
+  <meta name="generator" content="xml2rfc version 2.20.1 - https://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Andrews, H., Ed. and A. Wright, Ed." />
-  <meta name="dct.identifier" content="urn:ietf:id:draft-handrews-json-schema-hyperschema-WIP" />
-  <meta name="dct.issued" scheme="ISO8601" content="2019-18" />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-handrews-json-schema-hyperschema-02" />
+  <meta name="dct.issued" scheme="ISO8601" content="2019-10" />
   <meta name="dct.abstract" content="JSON Schema is a JSON-based format for describing JSON data using various vocabularies.  This document specifies a vocabulary for annotating JSON documents with hyperlinks.  These hyperlinks include attributes describing how to manipulate and interact with remote resources through hypermedia environments such as HTTP, as well as determining whether the link is usable based on the instance value.  The hyperlink serialization format described in this document is also usable independent of JSON Schema.  " />
   <meta name="description" content="JSON Schema is a JSON-based format for describing JSON data using various vocabularies.  This document specifies a vocabulary for annotating JSON documents with hyperlinks.  These hyperlinks include attributes describing how to manipulate and interact with remote resources through hypermedia environments such as HTTP, as well as determining whether the link is usable based on the instance value.  The hyperlink serialization format described in this document is also usable independent of JSON Schema.  " />
 
@@ -471,15 +471,15 @@
 </tr>
 <tr>
 <td class="left">Internet-Draft</td>
-<td class="right">Riverbed Technology</td>
+<td class="right"></td>
 </tr>
 <tr>
 <td class="left">Intended status: Informational</td>
 <td class="right">A. Wright, Ed.</td>
 </tr>
 <tr>
-<td class="left">Expires: December 20, 2019</td>
-<td class="right">June 18, 2019</td>
+<td class="left">Expires: February 11, 2020</td>
+<td class="right">August 10, 2019</td>
 </tr>
 
     	
@@ -487,19 +487,19 @@
   </table>
 
   <p class="title">JSON Hyper-Schema: A Vocabulary for Hypermedia Annotation of JSON <br />
-  <span class="filename">draft-handrews-json-schema-hyperschema-WIP</span></p>
+  <span class="filename">draft-handrews-json-schema-hyperschema-02</span></p>
   
   <h1 id="rfc.abstract"><a href="#rfc.abstract">Abstract</a></h1>
 <p>JSON Schema is a JSON-based format for describing JSON data using various vocabularies.  This document specifies a vocabulary for annotating JSON documents with hyperlinks.  These hyperlinks include attributes describing how to manipulate and interact with remote resources through hypermedia environments such as HTTP, as well as determining whether the link is usable based on the instance value.  The hyperlink serialization format described in this document is also usable independent of JSON Schema.  </p>
 <h1><a>Note to Readers</a></h1>
 <p>The issues list for this draft can be found at <span>&lt;</span><a href="https://github.com/json-schema-org/json-schema-spec/issues">https://github.com/json-schema-org/json-schema-spec/issues</a><span>&gt;</span>.  </p>
-<p>For additional information, see <span>&lt;</span><a href="http://json-schema.org/">http://json-schema.org/</a><span>&gt;</span>.  </p>
+<p>For additional information, see <span>&lt;</span><a href="https://json-schema.org/">https://json-schema.org/</a><span>&gt;</span>.  </p>
 <p>To provide feedback, use this issue tracker, the communication methods listed on the homepage, or email the document editors.  </p>
 <h1 id="rfc.status"><a href="#rfc.status">Status of This Memo</a></h1>
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on December 20, 2019.</p>
+<p>This Internet-Draft will expire on February 11, 2020.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
 <p>Copyright (c) 2019 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
@@ -727,11 +727,11 @@
 <p id="rfc.section.3.2.p.4">A few IANA-registered link relation types are given specific semantics in a JSON Hyper-Schema document.  A "self" link is used to interact with the resource that the instance document represents, while "collection" and "item" links identify resources for which collection-specific semantics can be assumed.  </p>
 <h1 id="rfc.section.4">
 <a href="#rfc.section.4">4.</a> Meta-Schemas and Output Schema</h1>
-<p id="rfc.section.4.p.1">The current URI for the JSON Hyper-Schema meta-schema is <span>&lt;</span><a href="http://json-schema.org/draft/2019-04/hyper-schema#">http://json-schema.org/draft/2019-04/hyper-schema#</a><span>&gt;</span>.  </p>
-<p id="rfc.section.4.p.2">The current URI for this vocabulary, known as the Hyper-Schema vocabulary, is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-04/vocab/hyper-schema">https://json-schema.org/draft/2019-04/vocab/hyper-schema</a><span>&gt;</span>.  </p>
-<p id="rfc.section.4.p.3">The current URI for the corresponding meta-schema, which differs from the convenience meta-schema above in that it describes only the hyper-schema keywords ("base" and "link") is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-04/meta/hyper-schema">https://json-schema.org/draft/2019-04/meta/hyper-schema</a><span>&gt;</span>.  </p>
-<p id="rfc.section.4.p.4">The <a href="#ldo" class="xref">link description format</a> can be used without JSON Schema, and use of this format can be declared by referencing the normative link description schema as the schema for the data structure that uses the links.  The URI of the normative link description schema is: <span>&lt;</span><a href="http://json-schema.org/draft/2019-04/links#">http://json-schema.org/draft/2019-04/links#</a><span>&gt;</span>.  </p>
-<p id="rfc.section.4.p.5">JSON Hyper-Schema implementations are free to provide output in any format.  However, a specific format is defined for use in the conformance test suite, which is also used to illustrate points in the <a href="#implementation" class="xref">"Implementation Requirements"</a>, and to show the output generated by <a href="#examples" class="xref">examples</a>.  It is RECOMMENDED that implementations be capable of producing output in this format to facilitated testing.  The URI of the JSON Schema describing the recommended output format is <span>&lt;</span><a href="http://json-schema.org/draft/2019-04/output/hyper-schema#">http://json-schema.org/draft/2019-04/output/hyper-schema#</a><span>&gt;</span>.  </p>
+<p id="rfc.section.4.p.1">The current URI for the JSON Hyper-Schema meta-schema is <span>&lt;</span><a href="https://json-schema.org/draft/2019-08/hyper-schema#">https://json-schema.org/draft/2019-08/hyper-schema#</a><span>&gt;</span>.  </p>
+<p id="rfc.section.4.p.2">The current URI for this vocabulary, known as the Hyper-Schema vocabulary, is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-08/vocab/hyper-schema">https://json-schema.org/draft/2019-08/vocab/hyper-schema</a><span>&gt;</span>.  </p>
+<p id="rfc.section.4.p.3">The current URI for the corresponding meta-schema, which differs from the convenience meta-schema above in that it describes only the hyper-schema keywords ("base" and "link") is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-08/meta/hyper-schema">https://json-schema.org/draft/2019-08/meta/hyper-schema</a><span>&gt;</span>.  </p>
+<p id="rfc.section.4.p.4">The <a href="#ldo" class="xref">link description format</a> can be used without JSON Schema, and use of this format can be declared by referencing the normative link description schema as the schema for the data structure that uses the links.  The URI of the normative link description schema is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-08/links#">https://json-schema.org/draft/2019-08/links#</a><span>&gt;</span>.  </p>
+<p id="rfc.section.4.p.5">JSON Hyper-Schema implementations are free to provide output in any format.  However, a specific format is defined for use in the conformance test suite, which is also used to illustrate points in the <a href="#implementation" class="xref">"Implementation Requirements"</a>, and to show the output generated by <a href="#examples" class="xref">examples</a>.  It is RECOMMENDED that implementations be capable of producing output in this format to facilitated testing.  The URI of the JSON Schema describing the recommended output format is <span>&lt;</span><a href="https://json-schema.org/draft/2019-08/output/hyper-schema#">https://json-schema.org/draft/2019-08/output/hyper-schema#</a><span>&gt;</span>.  </p>
 <p id="rfc.section.4.p.6">Updated vocabulary and meta-schema URIs MAY be published between specification drafts in order to correct errors.  Implementations SHOULD consider URIs dated after this specification draft and before the next to indicate the same syntax and semantics as those listed here.  </p>
 <h1 id="rfc.section.5">
 <a href="#rfc.section.5">5.</a> Schema Keywords</h1>
@@ -1189,7 +1189,7 @@ Link: &lt;https://schema.example.com/entry&gt;; rel="describedBy"
 
 {
     "$id": "https://schema.example.com/entry",
-    "$schema": "http://json-schema.org/draft/2019-04/hyper-schema#",
+    "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
     "base": "https://example.com/api/",
     "links": [
         {
@@ -1231,7 +1231,7 @@ Link: &lt;https://schema.example.com/entry&gt;; rel="describedBy"
 <pre>
 {
     "$id": "https://schema.example.com/thing",
-    "$schema": "http://json-schema.org/draft/2019-04/hyper-schema#",
+    "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
     "base": "https://example.com/api/",
     "type": "object",
     "required": ["data"],
@@ -1285,7 +1285,7 @@ Link: &lt;https://schema.example.com/entry&gt;; rel="describedBy"
 <pre>
 {
     "$id": "https://schema.example.com/interesting-stuff",
-    "$schema": "http://json-schema.org/draft/2019-04/hyper-schema#",
+    "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
     "required": ["stuffWorthEmailingAbout", "email", "title"],
     "properties": {
         "title": {
@@ -1413,7 +1413,7 @@ Link: &lt;https://example.com/api/trees/1/nodes/456&gt;; rev="up"
 <pre>
 {
     "$id": "https://schema.example.com/tree-node",
-    "$schema": "http://json-schema.org/draft/2019-04/hyper-schema#",
+    "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
     "base": "trees/{treeId}/",
     "properties": {
         "id": {"type": "integer"},
@@ -1453,7 +1453,7 @@ Link: &lt;https://example.com/api/trees/1/nodes/456&gt;; rev="up"
 <pre>
 {
     "$id": "https://schema.example.com/thing",
-    "$schema": "http://json-schema.org/draft/2019-04/hyper-schema#",
+    "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
     "base": "https://example.com/api/",
     "type": "object",
     "required": ["data"],
@@ -1488,7 +1488,7 @@ Link: &lt;https://example.com/api/trees/1/nodes/456&gt;; rev="up"
 <pre>
 {
     "$id": "https://schema.example.com/thing-collection",
-    "$schema": "http://json-schema.org/draft/2019-04/hyper-schema#",
+    "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
     "base": "https://example.com/api/",
     "type": "object",
     "required": ["elements"],
@@ -1751,12 +1751,12 @@ Link: &lt;https://example.com/api/trees/1/nodes/456&gt;; rev="up"
 <tr>
 <td class="reference"><b id="json-schema">[json-schema]</b></td>
 <td class="top">
-<a>Wright, A.</a> and <a>H. Andrews</a>, "<a href="https://tools.ietf.org/html/draft-handrews-json-schema-02">JSON Schema: A Media Type for Describing JSON Documents</a>", Internet-Draft draft-handrews-json-schema-WIP, November 2017.</td>
+<a>Wright, A.</a> and <a>H. Andrews</a>, "<a href="https://tools.ietf.org/html/draft-handrews-json-schema-02">JSON Schema: A Media Type for Describing JSON Documents</a>", Internet-Draft draft-handrews-json-schema-02, November 2017.</td>
 </tr>
 <tr>
 <td class="reference"><b id="json-schema-validation">[json-schema-validation]</b></td>
 <td class="top">
-<a>Wright, A.</a>, <a>Andrews, H.</a> and <a>G. Luff</a>, "<a href="https://tools.ietf.org/html/draft-handrews-json-schema-validation-02">JSON Schema Validation: A Vocabulary for Structural Validation of JSON</a>", Internet-Draft draft-handrews-json-schema-validation-WIP, November 2017.</td>
+<a>Wright, A.</a>, <a>Andrews, H.</a> and <a>G. Luff</a>, "<a href="https://tools.ietf.org/html/draft-handrews-json-schema-validation-02">JSON Schema Validation: A Vocabulary for Structural Validation of JSON</a>", Internet-Draft draft-handrews-json-schema-validation-02, November 2017.</td>
 </tr>
 <tr>
 <td class="reference"><b id="relative-json-pointer">[relative-json-pointer]</b></td>
@@ -1868,7 +1868,7 @@ Link: &lt;https://example.com/api/trees/1/nodes/456&gt;; rev="up"
 <p></p>
 
 <dl>
-<dt>draft-handrews-json-schema-hyperschema-WIP</dt>
+<dt>draft-handrews-json-schema-hyperschema-02</dt>
 <dd style="margin-left: 8">
 <ul>
 <li>Allow multiple values for "rel"</li>
@@ -1968,18 +1968,17 @@ Link: &lt;https://example.com/api/trees/1/nodes/456&gt;; rev="up"
 		<span class="family-name">Andrews</span>
 	  </span>
 	</span>
-	<span class="org vcardline">Riverbed Technology</span>
+	<span class="org vcardline"></span>
 	<span class="adr">
-	  <span class="vcardline">680 Folsom St.</span>
-
+	  
 	  <span class="vcardline">
-		<span class="locality">San Francisco</span>,  
-		<span class="region">CA</span> 
+		<span class="locality"></span> 
+		<span class="region"></span>
 		<span class="code"></span>
 	  </span>
-	  <span class="country-name vcardline">USA</span>
+	  <span class="country-name vcardline"></span>
 	</span>
-	<span class="vcardline">EMail: <a href="mailto:handrews@riverbed.com">handrews@riverbed.com</a></span>
+	<span class="vcardline">EMail: <a href="mailto:andrews_henry@yahoo.com">andrews_henry@yahoo.com</a></span>
 
   </address>
 </div><div class="avoidbreak">

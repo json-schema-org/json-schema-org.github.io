@@ -3,13 +3,13 @@
 
 
 Internet Engineering Task Force                          H. Andrews, Ed.
-Internet-Draft                                       Riverbed Technology
+Internet-Draft
 Intended status: Informational                            A. Wright, Ed.
-Expires: November 26, 2019                                  May 25, 2019
+Expires: February 11, 2020                               August 10, 2019
 
 
    JSON Hyper-Schema: A Vocabulary for Hypermedia Annotation of JSON
-               draft-handrews-json-schema-hyperschema-WIP
+               draft-handrews-json-schema-hyperschema-02
 
 Abstract
 
@@ -27,7 +27,7 @@ Note to Readers
    The issues list for this draft can be found at <https://github.com/
    json-schema-org/json-schema-spec/issues>.
 
-   For additional information, see <http://json-schema.org/>.
+   For additional information, see <https://json-schema.org/>.
 
    To provide feedback, use this issue tracker, the communication
    methods listed on the homepage, or email the document editors.
@@ -47,15 +47,15 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 26, 2019.
+   This Internet-Draft will expire on February 11, 2020.
 
 
 
 
 
-Andrews & Wright        Expires November 26, 2019               [Page 1]
+Andrews & Wright        Expires February 11, 2020               [Page 1]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 Copyright Notice
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Andrews & Wright        Expires November 26, 2019               [Page 2]
+Andrews & Wright        Expires February 11, 2020               [Page 2]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
        6.6.2.  headerSchema  . . . . . . . . . . . . . . . . . . . .  16
@@ -165,9 +165,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019               [Page 3]
+Andrews & Wright        Expires February 11, 2020               [Page 3]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    manipulating remote JSON resources through hypermedia environments
@@ -221,9 +221,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019               [Page 4]
+Andrews & Wright        Expires February 11, 2020               [Page 4]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    representation formats at runtime, or pre-emptively follow links to
@@ -277,9 +277,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019               [Page 5]
+Andrews & Wright        Expires February 11, 2020               [Page 5]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    JSON Hyper-Schema  A JSON Schema using the keywords defined by this
@@ -333,9 +333,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019               [Page 6]
+Andrews & Wright        Expires February 11, 2020               [Page 6]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    The relation type and target attributes are taken directly from each
@@ -358,22 +358,23 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 4.  Meta-Schemas and Output Schema
 
    The current URI for the JSON Hyper-Schema meta-schema is
-   <http://json-schema.org/draft/2019-04/hyper-schema#>.
+   <https://json-schema.org/draft/2019-08/hyper-schema#>.
 
    The current URI for this vocabulary, known as the Hyper-Schema
-   vocabulary, is: <https://json-schema.org/draft/2019-04/vocab/hyper-
+   vocabulary, is: <https://json-schema.org/draft/2019-08/vocab/hyper-
    schema>.
 
    The current URI for the corresponding meta-schema, which differs from
    the convenience meta-schema above in that it describes only the
    hyper-schema keywords ("base" and "link") is: <https://json-
-   schema.org/draft/2019-04/meta/hyper-schema>.
+   schema.org/draft/2019-08/meta/hyper-schema>.
 
    The link description format (Section 6) can be used without JSON
    Schema, and use of this format can be declared by referencing the
    normative link description schema as the schema for the data
    structure that uses the links.  The URI of the normative link
-   description schema is: <http://json-schema.org/draft/2019-04/links#>.
+   description schema is: <https://json-schema.org/draft/2019-08/
+   links#>.
 
    JSON Hyper-Schema implementations are free to provide output in any
    format.  However, a specific format is defined for use in the
@@ -382,16 +383,15 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
    generated by examples (Section 9).  It is RECOMMENDED that
    implementations be capable of producing output in this format to
    facilitated testing.  The URI of the JSON Schema describing the
-   recommended output format is <http://json-schema.org/draft/2019-
-   04/output/hyper-schema#>.
+   recommended output format is <https://json-schema.org/draft/2019-
+   08/output/hyper-schema#>.
 
 
 
 
-
-Andrews & Wright        Expires November 26, 2019               [Page 7]
+Andrews & Wright        Expires February 11, 2020               [Page 7]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    Updated vocabulary and meta-schema URIs MAY be published between
@@ -445,9 +445,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019               [Page 8]
+Andrews & Wright        Expires February 11, 2020               [Page 8]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    provides all of these, along with additional features using JSON
@@ -501,9 +501,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019               [Page 9]
+Andrews & Wright        Expires February 11, 2020               [Page 9]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 6.1.1.  anchor
@@ -557,9 +557,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 10]
+Andrews & Wright        Expires February 11, 2020              [Page 10]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 6.2.1.  rel
@@ -613,9 +613,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 11]
+Andrews & Wright        Expires February 11, 2020              [Page 11]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    As such a method would correspond to JSON Hyper-Schema's data
@@ -669,9 +669,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 12]
+Andrews & Wright        Expires February 11, 2020              [Page 12]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    "anchor" keyword being resolved which requires "base" templates to be
@@ -725,9 +725,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 13]
+Andrews & Wright        Expires February 11, 2020              [Page 13]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    User agents MAY use this description when presenting the link to the
@@ -781,9 +781,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 14]
+Andrews & Wright        Expires February 11, 2020              [Page 14]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    section is expected to become more well-defined based on draft
@@ -837,9 +837,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 15]
+Andrews & Wright        Expires February 11, 2020              [Page 15]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    other user agent data for filling out the URI Template in "href"
@@ -893,9 +893,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 16]
+Andrews & Wright        Expires February 11, 2020              [Page 16]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    prevent client applications or user agents from supplying additional
@@ -949,9 +949,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 17]
+Andrews & Wright        Expires February 11, 2020              [Page 17]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 6.6.4.1.  submissionMediaType
@@ -1005,9 +1005,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 18]
+Andrews & Wright        Expires February 11, 2020              [Page 18]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    contextUri  The fully resolved URI (with scheme) of the context
@@ -1061,9 +1061,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 19]
+Andrews & Wright        Expires February 11, 2020              [Page 19]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    must also be located and associated with the LDO through whatever
@@ -1117,9 +1117,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 20]
+Andrews & Wright        Expires February 11, 2020              [Page 20]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    1.  Populate template variable data from the instance
@@ -1173,9 +1173,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 21]
+Andrews & Wright        Expires February 11, 2020              [Page 21]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    for varname in T:
@@ -1229,9 +1229,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 22]
+Andrews & Wright        Expires February 11, 2020              [Page 22]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    "InputForm" represents whatever sort of input mechanism is
@@ -1285,9 +1285,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 23]
+Andrews & Wright        Expires February 11, 2020              [Page 23]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    for varname in templateData:
@@ -1341,9 +1341,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 24]
+Andrews & Wright        Expires February 11, 2020              [Page 24]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    The LDO can express all information needed to perform any operation
@@ -1397,9 +1397,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 25]
+Andrews & Wright        Expires February 11, 2020              [Page 25]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    schemas and use appropriate media types (e.g. "application/
@@ -1453,9 +1453,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 26]
+Andrews & Wright        Expires February 11, 2020              [Page 26]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    mechanism, although it is RECOMMENDED that the techniques outlined in
@@ -1509,9 +1509,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 27]
+Andrews & Wright        Expires February 11, 2020              [Page 27]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    Per RFC 5789 [RFC5789], the request structure for an HTTP PATCH is
@@ -1565,9 +1565,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 28]
+Andrews & Wright        Expires February 11, 2020              [Page 28]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    response and those that appear in an OPTIONS response can appear.  No
@@ -1621,9 +1621,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 29]
+Andrews & Wright        Expires February 11, 2020              [Page 29]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    o  Range requests
@@ -1677,9 +1677,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 30]
+Andrews & Wright        Expires February 11, 2020              [Page 30]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 9.  Examples
@@ -1718,7 +1718,7 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
    {
        "$id": "https://schema.example.com/entry",
-       "$schema": "http://json-schema.org/draft/2019-04/hyper-schema#",
+       "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
        "base": "https://example.com/api/",
        "links": [
            {
@@ -1733,9 +1733,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 31]
+Andrews & Wright        Expires February 11, 2020              [Page 31]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    These are the simplest possible links, with only a relation type and
@@ -1789,9 +1789,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 32]
+Andrews & Wright        Expires February 11, 2020              [Page 32]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 9.2.  Individually Identified Resources
@@ -1800,7 +1800,7 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
    {
        "$id": "https://schema.example.com/thing",
-       "$schema": "http://json-schema.org/draft/2019-04/hyper-schema#",
+       "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
        "base": "https://example.com/api/",
        "type": "object",
        "required": ["data"],
@@ -1845,9 +1845,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 33]
+Andrews & Wright        Expires February 11, 2020              [Page 33]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    so an extension relationship is defined using the "tag:" URI scheme
@@ -1901,9 +1901,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 34]
+Andrews & Wright        Expires February 11, 2020              [Page 34]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    We use "submissionMediaType" to indicate a multipart/alternative
@@ -1924,7 +1924,7 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
    {
        "$id": "https://schema.example.com/interesting-stuff",
-       "$schema": "http://json-schema.org/draft/2019-04/hyper-schema#",
+       "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
        "required": ["stuffWorthEmailingAbout", "email", "title"],
        "properties": {
            "title": {
@@ -1957,9 +1957,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 35]
+Andrews & Wright        Expires February 11, 2020              [Page 35]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
                        "email": false
@@ -2013,9 +2013,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 36]
+Andrews & Wright        Expires February 11, 2020              [Page 36]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    {
@@ -2069,9 +2069,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 37]
+Andrews & Wright        Expires February 11, 2020              [Page 37]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    As an example, there is an IANA-registered "up" relation, but there
@@ -2125,9 +2125,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 38]
+Andrews & Wright        Expires February 11, 2020              [Page 38]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    The following hyper-schema, applied to the instance in the response
@@ -2137,7 +2137,7 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
    {
        "$id": "https://schema.example.com/tree-node",
-       "$schema": "http://json-schema.org/draft/2019-04/hyper-schema#",
+       "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
        "base": "trees/{treeId}/",
        "properties": {
            "id": {"type": "integer"},
@@ -2181,9 +2181,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 39]
+Andrews & Wright        Expires February 11, 2020              [Page 39]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 9.5.  Collections
@@ -2237,9 +2237,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 40]
+Andrews & Wright        Expires February 11, 2020              [Page 40]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    For this example, we will re-use the individual thing schema as shown
@@ -2249,7 +2249,7 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
    {
        "$id": "https://schema.example.com/thing",
-       "$schema": "http://json-schema.org/draft/2019-04/hyper-schema#",
+       "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
        "base": "https://example.com/api/",
        "type": "object",
        "required": ["data"],
@@ -2293,9 +2293,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 41]
+Andrews & Wright        Expires February 11, 2020              [Page 41]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    Now we want to describe collections of "thing"s.  This schema
@@ -2308,7 +2308,7 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
    {
        "$id": "https://schema.example.com/thing-collection",
-       "$schema": "http://json-schema.org/draft/2019-04/hyper-schema#",
+       "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
        "base": "https://example.com/api/",
        "type": "object",
        "required": ["elements"],
@@ -2349,9 +2349,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 42]
+Andrews & Wright        Expires February 11, 2020              [Page 42]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    Here is a simple two-element collection instance:
@@ -2405,9 +2405,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 43]
+Andrews & Wright        Expires February 11, 2020              [Page 43]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
        {
@@ -2461,9 +2461,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 44]
+Andrews & Wright        Expires February 11, 2020              [Page 44]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    The collection links have identical target URIs as there is only one
@@ -2517,9 +2517,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 45]
+Andrews & Wright        Expires February 11, 2020              [Page 45]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
            }, {
@@ -2573,9 +2573,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 46]
+Andrews & Wright        Expires February 11, 2020              [Page 46]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    Given this instance:
@@ -2629,9 +2629,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 47]
+Andrews & Wright        Expires February 11, 2020              [Page 47]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    [[CREF7: It's not clear how pagination should work with the link from
@@ -2685,9 +2685,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 48]
+Andrews & Wright        Expires February 11, 2020              [Page 48]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    Presumably, our custom link relation type in the entry point schema
@@ -2741,9 +2741,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 49]
+Andrews & Wright        Expires February 11, 2020              [Page 49]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    parts of the specification discourage always re-downloading the
@@ -2797,9 +2797,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 50]
+Andrews & Wright        Expires February 11, 2020              [Page 50]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 11.  Acknowledgments
@@ -2818,13 +2818,13 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
    [json-schema]
               Wright, A. and H. Andrews, "JSON Schema: A Media Type for
-              Describing JSON Documents", draft-handrews-json-schema-WIP
+              Describing JSON Documents", draft-handrews-json-schema-02
               (work in progress), November 2017.
 
    [json-schema-validation]
               Wright, A., Andrews, H., and G. Luff, "JSON Schema
               Validation: A Vocabulary for Structural Validation of
-              JSON", draft-handrews-json-schema-validation-WIP (work in
+              JSON", draft-handrews-json-schema-validation-02 (work in
               progress), November 2017.
 
    [relative-json-pointer]
@@ -2853,9 +2853,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 51]
+Andrews & Wright        Expires February 11, 2020              [Page 51]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    [RFC6573]  Amundsen, M., "The Item and Collection Link Relations",
@@ -2909,9 +2909,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 52]
+Andrews & Wright        Expires February 11, 2020              [Page 52]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    [RFC7807]  Nottingham, M. and E. Wilde, "Problem Details for HTTP
@@ -2965,9 +2965,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 53]
+Andrews & Wright        Expires February 11, 2020              [Page 53]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 Appendix A.  Using JSON Hyper-Schema in APIs
@@ -3021,9 +3021,9 @@ A.2.  Responses and Errors
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 54]
+Andrews & Wright        Expires February 11, 2020              [Page 54]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
    [RFC7807], to allow the user agent or client application to interpret
@@ -3052,7 +3052,7 @@ Appendix B.  ChangeLog
    [[CREF13: This section to be removed before leaving Internet-Draft
    status.]]
 
-   draft-handrews-json-schema-hyperschema-WIP
+   draft-handrews-json-schema-hyperschema-02
 
       *  Allow multiple values for "rel"
 
@@ -3077,9 +3077,9 @@ Appendix B.  ChangeLog
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 55]
+Andrews & Wright        Expires February 11, 2020              [Page 55]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
       *  Removed stray "work in progress" language left over from review
@@ -3133,9 +3133,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 56]
+Andrews & Wright        Expires February 11, 2020              [Page 56]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
       *  Clarified how "hrefSchema" is used
@@ -3189,9 +3189,9 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 57]
+Andrews & Wright        Expires February 11, 2020              [Page 57]
 
-Internet-Draft              JSON Hyper-Schema                   May 2019
+Internet-Draft              JSON Hyper-Schema                August 2019
 
 
       *  Removed "pathStart" keyword
@@ -3210,12 +3210,8 @@ Internet-Draft              JSON Hyper-Schema                   May 2019
 Authors' Addresses
 
    Henry Andrews (editor)
-   Riverbed Technology
-   680 Folsom St.
-   San Francisco, CA
-   USA
 
-   EMail: handrews@riverbed.com
+   EMail: andrews_henry@yahoo.com
 
 
    Austin Wright (editor)
@@ -3245,4 +3241,8 @@ Authors' Addresses
 
 
 
-Andrews & Wright        Expires November 26, 2019              [Page 58]
+
+
+
+
+Andrews & Wright        Expires February 11, 2020              [Page 58]
