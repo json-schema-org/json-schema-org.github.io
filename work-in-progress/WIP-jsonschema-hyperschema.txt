@@ -358,22 +358,22 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 4.  Meta-Schemas and Output Schema
 
    The current URI for the JSON Hyper-Schema meta-schema is
-   <https://json-schema.org/draft/2019-08/hyper-schema#>.
+   <https://json-schema.org/draft/2019-WIP/hyper-schema#>.
 
    The current URI for this vocabulary, known as the Hyper-Schema
-   vocabulary, is: <https://json-schema.org/draft/2019-08/vocab/hyper-
+   vocabulary, is: <https://json-schema.org/draft/2019-WIP/vocab/hyper-
    schema>.
 
    The current URI for the corresponding meta-schema, which differs from
    the convenience meta-schema above in that it describes only the
    hyper-schema keywords ("base" and "link") is: <https://json-
-   schema.org/draft/2019-08/meta/hyper-schema>.
+   schema.org/draft/2019-WIP/meta/hyper-schema>.
 
    The link description format (Section 6) can be used without JSON
    Schema, and use of this format can be declared by referencing the
    normative link description schema as the schema for the data
    structure that uses the links.  The URI of the normative link
-   description schema is: <https://json-schema.org/draft/2019-08/
+   description schema is: <https://json-schema.org/draft/2019-WIP/
    links#>.
 
    JSON Hyper-Schema implementations are free to provide output in any
@@ -1718,7 +1718,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
    {
        "$id": "https://schema.example.com/entry",
-       "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
+       "$schema": "https://json-schema.org/draft/2019-WIP/hyper-schema#",
        "base": "https://example.com/api/",
        "links": [
            {
@@ -1800,7 +1800,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
    {
        "$id": "https://schema.example.com/thing",
-       "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
+       "$schema": "https://json-schema.org/draft/2019-WIP/hyper-schema#",
        "base": "https://example.com/api/",
        "type": "object",
        "required": ["data"],
@@ -1924,7 +1924,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
    {
        "$id": "https://schema.example.com/interesting-stuff",
-       "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
+       "$schema": "https://json-schema.org/draft/2019-WIP/hyper-schema#",
        "required": ["stuffWorthEmailingAbout", "email", "title"],
        "properties": {
            "title": {
@@ -2137,7 +2137,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
    {
        "$id": "https://schema.example.com/tree-node",
-       "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
+       "$schema": "https://json-schema.org/draft/2019-WIP/hyper-schema#",
        "base": "trees/{treeId}/",
        "properties": {
            "id": {"type": "integer"},
@@ -2249,7 +2249,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
    {
        "$id": "https://schema.example.com/thing",
-       "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
+       "$schema": "https://json-schema.org/draft/2019-WIP/hyper-schema#",
        "base": "https://example.com/api/",
        "type": "object",
        "required": ["data"],
@@ -2308,7 +2308,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
    {
        "$id": "https://schema.example.com/thing-collection",
-       "$schema": "https://json-schema.org/draft/2019-08/hyper-schema#",
+       "$schema": "https://json-schema.org/draft/2019-WIP/hyper-schema#",
        "base": "https://example.com/api/",
        "type": "object",
        "required": ["elements"],

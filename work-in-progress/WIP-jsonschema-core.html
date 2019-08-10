@@ -1124,8 +1124,8 @@
 <p id="rfc.section.8.5.p.2">The Core vocabulary MUST be considered mandatory at all times, in order to bootstrap the processing of further vocabularies.  Meta-schemas that use "$vocabulary" MUST explicitly list the Core vocabulary, which MUST have a value of true indicating that it is required.  </p>
 <p id="rfc.section.8.5.p.3">The behavior of a false value for this vocabulary (and only this vocabulary) is undefined, as is the behavior when "$vocabulary" is present but the Core vocabulary is not included.  However, it is RECOMMENDED that implementations detect these cases and raise an error when they occur.  </p>
 <p id="rfc.section.8.5.p.4">Meta-schemas that do not use "$vocabulary" MUST be considered to require the Core vocabulary as if its URI were present with a value of true.  </p>
-<p id="rfc.section.8.5.p.5">The current URI for the Core vocabulary is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-08/vocab/core">https://json-schema.org/draft/2019-08/vocab/core</a><span>&gt;</span>.  </p>
-<p id="rfc.section.8.5.p.6">The current URI for the corresponding meta-schema is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-08/meta/core">https://json-schema.org/draft/2019-08/meta/core</a><span>&gt;</span>.  </p>
+<p id="rfc.section.8.5.p.5">The current URI for the Core vocabulary is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-WIP/vocab/core">https://json-schema.org/draft/2019-WIP/vocab/core</a><span>&gt;</span>.  </p>
+<p id="rfc.section.8.5.p.6">The current URI for the corresponding meta-schema is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-WIP/meta/core">https://json-schema.org/draft/2019-WIP/meta/core</a><span>&gt;</span>.  </p>
 <p id="rfc.section.8.5.p.7">Updated vocabulary and meta-schema URIs MAY be published between specification drafts in order to correct errors.  Implementations SHOULD consider URIs dated after this specification draft and before the next to indicate the same syntax and semantics as those listed here.  </p>
 <h1 id="rfc.section.8.6">
 <a href="#rfc.section.8.6">8.6.</a> <a href="#example-meta-schema" id="example-meta-schema">Example Meta-Schema With Vocabulary Declarations</a>
@@ -1134,16 +1134,16 @@
 <pre>
 
 {
-  "$schema": "https://json-schema.org/draft/2019-08/core-app-example#",
-  "$id": "https://json-schema.org/draft/2019-08/core-app-example",
+  "$schema": "https://json-schema.org/draft/2019-WIP/core-app-example#",
+  "$id": "https://json-schema.org/draft/2019-WIP/core-app-example",
   "$recursiveAnchor": true,
   "$vocabulary": {
-    "https://json-schema.org/draft/2019-08/vocab/core": true,
-    "https://json-schema.org/draft/2019-08/vocab/applicator": true
+    "https://json-schema.org/draft/2019-WIP/vocab/core": true,
+    "https://json-schema.org/draft/2019-WIP/vocab/applicator": true
   },
   "allOf": [
-    {"$ref": "https://json-schema.org/draft/2019-08/meta/core"},
-    {"$ref": "https://json-schema.org/draft/2019-08/meta/applicator"}
+    {"$ref": "https://json-schema.org/draft/2019-WIP/meta/core"},
+    {"$ref": "https://json-schema.org/draft/2019-WIP/meta/applicator"}
   ],
   "patternProperties": {
     "^unevaluated.*$": false
@@ -1303,7 +1303,7 @@
 <pre>
 
 {
-    "$schema": "https://json-schema.org/draft/2019-08/schema#",
+    "$schema": "https://json-schema.org/draft/2019-WIP/schema#",
     "$id": "https://example.com/original",
 
     "properties": {
@@ -1317,7 +1317,7 @@
 }
 
 {
-    "$schema": "https://json-schema.org/draft/2019-08/schema#",
+    "$schema": "https://json-schema.org/draft/2019-WIP/schema#",
     "$id": "https://example.com/extension",
 
     "$ref": "original",
@@ -1359,7 +1359,7 @@
 <pre>
 
 {
-    "$schema": "https://json-schema.org/draft/2019-08/schema#",
+    "$schema": "https://json-schema.org/draft/2019-WIP/schema#",
     "$id": "https://example.com/original",
     "$recursiveAnchor": true,
 
@@ -1374,7 +1374,7 @@
 }
 
 {
-    "$schema": "https://json-schema.org/draft/2019-08/schema#",
+    "$schema": "https://json-schema.org/draft/2019-WIP/schema#",
     "$id": "https://example.com/extension",
     "$recursiveAnchor": true,
 
@@ -1460,8 +1460,8 @@
 <a href="#rfc.section.11">11.</a> A Vocabulary for Applying Subschemas</h1>
 <p id="rfc.section.11.p.1">This section defines a vocabulary of applicator keywords that are RECOMMENDED for use as the basis of other vocabularies.  </p>
 <p id="rfc.section.11.p.2">Meta-schemas that do not use "$vocabulary" SHOULD be considered to require this vocabulary as if its URI were present with a value of true.  </p>
-<p id="rfc.section.11.p.3">The current URI for this vocabulary, known as the Applicator vocabulary, is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-08/vocab/applicator">https://json-schema.org/draft/2019-08/vocab/applicator</a><span>&gt;</span>.  </p>
-<p id="rfc.section.11.p.4">The current URI for the corresponding meta-schema is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-08/meta/applicator">https://json-schema.org/draft/2019-08/meta/applicator</a><span>&gt;</span>.  </p>
+<p id="rfc.section.11.p.3">The current URI for this vocabulary, known as the Applicator vocabulary, is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-WIP/vocab/applicator">https://json-schema.org/draft/2019-WIP/vocab/applicator</a><span>&gt;</span>.  </p>
+<p id="rfc.section.11.p.4">The current URI for the corresponding meta-schema is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-WIP/meta/applicator">https://json-schema.org/draft/2019-WIP/meta/applicator</a><span>&gt;</span>.  </p>
 <p id="rfc.section.11.p.5">Updated vocabulary and meta-schema URIs MAY be published between specification drafts in order to correct errors.  Implementations SHOULD consider URIs dated after this specification draft and before the next to indicate the same syntax and semantics as those listed here.  </p>
 <h1 id="rfc.section.11.1">
 <a href="#rfc.section.11.1">11.1.</a> Keyword Independence</h1>
@@ -1646,7 +1646,7 @@
 <p id="rfc.section.12.3.2.p.1">The absolute, dereferenced location of the validating keyword.  The value MUST be expressed as an absolute URI, and it MUST NOT include by-reference applicators such as "$ref" or "$recursiveRef".  </p>
 <pre>
 
-https://json-schema.org/draft/2019-08/schema#/$defs/nonNegativeInteger/minimum
+https://json-schema.org/draft/2019-WIP/schema#/$defs/nonNegativeInteger/minimum
 
                         </pre>
 <p id="rfc.section.12.3.2.p.2">This information MAY be omitted only if either the relative location contains no references or if the schema does not declare an absolute URI as its "$id".  </p>
@@ -1679,7 +1679,7 @@ https://json-schema.org/draft/2019-08/schema#/$defs/nonNegativeInteger/minimum
 
 {
   "$id": "https://example.com/polygon#",
-  "$schema": "https://json-schema.org/draft/2019-08/schema#",
+  "$schema": "https://json-schema.org/draft/2019-WIP/schema#",
   "$defs": {
     "point": {
       "type": "object",
@@ -1830,13 +1830,13 @@ https://json-schema.org/draft/2019-08/schema#/$defs/nonNegativeInteger/minimum
 <a href="#rfc.section.12.4.4">12.4.4.</a> Verbose</h1>
 <p id="rfc.section.12.4.4.p.1">The "Verbose" structure is a fully realized hierarchy that exactly matches that of the schema.  This structure has applications in form generation and validation where the error's location is important.  </p>
 <p id="rfc.section.12.4.4.p.2">The primary difference between this and the "Detailed" structure is that all results are returned.  This includes sub-schema validation results that would otherwise be removed (e.g. annotations for failed validations, successful validations inside a `not` keyword, etc.).  Because of this, it is RECOMMENDED that each node also carry a `valid` property to indicate the validation result for that node.  </p>
-<p id="rfc.section.12.4.4.p.3">Because this output structure can be quite large, a smaller example is given here for brevity.  The URI of the full output structure of the example above is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-08/output/verbose-example">https://json-schema.org/draft/2019-08/output/verbose-example</a><span>&gt;</span>.  </p>
+<p id="rfc.section.12.4.4.p.3">Because this output structure can be quite large, a smaller example is given here for brevity.  The URI of the full output structure of the example above is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-WIP/output/verbose-example">https://json-schema.org/draft/2019-WIP/output/verbose-example</a><span>&gt;</span>.  </p>
 <pre>
 
 // schema
 {
   "$id": "https://example.com/polygon#",
-  "$schema": "https://json-schema.org/draft/2019-08/schema#",
+  "$schema": "https://json-schema.org/draft/2019-WIP/schema#",
   "type": "object",
   "properties": {
     "validProp": true,
@@ -1885,7 +1885,7 @@ https://json-schema.org/draft/2019-08/schema#/$defs/nonNegativeInteger/minimum
                         </pre>
 <h1 id="rfc.section.12.4.5">
 <a href="#rfc.section.12.4.5">12.4.5.</a> Output validation schemas</h1>
-<p id="rfc.section.12.4.5.p.1">For convenience, JSON Schema has been provided to validate output generated by implementations.  Its URI is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-08/output/schema">https://json-schema.org/draft/2019-08/output/schema</a><span>&gt;</span>.  </p>
+<p id="rfc.section.12.4.5.p.1">For convenience, JSON Schema has been provided to validate output generated by implementations.  Its URI is: <span>&lt;</span><a href="https://json-schema.org/draft/2019-WIP/output/schema">https://json-schema.org/draft/2019-WIP/output/schema</a><span>&gt;</span>.  </p>
 <h1 id="rfc.section.13">
 <a href="#rfc.section.13">13.</a> <a href="#hypermedia" id="hypermedia">Usage for Hypermedia</a>
 </h1>

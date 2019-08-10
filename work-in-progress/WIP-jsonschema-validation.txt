@@ -244,7 +244,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 5.  Meta-Schema
 
    The current URI for the JSON Schema Validation meta-schema is
-   <http://json-schema.org/draft/2019-08/schema#>.  For schema author
+   <http://json-schema.org/draft/2019-WIP/schema#>.  For schema author
    convenience, this meta-schema describes all vocabularies defined in
    this specification and the JSON Schema Core specification.
    Individual vocabulary and vocabulary meta-schema URIs are given for
@@ -268,11 +268,11 @@ Internet-Draft           JSON Schema Validation              August 2019
    true.
 
    The current URI for this vocabulary, known as the Validation
-   vocabulary, is: <https://json-schema.org/draft/2019-08/vocab/
+   vocabulary, is: <https://json-schema.org/draft/2019-WIP/vocab/
    validation>.
 
    The current URI for the corresponding meta-schema is: <https://json-
-   schema.org/draft/2019-08/meta/validation>.
+   schema.org/draft/2019-WIP/meta/validation>.
 
 
 
@@ -577,10 +577,10 @@ Internet-Draft           JSON Schema Validation              August 2019
    false.  See the Implementation Requirements below for details.
 
    The current URI for this vocabulary, known as the Format vocabulary,
-   is: <https://json-schema.org/draft/2019-08/vocab/format>.
+   is: <https://json-schema.org/draft/2019-WIP/vocab/format>.
 
    The current URI for the corresponding meta-schema is: <https://json-
-   schema.org/draft/2019-08/meta/format>.
+   schema.org/draft/2019-WIP/meta/format>.
 
 7.2.  Implementation Requirements
 
@@ -922,10 +922,10 @@ Internet-Draft           JSON Schema Validation              August 2019
    true.
 
    The current URI for this vocabulary, known as the Content vocabulary,
-   is: <https://json-schema.org/draft/2019-08/vocab/content>.
+   is: <https://json-schema.org/draft/2019-WIP/vocab/content>.
 
    The current URI for the corresponding meta-schema is: <https://json-
-   schema.org/draft/2019-08/meta/content>.
+   schema.org/draft/2019-WIP/meta/content>.
 
 8.2.  Implementation Requirements
 
@@ -1123,11 +1123,11 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
    The current URI for this vocabulary, known as the Meta-Data
-   vocabulary, is: <https://json-schema.org/draft/2019-08/vocab/meta-
+   vocabulary, is: <https://json-schema.org/draft/2019-WIP/vocab/meta-
    data>.
 
    The current URI for the corresponding meta-schema is: <https://json-
-   schema.org/draft/2019-08/meta/meta-data>.
+   schema.org/draft/2019-WIP/meta/meta-data>.
 
 9.1.  "title" and "description"
 

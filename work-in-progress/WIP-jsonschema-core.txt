@@ -1371,10 +1371,10 @@ Internet-Draft                 JSON Schema                   August 2019
    of true.
 
    The current URI for the Core vocabulary is: <https://json-schema.org/
-   draft/2019-08/vocab/core>.
+   draft/2019-WIP/vocab/core>.
 
    The current URI for the corresponding meta-schema is: <https://json-
-   schema.org/draft/2019-08/meta/core>.
+   schema.org/draft/2019-WIP/meta/core>.
 
    Updated vocabulary and meta-schema URIs MAY be published between
    specification drafts in order to correct errors.  Implementations
@@ -1413,16 +1413,16 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
  {
-   "$schema": "https://json-schema.org/draft/2019-08/core-app-example#",
-   "$id": "https://json-schema.org/draft/2019-08/core-app-example",
+   "$schema": "https://json-schema.org/draft/2019-WIP/core-app-example#",
+   "$id": "https://json-schema.org/draft/2019-WIP/core-app-example",
    "$recursiveAnchor": true,
    "$vocabulary": {
-     "https://json-schema.org/draft/2019-08/vocab/core": true,
-     "https://json-schema.org/draft/2019-08/vocab/applicator": true
+     "https://json-schema.org/draft/2019-WIP/vocab/core": true,
+     "https://json-schema.org/draft/2019-WIP/vocab/applicator": true
    },
    "allOf": [
-     {"$ref": "https://json-schema.org/draft/2019-08/meta/core"},
-     {"$ref": "https://json-schema.org/draft/2019-08/meta/applicator"}
+     {"$ref": "https://json-schema.org/draft/2019-WIP/meta/core"},
+     {"$ref": "https://json-schema.org/draft/2019-WIP/meta/applicator"}
    ],
    "patternProperties": {
      "^unevaluated.*$": false
@@ -1748,7 +1748,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
    {
-       "$schema": "https://json-schema.org/draft/2019-08/schema#",
+       "$schema": "https://json-schema.org/draft/2019-WIP/schema#",
        "$id": "https://example.com/original",
 
        "properties": {
@@ -1762,7 +1762,7 @@ Internet-Draft                 JSON Schema                   August 2019
    }
 
    {
-       "$schema": "https://json-schema.org/draft/2019-08/schema#",
+       "$schema": "https://json-schema.org/draft/2019-WIP/schema#",
        "$id": "https://example.com/extension",
 
        "$ref": "original",
@@ -1860,7 +1860,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
    {
-       "$schema": "https://json-schema.org/draft/2019-08/schema#",
+       "$schema": "https://json-schema.org/draft/2019-WIP/schema#",
        "$id": "https://example.com/original",
        "$recursiveAnchor": true,
 
@@ -1875,7 +1875,7 @@ Internet-Draft                 JSON Schema                   August 2019
    }
 
    {
-       "$schema": "https://json-schema.org/draft/2019-08/schema#",
+       "$schema": "https://json-schema.org/draft/2019-WIP/schema#",
        "$id": "https://example.com/extension",
        "$recursiveAnchor": true,
 
@@ -2135,11 +2135,11 @@ Internet-Draft                 JSON Schema                   August 2019
    true.
 
    The current URI for this vocabulary, known as the Applicator
-   vocabulary, is: <https://json-schema.org/draft/2019-08/vocab/
+   vocabulary, is: <https://json-schema.org/draft/2019-WIP/vocab/
    applicator>.
 
    The current URI for the corresponding meta-schema is: <https://json-
-   schema.org/draft/2019-08/meta/applicator>.
+   schema.org/draft/2019-WIP/meta/applicator>.
 
    Updated vocabulary and meta-schema URIs MAY be published between
    specification drafts in order to correct errors.  Implementations
@@ -2678,7 +2678,7 @@ Internet-Draft                 JSON Schema                   August 2019
    by-reference applicators such as "$ref" or "$recursiveRef".
 
 
-https://json-schema.org/draft/2019-08/schema#/$defs/nonNegativeInteger/minimum
+https://json-schema.org/draft/2019-WIP/schema#/$defs/nonNegativeInteger/minimum
 
 
 
@@ -2748,7 +2748,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
    {
      "$id": "https://example.com/polygon#",
-     "$schema": "https://json-schema.org/draft/2019-08/schema#",
+     "$schema": "https://json-schema.org/draft/2019-WIP/schema#",
      "$defs": {
        "point": {
          "type": "object",
@@ -3033,14 +3033,14 @@ Internet-Draft                 JSON Schema                   August 2019
 
    Because this output structure can be quite large, a smaller example
    is given here for brevity.  The URI of the full output structure of
-   the example above is: <https://json-schema.org/draft/2019-08/output/
+   the example above is: <https://json-schema.org/draft/2019-WIP/output/
    verbose-example>.
 
 
 // schema
 {
   "$id": "https://example.com/polygon#",
-  "$schema": "https://json-schema.org/draft/2019-08/schema#",
+  "$schema": "https://json-schema.org/draft/2019-WIP/schema#",
   "type": "object",
   "properties": {
     "validProp": true,
@@ -3099,7 +3099,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
    For convenience, JSON Schema has been provided to validate output
    generated by implementations.  Its URI is: <https://json-schema.org/
-   draft/2019-08/output/schema>.
+   draft/2019-WIP/output/schema>.
 
 13.  Usage for Hypermedia
 
