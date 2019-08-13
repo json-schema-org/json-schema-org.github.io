@@ -64,6 +64,9 @@ Validators
 
 Benchmarks that compare at least two implementations supporting draft-06+ may be listed here.
 
+-   Go
+    -   [validator-benchmarks](https://github.com/TheWildBlue/validator-benchmarks) - benchmark of Go JSON Schema validators based on official test suite
+
 -   JavaScript
     -   [json-schema-benchmark](https://github.com/ebdrup/json-schema-benchmark) - an independent benchmark for Node.js JSON-schema validators based on JSON-Schema Test Suite (MIT)
 
