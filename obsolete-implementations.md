@@ -129,7 +129,7 @@ Hyper-Schema
   {% endfor %}
 </ul>
 
-Schema generation
+Schema generators
 -----------------
 
 -   Python
@@ -142,6 +142,14 @@ Schema generation
     -   [JSON Schema Generator](http://visualstudiogallery.msdn.microsoft.com/b4515ef8-a518-41ca-b48c-bb1fd4e6faf7) - free extension
 -   Sparx Enterprise Architect
     -   [API-Add-In](https://github.com/bayeslife/api-add-in) - Sparx EA extension for exporting JSON Schema from UML models
+
+Generators from schemas
+-----------------------
+
+#### Data from schemas
+
+-   JavaScript
+    -   [json-schema-generator](https://github.com/json-schema-faker) (MIT) - JSON-Schema + fake data generators
 
 Data parsing and code generation
 --------------------------------
