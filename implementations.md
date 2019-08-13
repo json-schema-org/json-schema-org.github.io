@@ -179,7 +179,7 @@ are the only keywords that changed.
 -   Online (web tool)
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 -   PHP
-    -  [php-code-builder](https://github.com/swaggest/php-code-builder)(MIT) - generates PHP mapping structures defined by JSON schema using [swaggest/json-schema](https://github.com/swaggest/php-json-schema) *supports Draft 7*
+    -  [php-code-builder](https://github.com/swaggest/php-code-builder) (MIT) - generates PHP mapping structures defined by JSON schema using [swaggest/json-schema](https://github.com/swaggest/php-json-schema) *supports Draft 7*
 
 #### Web UI generation
 
@@ -203,7 +203,7 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [React JSON Schema Form (mozilla)](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
     -   [React Schema Form (networknt)](https://github.com/networknt/react-schema-form) (MIT)
     -   [uniforms (Vazco)](https://github.com/vazco/uniforms) (MIT)
-    -   [FormSchema (demsking)](https://gitlab.com/formschema/native) *Generate a form using JSON Schema and Vue.js* (MIT)
+    -   [FormSchema (demsking)](https://gitlab.com/formschema/native) (MIT) - generate a form using JSON Schema and Vue.js  *supports Draft 7*
 
 #### Data from schemas
 
