@@ -44,7 +44,7 @@ keyword | change | notes
 
 ### Formats
 
-Numerous formats were added, clarified, or restored from older drafts.
+Two formats were added.
 
 format | change | notes
 ---- | ---- | ----
