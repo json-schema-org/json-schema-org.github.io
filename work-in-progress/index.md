@@ -7,11 +7,13 @@ permalink: /work-in-progress
 * TOC
 {:toc}
 
-## The Next Draft (by whatever name) Is Ready for Final Pre-Publication Review!
+## The Next Draft is Ready for Final Pre-Publication Review!
 
 The forthcoming draft is now feature-frozen and has gone through the initial four-week pre-publication review period.
 
 _**UPDATE: July 28th, 2019** We continue to incorporate feedback and clarify sections of the new draft.  We expect to finally publish the draft during August._
+
+To see what changes are involved, read the [release notes](./WIP-json-schema-release-notes.md).
 
 The following sorts of feedback are particularly desired:
 
@@ -19,8 +21,7 @@ The following sorts of feedback are particularly desired:
 * Contradictions, inconsistencies and other bugs
 * Anything so egregious that implementation would be infeasible or impossible
 
-New features or major changes to existing features will be deferred to a future draft,
-and work on the next draft will begin immediately after this one is published.
+Work on the next draft will begin immediately after this one is published.
 
 ## What Is This Draft Called, Anyway?
 
@@ -88,9 +89,9 @@ _**NOTE:** when published, the `.json` will be removed from the final URI_
 * [WIP: meta/meta-data.json](/work-in-progress/meta/WIP-meta-data.json) (meta-data annotations, from the validation spec)
 * [WIP: meta/format.json](/work-in-progress/meta/WIP-format.json) (the format keyword, from the validation spec)
 * [WIP: meta/content.json](/work-in-progress/meta/WIP-content.json) (content keywords, from the validation spec)
-* [WIP: meta/hyper-schema.json](/work-in-progress/meta/WIP-hyper-schema.json) (hyper-schema keywords, from the hyper-shema spec)
+* [WIP: meta/hyper-schema.json](/work-in-progress/meta/WIP-hyper-schema.json) (hyper-schema keywords, from the hyper-schema spec)
 
-### Output schema:
+### Output Schema
 
 The new draft also introduces recommended output formats for reporting errors and annotations.
 
@@ -100,12 +101,12 @@ _**NOTE:** when published, the `.json` will be removed from the final URI_
 * [WIP: verbose-example.json](/work-in-progress/output/WIP-verbose-example.json) (example of the most verbose output format)
 * [WIP: hyper-schema.json](/work-in-progress/output/WIP-hyper-schema.json) (format used by the proposed hyper-schema test suite, and used in examples in the specification)
 
-## Providing Feedback and Tracking Progress in GitHub
+## Get Involved
 
 We are **particularly interested** in feedback on whether the wording and concepts is an
 improvement in terms of how easy it is to understand and learn the specifications.
 
-Note that _all drafts have Changelog appendicies_, for a concise list of notable changes.
+Note that _all drafts have Changelog appendices_, for a concise list of notable changes.
 
 * The active sources are on the
 ["master" branch of json-schema-org/json-schema-spec](https://github.com/json-schema-org/json-schema-spec)
@@ -117,4 +118,3 @@ Note that _all drafts have Changelog appendicies_, for a concise list of notable
 * [file an issue](https://github.com/json-schema-org/json-schema-spec/issues/new?milestone=draft-08)
   or [join us on Slack](https://join.slack.com/t/json-schema/shared_invite/enQtMjk1NDcyNDI2NTAwLTcyYmYwMjdmMmUxNzZjYzIxNGU2YjdkNzdlOGZiNjIwNDI2M2Y3NmRkYjA4YmMwODMwYjgyOTFlNWZjZjAyNjg) to submit feedback
   _(technically there is also a [mailing list](https://groups.google.com/forum/#!forum/json-schema) but it gets very little traffic and is not closely monitored)_
-
