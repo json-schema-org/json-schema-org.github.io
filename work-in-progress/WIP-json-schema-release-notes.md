@@ -3,9 +3,10 @@ title: JSON Schema Draft-07 Release Notes
 layout: page
 ---
 
-There are a few breaking changes with newer keywords based on community feedback,
-and internally there has been a lot of restructuring through a new concept called
-vocabularies, but on the whole things are mostly the same.
+There are a few non-breaking changes with keywords being deprecated and slates
+for removal, and a few newer keywords based on community feedback. Internally
+there has been a lot of restructuring through a new concept called vocabularies,
+but on the whole things are mostly the same.
 
 * TOC
 {:toc}
@@ -29,14 +30,13 @@ vocabularies, but on the whole things are mostly the same.
 
 keyword | change | notes
 ---- | ---- | ----
-[`"definitions"`](json-schema-core.html#rfc.section.TODO) | **removed** | use new "$defs" core keyword
+[`"definitions"`](json-schema-core.html#rfc.section.TODO) | **renamed** | use new "$defs" core keyword
 [`"unevaluatedProperties" and "unevaluatedItems"`](json-schema-core.html#rfc.section.TODO) | **added** |
 [`"$ref"`](json-schema-core.html#rfc.section.TODO) | **changed** | can now have siblings (keywords next to it)
 [`"$defs"`](json-schema-core.html#rfc.section.10.TODO) | **added** | moved over to core from validation
 `"dependencies"` | **removed** | use "dependentRequired" or "dependentSchemas"
 [`"dependentRequired"`](json-schema-core.html#rfc.section.10.TODO) | **added** | added to core schema
 [`"dependentSchemas"`](json-schema-core.html#rfc.section.10.TODO) | **added** | added to core schema
-[`"applicator"`](json-schema-core.html#rfc.section.10.TODO) | **moved** | from validation to core, but is functionally identical
 [`"minContains" and "maxContains"`](json-schema-validation.html#rfc.section.TODO) | added |
 [`"contentSchema"`](json-schema-validation.html#rfc.section.TODO) | added | allows applying a schema to a string-encoded document
 [`"deprecated"`](json-schema-validation.html#rfc.section.TODO) | added |
