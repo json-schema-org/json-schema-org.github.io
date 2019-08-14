@@ -64,6 +64,9 @@ Validators
 
 Benchmarks that compare at least two implementations supporting draft-06+ may be listed here.
 
+-   Go
+    -   [validator-benchmarks](https://github.com/TheWildBlue/validator-benchmarks) - benchmark of Go JSON Schema validators based on official test suite
+
 -   JavaScript
     -   [json-schema-benchmark](https://github.com/ebdrup/json-schema-benchmark) - an independent benchmark for Node.js JSON-schema validators based on JSON-Schema Test Suite (MIT)
 
@@ -149,6 +152,8 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
     -   [typescript-json-schema](https://github.com/YousefED/typescript-json-schema)
 -   Python
     -   [Pydantic](https://pydantic-docs.helpmanual.io/) (MIT) - generates schemas from Python models based on Python 3.6+ type hints.
+-   Java
+    -   [jsonschema-generator](https://github.com/victools/jsonschema-generator) (Apache 2.0) - generates schemas from Java types *supports Draft 7*
 
 #### From data
 
@@ -180,6 +185,8 @@ are the only keywords that changed.
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 -   PHP
     -  [php-code-builder](https://github.com/swaggest/php-code-builder) (MIT) - generates PHP mapping structures defined by JSON schema using [swaggest/json-schema](https://github.com/swaggest/php-json-schema) *supports Draft 7*
+-   Elm
+    -  [json-schema-to-elm](https://github.com/dragonwasrobot/json-schema-to-elm) - generates Elm types, JSON decoders+encoders, and fuzz tests from one or more JSON Schema files, using [dragonwasrobot/json_schema](https://github.com/dragonwasrobot/json_schema) *supports Draft 7*
 
 #### Web UI generation
 
@@ -192,14 +199,11 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [Angular Schema Form](https://github.com/json-schema-form/angular-schema-form) (MIT)
     -   [Angular2 Schema Form](https://github.com/makinacorpus/angular2-schema-form) *unrelated to Angular Schema Form* (MIT)
     -   [Angular6-json-schema-form](https://github.com/hamzahamidi/Angular6-json-schema-form) (MIT)
-    -   [JSON Editor](https://github.com/jdorn/json-editor) (MIT)
+    -   [JSON Editor](https://github.com/json-editor/json-editor) (MIT)
     -   [JSON Form (joshfire)](https://github.com/joshfire/jsonform) (joshfire) (MIT)
     -   [Json Forms (brutusin)](https://github.com/brutusin/json-forms) (brutusin) (MIT)
     -   [JSONForms (jsonforms.io)](https://jsonforms.io/) (EclipseSource) (MIT)
-    -   [Jsonary](https://github.com/jsonary-js/) (MIT)
     -   [Liform-react](https://github.com/Limenius/liform-react) (MIT)
-    -   [Metawidget](https://metawidget.org/) (LGPL)
-    -   [pure-form webcomponent](https://github.com/john-doherty/pure-form) (MIT)
     -   [React JSON Schema Form (mozilla)](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
     -   [React Schema Form (networknt)](https://github.com/networknt/react-schema-form) (MIT)
     -   [uniforms (Vazco)](https://github.com/vazco/uniforms) (MIT)
@@ -232,7 +236,8 @@ the utility, and decided on a case-by-case basis.
 
 #### Schema draft migration
 
-_None currently support draft-06 or later._
+-   Python
+    -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  creates [Hypothesis](https://hypothesis.works/) strategies for documents which match any schema, even with complex and interacting constraints.
 
 #### Format converters
 
@@ -249,12 +254,14 @@ _None currently support draft-06 or later._
 #### Testing
 
 -   Python
+    -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  creates [Hypothesis](https://hypothesis.works/) strategies for documents which match any schema, even with complex and interacting constraints.
     -   [hypo\_schema](https://github.com/mlakewood/hypo_schema) (BSD-2-Clause) Creates generators for Hypothesis from JSON Schema
-    
+
 #### Editors
 
 _TODO: Sort by draft support._
 
+-   [Altova XMLSpy 2019r3](https://www.altova.com/xmlspy-xml-editor#json_schema) - *Graphical JSON Schema editor for draft-06 and draft-7, as well as validation of JSON files based on JSON Schema*
 -   [Liquid XML Studio 2016](https://www.liquid-technologies.com/json-schema-editor) - *Graphical JSON schema editor for draft 4, context sensitive intellisense for JSON documents.*
 -   [Visual Studio 2013](https://www.visualstudio.com/) - *Auto-completion and tooltips based on JSON schema draft 3 and draft 4*
 -   [JSONBuddy](https://www.json-buddy.com/) - *Text and grid-style JSON editor and validator with context sensitive entry-helpers and sample data generation based on JSON schema. Support for draft 4, draft 6 and draft 7.*
@@ -264,7 +271,7 @@ _TODO: Sort by draft support._
 -   [JSON Schema Editor](https://json-schema-editor.tangramjs.com) - *An intuitive editor for JSON schema online*
 -   [JSON Editor](https://json-editor.tangramjs.com) - *An online, schema-aware editor for JSON document*
 -   [Eclipse IDE](https://www.eclipse.org/downloads/eclipse-packages) - *Rich JSON edition supporting schema for instantaneous validation and error reporting, completion, documentation.*
--   [WebStorm](https://www.jetbrains.com/webstorm/), [IntelliJ IDEA](https://www.jetbrains.com/idea/), and other [JetBrains IDEs](https://www.jetbrains.com/products.html?fromMenu#type=ide) - *Code completion, documentation, and validation for JSON files using JSON Schema*
+-   [WebStorm](https://www.jetbrains.com/webstorm/), [IntelliJ IDEA](https://www.jetbrains.com/idea/), and other [JetBrains IDEs](https://www.jetbrains.com/products.html?fromMenu#type=ide) - *Code completion, documentation, and validation for JSON and YAML files using JSON Schema*
 -   [JsonDraft](https://jsondraft.com/) - *Tree view JSON and JSON Schema editor online. Create and Save reusable components, Share JSON.*
 
 
@@ -272,3 +279,9 @@ Schema Repositories
 -------------------
 
 -   [SchemaStore.org](http://schemastore.org/json/) - validate against common JSON Schemas
+
+
+Schema Linter
+-------------
+
+-   [json-schema-linter](https://www.json-schema-linter.com/) - Lint/validate/parse json-schema itself and find out out typo, missing properties, missing required keys etc. Supports draft 4, 6, and 7.

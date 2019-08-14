@@ -7,6 +7,9 @@ permalink: /
 ***The current version is [draft-07](specification.html)!***
 {: style="color:gray; font-size: 150%; text-align: center;"}
 
+***The next draft work-in-progress is [in final review](work-in-progress)!***
+{: style="color:red; font-size: 150%; text-align: center;"}
+
 **JSON Schema** is a vocabulary that allows you to **annotate** and **validate** JSON documents.
 
 
@@ -37,21 +40,13 @@ permalink: /
 
 ## Project Status
 
-### Update as of 31 March 2019
+### Update as of 27 May 2019
 
-**You may be wondering _what in the world is going on with this draft?_  The short version is: we are entering the home stretch.  There are some ideas for simplifying `$id` that we are considering, and then there will be a final review period for feedback on overall flow and clarity.**
-
-As for the long version:  The original intent was to publish by the time the previous draft by or at least soon after the current Core and Validation drafts expired on 20 September, 2018.  The project is a volunteer project, and one editor was driving most of the large changes in this draft.
-
-Unfortunately, that editor had a lot of Real Life Stuff(tm) to deal with this past year, including changing jobs (which put things on hold from about May through August or so) and then a run of minor health issues (which put things on hold from November through February).  Other contributors made progress during those times,
-
-As of March, everyone is back to working towards the publication of the draft as schedules permit.
-
-We expect to publish a new round of drafts (Core, Validation, Hyper-Schema, Relative JSON Pointer) in the next month or two, and are actively working on the last few PRs.  While the drafts are currently expired, they are still under active development.  This project is staffed by volunteers, and life occasionally disregards IETF expiration schedules.
+**The forthcoming draft is in [final review](work-in-progress).**
 
 This draft has also taken more time than expected because it tackles deep, long-term issues that have long been a challenge for JSON Schema.  This includes building in a formal extensibility mechanism so that we can more easily draw a line to finalize the contents of the Core and Validation specifications.
 
-Progress on the next set of Internet-Drafts can be tracked on GitHub. The [draft-08](https://github.com/json-schema-org/json-schema-spec/milestone/6) milestone will track the evolving scope of the draft (although see [issue #612](https://github.com/json-schema-org/json-schema-spec/issues/612) for a discussion of whether "draft-08" is the right name for this milestone).
+Additionally, numerous life issues reduced the availability of key contributors during the process.
 
 ### The Path to Standardization
 
@@ -102,4 +97,4 @@ Questions? Feeling helpful? Get involved on:
 
 * [GitHub](http://github.com/json-schema-org/json-schema-spec)
 * [Google Groups](https://groups.google.com/forum/#!forum/json-schema)
-* [Slack](https://join.slack.com/t/json-schema/shared_invite/enQtMjk1NDcyNDI2NTAwLTcyYmYwMjdmMmUxNzZjYzIxNGU2YjdkNzdlOGZiNjIwNDI2M2Y3NmRkYjA4YmMwODMwYjgyOTFlNWZjZjAyNjg)
+* [Slack](https://join.slack.com/t/json-schema/shared_invite/enQtNjc5NTk0MzkzODg5LTVlZGIxNmVhMGY2MWFlYTdiNDQ5NWFiZGUwOThhNmYxZDE0YzA5YjRiOTA5MGY4ZTZlZGZhZDFmYTY4NWM2N2Y)
