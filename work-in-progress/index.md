@@ -43,6 +43,10 @@ and expiration dates of the IETF documents.  This will make it more clear when a
 meta-schema is produced, and also make it more obvious that the IETF and meta-schema identifiers
 are not expected to match exactly.
 
+## Change Log
+
+To see what changes are involved, read the [release notes](./WIP-json-schema-release-notes.md).
+
 ## Pre-Built Review Documents
 
 To encourage as many reviewers as possible, pre-built documents are available.  These may
