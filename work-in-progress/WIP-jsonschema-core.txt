@@ -5,11 +5,11 @@
 Internet Engineering Task Force                           A. Wright, Ed.
 Internet-Draft
 Intended status: Informational                           H. Andrews, Ed.
-Expires: February 11, 2020
+Expires: February 17, 2020
                                                           B. Hutton, Ed.
                                                Wellcome Sanger Institute
                                                                G. Dennis
-                                                         August 10, 2019
+                                                         August 16, 2019
 
 
         JSON Schema: A Media Type for Describing JSON Documents
@@ -53,12 +53,12 @@ Status of This Memo
 
 
 
-Wright, et al.          Expires February 11, 2020               [Page 1]
+Wright, et al.          Expires February 17, 2020               [Page 1]
 
 Internet-Draft                 JSON Schema                   August 2019
 
 
-   This Internet-Draft will expire on February 11, 2020.
+   This Internet-Draft will expire on February 17, 2020.
 
 Copyright Notice
 
@@ -79,19 +79,19 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   4
    2.  Conventions and Terminology . . . . . . . . . . . . . . . . .   4
-   3.  Overview  . . . . . . . . . . . . . . . . . . . . . . . . . .   5
-   4.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   6
-     4.1.  JSON Document . . . . . . . . . . . . . . . . . . . . . .   6
+   3.  Overview  . . . . . . . . . . . . . . . . . . . . . . . . . .   4
+   4.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   5
+     4.1.  JSON Document . . . . . . . . . . . . . . . . . . . . . .   5
      4.2.  Instance  . . . . . . . . . . . . . . . . . . . . . . . .   6
        4.2.1.  Instance Data Model . . . . . . . . . . . . . . . . .   6
        4.2.2.  Instance Media Types  . . . . . . . . . . . . . . . .   7
        4.2.3.  Instance Equality . . . . . . . . . . . . . . . . . .   7
      4.3.  JSON Schema Documents . . . . . . . . . . . . . . . . . .   8
        4.3.1.  JSON Schema Objects and Keywords  . . . . . . . . . .   8
-       4.3.2.  Boolean JSON Schemas  . . . . . . . . . . . . . . . .   9
+       4.3.2.  Boolean JSON Schemas  . . . . . . . . . . . . . . . .   8
        4.3.3.  Schema Vocabularies . . . . . . . . . . . . . . . . .   9
        4.3.4.  Meta-Schemas  . . . . . . . . . . . . . . . . . . . .   9
-       4.3.5.  Root Schema and Subschemas  . . . . . . . . . . . . .  10
+       4.3.5.  Root Schema and Subschemas  . . . . . . . . . . . . .   9
    5.  Fragment Identifiers  . . . . . . . . . . . . . . . . . . . .  10
    6.  General Considerations  . . . . . . . . . . . . . . . . . . .  11
      6.1.  Range of JSON Values  . . . . . . . . . . . . . . . . . .  11
@@ -109,85 +109,73 @@ Table of Contents
 
 
 
-Wright, et al.          Expires February 11, 2020               [Page 2]
+Wright, et al.          Expires February 17, 2020               [Page 2]
 
 Internet-Draft                 JSON Schema                   August 2019
 
 
        7.5.1.  Assertions and Instance Primitive Types . . . . . . .  16
-     7.6.  Annotations . . . . . . . . . . . . . . . . . . . . . . .  16
+     7.6.  Annotations . . . . . . . . . . . . . . . . . . . . . . .  17
        7.6.1.  Collecting Annotations  . . . . . . . . . . . . . . .  17
-   8.  Meta-Schemas and Vocabularies . . . . . . . . . . . . . . . .  20
-     8.1.  The "$schema" Keyword . . . . . . . . . . . . . . . . . .  21
-     8.2.  The "$vocabulary" Keyword . . . . . . . . . . . . . . . .  21
-       8.2.1.  Default vocabularies  . . . . . . . . . . . . . . . .  22
-       8.2.2.  Non-inheritability of vocabularies  . . . . . . . . .  23
-     8.3.  Detecting a Meta-Schema . . . . . . . . . . . . . . . . .  23
-     8.4.  Best Practices for Vocabulary and Meta-Schema Authors . .  23
-     8.5.  The JSON Schema Core Vocabulary . . . . . . . . . . . . .  25
-     8.6.  Example Meta-Schema With Vocabulary Declarations  . . . .  25
-   9.  Base URI and Dereferencing  . . . . . . . . . . . . . . . . .  27
-     9.1.  Initial Base URI  . . . . . . . . . . . . . . . . . . . .  27
-     9.2.  The "$id" Keyword . . . . . . . . . . . . . . . . . . . .  27
-       9.2.1.  Identifying the root schema . . . . . . . . . . . . .  27
-       9.2.2.  Changing the base URI within a schema file  . . . . .  28
-       9.2.3.  Location-independent identifiers  . . . . . . . . . .  28
-       9.2.4.  Schema identification examples  . . . . . . . . . . .  28
-     9.3.  Schema References . . . . . . . . . . . . . . . . . . . .  30
-       9.3.1.  Direct References with "$ref" . . . . . . . . . . . .  30
-       9.3.2.  Recursive References with "$recursiveRef" and
-               "$recursiveAnchor"  . . . . . . . . . . . . . . . . .  31
-       9.3.3.  Guarding Against Infinite Recursion . . . . . . . . .  35
-       9.3.4.  References to Possible Non-Schemas  . . . . . . . . .  35
-       9.3.5.  Loading a referenced schema . . . . . . . . . . . . .  36
-       9.3.6.  Dereferencing . . . . . . . . . . . . . . . . . . . .  36
-     9.4.  Schema Re-Use With "$defs"  . . . . . . . . . . . . . . .  37
-   10. Comments With "$comment"  . . . . . . . . . . . . . . . . . .  38
-   11. A Vocabulary for Applying Subschemas  . . . . . . . . . . . .  38
-     11.1.  Keyword Independence . . . . . . . . . . . . . . . . . .  39
-     11.2.  Keywords for Applying Subschemas in Place  . . . . . . .  39
-       11.2.1.  Keywords for Applying Subschemas With Boolean Logic   39
-       11.2.2.  Keywords for Applying Subschemas Conditionally . . .  40
-     11.3.  Keywords for Applying Subschemas to Child Instances  . .  42
-       11.3.1.  Keywords for Applying Subschemas to Arrays . . . . .  42
-       11.3.2.  Keywords for Applying Subschemas to Objects  . . . .  44
-   12. Output Formatting . . . . . . . . . . . . . . . . . . . . . .  47
-     12.1.  Format . . . . . . . . . . . . . . . . . . . . . . . . .  47
-     12.2.  Output Formats . . . . . . . . . . . . . . . . . . . . .  47
-     12.3.  Minimum Information  . . . . . . . . . . . . . . . . . .  48
-       12.3.1.  Keyword Relative Location  . . . . . . . . . . . . .  48
-       12.3.2.  Keyword Absolute Location  . . . . . . . . . . . . .  48
-       12.3.3.  Instance Location  . . . . . . . . . . . . . . . . .  49
-       12.3.4.  Error or Annotation  . . . . . . . . . . . . . . . .  49
-       12.3.5.  Nested Results . . . . . . . . . . . . . . . . . . .  49
-     12.4.  Output Structure . . . . . . . . . . . . . . . . . . . .  49
-       12.4.1.  Flag . . . . . . . . . . . . . . . . . . . . . . . .  51
+   8.  The JSON Schema Core Vocabulary . . . . . . . . . . . . . . .  21
+     8.1.  Meta-Schemas and Vocabularies . . . . . . . . . . . . . .  22
+       8.1.1.  The "$schema" Keyword . . . . . . . . . . . . . . . .  23
+       8.1.2.  The "$vocabulary" Keyword . . . . . . . . . . . . . .  23
+       8.1.3.  Updates to Meta-Schema and Vocabulary URIs  . . . . .  25
+       8.1.4.  Detecting a Meta-Schema . . . . . . . . . . . . . . .  25
+       8.1.5.  Best Practices for Vocabulary and Meta-Schema Authors  25
+       8.1.6.  Example Meta-Schema With Vocabulary Declarations  . .  27
+     8.2.  Base URI and Dereferencing  . . . . . . . . . . . . . . .  28
+       8.2.1.  Initial Base URI  . . . . . . . . . . . . . . . . . .  28
+       8.2.2.  The "$id" Keyword . . . . . . . . . . . . . . . . . .  28
+       8.2.3.  Schema References . . . . . . . . . . . . . . . . . .  31
+       8.2.4.  Schema Re-Use With "$defs"  . . . . . . . . . . . . .  38
+     8.3.  Comments With "$comment"  . . . . . . . . . . . . . . . .  39
+   9.  A Vocabulary for Applying Subschemas  . . . . . . . . . . . .  39
+     9.1.  Keyword Independence  . . . . . . . . . . . . . . . . . .  40
+     9.2.  Keywords for Applying Subschemas in Place . . . . . . . .  40
+       9.2.1.  Keywords for Applying Subschemas With Boolean Logic .  40
+       9.2.2.  Keywords for Applying Subschemas Conditionally  . . .  41
+     9.3.  Keywords for Applying Subschemas to Child Instances . . .  43
+       9.3.1.  Keywords for Applying Subschemas to Arrays  . . . . .  43
+       9.3.2.  Keywords for Applying Subschemas to Objects . . . . .  45
+   10. Output Formatting . . . . . . . . . . . . . . . . . . . . . .  48
+     10.1.  Format . . . . . . . . . . . . . . . . . . . . . . . . .  48
+     10.2.  Output Formats . . . . . . . . . . . . . . . . . . . . .  48
+     10.3.  Minimum Information  . . . . . . . . . . . . . . . . . .  49
+       10.3.1.  Keyword Relative Location  . . . . . . . . . . . . .  49
+       10.3.2.  Keyword Absolute Location  . . . . . . . . . . . . .  49
+       10.3.3.  Instance Location  . . . . . . . . . . . . . . . . .  50
+       10.3.4.  Error or Annotation  . . . . . . . . . . . . . . . .  50
+       10.3.5.  Nested Results . . . . . . . . . . . . . . . . . . .  50
+     10.4.  Output Structure . . . . . . . . . . . . . . . . . . . .  50
+       10.4.1.  Flag . . . . . . . . . . . . . . . . . . . . . . . .  52
+       10.4.2.  Basic  . . . . . . . . . . . . . . . . . . . . . . .  52
+       10.4.3.  Detailed . . . . . . . . . . . . . . . . . . . . . .  53
+       10.4.4.  Verbose  . . . . . . . . . . . . . . . . . . . . . .  55
+       10.4.5.  Output validation schemas  . . . . . . . . . . . . .  57
+   11. Usage for Hypermedia  . . . . . . . . . . . . . . . . . . . .  57
+     11.1.  Linking to a Schema  . . . . . . . . . . . . . . . . . .  57
+     11.2.  Identifying a Schema via a Media Type Parameter  . . . .  57
+     11.3.  Usage Over HTTP  . . . . . . . . . . . . . . . . . . . .  59
+   12. Security Considerations . . . . . . . . . . . . . . . . . . .  59
+   13. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  60
+     13.1.  application/schema+json  . . . . . . . . . . . . . . . .  60
+     13.2.  application/schema-instance+json . . . . . . . . . . . .  61
 
 
 
-Wright, et al.          Expires February 11, 2020               [Page 3]
+Wright, et al.          Expires February 17, 2020               [Page 3]
 
 Internet-Draft                 JSON Schema                   August 2019
 
 
-       12.4.2.  Basic  . . . . . . . . . . . . . . . . . . . . . . .  51
-       12.4.3.  Detailed . . . . . . . . . . . . . . . . . . . . . .  52
-       12.4.4.  Verbose  . . . . . . . . . . . . . . . . . . . . . .  54
-       12.4.5.  Output validation schemas  . . . . . . . . . . . . .  56
-   13. Usage for Hypermedia  . . . . . . . . . . . . . . . . . . . .  56
-     13.1.  Linking to a Schema  . . . . . . . . . . . . . . . . . .  56
-     13.2.  Identifying a Schema via a Media Type Parameter  . . . .  56
-     13.3.  Usage Over HTTP  . . . . . . . . . . . . . . . . . . . .  58
-   14. Security Considerations . . . . . . . . . . . . . . . . . . .  58
-   15. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  59
-     15.1.  application/schema+json  . . . . . . . . . . . . . . . .  59
-     15.2.  application/schema-instance+json . . . . . . . . . . . .  60
-   16. References  . . . . . . . . . . . . . . . . . . . . . . . . .  60
-     16.1.  Normative References . . . . . . . . . . . . . . . . . .  60
-     16.2.  Informative References . . . . . . . . . . . . . . . . .  61
-   Appendix A.  Acknowledgments  . . . . . . . . . . . . . . . . . .  63
-   Appendix B.  ChangeLog  . . . . . . . . . . . . . . . . . . . . .  63
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  66
+   14. References  . . . . . . . . . . . . . . . . . . . . . . . . .  61
+     14.1.  Normative References . . . . . . . . . . . . . . . . . .  61
+     14.2.  Informative References . . . . . . . . . . . . . . . . .  62
+   Appendix A.  Acknowledgments  . . . . . . . . . . . . . . . . . .  64
+   Appendix B.  ChangeLog  . . . . . . . . . . . . . . . . . . . . .  64
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  67
 
 1.  Introduction
 
@@ -214,18 +202,6 @@ Internet-Draft                 JSON Schema                   August 2019
    and "null" in this document are to be interpreted as defined in RFC
    8259 [RFC8259].
 
-
-
-
-
-
-
-
-Wright, et al.          Expires February 11, 2020               [Page 4]
-
-Internet-Draft                 JSON Schema                   August 2019
-
-
 3.  Overview
 
    This document proposes a new media type "application/schema+json" to
@@ -239,6 +215,16 @@ Internet-Draft                 JSON Schema                   August 2019
    annotate those instances with additional information.  Additional
    keywords are used to apply assertions and annotations to more complex
    JSON data structures, or based on some sort of condition.
+
+
+
+
+
+
+Wright, et al.          Expires February 17, 2020               [Page 4]
+
+Internet-Draft                 JSON Schema                   August 2019
+
 
    To facilitate re-use, keywords can be organized into vocabularies.  A
    vocabulary consists of a list of keywords, together with their syntax
@@ -271,17 +257,6 @@ Internet-Draft                 JSON Schema                   August 2019
    Further vocabularies for purposes such as structural validation or
    hypermedia annotation are defined in other documents.
 
-
-
-
-
-
-
-Wright, et al.          Expires February 11, 2020               [Page 5]
-
-Internet-Draft                 JSON Schema                   August 2019
-
-
 4.  Definitions
 
 4.1.  JSON Document
@@ -296,6 +271,16 @@ Internet-Draft                 JSON Schema                   August 2019
    document or memory structure that can be parsed into or processed
    according to the JSON Schema data model can be interpreted against a
    JSON Schema, including media types like CBOR [RFC7049].
+
+
+
+
+
+
+Wright, et al.          Expires February 17, 2020               [Page 5]
+
+Internet-Draft                 JSON Schema                   August 2019
+
 
 4.2.  Instance
 
@@ -330,16 +315,8 @@ Internet-Draft                 JSON Schema                   August 2019
 
    Whitespace and formatting concerns, including different lexical
    representations of numbers that are equal within the data model, are
-
-
-
-Wright, et al.          Expires February 11, 2020               [Page 6]
-
-Internet-Draft                 JSON Schema                   August 2019
-
-
    thus outside the scope of JSON Schema.  JSON Schema vocabularies
-   (Section 8) that wish to work with such differences in lexical
+   (Section 8.1) that wish to work with such differences in lexical
    representations SHOULD define keywords to precisely interpret
    formatted strings within the data model rather than relying on having
    the original JSON representation Unicode characters available.
@@ -352,6 +329,15 @@ Internet-Draft                 JSON Schema                   August 2019
    Note that JSON Schema vocabularies are free to define their own
    extended type system.  This should not be confused with the core data
    model types defined here.  As an example, "integer" is a reasonable
+
+
+
+
+Wright, et al.          Expires February 17, 2020               [Page 6]
+
+Internet-Draft                 JSON Schema                   August 2019
+
+
    type for a vocabulary to define as a value for a keyword, but the
    data model makes no distinction between integers and other numbers.
 
@@ -387,13 +373,6 @@ Internet-Draft                 JSON Schema                   August 2019
 
       both are numbers, and have the same mathematical value; or
 
-
-
-Wright, et al.          Expires February 11, 2020               [Page 7]
-
-Internet-Draft                 JSON Schema                   August 2019
-
-
       both are arrays, and have an equal value item-for-item; or
 
       both are objects, and each property in one has exactly one
@@ -405,6 +384,15 @@ Internet-Draft                 JSON Schema                   August 2019
    are unordered, there is no way to define multiple properties with the
    same key, and mere formatting differences (indentation, placement of
    commas, trailing zeros) are insignificant.
+
+
+
+
+
+Wright, et al.          Expires February 17, 2020               [Page 7]
+
+Internet-Draft                 JSON Schema                   August 2019
+
 
 4.3.  JSON Schema Documents
 
@@ -442,14 +430,6 @@ Internet-Draft                 JSON Schema                   August 2019
    A JSON Schema MAY contain properties which are not schema keywords.
    Unknown keywords SHOULD be ignored.
 
-
-
-
-Wright, et al.          Expires February 11, 2020               [Page 8]
-
-Internet-Draft                 JSON Schema                   August 2019
-
-
    An empty schema is a JSON Schema with no properties, or only unknown
    properties.
 
@@ -461,6 +441,15 @@ Internet-Draft                 JSON Schema                   August 2019
 
    These boolean schemas exist to clarify schema author intent and
    facilitate schema processing optimizations.  They behave identically
+
+
+
+
+Wright, et al.          Expires February 17, 2020               [Page 8]
+
+Internet-Draft                 JSON Schema                   August 2019
+
+
    to the following schema objects (where "not" is part of the subschema
    application vocabulary defined in this document).
 
@@ -498,14 +487,6 @@ Internet-Draft                 JSON Schema                   August 2019
    validate schemas that conform to the syntax of those vocabularies.
    However, meta-schemas and vocabularies are separate in order to allow
    meta-schemas to validate schema conformance more strictly or more
-
-
-
-Wright, et al.          Expires February 11, 2020               [Page 9]
-
-Internet-Draft                 JSON Schema                   August 2019
-
-
    loosely than the vocabularies' specifications call for.  Meta-schemas
    may also describe and validate additional keywords that are not part
    of a formal vocabulary.
@@ -517,6 +498,12 @@ Internet-Draft                 JSON Schema                   August 2019
 
    Some keywords take schemas themselves, allowing JSON Schemas to be
    nested:
+
+
+
+Wright, et al.          Expires February 17, 2020               [Page 9]
+
+Internet-Draft                 JSON Schema                   August 2019
 
 
    {
@@ -554,14 +541,6 @@ Internet-Draft                 JSON Schema                   August 2019
 
    Per the W3C's best practices for fragment identifiers
    [W3C.WD-fragid-best-practices-20121025], plain name fragment
-
-
-
-Wright, et al.          Expires February 11, 2020              [Page 10]
-
-Internet-Draft                 JSON Schema                   August 2019
-
-
    identifiers in "application/schema+json" are reserved for referencing
    locally named schemas.  All fragment identifiers that do not match
    the JSON Pointer syntax MUST be interpreted as plain name fragment
@@ -569,7 +548,19 @@ Internet-Draft                 JSON Schema                   August 2019
 
    Defining and referencing a plain name fragment identifier within an
    "application/schema+json" document are specified in the "$id" keyword
-   (Section 9.2) section.
+   (Section 8.2.2) section.
+
+
+
+
+
+
+
+
+Wright, et al.          Expires February 17, 2020              [Page 10]
+
+Internet-Draft                 JSON Schema                   August 2019
+
 
 6.  General Considerations
 
@@ -598,8 +589,8 @@ Internet-Draft                 JSON Schema                   August 2019
 
    Keywords MAY use regular expressions to express constraints, or
    constrain the instance value to be a regular expression.  These
-   regular expressions SHOULD be valid according to the ECMA 262
-   [ecma262] regular expression dialect.
+   regular expressions SHOULD be valid according to the regular
+   expression dialect described in ECMA 262, section 15.10.1 [ecma262].
 
    Furthermore, given the high disparity in regular expression
    constructs support, schema authors SHOULD limit themselves to the
@@ -610,14 +601,6 @@ Internet-Draft                 JSON Schema                   August 2019
 
       simple character classes ([abc]), range character classes ([a-z]);
 
-
-
-
-Wright, et al.          Expires February 11, 2020              [Page 11]
-
-Internet-Draft                 JSON Schema                   August 2019
-
-
       complemented character classes ([^abc], [^a-z]);
 
       simple quantifiers: "+" (one or more), "*" (zero or more), "?"
@@ -626,6 +609,14 @@ Internet-Draft                 JSON Schema                   August 2019
       range quantifiers: "{x}" (exactly x occurrences), "{x,y}" (at
       least x, at most y, occurrences), {x,} (x occurrences or more),
       and their lazy versions;
+
+
+
+
+Wright, et al.          Expires February 17, 2020              [Page 11]
+
+Internet-Draft                 JSON Schema                   August 2019
+
 
       the beginning-of-input ("^") and end-of-input ("$") anchors;
 
@@ -666,14 +657,6 @@ Internet-Draft                 JSON Schema                   August 2019
    Evaluating an instance against a schema involves processing all of
    the keywords in the schema against the appropriate locations within
    the instance.  Typically, applicator keywords are processed until a
-
-
-
-Wright, et al.          Expires February 11, 2020              [Page 12]
-
-Internet-Draft                 JSON Schema                   August 2019
-
-
    schema object with no applicators (and therefore no subschemas) is
    reached.  The appropriate location in the instance is evaluated
    against the assertion and annotation keywords in the schema object,
@@ -683,6 +666,14 @@ Internet-Draft                 JSON Schema                   August 2019
    Evaluation of a parent schema object can complete once all of its
    subschemas have been evaluated, although in some circumstances
    evaluation may be short-circuited due to assertion results.  When
+
+
+
+Wright, et al.          Expires February 17, 2020              [Page 12]
+
+Internet-Draft                 JSON Schema                   August 2019
+
+
    annotations are being collected, some assertion result short-
    circuiting is not possible due to the need to examine all subschemas
    for annotation collection, including those that cannot further change
@@ -721,15 +712,6 @@ Internet-Draft                 JSON Schema                   August 2019
    the keyword's "validation path."  [[CREF1: Or should this be the
    schema object at which processing begins, even if it is not a root?
    This has some implications for the case where "$recursiveAnchor" is
-
-
-
-
-Wright, et al.          Expires February 11, 2020              [Page 13]
-
-Internet-Draft                 JSON Schema                   August 2019
-
-
    only allowed in the root schema but processing begins in a subschema.
    ]]
 
@@ -740,6 +722,14 @@ Internet-Draft                 JSON Schema                   August 2019
    into a subschema present as a value.  A keyword on the far side of
    that reference that resolves information through the dynamic scope
    will consider the originating side of the reference to be their
+
+
+
+Wright, et al.          Expires February 17, 2020              [Page 13]
+
+Internet-Draft                 JSON Schema                   August 2019
+
+
    dynamic parent, rather than examining the local lexically enclosing
    parent.
 
@@ -778,20 +768,23 @@ Internet-Draft                 JSON Schema                   August 2019
    Because annotation collection can add significant cost in terms of
    both computation and memory, implementations MAY opt out of this
    feature.  Keywords known to an implementation to have assertion or
-
-
-
-Wright, et al.          Expires February 11, 2020              [Page 14]
-
-Internet-Draft                 JSON Schema                   August 2019
-
-
    applicator behavior that depend on annotation results MUST then be
    treated as errors, unless an alternate implementation producing the
    same behavior is available.  Keywords of this sort SHOULD describe
    reasonable alternate approaches when appropriate.  This approach is
    demonstrated by the "additionalItems" and "additionalProperties"
    keywords in this document.
+
+
+
+
+
+
+
+Wright, et al.          Expires February 17, 2020              [Page 14]
+
+Internet-Draft                 JSON Schema                   August 2019
+
 
 7.4.  Applicators
 
@@ -833,21 +826,21 @@ Internet-Draft                 JSON Schema                   August 2019
    themselves in various referenced and referencing arrangements during
    the evaluation of an instance against a schema.
 
-
-
-
-
-Wright, et al.          Expires February 11, 2020              [Page 15]
-
-Internet-Draft                 JSON Schema                   August 2019
-
-
-   For some by-reference applicators, such as "$ref" (Section 9.3.1),
+   For some by-reference applicators, such as "$ref" (Section 8.2.3.1),
    the referenced schema can be determined by static analysis of the
    schema document's lexical scope.  Others, such as "$recursiveRef" and
    "$recursiveAnchor", may make use of dynamic scoping, and therefore
    only be resolvable in the process of evaluating the schema with an
    instance.
+
+
+
+
+
+Wright, et al.          Expires February 17, 2020              [Page 15]
+
+Internet-Draft                 JSON Schema                   August 2019
+
 
 7.5.  Assertions
 
@@ -868,9 +861,42 @@ Internet-Draft                 JSON Schema                   August 2019
    the keyword, the instance is considered to conform to the assertion.
 
    For example, the "maxLength" keyword from the companion validation
-   vocabulary will only restrict certain strings (that are too long)
-   from being valid.  If the instance is a number, boolean, null, array,
-   or object, then it is valid against this assertion.
+   vocabulary [json-schema-validation]: will only restrict certain
+   strings (that are too long) from being valid.  If the instance is a
+   number, boolean, null, array, or object, then it is valid against
+   this assertion.
+
+   This behavior allows keywords to be used more easily with instances
+   that can be of multiple primitive types.  The companion validation
+   vocabulary also includes a "type" keyword which can independently
+   restrict the instance to one or more primitive types.  This allows
+   for a concise expression of use cases such as a function that might
+   return either a string of a certain length or a null value:
+
+
+   {
+       "type": ["string", "null"],
+       "maxLength": 255
+   }
+
+
+   If "maxLength" also restricted the instance type to be a string, then
+   this would be substantially more cumbersome to express because the
+   example as written would not actually allow null values.  Each
+   keyword is evaluated separately unless explicitly specified
+   otherwise, so if "maxLength" restricted the instance to strings, then
+   including "null" in "type" would not have any useful effect.
+
+
+
+
+
+
+
+Wright, et al.          Expires February 17, 2020              [Page 16]
+
+Internet-Draft                 JSON Schema                   August 2019
+
 
 7.6.  Annotations
 
@@ -889,14 +915,6 @@ Internet-Draft                 JSON Schema                   August 2019
    indeterminate order.  Given the extensibility of keywords, including
    applicators, it is not possible to define a universally predictable
    order of processing.
-
-
-
-
-Wright, et al.          Expires February 11, 2020              [Page 16]
-
-Internet-Draft                 JSON Schema                   August 2019
-
 
    Unlike assertion results, annotation data can take a wide variety of
    forms, which are provided to applications to use as they see fit.
@@ -929,6 +947,13 @@ Internet-Draft                 JSON Schema                   August 2019
 
       The attached value(s)
 
+
+
+Wright, et al.          Expires February 17, 2020              [Page 17]
+
+Internet-Draft                 JSON Schema                   August 2019
+
+
    If the same keyword attaches values from multiple schema locations to
    the same instance location, and the annotation defines a process for
    combining such values, then the combined value MUST also be
@@ -949,7 +974,38 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 17]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wright, et al.          Expires February 17, 2020              [Page 18]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -1005,7 +1061,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 18]
+Wright, et al.          Expires February 17, 2020              [Page 19]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -1061,7 +1117,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 19]
+Wright, et al.          Expires February 17, 2020              [Page 20]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -1093,7 +1149,51 @@ Internet-Draft                 JSON Schema                   August 2019
    annotation values are defined by each annotation keyword, and are not
    directly affected by the logic used for combining assertion results.
 
-8.  Meta-Schemas and Vocabularies
+8.  The JSON Schema Core Vocabulary
+
+   Keywords declared in in this section, which all begin with "$", make
+   up the JSON Schema Core vocabulary.  These keywords are either
+   required in order process any schema or meta-schema, including those
+   split across multiple documents, or exist to reserve keywords for
+   purposes that require guaranteed interoperability.
+
+   The Core vocabulary MUST be considered mandatory at all times, in
+   order to bootstrap the processing of further vocabularies.  Meta-
+   schemas that use the "$vocabulary" (Section 8.1) keyword to declare
+   the vocabularies in use MUST explicitly list the Core vocabulary,
+   which MUST have a value of true indicating that it is required.
+
+   The behavior of a false value for this vocabulary (and only this
+   vocabulary) is undefined, as is the behavior when "$vocabulary" is
+   present but the Core vocabulary is not included.  However, it is
+   RECOMMENDED that implementations detect these cases and raise an
+   error when they occur.  It is not meaningful to declare that a meta-
+   schema optionally uses Core.
+
+
+
+
+Wright, et al.          Expires February 17, 2020              [Page 21]
+
+Internet-Draft                 JSON Schema                   August 2019
+
+
+   Meta-schemas that do not use "$vocabulary" MUST be considered to
+   require the Core vocabulary as if its URI were present with a value
+   of true.
+
+   The current URI for the Core vocabulary is: <https://json-schema.org/
+   draft/2019-08/vocab/core>.
+
+   The current URI for the corresponding meta-schema is: <https://json-
+   schema.org/draft/2019-08/meta/core>.
+
+   While the "$" prefix is not formally reserved for the Core
+   vocabulary, it is RECOMMENDED that extension keywords (in
+   vocabularies or otherwise) begin with a character other than "$" to
+   avoid possible future collisions.
+
+8.1.  Meta-Schemas and Vocabularies
 
    Two concepts, meta-schemas and vocabularies, are used to inform an
    implementation how to interpret a schema.  Every schema has a meta-
@@ -1114,14 +1214,6 @@ Internet-Draft                 JSON Schema                   August 2019
       describe an incompatible syntax, such a meta-schema would be
       unlikely to be useful.
 
-
-
-
-Wright, et al.          Expires February 11, 2020              [Page 20]
-
-Internet-Draft                 JSON Schema                   August 2019
-
-
    Meta-schemas are separate from vocabularies to allow for vocabularies
    to be combined in different ways, and for meta-schema authors to
    impose additional constraints such as forbidding certain keywords, or
@@ -1134,7 +1226,15 @@ Internet-Draft                 JSON Schema                   August 2019
    design of meta-schema features emphasizes flexibility over
    simplicity.
 
-8.1.  The "$schema" Keyword
+
+
+
+Wright, et al.          Expires February 17, 2020              [Page 22]
+
+Internet-Draft                 JSON Schema                   August 2019
+
+
+8.1.1.  The "$schema" Keyword
 
    The "$schema" keyword is both used as a JSON Schema feature set
    identifier and as the identifier of a resource which is itself a JSON
@@ -1164,20 +1264,12 @@ Internet-Draft                 JSON Schema                   August 2019
    Values for this property are defined elsewhere in this and other
    documents, and by other parties.
 
-8.2.  The "$vocabulary" Keyword
+8.1.2.  The "$vocabulary" Keyword
 
    The "$vocabulary" keyword is used in meta-schemas to identify the
    vocabularies available for use in schemas described by that meta-
    schema.  It is also used to indicate whether each vocabulary is
    required or optional, in the sense that an implementation MUST
-
-
-
-Wright, et al.          Expires February 11, 2020              [Page 21]
-
-Internet-Draft                 JSON Schema                   August 2019
-
-
    understand the required vocabularies in order to successfully process
    the schema.
 
@@ -1190,6 +1282,14 @@ Internet-Draft                 JSON Schema                   August 2019
    currently undefined, and reserved for future use.  Vocabulary authors
    MAY use the URL of the vocabulary specification, in a human-readable
    media type such as text/html or text/plain, as the vocabulary URI.
+
+
+
+Wright, et al.          Expires February 17, 2020              [Page 23]
+
+Internet-Draft                 JSON Schema                   August 2019
+
+
    [[CREF3: Vocabulary documents may be added shortly, or in the next
    draft.  For now, identifying the keyword set is deemed sufficient as
    that, along with meta-schema validation, is how the current
@@ -1218,21 +1318,13 @@ Internet-Draft                 JSON Schema                   August 2019
    meta-schema M against its own meta-schema M' without requiring the
    validator to understand the vocabularies declared by M.
 
-8.2.1.  Default vocabularies
+8.1.2.1.  Default vocabularies
 
    If "$vocabulary" is absent, an implementation MAY determine behavior
    based on the meta-schema if it is recognized from the URI value of
    the referring schema's "$schema" keyword.  This is how behavior (such
    as Hyper-Schema usage) has been recognized prior to the existence of
    vocabularies.
-
-
-
-
-Wright, et al.          Expires February 11, 2020              [Page 22]
-
-Internet-Draft                 JSON Schema                   August 2019
-
 
    If the meta-schema, as referenced by the schema, is not recognized,
    or is missing, then the behavior is implementation-defined.  If the
@@ -1245,7 +1337,16 @@ Internet-Draft                 JSON Schema                   August 2019
    use of all vocabularies in this specification and the companion
    Validation specification.
 
-8.2.2.  Non-inheritability of vocabularies
+
+
+
+
+Wright, et al.          Expires February 17, 2020              [Page 24]
+
+Internet-Draft                 JSON Schema                   August 2019
+
+
+8.1.2.2.  Non-inheritability of vocabularies
 
    Note that the processing restrictions on "$vocabulary" mean that
    meta-schemas that reference other meta-schemas using "$ref" or
@@ -1253,9 +1354,17 @@ Internet-Draft                 JSON Schema                   August 2019
    declarations of those other meta-schemas.  All such declarations must
    be repeated in the root of each schema document intended for use as a
    meta-schema.  This is demonstrated in the example meta-schema
-   (Section 8.6).
+   (Section 8.1.6).
 
-8.3.  Detecting a Meta-Schema
+8.1.3.  Updates to Meta-Schema and Vocabulary URIs
+
+   Updated vocabulary and meta-schema URIs MAY be published between
+   specification drafts in order to correct errors.  Implementations
+   SHOULD consider URIs dated after this specification draft and before
+   the next to indicate the same syntax and semantics as those listed
+   here.
+
+8.1.4.  Detecting a Meta-Schema
 
    Implementations MUST recognize a schema as a meta-schema if it is
    being examined because it was identified as such by another schema's
@@ -1276,22 +1385,22 @@ Internet-Draft                 JSON Schema                   August 2019
    requirements up front.  Meta-schema authors MUST NOT expect such
    features to be interoperable across implementations.
 
-8.4.  Best Practices for Vocabulary and Meta-Schema Authors
+8.1.5.  Best Practices for Vocabulary and Meta-Schema Authors
 
    Vocabulary authors SHOULD take care to avoid keyword name collisions
    if the vocabulary is intended for broad use, and potentially combined
    with other vocabularies.  JSON Schema does not provide any formal
+   namespacing system, but also does not constrain keyword names,
+   allowing for any number of namespacing approaches.
 
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 23]
+
+Wright, et al.          Expires February 17, 2020              [Page 25]
 
 Internet-Draft                 JSON Schema                   August 2019
 
-
-   namespacing system, but also does not constrain keyword names,
-   allowing for any number of namespacing approaches.
 
    Vocabularies may build on each other, such as by defining the
    behavior of their keywords with respect to the behavior of keywords
@@ -1315,9 +1424,9 @@ Internet-Draft                 JSON Schema                   August 2019
    any keywords from the Core vocabulary.
 
    It is RECOMMENDED that meta-schema authors reference each
-   vocabulary's meta-schema using the "allOf" (Section 11.2.1.1)
-   keyword, although other mechanisms for constructing the meta-schema
-   may be appropriate for certain use cases.
+   vocabulary's meta-schema using the "allOf" (Section 9.2.1.1) keyword,
+   although other mechanisms for constructing the meta-schema may be
+   appropriate for certain use cases.
 
    The recursive nature of meta-schemas makes the "$recursiveAnchor" and
    "$recursiveRef" keywords particularly useful for extending existing
@@ -1341,66 +1450,15 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 24]
+
+
+
+Wright, et al.          Expires February 17, 2020              [Page 26]
 
 Internet-Draft                 JSON Schema                   August 2019
 
 
-8.5.  The JSON Schema Core Vocabulary
-
-   Keywords declared in in this specification that begin with "$" make
-   up the JSON Schema Core vocabulary.  These keywords are either
-   required in order process any schema or meta-schema, including those
-   split across multiple documents, or exist to reserve keywords for
-   purposes that require guaranteed interoperability.
-
-   The Core vocabulary MUST be considered mandatory at all times, in
-   order to bootstrap the processing of further vocabularies.  Meta-
-   schemas that use "$vocabulary" MUST explicitly list the Core
-   vocabulary, which MUST have a value of true indicating that it is
-   required.
-
-   The behavior of a false value for this vocabulary (and only this
-   vocabulary) is undefined, as is the behavior when "$vocabulary" is
-   present but the Core vocabulary is not included.  However, it is
-   RECOMMENDED that implementations detect these cases and raise an
-   error when they occur.
-
-   Meta-schemas that do not use "$vocabulary" MUST be considered to
-   require the Core vocabulary as if its URI were present with a value
-   of true.
-
-   The current URI for the Core vocabulary is: <https://json-schema.org/
-   draft/2019-WIP/vocab/core>.
-
-   The current URI for the corresponding meta-schema is: <https://json-
-   schema.org/draft/2019-WIP/meta/core>.
-
-   Updated vocabulary and meta-schema URIs MAY be published between
-   specification drafts in order to correct errors.  Implementations
-   SHOULD consider URIs dated after this specification draft and before
-   the next to indicate the same syntax and semantics as those listed
-   here.
-
-8.6.  Example Meta-Schema With Vocabulary Declarations
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Wright, et al.          Expires February 11, 2020              [Page 25]
-
-Internet-Draft                 JSON Schema                   August 2019
-
+8.1.6.  Example Meta-Schema With Vocabulary Declarations
 
    This meta-schema explicitly declares both the Core and Applicator
    vocabularies, and combines their meta-schemas with an "allOf".  It
@@ -1447,24 +1505,25 @@ Internet-Draft                 JSON Schema                   August 2019
    the Core and Validation specification, and that combine all
    vocabularies defined by those specifications as well as the Hyper-
    Schema specification, demonstrate additional complex combinations.
-   These URIs for these meta-schemas may be found in the Validation and
-   Hyper-Schema specifications, respectively.
 
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 26]
+Wright, et al.          Expires February 17, 2020              [Page 27]
 
 Internet-Draft                 JSON Schema                   August 2019
 
 
-9.  Base URI and Dereferencing
+   These URIs for these meta-schemas may be found in the Validation and
+   Hyper-Schema specifications, respectively.
+
+8.2.  Base URI and Dereferencing
 
    To differentiate between schemas in a vast ecosystem, schemas are
    identified by URI [RFC3986], and can embed references to other
    schemas by specifying their URI.
 
-9.1.  Initial Base URI
+8.2.1.  Initial Base URI
 
    RFC3986 Section 5.1 [RFC3986] defines how to determine the default
    base URI of a document.
@@ -1483,7 +1542,7 @@ Internet-Draft                 JSON Schema                   August 2019
    in RFC 3986 Section 5.1.4 [RFC3986].  It is RECOMMENDED that
    implementations document any default base URI that they assume.
 
-9.2.  The "$id" Keyword
+8.2.2.  The "$id" Keyword
 
    The "$id" keyword defines a URI for the schema, and the base URI that
    other URI references within the schema are resolved against.  A
@@ -1497,7 +1556,7 @@ Internet-Draft                 JSON Schema                   August 2019
    normalized, and SHOULD NOT be an empty fragment <#> or an empty
    string <>.
 
-9.2.1.  Identifying the root schema
+8.2.2.1.  Identifying the root schema
 
    The root schema of a JSON Schema document SHOULD contain an "$id"
    keyword with an absolute-URI [RFC3986] (containing a scheme, but no
@@ -1506,15 +1565,12 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-
-
-
-Wright, et al.          Expires February 11, 2020              [Page 27]
+Wright, et al.          Expires February 17, 2020              [Page 28]
 
 Internet-Draft                 JSON Schema                   August 2019
 
 
-9.2.2.  Changing the base URI within a schema file
+8.2.2.2.  Changing the base URI within a schema file
 
    When an "$id" sets the base URI, the object containing that "$id" and
    all of its subschemas can be identified by using a JSON Pointer
@@ -1524,9 +1580,9 @@ Internet-Draft                 JSON Schema                   August 2019
    URI declared in the subschema or a parent, along with a JSON Pointer
    fragment identifying the path from the schema object that declares
    the base to the subschema being identified.  Examples of this are
-   shown in section 9.2.4.
+   shown in section 8.2.2.4.
 
-9.2.3.  Location-independent identifiers
+8.2.2.3.  Location-independent identifiers
 
    Using JSON Pointer fragments requires knowledge of the structure of
    the schema.  When writing schema documents with the intention to
@@ -1548,7 +1604,7 @@ Internet-Draft                 JSON Schema                   August 2019
    interpreted?  There are two cases: when the other components match
    the current base URI and when they change the base URI.  ]]
 
-9.2.4.  Schema identification examples
+8.2.2.4.  Schema identification examples
 
 
 
@@ -1565,7 +1621,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 28]
+Wright, et al.          Expires February 17, 2020              [Page 29]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -1621,7 +1677,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 29]
+Wright, et al.          Expires February 17, 2020              [Page 30]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -1650,7 +1706,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
          https://example.com/root.json#/$defs/C
 
-9.3.  Schema References
+8.2.3.  Schema References
 
    Several keywords can be used to reference a schema which is to be
    applied to the current instance location. "$ref" and "$recursiveRef"
@@ -1669,7 +1725,7 @@ Internet-Draft                 JSON Schema                   August 2019
    implementations SHOULD NOT assume they should perform a network
    operation when they encounter a network-addressable URI.
 
-9.3.1.  Direct References with "$ref"
+8.2.3.1.  Direct References with "$ref"
 
    The "$ref" keyword is used to reference a statically identified
    schema.
@@ -1677,7 +1733,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 30]
+Wright, et al.          Expires February 17, 2020              [Page 31]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -1686,7 +1742,8 @@ Internet-Draft                 JSON Schema                   August 2019
    Reference.  Resolved against the current URI base, it identifies the
    URI of a schema to use.
 
-9.3.2.  Recursive References with "$recursiveRef" and "$recursiveAnchor"
+8.2.3.2.  Recursive References with "$recursiveRef" and
+          "$recursiveAnchor"
 
    The "$recursiveRef" and "$recursiveAnchor" keywords are used to
    construct extensible recursive schemas.  A recursive schema is one
@@ -1732,8 +1789,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-
-Wright, et al.          Expires February 11, 2020              [Page 31]
+Wright, et al.          Expires February 17, 2020              [Page 32]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -1789,7 +1845,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 32]
+Wright, et al.          Expires February 17, 2020              [Page 33]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -1801,7 +1857,7 @@ Internet-Draft                 JSON Schema                   August 2019
    original changes its recursive fields.  This approach can be seen in
    the meta-schema for JSON Hyper-Schema in all prior drafts.
 
-9.3.2.1.  Enabling Recursion with "$recursiveAnchor"
+8.2.3.2.1.  Enabling Recursion with "$recursiveAnchor"
 
    The desired behavior is for the recursive reference, "r", in the
    original schema to resolve to the original schema when that is the
@@ -1833,7 +1889,7 @@ Internet-Draft                 JSON Schema                   August 2019
    The value of "$recursiveAnchor" MUST be of type boolean, and MUST be
    true.  The value false is reserved for possible future use.
 
-9.3.2.2.  Dynamically recursive references with "$recursiveRef"
+8.2.3.2.2.  Dynamically recursive references with "$recursiveRef"
 
    The "$recursiveRef" keyword behaves identically to "$ref", except
    that if the referenced schema has "$recursiveAnchor" set to true,
@@ -1845,7 +1901,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 33]
+Wright, et al.          Expires February 17, 2020              [Page 34]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -1901,7 +1957,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 34]
+Wright, et al.          Expires February 17, 2020              [Page 35]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -1924,7 +1980,7 @@ Internet-Draft                 JSON Schema                   August 2019
    original schema will resolve to "https://example.com/extension#", not
    "https://example.com/original#".
 
-9.3.3.  Guarding Against Infinite Recursion
+8.2.3.3.  Guarding Against Infinite Recursion
 
    A schema MUST NOT be run into an infinite loop against an instance.
    For example, if two schemas "#alice" and "#bob" both have an "allOf"
@@ -1933,7 +1989,7 @@ Internet-Draft                 JSON Schema                   August 2019
    Schemas SHOULD NOT make use of infinite recursive nesting like this;
    the behavior is undefined.
 
-9.3.4.  References to Possible Non-Schemas
+8.2.3.4.  References to Possible Non-Schemas
 
    Subschema objects (or booleans) are recognized by their use with
    known applicator keywords.  These keywords may be the standard
@@ -1957,7 +2013,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 35]
+Wright, et al.          Expires February 17, 2020              [Page 36]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -1969,7 +2025,7 @@ Internet-Draft                 JSON Schema                   August 2019
    behavior is implementation-specific and MUST NOT be relied upon for
    interoperability.
 
-9.3.5.  Loading a referenced schema
+8.2.3.5.  Loading a referenced schema
 
    The use of URIs to identify remote schemas does not necessarily mean
    anything is downloaded, but instead JSON Schema implementations
@@ -1978,7 +2034,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
    When schemas are downloaded, for example by a generic user-agent that
    doesn't know until runtime which schemas to download, see Usage for
-   Hypermedia (Section 13).
+   Hypermedia (Section 11).
 
    Implementations SHOULD be able to associate arbitrary URIs with an
    arbitrary schema and/or automatically associate a schema's "$id"-
@@ -1986,14 +2042,14 @@ Internet-Draft                 JSON Schema                   August 2019
    schema.  Such URIs and schemas can be supplied to an implementation
    prior to processing instances, or may be noted within a schema
    document as it is processed, producing associations as shown in
-   section 9.2.4.
+   section 8.2.2.4.
 
    A schema MAY (and likely will) have multiple URIs, but there is no
    way for a URI to identify more than one schema.  When multiple
    schemas try to identify as the same URI, validators SHOULD raise an
    error condition.
 
-9.3.6.  Dereferencing
+8.2.3.6.  Dereferencing
 
    Schemas can be identified by any URI that has been given to them,
    including a JSON Pointer or their URI given directly by "$id".  In
@@ -2013,7 +2069,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 36]
+Wright, et al.          Expires February 17, 2020              [Page 37]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2055,7 +2111,7 @@ Internet-Draft                 JSON Schema                   August 2019
    system dynamically, so placing an absolute requirement of pre-loading
    schema documents is not feasible.  ]]
 
-9.4.  Schema Re-Use With "$defs"
+8.2.4.  Schema Re-Use With "$defs"
 
    The "$defs" keyword provides a standardized location for schema
    authors to inline re-usable JSON Schemas into a more general schema.
@@ -2069,7 +2125,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 37]
+Wright, et al.          Expires February 17, 2020              [Page 38]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2091,7 +2147,7 @@ Internet-Draft                 JSON Schema                   August 2019
    }
 
 
-10.  Comments With "$comment"
+8.3.  Comments With "$comment"
 
    This keyword is reserved for comments from schema authors to readers
    or maintainers of the schema.  The value of this keyword MUST be a
@@ -2117,7 +2173,7 @@ Internet-Draft                 JSON Schema                   August 2019
    "$comment" properties.  In particular, the value of "$comment" MUST
    NOT be collected as an annotation result.
 
-11.  A Vocabulary for Applying Subschemas
+9.  A Vocabulary for Applying Subschemas
 
    This section defines a vocabulary of applicator keywords that are
    RECOMMENDED for use as the basis of other vocabularies.
@@ -2125,7 +2181,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 38]
+Wright, et al.          Expires February 17, 2020              [Page 39]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2147,7 +2203,7 @@ Internet-Draft                 JSON Schema                   August 2019
    the next to indicate the same syntax and semantics as those listed
    here.
 
-11.1.  Keyword Independence
+9.1.  Keyword Independence
 
    Schema keywords typically operate independently, without affecting
    each other's outcomes.
@@ -2167,13 +2223,13 @@ Internet-Draft                 JSON Schema                   August 2019
       "unevaluatedItems", whose behavior is defined in terms of
       annotations from "items", "additionalItems" and itself
 
-11.2.  Keywords for Applying Subschemas in Place
+9.2.  Keywords for Applying Subschemas in Place
 
    These keywords apply subschemas to the same location in the instance
    as the parent schema is being applied.  They allow combining or
    modifying the subschema results in various ways.
 
-11.2.1.  Keywords for Applying Subschemas With Boolean Logic
+9.2.1.  Keywords for Applying Subschemas With Boolean Logic
 
    These keywords correspond to logical operators for combining or
    modifying the boolean assertion results of the subschemas.  They have
@@ -2181,7 +2237,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 39]
+Wright, et al.          Expires February 17, 2020              [Page 40]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2190,7 +2246,7 @@ Internet-Draft                 JSON Schema                   August 2019
    different values.  Annotation keywords define their own rules for
    combining such values.
 
-11.2.1.1.  allOf
+9.2.1.1.  allOf
 
    This keyword's value MUST be a non-empty array.  Each item of the
    array MUST be a valid JSON Schema.
@@ -2199,7 +2255,7 @@ Internet-Draft                 JSON Schema                   August 2019
    validates successfully against all schemas defined by this keyword's
    value.
 
-11.2.1.2.  anyOf
+9.2.1.2.  anyOf
 
    This keyword's value MUST be a non-empty array.  Each item of the
    array MUST be a valid JSON Schema.
@@ -2210,7 +2266,7 @@ Internet-Draft                 JSON Schema                   August 2019
    subschemas MUST be examined so that annotations are collected from
    each subschema that validates successfully.
 
-11.2.1.3.  oneOf
+9.2.1.3.  oneOf
 
    This keyword's value MUST be a non-empty array.  Each item of the
    array MUST be a valid JSON Schema.
@@ -2219,14 +2275,14 @@ Internet-Draft                 JSON Schema                   August 2019
    validates successfully against exactly one schema defined by this
    keyword's value.
 
-11.2.1.4.  not
+9.2.1.4.  not
 
    This keyword's value MUST be a valid JSON Schema.
 
    An instance is valid against this keyword if it fails to validate
    successfully against the schema defined by this keyword.
 
-11.2.2.  Keywords for Applying Subschemas Conditionally
+9.2.2.  Keywords for Applying Subschemas Conditionally
 
    Three of these keywords work together to implement conditional
    application of a subschema based on the outcome of another subschema.
@@ -2237,7 +2293,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 40]
+Wright, et al.          Expires February 17, 2020              [Page 41]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2250,7 +2306,7 @@ Internet-Draft                 JSON Schema                   August 2019
    present with an empty schema, and when "if" is not present, both
    "then" and "else" MUST be entirely ignored.
 
-11.2.2.1.  if
+9.2.2.1.  if
 
    This keyword's value MUST be a valid JSON Schema.
 
@@ -2270,7 +2326,7 @@ Internet-Draft                 JSON Schema                   August 2019
    from this keyword's subschema in the usual way, including when the
    keyword is present without either "then" or "else".
 
-11.2.2.2.  then
+9.2.2.2.  then
 
    This keyword's value MUST be a valid JSON Schema.
 
@@ -2284,7 +2340,7 @@ Internet-Draft                 JSON Schema                   August 2019
    evaluate the instance against this keyword, for either validation or
    annotation collection purposes, in such cases.
 
-11.2.2.3.  else
+9.2.2.3.  else
 
    This keyword's value MUST be a valid JSON Schema.
 
@@ -2293,7 +2349,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 41]
+Wright, et al.          Expires February 17, 2020              [Page 42]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2307,7 +2363,7 @@ Internet-Draft                 JSON Schema                   August 2019
    NOT evaluate the instance against this keyword, for either validation
    or annotation collection purposes, in such cases.
 
-11.2.2.4.  dependentSchemas
+9.2.2.4.  dependentSchemas
 
    This keyword specifies subschemas that are evaluated if the instance
    is an object and contains a certain property.
@@ -2321,15 +2377,15 @@ Internet-Draft                 JSON Schema                   August 2019
 
    Omitting this keyword has the same behavior as an empty object.
 
-11.3.  Keywords for Applying Subschemas to Child Instances
+9.3.  Keywords for Applying Subschemas to Child Instances
 
    Each of these keywords defines a rule for applying its subschema(s)
    to child instances, specifically object properties and array items,
    and combining their results.
 
-11.3.1.  Keywords for Applying Subschemas to Arrays
+9.3.1.  Keywords for Applying Subschemas to Arrays
 
-11.3.1.1.  items
+9.3.1.1.  items
 
    The value of "items" MUST be either a valid JSON Schema or an array
    of valid JSON Schemas.
@@ -2349,7 +2405,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 42]
+Wright, et al.          Expires February 17, 2020              [Page 43]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2362,7 +2418,7 @@ Internet-Draft                 JSON Schema                   August 2019
    Omitting this keyword has the same assertion behavior as an empty
    schema.
 
-11.3.1.2.  additionalItems
+9.3.1.2.  additionalItems
 
    The value of "additionalItems" MUST be a valid JSON Schema.
 
@@ -2390,7 +2446,7 @@ Internet-Draft                 JSON Schema                   August 2019
    checking for the presence and size of an "items" array.
    Implementations that do not support annotation collection MUST do so.
 
-11.3.1.3.  unevaluatedItems
+9.3.1.3.  unevaluatedItems
 
    The value of "unevaluatedItems" MUST be a valid JSON Schema.
 
@@ -2400,12 +2456,12 @@ Internet-Draft                 JSON Schema                   August 2019
    "additionalItems", which can come from those keywords when they are
    adjacent to the "unevaluatedItems" keyword.  Those two annotations,
    as well as "unevaluatedItems", can also result from any and all
-   adjacent in-place applicator (Section 11.2) keywords.  This includes
+   adjacent in-place applicator (Section 9.2) keywords.  This includes
 
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 43]
+Wright, et al.          Expires February 17, 2020              [Page 44]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2443,7 +2499,7 @@ Internet-Draft                 JSON Schema                   August 2019
    Implementations that do not collect annotations MUST raise an error
    upon encountering this keyword.
 
-11.3.1.4.  contains
+9.3.1.4.  contains
 
    The value of this keyword MUST be a valid JSON Schema.
 
@@ -2453,7 +2509,7 @@ Internet-Draft                 JSON Schema                   August 2019
    element even after the first match has been found.  This is to ensure
    that all possible annotations are collected.
 
-11.3.2.  Keywords for Applying Subschemas to Objects
+9.3.2.  Keywords for Applying Subschemas to Objects
 
 
 
@@ -2461,12 +2517,12 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 44]
+Wright, et al.          Expires February 17, 2020              [Page 45]
 
 Internet-Draft                 JSON Schema                   August 2019
 
 
-11.3.2.1.  properties
+9.3.2.1.  properties
 
    The value of "properties" MUST be an object.  Each value of this
    object MUST be a valid JSON Schema.
@@ -2484,7 +2540,7 @@ Internet-Draft                 JSON Schema                   August 2019
    Omitting this keyword has the same assertion behavior as an empty
    object.
 
-11.3.2.2.  patternProperties
+9.3.2.2.  patternProperties
 
    The value of "patternProperties" MUST be an object.  Each property
    name of this object SHOULD be a valid regular expression, according
@@ -2505,7 +2561,7 @@ Internet-Draft                 JSON Schema                   August 2019
    Omitting this keyword has the same assertion behavior as an empty
    object.
 
-11.3.2.3.  additionalProperties
+9.3.2.3.  additionalProperties
 
    The value of "additionalProperties" MUST be a valid JSON Schema.
 
@@ -2517,7 +2573,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 45]
+Wright, et al.          Expires February 17, 2020              [Page 46]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2539,7 +2595,7 @@ Internet-Draft                 JSON Schema                   August 2019
    "patternProperties" against the instance property set.
    Implementations that do not support annotation collection MUST do so.
 
-11.3.2.4.  unevaluatedProperties
+9.3.2.4.  unevaluatedProperties
 
    The value of "unevaluatedProperties" MUST be a valid JSON Schema.
 
@@ -2550,8 +2606,8 @@ Internet-Draft                 JSON Schema                   August 2019
    those keywords when they are adjacent to the "unevaluatedProperties"
    keyword.  Those three annotations, as well as
    "unevaluatedProperties", can also result from any and all adjacent
-   in-place applicator (Section 11.2) keywords.  This includes but is
-   not limited to the in-place applicators defined in this document.
+   in-place applicator (Section 9.2) keywords.  This includes but is not
+   limited to the in-place applicators defined in this document.
 
    Validation with "unevaluatedProperties" applies only to the child
    values of instance names that do not appear in the "properties",
@@ -2573,7 +2629,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 46]
+Wright, et al.          Expires February 17, 2020              [Page 47]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2587,7 +2643,7 @@ Internet-Draft                 JSON Schema                   August 2019
    Implementations that do not collect annotations MUST raise an error
    upon encountering this keyword.
 
-11.3.2.5.  propertyNames
+9.3.2.5.  propertyNames
 
    The value of "propertyNames" MUST be a valid JSON Schema.
 
@@ -2598,7 +2654,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
    Omitting this keyword has the same behavior as an empty schema.
 
-12.  Output Formatting
+10.  Output Formatting
 
    JSON Schema is defined to be platform-independent.  As such, to
    increase compatibility across platforms, implementations SHOULD
@@ -2606,7 +2662,7 @@ Internet-Draft                 JSON Schema                   August 2019
    describes the minimum requirements that consumers will need to
    properly interpret validation results.
 
-12.1.  Format
+10.1.  Format
 
    JSON Schema output is defined using the JSON Schema data instance
    model as described in section 4.2.1.  Implementations MAY deviate
@@ -2614,7 +2670,7 @@ Internet-Draft                 JSON Schema                   August 2019
    however it is RECOMMENDED that the output be convertible to the JSON
    format defined herein via serialization or other means.
 
-12.2.  Output Formats
+10.2.  Output Formats
 
    This specification defines four output formats.  See the "Output
    Structure" section for the requirements of each format.
@@ -2629,7 +2685,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 47]
+Wright, et al.          Expires February 17, 2020              [Page 48]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2644,7 +2700,7 @@ Internet-Draft                 JSON Schema                   August 2019
    "flag" format.  Implementations SHOULD specify in their documentation
    which formats they support.
 
-12.3.  Minimum Information
+10.3.  Minimum Information
 
    Beyond the simplistic "flag" output, additional information is useful
    to aid in debugging a schema or instance.  Each sub-result SHOULD
@@ -2655,7 +2711,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
    Implementations MAY elect to provide additional information.
 
-12.3.1.  Keyword Relative Location
+10.3.1.  Keyword Relative Location
 
    The relative location of the validating keyword that follows the
    validation path.  The value MUST be expressed as a JSON Pointer, and
@@ -2671,7 +2727,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
    The JSON key for this information is "keywordLocation".
 
-12.3.2.  Keyword Absolute Location
+10.3.2.  Keyword Absolute Location
 
    The absolute, dereferenced location of the validating keyword.  The
    value MUST be expressed as an absolute URI, and it MUST NOT include
@@ -2685,7 +2741,7 @@ https://json-schema.org/draft/2019-WIP/schema#/$defs/nonNegativeInteger/minimum
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 48]
+Wright, et al.          Expires February 17, 2020              [Page 49]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2696,14 +2752,14 @@ Internet-Draft                 JSON Schema                   August 2019
 
    The JSON key for this information is "absoluteKeywordLocation".
 
-12.3.3.  Instance Location
+10.3.3.  Instance Location
 
    The location of the JSON value within the instance being validated.
    The value MUST be expressed as a JSON Pointer.
 
    The JSON key for this information is "instanceLocation".
 
-12.3.4.  Error or Annotation
+10.3.4.  Error or Annotation
 
    The error or annotation that is produced by the validation.
 
@@ -2713,7 +2769,7 @@ Internet-Draft                 JSON Schema                   August 2019
    The JSON key for failed validations is "error"; for successful
    validations it is "annotation".
 
-12.3.5.  Nested Results
+10.3.5.  Nested Results
 
    For the two hierarchical structures, this property will hold nested
    errors and annotations.
@@ -2721,7 +2777,7 @@ Internet-Draft                 JSON Schema                   August 2019
    The JSON key for nested results in failed validations is "errors";
    for successful validations it is "annotations".
 
-12.4.  Output Structure
+10.4.  Output Structure
 
    The output MUST be an object containing a boolean property named
    "valid".  When additional information about the result is required,
@@ -2741,7 +2797,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 49]
+Wright, et al.          Expires February 17, 2020              [Page 50]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2797,7 +2853,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 50]
+Wright, et al.          Expires February 17, 2020              [Page 51]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2805,7 +2861,7 @@ Internet-Draft                 JSON Schema                   August 2019
    templating mechanism that allows their users to craft their own
    messages.
 
-12.4.1.  Flag
+10.4.1.  Flag
 
    In the simplest case, merely the boolean result for the "valid" valid
    property needs to be fulfilled.
@@ -2823,7 +2879,7 @@ Internet-Draft                 JSON Schema                   August 2019
    second one passes, there is no need to check the other three.  The
    logic can simply return with success.
 
-12.4.2.  Basic
+10.4.2.  Basic
 
    The "Basic" structure is a flat list of output units.
 
@@ -2853,7 +2909,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 51]
+Wright, et al.          Expires February 17, 2020              [Page 52]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2896,7 +2952,7 @@ Internet-Draft                 JSON Schema                   August 2019
 }
 
 
-12.4.3.  Detailed
+10.4.3.  Detailed
 
    The "Detailed" structure is based on the schema and can be more
    readable for both humans and machines.  Having the structure
@@ -2909,7 +2965,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 52]
+Wright, et al.          Expires February 17, 2020              [Page 53]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -2965,7 +3021,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 53]
+Wright, et al.          Expires February 17, 2020              [Page 54]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -3010,7 +3066,7 @@ Internet-Draft                 JSON Schema                   August 2019
 }
 
 
-12.4.4.  Verbose
+10.4.4.  Verbose
 
    The "Verbose" structure is a fully realized hierarchy that exactly
    matches that of the schema.  This structure has applications in form
@@ -3021,7 +3077,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 54]
+Wright, et al.          Expires February 17, 2020              [Page 55]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -3077,7 +3133,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 55]
+Wright, et al.          Expires February 17, 2020              [Page 56]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -3095,20 +3151,20 @@ Internet-Draft                 JSON Schema                   August 2019
 }
 
 
-12.4.5.  Output validation schemas
+10.4.5.  Output validation schemas
 
    For convenience, JSON Schema has been provided to validate output
    generated by implementations.  Its URI is: <https://json-schema.org/
    draft/2019-WIP/output/schema>.
 
-13.  Usage for Hypermedia
+11.  Usage for Hypermedia
 
    JSON has been adopted widely by HTTP servers for automated APIs and
    robots.  This section describes how to enhance processing of JSON
    documents in a more RESTful manner when used with protocols that
    support media types and Web linking [RFC8288].
 
-13.1.  Linking to a Schema
+11.1.  Linking to a Schema
 
    It is RECOMMENDED that instances described by a schema provide a link
    to a downloadable JSON Schema using the link relation "describedby",
@@ -3122,7 +3178,7 @@ Internet-Draft                 JSON Schema                   August 2019
    Link: <https://example.com/my-hyper-schema#>; rel="describedby"
 
 
-13.2.  Identifying a Schema via a Media Type Parameter
+11.2.  Identifying a Schema via a Media Type Parameter
 
    Media types MAY allow for a "schema" media type parameter, which
    gives HTTP servers the ability to perform Content-Type Negotiation
@@ -3133,7 +3189,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 56]
+Wright, et al.          Expires February 17, 2020              [Page 57]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -3189,7 +3245,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 57]
+Wright, et al.          Expires February 17, 2020              [Page 58]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -3210,7 +3266,7 @@ Internet-Draft                 JSON Schema                   August 2019
    Link: </alice>;rel="schema", </bob>;rel="schema"
 
 
-13.3.  Usage Over HTTP
+11.3.  Usage Over HTTP
 
    When used for hypermedia systems over a network, HTTP [RFC7231] is
    frequently the protocol of choice for distributing schemas.
@@ -3237,7 +3293,7 @@ Internet-Draft                 JSON Schema                   August 2019
    server operators can contact the owner of a potentially misbehaving
    script.
 
-14.  Security Considerations
+12.  Security Considerations
 
    Both schemas and instances are JSON values.  As such, all security
    considerations defined in RFC 8259 [RFC8259] apply.
@@ -3245,7 +3301,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 58]
+Wright, et al.          Expires February 17, 2020              [Page 59]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -3272,9 +3328,9 @@ Internet-Draft                 JSON Schema                   August 2019
    dangerous material within a "$comment".  Implementations MUST NOT
    parse or otherwise take action based on "$comment" contents.
 
-15.  IANA Considerations
+13.  IANA Considerations
 
-15.1.  application/schema+json
+13.1.  application/schema+json
 
    The proposed MIME media type for JSON Schema is defined as follows:
 
@@ -3301,19 +3357,19 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 59]
+Wright, et al.          Expires February 17, 2020              [Page 60]
 
 Internet-Draft                 JSON Schema                   August 2019
 
 
-      Security considerations: See Section 14 above.
+      Security considerations: See Section 12 above.
 
       Interoperability considerations: See Sections 6.2, 6.3, and 6.4
       above.
 
       Fragment identifier considerations: See Section 5
 
-15.2.  application/schema-instance+json
+13.2.  application/schema-instance+json
 
    The proposed MIME media type for JSON Schema Instances that require a
    JSON Schema-specific media type is defined as follows:
@@ -3336,16 +3392,16 @@ Internet-Draft                 JSON Schema                   August 2019
       those specified for the "application/json" media type.  See JSON
       [RFC8259].
 
-      Security considerations: See Section 14 above.
+      Security considerations: See Section 12 above.
 
       Interoperability considerations: See Sections 6.2, 6.3, and 6.4
       above.
 
       Fragment identifier considerations: See Section 5
 
-16.  References
+14.  References
 
-16.1.  Normative References
+14.1.  Normative References
 
    [ecma262]  "ECMA 262 specification", <http://www.ecma-
               international.org/publications/files/ECMA-ST/
@@ -3357,7 +3413,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 60]
+Wright, et al.          Expires February 17, 2020              [Page 61]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -3393,7 +3449,7 @@ Internet-Draft                 JSON Schema                   August 2019
               REC-ldp-20150226, February 2015,
               <http://www.w3.org/TR/2015/REC-ldp-20150226>.
 
-16.2.  Informative References
+14.2.  Informative References
 
    [json-hyper-schema]
               Andrews, H. and A. Wright, "JSON Hyper-Schema: A
@@ -3413,7 +3469,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 61]
+Wright, et al.          Expires February 17, 2020              [Page 62]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -3469,7 +3525,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 62]
+Wright, et al.          Expires February 17, 2020              [Page 63]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -3525,7 +3581,7 @@ Appendix B.  ChangeLog
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 63]
+Wright, et al.          Expires February 17, 2020              [Page 64]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -3581,7 +3637,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 64]
+Wright, et al.          Expires February 17, 2020              [Page 65]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -3637,7 +3693,7 @@ Internet-Draft                 JSON Schema                   August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 65]
+Wright, et al.          Expires February 17, 2020              [Page 66]
 
 Internet-Draft                 JSON Schema                   August 2019
 
@@ -3693,4 +3749,4 @@ Authors' Addresses
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 66]
+Wright, et al.          Expires February 17, 2020              [Page 67]

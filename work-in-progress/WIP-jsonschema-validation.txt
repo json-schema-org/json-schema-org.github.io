@@ -5,10 +5,10 @@
 Internet Engineering Task Force                           A. Wright, Ed.
 Internet-Draft
 Intended status: Informational                           H. Andrews, Ed.
-Expires: February 11, 2020
+Expires: February 17, 2020
                                                           B. Hutton, Ed.
                                                Wellcome Sanger Institute
-                                                         August 10, 2019
+                                                         August 16, 2019
 
 
  JSON Schema Validation: A Vocabulary for Structural Validation of JSON
@@ -47,13 +47,13 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 11, 2020.
+   This Internet-Draft will expire on February 17, 2020.
 
 
 
 
 
-Wright, et al.          Expires February 11, 2020               [Page 1]
+Wright, et al.          Expires February 17, 2020               [Page 1]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Wright, et al.          Expires February 11, 2020               [Page 2]
+Wright, et al.          Expires February 17, 2020               [Page 2]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -165,7 +165,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020               [Page 3]
+Wright, et al.          Expires February 17, 2020               [Page 3]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -221,7 +221,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020               [Page 4]
+Wright, et al.          Expires February 17, 2020               [Page 4]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -277,7 +277,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020               [Page 5]
+Wright, et al.          Expires February 17, 2020               [Page 5]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -333,7 +333,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020               [Page 6]
+Wright, et al.          Expires February 17, 2020               [Page 6]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -389,7 +389,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020               [Page 7]
+Wright, et al.          Expires February 17, 2020               [Page 7]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -445,7 +445,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020               [Page 8]
+Wright, et al.          Expires February 17, 2020               [Page 8]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -501,7 +501,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020               [Page 9]
+Wright, et al.          Expires February 17, 2020               [Page 9]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -557,7 +557,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 10]
+Wright, et al.          Expires February 17, 2020              [Page 10]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -613,7 +613,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 11]
+Wright, et al.          Expires February 17, 2020              [Page 11]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -669,7 +669,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 12]
+Wright, et al.          Expires February 17, 2020              [Page 12]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -725,7 +725,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 13]
+Wright, et al.          Expires February 17, 2020              [Page 13]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -781,7 +781,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 14]
+Wright, et al.          Expires February 17, 2020              [Page 14]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -837,7 +837,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 15]
+Wright, et al.          Expires February 17, 2020              [Page 15]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -893,7 +893,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 16]
+Wright, et al.          Expires February 17, 2020              [Page 16]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -949,7 +949,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 17]
+Wright, et al.          Expires February 17, 2020              [Page 17]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -1005,7 +1005,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 18]
+Wright, et al.          Expires February 17, 2020              [Page 18]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -1061,7 +1061,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 19]
+Wright, et al.          Expires February 17, 2020              [Page 19]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -1117,7 +1117,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 20]
+Wright, et al.          Expires February 17, 2020              [Page 20]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -1173,7 +1173,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 21]
+Wright, et al.          Expires February 17, 2020              [Page 21]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -1229,7 +1229,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 22]
+Wright, et al.          Expires February 17, 2020              [Page 22]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -1285,7 +1285,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 23]
+Wright, et al.          Expires February 17, 2020              [Page 23]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -1341,7 +1341,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 24]
+Wright, et al.          Expires February 17, 2020              [Page 24]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -1397,7 +1397,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 25]
+Wright, et al.          Expires February 17, 2020              [Page 25]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -1453,7 +1453,7 @@ Appendix B.  Acknowledgments
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 26]
+Wright, et al.          Expires February 17, 2020              [Page 26]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -1509,7 +1509,7 @@ Appendix C.  ChangeLog
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 27]
+Wright, et al.          Expires February 17, 2020              [Page 27]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -1565,7 +1565,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 28]
+Wright, et al.          Expires February 17, 2020              [Page 28]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -1621,7 +1621,7 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 29]
+Wright, et al.          Expires February 17, 2020              [Page 29]
 
 Internet-Draft           JSON Schema Validation              August 2019
 
@@ -1677,4 +1677,4 @@ Authors' Addresses
 
 
 
-Wright, et al.          Expires February 11, 2020              [Page 30]
+Wright, et al.          Expires February 17, 2020              [Page 30]

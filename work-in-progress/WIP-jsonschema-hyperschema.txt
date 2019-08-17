@@ -5,7 +5,7 @@
 Internet Engineering Task Force                          H. Andrews, Ed.
 Internet-Draft
 Intended status: Informational                            A. Wright, Ed.
-Expires: February 11, 2020                               August 10, 2019
+Expires: February 17, 2020                               August 16, 2019
 
 
    JSON Hyper-Schema: A Vocabulary for Hypermedia Annotation of JSON
@@ -47,13 +47,13 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 11, 2020.
+   This Internet-Draft will expire on February 17, 2020.
 
 
 
 
 
-Andrews & Wright        Expires February 11, 2020               [Page 1]
+Andrews & Wright        Expires February 17, 2020               [Page 1]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Andrews & Wright        Expires February 11, 2020               [Page 2]
+Andrews & Wright        Expires February 17, 2020               [Page 2]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -165,7 +165,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020               [Page 3]
+Andrews & Wright        Expires February 17, 2020               [Page 3]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -221,7 +221,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020               [Page 4]
+Andrews & Wright        Expires February 17, 2020               [Page 4]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -277,7 +277,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020               [Page 5]
+Andrews & Wright        Expires February 17, 2020               [Page 5]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -333,7 +333,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020               [Page 6]
+Andrews & Wright        Expires February 17, 2020               [Page 6]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -389,7 +389,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020               [Page 7]
+Andrews & Wright        Expires February 17, 2020               [Page 7]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -445,7 +445,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020               [Page 8]
+Andrews & Wright        Expires February 17, 2020               [Page 8]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -501,7 +501,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020               [Page 9]
+Andrews & Wright        Expires February 17, 2020               [Page 9]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -557,7 +557,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 10]
+Andrews & Wright        Expires February 17, 2020              [Page 10]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -613,7 +613,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 11]
+Andrews & Wright        Expires February 17, 2020              [Page 11]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -669,7 +669,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 12]
+Andrews & Wright        Expires February 17, 2020              [Page 12]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -725,7 +725,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 13]
+Andrews & Wright        Expires February 17, 2020              [Page 13]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -781,7 +781,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 14]
+Andrews & Wright        Expires February 17, 2020              [Page 14]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -837,7 +837,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 15]
+Andrews & Wright        Expires February 17, 2020              [Page 15]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -893,7 +893,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 16]
+Andrews & Wright        Expires February 17, 2020              [Page 16]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -949,7 +949,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 17]
+Andrews & Wright        Expires February 17, 2020              [Page 17]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1005,7 +1005,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 18]
+Andrews & Wright        Expires February 17, 2020              [Page 18]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1061,7 +1061,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 19]
+Andrews & Wright        Expires February 17, 2020              [Page 19]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1117,7 +1117,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 20]
+Andrews & Wright        Expires February 17, 2020              [Page 20]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1173,7 +1173,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 21]
+Andrews & Wright        Expires February 17, 2020              [Page 21]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1229,7 +1229,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 22]
+Andrews & Wright        Expires February 17, 2020              [Page 22]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1285,7 +1285,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 23]
+Andrews & Wright        Expires February 17, 2020              [Page 23]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1341,7 +1341,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 24]
+Andrews & Wright        Expires February 17, 2020              [Page 24]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1397,7 +1397,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 25]
+Andrews & Wright        Expires February 17, 2020              [Page 25]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1453,7 +1453,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 26]
+Andrews & Wright        Expires February 17, 2020              [Page 26]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1509,7 +1509,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 27]
+Andrews & Wright        Expires February 17, 2020              [Page 27]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1565,7 +1565,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 28]
+Andrews & Wright        Expires February 17, 2020              [Page 28]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1621,7 +1621,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 29]
+Andrews & Wright        Expires February 17, 2020              [Page 29]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1677,7 +1677,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 30]
+Andrews & Wright        Expires February 17, 2020              [Page 30]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1733,7 +1733,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 31]
+Andrews & Wright        Expires February 17, 2020              [Page 31]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1789,7 +1789,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 32]
+Andrews & Wright        Expires February 17, 2020              [Page 32]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1845,7 +1845,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 33]
+Andrews & Wright        Expires February 17, 2020              [Page 33]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1901,7 +1901,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 34]
+Andrews & Wright        Expires February 17, 2020              [Page 34]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -1957,7 +1957,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 35]
+Andrews & Wright        Expires February 17, 2020              [Page 35]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2013,7 +2013,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 36]
+Andrews & Wright        Expires February 17, 2020              [Page 36]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2069,7 +2069,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 37]
+Andrews & Wright        Expires February 17, 2020              [Page 37]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2125,7 +2125,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 38]
+Andrews & Wright        Expires February 17, 2020              [Page 38]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2181,7 +2181,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 39]
+Andrews & Wright        Expires February 17, 2020              [Page 39]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2237,7 +2237,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 40]
+Andrews & Wright        Expires February 17, 2020              [Page 40]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2293,7 +2293,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 41]
+Andrews & Wright        Expires February 17, 2020              [Page 41]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2349,7 +2349,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 42]
+Andrews & Wright        Expires February 17, 2020              [Page 42]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2405,7 +2405,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 43]
+Andrews & Wright        Expires February 17, 2020              [Page 43]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2461,7 +2461,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 44]
+Andrews & Wright        Expires February 17, 2020              [Page 44]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2517,7 +2517,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 45]
+Andrews & Wright        Expires February 17, 2020              [Page 45]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2573,7 +2573,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 46]
+Andrews & Wright        Expires February 17, 2020              [Page 46]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2629,7 +2629,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 47]
+Andrews & Wright        Expires February 17, 2020              [Page 47]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2685,7 +2685,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 48]
+Andrews & Wright        Expires February 17, 2020              [Page 48]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2741,7 +2741,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 49]
+Andrews & Wright        Expires February 17, 2020              [Page 49]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2797,7 +2797,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 50]
+Andrews & Wright        Expires February 17, 2020              [Page 50]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2853,7 +2853,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 51]
+Andrews & Wright        Expires February 17, 2020              [Page 51]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2909,7 +2909,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 52]
+Andrews & Wright        Expires February 17, 2020              [Page 52]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -2965,7 +2965,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 53]
+Andrews & Wright        Expires February 17, 2020              [Page 53]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -3021,7 +3021,7 @@ A.2.  Responses and Errors
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 54]
+Andrews & Wright        Expires February 17, 2020              [Page 54]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -3077,7 +3077,7 @@ Appendix B.  ChangeLog
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 55]
+Andrews & Wright        Expires February 17, 2020              [Page 55]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -3133,7 +3133,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 56]
+Andrews & Wright        Expires February 17, 2020              [Page 56]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -3189,7 +3189,7 @@ Internet-Draft              JSON Hyper-Schema                August 2019
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 57]
+Andrews & Wright        Expires February 17, 2020              [Page 57]
 
 Internet-Draft              JSON Hyper-Schema                August 2019
 
@@ -3245,4 +3245,4 @@ Authors' Addresses
 
 
 
-Andrews & Wright        Expires February 11, 2020              [Page 58]
+Andrews & Wright        Expires February 17, 2020              [Page 58]
