@@ -31,7 +31,7 @@
     - name: json-schema
       url: https://github.com/luposlip/json-schema
       draft: [7]
-      license: Eclipse Public License 2.0
+      license: Apache License, Version 2.0
 - name: Elixir
   implementations:
     - name: Elixir JSON Schema validator
@@ -134,7 +134,10 @@
       draft: [7, 6, 4, 3]
     - name: JSON Schema Lint
       url: http://jsonschemalint.com/
-      draft: [6, 4, 3, 2, 1]
+      draft: [7, 6, 4, 3, 2, 1]
+    - name: ExtendsClass's JSON Schema Validator
+      url: https://extendsclass.com/json-schema-validator.html
+      draft: [7]
 - name: Command Line
   implementations:
     - name: ajv-cli
