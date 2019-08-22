@@ -41,7 +41,7 @@
       "type": "string"
     },
     "geo": {
-      "$ref": "http://example.com/geo.schema.json"
+      "$ref": "http://example.com/geographical-location.schema.json"
     }
   }
 }
