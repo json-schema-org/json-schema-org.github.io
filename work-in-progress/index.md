@@ -7,20 +7,17 @@ permalink: /work-in-progress
 * TOC
 {:toc}
 
-## The Next Draft (by whatever name) Is Ready for Final Pre-Publication Review!
+## The Next Draft (by whatever name) Is Approaching Publication!
 
-The forthcoming draft is now feature-frozen and has gone through the initial four-week pre-publication review period.
+The draft is feature-complete, including late additions based on our first try at a final review period several months ago.
 
-_**UPDATE: July 28th, 2019** We continue to incorporate feedback and clarify sections of the new draft.  We expect to finally publish the draft during August._
+We will be working on a more user-friendly and extensive guide to the new draft shortly.
 
-The following sorts of feedback are particularly desired:
+### Update as of 26 Aug 2019
 
-* Clarity, readability, and accessibility to new readers
-* Contradictions, inconsistencies and other bugs
-* Anything so egregious that implementation would be infeasible or impossible
+***All PRs from our final review feedback have been posted.***
 
-New features or major changes to existing features will be deferred to a future draft,
-and work on the next draft will begin immediately after this one is published.
+_The draft will be published as soon as we have sufficient reviews from the spec team and/or implementation owners.  As this is summer vacation season, that may still take a few weeks._
 
 ## What Is This Draft Called, Anyway?
 
