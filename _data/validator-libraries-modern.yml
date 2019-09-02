@@ -28,6 +28,10 @@
       license: MIT
 - name: Clojure
   implementations:
+    - name: jinx
+      url: https://github.com/juxt/jinx
+      draft: [7]
+      license: MIT
     - name: json-schema
       url: https://github.com/luposlip/json-schema
       draft: [7]
