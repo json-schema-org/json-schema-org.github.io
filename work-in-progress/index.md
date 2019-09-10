@@ -7,17 +7,13 @@ permalink: /work-in-progress
 * TOC
 {:toc}
 
-## The Next Draft (by whatever name) Is Approaching Publication!
+## The Next Draft (by whatever name) Is Ready for Final Pre-Publication Review!
 
-The draft is feature-complete, including late additions based on our first try at a final review period several months ago.
+The forthcoming draft is now feature-frozen and has gone through the initial four-week pre-publication review period.
 
-We will be working on a more user-friendly and extensive guide to the new draft shortly.
+_**UPDATE: Sept 8th, 2019** All PRs have been posted, and we are waiting on final reviews from one team member.  The WIP documents here incorporate the PRs as they are currently posted._
 
-### Update as of 26 Aug 2019
-
-***All PRs from our final review feedback have been posted.***
-
-_The draft will be published as soon as we have sufficient reviews from the spec team and/or implementation owners.  As this is summer vacation season, that may still take a few weeks._
+Once we have completed reviews within the core JSON Schema team, we will publish this draft.
 
 ## What Is This Draft Called, Anyway?
 
@@ -39,10 +35,6 @@ Meta-schemas will now be identified with dates, which can be correlated with the
 and expiration dates of the IETF documents.  This will make it more clear when a bugfix
 meta-schema is produced, and also make it more obvious that the IETF and meta-schema identifiers
 are not expected to match exactly.
-
-## Change Log
-
-To see what changes are involved, read the [release notes](./WIP-json-schema-release-notes.md).
 
 ## Pre-Built Review Documents
 

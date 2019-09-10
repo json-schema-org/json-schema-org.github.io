@@ -1,11 +1,11 @@
 {
-    "$schema": "http://json-schema.org/draft/2019-WIP/schema#",
-    "$id": "http://json-schema.org/draft/2019-WIP/output/hyper-schema",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://json-schema.org/draft/2019-09/output/hyper-schema",
     "title": "JSON Hyper-Schema Output",
     "type": "array",
     "items": {
         "allOf": [
-            {"$ref": "http://json-schema.org/draft/2019-WIP/links#/$defs/noRequiredFields" }
+            {"$ref": "https://json-schema.org/draft/2019-09/links#/$defs/noRequiredFields" }
         ],
         "type": "object",
         "required": [
