@@ -15,7 +15,7 @@ _**UPDATE: Sept 8th, 2019** All PRs have been posted, and we are waiting on fina
 
 Once we have completed reviews within the core JSON Schema team, we will publish this draft.
 
-Learn more about the [changes](WIP-json-schema-release-notes.html) in this draft.
+Learn more about the [changes](/work-in-progress/WIP-json-schema-release-notes.html) in this draft.
 
 ## What Is This Draft Called, Anyway?
 
@@ -59,7 +59,7 @@ _**NOTE:** Links to meta-schemas and among the drafts will not work correctly in
 
 ### Change Log / Release Notes:
 
-Learn more about the [changes](WIP-json-schema-release-notes.html) in this draft.
+Learn more about the [changes](/work-in-progress/WIP-json-schema-release-notes.html) in this draft.
 
 ### General use meta-schemas:
 

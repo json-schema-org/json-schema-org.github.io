@@ -11,9 +11,9 @@ For implementors, there is a lot more to consider, and further guidance on imple
 {:toc}
 
 For a basic list of changes to each document, see their change logs:
-* [Core](WIP-jsonschema-core.html#rfc.appendix.G)
-* [Validation](WIP-jsonschema-validation.html#rfc.appendix.C)
-* [Hyper-Schema](WIP-jsonschema-hyperschema.html#rfc.appendix.B)
+* [Core](/work-in-progress/WIP-jsonschema-core.html#rfc.appendix.G)
+* [Validation](/work-in-progress/WIP-jsonschema-validation.html#rfc.appendix.C)
+* [Hyper-Schema](/work-in-progress/WIP-jsonschema-hyperschema.html#rfc.appendix.B)
 
 ### Incompatible Changes
 
@@ -31,60 +31,60 @@ The old syntax for these keywords is not an error (and the default meta-schema s
 
 ### Annotations, Errors, and Outputs
 
-[Annotation keywords](WIP-jsonschema-core.html#rfc.section.7.7) such as `title`, `readOnly`, and `default` have always been a part of JSON Schema, but without any guidance on how to make use of them.  This draft formalizes how implementations can make annotation information available to applications.
+[Annotation keywords](/work-in-progress/WIP-jsonschema-core.html#rfc.section.7.7) such as `title`, `readOnly`, and `default` have always been a part of JSON Schema, but without any guidance on how to make use of them.  This draft formalizes how implementations can make annotation information available to applications.
 
 Similarly, there has not previously been guidance on what constitutes useful error reporting when validation fails.
 
-To solve both of these problems, we now recommend that implementations support one or more of standardized [output formats](WIP-jsonschema-core.html#rfc.section.10).
+To solve both of these problems, we now recommend that implementations support one or more of standardized [output formats](/work-in-progress/WIP-jsonschema-core.html#rfc.section.10).
 
 ### Keyword Changes
 
-All keywords have now been organized into [vocabularies](WIP-jsonschema-core.html#rfc.section.8.1), with the Core and Validation specifications containing multiple vocabularies.  In this process, some keywords have moved from Validation into Core.
+All keywords have now been organized into [vocabularies](/work-in-progress/WIP-jsonschema-core.html#rfc.section.8.1), with the Core and Validation specifications containing multiple vocabularies.  In this process, some keywords have moved from Validation into Core.
 
 #### Core Vocabulary
 
-[Core Specification, Section 8](WIP-jsonschema-core.html#rfc.section.8)
+[Core Specification, Section 8](/work-in-progress/WIP-jsonschema-core.html#rfc.section.8)
 
 keyword | change | notes
 ---- | ---- | ----
-[`$anchor`](WIP-jsonschema-core.html#rfc.section.8.2.3) | **new** | Replaces the `#plain-name` form of `$id`, with a different syntax and approach
-[`$defs` (renamed from `definitions`)](WIP-jsonschema-core.html#rfc.section.8.2.5) | **renamed** | Note that the standard meta-schema still reserves `definitions` for backwards compatibility
-[`$id`](WIP-jsonschema-core.html#rfc.section.8.2.2) | **changed** | Only URI-references without fragments are allowed; see `$anchor` for a replacement for plain-name fragments; all other fragments in `$id` had undefined behavior previously
-[`$recursiveAnchor` and `$recursiveRef`](WIP-jsonschema-core.html#rfc.section.8.2.4.2) | **new** | Used for extending recursive schemas such as meta-schemas
+[`$anchor`](/work-in-progress/WIP-jsonschema-core.html#rfc.section.8.2.3) | **new** | Replaces the `#plain-name` form of `$id`, with a different syntax and approach
+[`$defs` (renamed from `definitions`)](/work-in-progress/WIP-jsonschema-core.html#rfc.section.8.2.5) | **renamed** | Note that the standard meta-schema still reserves `definitions` for backwards compatibility
+[`$id`](/work-in-progress/WIP-jsonschema-core.html#rfc.section.8.2.2) | **changed** | Only URI-references without fragments are allowed; see `$anchor` for a replacement for plain-name fragments; all other fragments in `$id` had undefined behavior previously
+[`$recursiveAnchor` and `$recursiveRef`](/work-in-progress/WIP-jsonschema-core.html#rfc.section.8.2.4.2) | **new** | Used for extending recursive schemas such as meta-schemas
 [`$ref`] | **changed** | Other keywords are now allowed alongside of it
-[`$vocabulary`](WIP-jsonschema-core.html#rfc.section.8.1) | **new** | Has effects only in meta-schemas, and is used to control what keywords an implementation must or can support in order to process a schema using that meta-schema
+[`$vocabulary`](/work-in-progress/WIP-jsonschema-core.html#rfc.section.8.1) | **new** | Has effects only in meta-schemas, and is used to control what keywords an implementation must or can support in order to process a schema using that meta-schema
 
 #### Applicator Vocabulary
 
-[Core Specification, Section 9](WIP-jsonschema-core.html#rfc.section.9)
+[Core Specification, Section 9](/work-in-progress/WIP-jsonschema-core.html#rfc.section.9)
 
 These keywords were formerly found in the Validation Specification.
 
 keyword | change | notes
 ---- | ---- | ----
-[`dependentSchemas` (split from `dependencies`)](WIP-jsonschema-core.html#rfc.section.9.2.2.4) | **split** | This is the schema form of `dependencies`; note that the standard meta-schema still reserves `dependencies` for backwards compatibility
-[`unevaluatedItems`](WIP-jsonschema-core.html#rfc.section.9.3.1.3) | **new** | Similar to `additionalItems`, but can "see" into subschemas and across references
-[`unevaluatedProperties`](WIP-jsonschema-core.html#rfc.section.9.3.2.4) | **new** | Similar to `additionalProperties`, but can "see" into subschemas and across references
+[`dependentSchemas` (split from `dependencies`)](/work-in-progress/WIP-jsonschema-core.html#rfc.section.9.2.2.4) | **split** | This is the schema form of `dependencies`; note that the standard meta-schema still reserves `dependencies` for backwards compatibility
+[`unevaluatedItems`](/work-in-progress/WIP-jsonschema-core.html#rfc.section.9.3.1.3) | **new** | Similar to `additionalItems`, but can "see" into subschemas and across references
+[`unevaluatedProperties`](/work-in-progress/WIP-jsonschema-core.html#rfc.section.9.3.2.4) | **new** | Similar to `additionalProperties`, but can "see" into subschemas and across references
 
 The other applicator vocabulary keywords are `items`, `additionalItems`, `properties`, `patternProperties`, `additionalProperties`, `anyOf`, `allOf`, `oneOf`, `not`, `if`, `then`, `else`.
 
 #### Validation Vocabulary
 
-[Validation Specification, Section 6](WIP-jsonschema-validation.html#rfc.section.6)
+[Validation Specification, Section 6](/work-in-progress/WIP-jsonschema-validation.html#rfc.section.6)
 
 keyword | change | notes
 ---- | ---- | ----
-[`dependentRequired` (split from `dependencies`)](WIP-jsonschema-validation.html#rfc.section.6.5.4) | **split** | This is the string array form of `dependencies`; note that the standard meta-schema still reserves `dependencies` for backwards compatibility
-[`maxContains` and `minContains`](WIP-jsonschema-validation.html#rfc.section.6.4.4) | **new** | Assertion for controlling how many times a subschema must be matched within an array
+[`dependentRequired` (split from `dependencies`)](/work-in-progress/WIP-jsonschema-validation.html#rfc.section.6.5.4) | **split** | This is the string array form of `dependencies`; note that the standard meta-schema still reserves `dependencies` for backwards compatibility
+[`maxContains` and `minContains`](/work-in-progress/WIP-jsonschema-validation.html#rfc.section.6.4.4) | **new** | Assertion for controlling how many times a subschema must be matched within an array
 
 
 #### Format Vocabulary
 
-[Validation Specification, Section 7](WIP-jsonschema-validation.html#rfc.section.7)
+[Validation Specification, Section 7](/work-in-progress/WIP-jsonschema-validation.html#rfc.section.7)
 
 The `format` keywords has always been problematic due to its optional nature.  There has never been a way to ensure that the implementation processing your schema supports `format` at all, or if it does, to what degree it validates each type of format.  In theory, since each format references a standard specification, if a format is supported, it should behave consistently.  In practice, this is not the case.
 
-There are two ways for an application to validate formats: It can rely on a JSON Schema implementation to validate them (which may or may not have the expected results), or it can note where the `format` keyword has been used and perform its own validation based on that.  This second approach is supported by treating `format` as an [annotation keyword](WIP-jsonschema-core.html#rfc.section.7.7) and supporting the [basic, detailed, or verbose output formats](WIP-jsonschema-core.html#rfc.section.10.4.2).
+There are two ways for an application to validate formats: It can rely on a JSON Schema implementation to validate them (which may or may not have the expected results), or it can note where the `format` keyword has been used and perform its own validation based on that.  This second approach is supported by treating `format` as an [annotation keyword](/work-in-progress/WIP-jsonschema-core.html#rfc.section.7.7) and supporting the [basic, detailed, or verbose output formats](/work-in-progress/WIP-jsonschema-core.html#rfc.section.10.4.2).
 
 To impose some predictability on this system, the behavior has changed in several ways, as illustrated below.  The key difference here is that `format` validation is now predictably off by default, but can be configured to be turned on.  In draft-07, it was on (but possibly unimplemented) by default and could be configured to be turned off.
 
@@ -129,34 +129,34 @@ Additionally, two new formats were added, and a specification reference was upda
 
 format | change | notes
 ---- | ---- | ----
-[`"duration"`](WIP-jsonschema-validation.html#rfc.section.7.3.1) | **added** | The duration format is from the ISO 8601 ABNF as given in Appendix A of RFC 3339
-[`"hostname"` and `"idn-hostname"`](WIP-jsonschema-validation.html#rfc.section.7.3.3) | **updated** | Use RFC 1123 instead of RFC 1034; this allows for a leading digit
-[`"uuid"`](WIP-jsonschema-validation.html#rfc.section.7.3.5) | **added** | A string instance is valid against this attribute if it is a valid string representation of a UUID, according to RFC4122
+[`"duration"`](/work-in-progress/WIP-jsonschema-validation.html#rfc.section.7.3.1) | **added** | The duration format is from the ISO 8601 ABNF as given in Appendix A of RFC 3339
+[`"hostname"` and `"idn-hostname"`](/work-in-progress/WIP-jsonschema-validation.html#rfc.section.7.3.3) | **updated** | Use RFC 1123 instead of RFC 1034; this allows for a leading digit
+[`"uuid"`](/work-in-progress/WIP-jsonschema-validation.html#rfc.section.7.3.5) | **added** | A string instance is valid against this attribute if it is a valid string representation of a UUID, according to RFC4122
 
 
 #### Content Vocabulary
 
-[Validation Specification, Section 8](WIP-jsonschema-validation.html#rfc.section.8)
+[Validation Specification, Section 8](/work-in-progress/WIP-jsonschema-validation.html#rfc.section.8)
 
 These keywords are now specified purely as annotations, and never assertions.  Some guidance is provided around how an implementation can optionally offer further automatic processing of this information outside of the validation process.
 
 keyword | change | notes
 ---- | ---- | ----
-[`contentEncoding`](WIP-jsonschema-validation.html#rfc.section.8.3) | **updated** | Encodings from RFC 4648 are now allowed, and take precedence over RFC 2045 when there is a difference
-[`contentSchema`](WIP-jsonschema-validation.html#rfc.section.8.5) | **added** | Schema for use with the decoded content string; note that it is _not_ automatically applied as not all content media types can be understood in advance
+[`contentEncoding`](/work-in-progress/WIP-jsonschema-validation.html#rfc.section.8.3) | **updated** | Encodings from RFC 4648 are now allowed, and take precedence over RFC 2045 when there is a difference
+[`contentSchema`](/work-in-progress/WIP-jsonschema-validation.html#rfc.section.8.5) | **added** | Schema for use with the decoded content string; note that it is _not_ automatically applied as not all content media types can be understood in advance
 
 #### Meta-Data Vocabulary
 
-[Validation Specification, Section 9](WIP-jsonschema-validation.html#rfc.section.9)
+[Validation Specification, Section 9](/work-in-progress/WIP-jsonschema-validation.html#rfc.section.9)
 
 keyword | change | notes
 ---- | ---- | ----
-[`deprecated`](WIP-jsonschema-validation.html#rfc.section.9.3) | **added** | Used to indicate that a field is deprecated in some application-specific manner
+[`deprecated`](/work-in-progress/WIP-jsonschema-validation.html#rfc.section.9.3) | **added** | Used to indicate that a field is deprecated in some application-specific manner
 
 #### Hyper-Schema Vocabulary
 
-[Hyper-Schema Specification, Sections 5 and 6](WIP-jsonschema-hyperschema.html#rfc.section.5)
+[Hyper-Schema Specification, Sections 5 and 6](/work-in-progress/WIP-jsonschema-hyperschema.html#rfc.section.5)
 
 keyword | change | notes
 ---- | ---- | ----
-[`rel`](WIP-jsonschema-hyperschema.html#rfc.section.6.2.1) | **changed** | Can now be an array of values instead of just a string
+[`rel`](/work-in-progress/WIP-jsonschema-hyperschema.html#rfc.section.6.2.1) | **changed** | Can now be an array of values instead of just a string
