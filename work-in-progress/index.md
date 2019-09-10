@@ -15,6 +15,8 @@ _**UPDATE: Sept 8th, 2019** All PRs have been posted, and we are waiting on fina
 
 Once we have completed reviews within the core JSON Schema team, we will publish this draft.
 
+Learn more about the [changes](WIP-json-schema-release-notes.html) in this draft.
+
 ## What Is This Draft Called, Anyway?
 
 We have typically referred to this as `draft-08`, following our own convention of just
@@ -54,6 +56,10 @@ _**NOTE:** Links to meta-schemas and among the drafts will not work correctly in
 * [WIP: JSON Schema Validation](/work-in-progress/WIP-jsonschema-validation.html)
 * [WIP: JSON Schema Hyper-Schema](/work-in-progress/WIP-jsonschema-hyperschema.html)
 * [WIP: Relative JSON Pointer](/work-in-progress/WIP-relative-json-pointer.html)
+
+### Change Log / Release Notes:
+
+Learn more about the [changes](WIP-json-schema-release-notes.html) in this draft.
 
 ### General use meta-schemas:
 
