@@ -3,7 +3,9 @@ title: JSON Schema Draft-2019/09 Release Notes
 layout: page
 ---
 
-For the vast majority of schema authors, we hope that these changes are minimally disruptive.  The most likely to be frustrating is `format`, which we decided was acceptable as many schema authors are already extremely frustrated by its inconsistent behavior.
+For the vast majority of schema authors, we hope that these changes are minimally disruptive.
+
+The most likely to be frustrating is that `format` is no longer treated as a validation assertion _by default_ (although it is still possible for an application or user to configure a validator to treat it as one).  We decided this was acceptable because many schema authors are already extremely frustrated by its inconsistent behavior.
 
 For implementors, there is a lot more to consider, and further guidance on implementation topics will be forthcoming.
 
@@ -51,7 +53,7 @@ keyword | change | notes
 [`$defs` (renamed from `definitions`)](/work-in-progress/WIP-jsonschema-core.html#rfc.section.8.2.5) | **renamed** | Note that the standard meta-schema still reserves `definitions` for backwards compatibility
 [`$id`](/work-in-progress/WIP-jsonschema-core.html#rfc.section.8.2.2) | **changed** | Only URI-references without fragments are allowed; see `$anchor` for a replacement for plain-name fragments; all other fragments in `$id` had undefined behavior previously
 [`$recursiveAnchor` and `$recursiveRef`](/work-in-progress/WIP-jsonschema-core.html#rfc.section.8.2.4.2) | **new** | Used for extending recursive schemas such as meta-schemas
-[`$ref`] | **changed** | Other keywords are now allowed alongside of it
+[`$ref`](/work-in-progress/WIP-jsonschema-core.html#rfc.section.8.2.4) | **changed** | Other keywords are now allowed alongside of it
 [`$vocabulary`](/work-in-progress/WIP-jsonschema-core.html#rfc.section.8.1) | **new** | Has effects only in meta-schemas, and is used to control what keywords an implementation must or can support in order to process a schema using that meta-schema
 
 #### Applicator Vocabulary
