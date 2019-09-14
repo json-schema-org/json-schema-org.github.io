@@ -5,7 +5,7 @@
 Internet Engineering Task Force                                  G. Luff
 Internet-Draft
 Intended status: Informational                           H. Andrews, Ed.
-Expires: February 17, 2020                               August 16, 2019
+Expires: March 17, 2020                               September 14, 2019
 
 
                          Relative JSON Pointers
@@ -33,7 +33,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 17, 2020.
+   This Internet-Draft will expire on March 17, 2020.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Luff & Andrews          Expires February 17, 2020               [Page 1]
+Luff & Andrews           Expires March 17, 2020                 [Page 1]
 
-Internet-Draft           Relative JSON Pointers              August 2019
+Internet-Draft           Relative JSON Pointers           September 2019
 
 
 Table of Contents
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Luff & Andrews          Expires February 17, 2020               [Page 2]
+Luff & Andrews           Expires March 17, 2020                 [Page 2]
 
-Internet-Draft           Relative JSON Pointers              August 2019
+Internet-Draft           Relative JSON Pointers           September 2019
 
 
               The ABNF syntax of a Relative JSON Pointer is:
@@ -165,9 +165,9 @@ Internet-Draft           Relative JSON Pointers              August 2019
 
 
 
-Luff & Andrews          Expires February 17, 2020               [Page 3]
+Luff & Andrews           Expires March 17, 2020                 [Page 3]
 
-Internet-Draft           Relative JSON Pointers              August 2019
+Internet-Draft           Relative JSON Pointers           September 2019
 
 
       If the referenced value is an object member within an object, then
@@ -221,9 +221,9 @@ Internet-Draft           Relative JSON Pointers              August 2019
 
 
 
-Luff & Andrews          Expires February 17, 2020               [Page 4]
+Luff & Andrews           Expires March 17, 2020                 [Page 4]
 
-Internet-Draft           Relative JSON Pointers              August 2019
+Internet-Draft           Relative JSON Pointers           September 2019
 
 
 6.  Non-use in URI Fragment Identifiers
@@ -277,9 +277,9 @@ Internet-Draft           Relative JSON Pointers              August 2019
 
 
 
-Luff & Andrews          Expires February 17, 2020               [Page 5]
+Luff & Andrews           Expires March 17, 2020                 [Page 5]
 
-Internet-Draft           Relative JSON Pointers              August 2019
+Internet-Draft           Relative JSON Pointers           September 2019
 
 
 11.  References
@@ -333,9 +333,9 @@ Internet-Draft           Relative JSON Pointers              August 2019
 
 
 
-Luff & Andrews          Expires February 17, 2020               [Page 6]
+Luff & Andrews           Expires March 17, 2020                 [Page 6]
 
-Internet-Draft           Relative JSON Pointers              August 2019
+Internet-Draft           Relative JSON Pointers           September 2019
 
 
 Appendix A.  ChangeLog
@@ -389,4 +389,4 @@ Authors' Addresses
 
 
 
-Luff & Andrews          Expires February 17, 2020               [Page 7]
+Luff & Andrews           Expires March 17, 2020                 [Page 7]

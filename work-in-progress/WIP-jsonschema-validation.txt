@@ -5,10 +5,10 @@
 Internet Engineering Task Force                           A. Wright, Ed.
 Internet-Draft
 Intended status: Informational                           H. Andrews, Ed.
-Expires: February 17, 2020
+Expires: March 17, 2020
                                                           B. Hutton, Ed.
                                                Wellcome Sanger Institute
-                                                         August 16, 2019
+                                                      September 14, 2019
 
 
  JSON Schema Validation: A Vocabulary for Structural Validation of JSON
@@ -47,15 +47,15 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 17, 2020.
+   This Internet-Draft will expire on March 17, 2020.
 
 
 
 
 
-Wright, et al.          Expires February 17, 2020               [Page 1]
+Wright, et al.           Expires March 17, 2020                 [Page 1]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
 Copyright Notice
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Wright, et al.          Expires February 17, 2020               [Page 2]
+Wright, et al.           Expires March 17, 2020                 [Page 2]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
        6.5.1.  maxProperties . . . . . . . . . . . . . . . . . . . .   9
@@ -144,7 +144,7 @@ Internet-Draft           JSON Schema Validation              August 2019
      9.1.  "title" and "description" . . . . . . . . . . . . . . . .  21
      9.2.  "default" . . . . . . . . . . . . . . . . . . . . . . . .  21
      9.3.  "deprecated"  . . . . . . . . . . . . . . . . . . . . . .  21
-     9.4.  "readOnly" and "writeOnly"  . . . . . . . . . . . . . . .  21
+     9.4.  "readOnly" and "writeOnly"  . . . . . . . . . . . . . . .  22
      9.5.  "examples"  . . . . . . . . . . . . . . . . . . . . . . .  22
    10. Security Considerations . . . . . . . . . . . . . . . . . . .  23
    11. References  . . . . . . . . . . . . . . . . . . . . . . . . .  23
@@ -165,9 +165,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020               [Page 3]
+Wright, et al.           Expires March 17, 2020                 [Page 3]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
    This specification will use the concepts, syntax, and terminology
@@ -204,10 +204,10 @@ Internet-Draft           JSON Schema Validation              August 2019
 
    This specification defines a set of assertion keywords, as well as a
    small vocabulary of metadata keywords that can be used to annotate
-   the JSON instance with useful information.  The Section 7 and
-   Section 8 keywords are also useful as annotations as well as being
-   optional assertions, as they convey additional usage guidance for the
-   instance data.
+   the JSON instance with useful information.  The Section 7 keyword is
+   intended primarily as an annotation, but can optionally be used as an
+   assertion.  The Section 8 keywords are annotations for working with
+   documents embedded as JSON strings.
 
 4.  Interoperability Considerations
 
@@ -221,9 +221,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020               [Page 4]
+Wright, et al.           Expires March 17, 2020                 [Page 4]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
 4.2.  Validation of Numeric Instances
@@ -243,10 +243,11 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 5.  Meta-Schema
 
-   The current URI for the JSON Schema Validation meta-schema is
-   <http://json-schema.org/draft/2019-08/schema#>.  For schema author
+   The current URI for the default JSON Schema meta-schema is
+   <http://json-schema.org/draft/2019-09/schema>.  For schema author
    convenience, this meta-schema describes all vocabularies defined in
-   this specification and the JSON Schema Core specification.
+   this specification and the JSON Schema Core specification, as well as
+   two former keywords which are reserved for a transitional period.
    Individual vocabulary and vocabulary meta-schema URIs are given for
    each section below.  Certain vocabularies are optional to support,
    which is explained in detail in the relevant sections.
@@ -268,18 +269,17 @@ Internet-Draft           JSON Schema Validation              August 2019
    true.
 
    The current URI for this vocabulary, known as the Validation
-   vocabulary, is: <https://json-schema.org/draft/2019-08/vocab/
+   vocabulary, is: <https://json-schema.org/draft/2019-09/vocab/
    validation>.
 
    The current URI for the corresponding meta-schema is: <https://json-
-   schema.org/draft/2019-08/meta/validation>.
+   schema.org/draft/2019-09/meta/validation>.
 
 
 
-
-Wright, et al.          Expires February 17, 2020               [Page 5]
+Wright, et al.           Expires March 17, 2020                 [Page 5]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
 6.1.  Validation Keywords for Any Instance Type
@@ -333,9 +333,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020               [Page 6]
+Wright, et al.           Expires March 17, 2020                 [Page 6]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
 6.2.2.  maximum
@@ -389,9 +389,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020               [Page 7]
+Wright, et al.           Expires March 17, 2020                 [Page 7]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
 6.3.2.  minLength
@@ -445,9 +445,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020               [Page 8]
+Wright, et al.           Expires March 17, 2020                 [Page 8]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
    Omitting this keyword has the same behavior as a value of false.
@@ -501,9 +501,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020               [Page 9]
+Wright, et al.           Expires March 17, 2020                 [Page 9]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
 6.5.3.  required
@@ -557,9 +557,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020              [Page 10]
+Wright, et al.           Expires March 17, 2020                [Page 10]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
    instance types defined in the data model defined in the core JSON
@@ -577,10 +577,10 @@ Internet-Draft           JSON Schema Validation              August 2019
    false.  See the Implementation Requirements below for details.
 
    The current URI for this vocabulary, known as the Format vocabulary,
-   is: <https://json-schema.org/draft/2019-08/vocab/format>.
+   is: <https://json-schema.org/draft/2019-09/vocab/format>.
 
    The current URI for the corresponding meta-schema is: <https://json-
-   schema.org/draft/2019-08/meta/format>.
+   schema.org/draft/2019-09/meta/format>.
 
 7.2.  Implementation Requirements
 
@@ -613,9 +613,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020              [Page 11]
+Wright, et al.           Expires March 17, 2020                [Page 11]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
 7.2.2.  As an assertion
@@ -669,9 +669,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020              [Page 12]
+Wright, et al.           Expires March 17, 2020                [Page 12]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
    implementation would send an email, attempt to connect to a URL, or
@@ -725,9 +725,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020              [Page 13]
+Wright, et al.           Expires March 17, 2020                [Page 13]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
 7.3.1.  Dates, Times, and Duration
@@ -781,9 +781,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020              [Page 14]
+Wright, et al.           Expires March 17, 2020                [Page 14]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
    Note that all strings valid against the "email" attribute are also
@@ -837,9 +837,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020              [Page 15]
+Wright, et al.           Expires March 17, 2020                [Page 15]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
    iri-reference:  A string instance is valid against this attribute if
@@ -893,9 +893,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020              [Page 16]
+Wright, et al.           Expires March 17, 2020                [Page 16]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
    Implementations that validate formats MUST accept at least the subset
@@ -922,10 +922,10 @@ Internet-Draft           JSON Schema Validation              August 2019
    true.
 
    The current URI for this vocabulary, known as the Content vocabulary,
-   is: <https://json-schema.org/draft/2019-08/vocab/content>.
+   is: <https://json-schema.org/draft/2019-09/vocab/content>.
 
    The current URI for the corresponding meta-schema is: <https://json-
-   schema.org/draft/2019-08/meta/content>.
+   schema.org/draft/2019-09/meta/content>.
 
 8.2.  Implementation Requirements
 
@@ -949,9 +949,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020              [Page 17]
+Wright, et al.           Expires March 17, 2020                [Page 17]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
    document.  [[CREF7: For now, the exact mechanism of performing and
@@ -1005,9 +1005,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020              [Page 18]
+Wright, et al.           Expires March 17, 2020                [Page 18]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
    The value of this property SHOULD be ignored if "contentMediaType" is
@@ -1061,9 +1061,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020              [Page 19]
+Wright, et al.           Expires March 17, 2020                [Page 19]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
    This example describes a JWT that is MACed using the HMAC SHA-256
@@ -1117,17 +1117,17 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020              [Page 20]
+Wright, et al.           Expires March 17, 2020                [Page 20]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
    The current URI for this vocabulary, known as the Meta-Data
-   vocabulary, is: <https://json-schema.org/draft/2019-08/vocab/meta-
+   vocabulary, is: <https://json-schema.org/draft/2019-09/vocab/meta-
    data>.
 
    The current URI for the corresponding meta-schema is: <https://json-
-   schema.org/draft/2019-08/meta/meta-data>.
+   schema.org/draft/2019-09/meta/meta-data>.
 
 9.1.  "title" and "description"
 
@@ -1153,15 +1153,30 @@ Internet-Draft           JSON Schema Validation              August 2019
 
    The value of this keyword MUST be a boolean.  When multiple
    occurrences of this keyword are applicable to a single sub-instance,
-   the resulting value MUST be true if any occurrence specifies a true
-   value, and MUST be false otherwise.
+   applications SHOULD consider the instance location to be deprecated
+   if any occurrence specifies a true value.
 
    If "deprecated" has a value of boolean true, it indicates that
    applications SHOULD refrain from usage of the declared property.  It
    MAY mean the property is going to be removed in the future.
 
    A root schema containing "deprecated" with a value of true indicates
-   the entire root schema MAY be removed in the future.
+   that the entire resource being described MAY be removed in the
+   future.
+
+   When the "deprecated" keyword is applied to an item in an array by
+   means of "items", if "items" is a single schema, the deprecation
+   relates to the whole array, while if "items" is an array of schemas,
+   the deprecation relates to the corrosponding item according to the
+   subschemas position.
+
+
+
+
+Wright, et al.           Expires March 17, 2020                [Page 21]
+
+Internet-Draft           JSON Schema Validation           September 2019
+
 
    Omitting this keyword has the same behavior as a value of false.
 
@@ -1169,17 +1184,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
    The value of these keywords MUST be a boolean.  When multiple
    occurrences of these keywords are applicable to a single sub-
-
-
-
-
-Wright, et al.          Expires February 17, 2020              [Page 21]
-
-Internet-Draft           JSON Schema Validation              August 2019
-
-
-   instance, the resulting value MUST be true if any occurrence
-   specifies a true value, and MUST be false otherwise.
+   instance, the resulting behavior SHOULD be as for a true value if any
+   occurrence specifies a true value, and SHOULD be as for a false value
+   otherwise.
 
    If "readOnly" has a value of boolean true, it indicates that the
    value of the instance is managed exclusively by the owning authority,
@@ -1220,19 +1227,17 @@ Internet-Draft           JSON Schema Validation              August 2019
    implementations MUST provide a flat array of all values rather than
    an array of arrays.
 
+
+
+Wright, et al.           Expires March 17, 2020                [Page 22]
+
+Internet-Draft           JSON Schema Validation           September 2019
+
+
    This keyword can be used to provide sample JSON values associated
    with a particular schema, for the purpose of illustrating usage.  It
    is RECOMMENDED that these values be valid against the associated
    schema.
-
-
-
-
-
-Wright, et al.          Expires February 17, 2020              [Page 22]
-
-Internet-Draft           JSON Schema Validation              August 2019
-
 
    Implementations MAY use the value(s) of "default", if present, as an
    additional example.  If "examples" is absent, "default" MAY still be
@@ -1278,17 +1283,17 @@ Internet-Draft           JSON Schema Validation              August 2019
               Describing JSON Documents", draft-handrews-json-schema-02
               (work in progress), November 2017.
 
+
+
+Wright, et al.           Expires March 17, 2020                [Page 23]
+
+Internet-Draft           JSON Schema Validation           September 2019
+
+
    [relative-json-pointer]
               Luff, G. and H. Andrews, "Relative JSON Pointers", draft-
               handrews-relative-json-pointer-01 (work in progress),
               November 2017.
-
-
-
-Wright, et al.          Expires February 17, 2020              [Page 23]
-
-Internet-Draft           JSON Schema Validation              August 2019
-
 
    [RFC1123]  Braden, R., Ed., "Requirements for Internet Hosts -
               Application and Support", STD 3, RFC 1123,
@@ -1332,19 +1337,18 @@ Internet-Draft           JSON Schema Validation              August 2019
               DOI 10.17487/RFC4122, July 2005,
               <https://www.rfc-editor.org/info/rfc4122>.
 
+
+
+
+
+Wright, et al.           Expires March 17, 2020                [Page 24]
+
+Internet-Draft           JSON Schema Validation           September 2019
+
+
    [RFC4291]  Hinden, R. and S. Deering, "IP Version 6 Addressing
               Architecture", RFC 4291, DOI 10.17487/RFC4291, February
               2006, <https://www.rfc-editor.org/info/rfc4291>.
-
-
-
-
-
-
-Wright, et al.          Expires February 17, 2020              [Page 24]
-
-Internet-Draft           JSON Schema Validation              August 2019
-
 
    [RFC4648]  Josefsson, S., "The Base16, Base32, and Base64 Data
               Encodings", RFC 4648, DOI 10.17487/RFC4648, October 2006,
@@ -1393,13 +1397,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-
-
-
-
-Wright, et al.          Expires February 17, 2020              [Page 25]
+Wright, et al.           Expires March 17, 2020                [Page 25]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
 Appendix A.  Keywords Moved from Validation to Core
@@ -1412,7 +1412,11 @@ Appendix A.  Keywords Moved from Validation to Core
    "definitions"  Renamed to "$defs" to match "$ref" and be shorter to
       type.  Schema vocabulary authors SHOULD NOT define a "definitions"
       keyword with different behavior in order to avoid invalidating
-      schemas that still use the older name.
+      schemas that still use the older name.  While "definitions" is
+      absent in the single-vocabulary meta-schemas referenced by this
+      document, it remains present in the default meta-schema, and
+      implementations SHOULD assume that "$defs" and "definitions" have
+      the same behavior when that meta-schema is used.
 
    "allOf", "anyOf", "oneOf", "not", "if", "then", "else",
                                      "items", "additionalItems",
@@ -1445,18 +1449,17 @@ Appendix B.  Acknowledgments
 
    Thanks to Jason Desrosiers, Daniel Perrett, Erik Wilde, Ben Hutton,
    Evgeny Poberezkin, Brad Bowman, Gowry Sankar, Donald Pipowitch, Dave
+
+
+
+
+Wright, et al.           Expires March 17, 2020                [Page 26]
+
+Internet-Draft           JSON Schema Validation           September 2019
+
+
    Finlay, and Denis Laxalde for their submissions and patches to the
    document.
-
-
-
-
-
-
-Wright, et al.          Expires February 17, 2020              [Page 26]
-
-Internet-Draft           JSON Schema Validation              August 2019
-
 
 Appendix C.  ChangeLog
 
@@ -1504,15 +1507,14 @@ Appendix C.  ChangeLog
       *  Provided the general principle behind ignoring annotations
          under "not" and similar cases
 
-      *  Clarified "if"/"then"/"else" validation interactions
 
 
-
-
-Wright, et al.          Expires February 17, 2020              [Page 27]
+Wright, et al.           Expires March 17, 2020                [Page 27]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
+
+      *  Clarified "if"/"then"/"else" validation interactions
 
       *  Clarified "if"/"then"/"else" behavior for annotation
 
@@ -1563,11 +1565,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-
-
-Wright, et al.          Expires February 17, 2020              [Page 28]
+Wright, et al.           Expires March 17, 2020                [Page 28]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
       *  Changed "exclusiveMaximum"/"exclusiveMinimum" from boolean
@@ -1621,9 +1621,9 @@ Internet-Draft           JSON Schema Validation              August 2019
 
 
 
-Wright, et al.          Expires February 17, 2020              [Page 29]
+Wright, et al.           Expires March 17, 2020                [Page 29]
 
-Internet-Draft           JSON Schema Validation              August 2019
+Internet-Draft           JSON Schema Validation           September 2019
 
 
       *  Rename "divisibleBy" to "multipleOf".
@@ -1677,4 +1677,4 @@ Authors' Addresses
 
 
 
-Wright, et al.          Expires February 17, 2020              [Page 30]
+Wright, et al.           Expires March 17, 2020                [Page 30]

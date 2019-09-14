@@ -451,7 +451,7 @@
 
   <meta name="dct.creator" content="Wright, A., Ed., Andrews, H., Ed., and B. Hutton, Ed." />
   <meta name="dct.identifier" content="urn:ietf:id:draft-handrews-json-schema-validation-02" />
-  <meta name="dct.issued" scheme="ISO8601" content="2019-08" />
+  <meta name="dct.issued" scheme="ISO8601" content="2019-14" />
   <meta name="dct.abstract" content="JSON Schema (application/schema+json) has several purposes, one of which is JSON instance validation.  This document specifies a vocabulary for JSON Schema to describe the meaning of JSON documents, provide hints for user interfaces working with JSON data, and to make assertions about what a valid document must look like.  " />
   <meta name="description" content="JSON Schema (application/schema+json) has several purposes, one of which is JSON instance validation.  This document specifies a vocabulary for JSON Schema to describe the meaning of JSON documents, provide hints for user interfaces working with JSON data, and to make assertions about what a valid document must look like.  " />
 
@@ -475,7 +475,7 @@
 <td class="right">H. Andrews, Ed.</td>
 </tr>
 <tr>
-<td class="left">Expires: March 11, 2020</td>
+<td class="left">Expires: March 17, 2020</td>
 <td class="right"></td>
 </tr>
 <tr>
@@ -488,7 +488,7 @@
 </tr>
 <tr>
 <td class="left"></td>
-<td class="right">September 8, 2019</td>
+<td class="right">September 14, 2019</td>
 </tr>
 
     	
@@ -508,7 +508,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on March 11, 2020.</p>
+<p>This Internet-Draft will expire on March 17, 2020.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
 <p>Copyright (c) 2019 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
@@ -675,7 +675,7 @@
 <a href="#rfc.section.3">3.</a> Overview</h1>
 <p id="rfc.section.3.p.1">JSON Schema validation asserts constraints on the structure of instance data.  An instance location that satisfies all asserted constraints is then annotated with any keywords that contain non-assertion information, such as descriptive metadata and usage hints.  If all locations within the instance satisfy all asserted constraints, then the instance is said to be valid against the schema.  </p>
 <p id="rfc.section.3.p.2">Each schema object is independently evaluated against each instance location to which it applies.  This greatly simplifies the implementation requirements for validators by ensuring that they do not need to maintain state across the document-wide validation process.  </p>
-<p id="rfc.section.3.p.3">This specification defines a set of assertion keywords, as well as a small vocabulary of metadata keywords that can be used to annotate the JSON instance with useful information.  The <a href="#format" class="xref">Section 7</a> and <a href="#content" class="xref">Section 8</a> keywords are also useful as annotations as well as being optional assertions, as they convey additional usage guidance for the instance data.  </p>
+<p id="rfc.section.3.p.3">This specification defines a set of assertion keywords, as well as a small vocabulary of metadata keywords that can be used to annotate the JSON instance with useful information.  The <a href="#format" class="xref">Section 7</a> keyword is intended primarily as an annotation, but can optionally be used as an assertion.  The <a href="#content" class="xref">Section 8</a> keywords are annotations for working with documents embedded as JSON strings.  </p>
 <h1 id="rfc.section.4">
 <a href="#rfc.section.4">4.</a> Interoperability Considerations</h1>
 <h1 id="rfc.section.4.1">
@@ -1059,13 +1059,14 @@
 <p id="rfc.section.9.2.p.2">This keyword can be used to supply a default JSON value associated with a particular schema. It is RECOMMENDED that a default value be valid against the associated schema.  </p>
 <h1 id="rfc.section.9.3">
 <a href="#rfc.section.9.3">9.3.</a> "deprecated"</h1>
-<p id="rfc.section.9.3.p.1">The value of this keyword MUST be a boolean.  When multiple occurrences of this keyword are applicable to a single sub-instance, the resulting value MUST be true if any occurrence specifies a true value, and MUST be false otherwise.  </p>
+<p id="rfc.section.9.3.p.1">The value of this keyword MUST be a boolean.  When multiple occurrences of this keyword are applicable to a single sub-instance, applications SHOULD consider the instance location to be deprecated if any occurrence specifies a true value.  </p>
 <p id="rfc.section.9.3.p.2">If "deprecated" has a value of boolean true, it indicates that applications SHOULD refrain from usage of the declared property. It MAY mean the property is going to be removed in the future.  </p>
-<p id="rfc.section.9.3.p.3">A root schema containing "deprecated" with a value of true indicates the entire root schema MAY be removed in the future.  </p>
-<p id="rfc.section.9.3.p.4">Omitting this keyword has the same behavior as a value of false.  </p>
+<p id="rfc.section.9.3.p.3">A root schema containing "deprecated" with a value of true indicates that the entire resource being described MAY be removed in the future.  </p>
+<p id="rfc.section.9.3.p.4">When the "deprecated" keyword is applied to an item in an array by means of "items", if "items" is a single schema, the deprecation relates to the whole array, while if "items" is an array of schemas, the deprecation relates to the corrosponding item according to the subschemas position.  </p>
+<p id="rfc.section.9.3.p.5">Omitting this keyword has the same behavior as a value of false.  </p>
 <h1 id="rfc.section.9.4">
 <a href="#rfc.section.9.4">9.4.</a> "readOnly" and "writeOnly"</h1>
-<p id="rfc.section.9.4.p.1">The value of these keywords MUST be a boolean.  When multiple occurrences of these keywords are applicable to a single sub-instance, the resulting value MUST be true if any occurrence specifies a true value, and MUST be false otherwise.  </p>
+<p id="rfc.section.9.4.p.1">The value of these keywords MUST be a boolean.  When multiple occurrences of these keywords are applicable to a single sub-instance, the resulting behavior SHOULD be as for a true value if any occurrence specifies a true value, and SHOULD be as for a false value otherwise.  </p>
 <p id="rfc.section.9.4.p.2">If "readOnly" has a value of boolean true, it indicates that the value of the instance is managed exclusively by the owning authority, and attempts by an application to modify the value of this property are expected to be ignored or rejected by that owning authority.  </p>
 <p id="rfc.section.9.4.p.3">An instance document that is marked as "readOnly for the entire document MAY be ignored if sent to the owning authority, or MAY result in an error, at the authority's discretion.  </p>
 <p id="rfc.section.9.4.p.4">If "writeOnly" has a value of boolean true, it indicates that the value is never present when the instance is retrieved from the owning authority.  It can be present when sent to the owning authority to update or create the document (or the resource it represents), but it will not be included in any updated or newly created version of the instance.  </p>
