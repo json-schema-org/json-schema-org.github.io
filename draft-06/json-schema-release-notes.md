@@ -25,6 +25,7 @@ keyword | change | consequence
 `"$id"` | replaces `"id"` | behavior is identical, `$` prefix matches the other two core keywords
 `"$ref"` | only allowed where a schema is expected | it is now possible to describe instance properties named `"$ref"`
 `"exclusiveMinimum"` and `"exclusiveMaximum"` | changed from a boolean to a number to be consistent with the principle of keyword independence | wherever one of these would be true before, change the value to the corresponding `"minimum"` or `"maximum"` value and remove the `"minimum"`/`"maximum"` keyword
+`"type"` | definition of `"integer"` | in draft-04, `"integer"` is listed as a primitive type and defined as "a JSON number without a fraction or exponent part"; in draft-06, `"integer"` is not considered a primitive type and is only defined in the section for keyword `"type"` as "any number with a zero fractional part"; `1.0` is thus not a valid `"integer"` type in draft-04 and earlier, but is a valid `"integer"` type in draft-06 and later; note that both drafts say that integers SHOULD be encoded in JSON without fractional parts  
 
 #### Additions and backwards-compatible changes
 
