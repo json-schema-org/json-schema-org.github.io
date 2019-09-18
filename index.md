@@ -4,11 +4,11 @@ title: JSON Schema
 permalink: /
 ---
 
-***The current version is [draft-07](specification.html)!***
-{: style="color:gray; font-size: 150%; text-align: center;"}
+**NEW DRAFT PUBLISHED!**
+{: style="color:red; font-size: 200%; text-align: center;"}
 
-***The next draft work-in-progress is [in final review](work-in-progress)!***
-{: style="color:red; font-size: 150%; text-align: center;"}
+The current version is [draft/2019-09](specification.html)!
+{: style="color:gray; font-size: 150%; text-align: center;"}
 
 **JSON Schema** is a vocabulary that allows you to **annotate** and **validate** JSON documents.
 
@@ -40,19 +40,9 @@ permalink: /
 
 ## Project Status
 
-### Update as of 8 September 2019
+16 September 2019: Draft 2019-09 (formerly known as draft-08) has been published!
 
-***All PRs from our final review feedback for the next draft have been posted!***
-
-_The draft will be published as soon as we have sufficient reviews from the spec team and/or implementation owners.  As this is summer vacation season, that may still take a few weeks.  As of September 8th, all but one team member have completed their reviews, and the last team member is now looking at the remaining PRs._
-
-This draft has also taken more time than expected because it tackles deep, long-term issues that have long been a challenge for JSON Schema.  This includes building in a formal extensibility mechanism so that we can more easily draw a line to finalize the contents of the Core and Validation specifications.
-
-Additionally, numerous life issues reduced the availability of key contributors during the process.
-
-And finally, the feedback process demonstrated that our first attempt at a publishable draft needed substantial additional work, adding another few months to the timeline.
-
-Since the most intractable problems are all addressed to one degree or another in this draft, we do not anticipate future drafts taking so long.
+See the [Specification page](specification.html) for details.
 
 ### The Path to Standardization
 
