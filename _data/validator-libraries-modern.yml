@@ -57,7 +57,8 @@
       url: https://github.com/santhosh-tekuri/jsonschema
       notes:
       draft: [7, 6, 4]
-      license: BSD-3-Clause
+      license: 
+      -3-Clause
     - name: qri-io/jsonschema
       url: https://github.com/qri-io/jsonschema
       draft: [7]
@@ -117,6 +118,11 @@
       notes:
       draft: [7, 6, 4, 3]
       license: "MIT"
+    - name: fastjsonschema
+      url: https://github.com/horejsek/python-fastjsonschema
+      notes: Great performance thanks to code generation.
+      draft: [7, 6, 4]
+      license: BSD-3-Clause
 - name: Ruby
   implementations:
     - name: JSONSchemer
