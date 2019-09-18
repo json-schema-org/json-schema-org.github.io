@@ -104,7 +104,7 @@ yes         | off           | not validated
 
 Obviously, each implementation will behave consistently from schema to schema, although some formats may be supported more thoroughly than others despite the wording in the specification.  However, complex formats are, in practice, supported to different degrees in each implementation.  If they are supported at all.
 
-**Summary of draft/2019-09 behavior**
+**Summary of 2019-09 behavior**
 
 The goal with this draft is to make the default behavior predictable, with the inconsistent behavior as an opt-in feature.  This is not entirely satisfactory, but we feel that it is a good first step to reduce the number of complaints seen around surprising results.  This way, there should at least be fewer surprises.
 

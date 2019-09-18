@@ -11,9 +11,9 @@ title: Specification
 Draft numbering
 ---------------
 
-The latest Internet-Drafts at the IETF are the **draft-handrews-json-schema\*-02** documents, which correspond to the **draft/2019-09** meta-schemas. These were published on **2019-09-16**.
+The latest Internet-Drafts at the IETF are the **draft-handrews-json-schema\*-02** documents, which correspond to the **2019-09** meta-schemas. These were published on **2019-09-16**.
 
-For a full explanation of both the IETF and meta-schema numbering schemes, how they correspond, and why we are now using the date-based `draft/2019-09` rather than `draft-08`, see the [Specification Links](specification-links.html) page.
+For a full explanation of both the IETF and meta-schema numbering schemes, how they correspond, and why we are now using the date-based `2019-09` rather than `draft-08`, see the [Specification Links](specification-links.html) page.
 
 Specification documents
 -----------------------
@@ -41,7 +41,7 @@ Meta-schemas
 
 The meta-schemas are schemas against which other schemas can be validated. They are self-descriptive: the JSON Schema meta-schema validates itself, while the JSON Hyper-Schema meta-schema both validates itself and defines its own "self" link.
 
-The latest meta-schema is **draft/2019**.  For an explanation of the change to date-based identifiers, see the [Specification Links](specification-links.html) page.
+The latest meta-schema is **2019-09**.  For an explanation of the change to date-based identifiers, see the [Specification Links](specification-links.html) page.
 
 _If you are accessing these JSON document links **from a web browser**, you will need to **save the file** then open it as a JSON document.  This is due to limitations with GitHub Pages._
 
@@ -76,11 +76,11 @@ Migrating from older drafts
 The release notes discuss the changes impacting users and implementers:
 
 - JSON Schema Core and Validation
-    - [Draft-07 to Draft 2019-09](draft/2019-09/release-notes.html)
+    - [Draft-07 to 2019-09](draft/2019-09/release-notes.html)
     - [Draft-06 to Draft-07](draft-07/json-schema-release-notes.html)
     - [Draft-04 to Draft-06](draft-06/json-schema-release-notes.html)
 - JSON Hyper-Schema
-    - [Draft-07 to Draft 2019-09](draft/2019-09/release-notes.html#hyper-schema-vocabulary)
+    - [Draft-07 to 2019-09](draft/2019-09/release-notes.html#hyper-schema-vocabulary)
     - [Draft-04 to Draft-07](draft-07/json-hyper-schema-release-notes.html)
     - [Draft-04 to Draft-06](draft-06/json-hyper-schema-release-notes.html)
 

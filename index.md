@@ -7,7 +7,7 @@ permalink: /
 **NEW DRAFT PUBLISHED!**
 {: style="color:red; font-size: 200%; text-align: center;"}
 
-The current version is [draft/2019-09](specification.html)!
+The current version is [2019-09](specification.html)!
 {: style="color:gray; font-size: 150%; text-align: center;"}
 
 **JSON Schema** is a vocabulary that allows you to **annotate** and **validate** JSON documents.
@@ -42,7 +42,11 @@ The current version is [draft/2019-09](specification.html)!
 
 16 September 2019: Draft 2019-09 (formerly known as draft-08) has been published!
 
-See the [Specification page](specification.html) for details.
+The IETF document IDs are of the form `draft-handrews-*-02`.  We are now using dates
+for meta-schemas, which are what implementations should use to determine behavior,
+so we will usually refer to `2019-09` (without the word "draft") on this web site.
+
+See the [Specification page](specification.html) for details about naming and numbering.
 
 ### The Path to Standardization
 

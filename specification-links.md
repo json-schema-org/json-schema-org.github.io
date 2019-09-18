@@ -208,7 +208,7 @@ For links to the somewhat more readably formatted versions on this web site, and
       </a></small></tt><br>
     </td>
     <td>
-      <tt><small>draft/2019&#8209;09</small></tt>
+      <tt><small>2019&#8209;09</small></tt>
     </td>
     <td>
       Draft 8
