@@ -1,5 +1,5 @@
 ---
-title: JSON Schema Draft-2019/09 Release Notes
+title: JSON Schema 2019-09 Release Notes
 layout: page
 ---
 
