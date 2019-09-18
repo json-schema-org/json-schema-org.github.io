@@ -34,8 +34,6 @@ They are also available on the IETF main site:
 * [draft-handrews-json-schema-hyperschema-02](https://tools.ietf.org/html/draft-handrews-json-schema-hyperschema-02)
 * [draft-handrews-relative-json-pointer-02](https://tools.ietf.org/html/draft-handrews-relative-json-pointer-02)
 
-_Note that the Relative JSON Pointer draft is still pending approval due to how the IETF manages emails and author identification.  It should be up within a few days._
-
 Meta-schemas
 ------------
 
