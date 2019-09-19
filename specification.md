@@ -5,6 +5,12 @@ permalink: /specification.html
 title: Specification
 ---
 
+**NEW DRAFT PUBLISHED!**
+{: style="color:red; font-size: 200%; text-align: center;"}
+
+The current version is 2019-09!
+{: style="color:gray; font-size: 150%; text-align: center;"}
+
 * TOC
 {:toc}
 
