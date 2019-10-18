@@ -216,7 +216,8 @@ Various levels of support for UI generation primarily from the validation vocabu
 
 #### Data from schemas
 
-_None currently support draft-06 or later._
+-   Python
+    -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  takes any schema, even with complex and interacting constraints, and returns a [Hypothesis](https://hypothesis.works/) strategy which can generate valid documents for testing.
 
 Utilities
 ---------
@@ -241,8 +242,7 @@ the utility, and decided on a case-by-case basis.
 
 #### Schema draft migration
 
--   Python
-    -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  creates [Hypothesis](https://hypothesis.works/) strategies for documents which match any schema, even with complex and interacting constraints.
+_None currently support draft-06 or later._
 
 #### Format converters
 
@@ -259,8 +259,7 @@ the utility, and decided on a case-by-case basis.
 #### Testing
 
 -   Python
-    -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  creates [Hypothesis](https://hypothesis.works/) strategies for documents which match any schema, even with complex and interacting constraints.
-    -   [hypo\_schema](https://github.com/mlakewood/hypo_schema) (BSD-2-Clause) Creates generators for Hypothesis from JSON Schema
+    -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  takes any schema, even with complex and interacting constraints, and returns a [Hypothesis](https://hypothesis.works/) strategy which can generate valid documents for testing.
 
 #### Editors
 
