@@ -3,16 +3,19 @@
   implementations:
     - name: Json.NET Schema
       url: https://www.newtonsoft.com/jsonschema
+      date-draft:
       draft: [7, 6, 4, 3]
       license: "AGPL-3.0-only"
     - name: Manatee.Json
       url: https://github.com/gregsdennis/Manatee.Json
+      date-draft: [2019-09]
       draft: [7, 6, 4]
       license: MIT
 - name: C
   implementations:
     - name: WJElement
       url: https://github.com/netmail-open/wjelement
+      date-draft:
       draft: [4, 3]
       license: LGPL-3.0
       notes: "Draft-06+ progress: issue [17](https://github.com/netmail-open/wjelement/issues/17#issuecomment-390899432)"
@@ -20,46 +23,55 @@
   implementations:
     - name: f5-json-schema
       url: https://github.com/KayEss/json-schema
+      date-draft:
       draft: [7]
       license: Boost Software License 1.0
     - name: JSON schema validator for JSON for Modern C++
       url: https://github.com/pboettch/json-schema-validator
+      date-draft:
       draft: [7]
       license: MIT
 - name: Clojure
   implementations:
     - name: jinx
       url: https://github.com/juxt/jinx
+      date-draft:
       draft: [7]
       license: MIT
     - name: json-schema
       url: https://github.com/luposlip/json-schema
+      date-draft:
       draft: [7]
       license: Apache License, Version 2.0
 - name: Elixir
   implementations:
     - name: Elixir JSON Schema validator
       url: https://github.com/jonasschmidt/ex_json_schema
+      date-draft:
       draft: [4]
       notes: "Draft-06+ progress: issue [24](https://github.com/jonasschmidt/ex_json_schema/issues/24); branch [multi-draft-support](https://github.com/jonasschmidt/ex_json_schema/tree/multi-draft-support)"
       license: MIT
     - name: JsonXema
       url: https://github.com/hrzndhrn/json_xema
+      date-draft:
       draft: [7, 6, 4]
       license: MIT
 - name: Go
   implementations:
     - name: gojsonschema
       url: https://github.com/xeipuuv/gojsonschema
+      date-draft:
       draft: [7, 6, 4]
       license: "Apache 2.0"
     - name: santhosh-tekuri/jsonschema
       url: https://github.com/santhosh-tekuri/jsonschema
       notes:
+      date-draft:
       draft: [7, 6, 4]
       license: BSD-3-Clause
     - name: qri-io/jsonschema
       url: https://github.com/qri-io/jsonschema
+      date-draft:
       draft: [7]
       license: MIT
       notes: includes custom validator support, rich error returns
@@ -68,11 +80,13 @@
     - name: everit-org/json-schema
       url: https://github.com/everit-org/json-schema
       notes:
+      date-draft:
       draft: [7, 6, 4]
       license: Apache License 2.0
     - name: Justify
       url: https://github.com/leadpony/justify
       notes:
+      date-draft:
       draft: [7, 6, 4]
       license: Apache License 2.0
 - name: Kotlin
@@ -80,6 +94,7 @@
     - name: Medeia-validator
       url: https://github.com/worldturner/medeia-validator
       notes: streaming validator for Kotlin and Java clients; works with Jackson and Gson
+      date-draft:
       draft: [7, 6, 4]
       license: Apache License 2.0
 - name: JavaScript
@@ -87,15 +102,18 @@
     - name: ajv
       url: https://github.com/epoberezkin/ajv
       notes: "for Node.js and browsers - supports [custom keywords](https://github.com/epoberezkin/ajv-keywords) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51)"
+      date-draft:
       draft: [7, 6, 4]
       license: MIT
     - name: djv
       url: https://github.com/korzio/djv
       notes: "for Node.js and browsers"
+      date-draft:
       draft: [6, 4]
       license: MIT
     - name: vue-vuelidate-jsonschema
       url: https://github.com/mokkabonna/vue-vuelidate-jsonschema
+      date-draft:
       draft: [6]
       license: MIT
 - name: PHP
@@ -103,11 +121,13 @@
     - name: Opis Json Schema
       url: https://github.com/opis/json-schema
       notes:
+      date-draft:
       draft: [7, 6]
       license: "Apache License 2.0"
     - name: Swaggest Json Schema
       url: https://github.com/swaggest/php-json-schema
       notes:
+      date-draft:
       draft: [7, 6, 4]
       license: "MIT"
 - name: Python
@@ -115,11 +135,13 @@
     - name: jsonschema
       url: https://github.com/Julian/jsonschema
       notes:
+      date-draft:
       draft: [7, 6, 4, 3]
       license: "MIT"
     - name: fastjsonschema
       url: https://github.com/horejsek/python-fastjsonschema
       notes: Great performance thanks to code generation.
+      date-draft:
       draft: [7, 6, 4]
       license: BSD-3-Clause
 - name: Ruby
@@ -127,6 +149,7 @@
     - name: JSONSchemer
       url: https://github.com/davishmcclurg/json_schemer
       notes:
+      date-draft:
       draft: [7, 6, 4]
       license: MIT
 - name: Objective-C
@@ -134,6 +157,7 @@
     - name: DSJSONSchemaValidation
       url: https://github.com/dashevo/JSONSchemaValidation
       notes:
+      date-draft:
       draft: [7, 6, 4]
       license: MIT
 - name: Lua/LuaJIT
@@ -141,27 +165,33 @@
     - name: lua-resty-jsonschema
       url: https://github.com/iresty/lua-resty-jsonschema
       notes:
+      date-draft:
       draft: [7, 6, 4]
       license: MIT
 - name: Web (Online)
   implementations:
     - name: JSON Schema Validator
       url: https://www.jsonschemavalidator.net/
+      date-draft:
       draft: [7, 6, 4, 3]
     - name: JSON Schema Lint
       url: http://jsonschemalint.com/
+      date-draft:
       draft: [7, 6, 4, 3, 2, 1]
     - name: ExtendsClass's JSON Schema Validator
       url: https://extendsclass.com/json-schema-validator.html
+      date-draft:
       draft: [7]
 - name: Command Line
   implementations:
     - name: ajv-cli
       license: MIT
       url: 'https://www.npmjs.com/package/ajv-cli'
+      date-draft:
       draft: [7, 6, 4]
     - name: Polyglottal JSON Schema Validator
       license: MIT
       url: 'https://www.npmjs.com/package/pajv'
+      date-draft:
       draft: [6, 4]
       notes: can be used with YAML and many other formats besides JSON

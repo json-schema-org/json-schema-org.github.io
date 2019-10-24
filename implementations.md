@@ -43,9 +43,14 @@ Validators
         <li>
         <a href="{{implementation.url}}">{{ implementation.name }}</a>
 
-        {% if implementation.draft %}
-            <em>draft-0{{ implementation.draft | join: ", -0" }}</em>
+        <em>
+        {% if implementation.date-draft %}
+            {{ implementation.date-draft | join: ", "}}{% if implementation.draft %}, {% endif %}
         {% endif %}
+        {% if implementation.draft %}
+            draft-0{{ implementation.draft | join: ", -0" }}
+        {% endif %}
+        </em>
 
         {{implementation.notes | markdownify | remove: '<p>' | remove: '</p>'}}
 
