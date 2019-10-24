@@ -136,6 +136,13 @@
       notes:
       draft: [7, 6, 4]
       license: MIT
+- name: Lua/LuaJIT
+  implementations:
+    - name: lua-resty-jsonschema
+      url: https://github.com/iresty/lua-resty-jsonschema
+      notes:
+      draft: [7, 6, 4]
+      license: MIT
 - name: Web (Online)
   implementations:
     - name: JSON Schema Validator
