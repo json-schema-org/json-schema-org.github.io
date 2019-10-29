@@ -40,8 +40,8 @@ For links to the somewhat more readably formatted versions on this web site, and
       Draft 0
     </td>
     <td>
-      due to a markup error, this draft was replaced by
-      <tt><small>draft&#8209;01</small></tt> on the same day
+      <small>due to a markup error, this draft was replaced by
+      <tt><small>draft&#8209;01</small></tt> on the same day</small>
     </td>
   </tr>
   <tr>
@@ -74,7 +74,8 @@ For links to the somewhat more readably formatted versions on this web site, and
     <td>
       <tt><small><a href="https://tools.ietf.org/html/draft-zyp-json-schema-03">
         draft&#8209;zyp&#8209;json&#8209;schema&#8209;03
-      </a></small></tt></td>
+      </a></small></tt>
+    </td>
     <td>
       <tt><small>draft&#8209;03</small></tt>
     </td>
@@ -105,10 +106,12 @@ For links to the somewhat more readably formatted versions on this web site, and
       Draft 4
     </td>
     <td>
+      <small>
       <tt><small>json&#8209;ref</small></tt> drafts
       <tt><small>00&#8209;02</small></tt> were all published between
       <tt><small>json&#8209;schema&#8209;03</small></tt> and
       <tt><small>json&#8209;schema&#8209;04</small></tt>
+      </small>
     </td>
   </tr>
   <tr>
@@ -127,8 +130,12 @@ For links to the somewhat more readably formatted versions on this web site, and
       Draft 5
     </td>
     <td>
-      the meta&#8209;schema was not changed, so
-      "<tt><small>draft&#8209;05</small></tt>" has no formal meaning</td>
+      <small>meta&#8209;schemas not changed, so
+      "<tt><small>draft&#8209;05</small></tt>" is really
+      <tt><small>draft&#8209;04</small></tt>
+      <br />
+      Milestone: <a href="https://github.com/json-schema-org/json-schema-spec/milestone/1">draft-5 (2016-10-13)</a></small>
+    </td>
   </tr>
   <tr>
     <td>
@@ -148,7 +155,12 @@ For links to the somewhat more readably formatted versions on this web site, and
     <td>
       Draft 6
     </td>
-    <td></td>
+    <td>
+      <small>Milestones:
+      <a href="https://github.com/json-schema-org/json-schema-spec/milestone/2">draft-6</a>,
+      <a href="https://github.com/json-schema-org/json-schema-spec/milestone/4">Meta-schema draft-06</a>
+      </small>
+    </td>
   </tr>
   <tr>
     <td>
@@ -166,13 +178,19 @@ For links to the somewhat more readably formatted versions on this web site, and
       </a></small></tt><br>
     </td>
     <td rowspan="3">
-      <tt><small>draft&#8209;07</small></tt></td>
+      <tt><small>draft&#8209;07</small></tt>
+    </td>
     <td rowspan="3">
       Draft 7
     </td>
     <td rowspan="3">
+      <small>
       the&nbsp;<tt><small>draft&#8209;handrews&#8209;*&#8209;01</small></tt> drafts were
       bugfixes and/or clarifications without meta&#8209;schema or functional changes
+      <br />
+      Milestone:
+      <a href="https://github.com/json-schema-org/json-schema-spec/milestone/5">draft-07</a>
+      </small>
     </td>
   </tr>
   <tr><!-- This empty row keeps the row colors aligned properlty for the two "draft-07" versions --></tr>
@@ -207,14 +225,48 @@ For links to the somewhat more readably formatted versions on this web site, and
         draft&#8209;handrews&#8209;relative&#8209;json&#8209;pointer&#8209;02
       </a></small></tt><br>
     </td>
-    <td>
+    <td rowspan="2">
       <tt><small>2019&#8209;09</small></tt>
     </td>
-    <td>
+    <td rowspan="2">
       Draft 8
     </td>
-    <td></td>
+    <td>
+      <small>Milestone:
+      <a href="https://github.com/json-schema-org/json-schema-spec/milestone/6">draft-08</a>
+      </small>
+    </td>
   </tr>
+  <tr>
+    <td>
+      <small><i>(TBD, probably only a subset of the documents)</i></small>
+    </td>
+    <td>
+      <small>
+      bugfixes and/or clarifications, no functional changes
+      <br />
+      Milestone:
+      <a href="https://github.com/json-schema-org/json-schema-spec/milestone/8">draft-08-patch-1</a>
+      </small>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <small><i>(TBD)</i></small>
+    </td>
+    <td>
+      <small><i>(TBD)</i></small>
+    </td>
+    <td>
+      Draft 9
+    </td>
+    <td>
+      <small>Milestone:
+      <a href="https://github.com/json-schema-org/json-schema-spec/milestone/7">draft-09</a>
+      </small>
+    </td>
+  </tr>
+    
 </table>
 
 ## Published Drafts
