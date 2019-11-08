@@ -89,6 +89,12 @@
       date-draft:
       draft: [7, 6, 4]
       license: Apache License 2.0
+    - name: networknt/json-schema-validator
+      url: https://github.com/networknt/json-schema-validator
+      notes:
+      date-draft:
+      draft: [7, 6, 4]
+      license: Apache License 2.0
 - name: Kotlin
   implementations:
     - name: Medeia-validator
