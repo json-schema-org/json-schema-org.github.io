@@ -43,9 +43,14 @@ Validators
         <li>
         <a href="{{implementation.url}}">{{ implementation.name }}</a>
 
-        {% if implementation.draft %}
-            <em>draft-0{{ implementation.draft | join: ", -0" }}</em>
+        <em>
+        {% if implementation.date-draft %}
+            {{ implementation.date-draft | join: ", "}}{% if implementation.draft %}, {% endif %}
         {% endif %}
+        {% if implementation.draft %}
+            draft-0{{ implementation.draft | join: ", -0" }}
+        {% endif %}
+        </em>
 
         {{implementation.notes | markdownify | remove: '<p>' | remove: '</p>'}}
 
@@ -183,12 +188,16 @@ are the only keywords that changed.
 
 #### Code generation
 
+-   Delphi
+    - [DJsonSchema](https://github.com/schlothauer-wauer/DJsonSchema) (MIT) - JSON Schema reader and code generator for Delphi.
+-   Elm
+    -  [json-schema-to-elm](https://github.com/dragonwasrobot/json-schema-to-elm) - generates Elm types, JSON decoders+encoders, and fuzz tests from one or more JSON Schema files, using [dragonwasrobot/json_schema](https://github.com/dragonwasrobot/json_schema) *supports Draft 7*
+-   Java
+    - [jsonCodeGen](https://github.com/schlothauer-wauer/jsoncodegen) (MIT) - Groovy based generation tasks from JSON schema. Already includes templates/generators for Java Beans, Swagger specification files and PlantUML diagrams.
 -   Online (web tool)
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 -   PHP
     -  [php-code-builder](https://github.com/swaggest/php-code-builder)(MIT) - generates PHP mapping structures defined by JSON schema using [swaggest/json-schema](https://github.com/swaggest/php-json-schema) *supports Draft 7*
--   Elm
-    -  [json-schema-to-elm](https://github.com/dragonwasrobot/json-schema-to-elm) - generates Elm types, JSON decoders+encoders, and fuzz tests from one or more JSON Schema files, using [dragonwasrobot/json_schema](https://github.com/dragonwasrobot/json_schema) *supports Draft 7*
 -   Rust
     - [schemafy](https://github.com/Marwes/schemafy/) - generates Rust types and serialization code from a JSON schema. *supports Draft 4*
 
@@ -214,7 +223,8 @@ Various levels of support for UI generation primarily from the validation vocabu
 
 #### Data from schemas
 
-_None currently support draft-06 or later._
+-   Python
+    -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  takes any schema, even with complex and interacting constraints, and returns a [Hypothesis](https://hypothesis.works/) strategy which can generate valid documents for testing.
 
 Utilities
 ---------
@@ -239,8 +249,7 @@ the utility, and decided on a case-by-case basis.
 
 #### Schema draft migration
 
--   Python
-    -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  creates [Hypothesis](https://hypothesis.works/) strategies for documents which match any schema, even with complex and interacting constraints.
+_None currently support draft-06 or later._
 
 #### Format converters
 
@@ -257,8 +266,7 @@ the utility, and decided on a case-by-case basis.
 #### Testing
 
 -   Python
-    -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  creates [Hypothesis](https://hypothesis.works/) strategies for documents which match any schema, even with complex and interacting constraints.
-    -   [hypo\_schema](https://github.com/mlakewood/hypo_schema) (BSD-2-Clause) Creates generators for Hypothesis from JSON Schema
+    -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  takes any schema, even with complex and interacting constraints, and returns a [Hypothesis](https://hypothesis.works/) strategy which can generate valid documents for testing.
 
 #### Editors
 
