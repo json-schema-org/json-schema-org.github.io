@@ -123,7 +123,7 @@ Hyper-Schema
 
 -   JavaScript
     -   [@cloudflare/doca](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/doca) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), _draft-04, -06, -07, and Doca extensions_ (UI forthcoming)
-    -   [@adobe/jsonschema2md](https://github.com/adobe/jsonschema2md) makes it easier by providing a number of scripts that can turn JSON Schema files into readable Markdown documentation that is ready for consumption on GitHub or processed using Jekyll or other static site generators. _JSON Schema 2019-09_
+    -   [@adobe/jsonschema2md](https://github.com/adobe/jsonschema2md) makes it easier by providing a number of scripts that can turn JSON Schema files into readable Markdown documentation that is ready for consumption on GitHub or processed using Jekyll or other static site generators. _JSON Schema 2019-09_ ([partial](https://github.com/adobe/jsonschema2md/blob/master/schemasupport.md))
 
 -   Python
     -   [FastAPI](https://github.com/tiangolo/fastapi) (MIT) is an API framework based on Python 3.6+ types that generates **OpenAPI 3** schemas, including **JSON Schemas** for all the models declared.
