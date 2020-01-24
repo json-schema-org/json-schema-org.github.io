@@ -201,3 +201,9 @@
       date-draft:
       draft: [6, 4]
       notes: can be used with YAML and many other formats besides JSON
+    - name: yajsv
+      license: MIT
+      url: 'https://github.com/neilpa/yajsv'
+      date-draft:
+      draft: [7, 6, 4]
+      notes: wraps https://github.com/xeipuuv/gojsonschema
