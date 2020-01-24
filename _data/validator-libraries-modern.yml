@@ -206,4 +206,4 @@
       url: 'https://github.com/neilpa/yajsv'
       date-draft:
       draft: [7, 6, 4]
-      notes: wraps https://github.com/xeipuuv/gojsonschema
+      notes: wraps [xeipuuv/gojsonschema](https://github.com/xeipuuv/gojsonschema)
