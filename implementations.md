@@ -285,6 +285,7 @@ _TODO: Sort by draft support._
 -   [Eclipse IDE](https://www.eclipse.org/downloads/eclipse-packages) - *Rich JSON edition supporting schema for instantaneous validation and error reporting, completion, documentation.*
 -   [WebStorm](https://www.jetbrains.com/webstorm/), [IntelliJ IDEA](https://www.jetbrains.com/idea/), and other [JetBrains IDEs](https://www.jetbrains.com/products.html?fromMenu#type=ide) - *Code completion, documentation, and validation for JSON and YAML files using JSON Schema*
 -   [JsonDraft](https://jsondraft.com/) - *Tree view JSON and JSON Schema editor online. Create and Save reusable components, Share JSON.*
+-   [Oxygen JSON Editor](https://www.oxygenxml.com/xml_editor/json.html) - *JSON editor with a variety of editing features and helper views. Support for validation and editing JSON Schema draft-4, draft-6, and draft-7. Validation and editing of JSON files based on JSON Schema.*
 
 
 Schema Repositories
