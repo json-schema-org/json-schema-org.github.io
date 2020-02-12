@@ -122,6 +122,14 @@
       date-draft:
       draft: [6]
       license: MIT
+- name: Perl
+  implementations:
+    - name: JSON::Validator
+      url: https://github.com/mojolicious/json-validator
+      notes:
+      date-draft:
+      draft: [7, 6, 4]
+      license: "The Artistic License 2.0 (GPL Compatible)"
 - name: PHP
   implementations:
     - name: Opis Json Schema
