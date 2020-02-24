@@ -4,8 +4,8 @@ sudo: false
 node_js:
 - node
 before_script:
-- npm install ajv-cli
+- npm install ajv-cli@3.1.0
 - PATH="./node_modules/.bin/:$PATH"
 script:
 - bundle exec jekyll build
-- ajv test -s draft-07/schema -d "learn/examples/*.json" --valid
+- ajv test -s draft-07/schema -d "learn/examples/*.json" --valid --add-used-schema=false
