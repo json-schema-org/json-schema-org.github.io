@@ -4,11 +4,11 @@ title: JSON Schema
 permalink: /
 ---
 
-***The current version is [draft-07](specification.html)!***
-{: style="color:gray; font-size: 150%; text-align: center;"}
+**NEW DRAFT PUBLISHED!**
+{: style="color:red; font-size: 200%; text-align: center;"}
 
-***The next draft work-in-progres is [in final review](work-in-progress)!***
-{: style="color:red; font-size: 150%; text-align: center;"}
+The current version is [2019-09](specification.html)!
+{: style="color:gray; font-size: 150%; text-align: center;"}
 
 **JSON Schema** is a vocabulary that allows you to **annotate** and **validate** JSON documents.
 
@@ -40,13 +40,13 @@ permalink: /
 
 ## Project Status
 
-### Update as of 27 May 2019
+16 September 2019: Draft 2019-09 (formerly known as draft-08) has been published!
 
-**The forthcoming draft is in [final review](work-in-progress).**
+The IETF document IDs are of the form `draft-handrews-*-02`.  We are now using dates
+for meta-schemas, which are what implementations should use to determine behavior,
+so we will usually refer to `2019-09` (without the word "draft") on this web site.
 
-This draft has also taken more time than expected because it tackles deep, long-term issues that have long been a challenge for JSON Schema.  This includes building in a formal extensibility mechanism so that we can more easily draw a line to finalize the contents of the Core and Validation specifications.
-
-Additionally, numerous life issues reduced the availability of key contributors during the process.
+See the [Specification page](specification.html) for details about naming and numbering.
 
 ### The Path to Standardization
 
@@ -97,4 +97,4 @@ Questions? Feeling helpful? Get involved on:
 
 * [GitHub](http://github.com/json-schema-org/json-schema-spec)
 * [Google Groups](https://groups.google.com/forum/#!forum/json-schema)
-* [Slack](https://join.slack.com/t/json-schema/shared_invite/enQtMjk1NDcyNDI2NTAwLTcyYmYwMjdmMmUxNzZjYzIxNGU2YjdkNzdlOGZiNjIwNDI2M2Y3NmRkYjA4YmMwODMwYjgyOTFlNWZjZjAyNjg)
+* [Slack](https://join.slack.com/t/json-schema/shared_invite/enQtNjc5NTk0MzkzODg5LTVlZGIxNmVhMGY2MWFlYTdiNDQ5NWFiZGUwOThhNmYxZDE0YzA5YjRiOTA5MGY4ZTZlZGZhZDFmYTY4NWM2N2Y)

@@ -23,3 +23,6 @@
 	path = _includes/draft-07
 	url = https://github.com/json-schema-org/json-schema-spec.git
 	branch = draft-07
+[submodule "_includes/draft/2019-09"]
+	path = _includes/draft/2019-09
+	url = https://github.com/json-schema-org/json-schema-spec.git

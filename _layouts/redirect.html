@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <meta charset="utf-8">
+  <title>Redirecting&hellip;</title>
+  <link rel="canonical" href="{{ page.redirect.to }}">
+  <meta http-equiv="refresh" content="0; url={{ page.redirect.to }}">
+  <meta name="robots" content="noindex">
+  <h1>Redirecting&hellip;</h1>
+  <p>
+    Several redirections on json-schema.org are special cases:
+  </p>
+  <ul>
+    <li>The unversioned meta-schema URIs should no longer be used.</li>
+    <li>The vocabularies are represented by their specification text.</li>
+    <li>The "latest" specification URIs are for convenice of browser
+        bookmarking only.</li>
+  </ul>
+  <a href="{{ page.redirect.to }}">Click here if you are not redirected.</a>
+  <script>location="{{ page.redirect.to }}"</script>
+</html>

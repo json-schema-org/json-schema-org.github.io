@@ -73,11 +73,6 @@
       url: https://github.com/java-json-tools/json-schema-validator
       draft: [4]
       license: LGPLv3
-    - name: json-schema-validator
-      url: https://github.com/networknt/json-schema-validator
-      notes:
-      draft: [4]
-      license: Apache License 2.0
 - name: JavaScript
   implementations:
     - name: jsonschema
