@@ -159,7 +159,7 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
 -   Python
     -   [Pydantic](https://pydantic-docs.helpmanual.io/) (MIT) - generates schemas from Python models based on Python 3.6+ type hints.
 -   Java
-    -   [jsonschema-generator](https://github.com/victools/jsonschema-generator) (Apache 2.0) - generates schemas from Java types *supports Draft 7*
+    -   [jsonschema-generator](https://github.com/victools/jsonschema-generator) (Apache 2.0) - generates schemas from Java types *supports Draft 7 and Draft 2019-09*
 -   Scala
     -   [scala-jsonschema](https://github.com/andyglow/scala-jsonschema) (Apache 2.0) - generates schemad out of Scala case classes
 
