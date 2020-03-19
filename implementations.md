@@ -272,9 +272,10 @@ _None currently support draft-06 or later._
 #### Editors
 
 -   [Altova XMLSpy 2019r3](https://www.altova.com/xmlspy-xml-editor#json_schema) - *Graphical JSON Schema editor for draft-06 and draft-7, as well as validation of JSON files based on JSON Schema*
--   [JSONBuddy](https://www.json-buddy.com/) - *Text and grid-style JSON editor and validator with context sensitive entry-helpers and sample data generation based on JSON schema. Support for draft 4, draft 6 and draft 7.*
+-   [JSONBuddy](https://www.json-buddy.com/) - *Text and grid-style JSON editor and validator with context sensitive entry-helpers and sample data generation based on JSON schema. Support for draft-4, draft-6 and draft-7.*
 -   [JSONEditor Online](https://jsoneditoronline.org/) - *View, edit, format, and validate JSON online* Support draft-4, draft-6, and draft-7.
 -   [Oxygen JSON Editor](https://www.oxygenxml.com/xml_editor/json.html) - *JSON editor with a variety of editing features and helper views. Support for validation and editing JSON Schema draft-4, draft-6, and draft-7. Validation and editing of JSON files based on JSON Schema.*
+-   [Stoplight Studio](https://stoplight.io/) - *JSON Schema IDE (text-based and GUI) with support for JSON/YAML linting, which can also be based on JSON Schema rules via Spectral. Support for draft-4, draft-6 and draft-7.*
 -   [Visual Studio Code](https://code.visualstudio.com/) - *Schema driven code completion, hovers and validation for editing JSON files (including schemas)*
 -   [Eclipse IDE](https://www.eclipse.org/downloads/eclipse-packages) - *Rich JSON edition supporting schema for instantaneous validation and error reporting, completion, documentation.*
 -   [WebStorm](https://www.jetbrains.com/webstorm/), [IntelliJ IDEA](https://www.jetbrains.com/idea/), and other [JetBrains IDEs](https://www.jetbrains.com/products.html?fromMenu#type=ide) - *Code completion, documentation, and validation for JSON and YAML files using JSON Schema*
