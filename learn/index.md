@@ -11,3 +11,4 @@ title: Learn
   * [calendar.schema.json](./examples/calendar.schema.json)
   * [card.schema.json](./examples/card.schema.json)
   * [geographical-location.schema.json](./examples/geographical-location.schema.json)
+* [Understanding JSON Schema](/understanding-json-schema/)
