@@ -297,4 +297,5 @@ Schema Repositories
 Schema Linter
 -------------
 
--   [json-schema-linter](https://www.json-schema-linter.com/) - Lint/validate/parse json-schema itself and find out out typo, missing properties, missing required keys etc. Supports draft 4, 6, and 7.
+-   [json-schema-linter](https://www.json-schema-linter.com/) - Lint/validate/parse json-schema itself, and find typos, missing properties, missing required keys, etc. Supports draft 4, 6, and 7.
+-   [Stoplight Spectral](https://stoplight.io/open-source/spectral) - A flexible JSON/YAML linter for creating automated style guides, with baked in support for OpenAPI v2/v3 and JSON Schema. Supports draft 4, 6, and 7.
