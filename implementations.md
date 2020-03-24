@@ -213,6 +213,7 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [Angular Schema Form](https://github.com/json-schema-form/angular-schema-form) (MIT)
     -   [Angular2 Schema Form](https://github.com/makinacorpus/angular2-schema-form) *unrelated to Angular Schema Form* (MIT)
     -   [Angular6-json-schema-form](https://github.com/hamzahamidi/Angular6-json-schema-form) (MIT)
+    -   [Dashjoin JSON Schema Form](https://github.com/dashjoin/json-schema-form) (Apache 2)
     -   [JSON Editor](https://github.com/json-editor/json-editor) (MIT)
     -   [JSON Form (joshfire)](https://github.com/joshfire/jsonform) (joshfire) (MIT)
     -   [Json Forms (brutusin)](https://github.com/brutusin/json-forms) (brutusin) (MIT)
