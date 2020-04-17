@@ -239,6 +239,9 @@ the utility, and decided on a case-by-case basis.
 -   JavaScript
     -   [json-schema-ref-parser](https://github.com/BigstickCarpet/json-schema-ref-parser) (MIT) Tools for dereferencing non-cyclic schemas, bundling referenced schemas into a single file, and other `$ref` processing.
     -   [@cloudflare/json-schema-walker](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-walker) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), _draft-07, -06, -04, and Cloudflare's Doca extensions_ Walks schemas and runs pre- and post-walk callbacks.  Can modify schemas in place. (BSD-3-Clause)
+    -   [@hyperjump/json-schema-core](https://github.com/jdesrosiers/json-schema-core)
+        (MIT) Tools for working with schemas that handle identifiers and
+        references. Build vocabularies and other JSON Schema based tools.
 
 #### Schema to Schema
 
