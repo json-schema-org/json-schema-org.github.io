@@ -167,6 +167,8 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
 
 -   Scala
     -   [Schema Guru](https://github.com/snowplow/schema-guru) (Apache 2.0) - CLI util, Spark Job and Web UI for deriving JSON Schemas out of corpus of JSON instances; see issue [178](https://github.com/snowplow/schema-guru/issues/178) for progress towards draft-06+ support
+-   Clojure
+    -   [luposlip/json-schema](https://github.com/luposlip/json-schema) (Apache 2.0) - infer JSON Schema from Clojure data
 -   Online (web tool)
     -   [jsonschema.net](https://www.jsonschema.net/) - generates schemas from example data
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
