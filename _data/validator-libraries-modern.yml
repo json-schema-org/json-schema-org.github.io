@@ -128,7 +128,7 @@
       date-draft:
       draft: [6]
       license: MIT
-    - name: '@cfworker/json-schema'
+    - name: "@cfworker/json-schema"
       url: https://github.com/cfworker/cfworker/blob/master/packages/json-schema/README.md
       notes: "Built for Cloudflare workers, browsers, and Node.js"
       date-draft: [2019-09]
