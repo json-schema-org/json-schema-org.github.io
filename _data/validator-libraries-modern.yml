@@ -77,6 +77,12 @@
       notes: includes custom validator support, rich error returns
 - name: Java
   implementations:
+    - name: Snow
+      url: https://github.com/ssilverman/snowy-json
+      notes: Uses Maven for the project, and Gson and Guava under the hood.
+      date-draft: [2019-09]
+      draft: [7, 6]
+      license: GNU Affero General Public License v3.0
     - name: everit-org/json-schema
       url: https://github.com/everit-org/json-schema
       notes:
