@@ -95,6 +95,12 @@
       date-draft:
       draft: [7, 6, 4]
       license: Apache License 2.0
+    - name: Snow
+      url: https://github.com/ssilverman/snowy-json
+      notes: Uses Maven for the project, and Gson and Guava under the hood.
+      date-draft: [2019-09]
+      draft: [7, 6]
+      license: GNU Affero General Public License v3.0
 - name: Kotlin
   implementations:
     - name: Medeia-validator
