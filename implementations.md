@@ -199,6 +199,8 @@ are the only keywords that changed.
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 -   PHP
     -  [php-code-builder](https://github.com/swaggest/php-code-builder)(MIT) - generates PHP mapping structures defined by JSON schema using [swaggest/json-schema](https://github.com/swaggest/php-json-schema) *supports Draft 7*
+-   Python
+    - [yacg](https://github.com/OkieOth/yacg) (MIT) - parse JSON Schema and OpenApi files to build a meta model from them. This meta model can be used in Mako templates to generate source code, other schemas or plantUml.   
 -   Rust
     - [schemafy](https://github.com/Marwes/schemafy/) - generates Rust types and serialization code from a JSON schema. *supports Draft 4*
 
