@@ -171,6 +171,9 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
     -   [jsonschema.net](https://www.jsonschema.net/) - generates schemas from example data
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 
+#### Editors
+
+-   [dashjoin.github.io](https://dashjoin.github.io/#/schema) - allows creating basic JSON schema interactively, good tool for learning & education, does not support advanced JSON schema constructs
 
 Generators from schemas
 -----------------------
