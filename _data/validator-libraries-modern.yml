@@ -31,6 +31,12 @@
       date-draft:
       draft: [7]
       license: MIT
+    - name: Valijson
+      url: https://github.com/tristanpenman/valijson
+      notes: header-only library, works with many JSON parser implementations
+      date-draft:
+      draft: [7]
+      license: BSD-2-Clause
 - name: Clojure
   implementations:
     - name: jinx
