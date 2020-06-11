@@ -165,6 +165,8 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
 
 #### From data
 
+-   Java
+    -   [saasquatch/json-schema-inferrer](https://github.com/saasquatch/json-schema-inferrer) _draft-07, -06, -04_ (Apache 2.0) - Java library for inferring JSON Schemas from one or multiple JSON samples.
 -   Scala
     -   [Schema Guru](https://github.com/snowplow/schema-guru) (Apache 2.0) - CLI util, Spark Job and Web UI for deriving JSON Schemas out of corpus of JSON instances; see issue [178](https://github.com/snowplow/schema-guru/issues/178) for progress towards draft-06+ support
 -   Online (web tool)
