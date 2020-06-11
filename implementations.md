@@ -171,10 +171,6 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
     -   [jsonschema.net](https://www.jsonschema.net/) - generates schemas from example data
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 
-#### Editors
-
--   [dashjoin.github.io](https://dashjoin.github.io/#/schema) - allows creating basic JSON schema interactively, good tool for learning & education, does not support advanced JSON schema constructs
-
 Generators from schemas
 -----------------------
 
@@ -279,6 +275,7 @@ _None currently support draft-06 or later._
 #### Editors
 
 -   [Altova XMLSpy 2019r3](https://www.altova.com/xmlspy-xml-editor#json_schema) - *Graphical JSON Schema editor for draft-06 and draft-7, as well as validation of JSON files based on JSON Schema*
+-   [Dashjoin JSON Schema editor](https://dashjoin.github.io/#/schema) - allows creating basic JSON schema interactively, good tool for learning & education, does not support advanced JSON schema constructs
 -   [JSONBuddy](https://www.json-buddy.com/) - *Text and grid-style JSON editor and validator with context sensitive entry-helpers and sample data generation based on JSON schema. Support for draft-4, draft-6 and draft-7.*
 -   [JSONEditor Online](https://jsoneditoronline.org/) - *View, edit, format, and validate JSON online* Support draft-4, draft-6, and draft-7.
 -   [Oxygen JSON Editor](https://www.oxygenxml.com/xml_editor/json.html) - *JSON editor with a variety of editing features and helper views. Support for validation and editing JSON Schema draft-4, draft-6, and draft-7. Validation and editing of JSON files based on JSON Schema.*
