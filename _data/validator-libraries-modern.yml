@@ -189,6 +189,14 @@
       date-draft:
       draft: [7, 6, 4]
       license: MIT
+- name: Rust
+  implementations:
+    - name: jsonschema-rs
+      url: https://github.com/Stranger6667/jsonschema-rs
+      notes: Fast due to compiling schema into a validation tree
+      date-draft:
+      draft: [7, 6]
+      license: MIT
 - name: Objective-C
   implementations:
     - name: DSJSONSchemaValidation
