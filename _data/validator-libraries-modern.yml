@@ -53,8 +53,8 @@
   implementations:
     - name: json-schema
       url: https://github.com/fisxoj/json-schema
-      date-draft:
-      draft: [4, 6, 7, 2019-09]
+      date-draft: [2019-09]
+      draft: [4, 6, 7]
       license: LGPL
 - name: Elixir
   implementations:
