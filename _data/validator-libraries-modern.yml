@@ -187,6 +187,12 @@
       date-draft:
       draft: [7, 6, 4]
       license: BSD-3-Clause
+    - name: jsonschema-rs
+      url: https://github.com/Stranger6667/jsonschema-rs/python
+      notes: Python bindings to Rust's jsonschema crate
+      date-draft:
+      draft: [7, 6, 4]
+      license: MIT
 - name: Ruby
   implementations:
     - name: JSONSchemer
@@ -201,7 +207,7 @@
       url: https://github.com/Stranger6667/jsonschema-rs
       notes: Fast due to compiling schema into a validation tree
       date-draft:
-      draft: [7, 6]
+      draft: [7, 6, 4]
       license: MIT
 - name: Objective-C
   implementations:
