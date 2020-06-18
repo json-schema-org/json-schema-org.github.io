@@ -150,8 +150,6 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
 -   .NET
     -   [Json.NET](https://www.newtonsoft.com/jsonschema) (AGPL-3.0) - generates schemas from .NET types
     -   [NJsonSchema](https://github.com/RSuter/NJsonSchema/) - (Ms-PL) - generates schemas from .NET types, see issue [574](https://github.com/RSuter/NJsonSchema/issues/574) for draft-06+ support progress
--   Golang
-    -  [qri-io/jsonschema](https://github.com/qri-io/jsonschema)(MIT) - idiomatic go implementation with custom validator support, coding to and from json, rich error returns *supports Draft 7*
 -   PHP
     -   [Liform](https://github.com/Limenius/liform) (MIT) - generates schemas from Symfony forms
 -   TypeScript
