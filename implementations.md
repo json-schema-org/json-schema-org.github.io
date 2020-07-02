@@ -173,7 +173,6 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
     -   [jsonschema.net](https://www.jsonschema.net/) - generates schemas from example data
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 
-
 Generators from schemas
 -----------------------
 
@@ -217,7 +216,7 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [Angular Schema Form](https://github.com/json-schema-form/angular-schema-form) (MIT)
     -   [Angular2 Schema Form](https://github.com/makinacorpus/angular2-schema-form) *unrelated to Angular Schema Form* (MIT)
     -   [Angular6-json-schema-form](https://github.com/hamzahamidi/Angular6-json-schema-form) (MIT)
-    -   [Dashjoin JSON Schema Form](https://github.com/dashjoin/json-schema-form) (Apache 2)
+    -   [Dashjoin JSON Schema Form](https://github.com/dashjoin/json-schema-form) (Apache 2) *draft-06 (minus oneOf, anyOf, allOf, not)*
     -   [JSON Editor](https://github.com/json-editor/json-editor) (MIT)
     -   [JSON Form (joshfire)](https://github.com/joshfire/jsonform) (joshfire) (MIT)
     -   [Json Forms (brutusin)](https://github.com/brutusin/json-forms) (brutusin) (MIT)
@@ -280,6 +279,7 @@ _None currently support draft-06 or later._
 #### Editors
 
 -   [Altova XMLSpy 2019r3](https://www.altova.com/xmlspy-xml-editor#json_schema) - *Graphical JSON Schema editor for draft-06 and draft-7, as well as validation of JSON files based on JSON Schema*
+-   [Dashjoin JSON Schema editor](https://dashjoin.github.io/#/schema) - *Graphical online JSON Schema editor for draft-06 (minus oneOf, anyOf, allOf, not). The generated schema can be tested immediately via a form that is driven by it.*
 -   [JSONBuddy](https://www.json-buddy.com/) - *Text and grid-style JSON editor and validator with context sensitive entry-helpers and sample data generation based on JSON schema. Support for draft-4, draft-6 and draft-7.*
 -   [JSONEditor Online](https://jsoneditoronline.org/) - *View, edit, format, and validate JSON online* Support draft-4, draft-6, and draft-7.
 -   [Oxygen JSON Editor](https://www.oxygenxml.com/xml_editor/json.html) - *JSON editor with a variety of editing features and helper views. Support for validation and editing JSON Schema draft-4, draft-6, and draft-7. Validation and editing of JSON files based on JSON Schema.*
