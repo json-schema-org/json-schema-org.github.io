@@ -93,7 +93,7 @@
     - name: Vert.x Json Schema
       url: https://github.com/eclipse-vertx/vertx-json-schema
       notes: Validator for Eclipse Vert.x project JSON types.
-      date-draft: []
+      date-draft: [2019-09]
       draft: [7]
       license: Apache License, Version 2.0
       notes: includes custom keywords support, custom dialect support, asynchronous validation
