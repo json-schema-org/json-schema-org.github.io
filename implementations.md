@@ -291,11 +291,11 @@ _None currently support draft-06 or later._
 
 #### Documentation generators
 
-- [jsonschematic](https://github.com/yanick/jsonschematic/) - Svelte-based schema viewer. Runs as a local web app.
+- [jsonschematic](https://github.com/yanick/jsonschematic/) - Svelte-based schema viewer. Runs as a local web app. Supports draft-7.
 
-- [docson](https://github.com/lbovet/docson) - Javascript-based schema viewer.  Runs as a local web app.
+- [docson](https://github.com/lbovet/docson) - Javascript-based schema viewer.  Runs as a local web app. Supports draft-4.
 
-- [json-schema-for-humans](https://pypi.org/project/json-schema-for-humans/) - Generate HTML representation of a schema. Python-based.
+- [json-schema-for-humans](https://pypi.org/project/json-schema-for-humans/) - Generate HTML representation of a schema. Python-based. Supports draft-7.
 
 Schema Repositories
 -------------------
