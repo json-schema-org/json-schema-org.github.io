@@ -18,7 +18,7 @@ title: JSON Schema
 description: The home of JSON Schema
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
-#twitter_username: jekyllrb
+twitter_username: jsonschema
 github_username:  json-schema-org
 google_analytics: UA-99695987-1
 
