@@ -60,7 +60,9 @@ $content-width:    960px !default;
   top: 90px;
   font-size: 12px;
   line-height: 1.45;
-  box-shadow: 0 0 17px rgba(0,0,0,.2);
+  background-color: #f9f9f9;
+  border: 1px dashed;
+  border-color: #cacaca;
 }
 
 @media (max-width: 1199.98px) {
@@ -83,8 +85,6 @@ $content-width:    960px !default;
   display: block;
   padding: 10px;
   border-radius: 4px;
-  background-color: #fff;
-  box-shadow: 0 1px 3px hsla(0, 0%, 0%, .05);
 }
 
 #carbonads .carbon-wrap {
@@ -111,8 +111,12 @@ $content-width:    960px !default;
   text-transform: uppercase;
   letter-spacing: .5px;
   font-weight: 500;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1;
+}
+
+#carbonads .carbon-poweredby:hover {
+  color: #637381;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 759px) {
