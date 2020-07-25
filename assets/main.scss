@@ -48,3 +48,79 @@ code {
 // minima.scss overrides
 $spacing-unit:     10px !default;
 $content-width:    960px !default;
+
+// Carbon ads
+
+#carbonads {
+  max-width: 300px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: flex;
+  position: fixed;
+  right: 10px;
+  top: 90px;
+  font-size: 12px;
+  line-height: 1.45;
+  background-color: #f9f9f9;
+  border: 1px dashed;
+  border-color: #cacaca;
+}
+
+@media (max-width: 1420px) {
+  #carbonads {
+    display: block;
+    position: relative;
+    right: unset;
+    top: unset;
+    margin: auto;
+    margin-bottom: 30px;
+    overflow: hidden;
+    max-width: 728px;
+    font-size: 24px;
+    box-sizing: content-box;
+  }
+}
+
+#carbonads > span {
+  position: relative;
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#carbonads .carbon-wrap {
+  display: flex;
+}
+
+#carbonads .carbon-img {
+  margin-right: 10px;
+  line-height: 1;
+}
+
+#carbonads .carbon-text {
+  margin-bottom: 12px;
+  color: #637381;
+  text-decoration: none;
+}
+
+#carbonads .carbon-poweredby {
+  position: absolute;
+  bottom: 10px;
+  left: 152px;
+  color: #c5cdd0;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1;
+}
+
+#carbonads .carbon-poweredby:hover {
+  color: #637381;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 759px) {
+  .carbon-text {
+    font-size: 14px;
+  }
+}
