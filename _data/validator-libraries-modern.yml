@@ -3,7 +3,7 @@
   implementations:
     - name: Json.NET Schema
       url: https://www.newtonsoft.com/jsonschema
-      date-draft:
+      date-draft: [2019-09]
       draft: [7, 6, 4, 3]
       license: "AGPL-3.0-only"
     - name: Manatee.Json
@@ -241,7 +241,7 @@
       notes: Supports multiple schemas and multiple instances
     - name: JSON Schema Validator
       url: https://www.jsonschemavalidator.net/
-      date-draft:
+      date-draft: [2019-09]
       draft: [7, 6, 4, 3]
     - name: JSON Schema Lint
       url: http://jsonschemalint.com/
