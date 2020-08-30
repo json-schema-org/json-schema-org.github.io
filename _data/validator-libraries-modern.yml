@@ -6,6 +6,11 @@
       date-draft: [2019-09]
       draft: [7, 6, 4, 3]
       license: "AGPL-3.0-only"
+    - name: JsonSchema.Net
+      url: https://github.com/gregsdennis/json-everything
+      date-draft: [2019-09]
+      draft: [7, 6]
+      license: MIT
     - name: Manatee.Json
       url: https://github.com/gregsdennis/Manatee.Json
       date-draft: [2019-09]
