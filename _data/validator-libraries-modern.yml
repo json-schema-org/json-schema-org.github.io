@@ -3,7 +3,7 @@
   implementations:
     - name: Json.NET Schema
       url: https://www.newtonsoft.com/jsonschema
-      date-draft:
+      date-draft: [2019-09]
       draft: [7, 6, 4, 3]
       license: "AGPL-3.0-only"
     - name: Manatee.Json
@@ -31,6 +31,12 @@
       date-draft:
       draft: [7]
       license: MIT
+    - name: Valijson
+      url: https://github.com/tristanpenman/valijson
+      notes: header-only library, works with many JSON parser implementations
+      date-draft:
+      draft: [7]
+      license: BSD-2-Clause
 - name: Clojure
   implementations:
     - name: jinx
@@ -43,6 +49,13 @@
       date-draft:
       draft: [7]
       license: Apache License, Version 2.0
+- name: Common Lisp
+  implementations:
+    - name: json-schema
+      url: https://github.com/fisxoj/json-schema
+      date-draft: [2019-09]
+      draft: [4, 6, 7]
+      license: LGPL
 - name: Elixir
   implementations:
     - name: Elixir JSON Schema validator
@@ -71,12 +84,18 @@
       license: BSD-3-Clause
     - name: qri-io/jsonschema
       url: https://github.com/qri-io/jsonschema
-      date-draft:
+      date-draft: [2019-09]
       draft: [7]
       license: MIT
       notes: includes custom validator support, rich error returns
 - name: Java
   implementations:
+    - name: Snow
+      url: https://github.com/ssilverman/snowy-json
+      notes: Uses Maven for the project and Gson under the hood.
+      date-draft: [2019-09]
+      draft: [7, 6]
+      license: GNU Affero General Public License v3.0
     - name: everit-org/json-schema
       url: https://github.com/everit-org/json-schema
       notes:
@@ -117,10 +136,22 @@
       date-draft:
       draft: [6, 4]
       license: MIT
+    - name: Hyperjump JSV
+      url: https://github.com/jdesrosiers/json-schema
+      notes: "Built for Node.js and browsers. Includes support for custom vocabularies."
+      date-draft: [2019-09]
+      draft: [7, 6, 4]
+      license: MIT
     - name: vue-vuelidate-jsonschema
       url: https://github.com/mokkabonna/vue-vuelidate-jsonschema
       date-draft:
       draft: [6]
+      license: MIT
+    - name: "@cfworker/json-schema"
+      url: https://github.com/cfworker/cfworker/blob/master/packages/json-schema/README.md
+      notes: "Built for Cloudflare workers, browsers, and Node.js"
+      date-draft: [2019-09]
+      draft: [7, 6, 4]
       license: MIT
 - name: Perl
   implementations:
@@ -130,6 +161,11 @@
       date-draft:
       draft: [7, 6, 4]
       license: "The Artistic License 2.0 (GPL Compatible)"
+    - name: JSON::Schema::Draft201909
+      url: https://github.com/karenetheridge/JSON-Schema-Draft201909
+      notes:
+      date-draft: [2019-09]
+      license: "GNU General Public License, Version 1 + The Artistic License 1.0"
 - name: PHP
   implementations:
     - name: Opis Json Schema
@@ -158,11 +194,25 @@
       date-draft:
       draft: [7, 6, 4]
       license: BSD-3-Clause
+    - name: jsonschema-rs
+      url: https://github.com/Stranger6667/jsonschema-rs/python
+      notes: Python bindings to Rust's jsonschema crate
+      date-draft:
+      draft: [7, 6, 4]
+      license: MIT
 - name: Ruby
   implementations:
     - name: JSONSchemer
       url: https://github.com/davishmcclurg/json_schemer
       notes:
+      date-draft:
+      draft: [7, 6, 4]
+      license: MIT
+- name: Rust
+  implementations:
+    - name: jsonschema-rs
+      url: https://github.com/Stranger6667/jsonschema-rs
+      notes: Fast due to compiling schema into a validation tree
       date-draft:
       draft: [7, 6, 4]
       license: MIT
@@ -184,9 +234,14 @@
       license: MIT
 - name: Web (Online)
   implementations:
+    - name: Hyperjump JSV
+      url: https://json-schema.hyperjump.io
+      date-draft: [2019-09]
+      draft: [7, 6, 4]
+      notes: Supports multiple schemas and multiple instances
     - name: JSON Schema Validator
       url: https://www.jsonschemavalidator.net/
-      date-draft:
+      date-draft: [2019-09]
       draft: [7, 6, 4, 3]
     - name: JSON Schema Lint
       url: http://jsonschemalint.com/

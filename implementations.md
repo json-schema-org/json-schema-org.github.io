@@ -150,8 +150,6 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
 -   .NET
     -   [Json.NET](https://www.newtonsoft.com/jsonschema) (AGPL-3.0) - generates schemas from .NET types
     -   [NJsonSchema](https://github.com/RSuter/NJsonSchema/) - (Ms-PL) - generates schemas from .NET types, see issue [574](https://github.com/RSuter/NJsonSchema/issues/574) for draft-06+ support progress
--   Golang
-    -  [qri-io/jsonschema](https://github.com/qri-io/jsonschema)(MIT) - idiomatic go implementation with custom validator support, coding to and from json, rich error returns *supports Draft 7*
 -   PHP
     -   [Liform](https://github.com/Limenius/liform) (MIT) - generates schemas from Symfony forms
 -   TypeScript
@@ -159,18 +157,21 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
 -   Python
     -   [Pydantic](https://pydantic-docs.helpmanual.io/) (MIT) - generates schemas from Python models based on Python 3.6+ type hints.
 -   Java
-    -   [jsonschema-generator](https://github.com/victools/jsonschema-generator) (Apache 2.0) - generates schemas from Java types *supports Draft 7*
+    -   [jsonschema-generator](https://github.com/victools/jsonschema-generator) (Apache 2.0) - generates schemas from Java types *supports Draft 7 and Draft 2019-09*
 -   Scala
     -   [scala-jsonschema](https://github.com/andyglow/scala-jsonschema) (Apache 2.0) - generates schemad out of Scala case classes
 
 #### From data
 
+-   Java
+    -   [saasquatch/json-schema-inferrer](https://github.com/saasquatch/json-schema-inferrer) _draft-07, -06, -04_ (Apache 2.0) - Java library for inferring JSON Schemas from one or multiple JSON samples.
 -   Scala
     -   [Schema Guru](https://github.com/snowplow/schema-guru) (Apache 2.0) - CLI util, Spark Job and Web UI for deriving JSON Schemas out of corpus of JSON instances; see issue [178](https://github.com/snowplow/schema-guru/issues/178) for progress towards draft-06+ support
+-   Clojure
+    -   [luposlip/json-schema](https://github.com/luposlip/json-schema) (Apache 2.0) - infer JSON Schema from Clojure data
 -   Online (web tool)
     -   [jsonschema.net](https://www.jsonschema.net/) - generates schemas from example data
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
-
 
 Generators from schemas
 -----------------------
@@ -199,6 +200,8 @@ are the only keywords that changed.
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 -   PHP
     -  [php-code-builder](https://github.com/swaggest/php-code-builder)(MIT) - generates PHP mapping structures defined by JSON schema using [swaggest/json-schema](https://github.com/swaggest/php-json-schema) *supports Draft 7*
+-   Python
+    - [yacg](https://github.com/OkieOth/yacg) (MIT) - parse JSON Schema and OpenApi files to build a meta model from them. This meta model can be used in Mako templates to generate source code, other schemas or plantUml.   
 -   Rust
     - [schemafy](https://github.com/Marwes/schemafy/) - generates Rust types and serialization code from a JSON schema. *supports Draft 4*
 
@@ -213,6 +216,7 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [Angular Schema Form](https://github.com/json-schema-form/angular-schema-form) (MIT)
     -   [Angular2 Schema Form](https://github.com/makinacorpus/angular2-schema-form) *unrelated to Angular Schema Form* (MIT)
     -   [Angular6-json-schema-form](https://github.com/hamzahamidi/Angular6-json-schema-form) (MIT)
+    -   [Dashjoin JSON Schema Form](https://github.com/dashjoin/json-schema-form) (Apache 2) *draft-06 (minus oneOf, anyOf, allOf, not)*
     -   [JSON Editor](https://github.com/json-editor/json-editor) (MIT)
     -   [JSON Form (joshfire)](https://github.com/joshfire/jsonform) (joshfire) (MIT)
     -   [Json Forms (brutusin)](https://github.com/brutusin/json-forms) (brutusin) (MIT)
@@ -238,6 +242,9 @@ the utility, and decided on a case-by-case basis.
 -   JavaScript
     -   [json-schema-ref-parser](https://github.com/BigstickCarpet/json-schema-ref-parser) (MIT) Tools for dereferencing non-cyclic schemas, bundling referenced schemas into a single file, and other `$ref` processing.
     -   [@cloudflare/json-schema-walker](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-walker) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), _draft-07, -06, -04, and Cloudflare's Doca extensions_ Walks schemas and runs pre- and post-walk callbacks.  Can modify schemas in place. (BSD-3-Clause)
+    -   [@hyperjump/json-schema-core](https://github.com/jdesrosiers/json-schema-core)
+        (MIT) Tools for working with schemas that handle identifiers and
+        references. Build vocabularies and other JSON Schema based tools.
 
 #### Schema to Schema
 
@@ -271,22 +278,15 @@ _None currently support draft-06 or later._
 
 #### Editors
 
-_TODO: Sort by draft support._
-
 -   [Altova XMLSpy 2019r3](https://www.altova.com/xmlspy-xml-editor#json_schema) - *Graphical JSON Schema editor for draft-06 and draft-7, as well as validation of JSON files based on JSON Schema*
--   [Liquid XML Studio 2016](https://www.liquid-technologies.com/json-schema-editor) - *Graphical JSON schema editor for draft 4, context sensitive intellisense for JSON documents.*
--   [Visual Studio 2013](https://www.visualstudio.com/) - *Auto-completion and tooltips based on JSON schema draft 3 and draft 4*
--   [JSONBuddy](https://www.json-buddy.com/) - *Text and grid-style JSON editor and validator with context sensitive entry-helpers and sample data generation based on JSON schema. Support for draft 4, draft 6 and draft 7.*
--   [ReSharper 2016.1](https://www.jetbrains.com/resharper/) - *code completion, inspections and quick fixes for JSON schema in Visual Studio 2010 - 2015, including support for JSON Path and regular expressions for schema editing*
--   [Visual Studio Code](https://code.visualstudio.com/) - *Schema driven code completion, hovers and validation for editing JSON files (including schemas)*
--   [JSONEditor Online](https://jsoneditoronline.org/) - *View, edit, format, and validate JSON online*
--   [JSON Schema Editor](https://json-schema-editor.tangramjs.com) - *An intuitive editor for JSON schema online*
--   [JSON Editor](https://json-editor.tangramjs.com) - *An online, schema-aware editor for JSON document*
--   [Eclipse IDE](https://www.eclipse.org/downloads/eclipse-packages) - *Rich JSON edition supporting schema for instantaneous validation and error reporting, completion, documentation.*
--   [WebStorm](https://www.jetbrains.com/webstorm/), [IntelliJ IDEA](https://www.jetbrains.com/idea/), and other [JetBrains IDEs](https://www.jetbrains.com/products.html?fromMenu#type=ide) - *Code completion, documentation, and validation for JSON and YAML files using JSON Schema*
--   [JsonDraft](https://jsondraft.com/) - *Tree view JSON and JSON Schema editor online. Create and Save reusable components, Share JSON.*
+-   [Dashjoin JSON Schema editor](https://dashjoin.github.io/#/schema) - *Graphical online JSON Schema editor for draft-06 (minus oneOf, anyOf, allOf, not). The generated schema can be tested immediately via a form that is driven by it.*
+-   [JSONBuddy](https://www.json-buddy.com/) - *Text and grid-style JSON editor and validator with context sensitive entry-helpers and sample data generation based on JSON schema. Support for draft-4, draft-6 and draft-7.*
+-   [JSONEditor Online](https://jsoneditoronline.org/) - *View, edit, format, and validate JSON online* Support draft-4, draft-6, and draft-7.
 -   [Oxygen JSON Editor](https://www.oxygenxml.com/xml_editor/json.html) - *JSON editor with a variety of editing features and helper views. Support for validation and editing JSON Schema draft-4, draft-6, and draft-7. Validation and editing of JSON files based on JSON Schema.*
-
+-   [Stoplight Studio](https://stoplight.io/) - *JSON Schema IDE (text-based and GUI) with support for JSON/YAML linting, which can also be based on JSON Schema rules via Spectral. Support for draft-4, draft-6 and draft-7.*
+-   [Visual Studio Code](https://code.visualstudio.com/) - *Schema driven code completion, hovers and validation for editing JSON files (including schemas)*
+-   [WebStorm](https://www.jetbrains.com/webstorm/), [IntelliJ IDEA](https://www.jetbrains.com/idea/), and other [JetBrains IDEs](https://www.jetbrains.com/products.html?fromMenu#type=ide) - *Code completion, documentation, and validation for JSON and YAML files using JSON Schema. Support for draft-4, draft-6, and draft-7.*
+-   [Eclipse IDE](https://www.eclipse.org/downloads/eclipse-packages) - *Rich JSON edition supporting schema for instantaneous validation and error reporting, completion, documentation.*
 
 Schema Repositories
 -------------------
@@ -297,4 +297,5 @@ Schema Repositories
 Schema Linter
 -------------
 
--   [json-schema-linter](https://www.json-schema-linter.com/) - Lint/validate/parse json-schema itself and find out out typo, missing properties, missing required keys etc. Supports draft 4, 6, and 7.
+-   [json-schema-linter](https://www.json-schema-linter.com/) - Lint/validate/parse json-schema itself, and find typos, missing properties, missing required keys, etc. Supports draft 4, 6, and 7.
+-   [Stoplight Spectral](https://stoplight.io/open-source/spectral) - A flexible JSON/YAML linter for creating automated style guides, with baked in support for OpenAPI v2/v3 and JSON Schema. Supports draft 4, 6, and 7.

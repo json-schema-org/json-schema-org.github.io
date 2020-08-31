@@ -60,13 +60,6 @@ Validators
 </ul>
 
 
-
-### Online
-
--   [JSON Schema Lint](http://jsonschemalint.com/) - validate against your own schemas
--   [SchemaStore.org](http://schemastore.org/validator/) - validate against common JSON Schemas
--   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
-
 ### Command Line
 
 <!-- To add a validator library, add it in _data/validator-libraries-obsolete.yml -->
@@ -129,7 +122,7 @@ Hyper-Schema
   {% endfor %}
 </ul>
 
-Schema generators
+Schema Generators
 -----------------
 
 -   Python
@@ -151,7 +144,7 @@ Generators from schemas
 -   JavaScript
     -   [json-schema-generator](https://github.com/json-schema-faker) (MIT) - JSON-Schema + fake data generators
 
-Data parsing and code generation
+Data Parsing and Code Generation
 --------------------------------
 
 -   Delphi
@@ -168,9 +161,9 @@ Data parsing and code generation
 -   Swift
     -   [Bric-à-brac](https://github.com/glimpseio/BricBrac) (MIT) - generates idiomatic swift structs and parser/serializer from JSON schemas
 -   Golang
-    -  [gojsonschema](https://github.com/andy-zhangtao/gojsonschema)(Apache 2.0) - golang package for generating golang struct *supports Draft 4*. [Demo](http://json.golang.chinazt.cc)
+    -  [gojsonschema](https://github.com/andy-zhangtao/gojsonschema)(Apache 2.0) - golang package for generating golang struct *support for Draft 4*. [Demo](http://json.golang.chinazt.cc)
 
-UI generation
+UI Generation
 -------------
 
 _TODO: Sort by draft support._
@@ -195,17 +188,11 @@ Various levels of support for UI generation primarily from the validation vocabu
 Editors
 -------
 
-_TODO: Sort by draft support._
-
 -   [Liquid XML Studio 2016](https://www.liquid-technologies.com/json-schema-editor) - *Graphical JSON schema editor for draft 4, context sensitive intellisense for JSON documents.*
+-   [ReSharper 2016.1](https://www.jetbrains.com/resharper/) - *code completion, inspections and quick fixes for JSON schema in Visual Studio 2010 - 2015, including support for JSON Path and regular expressions for schema editing. Support for draft-4*
 -   [Visual Studio 2013](http://www.visualstudio.com/) - *Auto-completion and tooltips based on JSON schema draft 3 and draft 4*
--   [JSONBuddy](http://www.json-buddy.com/) - *Grid-style JSON editor and context sensitive entry-helpers based on JSON schema*
--   [ReSharper 2016.1](https://www.jetbrains.com/resharper/) - *code completion, inspections and quick fixes for JSON schema in Visual Studio 2010 - 2015, including support for JSON Path and regular expressions for schema editing*
--   [Visual Studio Code](https://code.visualstudio.com/) - *Schema driven code completion, hovers and validation for editing JSON files (including schemas)*
--   [JSONEditor Online](http://jsoneditoronline.org) - *View, edit, format, and validate JSON online*
 -   [JSON Schema Editor](https://json-schema-editor.tangramjs.com) - *An intuitive editor for JSON schema online*
 -   [JSON Editor](https://json-editor.tangramjs.com) - *An online, schema-aware editor for JSON document*
--   [Eclipse IDE](https://www.eclipse.org/downloads/eclipse-packages) - *Rich JSON edition supporting schema for instantaneous validation and error reporting, completion, documentation.*
 
 Compatibility
 -------------

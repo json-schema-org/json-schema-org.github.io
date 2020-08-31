@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      {% if page.url != "/" %}
+      <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7I627Y&placement=json-schemaorg" id="_carbonads_js"></script>
+      {% endif %}
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>
