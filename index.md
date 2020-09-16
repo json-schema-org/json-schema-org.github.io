@@ -4,7 +4,6 @@ title: JSON Schema
 permalink: /
 ---
 
-The current version is *[2019-09](specification.html)*!
 
 **JSON Schema** is a vocabulary that allows you to **annotate** and **validate** JSON documents.
 
