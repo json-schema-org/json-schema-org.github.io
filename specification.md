@@ -5,21 +5,7 @@ permalink: /specification.html
 title: Specification
 ---
 
-**NEW DRAFT PUBLISHED!**
-{: style="color:red; font-size: 200%; text-align: center;"}
-
-The current version is 2019-09!
-{: style="color:gray; font-size: 150%; text-align: center;"}
-
-* TOC
-{:toc}
-
-Draft numbering
----------------
-
-The latest Internet-Drafts at the IETF are the **draft-handrews-json-schema\*-02** documents, which correspond to the **2019-09** meta-schemas. These were published on **2019-09-16**.
-
-For a full explanation of both the IETF and meta-schema numbering schemes, how they correspond, and why we are now using the date-based `2019-09` rather than `draft-08`, see the [Specification Links](specification-links.html) page.
+The current version is *2019-09*!
 
 Specification documents
 -----------------------
