@@ -119,6 +119,12 @@
       date-draft:
       draft: [7, 6, 4]
       license: Apache License 2.0
+    - name: jsonschemafriend
+      url: https://github.com/jimblackler/jsonschematypes/tree/master/library
+      notes:
+      date-draft: [2019-09]
+      draft: [7, 6, 4, 3]
+      license: Apache License 2.0
 - name: Kotlin
   implementations:
     - name: Medeia-validator
