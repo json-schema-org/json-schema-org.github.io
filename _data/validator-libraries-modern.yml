@@ -120,7 +120,7 @@
       draft: [7, 6, 4]
       license: Apache License 2.0
     - name: jsonschemafriend
-      url: https://github.com/jimblackler/jsonschematypes/tree/master/library
+      url: https://github.com/jimblackler/jsonschemafriend
       notes:
       date-draft: [2019-09]
       draft: [7, 6, 4, 3]
