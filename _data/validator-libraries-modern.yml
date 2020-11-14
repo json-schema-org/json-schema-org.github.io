@@ -130,9 +130,9 @@
 - name: JavaScript
   implementations:
     - name: ajv
-      url: https://github.com/epoberezkin/ajv
-      notes: "for Node.js and browsers - supports [custom keywords](https://github.com/epoberezkin/ajv-keywords) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51)"
-      date-draft:
+      url: https://github.com/ajv-validator/ajv
+      notes: "for Node.js and browsers - supports [user-defined keywords](https://github.com/ajv-validator/ajv/blob/master/docs/keywords.md) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51)"
+      date-draft: [2019-09]
       draft: [7, 6, 4]
       license: MIT
     - name: djv
