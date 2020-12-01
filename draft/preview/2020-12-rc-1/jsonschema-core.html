@@ -408,6 +408,7 @@
 <link href="#rfc.section.7.7" rel="Chapter" title="7.7 Annotations">
 <link href="#rfc.section.7.7.1" rel="Chapter" title="7.7.1 Collecting Annotations">
 <link href="#rfc.section.7.8" rel="Chapter" title="7.8 Reserved Locations">
+<link href="#rfc.section.7.9" rel="Chapter" title="7.9 Loading Instance Data">
 <link href="#rfc.section.8" rel="Chapter" title="8 The JSON Schema Core Vocabulary">
 <link href="#rfc.section.8.1" rel="Chapter" title="8.1 Meta-Schemas and Vocabularies">
 <link href="#rfc.section.8.1.1" rel="Chapter" title='8.1.1 The "$schema" Keyword'>
@@ -482,12 +483,12 @@
 <link href="#rfc.authors" rel="Chapter">
 
 
-  <meta name="generator" content="xml2rfc version 2.23.1 - https://tools.ietf.org/tools/xml2rfc" />
+  <meta name="generator" content="xml2rfc version 2.30.0 - https://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Wright, A., Ed., Andrews, H., Ed., Hutton, B., Ed., and G. Dennis" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-bhutton-json-schema-00" />
-  <meta name="dct.issued" scheme="ISO8601" content="2020-12" />
+  <meta name="dct.issued" scheme="ISO8601" content="2020-01" />
   <meta name="dct.abstract" content="JSON Schema defines the media type &quot;application/schema+json&quot;, a JSON-based format for describing the structure of JSON data.  JSON Schema asserts what a JSON document must look like, ways to extract information from it, and how to interact with it.  The &quot;application/schema-instance+json&quot; media type provides additional feature-rich integration with &quot;application/schema+json&quot; beyond what can be offered for &quot;application/json&quot; documents.  " />
   <meta name="description" content="JSON Schema defines the media type &quot;application/schema+json&quot;, a JSON-based format for describing the structure of JSON data.  JSON Schema asserts what a JSON document must look like, ways to extract information from it, and how to interact with it.  The &quot;application/schema-instance+json&quot; media type provides additional feature-rich integration with &quot;application/schema+json&quot; beyond what can be offered for &quot;application/json&quot; documents.  " />
 
@@ -511,7 +512,7 @@
 <td class="right">H. Andrews, Ed.</td>
 </tr>
 <tr>
-<td class="left">Expires: May 16, 2021</td>
+<td class="left">Expires: June 4, 2021</td>
 <td class="right"></td>
 </tr>
 <tr>
@@ -528,7 +529,7 @@
 </tr>
 <tr>
 <td class="left"></td>
-<td class="right">November 12, 2020</td>
+<td class="right">December 1, 2020</td>
 </tr>
 
     	
@@ -541,7 +542,7 @@
   <h1 id="rfc.abstract"><a href="#rfc.abstract">Abstract</a></h1>
 <p>JSON Schema defines the media type "application/schema+json", a JSON-based format for describing the structure of JSON data.  JSON Schema asserts what a JSON document must look like, ways to extract information from it, and how to interact with it.  The "application/schema-instance+json" media type provides additional feature-rich integration with "application/schema+json" beyond what can be offered for "application/json" documents.  </p>
 <h1><a>Note to Readers</a></h1>
-<p>This document a pre-release identified as JSON Schema draft 2020-11-rc-0.  </p>
+<p>This document a pre-release identified as JSON Schema draft 2020-12-rc-1.  </p>
 <p>The issues list for this draft can be found at <span>&lt;</span><a href="https://github.com/json-schema-org/json-schema-spec/issues">https://github.com/json-schema-org/json-schema-spec/issues</a><span>&gt;</span>.  </p>
 <p>For additional information, see <span>&lt;</span><a href="https://json-schema.org/">https://json-schema.org/</a><span>&gt;</span>.  </p>
 <p>To provide feedback, use this issue tracker, the communication methods listed on the homepage, or email the document editors.  </p>
@@ -549,7 +550,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on May 16, 2021.</p>
+<p>This Internet-Draft will expire on June 4, 2021.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
 <p>Copyright (c) 2020 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
@@ -626,6 +627,8 @@
 <ul><li>7.7.1.   <a href="#rfc.section.7.7.1">Collecting Annotations</a>
 </li>
 </ul><li>7.8.   <a href="#rfc.section.7.8">Reserved Locations</a>
+</li>
+<li>7.9.   <a href="#rfc.section.7.9">Loading Instance Data</a>
 </li>
 </ul><li>8.   <a href="#rfc.section.8">The JSON Schema Core Vocabulary</a>
 </li>
@@ -778,7 +781,7 @@
   <h1 id="rfc.section.1">
 <a href="#rfc.section.1">1.</a> Introduction</h1>
 <p id="rfc.section.1.p.1">JSON Schema is a JSON media type for defining the structure of JSON data. JSON Schema is intended to define validation, documentation, hyperlink navigation, and interaction control of JSON data.  </p>
-<p id="rfc.section.1.p.2">This specification defines JSON Schema core terminology and mechanisms, including pointing to another JSON Schema by reference, dereferencing a JSON Schema reference, specifying the vocabulary being used, and defining the expected output.  </p>
+<p id="rfc.section.1.p.2">This specification defines JSON Schema core terminology and mechanisms, including pointing to another JSON Schema by reference, dereferencing a JSON Schema reference, specifying the dialect being used, specifying a dialect's vocabulary requirements, and defining the expected output.  </p>
 <p id="rfc.section.1.p.3">Other specifications define the vocabularies that perform assertions about validation, linking, annotation, navigation, and interaction.  </p>
 <h1 id="rfc.section.2">
 <a href="#rfc.section.2">2.</a> Conventions and Terminology</h1>
@@ -788,7 +791,7 @@
 <a href="#rfc.section.3">3.</a> Overview</h1>
 <p id="rfc.section.3.p.1">This document proposes a new media type "application/schema+json" to identify a JSON Schema for describing JSON data.  It also proposes a further optional media type, "application/schema-instance+json", to provide additional integration features.  JSON Schemas are themselves JSON documents.  This, and related specifications, define keywords allowing authors to describe JSON data in several ways.  </p>
 <p id="rfc.section.3.p.2">JSON Schema uses keywords to assert constraints on JSON instances or annotate those instances with additional information.  Additional keywords are used to apply assertions and annotations to more complex JSON data structures, or based on some sort of condition.  </p>
-<p id="rfc.section.3.p.3">To facilitate re-use, keywords can be organized into vocabularies.  A vocabulary consists of a list of keywords, together with their syntax and semantics.  A set of vocabularies identified by a meta-schema is known as a dialect.  </p>
+<p id="rfc.section.3.p.3">To facilitate re-use, keywords can be organized into vocabularies. A vocabulary consists of a list of keywords, together with their syntax and semantics.  A dialect is defined as a set of vocabularies and their required support identified in a meta-schema.  </p>
 <p id="rfc.section.3.p.4">JSON Schema can be extended either by defining additional vocabularies, or less formally by defining additional keywords outside of any vocabulary.  Unrecognized individual keywords simply have their values collected as annotations, while the behavior with respect to an unrecognized vocabulary can be controlled when declaring which vocabularies are in use.  </p>
 <p id="rfc.section.3.p.5">This document defines a core vocabulary that MUST be supported by any implementation, and cannot be disabled.  Its keywords are each prefixed with a "$" character to emphasize their required nature.  This vocabulary is essential to the functioning of the "application/schema+json" media type, and is used to bootstrap the loading of other vocabularies.  </p>
 <p id="rfc.section.3.p.6">Additionally, this document defines a RECOMMENDED vocabulary of keywords for applying subschemas conditionally, and for applying subschemas to the contents of objects and arrays.  Either this vocabulary or one very much like it is required to write schemas for non-trivial JSON instances, whether those schemas are intended for assertion validation, annotation, or both.  While not part of the required core vocabulary, for maximum interoperability this additional vocabulary is included in this document and its use is strongly encouraged.  </p>
@@ -804,7 +807,7 @@
 <a href="#rfc.section.4.2">4.2.</a> Instance</h1>
 <p id="rfc.section.4.2.p.1">A JSON document to which a schema is applied is known as an "instance".  </p>
 <p id="rfc.section.4.2.p.2">JSON Schema is defined over "application/json" or compatible documents, including media types with the "+json" structured syntax suffix.  </p>
-<p id="rfc.section.4.2.p.3">Among these, this specification defines the "application/schema-instance+json" media type which defines handling for fragments in the URI, and the "schema" media type parameter.  </p>
+<p id="rfc.section.4.2.p.3">Among these, this specification defines the "application/schema-instance+json" media type which defines handling for fragments in the URI.  </p>
 <h1 id="rfc.section.4.2.1">
 <a href="#rfc.section.4.2.1">4.2.1.</a> Instance Data Model</h1>
 <p id="rfc.section.4.2.1.p.1">JSON Schema interprets documents according to a data model. A JSON value interpreted according to this data model is called an "instance".  </p>
@@ -848,12 +851,12 @@
 <h1 id="rfc.section.4.2.3">
 <a href="#rfc.section.4.2.3">4.2.3.</a> Non-JSON Instances</h1>
 <p id="rfc.section.4.2.3.p.1">It is possible to use JSON Schema with a superset of the JSON Schema data model, where an instance may be outside any of the six JSON data types.  </p>
-<p id="rfc.section.4.2.3.p.2">In this case, annotations still apply; but validation keywords will not be useful, as they will always pass or always fail.  </p>
+<p id="rfc.section.4.2.3.p.2">In this case, annotations still apply; but most validation keywords will not be useful, as they will always pass or always fail.  </p>
 <p id="rfc.section.4.2.3.p.3">A custom vocabulary may define support for a superset of the core data model.  The schema itself may only be expressible in this superset; for example, to make use of the "const" keyword.  </p>
 <h1 id="rfc.section.4.3">
 <a href="#rfc.section.4.3">4.3.</a> <a href="#schema-document" id="schema-document">JSON Schema Documents</a>
 </h1>
-<p id="rfc.section.4.3.p.1">A JSON Schema document, or simply a schema, is a JSON document used to describe an instance.  A schema can itself be interpreted as an instance, but SHOULD always be given the media type "application/schema+json" rather than "application/schema-instance+json".  The "application/schema+json" media type is defined to offer a superset of the media type parameter and fragment identifier syntax and semantics provided by "application/schema-instance+json".  </p>
+<p id="rfc.section.4.3.p.1">A JSON Schema document, or simply a schema, is a JSON document used to describe an instance.  A schema can itself be interpreted as an instance, but SHOULD always be given the media type "application/schema+json" rather than "application/schema-instance+json".  The "application/schema+json" media type is defined to offer a superset of the fragment identifier syntax and semantics provided by "application/schema-instance+json".  </p>
 <p id="rfc.section.4.3.p.2">A JSON Schema MUST be an object or a boolean.  </p>
 <h1 id="rfc.section.4.3.1">
 <a href="#rfc.section.4.3.1">4.3.1.</a> JSON Schema Objects and Keywords</h1>
@@ -874,13 +877,13 @@
 
 <p> </p>
 <p id="rfc.section.4.3.1.p.2">Keywords may fall into multiple categories, although applicators SHOULD only produce assertion results based on their subschemas' results.  They should not define additional constraints independent of their subschemas.  </p>
-<p id="rfc.section.4.3.1.p.3">Keywords within the same schema object are referred to as adjacent keywords.  </p>
+<p id="rfc.section.4.3.1.p.3">Keywords which are properties within the same schema object are referred to as adjacent keywords.  </p>
 <p id="rfc.section.4.3.1.p.4">Extension keywords, meaning those defined outside of this document and its companions, are free to define other behaviors as well.  </p>
 <p id="rfc.section.4.3.1.p.5">A JSON Schema MAY contain properties which are not schema keywords.  Unknown keywords SHOULD be treated as annotations, where the value of the keyword is the value of the annotation.  </p>
 <p id="rfc.section.4.3.1.p.6">An empty schema is a JSON Schema with no properties, or only unknown properties.  </p>
 <h1 id="rfc.section.4.3.2">
 <a href="#rfc.section.4.3.2">4.3.2.</a> Boolean JSON Schemas</h1>
-<p id="rfc.section.4.3.2.p.1">The boolean schema values "true" and "false" are trivial schemas that always produce themselves as assertions results, regardless of the instance value.  They never produce annotation results.  </p>
+<p id="rfc.section.4.3.2.p.1">The boolean schema values "true" and "false" are trivial schemas that always produce themselves as assertion results, regardless of the instance value.  They never produce annotation results.  </p>
 <p id="rfc.section.4.3.2.p.2">These boolean schemas exist to clarify schema author intent and facilitate schema processing optimizations.  They behave identically to the following schema objects (where "not" is part of the subschema application vocabulary defined in this document).  </p>
 
 <dl>
@@ -946,7 +949,7 @@
 <a href="#rfc.section.6.4">6.4.</a> <a href="#regex" id="regex">Regular Expressions</a>
 </h1>
 <p id="rfc.section.6.4.p.1">Keywords MAY use regular expressions to express constraints, or constrain the instance value to be a regular expression.  These regular expressions SHOULD be valid according to the regular expression dialect described in <a href="#ecma262" class="xref">ECMA-262, section 21.2.1</a>.  </p>
-<p id="rfc.section.6.4.p.2">Regular expressions SHOULD be built with the "u" flag (or equivilent) to provide Unicode support, or processed in such a way which provides Unicode as defined by ECMA-262.  </p>
+<p id="rfc.section.6.4.p.2">Regular expressions SHOULD be built with the "u" flag (or equivalent) to provide Unicode support, or processed in such a way which provides Unicode as defined by ECMA-262.  </p>
 <p id="rfc.section.6.4.p.3">Furthermore, given the high disparity in regular expression constructs support, schema authors SHOULD limit themselves to the following regular expression tokens: </p>
 
 <ul class="empty">
@@ -979,8 +982,8 @@
 <p id="rfc.section.7.1.p.2">The lexical scope of a keyword is determined by the nested JSON data structure of objects and arrays.  The largest such scope is an entire schema document.  The smallest scope is a single schema object with no subschemas.  </p>
 <p id="rfc.section.7.1.p.3">Keywords MAY be defined with a partial value, such as a URI-reference, which must be resolved against another value, such as another URI-reference or a full URI, which is found through the lexical structure of the JSON document.  The "$id", "$ref", and "$dynamicRef" core keywords, and the "base" JSON Hyper-Schema keyword, are examples of this sort of behavior.  </p>
 <p id="rfc.section.7.1.p.4">Note that some keywords, such as "$schema", apply to the lexical scope of the entire schema resource, and therefore MUST only appear in a schema resource's root schema.  </p>
-<p id="rfc.section.7.1.p.5">Other keywords may take into account the dynamic scope that exists during the evaluation of a schema, typically together with an instance document.  The outermost dynamic scope is the root schema of the schema document in which processing begins.  The path from this root schema to any particular keyword (that includes any "$ref" and "$dynamicRef" keywords that may have been resolved) is considered the keyword's "validation path." <a id="CREF1" class="info">[CREF1]<span class="info">Or should this be the schema object at which processing begins, even if it is not a root?  This has some implications for the case where "$dynamicAnchor" is only allowed in the root schema but processing begins in a subschema.  </span></a> </p>
-<p id="rfc.section.7.1.p.6">Lexical and dynamic scopes align until a reference keyword is encountered.  While following the reference keyword moves processing from one lexical scope into a different one, from the perspective of dynamic scope, following reference is no different from descending into a subschema present as a value.  A keyword on the far side of that reference that resolves information through the dynamic scope will consider the originating side of the reference to be their dynamic parent, rather than examining the local lexically enclosing parent.  </p>
+<p id="rfc.section.7.1.p.5">Other keywords may take into account the dynamic scope that exists during the evaluation of a schema.  The outermost dynamic scope is the root schema of the schema document in which processing begins.  The path from this root schema to any particular keyword (that includes any "$ref" and "$dynamicRef" keywords that may have been resolved) is considered the keyword's "validation path." </p>
+<p id="rfc.section.7.1.p.6">Lexical and dynamic scopes align until a reference keyword is encountered.  While following the reference keyword moves processing from one lexical scope into a different one, from the perspective of dynamic scope, following a reference is no different from descending into a subschema present as a value.  A keyword on the far side of that reference that resolves information through the dynamic scope will consider the originating side of the reference to be their dynamic parent, rather than examining the local lexically enclosing parent.  </p>
 <p id="rfc.section.7.1.p.7">The concept of dynamic scope is primarily used with "$dynamicRef" and "$dynamicAnchor", and should be considered an advanced feature and used with caution when defining additional keywords.  It also appears when reporting errors and collected annotations, as it may be possible to revisit the same lexical scope repeatedly with different dynamic scopes.  In such cases, it is important to inform the user of the dynamic path that produced the error or annotation.  </p>
 <h1 id="rfc.section.7.2">
 <a href="#rfc.section.7.2">7.2.</a> Keyword Interactions</h1>
@@ -995,7 +998,7 @@
 <a href="#rfc.section.7.4">7.4.</a> <a href="#identifiers" id="identifiers">Identifiers</a>
 </h1>
 <p id="rfc.section.7.4.p.1">Identifiers set the canonical URI of a schema, or affect how such URIs are resolved in <a href="#references" class="xref">references</a>, or both.  The Core vocabulary defined in this document defines several identifying keywords, most notably "$id".  </p>
-<p id="rfc.section.7.4.p.2">Canonical schema URIs MUST NOT change while processing an instance, but keywords that affect URI-reference resolution MAY have behavior that is only fully determined at runtime.  </p>
+<p id="rfc.section.7.4.p.2">Canonical schema URIs MUST NOT change while processing an instance, but keywords that affect URI-reference resolution MAY have behavior that is only fully determined dynamically.  </p>
 <p id="rfc.section.7.4.p.3">While custom identifier keywords are possible, vocabulary designers should take care not to disrupt the functioning of core keywords. For example, the "$dynamicAnchor" keyword in this specification limits its URI resolution effects to the matching "$dynamicRef" keyword, leaving the behavior of "$ref" undisturbed.  </p>
 <h1 id="rfc.section.7.5">
 <a href="#rfc.section.7.5">7.5.</a> <a href="#applicators" id="applicators">Applicators</a>
@@ -1009,7 +1012,7 @@
 </h1>
 <p id="rfc.section.7.5.1.p.1">As noted in <a href="#applicators" class="xref">Section 7.5</a>, an applicator keyword may refer to a schema to be applied, rather than including it as a subschema in the applicator's value.  In such situations, the schema being applied is known as the referenced schema, while the schema containing the applicator keyword is the referencing schema.  </p>
 <p id="rfc.section.7.5.1.p.2">While root schemas and subschemas are static concepts based on a schema's position within a schema document, referenced and referencing schemas are dynamic.  Different pairs of schemas may find themselves in various referenced and referencing arrangements during the evaluation of an instance against a schema.  </p>
-<p id="rfc.section.7.5.1.p.3">For some by-reference applicators, such as <a href="#ref" class="xref">"$ref"</a>, the referenced schema can be determined by static analysis of the schema document's lexical scope.  Others, such as "$dynamicRef" (with "$dynamicAnchor"),  may make use of dynamic scoping, and therefore only be resolvable in the process of evaluating the schema with an instance.  </p>
+<p id="rfc.section.7.5.1.p.3">For some by-reference applicators, such as <a href="#ref" class="xref">"$ref"</a>, the referenced schema can be determined by static analysis of the schema document's lexical scope.  Others, such as "$dynamicRef" (with "$dynamicAnchor"), are only resolvable with knowledge of all the schemas in it's dynamic scope.  </p>
 <h1 id="rfc.section.7.6">
 <a href="#rfc.section.7.6">7.6.</a> <a href="#assertions" id="assertions">Assertions</a>
 </h1>
@@ -1130,14 +1133,19 @@
 <a href="#rfc.section.7.8">7.8.</a> Reserved Locations</h1>
 <p id="rfc.section.7.8.p.1">A fourth category of keywords simply reserve a location to hold re-usable components or data of interest to schema authors that is not suitable for re-use.  These keywords do not affect validation or annotation results.  Their purpose in the core vocabulary is to ensure that locations are available for certain purposes and will not be redefined by extension keywords.  </p>
 <p id="rfc.section.7.8.p.2">While these keywords do not directly affect results, as explained in section <a href="#non-schemas" class="xref">9.4.2</a> unrecognized extension keywords that reserve locations for re-usable schemas may have undesirable interactions with references in certain circumstances.  </p>
+<h1 id="rfc.section.7.9">
+<a href="#rfc.section.7.9">7.9.</a> Loading Instance Data</h1>
+<p id="rfc.section.7.9.p.1">While none of the vocabularies defined as part of this or the associated documents define a keyword which may target and/or load instance data, it is possible that other vocabularies may wish to do so.  </p>
+<p id="rfc.section.7.9.p.2">Keywords MAY be defined to use JSON Pointers or Relative JSON Pointers to examine parts of an instance outside the current evaluation location.  </p>
+<p id="rfc.section.7.9.p.3">Keywords that allow adjusting the location using a Relative JSON Pointer SHOULD default to using the current location if a default is desireable.  </p>
 <h1 id="rfc.section.8">
 <a href="#rfc.section.8">8.</a> The JSON Schema Core Vocabulary</h1>
 <p id="rfc.section.8.p.1">Keywords declared in this section, which all begin with "$", make up the JSON Schema Core vocabulary.  These keywords are either required in order to process any schema or meta-schema, including those split across multiple documents, or exist to reserve keywords for purposes that require guaranteed interoperability.  </p>
 <p id="rfc.section.8.p.2">The Core vocabulary MUST be considered mandatory at all times, in order to bootstrap the processing of further vocabularies.  Meta-schemas that use the <a href="#vocabulary" class="xref">"$vocabulary"</a> keyword to declare the vocabularies in use MUST explicitly list the Core vocabulary, which MUST have a value of true indicating that it is required.  </p>
 <p id="rfc.section.8.p.3">The behavior of a false value for this vocabulary (and only this vocabulary) is undefined, as is the behavior when "$vocabulary" is present but the Core vocabulary is not included.  However, it is RECOMMENDED that implementations detect these cases and raise an error when they occur.  It is not meaningful to declare that a meta-schema optionally uses Core.  </p>
 <p id="rfc.section.8.p.4">Meta-schemas that do not use "$vocabulary" MUST be considered to require the Core vocabulary as if its URI were present with a value of true.  </p>
-<p id="rfc.section.8.p.5">The current URI for the Core vocabulary is: &lt;https://json-schema.org/draft/2020-11/vocab/core&gt;.  </p>
-<p id="rfc.section.8.p.6">The current URI for the corresponding meta-schema is: <span>&lt;</span><a href="https://json-schema.org/draft/2020-11/meta/core">https://json-schema.org/draft/2020-11/meta/core</a><span>&gt;</span>.  </p>
+<p id="rfc.section.8.p.5">The current URI for the Core vocabulary is: &lt;https://json-schema.org/draft/2020-12/vocab/core&gt;.  </p>
+<p id="rfc.section.8.p.6">The current URI for the corresponding meta-schema is: <span>&lt;</span><a href="https://json-schema.org/draft/2020-12/meta/core">https://json-schema.org/draft/2020-12/meta/core</a><span>&gt;</span>.  </p>
 <p id="rfc.section.8.p.7">While the "$" prefix is not formally reserved for the Core vocabulary, it is RECOMMENDED that extension keywords (in vocabularies or otherwise) begin with a character other than "$" to avoid possible future collisions.  </p>
 <h1 id="rfc.section.8.1">
 <a href="#rfc.section.8.1">8.1.</a> <a href="#vocabulary" id="vocabulary">Meta-Schemas and Vocabularies</a>
@@ -1158,17 +1166,17 @@
 <h1 id="rfc.section.8.1.1">
 <a href="#rfc.section.8.1.1">8.1.1.</a> <a href="#keyword-schema" id="keyword-schema">The "$schema" Keyword</a>
 </h1>
-<p id="rfc.section.8.1.1.p.1">The "$schema" keyword is both used as a JSON Schema feature set identifier and as the identifier of a resource which is itself a JSON Schema, which describes the set of valid schemas written for this particular feature set.  </p>
+<p id="rfc.section.8.1.1.p.1">The "$schema" keyword is both used as a JSON Schema dialect identifier and as the identifier of a resource which is itself a JSON Schema, which describes the set of valid schemas written for this particular dialect.  </p>
 <p id="rfc.section.8.1.1.p.2">The value of this keyword MUST be a <a href="#RFC3986" class="xref">URI</a> (containing a scheme) and this URI MUST be normalized.  The current schema MUST be valid against the meta-schema identified by this URI.  </p>
 <p id="rfc.section.8.1.1.p.3">If this URI identifies a retrievable resource, that resource SHOULD be of media type "application/schema+json".  </p>
 <p id="rfc.section.8.1.1.p.4">The "$schema" keyword SHOULD be used in the document root schema object, and MAY be used in the root schema objects of embedded schema resources.  It MUST NOT appear in non-resource root schema objects.  If absent from the document root schema, the resulting behavior is implementation-defined.  </p>
 <p id="rfc.section.8.1.1.p.5">Values for this property are defined elsewhere in this and other documents, and by other parties.  </p>
 <h1 id="rfc.section.8.1.2">
 <a href="#rfc.section.8.1.2">8.1.2.</a> The "$vocabulary" Keyword</h1>
-<p id="rfc.section.8.1.2.p.1">The "$vocabulary" keyword is used in meta-schemas to identify the vocabularies available for use in schemas described by that meta-schema.  It is also used to indicate whether each vocabulary is required or optional, in the sense that an implementation MUST understand the required vocabularies in order to successfully process the schema.  </p>
+<p id="rfc.section.8.1.2.p.1">The "$vocabulary" keyword is used in meta-schemas to identify the vocabularies available for use in schemas described by that meta-schema.  It is also used to indicate whether each vocabulary is required or optional, in the sense that an implementation MUST understand the required vocabularies in order to successfully process the schema. Together, this information forms a dialect. Any vocabulary that is understood by the implementation MUST be processed in a manner consistent with the semantic definitions contained within the vocabulary.  </p>
 <p id="rfc.section.8.1.2.p.2">The value of this keyword MUST be an object.  The property names in the object MUST be URIs (containing a scheme) and this URI MUST be normalized.  Each URI that appears as a property name identifies a specific set of keywords and their semantics.  </p>
-<p id="rfc.section.8.1.2.p.3">The URI MAY be a URL, but the nature of the retrievable resource is currently undefined, and reserved for future use.  Vocabulary authors MAY use the URL of the vocabulary specification, in a human-readable media type such as text/html or text/plain, as the vocabulary URI.  <a id="CREF2" class="info">[CREF2]<span class="info">Vocabulary documents may be added in forthcoming drafts.  For now, identifying the keyword set is deemed sufficient as that, along with meta-schema validation, is how the current "vocabularies" work today.  Any future vocabulary document format will be specified as a JSON document, so using text/html or other non-JSON formats in the meantime will not produce any future ambiguity.  </span></a> </p>
-<p id="rfc.section.8.1.2.p.4">The values of the object properties MUST be booleans.  If the value is true, then implementations that do not recognize the vocabulary MUST refuse to process any schemas that declare this meta-schema with "$schema".  If the value is false, implementations that do not recognize the vocabulary SHOULD proceed with processing such schemas.  </p>
+<p id="rfc.section.8.1.2.p.3">The URI MAY be a URL, but the nature of the retrievable resource is currently undefined, and reserved for future use.  Vocabulary authors MAY use the URL of the vocabulary specification, in a human-readable media type such as text/html or text/plain, as the vocabulary URI.  <a id="CREF1" class="info">[CREF1]<span class="info">Vocabulary documents may be added in forthcoming drafts.  For now, identifying the keyword set is deemed sufficient as that, along with meta-schema validation, is how the current "vocabularies" work today.  Any future vocabulary document format will be specified as a JSON document, so using text/html or other non-JSON formats in the meantime will not produce any future ambiguity.  </span></a> </p>
+<p id="rfc.section.8.1.2.p.4">The values of the object properties MUST be booleans.  If the value is true, then implementations that do not recognize the vocabulary MUST refuse to process any schemas that declare this meta-schema with "$schema".  If the value is false, implementations that do not recognize the vocabulary SHOULD proceed with processing such schemas.  The value has no impact if the implementation understands the vocabulary.  </p>
 <p id="rfc.section.8.1.2.p.5">Per <a href="#extending" class="xref">6.5</a>, unrecognized keywords SHOULD be treated as annotations.  This remains the case for keywords defined by unrecognized vocabularies.  It is not currently possible to distinguish between unrecognized keywords that are defined in vocabularies from those that are not part of any vocabulary.  </p>
 <p id="rfc.section.8.1.2.p.6">The "$vocabulary" keyword SHOULD be used in the root schema of any schema document intended for use as a meta-schema.  It MUST NOT appear in subschemas.  </p>
 <p id="rfc.section.8.1.2.p.7">The "$vocabulary" keyword MUST be ignored in schema documents that are not being processed as a meta-schema.  This allows validating a meta-schema M against its own meta-schema M' without requiring the validator to understand the vocabularies declared by M.  </p>
@@ -1179,7 +1187,7 @@
 <p id="rfc.section.8.1.2.1.p.3">For example, an implementation that is a validator SHOULD assume the use of all vocabularies in this specification and the companion Validation specification.  </p>
 <h1 id="rfc.section.8.1.2.2">
 <a href="#rfc.section.8.1.2.2">8.1.2.2.</a> Non-inheritability of vocabularies </h1>
-<p id="rfc.section.8.1.2.2.p.1">Note that the processing restrictions on "$vocabulary" mean that meta-schemas that reference other meta-schemas using "$ref" or similar keywords do not automatically inherit the vocabulary declarations of those other meta-schemas.  All such declarations must be repeated in the root of each schema document intended for use as a meta-schema.  This is demonstrated in <a href="#example-meta-schema" class="xref">the example meta-schema</a>.  <a id="CREF3" class="info">[CREF3]<span class="info">This requirement allows implementations to find all vocabulary requirement information in a single place for each meta-schema.  As schema extensibility means that there are endless potential ways to combine more fine-grained meta-schemas by reference, requiring implementations to anticipate all possibilities and search for vocabularies in referenced meta-schemas would be overly burdensome.  </span></a> </p>
+<p id="rfc.section.8.1.2.2.p.1">Note that the processing restrictions on "$vocabulary" mean that meta-schemas that reference other meta-schemas using "$ref" or similar keywords do not automatically inherit the vocabulary declarations of those other meta-schemas.  All such declarations must be repeated in the root of each schema document intended for use as a meta-schema.  This is demonstrated in <a href="#example-meta-schema" class="xref">the example meta-schema</a>.  <a id="CREF2" class="info">[CREF2]<span class="info">This requirement allows implementations to find all vocabulary requirement information in a single place for each meta-schema.  As schema extensibility means that there are endless potential ways to combine more fine-grained meta-schemas by reference, requiring implementations to anticipate all possibilities and search for vocabularies in referenced meta-schemas would be overly burdensome.  </span></a> </p>
 <h1 id="rfc.section.8.1.3">
 <a href="#rfc.section.8.1.3">8.1.3.</a> Updates to Meta-Schema and Vocabulary URIs</h1>
 <p id="rfc.section.8.1.3.p.1">Updated vocabulary and meta-schema URIs MAY be published between specification drafts in order to correct errors.  Implementations SHOULD consider URIs dated after this specification draft and before the next to indicate the same syntax and semantics as those listed here.  </p>
@@ -1193,7 +1201,7 @@
 <p id="rfc.section.8.2.1.p.1">The "$id" keyword identifies a schema resource with its <a href="#RFC6596" class="xref">canonical</a> URI.  </p>
 <p id="rfc.section.8.2.1.p.2">Note that this URI is an identifier and not necessarily a network locator.  In the case of a network-addressable URL, a schema need not be downloadable from its canonical URI.  </p>
 <p id="rfc.section.8.2.1.p.3">If present, the value for this keyword MUST be a string, and MUST represent a valid <a href="#RFC3986" class="xref">URI-reference</a>.  This URI-reference SHOULD be normalized, and MUST resolve to an <a href="#RFC3986" class="xref">absolute-URI</a> (without a fragment).  Therefore, "$id" MUST NOT contain a non-empty fragment, and SHOULD NOT contain an empty fragment.  </p>
-<p id="rfc.section.8.2.1.p.4">Since an empty fragment in the context of the application/schema+json media type refers to the same resource as the base URI without a fragment, an implementation MAY normalize a URI ending with an empty fragment by removing the fragment.  However, schema authors SHOULD NOT rely on this behavior across implementations.  <a id="CREF4" class="info">[CREF4]<span class="info">This is primarily allowed because older meta-schemas have an empty fragment in their $id (or previously, id).  A future draft may outright forbid even empty fragments in "$id".  </span></a> </p>
+<p id="rfc.section.8.2.1.p.4">Since an empty fragment in the context of the application/schema+json media type refers to the same resource as the base URI without a fragment, an implementation MAY normalize a URI ending with an empty fragment by removing the fragment.  However, schema authors SHOULD NOT rely on this behavior across implementations.  <a id="CREF3" class="info">[CREF3]<span class="info">This is primarily allowed because older meta-schemas have an empty fragment in their $id (or previously, id).  A future draft may outright forbid even empty fragments in "$id".  </span></a> </p>
 <p id="rfc.section.8.2.1.p.5">This URI also serves as the base URI for relative URI-references in keywords within the schema resource, in accordance with <a href="#RFC3986" class="xref">RFC 3986 section 5.1.1</a> regarding base URIs embedded in content.  </p>
 <p id="rfc.section.8.2.1.p.6">The presence of "$id" in a subschema indicates that the subschema constitutes a distinct schema resource within a single schema document.  Furthermore, in accordance with <a href="#RFC3986" class="xref">RFC 3986 section 5.1.2</a> regarding encapsulating entities, if an "$id" in a subschema is a relative URI-reference, the base URI for resolving that reference is the URI of the parent schema resource.  </p>
 <p id="rfc.section.8.2.1.p.7">If no parent schema object explicitly identifies itself as a resource with "$id", the base URI is that of the entire document, as established by the steps given in the <a href="#initial-base" class="xref">previous section.</a> </p>
@@ -1204,11 +1212,11 @@
 <a href="#rfc.section.8.2.2">8.2.2.</a> <a href="#anchor" id="anchor">Defining location-independent identifiers</a>
 </h1>
 <p id="rfc.section.8.2.2.p.1">Using JSON Pointer fragments requires knowledge of the structure of the schema.  When writing schema documents with the intention to provide re-usable schemas, it may be preferable to use a plain name fragment that is not tied to any particular structural location.  This allows a subschema to be relocated without requiring JSON Pointer references to be updated.  </p>
-<p id="rfc.section.8.2.2.p.2">The "$anchor" and "$dynamicAnchor" keywords are used to specify such fragments.  They are identifier keywords that can only be used to create plain name fragments, rather than absolute URIs as seen with "$id".  The behavior of the created fragment is identical for both keywords.  </p>
+<p id="rfc.section.8.2.2.p.2">The "$anchor" and "$dynamicAnchor" keywords are used to specify such fragments.  They are identifier keywords that can only be used to create plain name fragments, rather than absolute URIs as seen with "$id".  </p>
 <p id="rfc.section.8.2.2.p.3">The base URI to which the resulting fragment is appended is the canonical URI of the schema resource containing the "$anchor" or "$dynamicAnchor" in question.  As discussed in the previous section, this is either the nearest "$id" in the same or parent schema object, or the base URI for the document as determined according to RFC 3986.  </p>
 <p id="rfc.section.8.2.2.p.4">Separately from the usual usage of URIs, "$dynamicAnchor" indicates that the fragment is an extension point when used with the "$dynamicRef" keyword.  This low-level, advanced feature makes it easier to extend recursive schemas such as the meta-schemas, without imposing any particular semantics on that extension.  See the section on <a href="#dynamic-ref" class="xref">"$dynamicRef"</a> for details.  </p>
 <p id="rfc.section.8.2.2.p.5">In most cases, the normal fragment behavior both suffices and is more intuitive.  Therefore it is RECOMMENDED that "$anchor" be used to create plain name fragments unless there is a clear need for "$dynamicAnchor".  </p>
-<p id="rfc.section.8.2.2.p.6">If present, the value of this keyword MUST be a string and MUST start with a letter ([A-Za-z]) or underscore ("_"), followed by any number of letters, digits ([0-9]), hyphens ("-"), underscores ("_"), and periods (".").  This matches the US-ASCII part of XML's <a href="#xml-names" class="xref">NCName production</a>.  <a id="CREF5" class="info">[CREF5]<span class="info">Note that the anchor string does not include the "#" character, as it is not a URI-reference.  An "$anchor": "foo" becomes the fragment "#foo" when used in a URI.  See below for full examples.  </span></a> </p>
+<p id="rfc.section.8.2.2.p.6">If present, the value of this keyword MUST be a string and MUST start with a letter ([A-Za-z]) or underscore ("_"), followed by any number of letters, digits ([0-9]), hyphens ("-"), underscores ("_"), and periods (".").  This matches the US-ASCII part of XML's <a href="#xml-names" class="xref">NCName production</a>.  <a id="CREF4" class="info">[CREF4]<span class="info">Note that the anchor string does not include the "#" character, as it is not a URI-reference.  An "$anchor": "foo" becomes the fragment "#foo" when used in a URI.  See below for full examples.  </span></a> </p>
 <p id="rfc.section.8.2.2.p.7">The effect of specifying the same fragment name multiple times within the same resource, using any combination of "$anchor" and/or "$dynamicAnchor", is undefined.  Implementations MAY raise an error if such usage is detected.  </p>
 <h1 id="rfc.section.8.2.3">
 <a href="#rfc.section.8.2.3">8.2.3.</a> <a href="#references" id="references">Schema References</a>
@@ -1219,17 +1227,17 @@
 <h1 id="rfc.section.8.2.3.1">
 <a href="#rfc.section.8.2.3.1">8.2.3.1.</a> <a href="#ref" id="ref">Direct References with "$ref"</a>
 </h1>
-<p id="rfc.section.8.2.3.1.p.1">The "$ref" keyword is an applicator that is used to reference a statically identified schema.  Its results are the results of the referenced schema.  <a id="CREF6" class="info">[CREF6]<span class="info">Note that this definition of how the results are determined means that other keywords can appear alongside of "$ref" in the same schema object.  </span></a> </p>
-<p id="rfc.section.8.2.3.1.p.2">The value of the "$ref" property MUST be a string which is a URI-Reference.  Resolved against the current URI base, it produces the URI of the schema to apply.  This resolution is safe to perform on schema load, as the process of evaluating an instance cannot change how the reference resolves.  </p>
+<p id="rfc.section.8.2.3.1.p.1">The "$ref" keyword is an applicator that is used to reference a statically identified schema.  Its results are the results of the referenced schema.  <a id="CREF5" class="info">[CREF5]<span class="info">Note that this definition of how the results are determined means that other keywords can appear alongside of "$ref" in the same schema object.  </span></a> </p>
+<p id="rfc.section.8.2.3.1.p.2">The value of the "$ref" keyword MUST be a string which is a URI-Reference.  Resolved against the current URI base, it produces the URI of the schema to apply.  This resolution is safe to perform on schema load as neither other schemas nor the instance can change how the reference resolves.  </p>
 <h1 id="rfc.section.8.2.3.2">
 <a href="#rfc.section.8.2.3.2">8.2.3.2.</a> <a href="#dynamic-ref" id="dynamic-ref">Dynamic References with "$dynamicRef"</a>
 </h1>
-<p id="rfc.section.8.2.3.2.p.1">The "$dynamicRef" keyword is an applicator that allows for deferring the full resolution until runtime, at which point it is resolved each time it is encountered while evaluating an instance.  </p>
-<p id="rfc.section.8.2.3.2.p.2">Together with "$dynamicAnchor", "$dynamicRef" implements a cooperative extension mechanism that is primarily useful with recursive schemas (schemas that reference themselves).  Both the extension point and the runtime-determined extension target are defined with "$dynamicAnchor", and only exhibit runtime dynamic behavior when referenced with "$dynamicRef".  </p>
-<p id="rfc.section.8.2.3.2.p.3">The value of the "$dynamicRef" property MUST be a string which is a URI-Reference.  Resolved against the current URI base, it produces the URI used as the starting point for runtime resolution.  This initial resolution is safe to perform on schema load.  </p>
-<p id="rfc.section.8.2.3.2.p.4">If the initially resolved starting point URI includes a fragment that was created by the "$dynamicAnchor" keyword, the initial URI MUST be replaced by the URI (including the fragment) for the outermost schema resource in the <a href="#scopes" class="xref">dynamic scope</a> that defines an identically named fragment with "$dynamicAnchor".  <a id="CREF7" class="info">[CREF7]<span class="info">Requiring both the initial and final URI fragment to be defined by "$dynamicAnchor" ensures that the more common "$anchor" never unexpectedly changes the dynamic resolution process due to a naming conflict across resources.  Users of "$dynamicAnchor" are expected to be aware of the possibility of such name collisions, while users of "$anchor" are not.  </span></a> </p>
-<p id="rfc.section.8.2.3.2.p.5">Otherwise, its behavior is identical to "$ref", and no runtime resolution is needed.  </p>
-<p id="rfc.section.8.2.3.2.p.6">For a full example using these keyword, see appendix <a href="#recursive-example" class="xref">C</a>.  <a id="CREF8" class="info">[CREF8]<span class="info">The difference between the hyper-schema meta-schema in pre-2019 drafts and an this draft dramatically demonstrates the utility of these keywords.  </span></a> </p>
+<p id="rfc.section.8.2.3.2.p.1">The "$dynamicRef" keyword is an applicator that is used to reference a dynamically identified schema.  </p>
+<p id="rfc.section.8.2.3.2.p.2">Together with "$dynamicAnchor", "$dynamicRef" implements a cooperative extension mechanism that is primarily useful with recursive schemas (schemas that reference themselves).  Both the extension point and the extension target are defined with "$dynamicAnchor", and only exhibit dynamic behavior when referenced with "$dynamicRef".  </p>
+<p id="rfc.section.8.2.3.2.p.3">The value of the "$dynamicRef" property MUST be a string which is a URI-Reference.  Resolved against the current URI base, it produces the URI used as the starting point for resolution.  This initial resolution is safe to perform on schema load.  </p>
+<p id="rfc.section.8.2.3.2.p.4">If the initially resolved starting point URI includes a fragment that was created by the "$dynamicAnchor" keyword, the initial URI MUST be replaced by the URI (including the fragment) for the outermost schema resource in the <a href="#scopes" class="xref">dynamic scope</a> that defines an identically named fragment with "$dynamicAnchor".  </p>
+<p id="rfc.section.8.2.3.2.p.5">Otherwise, its behavior is identical to "$ref", and no dynamic resolution is needed.  </p>
+<p id="rfc.section.8.2.3.2.p.6">For a full example using these keyword, see appendix <a href="#recursive-example" class="xref">C</a>.  <a id="CREF6" class="info">[CREF6]<span class="info">The difference between the hyper-schema meta-schema in pre-2019 drafts and an this draft dramatically demonstrates the utility of these keywords.  </span></a> </p>
 <h1 id="rfc.section.8.2.4">
 <a href="#rfc.section.8.2.4">8.2.4.</a> <a href="#defs" id="defs">Schema Re-Use With "$defs"</a>
 </h1>
@@ -1256,7 +1264,7 @@
 <p id="rfc.section.8.3.p.2">The value of this keyword MUST be a string. Implementations MUST NOT present this string to end users.  Tools for editing schemas SHOULD support displaying and editing this keyword.  The value of this keyword MAY be used in debug or error output which is intended for developers making use of schemas.  </p>
 <p id="rfc.section.8.3.p.3">Schema vocabularies SHOULD allow "$comment" within any object containing vocabulary keywords.  Implementations MAY assume "$comment" is allowed unless the vocabulary specifically forbids it.  Vocabularies MUST NOT specify any effect of "$comment" beyond what is described in this specification.  </p>
 <p id="rfc.section.8.3.p.4">Tools that translate other media types or programming languages to and from application/schema+json MAY choose to convert that media type or programming language's native comments to or from "$comment" values.  The behavior of such translation when both native comments and "$comment" properties are present is implementation-dependent.  </p>
-<p id="rfc.section.8.3.p.5">Implementations SHOULD treat "$comment" identically to an unknown extension keyword.  They MAY strip "$comment" values at any point during processing.  In particular, this allows for shortening schemas when the size of deployed schemas is a concern.  </p>
+<p id="rfc.section.8.3.p.5">Implementations MAY strip "$comment" values at any point during processing.  In particular, this allows for shortening schemas when the size of deployed schemas is a concern.  </p>
 <p id="rfc.section.8.3.p.6">Implementations MUST NOT take any other action based on the presence, absence, or contents of "$comment" properties.  In particular, the value of "$comment" MUST NOT be collected as an annotation result.  </p>
 <h1 id="rfc.section.9">
 <a href="#rfc.section.9">9.</a> Loading and Processing Schemas</h1>
@@ -1308,7 +1316,7 @@
                     </pre>
 <p id="rfc.section.9.2.p.4">When an implementation encounters the &lt;#/$defs/single&gt; schema, it resolves the "$anchor" value as a fragment name against the current base URI to form &lt;https://example.net/root.json#item&gt;.  </p>
 <p id="rfc.section.9.2.p.5">When an implementation then looks inside the &lt;#/items&gt; schema, it encounters the &lt;#item&gt; reference, and resolves this to &lt;https://example.net/root.json#item&gt;, which it has seen defined in this same document and can therefore use automatically.  </p>
-<p id="rfc.section.9.2.p.6">When an implementation encounters the reference to "other.json", it resolves this to &lt;https://example.net/other.json&gt;, which is not defined in this document.  If a schema with that identifier has otherwise been supplied to the implementation, it can also be used automatically.  <a id="CREF9" class="info">[CREF9]<span class="info">What should implementations do when the referenced schema is not known? Are there circumstances in which automatic network dereferencing is allowed?  A same origin policy?  A user-configurable option?  In the case of an evolving API described by Hyper-Schema, it is expected that new schemas will be added to the system dynamically, so placing an absolute requirement of pre-loading schema documents is not feasible.  </span></a> </p>
+<p id="rfc.section.9.2.p.6">When an implementation encounters the reference to "other.json", it resolves this to &lt;https://example.net/other.json&gt;, which is not defined in this document.  If a schema with that identifier has otherwise been supplied to the implementation, it can also be used automatically.  <a id="CREF7" class="info">[CREF7]<span class="info">What should implementations do when the referenced schema is not known? Are there circumstances in which automatic network dereferencing is allowed?  A same origin policy?  A user-configurable option?  In the case of an evolving API described by Hyper-Schema, it is expected that new schemas will be added to the system dynamically, so placing an absolute requirement of pre-loading schema documents is not feasible.  </span></a> </p>
 <h1 id="rfc.section.9.2.1">
 <a href="#rfc.section.9.2.1">9.2.1.</a> <a href="#embedded" id="embedded">JSON Pointer fragments and embedded schema resources</a>
 </h1>
@@ -1346,27 +1354,28 @@
                         </pre>
 <p>Here we see that the canonical URI for that "additionalProperties" subschema is still valid, while the non-canonical URI with the fragment beginning with "#/items/$ref" now resolves to nothing.  </p>
 <p id="rfc.section.9.2.1.p.4">Note also that "https://example.com/foo#/items" is valid in both arrangements, but resolves to a different value.  This URI ends up functioning similarly to a retrieval URI for a resource.  While valid, examining the resolved value and either using the "$id" (if the value is a subschema), or resolving the reference and using the "$id" of the reference target, is preferable.  </p>
-<p id="rfc.section.9.2.1.p.5">An implementation MAY choose not to support addressing schemas by non-canonical URIs. As such, it is RECOMMENDED that schema authors only use canonical URIs, as using non-canonical URIs may reduce schema interoperability.  <a id="CREF10" class="info">[CREF10]<span class="info">This is to avoid requiring implementations to keep track of a whole stack of possible base URIs and JSON Pointer fragments for each, given that all but one will be fragile if the schema resources are reorganized.  Some have argued that this is easy so there is no point in forbidding it, while others have argued that it complicates schema identification and should be forbidden.  Feedback on this topic is encouraged.  </span></a> </p>
+<p id="rfc.section.9.2.1.p.5">An implementation MAY choose not to support addressing schemas by non-canonical URIs. As such, it is RECOMMENDED that schema authors only use canonical URIs, as using non-canonical URIs may reduce schema interoperability.  <a id="CREF8" class="info">[CREF8]<span class="info">This is to avoid requiring implementations to keep track of a whole stack of possible base URIs and JSON Pointer fragments for each, given that all but one will be fragile if the schema resources are reorganized.  Some have argued that this is easy so there is no point in forbidding it, while others have argued that it complicates schema identification and should be forbidden.  Feedback on this topic is encouraged.  </span></a> </p>
 <p id="rfc.section.9.2.1.p.6">Further examples of such non-canonical URIs, as well as the appropriate canonical URIs to use instead, are provided in appendix <a href="#idExamples" class="xref">A</a>.  </p>
 <h1 id="rfc.section.9.3">
 <a href="#rfc.section.9.3">9.3.</a> Compound Documents</h1>
-<p id="rfc.section.9.3.p.1">A Compound Schema Document is defined as JSON document (sometimes called a "bundled" schema) which has multiple embedded JSON Schema Resources bundled into the same document to ease transportation.  </p>
+<p id="rfc.section.9.3.p.1">A Compound Schema Document is defined as a JSON document (sometimes called a "bundled" schema) which has multiple embedded JSON Schema Resources bundled into the same document to ease transportation.  </p>
 <p id="rfc.section.9.3.p.2">Each embedded Schema Resource MUST be treated as an individual Schema Resource, following standard schema loading and processing requirements, including determining vocabulary support.  </p>
 <h1 id="rfc.section.9.3.1">
 <a href="#rfc.section.9.3.1">9.3.1.</a> Bundling</h1>
-<p id="rfc.section.9.3.1.p.1">The bundling process for creating a Compound Schema Document is defined as taking references (such as "$ref") to an external Schema Resource and embedding the referenced Schema Resources within the referring document. Bundling is done in such a way that all URIs (used for referencing) in the base document and any referenced/embedded documents do not require altering.  </p>
-<p id="rfc.section.9.3.1.p.2">Each embedded JSON Schema Resource MUST identify itself with an absolute URI using the "$id" keyword, and SHOULD make use of the "$schema" keyword to identify the dialect it is using, in the root of the schema resource.  </p>
-<p id="rfc.section.9.3.1.p.3">When the Schema Resource referenced by a by-reference applicator is bundled, the Schema Resource MUST be located as a value of a "$defs" object at the containing schema's root.  The key of the "$defs" for the now embedded Schema Resource MAY be the "$id" of the bundled schema or some other form of application defined unique identifer (such as a UUID). This key is not intended to be referenced in JSON Schema, but may be used by an application to aid the bundling process.  </p>
-<p id="rfc.section.9.3.1.p.4">Bundled Schema Resource MUST NOT be bundled by replacing the schema object from which it was referenced, or by wrapping the Schema Resource in other applicator keywords.  </p>
-<p id="rfc.section.9.3.1.p.5">In order to produce identical output, references in the containing schema document to the previously external Schema Resources MUST NOT be changed, and now resolve to a schema using the "$id" of an embedded Schema Resource. Such identical output includes validation evaluation and URIs or paths used in resulting annotations or errors.  </p>
-<p id="rfc.section.9.3.1.p.6">While the bundling process will often be the main method for creating a Compound Schema Document, it is also possible and expected that some will be created by hand, potentially without individual Schema Resources existing on their own previously.  </p>
+<p id="rfc.section.9.3.1.p.1">The bundling process for creating a Compound Schema Document is defined as taking references (such as "$ref") to an external Schema Resource and embedding the referenced Schema Resources within the referring document. Bundling SHOULD be done in such a way that all URIs (used for referencing) in the base document and any referenced/embedded documents do not require altering.  </p>
+<p id="rfc.section.9.3.1.p.2">Each embedded JSON Schema Resource MUST identify itself with a URI using the "$id" keyword, and SHOULD make use of the "$schema" keyword to identify the dialect it is using, in the root of the schema resource. It is RECOMMENDED that the URI identifier value of "$id" be an Absolute URI.  </p>
+<p id="rfc.section.9.3.1.p.3">When the Schema Resource referenced by a by-reference applicator is bundled, it is RECOMMENDED that the Schema Resource be located as a value of a "$defs" object at the containing schema's root.  The key of the "$defs" for the now embedded Schema Resource MAY be the "$id" of the bundled schema or some other form of application defined unique identifer (such as a UUID). This key is not intended to be referenced in JSON Schema, but may be used by an application to aid the bundling process.  </p>
+<p id="rfc.section.9.3.1.p.4">A Schema Resource MAY be embedded in a location other than "$defs" where the location is defined as a schema value.  </p>
+<p id="rfc.section.9.3.1.p.5">A Bundled Schema Resource MUST NOT be bundled by replacing the schema object from which it was referenced, or by wrapping the Schema Resource in other applicator keywords.  </p>
+<p id="rfc.section.9.3.1.p.6">In order to produce identical output, references in the containing schema document to the previously external Schema Resources MUST NOT be changed, and now resolve to a schema using the "$id" of an embedded Schema Resource. Such identical output includes validation evaluation and URIs or paths used in resulting annotations or errors.  </p>
+<p id="rfc.section.9.3.1.p.7">While the bundling process will often be the main method for creating a Compound Schema Document, it is also possible and expected that some will be created by hand, potentially without individual Schema Resources existing on their own previously.  </p>
 <h1 id="rfc.section.9.3.2">
 <a href="#rfc.section.9.3.2">9.3.2.</a> Differing and Default Dialects</h1>
-<p id="rfc.section.9.3.2.p.1">If multiple schema resources are present in a single document, then schema resources which do not have a "$schema" keyword in their root schema object MUST be processed as if "$schema" were present with the same value as for the immediately enclosing resource.  </p>
-<p id="rfc.section.9.3.2.p.2">Since any schema that can be referenced can also be embedded, embedded schema resources MAY specify different "$schema" values from their enclosing resource.  </p>
+<p id="rfc.section.9.3.2.p.1">When multiple schema resources are present in a single document, schema resources which do not define with which dialect they should be processed MUST be processed with the same dialect as the enclosing resource.  </p>
+<p id="rfc.section.9.3.2.p.2">Since any schema that can be referenced can also be embedded, embedded schema resources MAY specify different processing dialects using the "$schema" values from their enclosing resource.  </p>
 <h1 id="rfc.section.9.3.3">
 <a href="#rfc.section.9.3.3">9.3.3.</a> Validating</h1>
-<p id="rfc.section.9.3.3.p.1">Given that a Compound Schema Document may have embedded resources which identify as using different dialects, these documents SHOULD NOT be validated by applying a meta-schema to the Compound Schema Document as an instance. It is RECOMMENDED that an alternate validation process be provided in order to validate Schema Documents. Each Schema Resource SHOULD be separately validated against its associated meta-schema.  <a id="CREF11" class="info">[CREF11]<span class="info">If you know a schema is what's being validated, you can identify if the schemas is a Compound Schema Document or not, by way of use of "$id", which identifies an embedded resource when used not at the document's root.  </span></a> </p>
+<p id="rfc.section.9.3.3.p.1">Given that a Compound Schema Document may have embedded resources which identify as using different dialects, these documents SHOULD NOT be validated by applying a meta-schema to the Compound Schema Document as an instance. It is RECOMMENDED that an alternate validation process be provided in order to validate Schema Documents. Each Schema Resource SHOULD be separately validated against its associated meta-schema.  <a id="CREF9" class="info">[CREF9]<span class="info">If you know a schema is what's being validated, you can identify if the schemas is a Compound Schema Document or not, by way of use of "$id", which identifies an embedded resource when used not at the document's root.  </span></a> </p>
 <p id="rfc.section.9.3.3.p.2">A Compound Schema Document in which all embedded resources identify as using the same dialect, or in which "$schema" is omitted and therefore defaults to that of the enclosing resource, MAY be validated by applying the appropriate meta-schema.  </p>
 <h1 id="rfc.section.9.4">
 <a href="#rfc.section.9.4">9.4.</a> Caveats</h1>
@@ -1377,7 +1386,7 @@
 <a href="#rfc.section.9.4.2">9.4.2.</a> <a href="#non-schemas" id="non-schemas">References to Possible Non-Schemas</a>
 </h1>
 <p id="rfc.section.9.4.2.p.1">Subschema objects (or booleans) are recognized by their use with known applicator keywords or with location-reserving keywords such as <a href="#defs" class="xref">"$defs"</a> that take one or more subschemas as a value.  These keywords may be "$defs" and the standard applicators from this document, or extension keywords from a known vocabulary, or implementation-specific custom keywords.  </p>
-<p id="rfc.section.9.4.2.p.2">Multi-level structures of unknown keywords are capable of introducing nested subschemas, which would be subject to the processing rules for "$id".  Therefore, having a reference target in such an unrecognized structure cannot be reliably implemented, and the resulting behavior is undefined.  Similarly, a reference target under a known keyword, for which the value is known not to be a schema, results in undefined behavior in order to avoid burdening implementations with the need to detect such targets.  <a id="CREF12" class="info">[CREF12]<span class="info">These scenarios are analogous to fetching a schema over HTTP but receiving a response with a Content-Type other than application/schema+json.  An implementation can certainly try to interpret it as a schema, but the origin server offered no guarantee that it actually is any such thing.  Therefore, interpreting it as such has security implications and may produce unpredictable results.  </span></a> </p>
+<p id="rfc.section.9.4.2.p.2">Multi-level structures of unknown keywords are capable of introducing nested subschemas, which would be subject to the processing rules for "$id".  Therefore, having a reference target in such an unrecognized structure cannot be reliably implemented, and the resulting behavior is undefined.  Similarly, a reference target under a known keyword, for which the value is known not to be a schema, results in undefined behavior in order to avoid burdening implementations with the need to detect such targets.  <a id="CREF10" class="info">[CREF10]<span class="info">These scenarios are analogous to fetching a schema over HTTP but receiving a response with a Content-Type other than application/schema+json.  An implementation can certainly try to interpret it as a schema, but the origin server offered no guarantee that it actually is any such thing.  Therefore, interpreting it as such has security implications and may produce unpredictable results.  </span></a> </p>
 <p id="rfc.section.9.4.2.p.3">Note that single-level custom keywords with identical syntax and semantics to "$defs" do not allow for any intervening "$id" keywords, and therefore will behave correctly under implementations that attempt to use any reference target as a schema.  However, this behavior is implementation-specific and MUST NOT be relied upon for interoperability.  </p>
 <h1 id="rfc.section.9.5">
 <a href="#rfc.section.9.5">9.5.</a> Associating Instances and Schemas</h1>
@@ -1395,60 +1404,22 @@
         
                             </pre>
 <h1 id="rfc.section.9.5.1.2">
-<a href="#rfc.section.9.5.1.2">9.5.1.2.</a> <a href="#parameter" id="parameter">Identifying a Schema via a Media Type Parameter</a>
-</h1>
-<p id="rfc.section.9.5.1.2.p.1">Media types MAY allow for a "schema" media type parameter, which gives HTTP servers the ability to perform Content-Type Negotiation based on schema.  The media-type parameter MUST be a whitespace-separated list of URIs (i.e. relative references are invalid).  </p>
-<p id="rfc.section.9.5.1.2.p.2">When using the media type application/schema-instance+json, the "schema" parameter MUST be supplied.  </p>
-<p id="rfc.section.9.5.1.2.p.3">When using the media type application/schema+json, the "schema" parameter MAY be supplied. If supplied, it SHOULD contain the same URI as identified by the "$schema" keyword, and MAY contain additional URIs.  The "$schema" URI MUST be considered the schema's canonical meta-schema, regardless of the presence of alternative or additional meta-schemas as a media type parameter.  </p>
-<p id="rfc.section.9.5.1.2.p.4">The schema URI is opaque and SHOULD NOT automatically be dereferenced.  If the implementation does not understand the semantics of the provided schema, the implementation can instead follow the "describedby" links, if any, which may provide information on how to handle the schema.  Since "schema" doesn't necessarily point to a network location, the "describedby" relation is used for linking to a downloadable schema.  However, for simplicity, schema authors should make these URIs point to the same resource when possible.  </p>
-<p id="rfc.section.9.5.1.2.p.5">In HTTP, the media-type parameter would be sent inside the Content-Type header: </p>
-<pre>
-        
-        Content-Type: application/schema-instance+json;
-                  schema="https://example.com/my-hyper-schema"
-        
-                            </pre>
-<p id="rfc.section.9.5.1.2.p.6">Multiple schemas are whitespace separated, and indicate that the instance conforms to all of the listed schemas: </p>
-<pre>
-        
-        Content-Type: application/schema-instance+json;
-                  schema="https://example.com/alice https://example.com/bob"
-        
-                            </pre>
-<p id="rfc.section.9.5.1.2.p.7">Media type parameters are also used in HTTP's Accept request header: </p>
-<pre>
-        
-        Accept: application/schema-instance+json;
-                  schema="https://example.com/qiang https://example.com/li",
-                application/schema-instance+json;
-                  schema="https://example.com/kumar"
-        
-                            </pre>
-<p id="rfc.section.9.5.1.2.p.8">As with Content-Type, multiple schema parameters in the same string requests an instance that conforms to all of the listed schemas.  </p>
-<p id="rfc.section.9.5.1.2.p.9">Unlike Content-Type, Accept can contain multiple values to indicate that the client can accept several media types.  In the above example, note that the two media types differ only by their schema parameter values.  This requests an application/schema-instance+json representation that conforms to at least one of the identified schemas.  </p>
-<p><a id="CREF13" class="info">[CREF13]<span class="info">This paragraph assumes that we can register a "schema" link relation.  Should we instead specify something like "tag:json-schema.org,2017:schema" for now? </span></a> HTTP can also send the "schema" in a Link, though this may impact media-type semantics and Content-Type negotiation if this replaces the media-type parameter entirely: </p>
-<pre>
-        
-        Link: &lt;/alice&gt;;rel="schema", &lt;/bob&gt;;rel="schema"
-        
-                            </pre>
-<h1 id="rfc.section.9.5.1.3">
-<a href="#rfc.section.9.5.1.3">9.5.1.3.</a> Usage Over HTTP</h1>
-<p id="rfc.section.9.5.1.3.p.1">When used for hypermedia systems over a network, <a href="#RFC7231" class="xref">HTTP</a> is frequently the protocol of choice for distributing schemas. Misbehaving clients can pose problems for server maintainers if they pull a schema over the network more frequently than necessary, when it's instead possible to cache a schema for a long period of time.  </p>
-<p id="rfc.section.9.5.1.3.p.2">HTTP servers SHOULD set long-lived caching headers on JSON Schemas.  HTTP clients SHOULD observe caching headers and not re-request documents within their freshness period.  Distributed systems SHOULD make use of a shared cache and/or caching proxy.  </p>
-<p id="rfc.section.9.5.1.3.p.3">Clients SHOULD set or prepend a User-Agent header specific to the JSON Schema implementation or software product. Since symbols are listed in decreasing order of significance, the JSON Schema library name/version should precede the more generic HTTP library name (if any). For example: </p>
+<a href="#rfc.section.9.5.1.2">9.5.1.2.</a> Usage Over HTTP</h1>
+<p id="rfc.section.9.5.1.2.p.1">When used for hypermedia systems over a network, <a href="#RFC7231" class="xref">HTTP</a> is frequently the protocol of choice for distributing schemas. Misbehaving clients can pose problems for server maintainers if they pull a schema over the network more frequently than necessary, when it's instead possible to cache a schema for a long period of time.  </p>
+<p id="rfc.section.9.5.1.2.p.2">HTTP servers SHOULD set long-lived caching headers on JSON Schemas.  HTTP clients SHOULD observe caching headers and not re-request documents within their freshness period.  Distributed systems SHOULD make use of a shared cache and/or caching proxy.  </p>
+<p id="rfc.section.9.5.1.2.p.3">Clients SHOULD set or prepend a User-Agent header specific to the JSON Schema implementation or software product. Since symbols are listed in decreasing order of significance, the JSON Schema library name/version should precede the more generic HTTP library name (if any). For example: </p>
 <pre>
         
         User-Agent: product-name/5.4.1 so-cool-json-schema/1.0.2 curl/7.43.0
         
                             </pre>
-<p id="rfc.section.9.5.1.3.p.4">Clients SHOULD be able to make requests with a "From" header so that server operators can contact the owner of a potentially misbehaving script.  </p>
+<p id="rfc.section.9.5.1.2.p.4">Clients SHOULD be able to make requests with a "From" header so that server operators can contact the owner of a potentially misbehaving script.  </p>
 <h1 id="rfc.section.10">
 <a href="#rfc.section.10">10.</a> A Vocabulary for Applying Subschemas</h1>
 <p id="rfc.section.10.p.1">This section defines a vocabulary of applicator keywords that are RECOMMENDED for use as the basis of other vocabularies.  </p>
 <p id="rfc.section.10.p.2">Meta-schemas that do not use "$vocabulary" SHOULD be considered to require this vocabulary as if its URI were present with a value of true.  </p>
-<p id="rfc.section.10.p.3">The current URI for this vocabulary, known as the Applicator vocabulary, is: &lt;https://json-schema.org/draft/2020-11/vocab/applicator&gt;.  </p>
-<p id="rfc.section.10.p.4">The current URI for the corresponding meta-schema is: <span>&lt;</span><a href="https://json-schema.org/draft/2020-11/meta/applicator">https://json-schema.org/draft/2020-11/meta/applicator</a><span>&gt;</span>.  </p>
+<p id="rfc.section.10.p.3">The current URI for this vocabulary, known as the Applicator vocabulary, is: &lt;https://json-schema.org/draft/2020-12/vocab/applicator&gt;.  </p>
+<p id="rfc.section.10.p.4">The current URI for the corresponding meta-schema is: <span>&lt;</span><a href="https://json-schema.org/draft/2020-12/meta/applicator">https://json-schema.org/draft/2020-12/meta/applicator</a><span>&gt;</span>.  </p>
 <p id="rfc.section.10.p.5">Updated vocabulary and meta-schema URIs MAY be published between specification drafts in order to correct errors.  Implementations SHOULD consider URIs dated after this specification draft and before the next to indicate the same syntax and semantics as those listed here.  </p>
 <h1 id="rfc.section.10.1">
 <a href="#rfc.section.10.1">10.1.</a> Keyword Independence</h1>
@@ -1467,6 +1438,7 @@
 <a href="#rfc.section.10.2">10.2.</a> <a href="#in-place" id="in-place">Keywords for Applying Subschemas in Place</a>
 </h1>
 <p id="rfc.section.10.2.p.1">These keywords apply subschemas to the same location in the instance as the parent schema is being applied.  They allow combining or modifying the subschema results in various ways.  </p>
+<p id="rfc.section.10.2.p.2">Subschemas of these keywords evaluate the instance completely independently such that the results of one such subschema MUST NOT impact the results of sibling subschemas.  Therefore subschemas may be applied in any order.  </p>
 <h1 id="rfc.section.10.2.1">
 <a href="#rfc.section.10.2.1">10.2.1.</a> <a href="#logic" id="logic">Keywords for Applying Subschemas With Logic</a>
 </h1>
@@ -1533,15 +1505,16 @@
 <a href="#rfc.section.10.3.1.2">10.3.1.2.</a> <a href="#items" id="items">items</a>
 </h1>
 <p id="rfc.section.10.3.1.2.p.1">The value of "items" MUST be a valid JSON Schema.  </p>
-<p id="rfc.section.10.3.1.2.p.2">This keyword applies its subschema to all instance elements at indexes greater than the length of the "prefixItems" array in the same schema object, as reported by the annotation result of that "prefixItems" keyword.  If no such annotation result exists, "items" applies its subschema to all instance array elements.  <a id="CREF14" class="info">[CREF14]<span class="info">Note that the behavior of "items" without "prefixItems" is identical to that of the schema form of "items" in prior drafts.  When "prefixItems" is present, the behavior of "items" is identical to the former "additionalItems" keyword.  </span></a> </p>
+<p id="rfc.section.10.3.1.2.p.2">This keyword applies its subschema to all instance elements at indexes greater than the length of the "prefixItems" array in the same schema object, as reported by the annotation result of that "prefixItems" keyword.  If no such annotation result exists, "items" applies its subschema to all instance array elements.  <a id="CREF11" class="info">[CREF11]<span class="info">Note that the behavior of "items" without "prefixItems" is identical to that of the schema form of "items" in prior drafts.  When "prefixItems" is present, the behavior of "items" is identical to the former "additionalItems" keyword.  </span></a> </p>
 <p id="rfc.section.10.3.1.2.p.3">If the "items" subschema is applied to any positions within the instance array, it produces an annotation result of boolean true, indicating that all remaining array elements have been evaluated against this keyword's subschema.  </p>
 <p id="rfc.section.10.3.1.2.p.4">Omitting this keyword has the same assertion behavior as an empty schema.  </p>
 <p id="rfc.section.10.3.1.2.p.5">Implementations MAY choose to implement or optimize this keyword in another way that produces the same effect, such as by directly checking for the presence and size of a "prefixItems" array.  Implementations that do not support annotation collection MUST do so.  </p>
 <h1 id="rfc.section.10.3.1.3">
 <a href="#rfc.section.10.3.1.3">10.3.1.3.</a> contains</h1>
 <p id="rfc.section.10.3.1.3.p.1">The value of this keyword MUST be a valid JSON Schema.  </p>
-<p id="rfc.section.10.3.1.3.p.2">An array instance is valid against "contains" if at least one of its elements is valid against the given schema.  Note that when collecting annotations, the subschema MUST be applied to every array element even after the first match has been found.  This is to ensure that all possible annotations are collected.  </p>
-<p id="rfc.section.10.3.1.3.p.3">This keyword produces an annotation value which is an array of the indexes to which this keyword validates successfully when applying its subschema, in ascending order. The value MAY be a boolean true if the subschema validated successfully when applied to every index of the instance.  </p>
+<p id="rfc.section.10.3.1.3.p.2">An array instance is valid against "contains" if at least one of its elements is valid against the given schema. The subschema MUST be applied to every array element even after the first match has been found, in order to collect annotations for use by other keywords.  This is to ensure that all possible annotations are collected.  </p>
+<p id="rfc.section.10.3.1.3.p.3">Logically, the validation result of applying the value subschema to each item in the array MUST be ORed with "false", resulting in an overall validation result.  </p>
+<p id="rfc.section.10.3.1.3.p.4">This keyword produces an annotation value which is an array of the indexes to which this keyword validates successfully when applying its subschema, in ascending order. The value MAY be a boolean "true" if the subschema validated successfully when applied to every index of the instance.  If the instance array this keywords subschema is applicable to is empty, the annotation value MUST NOT be missing.  </p>
 <h1 id="rfc.section.10.3.2">
 <a href="#rfc.section.10.3.2">10.3.2.</a> Keywords for Applying Subschemas to Objects</h1>
 <h1 id="rfc.section.10.3.2.1">
@@ -1574,12 +1547,13 @@
 <a href="#rfc.section.11">11.</a> A Vocabulary for Unevaluated Locations</h1>
 <p id="rfc.section.11.p.1">The purpose of these keywords is to enable schema authors to apply subschemas to array items or object properties that have not been successfully evaluated against any dynamic-scope subschema of any adjacent keywords.  </p>
 <p id="rfc.section.11.p.2">These instance items or properties may have been unsuccessfully evaluated against one or more adjacent keyword subschemas, such as when an assertion in a branch of an "anyOf" fails.  Such failed evaluations are not considered to contribute to whether or not the item or property has been evaluated.  Only successful evaluations are considered.  </p>
-<p id="rfc.section.11.p.3">Recall that adjacent keywords are keywords within the same schema object, and that the dynamic-scope subschemas include reference targets as well as lexical subschemas.  </p>
-<p id="rfc.section.11.p.4">The behavior of these keywords depend on the annotation results of adjacent keywords that apply to the instance location being validated.  </p>
-<p id="rfc.section.11.p.5">Meta-schemas that do not use "$vocabulary" SHOULD be considered to require this vocabulary as if its URI were present with a value of true.  </p>
-<p id="rfc.section.11.p.6">The current URI for this vocabulary, known as the Unevaluated Applicator vocabulary, is: &lt;https://json-schema.org/draft/2020-11/vocab/unevaluated&gt;.  </p>
-<p id="rfc.section.11.p.7">The current URI for the corresponding meta-schema is: <span>&lt;</span><a href="https://json-schema.org/draft/2020-11/meta/unevaluated">https://json-schema.org/draft/2020-11/meta/unevaluated</a><span>&gt;</span>.  </p>
-<p id="rfc.section.11.p.8">Updated vocabulary and meta-schema URIs MAY be published between specification drafts in order to correct errors.  Implementations SHOULD consider URIs dated after this specification draft and before the next to indicate the same syntax and semantics as those listed here.  </p>
+<p id="rfc.section.11.p.3">If an item in an array or an object property is "successfully evaluated", it is logically considered to be valid in terms of the representation of the object or array that's expected. For example if a subschema represents a car, which requires between 2-4 wheels, and the value of "wheels" is 6, the instance object is not "evaluated" to be a car, and the "wheels" property is considered "unevaluated (successfully as a known thing)", and does not retain any annotations.  </p>
+<p id="rfc.section.11.p.4">Recall that adjacent keywords are keywords within the same schema object, and that the dynamic-scope subschemas include reference targets as well as lexical subschemas.  </p>
+<p id="rfc.section.11.p.5">The behavior of these keywords depend on the annotation results of adjacent keywords that apply to the instance location being validated.  </p>
+<p id="rfc.section.11.p.6">Meta-schemas that do not use "$vocabulary" SHOULD be considered to require this vocabulary as if its URI were present with a value of true.  </p>
+<p id="rfc.section.11.p.7">The current URI for this vocabulary, known as the Unevaluated Applicator vocabulary, is: &lt;https://json-schema.org/draft/2020-12/vocab/unevaluated&gt;.  </p>
+<p id="rfc.section.11.p.8">The current URI for the corresponding meta-schema is: <span>&lt;</span><a href="https://json-schema.org/draft/2020-12/meta/unevaluated">https://json-schema.org/draft/2020-12/meta/unevaluated</a><span>&gt;</span>.  </p>
+<p id="rfc.section.11.p.9">Updated vocabulary and meta-schema URIs MAY be published between specification drafts in order to correct errors.  Implementations SHOULD consider URIs dated after this specification draft and before the next to indicate the same syntax and semantics as those listed here.  </p>
 <h1 id="rfc.section.11.1">
 <a href="#rfc.section.11.1">11.1.</a> <a href="#unevaluatedItems" id="unevaluatedItems">unevaluatedItems</a>
 </h1>
@@ -1635,7 +1609,7 @@
 <p id="rfc.section.12.3.1.p.3">The JSON key for this information is "keywordLocation".  </p>
 <h1 id="rfc.section.12.3.2">
 <a href="#rfc.section.12.3.2">12.3.2.</a> Keyword Absolute Location</h1>
-<p id="rfc.section.12.3.2.p.1">The absolute, dereferenced location of the validating keyword.  The value MUST be expressed as a full URI using the canonical URI of the relevant schema object, and it MUST NOT include by-reference applicators such as "$ref" or "$dynamicRef" as non-terminal path components.  It MAY end in such keywords if the error or annotation is for that keyword, such as an unresolvable reference.  <a id="CREF15" class="info">[CREF15]<span class="info">Note that "absolute" here is in the sense of "absolute filesystem path" (meaning the complete location) rather than the "absolute-URI" terminology from RFC 3986 (meaning with scheme but without fragment).  Keyword absolute locations will always have a fragment in order to identify the keyword.  </span></a> </p>
+<p id="rfc.section.12.3.2.p.1">The absolute, dereferenced location of the validating keyword.  The value MUST be expressed as a full URI using the canonical URI of the relevant schema object, and it MUST NOT include by-reference applicators such as "$ref" or "$dynamicRef" as non-terminal path components.  It MAY end in such keywords if the error or annotation is for that keyword, such as an unresolvable reference.  <a id="CREF12" class="info">[CREF12]<span class="info">Note that "absolute" here is in the sense of "absolute filesystem path" (meaning the complete location) rather than the "absolute-URI" terminology from RFC 3986 (meaning with scheme but without fragment).  Keyword absolute locations will always have a fragment in order to identify the keyword.  </span></a> </p>
 <pre>
 
 https://example.com/schemas/common#/$defs/count/minimum
@@ -1672,7 +1646,7 @@ https://example.com/schemas/common#/$defs/count/minimum
 
 {
   "$id": "https://example.com/polygon",
-  "$schema": "https://json-schema.org/draft/2020-11/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$defs": {
     "point": {
       "type": "object",
@@ -1823,13 +1797,13 @@ https://example.com/schemas/common#/$defs/count/minimum
 <a href="#rfc.section.12.4.4">12.4.4.</a> Verbose</h1>
 <p id="rfc.section.12.4.4.p.1">The "Verbose" structure is a fully realized hierarchy that exactly matches that of the schema.  This structure has applications in form generation and validation where the error's location is important.  </p>
 <p id="rfc.section.12.4.4.p.2">The primary difference between this and the "Detailed" structure is that all results are returned.  This includes sub-schema validation results that would otherwise be removed (e.g. annotations for failed validations, successful validations inside a `not` keyword, etc.).  Because of this, it is RECOMMENDED that each node also carry a `valid` property to indicate the validation result for that node.  </p>
-<p id="rfc.section.12.4.4.p.3">Because this output structure can be quite large, a smaller example is given here for brevity.  The URI of the full output structure of the example above is: <span>&lt;</span><a href="https://json-schema.org/draft/2020-11/output/verbose-example">https://json-schema.org/draft/2020-11/output/verbose-example</a><span>&gt;</span>.  </p>
+<p id="rfc.section.12.4.4.p.3">Because this output structure can be quite large, a smaller example is given here for brevity.  The URI of the full output structure of the example above is: <span>&lt;</span><a href="https://json-schema.org/draft/2020-12/output/verbose-example">https://json-schema.org/draft/2020-12/output/verbose-example</a><span>&gt;</span>.  </p>
 <pre>
 
 // schema
 {
   "$id": "https://example.com/polygon",
-  "$schema": "https://json-schema.org/draft/2020-11/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
     "validProp": true,
@@ -1878,7 +1852,7 @@ https://example.com/schemas/common#/$defs/count/minimum
                         </pre>
 <h1 id="rfc.section.12.4.5">
 <a href="#rfc.section.12.4.5">12.4.5.</a> Output validation schemas</h1>
-<p id="rfc.section.12.4.5.p.1">For convenience, JSON Schema has been provided to validate output generated by implementations.  Its URI is: <span>&lt;</span><a href="https://json-schema.org/draft/2020-11/output/schema">https://json-schema.org/draft/2020-11/output/schema</a><span>&gt;</span>.  </p>
+<p id="rfc.section.12.4.5.p.1">For convenience, JSON Schema has been provided to validate output generated by implementations.  Its URI is: <span>&lt;</span><a href="https://json-schema.org/draft/2020-12/output/schema">https://json-schema.org/draft/2020-12/output/schema</a><span>&gt;</span>.  </p>
 <h1 id="rfc.section.13">
 <a href="#rfc.section.13">13.</a> <a href="#security" id="security">Security Considerations</a>
 </h1>
@@ -1983,7 +1957,7 @@ https://example.com/schemas/common#/$defs/count/minimum
 <tr>
 <td class="reference"><b id="json-schema-validation">[json-schema-validation]</b></td>
 <td class="top">
-<a>Wright, A.</a>, <a>Andrews, H.</a> and <a>B. Hutton</a>, "<a href="https://tools.ietf.org/html/draft-bhutton-json-schema-validation-00">JSON Schema Validation: A Vocabulary for Structural Validation of JSON</a>", Internet-Draft draft-bhutton-json-schema-validation-00, November 2020.</td>
+<a>Wright, A.</a>, <a>Andrews, H.</a> and <a>B. Hutton</a>, "<a href="https://tools.ietf.org/html/draft-bhutton-json-schema-validation-00">JSON Schema Validation: A Vocabulary for Structural Validation of JSON</a>", Internet-Draft draft-bhutton-json-schema-validation-00, December 2020.</td>
 </tr>
 <tr>
 <td class="reference"><b id="RFC6596">[RFC6596]</b></td>
@@ -2147,7 +2121,7 @@ https://example.com/schemas/common#/$defs/count/minimum
 
 // tree schema, extensible
 {
-    "$schema": "https://json-schema.org/draft/2020-11/schema",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://example.com/tree",
     "$dynamicAnchor": "node",
 
@@ -2165,9 +2139,9 @@ https://example.com/schemas/common#/$defs/count/minimum
 
 // strict-tree schema, guards against misspelled properties
 {
-    "$schema": "https://json-schema.org/draft/2020-11/schema",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://example.com/strict-tree",
-    "$dynamicAnchor": node,
+    "$dynamicAnchor": "node",
 
     "$ref": "tree",
     "unevaluatedProperties": false
@@ -2232,19 +2206,19 @@ https://example.com/schemas/common#/$defs/count/minimum
 <pre>
 
 {
-  "$schema": "https://json-schema.org/draft/2020-11/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.com/meta/general-use-example",
   "$dynamicAnchor": "meta",
   "$vocabulary": {
-    "https://json-schema.org/draft/2020-11/vocab/core": true,
-    "https://json-schema.org/draft/2020-11/vocab/applicator": true,
-    "https://json-schema.org/draft/2020-11/vocab/validation": true,
+    "https://json-schema.org/draft/2020-12/vocab/core": true,
+    "https://json-schema.org/draft/2020-12/vocab/applicator": true,
+    "https://json-schema.org/draft/2020-12/vocab/validation": true,
     "https://example.com/vocab/example-vocab": true
   },
   "allOf": [
-    {"$ref": "https://json-schema.org/draft/2020-11/meta/core"},
-    {"$ref": "https://json-schema.org/draft/2020-11/meta/applicator"},
-    {"$ref": "https://json-schema.org/draft/2020-11/meta/validation"},
+    {"$ref": "https://json-schema.org/draft/2020-12/meta/core"},
+    {"$ref": "https://json-schema.org/draft/2020-12/meta/applicator"},
+    {"$ref": "https://json-schema.org/draft/2020-12/meta/validation"},
     {"$ref": "https://example.com/meta/example-vocab",
   ],
   "patternProperties": {
@@ -2263,7 +2237,7 @@ https://example.com/schemas/common#/$defs/count/minimum
 <pre>
 
 {
-  "$schema": "https://json-schema.org/draft/2020-11/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.com/meta/example-vocab",
   "$dynamicAnchor": "meta",
   "$vocabulary": {
@@ -2321,7 +2295,7 @@ https://example.com/schemas/common#/$defs/count/minimum
 <p id="rfc.section.F.p.2">Thanks to Jason Desrosiers, Daniel Perrett, Erik Wilde, Evgeny Poberezkin, Brad Bowman, Gowry Sankar, Donald Pipowitch, Dave Finlay, Denis Laxalde, Phil Sturgeon, Shawn Silverman, and Karen Etheridge for their submissions and patches to the document.  </p>
 <h1 id="rfc.appendix.G">
 <a href="#rfc.appendix.G">Appendix G.</a> ChangeLog</h1>
-<p><a id="CREF16" class="info">[CREF16]<span class="info">This section to be removed before leaving Internet-Draft status.</span></a> </p>
+<p><a id="CREF13" class="info">[CREF13]<span class="info">This section to be removed before leaving Internet-Draft status.</span></a> </p>
 <p></p>
 
 <dl>
@@ -2337,7 +2311,7 @@ https://example.com/schemas/common#/$defs/count/minimum
 <li>$dynamic* (previously $recursive) no longer use runtime base URI determination</li>
 <li>Define Compound Schema Documents (bundle) and processing</li>
 <li>Reference ECMA-262, 11th edition for regular expression support</li>
-<li>
+<li>Remove media type parameters</li>
 <li>
 <li>
 </ul>
@@ -2527,13 +2501,15 @@ https://example.com/schemas/common#/$defs/count/minimum
 	<span class="adr">
 	  
 	  <span class="vcardline">
-		<span class="locality">Auckland</span>,  
+		<span class="locality"></span> 
 		<span class="region"></span>
 		<span class="code"></span>
 	  </span>
-	  <span class="country-name vcardline">NZ</span>
+	  <span class="country-name vcardline"></span>
 	</span>
 	<span class="vcardline">EMail: <a href="mailto:gregsdennis@yahoo.com">gregsdennis@yahoo.com</a></span>
+
+<span class="vcardline">URI: <a href="https://github.com/gregsdennis">https://github.com/gregsdennis</a></span>
 
   </address>
 </div>
