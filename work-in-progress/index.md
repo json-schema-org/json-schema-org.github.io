@@ -14,9 +14,11 @@ At this point, the specification is feature locked, but please do file any issue
 
 Spec preview documents:
 
-Core: https://json-schema.org/draft/preview/2020-12-rc-1/jsonschema-core.html
-Validation: https://json-schema.org/draft/preview/2020-12-rc-1/jsonschema-validation.html
-Relative JSON Pointer: https://json-schema.org/draft/preview/2020-12-rc-1/relative-json-pointer.html
+Core: [https://json-schema.org/draft/preview/2020-12-rc-1/jsonschema-core.html]
+
+Validation: [https://json-schema.org/draft/preview/2020-12-rc-1/jsonschema-validation.html]
+
+Relative JSON Pointer: [https://json-schema.org/draft/preview/2020-12-rc-1/relative-json-pointer.html]
 
 HyperSchema is not included in this upcoming draft and is on hiatus.
 
