@@ -146,7 +146,7 @@
     - name: Hyperjump JSV
       url: https://github.com/jdesrosiers/json-schema
       notes: "Built for Node.js and browsers. Includes support for custom vocabularies."
-      date-draft: [2019-09]
+      date-draft: [2019-09, 2020-12]
       draft: [7, 6, 4]
       license: MIT
     - name: vue-vuelidate-jsonschema
@@ -243,7 +243,7 @@
   implementations:
     - name: Hyperjump JSV
       url: https://json-schema.hyperjump.io
-      date-draft: [2019-09]
+      date-draft: [2019-09, 2020-12]
       draft: [7, 6, 4]
       notes: Supports multiple schemas and multiple instances
     - name: JSON Schema Validator
