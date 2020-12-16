@@ -225,6 +225,7 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [Liform-react](https://github.com/Limenius/liform-react) (MIT)
     -   [React JSON Schema Form (mozilla)](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
     -   [React Schema Form (networknt)](https://github.com/networknt/react-schema-form) (MIT)
+    -   [Restspace Schema Form](https://github.com/restspace/schema-form) (MIT)
     -   [uniforms (Vazco)](https://github.com/vazco/uniforms) (MIT)
 
 #### Data from schemas
