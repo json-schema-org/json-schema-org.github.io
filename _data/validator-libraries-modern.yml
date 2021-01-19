@@ -42,6 +42,12 @@
       date-draft:
       draft: [7]
       license: BSD-2-Clause
+    - name: jsoncons
+      url: https://github.com/danielaparker/jsoncons/blob/master/doc/ref/jsonschema/jsonschema.md
+      notes: Header-only library
+      date-draft:
+      draft: [7]
+      license: Boost Software License 1.0
 - name: Clojure
   implementations:
     - name: jinx
