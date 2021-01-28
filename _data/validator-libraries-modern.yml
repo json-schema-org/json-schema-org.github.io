@@ -90,6 +90,12 @@
       notes: includes custom validator support, rich error returns
 - name: Java
   implementations:
+    - name: Snow
+      url: https://github.com/ssilverman/snowy-json
+      notes: Uses Maven for the project and Gson under the hood.
+      date-draft: [2019-09]
+      draft: [7, 6]
+      license: GNU Affero General Public License v3.0
     - name: Vert.x Json Schema
       url: https://github.com/eclipse-vertx/vertx-json-schema
       notes: Validator for Eclipse Vert.x project JSON types.
@@ -97,12 +103,6 @@
       draft: [7]
       license: Apache License, Version 2.0
       notes: includes custom keywords support, custom dialect support, asynchronous validation
-    - name: Snow
-      url: https://github.com/ssilverman/snowy-json
-      notes: Uses Maven for the project and Gson under the hood.
-      date-draft: [2019-09]
-      draft: [7, 6]
-      license: GNU Affero General Public License v3.0
     - name: everit-org/json-schema
       url: https://github.com/everit-org/json-schema
       notes:
