@@ -451,7 +451,7 @@
 
   <meta name="dct.creator" content="Wright, A., Ed., Andrews, H., Ed., and B. Hutton, Ed." />
   <meta name="dct.identifier" content="urn:ietf:id:draft-bhutton-json-schema-validation-00" />
-  <meta name="dct.issued" scheme="ISO8601" content="2020-01" />
+  <meta name="dct.issued" scheme="ISO8601" content="2020-28" />
   <meta name="dct.abstract" content="JSON Schema (application/schema+json) has several purposes, one of which is JSON instance validation.  This document specifies a vocabulary for JSON Schema to describe the meaning of JSON documents, provide hints for user interfaces working with JSON data, and to make assertions about what a valid document must look like.  " />
   <meta name="description" content="JSON Schema (application/schema+json) has several purposes, one of which is JSON instance validation.  This document specifies a vocabulary for JSON Schema to describe the meaning of JSON documents, provide hints for user interfaces working with JSON data, and to make assertions about what a valid document must look like.  " />
 
@@ -475,7 +475,7 @@
 <td class="right">H. Andrews, Ed.</td>
 </tr>
 <tr>
-<td class="left">Expires: June 4, 2021</td>
+<td class="left">Expires: August 1, 2021</td>
 <td class="right"></td>
 </tr>
 <tr>
@@ -484,7 +484,7 @@
 </tr>
 <tr>
 <td class="left"></td>
-<td class="right">December 1, 2020</td>
+<td class="right">January 28, 2020</td>
 </tr>
 
     	
@@ -497,7 +497,6 @@
   <h1 id="rfc.abstract"><a href="#rfc.abstract">Abstract</a></h1>
 <p>JSON Schema (application/schema+json) has several purposes, one of which is JSON instance validation.  This document specifies a vocabulary for JSON Schema to describe the meaning of JSON documents, provide hints for user interfaces working with JSON data, and to make assertions about what a valid document must look like.  </p>
 <h1><a>Note to Readers</a></h1>
-<p>This document a pre-release identified as JSON Schema draft 2020-12-rc-1.  </p>
 <p>The issues list for this draft can be found at <span>&lt;</span><a href="https://github.com/json-schema-org/json-schema-spec/issues">https://github.com/json-schema-org/json-schema-spec/issues</a><span>&gt;</span>.  </p>
 <p>For additional information, see <span>&lt;</span><a href="https://json-schema.org/">https://json-schema.org/</a><span>&gt;</span>.  </p>
 <p>To provide feedback, use this issue tracker, the communication methods listed on the homepage, or email the document editors.  </p>
@@ -505,7 +504,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on June 4, 2021.</p>
+<p>This Internet-Draft will expire on August 1, 2021.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
 <p>Copyright (c) 2020 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
@@ -777,12 +776,12 @@
 <a href="#rfc.section.6.4.4">6.4.4.</a> maxContains</h1>
 <p id="rfc.section.6.4.4.p.1">The value of this keyword MUST be a non-negative integer.  </p>
 <p id="rfc.section.6.4.4.p.2">If "contains" is not present within the same schema object, then this keyword has no effect.  </p>
-<p id="rfc.section.6.4.4.p.3">An array instance is valid against "maxContains" if its value is less than or equal to, the array length of the annotation result from an adjacent <a href="#json-schema" class="xref">"contains"</a> keyword where the annotation is an array, or the length of the instance array where the annotation is "true".  </p>
+<p id="rfc.section.6.4.4.p.3">An instance array is valid against "maxContains" in two ways, depending on the form of the annotation result of an adjacent <a href="#json-schema" class="xref">"contains"</a> keyword. The first way is if the annotation result is an array and the length of that array is less than or equal to the "maxContains" value. The second way is if the annotation result is a boolean "true" and the instance array length is less than or equal to the "maxContains" value.  </p>
 <h1 id="rfc.section.6.4.5">
 <a href="#rfc.section.6.4.5">6.4.5.</a> minContains</h1>
 <p id="rfc.section.6.4.5.p.1">The value of this keyword MUST be a non-negative integer.  </p>
 <p id="rfc.section.6.4.5.p.2">If "contains" is not present within the same schema object, then this keyword has no effect.  </p>
-<p id="rfc.section.6.4.5.p.3">An array instance is valid against "minContains" if its value is greater than or equal to, the array length of the annotation result from an adjacent <a href="#json-schema" class="xref">"contains"</a> keyword where the annotation is an array, or the length of the instance array where the annotation is "true".  </p>
+<p id="rfc.section.6.4.5.p.3">An instance array is valid against "minContains" in two ways, depending on the form of the annotation result of an adjacent <a href="#json-schema" class="xref">"contains"</a> keyword. The first way is if the annotation result is an array and the length of that array is greater than or equal to the "minContains" value. The second way is if the annotation result is a boolean "true" and the instance array length is greater than or equal to the "minContains" value.  </p>
 <p id="rfc.section.6.4.5.p.4">A value of 0 is allowed, but is only useful for setting a range of occurrences from 0 to the value of "maxContains".  A value of 0 with no "maxContains" causes "contains" to always pass validation.  </p>
 <p id="rfc.section.6.4.5.p.5">Omitting this keyword has the same behavior as a value of 1.  </p>
 <h1 id="rfc.section.6.5">
@@ -1228,13 +1227,7 @@
 <li>Clarified the set and meaning of "contentEncoding" values</li>
 <li>Reference ECMA-262, 11th edition for regular expression support</li>
 <li>Split "format" into an annotation only vocabulary and an assertion vocabulary</li>
-<li>
-<li>
-<li>
-<li>
-<li>
-<li>
-<li>
+<li>Clarify "deprecated" when applicable to arrays</li>
 </ul>
 <p> </p>
 </dd>

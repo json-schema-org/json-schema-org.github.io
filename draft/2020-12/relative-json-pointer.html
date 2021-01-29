@@ -397,7 +397,7 @@
 
   <meta name="dct.creator" content="Luff, G., Andrews, H., Ed., and B. Hutton, Ed." />
   <meta name="dct.identifier" content="urn:ietf:id:draft-bhutton-relative-json-pointer-00" />
-  <meta name="dct.issued" scheme="ISO8601" content="2020-01" />
+  <meta name="dct.issued" scheme="ISO8601" content="2020-28" />
   <meta name="dct.abstract" content="JSON Pointer is a syntax for specifying locations in a JSON document, starting from the document root.  This document defines an extension to the JSON Pointer syntax, allowing relative locations from within the document.  " />
   <meta name="description" content="JSON Pointer is a syntax for specifying locations in a JSON document, starting from the document root.  This document defines an extension to the JSON Pointer syntax, allowing relative locations from within the document.  " />
 
@@ -421,7 +421,7 @@
 <td class="right">H. Andrews, Ed.</td>
 </tr>
 <tr>
-<td class="left">Expires: June 4, 2021</td>
+<td class="left">Expires: August 1, 2021</td>
 <td class="right"></td>
 </tr>
 <tr>
@@ -430,7 +430,7 @@
 </tr>
 <tr>
 <td class="left"></td>
-<td class="right">December 1, 2020</td>
+<td class="right">January 28, 2020</td>
 </tr>
 
     	
@@ -446,7 +446,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on June 4, 2021.</p>
+<p>This Internet-Draft will expire on August 1, 2021.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
 <p>Copyright (c) 2020 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
@@ -505,8 +505,9 @@
 <p>The ABNF syntax of a Relative JSON Pointer is: </p>
 <pre>
 
-   relative-json-pointer =  non-negative-integer &lt;json-pointer&gt;
+   relative-json-pointer =  non-negative-integer [index-manipulation] &lt;json-pointer&gt;
    relative-json-pointer =/ non-negative-integer "#"
+   index-manipulation    =  ("+" / "-") non-negative-integer
    non-negative-integer      =  %x30 / %x31-39 *( %x30-39 )
            ; "0", or digits without a leading "0"
 
@@ -566,8 +567,10 @@
 
                   "0"                         "baz"
                   "1/0"                       "bar"
+                  "0-1"                       "bar"
                   "2/highly/nested/objects"   true
                   "0#"                        1
+                  "0-1#"                      0
                   "1#"                        "foo"
 
                     </pre>
@@ -629,7 +632,7 @@
 <p></p>
 
 <dl>
-<dt>draft-handrews-relative-json-pointer-03</dt>
+<dt>draft-bhutton-relative-json-pointer-00</dt>
 <dd style="margin-left: 8">
 <ul><li>Add array forward and backward index manipulation</li></ul>
 <p> </p>
