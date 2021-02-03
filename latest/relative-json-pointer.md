@@ -1,4 +1,4 @@
 ---
-redirect_to: "/draft/2019-09/relative-json-pointer.html"
+redirect_to: "/draft/2020-12/relative-json-pointer.html"
 title: "Relative JSON Pointers"
 ---

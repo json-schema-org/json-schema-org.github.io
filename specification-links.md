@@ -225,11 +225,11 @@ For links to the somewhat more readably formatted versions on this web site, and
         draft&#8209;handrews&#8209;relative&#8209;json&#8209;pointer&#8209;02
       </a></small></tt><br>
     </td>
-    <td rowspan="2">
+    <td>
       <tt><small>2019&#8209;09</small></tt>
     </td>
-    <td rowspan="2">
-      Draft 8
+    <td>
+      Draft 2019-09
     </td>
     <td>
       <small>Milestone:
@@ -239,14 +239,28 @@ For links to the somewhat more readably formatted versions on this web site, and
   </tr>
   <tr>
     <td>
-      <small><i>(TBD, probably only a subset of the documents)</i></small>
+      <tt><small><a href="https://tools.ietf.org/html/draft-bhutton-json-schema-00">
+        draft&#8209;bhutton&#8209;json&#8209;schema&#8209;00
+      </a></small></tt><br>
+      <tt><small><a href="https://tools.ietf.org/html/draft-bhutton-json-schema-validation-00">
+        draft&#8209;bhutton&#8209;json&#8209;schema&#8209;validation&#8209;00
+      </a></small></tt><br>
+      <tt><small><a href="https://tools.ietf.org/html/draft-bhutton-relative-json-pointer-00">
+        draft&#8209;bhutton&#8209;relative&#8209;json&#8209;pointer&#8209;00
+      </a></small></tt><br>
+    </td>
+    <td>
+      <tt><small>2020&#8209;12</small></tt>
+    </td>
+    <td>
+      Draft 2020-12
     </td>
     <td>
       <small>
-      bugfixes and/or clarifications, no functional changes
-      <br />
       Milestone:
       <a href="https://github.com/json-schema-org/json-schema-spec/milestone/8">draft-08-patch-1</a>
+      <br/>
+      Changes and fixes as a result of discussion with the OpenAPI community. (Includes breaking changes.)
       </small>
     </td>
   </tr>
@@ -258,22 +272,46 @@ For links to the somewhat more readably formatted versions on this web site, and
       <small><i>(TBD)</i></small>
     </td>
     <td>
-      Draft 9
+      Draft 2021-NN
     </td>
     <td>
       <small>Milestone:
-      <a href="https://github.com/json-schema-org/json-schema-spec/milestone/7">draft-09</a>
+      <a href="https://github.com/json-schema-org/json-schema-spec/milestone/7">Draft 2021-NN</a>
       </small>
     </td>
   </tr>
-    
+
 </table>
 
 ## Published Drafts
 
+### 2020-12
+
+- Specifications
+    - Core: [draft-bhutton-json-schema-00](https://tools.ietf.org/html/draft-bhutton-json-schema-00) ([changes](https://tools.ietf.org/html/draft-bhutton-json-schema-00#appendix-G))
+    - Validation: [draft-bhutton-json-schema-validation-00](https://tools.ietf.org/html/draft-bhutton-json-schema-validation-00) ([changes](https://tools.ietf.org/html/draft-bhutton-json-schema-validation-00#appendix-C))
+    - Relative JSON Pointer: [draft-bhutton-relative-json-pointer-00](https://tools.ietf.org/html/draft-bhutton-relative-json-pointer-00) ([changes](https://tools.ietf.org/html/draft-bhutton-relative-json-pointer-00#appendix-A))
+- General use meta-schemas
+    - [JSON Schema meta-schema](draft/2020-12/schema)
+- Individual vocablary meta-schemas
+  - [Core Vocabulary meta-schema](draft/2020-12/meta/core)
+  - [Applicator Vocabulary meta-schema](draft/2020-12/meta/applicator)
+  - [Validation Vocabulary meta-schema](draft/2020-12/meta/validation)
+  - [Unevaluated Vocabulary meta-schema](draft/2020-12/meta/unevaluated)
+  - [Format Annotation Vocabulary meta-schema](draft/2020-12/meta/format-annotation)
+  - [Format Assertion Vocabulary meta-schema](draft/2020-12/meta/format-assertion)
+  - [Content Vocabulary meta-schema](draft/2020-12/meta/content)
+  - [Meta-Data Vocabulary meta-schema](draft/2020-12/meta/meta-data)
+- Output schemas
+    - [JSON Schema recommended output schema](draft/2020-12/output/schema)
+- Output examples
+    - [JSON Schema verbose output example](draft/2020-12/output/verbose-example)
+
 ### 2019-09 (formerly known as Draft 8)
 
 _**NOTE:** All meta-schema URIs now use `https://`.  While currently also available over plain HTTP due to the limitations of GitHub pages and the need to keep prior drafts available over HTTP, only the HTTPS URIs should be used._
+
+### Draft 2019-09
 
 - Specifications
     - Core: [draft-handrews-json-schema-02](https://tools.ietf.org/html/draft-handrews-json-schema-02) ([changes](https://tools.ietf.org/html/draft-handrews-json-schema-02#appendix-G))
