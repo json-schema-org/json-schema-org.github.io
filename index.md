@@ -32,7 +32,7 @@ After that, you could check out all our [learning resources](/learn).
 
 We're here to help!
 
-At any point, feel free to join our Slack server using the link in the menu.
+At any point, feel free to join our [Slack server](/slack).
 
 We also monitor the `jsonschema` tag on StackOverflow.
 
@@ -111,4 +111,4 @@ Questions? Feeling helpful? Get involved on:
 
 * [GitHub](http://github.com/json-schema-org/json-schema-spec)
 * [Google Groups](https://groups.google.com/forum/#!forum/json-schema)
-* [Slack](https://join.slack.com/t/json-schema/shared_invite/enQtNjc5NTk0MzkzODg5LTVlZGIxNmVhMGY2MWFlYTdiNDQ5NWFiZGUwOThhNmYxZDE0YzA5YjRiOTA5MGY4ZTZlZGZhZDFmYTY4NWM2N2Y)
+* [Slack](/slack)
