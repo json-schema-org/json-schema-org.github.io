@@ -24,13 +24,13 @@ permalink: /
 
 Learning a new specification can be daunting.
 
-Luckily, we created this [getting started guide](/learn/getting-started-step-by-step)!
+You should read our [getting started guide](/learn/getting-started-step-by-step)!
 
-After that, you could check out all our [learning resources](/learn).
+You can also see our other [learning resources](/learn).
 
 ### Got questions?
 
-We're here to help!
+The JSON Schema team and community are here to help!
 
 At any point, feel free to join our [Slack server](/slack).
 
@@ -50,7 +50,7 @@ See the [Specification page](specification.html) for details about naming and nu
 
 ### The Path to Standardization
 
-The JSON Schema project intends to shepherd all three draft series to either: RFC status, the equivilent within another standards body, or join a foundation and establish self publication rules.
+The JSON Schema project intends to shepherd all three draft series to either: RFC status, the equivilent within another standards body, and/or join a foundation and establish self publication rules.
 
 <details markdown="1">
 <summary>Read more</summary>
