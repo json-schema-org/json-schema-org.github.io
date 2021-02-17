@@ -13,7 +13,9 @@ Specification documents
 
 See also the release notes / change log (Work in progress).
 
-The specification is split into two parts, Core and Validation, along with a related specification, Relative JSON Pointers:
+The specification is split into two parts, Core and Validation. We also publish
+the Relative JSON Pointers spec although it's not currently used by Core or
+Validation in any significant way.
 
 |--------------------------------------------------------------|-------------------------------------------------------|
 | [JSON Schema Core](draft/2020-12/json-schema-core.html)             | defines the basic foundation of JSON Schema           |
