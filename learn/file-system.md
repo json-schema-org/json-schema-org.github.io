@@ -66,16 +66,16 @@ We will start with a base JSON Schema expressing the following constraints:
 
 Building out our JSON Schema from top to bottom:
 
-* The [`$id`](http://json-schema.org/latest/json-schema-core.html#rfc.section.8.2) keyword.
-* The [`$schema`](http://json-schema.org/latest/json-schema-core.html#rfc.section.7) keyword.
-* The [`type`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.1.1) validation keyword.
-* The [`required`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.3) validation keyword.
-* The [`properties`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.4) validation keyword.
+* The [`$id`](http://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.8.2.1) keyword.
+* The [`$schema`](http://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.8.1.1) keyword.
+* The [`type`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.1.1) validation keyword.
+* The [`required`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.5.3) validation keyword.
+* The [`properties`](http://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.10.3.2.1) validation keyword.
   * The `/` key is empty now; We will fill it out later.
-* The [`patternProperties`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.5) validation keyword.
+* The [`patternProperties`](http://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.10.3.2.2) validation keyword.
   * This matches other property names via a regular expression. Note: it does not match `/`.
   * The `^(/[^/]+)+$` key is empty now; We will fill it out later.
-* The [`additionalProperties`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.6) validation keyword.
+* The [`additionalProperties`](http://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.10.3.2.3) validation keyword.
   * The value here is `false` to constrain object properties to be either `/` or to match the regular expression.
 
 > You will notice that the regular expression is explicitly anchored (with `^` and `$`): in JSON Schema, regular expressions (in `patternProperties` and in `pattern`) are not anchored by default.
@@ -104,11 +104,11 @@ We saw these keywords in the prior exercise: `$id`, `$schema`, `type`, `required
 
 To this we add:
 
-* The [`description`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.10.1) annotation keyword.
-* The [`oneOf`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.7.3) keyword.
-* The [`$ref`](http://json-schema.org/latest/json-schema-core.html#rfc.section.8.3) keyword.
+* The [`description`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.9.1) annotation keyword.
+* The [`oneOf`](http://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.10.2.1.3) keyword.
+* The [`$ref`](http://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.8.2.3.1) keyword.
   * In this case, all references used are local to the schema using a relative fragment URI (`#/...`).
-* The [`$defs`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.9) keyword.
+* The [`$defs`](http://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.8.2.4) keyword.
   * Including several key names which we will define later.
 
 ```json
@@ -142,12 +142,12 @@ To this we add:
 
 Let's now extend this skeleton to add constraints to some of the properties.
 
-* Our `fstype` key uses the [`enum`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.1.2) validation keyword.
+* Our `fstype` key uses the [`enum`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.1.2) validation keyword.
 * Our `options` key uses the following:
   * The `type` validation keyword (see above).
-  * The [`minItems`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.4.4) validation keyword.
-  * The [`items`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.4.1) validation keyword.
-  * The [`uniqueItems`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.4.5) validation keyword.
+  * The [`minItems`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.4.2) validation keyword.
+  * The [`items`](http://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.10.3.1.2) validation keyword.
+  * The [`uniqueItems`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.4.3) validation keyword.
   * Together these say: `options` must be an array, and the items therein must be strings, there must be at least one item, and all items should be unique.
 * We have a `readonly` key.
 
@@ -198,7 +198,7 @@ With these added constraints, the schema now looks like this:
 
 One new keyword is introduced here:
 
-* The [`pattern`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.3.3) validation keyword notes the `device` key must be an absolute path starting with */dev*.
+* The [`pattern`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.3.3) validation keyword notes the `device` key must be an absolute path starting with */dev*.
 
 ```json
 {
@@ -246,7 +246,7 @@ We do have a new key: `label` and the `pattern` validation keyword states it mus
 
 We find another new keyword:
 
-* The [`format`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.7) annotation and assertion keyword.
+* The [`format`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.7) annotation and assertion keyword.
 
 ```json
 {
@@ -276,8 +276,8 @@ We find another new keyword:
 
 Our last definition introduces two new keywords:
 
-* The [`minimum`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.4) validation keyword.
-* The [`maximum`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.2) validation keword.
+* The [`minimum`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.2.4) validation keyword.
+* The [`maximum`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.2.2) validation keword.
 * Together these require the size be between 16 and 512, inclusive.
 
 ```json

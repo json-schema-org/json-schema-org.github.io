@@ -7,15 +7,15 @@ title: Miscellaneous Examples
 
 This example provides a typical minimum you are likely to see in JSON Schema. It contains:
 
-* [`$id`](http://json-schema.org/latest/json-schema-core.html#rfc.section.8.2) keyword
-* [`$schema`](http://json-schema.org/latest/json-schema-core.html#rfc.section.7) keyword
-* [`title`](http://json-schema.org/latest/json-schema-hypermedia.html#rfc.section.6.5.1) annotation keyword
-* [`type`](http://json-schema.org/latest/json-schema-core.html#rfc.section.4.2.1) instance data model
-* [`properties`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.4) validation keyword
+* [`$id`](http://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.8.2.1) keyword
+* [`$schema`](http://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.8.1.1) keyword
+* [`title`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.9.1) annotation keyword
+* [`type`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.1.1) instance data model
+* [`properties`](http://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.10.3.2.1) validation keyword
 * Three keys: `firstName`, `lastName` and `age` each with their own:
-  * [`description`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.10.1) annotation keyword.
+  * [`description`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.9.1) annotation keyword.
   * `type` instance data model (see above).
-* [`minimum`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.4) validation keyword on the `age` key.
+* [`minimum`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.2.4) validation keyword on the `age` key.
 
 ```json
 {
@@ -55,9 +55,9 @@ This example provides a typical minimum you are likely to see in JSON Schema. It
 
 This example introduces:
 
-* [`required`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.5.3) validation keyword
-* [`minimum`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.4) validation keyword
-* [`maximum`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.2.2) validation keyword
+* [`required`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.5.3) validation keyword
+* [`minimum`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.2.4) validation keyword
+* [`maximum`](http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.2.2) validation keyword
 
 ```json
 {
@@ -100,8 +100,8 @@ Arrays are fundamental structures in JSON -- here we demonstrate a couple of way
 
 We also introduce the following with this example:
 
-* [`$defs`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.9) keyword
-* [`$ref`](http://json-schema.org/latest/json-schema-core.html#rfc.section.8.3) keyword
+* [`$defs`](http://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.8.2.4) keyword
+* [`$ref`](http://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.8.2.3.1) keyword
 
 ```json
 {
