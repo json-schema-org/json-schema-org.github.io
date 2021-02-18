@@ -20,7 +20,7 @@ This example provides a typical minimum you are likely to see in JSON Schema. It
 ```json
 {
   "$id": "https://example.com/person.schema.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Person",
   "type": "object",
   "properties": {
@@ -62,7 +62,7 @@ This example introduces:
 ```json
 {
   "$id": "https://example.com/geographical-location.schema.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Longitude and Latitude Values",
   "description": "A geographical coordinate.",
   "required": [ "latitude", "longitude" ],
@@ -100,13 +100,13 @@ Arrays are fundamental structures in JSON -- here we demonstrate a couple of way
 
 We also introduce the following with this example:
 
-* [`definitions`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.9) keyword
+* [`$defs`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.9) keyword
 * [`$ref`](http://json-schema.org/latest/json-schema-core.html#rfc.section.8.3) keyword
 
 ```json
 {
   "$id": "https://example.com/arrays.schema.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "A representation of a person, company, organization, or place",
   "type": "object",
   "properties": {
@@ -118,10 +118,10 @@ We also introduce the following with this example:
     },
     "vegetables": {
       "type": "array",
-      "items": { "$ref": "#/definitions/veggie" }
+      "items": { "$ref": "#/$defs/veggie" }
     }
   },
-  "definitions": {
+  "$defs": {
     "veggie": {
       "type": "object",
       "required": [ "veggieName", "veggieLike" ],

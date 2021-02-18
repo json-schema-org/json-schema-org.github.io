@@ -57,8 +57,8 @@ We start with four properties called **keywords** which are expressed as [JSON](
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/product.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/product.schema.json",
   "title": "Product",
   "description": "A product in the catalog",
   "type": "object"
@@ -85,8 +85,8 @@ In JSON Schema terms, we update our schema to add:
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/product.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/product.schema.json",
   "title": "Product",
   "description": "A product from Acme's catalog",
   "type": "object",
@@ -106,8 +106,8 @@ In JSON Schema terms, we update our schema to add:
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/product.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/product.schema.json",
   "title": "Product",
   "description": "A product from Acme's catalog",
   "type": "object",
@@ -135,8 +135,8 @@ According to the store owner there are no free products. ;)
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/product.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/product.schema.json",
   "title": "Product",
   "description": "A product from Acme's catalog",
   "type": "object",
@@ -179,8 +179,8 @@ Therefore:
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/product.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/product.schema.json",
   "title": "Product",
   "description": "A product from Acme's catalog",
   "type": "object",
@@ -222,8 +222,8 @@ Up until this point we've been dealing with a very flat schema -- only one level
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/product.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/product.schema.json",
   "title": "Product",
   "description": "A product from Acme's catalog",
   "type": "object",
@@ -282,7 +282,7 @@ For this example we introduce a new JSON Schema resource and for both properties
 ```json
 {
   "$id": "https://example.com/geographical-location.schema.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Longitude and Latitude",
   "description": "A geographical coordinate on a planet (most commonly Earth).",
   "required": [ "latitude", "longitude" ],
@@ -306,8 +306,8 @@ Next we add a reference to this new schema so it can be incorporated.
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/product.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/product.schema.json",
   "title": "Product",
   "description": "A product from Acme's catalog",
   "type": "object",

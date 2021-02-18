@@ -82,8 +82,8 @@ Building out our JSON Schema from top to bottom:
 
 ```json
 {
-  "$id": "http://example.com/fstab",
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/fstab",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "required": [ "/" ],
   "properties": {
@@ -108,13 +108,13 @@ To this we add:
 * The [`oneOf`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.7.3) keyword.
 * The [`$ref`](http://json-schema.org/latest/json-schema-core.html#rfc.section.8.3) keyword.
   * In this case, all references used are local to the schema using a relative fragment URI (`#/...`).
-* The [`definitions`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.9) keyword.
+* The [`$defs`](http://json-schema.org/latest/json-schema-validation.html#rfc.section.9) keyword.
   * Including several key names which we will define later.
 
 ```json
 {
-  "$id": "http://example.com/entry-schema",
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/entry-schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "JSON Schema for an fstab entry",
   "type": "object",
   "required": [ "storage" ],
@@ -122,14 +122,14 @@ To this we add:
     "storage": {
       "type": "object",
       "oneOf": [
-        { "$ref": "#/definitions/diskDevice" },
-        { "$ref": "#/definitions/diskUUID" },
-        { "$ref": "#/definitions/nfs" },
-        { "$ref": "#/definitions/tmpfs" }
+        { "$ref": "#/$defs/diskDevice" },
+        { "$ref": "#/$defs/diskUUID" },
+        { "$ref": "#/$defs/nfs" },
+        { "$ref": "#/$defs/tmpfs" }
       ]
     }
   },
-  "definitions": {
+  "$defs": {
     "diskDevice": {},
     "diskUUID": {},
     "nfs": {},
@@ -155,8 +155,8 @@ With these added constraints, the schema now looks like this:
 
 ```json
 {
-  "$id": "http://example.com/entry-schema",
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/entry-schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "JSON Schema for an fstab entry",
   "type": "object",
   "required": [ "storage" ],
@@ -164,10 +164,10 @@ With these added constraints, the schema now looks like this:
     "storage": {
       "type": "object",
       "oneOf": [
-        { "$ref": "#/definitions/diskDevice" },
-        { "$ref": "#/definitions/diskUUID" },
-        { "$ref": "#/definitions/nfs" },
-        { "$ref": "#/definitions/tmpfs" }
+        { "$ref": "#/$defs/diskDevice" },
+        { "$ref": "#/$defs/diskUUID" },
+        { "$ref": "#/$defs/nfs" },
+        { "$ref": "#/$defs/tmpfs" }
       ]
     },
     "fstype": {
@@ -185,7 +185,7 @@ With these added constraints, the schema now looks like this:
       "type": "boolean"
     }
   },
-  "definitions": {
+  "$defs": {
     "diskDevice": {},
     "diskUUID": {},
     "nfs": {},
@@ -303,8 +303,8 @@ The resulting schema is quite large:
 
 ```json
 {
-  "$id": "http://example.com/entry-schema",
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/entry-schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "JSON Schema for an fstab entry",
   "type": "object",
   "required": [ "storage" ],
@@ -312,10 +312,10 @@ The resulting schema is quite large:
     "storage": {
       "type": "object",
       "oneOf": [
-        { "$ref": "#/definitions/diskDevice" },
-        { "$ref": "#/definitions/diskUUID" },
-        { "$ref": "#/definitions/nfs" },
-        { "$ref": "#/definitions/tmpfs" }
+        { "$ref": "#/$defs/diskDevice" },
+        { "$ref": "#/$defs/diskUUID" },
+        { "$ref": "#/$defs/nfs" },
+        { "$ref": "#/$defs/tmpfs" }
       ]
     },
     "fstype": {
@@ -333,7 +333,7 @@ The resulting schema is quite large:
       "type": "boolean"
     }
   },
-  "definitions": {
+  "$defs": {
     "diskDevice": {
       "properties": {
         "type": {
@@ -404,16 +404,16 @@ Coming full circle we use the `$ref` keyword to add our entry schema into the ke
 
 ```json
 {
-  "$id": "http://example.com/fstab",
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/fstab",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "required": [ "/" ],
   "properties": {
-    "/": { "$ref": "http://example.com/entry-schema" }
+    "/": { "$ref": "https://example.com/entry-schema" }
   },
   "patternProperties": {
-    "^(/[^/]+)+$":  { "$ref": "http://example.com/entry-schema" }
+    "^(/[^/]+)+$":  { "$ref": "https://example.com/entry-schema" }
   },
-  "additionalProperties": false,
+  "additionalProperties": false
 }
 ```
