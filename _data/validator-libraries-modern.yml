@@ -101,6 +101,13 @@
       date-draft: [2019-09]
       draft: [7, 6]
       license: GNU Affero General Public License v3.0
+    - name: Vert.x Json Schema
+      url: https://github.com/eclipse-vertx/vertx-json-schema
+      notes: Validator for Eclipse Vert.x project JSON types.
+      date-draft: [2019-09]
+      draft: [7]
+      license: Apache License, Version 2.0
+      notes: includes custom keywords support, custom dialect support, asynchronous validation
     - name: everit-org/json-schema
       url: https://github.com/everit-org/json-schema
       notes:

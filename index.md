@@ -112,3 +112,4 @@ Questions? Feeling helpful? Get involved on:
 * [GitHub](http://github.com/json-schema-org/json-schema-spec)
 * [Google Groups](https://groups.google.com/forum/#!forum/json-schema)
 * [Slack](/slack)
+* [Open Collective](https://opencollective.com/json-schema)
