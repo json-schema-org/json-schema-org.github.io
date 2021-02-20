@@ -103,7 +103,7 @@ Interested? Check out:
 * [Understanding JSON Schema](/understanding-json-schema/)
 * The [specification](./specification.md)
 * [Learning resources](./learn/index.md)
-* the growing list of [JSON (Hyper-)Schema software](./implementations.md)
+* the growing list of [JSON Schema software](./implementations.md)
 
 We encourage updating to the latest specification where possible, which is 2020-12.
 
