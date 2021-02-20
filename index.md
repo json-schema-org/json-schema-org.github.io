@@ -8,11 +8,9 @@ permalink: /
 **JSON Schema** is a vocabulary that allows you to **annotate** and **validate** JSON documents.
 
 
-## Advantages
+## Benefits
 
-<div class="block" style="float:left;width:50%;" markdown="1">
-
-### JSON Schema
+<div class="block" markdown="1">
 
 * Describes your existing data format(s).
 * Provides clear human- and machine- readable documentation.
@@ -22,42 +20,55 @@ permalink: /
 
 </div>
 
-<div class="block" style="float:right;width:50%;" markdown="1">
+## New to JSON Schema?
 
-### JSON Hyper-Schema
+Learning a new specification can be daunting.
 
-* Make any JSON format a hypermedia format with no constraints on document structure
-* Allows use of [URI Templates](https://tools.ietf.org/html/rfc6570) with instance data
-* Describe client data for use with links using JSON Schema.
-* Recognizes collections and collection items.
+You should read our [getting started guide](/learn/getting-started-step-by-step)!
 
-</div>
+You can also see our other [learning resources](/learn).
+
+### Got questions?
+
+The JSON Schema team and community are here to help!
+
+At any point, feel free to join our [Slack server](/slack).
+
+We also monitor the `jsonschema` tag on StackOverflow.
 
 ## Project Status
 
-16 September 2019: Draft 2019-09 (formerly known as draft-08) has been published!
+2021-02-01: Draft 2020-12 has been published!
 
-The IETF document IDs are of the form `draft-handrews-*-02`.  We are now using dates
-for meta-schemas, which are what implementations should use to determine behavior,
-so we will usually refer to `2019-09` (without the word "draft") on this web site.
+The IETF document IDs are of the form `draft-bhutton-*-00`.
+
+We are using dates for meta-schemas, which are what implementations should use to determine behavior,
+so we will usually refer to `2020-12` (without the word "draft") on this web site.
 
 See the [Specification page](specification.html) for details about naming and numbering.
 
+
 ### The Path to Standardization
 
-The JSON Schema project intends to shepherd all four draft series to RFC status.  Currently, we are continuing to improve our self-published Internet-Drafts. The next step will be to get the drafts adopted by an IETF Working Group.  We are actively investigating how to accomplish this.
+The JSON Schema project intends to shepherd all three draft series to either: RFC status, the equivilent within another standards body, and/or join a foundation and establish self publication rules.
 
-If you have experience with such things and would like to help, please contact us!
+<details markdown="1">
+<summary>Read more</summary>
+
+Currently, we are continuing to improve our self-published Internet-Drafts. We are not activly pursuing joining a standards organisation.
+
+We have a few contacts related to each potential path, but if you have experience with such things and would like to help, please still contact us!
 
 In the meantime, publication of Internet-Draft documents can be tracked through the IETF:
-* [JSON Schema (core)](https://datatracker.ietf.org/doc/draft-handrews-json-schema/)
-* [JSON Schema Validation](https://datatracker.ietf.org/doc/draft-handrews-json-schema-validation/)
-* [JSON Hyper-Schema](https://datatracker.ietf.org/doc/draft-handrews-json-schema-hyperschema/)
-* [Relative JSON Pointers](https://datatracker.ietf.org/doc/draft-handrews-relative-json-pointer/)
+* [JSON Schema (core)](https://datatracker.ietf.org/doc/draft-bhutton-json-schema/)
+* [JSON Schema Validation](https://datatracker.ietf.org/doc/draft-bhutton-json-schema-validation/)
+* [Relative JSON Pointers](https://datatracker.ietf.org/doc/draft-bhutton-relative-json-pointer/)
 
 Internet-Drafts expire after six months, so our goal is to publish often enough to always have a set of unexpired drafts available.  There may be brief gaps as we wrap up each draft and finalize the text.
 
 The intention, particularly for vocabularies such as validation which have been widely implemented, is to remain as compatible as possible from draft to draft.  However, these are still drafts, and given a clear enough need validated with the user community, major changes can occur.
+
+</details>
 
 ## Quickstart
 
@@ -77,6 +88,14 @@ You can apply constraints on an instance by adding validation keywords to the sc
 
 JSON Schema is hypermedia ready, and ideal for annotating your existing JSON-based HTTP API. JSON Schema documents are identified by URIs, which can be used in HTTP Link headers, and inside JSON Schema documents to allow recursive definitions.
 
+## JSON Hyper-Schema
+
+JSON Hyper-Schema is on hiatus / not currently maintained as of 2021.
+
+This allows the team to focus the little time they do donate on JSON Schema core and validation.
+
+We may revisit JSON Hyper-Schema at a later date.
+
 ## More
 
 Interested? Check out:
@@ -84,13 +103,13 @@ Interested? Check out:
 * [Understanding JSON Schema](/understanding-json-schema/)
 * The [specification](./specification.md)
 * [Learning resources](./learn/index.md)
-* the growing list of [JSON (Hyper-)Schema software](./implementations.md)
+* the growing list of [JSON Schema software](./implementations.md)
 
-We encourage updating to the latest specification, as described by the draft-07 meta-schemas.
+We encourage updating to the latest specification where possible, which is 2020-12.
 
 Questions? Feeling helpful? Get involved on:
 
 * [GitHub](http://github.com/json-schema-org/json-schema-spec)
 * [Google Groups](https://groups.google.com/forum/#!forum/json-schema)
-* [Slack](https://join.slack.com/t/json-schema/shared_invite/enQtNjc5NTk0MzkzODg5LTVlZGIxNmVhMGY2MWFlYTdiNDQ5NWFiZGUwOThhNmYxZDE0YzA5YjRiOTA5MGY4ZTZlZGZhZDFmYTY4NWM2N2Y)
+* [Slack](/slack)
 * [Open Collective](https://opencollective.com/json-schema)

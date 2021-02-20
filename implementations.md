@@ -78,47 +78,6 @@ Benchmarks that compare at least two implementations supporting draft-06+ may be
 -   PHP
     -   [php-json-schema-bench](https://github.com/swaggest/php-json-schema-bench) - comparative benchmark for JSON-schema PHP validators using JSON-Schema Test Suite and z-schema/JSCK (MIT)
 
-Hyper-Schema
----------------------
-
-<nav class="intra" markdown="1">
-
-{% assign hyper-schema-libraries = site.data.hyper-libraries-modern | sort:"name" %}
-
-{% for language in hyper-schema-libraries %}
--   [{{ language.name }}](#hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %})
-{% endfor %}
-
-</nav>
-
-<!-- To add a hyper-schema library, add it in _data/hyper-schema-libraries.yml -->
-
-<ul>
-  {% for language in hyper-schema-libraries %}
-  <li>
-    {{language.name}} <a id="hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %}"></a>
-    <ul>
-    {% for implementation in language.implementations %}
-        <li>
-        <a href="{{implementation.url}}">{{ implementation.name }}</a>
-
-        {% if implementation.draft %}
-            <em>draft-0{{ implementation.draft | join: ", -0" }}</em>
-        {% endif %}
-
-        {{implementation.notes | markdownify | remove: '<p>' | remove: '</p>'}}
-
-        {% if implementation.license %}
-            ({{ implementation.license | join: ", " }})
-        {% endif %}
-
-        </li>
-    {% endfor %}
-    </ul>
-  </li>
-  {% endfor %}
-</ul>
-
 #### API documentation
 
 -   JavaScript
@@ -306,3 +265,44 @@ Schema Linter
 
 -   [json-schema-linter](https://www.json-schema-linter.com/) - Lint/validate/parse json-schema itself, and find typos, missing properties, missing required keys, etc. Supports draft 4, 6, and 7.
 -   [Stoplight Spectral](https://stoplight.io/open-source/spectral) - A flexible JSON/YAML linter for creating automated style guides, with baked in support for OpenAPI v2/v3 and JSON Schema. Supports draft 4, 6, and 7.
+
+Hyper-Schema
+---------------------
+
+<nav class="intra" markdown="1">
+
+{% assign hyper-schema-libraries = site.data.hyper-libraries-modern | sort:"name" %}
+
+{% for language in hyper-schema-libraries %}
+-   [{{ language.name }}](#hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %})
+{% endfor %}
+
+</nav>
+
+<!-- To add a hyper-schema library, add it in _data/hyper-schema-libraries.yml -->
+
+<ul>
+  {% for language in hyper-schema-libraries %}
+  <li>
+    {{language.name}} <a id="hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %}"></a>
+    <ul>
+    {% for implementation in language.implementations %}
+        <li>
+        <a href="{{implementation.url}}">{{ implementation.name }}</a>
+
+        {% if implementation.draft %}
+            <em>draft-0{{ implementation.draft | join: ", -0" }}</em>
+        {% endif %}
+
+        {{implementation.notes | markdownify | remove: '<p>' | remove: '</p>'}}
+
+        {% if implementation.license %}
+            ({{ implementation.license | join: ", " }})
+        {% endif %}
+
+        </li>
+    {% endfor %}
+    </ul>
+  </li>
+  {% endfor %}
+</ul>
