@@ -6,7 +6,7 @@ permalink: /implementations.html
 
 _**NOTE:** This page lists implementations with (or actively working towards) support for draft-06 or later._
 
-_For implementations supporting only draft-04 or older, see the [Obsolete Implementations](obsolete-implementations) page._
+_For implementations supporting only draft-04 or older, or that are no longer in development, see the [Obsolete Implementations](obsolete-implementations) page._
 
 
 * TOC
