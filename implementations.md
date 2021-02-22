@@ -78,47 +78,6 @@ Benchmarks that compare at least two implementations supporting draft-06+ may be
 -   PHP
     -   [php-json-schema-bench](https://github.com/swaggest/php-json-schema-bench) - comparative benchmark for JSON-schema PHP validators using JSON-Schema Test Suite and z-schema/JSCK (MIT)
 
-Hyper-Schema
----------------------
-
-<nav class="intra" markdown="1">
-
-{% assign hyper-schema-libraries = site.data.hyper-libraries-modern | sort:"name" %}
-
-{% for language in hyper-schema-libraries %}
--   [{{ language.name }}](#hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %})
-{% endfor %}
-
-</nav>
-
-<!-- To add a hyper-schema library, add it in _data/hyper-schema-libraries.yml -->
-
-<ul>
-  {% for language in hyper-schema-libraries %}
-  <li>
-    {{language.name}} <a id="hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %}"></a>
-    <ul>
-    {% for implementation in language.implementations %}
-        <li>
-        <a href="{{implementation.url}}">{{ implementation.name }}</a>
-
-        {% if implementation.draft %}
-            <em>draft-0{{ implementation.draft | join: ", -0" }}</em>
-        {% endif %}
-
-        {{implementation.notes | markdownify | remove: '<p>' | remove: '</p>'}}
-
-        {% if implementation.license %}
-            ({{ implementation.license | join: ", " }})
-        {% endif %}
-
-        </li>
-    {% endfor %}
-    </ul>
-  </li>
-  {% endfor %}
-</ul>
-
 #### API documentation
 
 -   JavaScript
@@ -201,7 +160,8 @@ are the only keywords that changed.
 -   PHP
     -  [php-code-builder](https://github.com/swaggest/php-code-builder)(MIT) - generates PHP mapping structures defined by JSON schema using [swaggest/json-schema](https://github.com/swaggest/php-json-schema) *supports Draft 7*
 -   Python
-    - [yacg](https://github.com/OkieOth/yacg) (MIT) - parse JSON Schema and OpenApi files to build a meta model from them. This meta model can be used in Mako templates to generate source code, other schemas or plantUml.   
+    - [yacg](https://github.com/OkieOth/yacg) (MIT) - parse JSON Schema and OpenApi files to build a meta model from them. This meta model can be used in Mako templates to generate source code, other schemas or plantUml.
+    - [statham](https://github.com/jacksmith15/statham-schema) (MIT) - generate type-annotated models from JSON Schema documents.
 -   Rust
     - [schemafy](https://github.com/Marwes/schemafy/) - generates Rust types and serialization code from a JSON schema. *supports Draft 4*
 
@@ -288,6 +248,12 @@ _None currently support draft-06 or later._
 -   [WebStorm](https://www.jetbrains.com/webstorm/), [IntelliJ IDEA](https://www.jetbrains.com/idea/), and other [JetBrains IDEs](https://www.jetbrains.com/products.html?fromMenu#type=ide) - *Code completion, documentation, and validation for JSON and YAML files using JSON Schema. Support for draft-4, draft-6, and draft-7.*
 -   [Eclipse IDE](https://www.eclipse.org/downloads/eclipse-packages) - *Rich JSON edition supporting schema for instantaneous validation and error reporting, completion, documentation.*
 
+#### Documentation generators
+
+- [jsonschematic](https://github.com/yanick/jsonschematic/) - Svelte-based schema viewer. Runs as a local web app. Supports draft-7.
+- [docson](https://github.com/lbovet/docson) - Javascript-based schema viewer.  Runs as a local web app. Supports draft-4.
+- [json-schema-for-humans](https://pypi.org/project/json-schema-for-humans/) - Generate HTML representation of a schema. Python-based. Supports draft-7.
+
 Schema Repositories
 -------------------
 
@@ -299,3 +265,44 @@ Schema Linter
 
 -   [json-schema-linter](https://www.json-schema-linter.com/) - Lint/validate/parse json-schema itself, and find typos, missing properties, missing required keys, etc. Supports draft 4, 6, and 7.
 -   [Stoplight Spectral](https://stoplight.io/open-source/spectral) - A flexible JSON/YAML linter for creating automated style guides, with baked in support for OpenAPI v2/v3 and JSON Schema. Supports draft 4, 6, and 7.
+
+Hyper-Schema
+---------------------
+
+<nav class="intra" markdown="1">
+
+{% assign hyper-schema-libraries = site.data.hyper-libraries-modern | sort:"name" %}
+
+{% for language in hyper-schema-libraries %}
+-   [{{ language.name }}](#hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %})
+{% endfor %}
+
+</nav>
+
+<!-- To add a hyper-schema library, add it in _data/hyper-schema-libraries.yml -->
+
+<ul>
+  {% for language in hyper-schema-libraries %}
+  <li>
+    {{language.name}} <a id="hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %}"></a>
+    <ul>
+    {% for implementation in language.implementations %}
+        <li>
+        <a href="{{implementation.url}}">{{ implementation.name }}</a>
+
+        {% if implementation.draft %}
+            <em>draft-0{{ implementation.draft | join: ", -0" }}</em>
+        {% endif %}
+
+        {{implementation.notes | markdownify | remove: '<p>' | remove: '</p>'}}
+
+        {% if implementation.license %}
+            ({{ implementation.license | join: ", " }})
+        {% endif %}
+
+        </li>
+    {% endfor %}
+    </ul>
+  </li>
+  {% endfor %}
+</ul>
