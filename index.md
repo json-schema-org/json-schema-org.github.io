@@ -50,12 +50,12 @@ See the [Specification page](specification.html) for details about naming and nu
 
 ### The Path to Standardization
 
-The JSON Schema project intends to shepherd all three draft series to either: RFC status, the equivilent within another standards body, and/or join a foundation and establish self publication rules.
+The JSON Schema project intends to shepherd all three draft series to either: RFC status, the equivalent within another standards body, and/or join a foundation and establish self publication rules.
 
 <details markdown="1">
 <summary>Read more</summary>
 
-Currently, we are continuing to improve our self-published Internet-Drafts. We are not activly pursuing joining a standards organisation.
+Currently, we are continuing to improve our self-published Internet-Drafts. We are not actively pursuing joining a standards organisation.
 
 We have a few contacts related to each potential path, but if you have experience with such things and would like to help, please still contact us!
 
