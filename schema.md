@@ -1,3 +1,3 @@
 ---
-redirect_to: /draft/2019-09/schema
+redirect_to: /draft/2020-12/schema
 ---
