@@ -185,6 +185,7 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [React JSON Schema Form (mozilla)](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
     -   [React Schema Form (networknt)](https://github.com/networknt/react-schema-form) (MIT)
     -   [uniforms (Vazco)](https://github.com/vazco/uniforms) (MIT)
+    -   [UI Schema for React](https://github.com/ui-schema/ui-schema) (MIT) *2019-09 / draft-08, -07, -06, -04 (incompatible `type=integer`)*
 
 #### Data from schemas
 
