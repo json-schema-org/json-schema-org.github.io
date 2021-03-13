@@ -202,7 +202,7 @@
       draft: [7, 6, 4]
       license: BSD-3-Clause
     - name: jsonschema-rs
-      url: https://github.com/Stranger6667/jsonschema-rs/python
+      url: https://github.com/Stranger6667/jsonschema-rs/tree/master/bindings/python
       notes: Python bindings to Rust's jsonschema crate
       date-draft:
       draft: [7, 6, 4]
