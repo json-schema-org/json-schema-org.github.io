@@ -189,6 +189,12 @@
       license: "MIT"
 - name: Python
   implementations:
+    - name: jschon
+      url: https://github.com/marksparkza/jschon
+      notes:
+      date-draft: [2019-09, 2020-12]
+      draft:
+      license: MIT
     - name: jsonschema
       url: https://github.com/Julian/jsonschema
       notes:
@@ -206,12 +212,6 @@
       notes: Python bindings to Rust's jsonschema crate
       date-draft:
       draft: [7, 6, 4]
-      license: MIT
-    - name: jschon
-      url: https://github.com/marksparkza/jschon
-      notes:
-      date-draft: [2019-09, 2020-12]
-      draft:
       license: MIT
 - name: Ruby
   implementations:
