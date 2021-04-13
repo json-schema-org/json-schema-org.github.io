@@ -178,7 +178,7 @@
     - name: Opis Json Schema
       url: https://github.com/opis/json-schema
       notes:
-      date-draft:
+      date-draft: [2019-09, 2020-12]
       draft: [7, 6]
       license: "Apache License 2.0"
     - name: Swaggest Json Schema
