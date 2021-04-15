@@ -186,6 +186,7 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [JSONForms (jsonforms.io)](https://jsonforms.io/) (EclipseSource) (MIT)
     -   [Liform-react](https://github.com/Limenius/liform-react) (MIT)
     -   [React JSON Schema Form (mozilla)](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
+    -   [React Json Schema Form (Mui)](https://github.com/vip-git/react-jsonschema-form-material-ui) (MIT)
     -   [React Schema Form (networknt)](https://github.com/networknt/react-schema-form) (MIT)
     -   [Restspace Schema Form](https://github.com/restspace/schema-form) (MIT)
     -   [uniforms (Vazco)](https://github.com/vazco/uniforms) (MIT)
