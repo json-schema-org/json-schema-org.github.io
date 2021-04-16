@@ -168,17 +168,22 @@
       license: MIT
 - name: Perl
   implementations:
+    - name: JSON::Schema::Draft201909
+      url: https://github.com/karenetheridge/JSON-Schema-Draft201909
+      notes:
+      date-draft: [2019-09]
+      license: "GNU General Public License, Version 1 + The Artistic License 1.0"
+    - name: JSON::Schema::Tiny
+      url: https://github.com/karenetheridge/JSON-Schema-Tiny
+      notes:
+      date-draft: [2019-09]
+      license: "GNU General Public License, Version 1 + The Artistic License 1.0"
     - name: JSON::Validator
       url: https://github.com/mojolicious/json-validator
       notes:
       date-draft:
       draft: [7, 6, 4]
       license: "The Artistic License 2.0 (GPL Compatible)"
-    - name: JSON::Schema::Draft201909
-      url: https://github.com/karenetheridge/JSON-Schema-Draft201909
-      notes:
-      date-draft: [2019-09]
-      license: "GNU General Public License, Version 1 + The Artistic License 1.0"
 - name: PHP
   implementations:
     - name: Opis Json Schema
