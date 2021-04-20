@@ -6,7 +6,7 @@ permalink: /implementations.html
 
 _**NOTE:** This page lists implementations with (or actively working towards) support for draft-06 or later._
 
-_For implementations supporting only draft-04 or older, see the [Obsolete Implementations](obsolete-implementations) page._
+_For implementations supporting only draft-04 or older, or that are no longer in development, see the [Obsolete Implementations](obsolete-implementations) page._
 
 
 * TOC
@@ -77,47 +77,6 @@ Benchmarks that compare at least two implementations supporting draft-06+ may be
 
 -   PHP
     -   [php-json-schema-bench](https://github.com/swaggest/php-json-schema-bench) - comparative benchmark for JSON-schema PHP validators using JSON-Schema Test Suite and z-schema/JSCK (MIT)
-
-Hyper-Schema
----------------------
-
-<nav class="intra" markdown="1">
-
-{% assign hyper-schema-libraries = site.data.hyper-libraries-modern | sort:"name" %}
-
-{% for language in hyper-schema-libraries %}
--   [{{ language.name }}](#hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %})
-{% endfor %}
-
-</nav>
-
-<!-- To add a hyper-schema library, add it in _data/hyper-schema-libraries.yml -->
-
-<ul>
-  {% for language in hyper-schema-libraries %}
-  <li>
-    {{language.name}} <a id="hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %}"></a>
-    <ul>
-    {% for implementation in language.implementations %}
-        <li>
-        <a href="{{implementation.url}}">{{ implementation.name }}</a>
-
-        {% if implementation.draft %}
-            <em>draft-0{{ implementation.draft | join: ", -0" }}</em>
-        {% endif %}
-
-        {{implementation.notes | markdownify | remove: '<p>' | remove: '</p>'}}
-
-        {% if implementation.license %}
-            ({{ implementation.license | join: ", " }})
-        {% endif %}
-
-        </li>
-    {% endfor %}
-    </ul>
-  </li>
-  {% endfor %}
-</ul>
 
 #### API documentation
 
@@ -196,6 +155,7 @@ are the only keywords that changed.
     -  [json-schema-to-elm](https://github.com/dragonwasrobot/json-schema-to-elm) - generates Elm types, JSON decoders+encoders, and fuzz tests from one or more JSON Schema files, using [dragonwasrobot/json_schema](https://github.com/dragonwasrobot/json_schema) *supports Draft 7*
 -   Java
     - [jsonCodeGen](https://github.com/schlothauer-wauer/jsoncodegen) (MIT) - Groovy based generation tasks from JSON schema. Already includes templates/generators for Java Beans, Swagger specification files and PlantUML diagrams.
+    - [jsongenerator](https://github.com/jimblackler/jsonschematypes/tree/master/codegen) *JSON Schema 2019-09, draft-07, -06, -04, -03* (Apache-2.0)
 -   Kotlin
     - [json-kotlin-schema-codegen](https://github.com/pwall567/json-kotlin-schema-codegen) (MIT) - Generates Kotlin data classes from JSON Schema.
 -   Online (web tool)
@@ -207,6 +167,8 @@ are the only keywords that changed.
     - [statham](https://github.com/jacksmith15/statham-schema) (MIT) - generate type-annotated models from JSON Schema documents.
 -   Rust
     - [schemafy](https://github.com/Marwes/schemafy/) - generates Rust types and serialization code from a JSON schema. *supports Draft 4*
+-   TypeScript
+    - [jsongenerator](https://github.com/jimblackler/jsonschematypes/tree/master/codegen) *JSON Schema 2019-09, draft-07, -06, -04, -03* (Apache-2.0)
 
 #### Web UI generation
 
@@ -226,13 +188,18 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [JSONForms (jsonforms.io)](https://jsonforms.io/) (EclipseSource) (MIT)
     -   [Liform-react](https://github.com/Limenius/liform-react) (MIT)
     -   [React JSON Schema Form (mozilla)](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
+    -   [React Json Schema Form (Mui)](https://github.com/vip-git/react-jsonschema-form-material-ui) (MIT)
     -   [React Schema Form (networknt)](https://github.com/networknt/react-schema-form) (MIT)
+    -   [Restspace Schema Form](https://github.com/restspace/schema-form) (MIT)
     -   [uniforms (Vazco)](https://github.com/vazco/uniforms) (MIT)
+    -   [UI Schema for React](https://github.com/ui-schema/ui-schema) (MIT) *2019-09 / draft-08, -07, -06, -04 (incompatible `type=integer`)*
 
 #### Data from schemas
 
 -   Python
     -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  takes any schema, even with complex and interacting constraints, and returns a [Hypothesis](https://hypothesis.works/) strategy which can generate valid documents for testing.
+-   Java
+    -   [jsongenerator](https://github.com/jimblackler/jsongenerator) *JSON Schema 2019-09, draft-07, -06, -04, -03* (Apache-2.0)
 
 Utilities
 ---------
@@ -291,6 +258,12 @@ _None currently support draft-06 or later._
 -   [WebStorm](https://www.jetbrains.com/webstorm/), [IntelliJ IDEA](https://www.jetbrains.com/idea/), and other [JetBrains IDEs](https://www.jetbrains.com/products.html?fromMenu#type=ide) - *Code completion, documentation, and validation for JSON and YAML files using JSON Schema. Support for draft-4, draft-6, and draft-7.*
 -   [Eclipse IDE](https://www.eclipse.org/downloads/eclipse-packages) - *Rich JSON edition supporting schema for instantaneous validation and error reporting, completion, documentation.*
 
+#### Documentation generators
+
+- [jsonschematic](https://github.com/yanick/jsonschematic/) - Svelte-based schema viewer. Runs as a local web app. Supports draft-7.
+- [docson](https://github.com/lbovet/docson) - Javascript-based schema viewer.  Runs as a local web app. Supports draft-4.
+- [json-schema-for-humans](https://pypi.org/project/json-schema-for-humans/) - Generate HTML representation of a schema. Python-based. Supports draft-7.
+
 Schema Repositories
 -------------------
 
@@ -302,3 +275,44 @@ Schema Linter
 
 -   [json-schema-linter](https://www.json-schema-linter.com/) - Lint/validate/parse json-schema itself, and find typos, missing properties, missing required keys, etc. Supports draft 4, 6, and 7.
 -   [Stoplight Spectral](https://stoplight.io/open-source/spectral) - A flexible JSON/YAML linter for creating automated style guides, with baked in support for OpenAPI v2/v3 and JSON Schema. Supports draft 4, 6, and 7.
+
+Hyper-Schema
+---------------------
+
+<nav class="intra" markdown="1">
+
+{% assign hyper-schema-libraries = site.data.hyper-libraries-modern | sort:"name" %}
+
+{% for language in hyper-schema-libraries %}
+-   [{{ language.name }}](#hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %})
+{% endfor %}
+
+</nav>
+
+<!-- To add a hyper-schema library, add it in _data/hyper-schema-libraries.yml -->
+
+<ul>
+  {% for language in hyper-schema-libraries %}
+  <li>
+    {{language.name}} <a id="hyper-schema-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %}"></a>
+    <ul>
+    {% for implementation in language.implementations %}
+        <li>
+        <a href="{{implementation.url}}">{{ implementation.name }}</a>
+
+        {% if implementation.draft %}
+            <em>draft-0{{ implementation.draft | join: ", -0" }}</em>
+        {% endif %}
+
+        {{implementation.notes | markdownify | remove: '<p>' | remove: '</p>'}}
+
+        {% if implementation.license %}
+            ({{ implementation.license | join: ", " }})
+        {% endif %}
+
+        </li>
+    {% endfor %}
+    </ul>
+  </li>
+  {% endfor %}
+</ul>

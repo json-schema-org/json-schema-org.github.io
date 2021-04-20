@@ -1,6 +1,6 @@
 {
   "$id": "https://example.com/calendar.schema.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "A representation of an event",
   "type": "object",
   "required": [ "dtstart", "summary" ],
@@ -41,7 +41,7 @@
       "type": "string"
     },
     "geo": {
-      "$ref": "http://example.com/geographical-location.schema.json"
+      "$ref": "https://example.com/geographical-location.schema.json"
     }
   }
 }

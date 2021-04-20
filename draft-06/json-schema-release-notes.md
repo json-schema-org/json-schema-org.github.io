@@ -70,19 +70,19 @@ The difficulty is that if you attempt to do this:
 {
     "type": "object",
     "allOf": [
-        {"$ref": "#/definitions/foo"},
-        {"$ref": "#/definitions/bar"}
+        { "$ref": "#/definitions/foo" },
+        { "$ref": "#/definitions/bar" }
     ],
     "definitions": {
         "foo": {
             "properties": {
-                "foo": {"type": "string"}
+                "foo": { "type": "string" }
             },
             "additionalProperties": false
         },
         "bar": {
             "properties": {
-                "bar": {"type": "number"}
+                "bar": { "type": "number" }
             },
             "additionalProperties": false
         }
@@ -100,30 +100,28 @@ A workaround is available with the new `"propertyNames"` keyword:
 {
     "type": "object",
     "allOf": [
-        {"$ref": "#/definitions/foo"},
-        {"$ref": "#/definitions/bar"}
+        { "$ref": "#/definitions/foo" },
+        { "$ref": "#/definitions/bar" }
     ],
-    "anyOf": [
-        {"$ref": "#/definitions/fooNames"},
-        {"$ref": "#/definitions/barNames"}
-    ],
+    "propertyNames": {
+        "anyOf": [
+            { "$ref": "#/definitions/fooNames" },
+            { "$ref": "#/definitions/barNames" }
+        ]
+    },
     "definitions": {
         "foo": {
             "properties": {
-                "foo": {"type": "string"}
+                "foo": { "type": "string" }
             }
         },
-        "fooNames": {
-            "propertyNames": {"enum": ["foo"]}
-        },
+        "fooNames": { "enum": ["foo"] },
         "bar": {
             "properties": {
-                "bar": {"type": "number"}
+                "bar": { "type": "number" }
             }
         },
-        "barNames": {
-            "propertyNames": {"enum": ["bar"]}
-        }
+        "barNames": { "enum": ["bar"] }
     }
 }
 ```

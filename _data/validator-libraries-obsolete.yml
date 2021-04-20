@@ -6,6 +6,11 @@
       notes:
       draft: [4]
       license: Ms-PL
+    - name: Manatee.Json
+      url: https://github.com/gregsdennis/Manatee.Json
+      date-draft: [2019-09]
+      draft: [7, 6, 4]
+      license: MIT
 - name: C++
   anchor-name: cpp
   implementations:
