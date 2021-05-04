@@ -19,6 +19,8 @@ Implementations are classified based on their functionality. When known, the lic
 
 If you have updates to this list, make a pull request on the [GitHub repo](https://github.com/json-schema-org/json-schema-org.github.io).
 
+Listing does not signify a recommendation or endorsement of any kind.
+
 Validators
 ----------
 
