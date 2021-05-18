@@ -130,7 +130,7 @@
     - name: json-kotlin-schema
       url: https://github.com/pwall567/json-kotlin-schema
       notes: Kotlin implementation of JSON Schema
-      date-draft: [2019-09]
+      date-draft:
       draft: [7]
       license: MIT
 - name: JavaScript

@@ -197,7 +197,7 @@ are the only keywords that changed.
 -   Java
     - [jsonCodeGen](https://github.com/schlothauer-wauer/jsoncodegen) (MIT) - Groovy based generation tasks from JSON schema. Already includes templates/generators for Java Beans, Swagger specification files and PlantUML diagrams.
 -   Kotlin
-    - [json-kotlin-schema-codegen](https://github.com/pwall567/json-kotlin-schema-codegen) (MIT) - Generates Kotlin data classes from JSON Schema.
+    - [json-kotlin-schema-codegen](https://github.com/pwall567/json-kotlin-schema-codegen) (MIT) - Generates Kotlin data classes, Java classes or TypeScript interfaces from JSON Schema.
 -   Online (web tool)
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 -   PHP
