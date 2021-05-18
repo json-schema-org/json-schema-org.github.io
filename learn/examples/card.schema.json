@@ -1,6 +1,6 @@
 {
   "$id": "https://example.com/card.schema.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "A representation of a person, company, organization, or place",
   "type": "object",
   "required": [ "familyName", "givenName" ],
@@ -61,8 +61,8 @@
         }
       }
     },
-    "adr": { "$ref": "http://example.com/address.schema.json" },
-    "geo": { "$ref": "http://example.com/geographical-location.schema.json" },
+    "adr": { "$ref": "https://example.com/address.schema.json" },
+    "geo": { "$ref": "https://example.com/geographical-location.schema.json" },
     "tz": {
       "type": "string"
     },

@@ -1,5 +1,5 @@
 ---
-redirect_to: "/draft/2019-09/json-schema-core.html"
+redirect_to: "/draft/2020-12/json-schema-core.html"
 title: "JSON Schema: A Media Type for Describing JSON Documents"
 ---
 

@@ -26,3 +26,7 @@
 [submodule "_includes/draft/2019-09"]
 	path = _includes/draft/2019-09
 	url = https://github.com/json-schema-org/json-schema-spec.git
+[submodule "_includes/draft/2020-12"]
+	path = _includes/draft/2020-12
+	url = https://github.com/json-schema-org/json-schema-spec.git
+	branch = 2020-12
