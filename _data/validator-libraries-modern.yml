@@ -141,6 +141,15 @@
       date-draft:
       draft: [7, 6, 4]
       license: Apache License 2.0
+    - name: json-kotlin-schema
+      url: https://github.com/pwall567/json-kotlin-schema
+      notes: |
+        Kotlin implementation of JSON Schema.
+        (Currently supports most of Draft 7; see the README for details.
+        Full compliance with Draft 7 and later drafts in progress.)
+      date-draft:
+      draft: [7]
+      license: MIT
 - name: JavaScript
   implementations:
     - name: ajv
