@@ -3,8 +3,6 @@ title: JSON Schema 2019-09 Release Notes
 layout: page
 ---
 
-_NOTE: This page is still being written, and is currently a fairly minimal listing of changes._
-
 For the vast majority of schema authors, we hope that these changes are minimally disruptive.
 
 The most likely to be frustrating is that `format` is no longer treated as a validation assertion _by default_ (although it is still possible for an application or user to configure a validator to treat it as one).  We decided this was acceptable because many schema authors are already extremely frustrated by its inconsistent behavior.
