@@ -184,3 +184,22 @@ Here's how you would covert a schema using `$recursiveRef` to use `$dynamicRef`.
 }</pre></td>
   </tr>
 </table>
+
+## Vocabulary Changes
+The `unevaluatedProperties` and `unevaluatedItems` keywords have been moved from
+the applicator vocabulary to their own vocabulary designated which is required
+in the default meta-schema. In Draft 2019-09, these keywords were expected to
+throw an error if not implemented. This was a special-case behavior of the
+applicator vocabulary. Moving the "unevaluated" keywords into their own
+vocabulary allows us to remove that special-case and also allowing for dialects
+to be constructed that don't require these keywords.
+
+The format vocabulary was broken into two separate vocabularies. The
+"format-annotation" vocabulary treats the `format` keyword as an annotation and
+the "format-assertion" vocabulary treats the `format` keyword as an assertion.
+The "format-annotation" vocabulary is used in the default meta-schema and is
+required. In Draft 2019-09, `format` should be evaluated as an annotation by
+default and implementations could provide configuration to change the behavior
+to evaluate `format` as an assertion. The separate vocabularies allow for
+removing the special configuration requirements and just use the vocabulary
+system to express which behavior should be used.
