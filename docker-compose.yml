@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  web:
+    image: docker.io/jekyll/jekyll
+    volumes:
+      - .:/srv/jekyll:Z
+      - ./vendor/bundle:/usr/local/bundle:Z
+    ports:
+      - "4000:4000"
+    command: jekyll serve --incremental --watch
