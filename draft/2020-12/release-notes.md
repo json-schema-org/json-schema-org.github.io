@@ -113,10 +113,10 @@ more types of problems. The name change reflects that these keywords are useful
 for more than just extending recursive schemas.
 
 A `$dynamicAnchor` can be thought of like a normal `$anchor` except that it can
-be referenced across schemas rather than just in the schema it was defined in.
-You can think of the old `$recursiveAnchor` as working the same way except that
-it only allowed you to create an anchor at the root of the schema and the anchor
-name is always empty.
+be referenced across schemas rather than just in the schema where it was
+defined. You can think of the old `$recursiveAnchor` as working the same way
+except that it only allowed you to create one anchor per schema, it had to be at
+the root of the schema, and the anchor name is always empty.
 
 `$dynamicRef` works the same as the old `$recursiveRef` except that fragments
 are no longer empty (`"$dynamicRef": "#my-anchor"` instead of `"$recursiveRef":
