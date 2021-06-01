@@ -185,6 +185,98 @@ Here's how you would covert a schema using `$recursiveRef` to use `$dynamicRef`.
   </tr>
 </table>
 
+## contains and unevaluatedItems
+In the previous draft, it wasn't specified how or if the `contains` keyword
+affects the `unevaluatedItems` keyword. This draft specifies that any item in an
+array that passes validation of the `contains` schema is considered "evaluated".
+
+This allows you to use `contains` to express some constraints more cleanly than
+you could in previous drafts. This example show how you can express an array
+that has some item matching one schema and everything else matching another
+schema.
+
+<table>
+  <tr>
+    <th>Draft 2019-09</th>
+    <th>Draft 2020-12</th>
+  </tr>
+  <tr>
+    <td><pre>{
+  "type": "array",
+  "contains": { "type": "string" },
+  "items": {
+    "anyOf": [
+      { "type": "string" },
+      { "type": "number" }
+    ]
+  }
+}</pre></td>
+    <td><pre>{
+  "type": "array",
+  "contains": { "type": "string" },
+  "unevaluatedItems": { "type": "number" }
+}
+
+
+
+
+
+</pre></td>
+  </tr>
+</table>
+
+Unfortunately, this change means you may not be able to use `contains` in some
+situations you did before. Consider this draft 2019-09 schema describing a tuple
+of two strings where one of the two must be three or more characters long and
+any additional items are not allowed.
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "array",
+  "items": [{ "type": "string" }, { "type": "string" }],
+  "contains": { "type": "string", "minLength": 3 },
+  "unevaluatedItems": false
+}
+```
+
+Given this schema, the instance `["a", "b", "ccc"]` will fail because `"ccc"` is
+considered unevaluated and fails the `unevaluatedItems` keyword. Now let's
+naively convert that example to a draft 2020-12 schema.
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "prefixItems": [{ "type": "string" }, { "type": "string" }],
+  "contains": { "type": "string", "minLength": 3 },
+  "unevaluatedItems": false
+}
+```
+
+Given this schema, the instance `["a", "b", "ccc"]` will pass because `"ccc"` is
+considered evaluated and doesn't not apply to the `unevaluatedItems` keyword. To
+fix this problem we can use the same boolean algebra transformation we used to
+use before we had the `contains` keyword.
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "prefixItems": [{ "type": "string" }, { "type": "string" }],
+  "not": {
+    "items": {
+      "not": { "type": "string", "minLength": 3 }
+    }
+  },
+  "unevaluatedItems": false
+}
+```
+
+Given this schema, the instance `["a", "b", "ccc"]` will fail because `"ccc"` is
+considered unevaluated and fails the `unevaluatedItems` keyword like it did in
+previous drafts.
+
 ## Vocabulary Changes
 The `unevaluatedProperties` and `unevaluatedItems` keywords have been moved from
 the applicator vocabulary to their own vocabulary designated which is required
