@@ -277,6 +277,162 @@ Given this schema, the instance `["a", "b", "ccc"]` will fail because `"ccc"` is
 considered unevaluated and fails the `unevaluatedItems` keyword like it did in
 previous drafts.
 
+## Embedded Schemas and Bundling
+In Draft 2019-09, the meaning of `$id` in a sub-schema changed from indicating a
+base URI change within the current schema to indicating an embedded schema
+independent of the parent schema. A schema that contains one or more embedded
+schemas is called a "Compound Schema Document". This draft introduces guidance
+on how bundlers should embedded schemas to create Compound Schema Documents.
+
+If you reference an external schema, that schema can declare it's own `$schema`
+and that may be different than the `$schema` of the referencing schema.
+Implementations need to be prepared to switch processing modes or throw an
+error if they don't support the `$schema` of the referenced schema. Embedded
+schemas work exactly the same way. They may declare a `$schema` that is not the
+same as the parent schema and implementations need to be prepared to handle the
+`$schema` change appropriately.
+
+A notable consequence of embedded schemas having a different `$schema` than its
+parent is that implementations can't validate Compound Schema Documents directly
+against the meta-schema. The Compound Schema Document needs to be decomposed and
+each Schema Resource needs to be validated individually against the appropriate
+meta-schema for that schema.
+
+This draft introduces official guidance on how to use embedded schemas to
+bundle schemas into a Compound Schema Document. The approach is designed to not
+have to modify schemas (other than adding to `$defs`) so that output results
+remain as similar as possible whether you are validating the bundled schema or
+following external references. Here's an example of a customer schema with
+external references that we want to bundle.
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12",
+  "$id": "https://example.com/schema/customer",
+
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "phone": { "$ref": "/schema/common#/$defs/phone" },
+    "address": { "$ref": "/schema/address" }
+  }
+}
+```
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12",
+  "$id": "https://example.com/schema/address",
+
+  "type": "object",
+  "properties": {
+    "address": { "type": "string" },
+    "city": { "type": "string" },
+    "postalCode": { "type": "/schema/common#/$defs/usaPostalCode" },
+    "state": { "type": "/$defs/states" }
+  },
+
+  "$defs": {
+    "states": {
+      "enum": [...]
+    }
+  }
+}
+```
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2019-09",
+  "$id": "https://example.com/schema/common",
+
+  "$defs": {
+    "phone": {
+      "type": "string",
+      "pattern": "^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+    },
+    "usaPostalCode": {
+      "type": "string",
+      "pattern": "^[0-9]{5}(?:-[0-9]{4})?$"
+    },
+    "unsignedInt": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}
+```
+
+To bundle these schemas, we simply add each of the referenced schemas as
+embedded schemas using `$defs`. Here's what the bundled schema would look like.
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12",
+  "$id": "https://example.com/schema/customer",
+
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "phone": { "$ref": "/schema/common#/$defs/phone" },
+    "address": { "$ref": "/schema/address" }
+  }
+
+  "$defs": {
+    "https://example.com/schema/address": {
+      "$id": "https://example.com/schema/address",
+
+      "type": "object",
+      "properties": {
+        "address": { "type": "string" },
+        "city": { "type": "string" },
+        "postalCode": { "type": "/schema/common#/$defs/usaPostalCode" },
+        "state": { "type": "#/$defs/states" }
+      },
+
+      "$defs": {
+        "states": {
+          "enum": [...]
+        }
+      }
+    },
+    "$id": "https://example.com/schema/common": {
+      "$schema": "https://json-schema.org/draft/2019-09",
+      "$id": "https://example.com/schema/common",
+
+      "$defs": {
+        "phone": {
+          "type": "string",
+          "pattern": "^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+        },
+        "usaPostalCode": {
+          "type": "string",
+          "pattern": "^[0-9]{5}(?:-[0-9]{4})?$"
+        },
+        "unsignedInt": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  }
+}
+```
+
+Here are a few things you might notice from this example.
+
+1. No `$ref`s were modified. Even local references are unchanged.
+2. `https://example.com/schema/common#/$defs/unsignedInt` got pulled in with the
+common schema even though it isn't used. It's allowed to trim out the extra
+definitions, but not necessary.
+3. `https://example.com/schema/address` doesn't declare a `$schema`. Because it
+uses the same `$schema` as `https://example.com/schema/customer`, it can skip
+that declaration and use the `$schema` from the schema it's embedded in.
+4. `https://example.com/schema/common` uses a different `$schema` than the
+document it's embedded in. That's allowed.
+5. Definitions from `https://example.com/schema/common` are used in both of the
+other schemas and only needs to be included once. It isn't necessary for
+bundlers to embed a schema inside another embedded schema.
+
 ## Vocabulary Changes
 The `unevaluatedProperties` and `unevaluatedItems` keywords have been moved from
 the applicator vocabulary to their own vocabulary designated which is required
