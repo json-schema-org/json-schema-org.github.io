@@ -2,6 +2,16 @@
 title: JSON Schema 2020-12 Release Notes
 layout: page
 ---
+The previous draft (2019-09) introduced a lot of new concepts including
+`$recursiveRef`/`$recursiveAnchor`, `unevaluatedProperties`/`unevaluatedItems`,
+vocabularies, and more. Since then, these new features have seen multiple
+implementations and usage in real schemas. This draft is mostly dedicated to
+changes related to applying the lessons we've learned about implementing and
+using these new features in the wild.
+
+This document attempts to put information most useful to schema authors toward
+the top and information for implementation authors toward the bottom.
+
 ## Changes to items and additionalItems
 The keywords used for defining arrays and tuples have been redesigned to help
 lower the learning curve for JSON Schema. Since the `items` keyword was used for
@@ -277,6 +287,18 @@ Given this schema, the instance `["a", "b", "ccc"]` will fail because `"ccc"` is
 considered unevaluated and fails the `unevaluatedItems` keyword like it did in
 previous drafts.
 
+## Regular Expressions
+Regular expressions are now required to support unicode characters. Previously,
+this was unspecified and implementations may or may not support this unicode in
+regular expressions.
+
+## Media Type Changes
+JSON Schema defines two media types, `application/schema+json` and
+`application/schema-instance+json`. This draft drops support for the `schema`
+media type parameter. It's caused a lot of confusion and disagreement. Since we
+haven't seen any evidence of anyone actually using it, it was decided to remove
+it for now.
+
 ## Embedded Schemas and Bundling
 In Draft 2019-09, the meaning of `$id` in a sub-schema changed from indicating a
 base URI change within the current schema to indicating an embedded schema
@@ -432,6 +454,11 @@ document it's embedded in. That's allowed.
 5. Definitions from `https://example.com/schema/common` are used in both of the
 other schemas and only needs to be included once. It isn't necessary for
 bundlers to embed a schema inside another embedded schema.
+
+## Annotations
+Implementations that collect annotations should now include annotations for
+unknown keywords in the "verbose" output format. The annotation value for an
+unknown keyword is the keyword's value.
 
 ## Vocabulary Changes
 The `unevaluatedProperties` and `unevaluatedItems` keywords have been moved from
