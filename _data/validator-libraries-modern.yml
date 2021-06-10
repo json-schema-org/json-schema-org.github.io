@@ -278,6 +278,10 @@
       date-draft: [2019-09, 2020-12]
       draft: [7, 6, 4]
       notes: Supports multiple schemas and multiple instances
+    - name: jschon.dev
+      url: https://jschon.dev/
+      date-draft: [2019-09, 2020-12]
+      draft:
     - name: JSON Schema Validator
       url: https://www.jsonschemavalidator.net/
       date-draft: [2019-09]
