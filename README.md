@@ -19,28 +19,17 @@ Labels are assigned based on [Sensible Github Labels](https://github.com/Releque
 ## Compile and run locally
 
 This site runs via github pages, with automatically building PR previews via netlify.
-If you wish to compile and run this site locally, you will need to have ruby installed.
 
-If you're not familiar with ruby, consider using `rvm` (https://rvm.io/).
-Once you have Ruby installed, follow these instructions while in the project directory
+This project uses git submodules, so you will need to run the following commands
+to fully clone the repo.
 
-> Instructions
->
->     1. Install the jekyll and bundler gems.
->
->     `gem install jekyll bundler`
->
->     2. Create a new Jekyll site at ./myblog.
->
->     ...
->
->     3. Build the site and make it available on a local server.
->
->     `bundle exec jekyll serve`
->
->     4. Browse to http://localhost:4000
+```bash
+git submodule init
+git submodule update
+```
 
-Adapted from https://jekyllrb.com/docs/
+You can run the site locally using `docker-compose up` and browse to
+http://localhost:4000
 
 ## License
 
