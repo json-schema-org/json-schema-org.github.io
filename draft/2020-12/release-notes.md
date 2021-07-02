@@ -306,7 +306,7 @@ independent of the parent schema. A schema that contains one or more embedded
 schemas is called a "Compound Schema Document". This draft introduces guidance
 on how bundlers should embedded schemas to create Compound Schema Documents.
 
-If you reference an external schema, that schema can declare it's own `$schema`
+If you reference an external schema, that schema can declare its own `$schema`
 and that may be different than the `$schema` of the referencing schema.
 Implementations need to be prepared to switch processing modes or throw an
 error if they don't support the `$schema` of the referenced schema. Embedded
@@ -417,7 +417,7 @@ embedded schemas using `$defs`. Here's what the bundled schema would look like.
         }
       }
     },
-    "$id": "https://example.com/schema/common": {
+    "https://example.com/schema/common": {
       "$schema": "https://json-schema.org/draft/2019-09",
       "$id": "https://example.com/schema/common",
 
@@ -462,7 +462,7 @@ unknown keyword is the keyword's value.
 
 ## Vocabulary Changes
 The `unevaluatedProperties` and `unevaluatedItems` keywords have been moved from
-the applicator vocabulary to their own vocabulary designated which is required
+the applicator vocabulary to their own designated vocabulary which is required
 in the default meta-schema. In Draft 2019-09, these keywords were expected to
 throw an error if not implemented. This was a special-case behavior of the
 applicator vocabulary. Moving the "unevaluated" keywords into their own
