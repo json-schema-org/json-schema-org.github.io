@@ -65,10 +65,19 @@ In the meantime, publication of Internet-Draft documents can be tracked through 
 * [Relative JSON Pointers](https://datatracker.ietf.org/doc/draft-bhutton-relative-json-pointer/)
 
 Internet-Drafts expire after six months, so our goal is to publish often enough to always have a set of unexpired drafts available.  There may be brief gaps as we wrap up each draft and finalize the text.
-
-The intention, particularly for vocabularies such as validation which have been widely implemented, is to remain as compatible as possible from draft to draft.  However, these are still drafts, and given a clear enough need validated with the user community, major changes can occur.
-
 </details>
+
+### Use of the _draft_ qualifier
+
+Releases of the JSON schema specification and meta schemas are qualified as _draft_ primarily for historical reasons stemming from the relationship of this specification to IETF.
+
+The JSON schema project recognizes, condones and advocates for the use of the JSON schema standard in production.
+
+Each release of the JSON schema is treated as a production release by the JSON schema project. All changes in each new release are made judiciously, with great care and thorough review with careful consideration of how the changes will impact existing users and implementations of the JSON schema specification.
+
+Similarly to most specifications, the JSON schema specification will continue to evolve, and not all releases will be backwards compatible. The intention, particularly for vocabularies such as validation which have been widely implemented, is to remain as compatible as possible from release to release. However, major changes can still occur given a clear enough need validated with the user community.
+
+At some point, the draft qualifier will be dropped, and this may indicate that the frequency of releases and amount of changes in each release will decrease, but it won't indicate that no new releases will be made, or that all future releases will be backwards compatible.
 
 ## Quickstart
 
