@@ -73,7 +73,7 @@ Releases of the JSON schema specification and meta schemas are qualified as _dra
 
 The JSON schema project recognizes, condones and advocates for the use of the JSON schema standard in production.
 
-Each release of the JSON schema is treated as a production release by the JSON schema project. All changes in each new release are made judiciously, with great care and thorough review with careful consideration of how the changes will impact existing users and implementations of the JSON schema specification.
+Each release of the JSON schema specification is treated as a production release by the JSON schema project. All changes in each new release are made judiciously, with great care and thorough review with careful consideration of how the changes will impact existing users and implementations of the JSON schema specification.
 
 Similarly to most specifications, the JSON schema specification will continue to evolve, and not all releases will be backwards compatible. The intention, particularly for vocabularies such as validation which have been widely implemented, is to remain as compatible as possible from release to release. However, major changes can still occur given a clear enough need validated with the user community.
 
