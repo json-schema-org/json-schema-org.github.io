@@ -72,7 +72,7 @@ Internet-Drafts expire after six months, so our goal is to publish often enough 
 Releases of the JSON schema specification and meta schemas use the _draft_ designation primarily for historical reasons stemming from the relationship of this specification to IETF ([explained here](https://json-schema.org/specification-links.html#understanding-draft-names-and-numbers)).
 The use of this designation is under review but will continue until this review process completes to avoid changing the designation style multiple times.
 
-The JSON schema project recognizes, condones and advocates for the use of the JSON schema standard in production.
+The JSON schema project recognizes, condones, and advocates for the use of the JSON schema standard in production.
 
 Each release of the JSON schema specification is treated as a production release by the JSON schema project. All changes in each new release are made judiciously, with great care, thorough review and careful consideration of how the changes will impact existing users and implementations of the JSON schema specification.
 
