@@ -253,6 +253,7 @@ _None currently support draft-06 or later._
 
 -   [Altova XMLSpy 2019r3](https://www.altova.com/xmlspy-xml-editor#json_schema) - *Graphical JSON Schema editor for draft-06 and draft-7, as well as validation of JSON files based on JSON Schema*
 -   [Dashjoin JSON Schema editor](https://dashjoin.github.io/#/schema) - *Graphical online JSON Schema editor for draft-06 (minus oneOf, anyOf, allOf, not). The generated schema can be tested immediately via a form that is driven by it.*
+-   [FModel](https:fset.app) - JSON Schema editor, keyboard driven UX. Thinking in terms of algebraic data type, inline documentation, and export draft/2020-12 json schema.
 -   [JSONBuddy](https://www.json-buddy.com/) - *Text and grid-style JSON editor and validator with JSON schema analyzer, context sensitive entry-helpers and sample data generation based on JSON schema. Support for draft-4, draft-6, draft-7 and 2019-09.*
 -   [JSONEditor Online](https://jsoneditoronline.org/) - *View, edit, format, and validate JSON online* Support draft-4, draft-6, and draft-7.
 -   [Liquid JSON Schema Editor](https://www.liquid-technologies.com/json-schema-editor) - *Graphical JSON Schema editor for draft-04, draft-06, draft-07 and 2019-09, with split source code and grphical editing. Includes validation of JSON files based on JSON Schema, JSON Sample Generator and JSON Schema Documentation Generator.*
