@@ -288,9 +288,9 @@ considered unevaluated and fails the `unevaluatedItems` keyword like it did in
 previous drafts.
 
 ## Regular Expressions
-Regular expressions are now required to support unicode characters. Previously,
-this was unspecified and implementations may or may not support this unicode in
-regular expressions.
+Regular expressions are now expected (but not strictly required) to support
+unicode characters. Previously, this was unspecified and implementations may or
+may not support this unicode in regular expressions.
 
 ## Media Type Changes
 JSON Schema defines two media types, `application/schema+json` and
