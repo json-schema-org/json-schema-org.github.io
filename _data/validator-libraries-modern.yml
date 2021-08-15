@@ -85,9 +85,10 @@
     - name: santhosh-tekuri/jsonschema
       url: https://github.com/santhosh-tekuri/jsonschema
       notes:
-      date-draft:
+      date-draft: [2019-09]
       draft: [7, 6, 4]
       license: BSD-3-Clause
+      notes: includes custom keywords, rich error returns
     - name: qri-io/jsonschema
       url: https://github.com/qri-io/jsonschema
       date-draft: [2019-09]
