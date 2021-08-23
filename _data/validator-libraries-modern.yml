@@ -55,6 +55,13 @@
       date-draft:
       draft: [7]
       license: Apache License, Version 2.0
+- name: COM/ActiveX
+  implementations:
+    - name: JSON Essentials for COM/ActiveX
+      url: https://pinery.systems/json-essentials-com/index.html
+      draft: [7]
+      license: proprietary
+      notes: Language independent, includes JSON DOM parser, REST ready, 4 licensing options for free and business uses. For Windows platform only.
 - name: Common Lisp
   implementations:
     - name: json-schema
