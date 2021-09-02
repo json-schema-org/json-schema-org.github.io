@@ -84,10 +84,10 @@
       license: "Apache 2.0"
     - name: santhosh-tekuri/jsonschema
       url: https://github.com/santhosh-tekuri/jsonschema
-      notes:
-      date-draft:
+      notes: includes custom keywords, output formats
+      date-draft: [2020-12, 2019-09]
       draft: [7, 6, 4]
-      license: BSD-3-Clause
+      license: Apache License 2.0
     - name: qri-io/jsonschema
       url: https://github.com/qri-io/jsonschema
       date-draft: [2019-09]
