@@ -307,11 +307,9 @@ For links to the somewhat more readably formatted versions on this web site, and
 - Output examples
     - [JSON Schema verbose output example](draft/2020-12/output/verbose-example)
 
-### 2019-09 (formerly known as Draft 8)
+### Draft 2019-09 (formerly known as Draft 8)
 
 _**NOTE:** All meta-schema URIs now use `https://`.  While currently also available over plain HTTP due to the limitations of GitHub pages and the need to keep prior drafts available over HTTP, only the HTTPS URIs should be used._
-
-### Draft 2019-09
 
 - Specifications
     - Core: [draft-handrews-json-schema-02](https://tools.ietf.org/html/draft-handrews-json-schema-02) ([changes](https://tools.ietf.org/html/draft-handrews-json-schema-02#appendix-G))

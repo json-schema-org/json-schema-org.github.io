@@ -19,6 +19,8 @@ Implementations are classified based on their functionality. When known, the lic
 
 If you have updates to this list, make a pull request on the [GitHub repo](https://github.com/json-schema-org/json-schema-org.github.io).
 
+Listing does not signify a recommendation or endorsement of any kind.
+
 Validators
 ----------
 
@@ -130,6 +132,7 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
     -   [luposlip/json-schema](https://github.com/luposlip/json-schema) (Apache 2.0) - infer JSON Schema from Clojure data
 -   Online (web tool)
     -   [jsonschema.net](https://www.jsonschema.net/) - generates schemas from example data
+    -   [Liquid Online Tools](https://www.liquid-technologies.com/online-json-to-schema-converter) - infer JSON Schema from sample JSON data
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 
 Generators from schemas
@@ -149,12 +152,15 @@ are the only keywords that changed.
 
 #### Code generation
 
--   Delphi
-    - [DJsonSchema](https://github.com/schlothauer-wauer/DJsonSchema) (MIT) - JSON Schema reader and code generator for Delphi.
 -   Elm
     -  [json-schema-to-elm](https://github.com/dragonwasrobot/json-schema-to-elm) - generates Elm types, JSON decoders+encoders, and fuzz tests from one or more JSON Schema files, using [dragonwasrobot/json_schema](https://github.com/dragonwasrobot/json_schema) *supports Draft 7*
 -   Java
     - [jsonCodeGen](https://github.com/schlothauer-wauer/jsoncodegen) (MIT) - Groovy based generation tasks from JSON schema. Already includes templates/generators for Java Beans, Swagger specification files and PlantUML diagrams.
+    - [jsonschema2pojo](https://github.com/joelittlejohn/jsonschema2pojo) (Apache 2.0) - generates Java types from JSON Schema (or example JSON) and can annotate those types for data-binding with Jackson 2.x or Gson. *draft-07*
+    - [jsonschematypes](https://github.com/jimblackler/jsonschematypes) (Apache 2.0) - Java library to generate Java or TypeScript classes from standard JSON Schemas. *JSON Schema 2019-09, draft-07, -06, -04, -03*
+    - [jsongenerator](https://github.com/jimblackler/jsonschematypes/tree/master/codegen) *JSON Schema 2019-09, draft-07, -06, -04, -03* (Apache-2.0)
+-   Kotlin
+    - [json-kotlin-schema-codegen](https://github.com/pwall567/json-kotlin-schema-codegen) (MIT) - Generates Kotlin data classes, Java classes or TypeScript interfaces from JSON Schema.
 -   Online (web tool)
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 -   PHP
@@ -164,6 +170,8 @@ are the only keywords that changed.
     - [statham](https://github.com/jacksmith15/statham-schema) (MIT) - generate type-annotated models from JSON Schema documents.
 -   Rust
     - [schemafy](https://github.com/Marwes/schemafy/) - generates Rust types and serialization code from a JSON schema. *supports Draft 4*
+-   TypeScript
+    - [jsongenerator](https://github.com/jimblackler/jsonschematypes/tree/master/codegen) *JSON Schema 2019-09, draft-07, -06, -04, -03* (Apache-2.0)
 
 #### Web UI generation
 
@@ -183,13 +191,18 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [JSONForms (jsonforms.io)](https://jsonforms.io/) (EclipseSource) (MIT)
     -   [Liform-react](https://github.com/Limenius/liform-react) (MIT)
     -   [React JSON Schema Form (mozilla)](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
+    -   [React Json Schema Form (Mui)](https://github.com/vip-git/react-jsonschema-form-material-ui) (MIT)
     -   [React Schema Form (networknt)](https://github.com/networknt/react-schema-form) (MIT)
+    -   [Restspace Schema Form](https://github.com/restspace/schema-form) (MIT)
     -   [uniforms (Vazco)](https://github.com/vazco/uniforms) (MIT)
+    -   [UI Schema for React](https://github.com/ui-schema/ui-schema) (MIT) *2019-09 / draft-08, -07, -06, -04 (incompatible `type=integer`)*
 
 #### Data from schemas
 
 -   Python
     -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  takes any schema, even with complex and interacting constraints, and returns a [Hypothesis](https://hypothesis.works/) strategy which can generate valid documents for testing.
+-   Java
+    -   [jsongenerator](https://github.com/jimblackler/jsongenerator) *JSON Schema 2019-09, draft-07, -06, -04, -03* (Apache-2.0)
 
 Utilities
 ---------
@@ -240,8 +253,9 @@ _None currently support draft-06 or later._
 
 -   [Altova XMLSpy 2019r3](https://www.altova.com/xmlspy-xml-editor#json_schema) - *Graphical JSON Schema editor for draft-06 and draft-7, as well as validation of JSON files based on JSON Schema*
 -   [Dashjoin JSON Schema editor](https://dashjoin.github.io/#/schema) - *Graphical online JSON Schema editor for draft-06 (minus oneOf, anyOf, allOf, not). The generated schema can be tested immediately via a form that is driven by it.*
--   [JSONBuddy](https://www.json-buddy.com/) - *Text and grid-style JSON editor and validator with context sensitive entry-helpers and sample data generation based on JSON schema. Support for draft-4, draft-6 and draft-7.*
+-   [JSONBuddy](https://www.json-buddy.com/) - *Text and grid-style JSON editor and validator with JSON schema analyzer, context sensitive entry-helpers and sample data generation based on JSON schema. Support for draft-4, draft-6, draft-7 and 2019-09.*
 -   [JSONEditor Online](https://jsoneditoronline.org/) - *View, edit, format, and validate JSON online* Support draft-4, draft-6, and draft-7.
+-   [Liquid JSON Schema Editor](https://www.liquid-technologies.com/json-schema-editor) - *Graphical JSON Schema editor for draft-04, draft-06, draft-07 and 2019-09, with split source code and grphical editing. Includes validation of JSON files based on JSON Schema, JSON Sample Generator and JSON Schema Documentation Generator.*
 -   [Oxygen JSON Editor](https://www.oxygenxml.com/xml_editor/json.html) - *JSON editor with a variety of editing features and helper views. Support for validation and editing JSON Schema draft-4, draft-6, and draft-7. Validation and editing of JSON files based on JSON Schema.*
 -   [Stoplight Studio](https://stoplight.io/) - *JSON Schema IDE (text-based and GUI) with support for JSON/YAML linting, which can also be based on JSON Schema rules via Spectral. Support for draft-4, draft-6 and draft-7.*
 -   [Visual Studio Code](https://code.visualstudio.com/) - *Schema driven code completion, hovers and validation for editing JSON files (including schemas)*

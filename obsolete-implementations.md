@@ -77,12 +77,9 @@ Validators
 <!-- -->
 
 -   JavaScript
-    -   [json-schema-benchmark](https://github.com/ebdrup/json-schema-benchmark) - an independent benchmark for Node.js JSON-schema validators based on JSON-Schema Test Suite (MIT)
     -   [z-schema validator benchmark](https://github.com/zaggino/z-schema#benchmarks) - compares performance in the individual tests from JSON-Schema Test Suite (MIT)
     -   [JSCK validator benchmark](https://github.com/pandastrike/jsck#benchmarks) - shows performance for JSON-schemas of different complexity (MIT)
 
--   PHP
-    -   [php-json-schema-bench](https://github.com/swaggest/php-json-schema-bench) - comparative benchmark for JSON-schema PHP validators using JSON-Schema Test Suite and z-schema/JSCK (MIT)
 
 Hyper-Schema
 ---------------------
@@ -149,8 +146,6 @@ Data Parsing and Code Generation
 
 -   Delphi
     - [DJsonSchema](https://github.com/schlothauer-wauer/DJsonSchema) (MIT) - JSON Schema reader and code generator for Delphi.
--   Groovy
-    - [jsonCodeGen](https://github.com/schlothauer-wauer/jsoncodegen) (MIT) - Groovy based generation tasks from JSON schema. Already includes generators for Java Beans, Swagger specification files and PlantUML diagrams.
 -   Haskell
     -   [aeson-schema](https://github.com/Fuuzetsu/aeson-schema) (MIT) - generates code for a parser
 -   Ruby
@@ -171,19 +166,11 @@ _TODO: Sort by draft support._
 Various levels of support for UI generation primarily from the validation vocabulary or combined with UI specific definition.
 
 -   JavaScript
-    -   [Alpaca Forms](http://www.alpacajs.org/) (ASL 2.0)
-    -   [Angular Schema Form](https://github.com/json-schema-form/angular-schema-form) (MIT)
-    -   [Angular2 Schema Form](https://github.com/makinacorpus/angular2-schema-form) *unrelated to Angular Schema Form* (MIT)
     -   [JSON Editor](https://github.com/jdorn/json-editor) (MIT)
-    -   [JSON Form](https://github.com/joshfire/jsonform) (joshfire) (MIT)
-    -   [Json Forms](https://github.com/brutusin/json-forms) (brutusin) (MIT)
     -   [JSONForms](http://jsonforms.io) (EclipseSource) (MIT)
     -   [Jsonary](http://jsonary.com/) (MIT)
-    -   [Liform-react](https://github.com/Limenius/liform-react) (MIT)
     -   [Metawidget](http://metawidget.org/) (LGPL)
     -   [pure-form webcomponent](https://github.com/john-doherty/pure-form) (MIT)
-    -   [React JSON Schema Form](https://github.com/mozilla-services/react-jsonschema-form) (Apache 2)
-    -   [React Schema Form](https://github.com/networknt/react-schema-form) (MIT)
 
 Editors
 -------
@@ -216,5 +203,3 @@ Other
 -   JavaScript
     -   [Dojo](http://www.dojotoolkit.org/) (AFL or BSD) - supports some aspects of JSON Schema
     -   [JSON Schema Random](https://github.com/andreineculau/json-schema-random) (Apache 2.0)
-    -   [json-schema-merge-allof](https://github.com/mokkabonna/json-schema-merge-allof) (MIT)
-    -   [json-schema-compare](https://github.com/mokkabonna/json-schema-compare) (MIT)

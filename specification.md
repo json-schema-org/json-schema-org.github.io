@@ -67,8 +67,8 @@ Migrating from older drafts
 The release notes discuss the changes impacting users and implementers:
 
 - JSON Schema Core and Validation
-    - 2019-09 to 2020-12 (Work in progress - 2021-02-01)
-    - [Draft-07 to 2019-09](draft/2019-09/release-notes.html)
+    - [Draft 2019-09 to Draft 2020-12](draft/2020-12/release-notes.html)
+    - [Draft-07 to Draft 2019-09](draft/2019-09/release-notes.html)
     - [Draft-06 to Draft-07](draft-07/json-schema-release-notes.html)
     - [Draft-04 to Draft-06](draft-06/json-schema-release-notes.html)
 - JSON Hyper-Schema

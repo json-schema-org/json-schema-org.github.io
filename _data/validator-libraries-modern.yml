@@ -37,6 +37,12 @@
       date-draft:
       draft: [7]
       license: BSD-2-Clause
+    - name: jsoncons
+      url: https://github.com/danielaparker/jsoncons/blob/master/doc/ref/jsonschema/jsonschema.md
+      notes: Header-only library
+      date-draft:
+      draft: [7]
+      license: Boost Software License 1.0
 - name: Clojure
   implementations:
     - name: jinx
@@ -121,6 +127,12 @@
       date-draft:
       draft: [7, 6, 4]
       license: Apache License 2.0
+    - name: jsonschemafriend
+      url: https://github.com/jimblackler/jsonschemafriend
+      notes:
+      date-draft: [2019-09]
+      draft: [7, 6, 4, 3]
+      license: Apache License 2.0
 - name: Kotlin
   implementations:
     - name: Medeia-validator
@@ -129,12 +141,21 @@
       date-draft:
       draft: [7, 6, 4]
       license: Apache License 2.0
+    - name: json-kotlin-schema
+      url: https://github.com/pwall567/json-kotlin-schema
+      notes: |
+        Kotlin implementation of JSON Schema.
+        (Currently supports most of Draft 7; see the README for details.
+        Full compliance with Draft 7 and later drafts in progress.)
+      date-draft:
+      draft: [7]
+      license: MIT
 - name: JavaScript
   implementations:
     - name: ajv
       url: https://github.com/ajv-validator/ajv
       notes: "for Node.js and browsers - supports [user-defined keywords](https://github.com/ajv-validator/ajv/blob/master/docs/keywords.md) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51)"
-      date-draft: [2019-09]
+      date-draft: [2019-09, 2020-12]
       draft: [7, 6, 4]
       license: MIT
     - name: djv
@@ -146,7 +167,7 @@
     - name: Hyperjump JSV
       url: https://github.com/jdesrosiers/json-schema
       notes: "Built for Node.js and browsers. Includes support for custom vocabularies."
-      date-draft: [2019-09]
+      date-draft: [2019-09, 2020-12]
       draft: [7, 6, 4]
       license: MIT
     - name: vue-vuelidate-jsonschema
@@ -162,17 +183,22 @@
       license: MIT
 - name: Perl
   implementations:
+    - name: JSON::Schema::Modern
+      url: https://github.com/karenetheridge/JSON-Schema-Modern
+      notes:
+      date-draft: [7, 2019-09, 2020-12]
+      license: "GNU General Public License, Version 1 + The Artistic License 1.0"
+    - name: JSON::Schema::Tiny
+      url: https://github.com/karenetheridge/JSON-Schema-Tiny
+      notes:
+      date-draft: [7, 2019-09, 2020-12]
+      license: "GNU General Public License, Version 1 + The Artistic License 1.0"
     - name: JSON::Validator
       url: https://github.com/mojolicious/json-validator
       notes:
       date-draft:
       draft: [7, 6, 4]
       license: "The Artistic License 2.0 (GPL Compatible)"
-    - name: JSON::Schema::Draft201909
-      url: https://github.com/karenetheridge/JSON-Schema-Draft201909
-      notes:
-      date-draft: [2019-09]
-      license: "GNU General Public License, Version 1 + The Artistic License 1.0"
 - name: PHP
   implementations:
     - name: Opis Json Schema
@@ -189,6 +215,12 @@
       license: "MIT"
 - name: Python
   implementations:
+    - name: jschon
+      url: https://github.com/marksparkza/jschon
+      notes:
+      date-draft: [2019-09, 2020-12]
+      draft:
+      license: MIT
     - name: jsonschema
       url: https://github.com/Julian/jsonschema
       notes:
@@ -202,7 +234,7 @@
       draft: [7, 6, 4]
       license: BSD-3-Clause
     - name: jsonschema-rs
-      url: https://github.com/Stranger6667/jsonschema-rs/python
+      url: https://github.com/Stranger6667/jsonschema-rs/tree/master/bindings/python
       notes: Python bindings to Rust's jsonschema crate
       date-draft:
       draft: [7, 6, 4]
@@ -256,6 +288,10 @@
       date-draft: [2019-09]
       draft: [7, 6, 4]
       notes: Powered by ajv; client-side validation
+    - name: jschon.dev
+      url: https://jschon.dev/
+      date-draft: [2020-12, 2019-09]
+      draft:
     - name: JSON Schema Validator
       url: https://www.jsonschemavalidator.net/
       date-draft: [2019-09]
