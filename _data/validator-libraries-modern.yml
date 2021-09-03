@@ -275,17 +275,27 @@
   implementations:
     - name: Hyperjump JSV
       url: https://json-schema.hyperjump.io
-      date-draft: [2019-09, 2020-12]
+      date-draft: [2020-12, 2019-09]
       draft: [7, 6, 4]
-      notes: Supports multiple schemas and multiple instances
+      notes: Supports multiple schemas and multiple instances; client-side validation
+    - name: json-everything
+      url: https://json-everything.net
+      date-draft: [2020-12, 2019-09]
+      draft: [7, 6]
+      notes: Powered by JsonSchema.Net; server-side validation
+    - name: jsonschema.dev
+      url: https://jsonschema.dev
+      draft: [7]
+      notes: Powered by ajv; client-side validation
     - name: jschon.dev
       url: https://jschon.dev/
-      date-draft: [2019-09, 2020-12]
+      date-draft: [2020-12, 2019-09]
       draft:
     - name: JSON Schema Validator
       url: https://www.jsonschemavalidator.net/
       date-draft: [2019-09]
       draft: [7, 6, 4, 3]
+      notes: Powered by JSON.Net; server-side validation
     - name: JSON Schema Lint
       url: http://jsonschemalint.com/
       date-draft:
