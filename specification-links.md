@@ -293,7 +293,7 @@ For links to the somewhat more readably formatted versions on this web site, and
     - Relative JSON Pointer: [draft-bhutton-relative-json-pointer-00](https://tools.ietf.org/html/draft-bhutton-relative-json-pointer-00) ([changes](https://tools.ietf.org/html/draft-bhutton-relative-json-pointer-00#appendix-A))
 - General use meta-schemas
     - [JSON Schema meta-schema](draft/2020-12/schema)
-- Individual vocablary meta-schemas
+- Individual vocabulary meta-schemas
   - [Core Vocabulary meta-schema](draft/2020-12/meta/core)
   - [Applicator Vocabulary meta-schema](draft/2020-12/meta/applicator)
   - [Validation Vocabulary meta-schema](draft/2020-12/meta/validation)
@@ -320,7 +320,7 @@ _**NOTE:** All meta-schema URIs now use `https://`.  While currently also availa
     - [JSON Schema meta-schema](https://json-schema.org/draft/2019-09/schema)
     - [JSON Hyper-Schema meta-schema](https://json-schema.org/draft/2019-09/hyper-schema)
     - [JSON Hyper-Schema Link Description Object meta-schema](https://json-schema.org/draft/2019-09/links)
-- Individual vocablary meta-schemas
+- Individual vocabulary meta-schemas
     - [Core Vocabulary meta-schema](https://json-schema.org/draft/2019-09/meta/core)
     - [Applicator Vocabulary meta-schema](https://json-schema.org/draft/2019-09/meta/applicator)
     - [Validation Vocabulary meta-schema](https://json-schema.org/draft/2019-09/meta/validation)
