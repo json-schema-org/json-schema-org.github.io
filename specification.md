@@ -42,6 +42,7 @@ Please note, additional vocabulary specific schema files are needed to fully con
 
 |--------------------------------------------------------------|------------------------------------------------------------|
 | [Core/Validation Dialect meta-schema](draft/2020-12/schema)  | Used for schemas written for pure validation.              |
+| [Hyper-Schema Dialect meta-schema](draft/2020-12/hyper-schema) | Used for schemas written for validation (2020-12) and hyper-linking (2019-09).|
 | [Recommended Output meta-schema](draft/2020-12/output/schema)| Recommended output structure of the application process.   |
 
 ## Single-vocabulary meta-schemas
