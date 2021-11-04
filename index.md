@@ -20,21 +20,48 @@ permalink: /
 
 </div>
 
-## New to JSON Schema?
+## What now?
 
-Learning a new specification can be daunting.
+Learn, Get help, Shape the Community, Chat, with the JSON Schema team and Community!
 
-You should read our [getting started guide](/learn/getting-started-step-by-step)!
+<div class="wrapper text-center buttons">
+    <a class="button border button-center" href="/learn/getting-started-step-by-step">👋 Getting Started</a>
+    <a class="button border button-center" href="/slack" target="_blank"><img class="small-svg-logo" src="/assets/logo-slack.svg" height="1.3em" width="1.3em"> Open JSON Schema Slack</a>
+    <a class="button border button-center" href="https://github.com/json-schema-org/community/discussions" target="_blank">💬 Community Discussions</a>
+</div>
 
-You can also see our other [learning resources](/learn).
+## Regular Activities
 
-### Got questions?
+We hold weekly Office Hours and twice monthly Open Community Working Meetings.
+
+<div class="wrapper text-center buttons">
+    <a class="button border button-center" href="https://github.com/json-schema-org/community/discussions/34" target="_blank">🧑‍💻 Office Hours</a>
+    <a class="button border button-center" href="https://github.com/json-schema-org/community/discussions/35" target="_blank">👷 Open Community Working Meetings</a>
+</div>
+
+Office Hours are every Tuesday at 15:00 UTC.
+
+Open Community Working Meetings follow two patterns:
+- First Friday of the month at 20:00 UTC.
+- Third Friday of the month at 15:00 UTC.
+
+## Need more?
+
+We have our other [learning resources](/learn), including the [Understanding JSON Schema documentation](/understanding-json-schema).
+
+## About Our Community
+
+We have an active and growing community. All are welcome to be part of our community, help shape it, or simply observe.
+
+We want keep our community welcoming and inclusive, so please read our [JSON Schema Organizational Code of Conduct](https://github.com/json-schema-org/.github/blob/main/CODE_OF_CONDUCT.md). (This is a combination of the Contributor Covenant and IETF BCP 54.)
 
 The JSON Schema team and community are here to help!
 
-At any point, feel free to join our [Slack server](/slack).
+At any point, feel free to join our Slack server. [Slack server](/slack).
 
-We also monitor the `jsonschema` tag on StackOverflow.
+Our Slack server has limited history, so we also use [GitHub Discussions](https://github.com/json-schema-org/community/discussions).
+
+We monitor the `jsonschema` tag on StackOverflow.
 
 ## Project Status
 
@@ -46,7 +73,6 @@ We are using dates for meta-schemas, which are what implementations should use t
 so we will usually refer to `2020-12` (without the word "draft") on this web site.
 
 See the [Specification page](specification.html) for details about naming and numbering.
-
 
 ### The Path to Standardization
 
@@ -107,7 +133,7 @@ This allows the team to focus the little time they do donate on JSON Schema core
 
 We may revisit JSON Hyper-Schema at a later date.
 
-## More
+## More Links
 
 Interested? Check out:
 
