@@ -65,7 +65,13 @@ We monitor the `jsonschema` tag on StackOverflow.
 
 ## Project Status
 
-2021-02-01: Draft 2020-12 has been published!
+We have a twice yearly release cycle for the specification.
+
+We are currently in the "patch release" cycle which is tracked by [Milestone 9](https://github.com/json-schema-org/json-schema-spec/milestone/9).
+
+One release includes new features ("feature release"), while the other release includes non-controversial clarifications and corrections that do not change compliance requirements ("patch release"). These should be spaced roughly 6 months apart.
+
+Draft 2020-12 is the current latest release.
 
 The IETF document IDs are of the form `draft-bhutton-*-00`.
 
