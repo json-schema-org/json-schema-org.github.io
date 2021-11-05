@@ -206,6 +206,12 @@
       date-draft:
       draft: [7, 6, 4]
       license: "The Artistic License 2.0 (GPL Compatible)"
+    - name: JSONSchema::Validator
+      url: https://github.com/skbkontur/perl-jsonschema-validator
+      notes:
+      date-draft:
+      draft: [7, 6, 4]
+      license: MIT
 - name: PHP
   implementations:
     - name: Opis Json Schema
