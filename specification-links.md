@@ -294,6 +294,7 @@ For links to the somewhat more readably formatted versions on this web site, and
 - General use meta-schemas
     - [JSON Schema meta-schema](draft/2020-12/schema)
     - [JSON Hyper-Schema meta-schema](draft/2020-12/hyper-schema) (2019-09 Hyper-Schema with 2020-12 Validation)
+    - [JSON Hyper-Schema Link Description Object meta-schema](draft/2020-12/links)
 - Individual vocabulary meta-schemas
   - [Core Vocabulary meta-schema](draft/2020-12/meta/core)
   - [Applicator Vocabulary meta-schema](draft/2020-12/meta/applicator)
