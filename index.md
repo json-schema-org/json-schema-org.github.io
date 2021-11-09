@@ -57,7 +57,7 @@ We want keep our community welcoming and inclusive, so please read our [JSON Sch
 
 The JSON Schema team and community are here to help!
 
-At any point, feel free to join our Slack server. [Slack server](/slack).
+At any point, feel free to join our [Slack server](/slack).
 
 Our Slack server has limited history, so we also use [GitHub Discussions](https://github.com/json-schema-org/community/discussions).
 
