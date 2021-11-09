@@ -53,7 +53,7 @@ We have our other [learning resources](/learn), including the [Understanding JSO
 
 We have an active and growing community. All are welcome to be part of our community, help shape it, or simply observe.
 
-We want keep our community welcoming and inclusive, so please read our [JSON Schema Organizational Code of Conduct](https://github.com/json-schema-org/.github/blob/main/CODE_OF_CONDUCT.md). (This is a combination of the Contributor Covenant and IETF BCP 54.)
+We want to keep our community welcoming and inclusive, so please read our [JSON Schema Organizational Code of Conduct](https://github.com/json-schema-org/.github/blob/main/CODE_OF_CONDUCT.md). (This is a combination of the Contributor Covenant and IETF BCP 54.)
 
 The JSON Schema team and community are here to help!
 
