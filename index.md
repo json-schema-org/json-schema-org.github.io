@@ -5,8 +5,11 @@ permalink: /
 ---
 
 
-**JSON Schema** is a vocabulary that allows you to **annotate** and **validate** JSON documents.
+**JSON Schema** enables the confident and reliable use of the JSON data format.
 
+## Mission
+
+Our mission is to enable the definition of interoperable contracts for JSON data in the form of schemas, using constraints based validation rules, while enabling and supporting use cases beyond validation.
 
 ## Benefits
 
