@@ -5,7 +5,7 @@ permalink: /
 ---
 
 
-**JSON Schema** enables the confident and reliable use of the JSON data format.
+**JSON Schema** is a vocabulary that allows you to **annotate** and **validate** JSON documents. It enables the confident and reliable use of the JSON data format.
 
 ## Mission
 
