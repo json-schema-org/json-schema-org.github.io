@@ -129,7 +129,7 @@ Schema Generators
 -   TypeScript
     -   [Typson](https://github.com/lbovet/typson) (Apache 2.0)
 -   Visual Studio
-    -   [JSON Schema Generator](http://visualstudiogallery.msdn.microsoft.com/b4515ef8-a518-41ca-b48c-bb1fd4e6faf7) - free extension
+    -   [JSON Schema Generator](https://visualstudiogallery.msdn.microsoft.com/b4515ef8-a518-41ca-b48c-bb1fd4e6faf7) - free extension
 -   Sparx Enterprise Architect
     -   [API-Add-In](https://github.com/bayeslife/api-add-in) - Sparx EA extension for exporting JSON Schema from UML models
 
@@ -167,9 +167,9 @@ Various levels of support for UI generation primarily from the validation vocabu
 
 -   JavaScript
     -   [JSON Editor](https://github.com/jdorn/json-editor) (MIT)
-    -   [JSONForms](http://jsonforms.io) (EclipseSource) (MIT)
-    -   [Jsonary](http://jsonary.com/) (MIT)
-    -   [Metawidget](http://metawidget.org/) (LGPL)
+    -   [JSONForms](https://jsonforms.io) (EclipseSource) (MIT)
+    -   [Jsonary](https://jsonary.com/) (MIT)
+    -   [Metawidget](https://metawidget.org/) (LGPL)
     -   [pure-form webcomponent](https://github.com/john-doherty/pure-form) (MIT)
 
 Editors
@@ -201,5 +201,5 @@ Other
 -----
 
 -   JavaScript
-    -   [Dojo](http://www.dojotoolkit.org/) (AFL or BSD) - supports some aspects of JSON Schema
+    -   [Dojo](https://www.dojotoolkit.org/) (AFL or BSD) - supports some aspects of JSON Schema
     -   [JSON Schema Random](https://github.com/andreineculau/json-schema-random) (Apache 2.0)

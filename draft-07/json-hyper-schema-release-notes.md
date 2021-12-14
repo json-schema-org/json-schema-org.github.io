@@ -50,7 +50,7 @@ for information related to draft-05.
 ### Migrating from draft-04
 
 In the ideal draft-07 world, links and
-[operations](http://json-schema.org/draft-07/json-schema-hypermedia.html#rfc.section.3.1)
+[operations](https://json-schema.org/draft-07/json-schema-hypermedia.html#rfc.section.3.1)
 are not the same concept.  Using terminology borrowed from
 [OpenAPI's Operation Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#operationObject), HTTP methods are operations, and each
 link (as described by a single LDO) can support multiple operations.

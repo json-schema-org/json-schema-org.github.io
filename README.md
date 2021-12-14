@@ -1,6 +1,6 @@
 # JSON Schema Website
 
-This is the repository for the [JSON Schema website](http://json-schema.org).
+This is the repository for the [JSON Schema website](https://json-schema.org).
 
 For issues, discussion, and changes to the JSON Schema specification, please use the [json-schema-spec](https://github.com/json-schema-org/json-schema-spec) repository.
 
