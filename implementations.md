@@ -272,7 +272,7 @@ _None currently support draft-06 or later._
 Schema Repositories
 -------------------
 
--   [SchemaStore.org](http://schemastore.org/json/) - validate against common JSON Schemas
+-   [SchemaStore.org](https://schemastore.org/json/) - validate against common JSON Schemas
 
 
 Schema Linter

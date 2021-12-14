@@ -146,7 +146,7 @@ We encourage updating to the latest specification where possible, which is 2020-
 
 Questions? Feeling helpful? Get involved on:
 
-* [GitHub](http://github.com/json-schema-org/json-schema-spec)
+* [GitHub](https://github.com/json-schema-org/json-schema-spec)
 * [GitHub Discussions](https://github.com/json-schema-org/community/discussions)
 * [Google Groups](https://groups.google.com/forum/#!forum/json-schema)
 * [Slack](/slack)
