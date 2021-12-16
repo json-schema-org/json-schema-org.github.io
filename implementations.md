@@ -235,7 +235,7 @@ _None currently support draft-06 or later._
 #### Format converters
 
 -   OpenAPI
-    -   [JSON Schema to OpenAPI Schema](https://github.com/wework/json-schema-to-openapi-schema) _draft-04_ Draft-06 and -07 planned per README (_license not stated_)
+    -   [JSON Schema to OpenAPI Schema](https://github.com/wework/json-schema-to-openapi-schema) _draft-04_ Draft-06 and -07 planned per README (MIT)
 -   Orderly
     -   [Orderly](https://github.com/lloyd/orderly) (BSD-3-Clause)
 -   RAML
