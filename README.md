@@ -1,5 +1,9 @@
 # JSON Schema Website
 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://github.com/json-schema-org/.github/blob/main/CODE_OF_CONDUCT.md)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Financial Contributors on Open Collective](https://opencollective.com/json-schema/all/badge.svg?label=financial+contributors)](https://opencollective.com/json-schema) 
+
 This is the repository for the [JSON Schema website](https://json-schema.org).
 
 For issues, discussion, and changes to the JSON Schema specification, please use the [json-schema-spec](https://github.com/json-schema-org/json-schema-spec) repository.
