@@ -260,6 +260,12 @@
       date-draft:
       draft: [7, 6, 4]
       license: MIT
+    - name: JSI
+      url: https://rubydoc.info/gems/jsi
+      notes:
+      date-draft:
+      draft: [7, 6, 4]
+      license: AGPL-3.0
 - name: Rust
   implementations:
     - name: jsonschema-rs
