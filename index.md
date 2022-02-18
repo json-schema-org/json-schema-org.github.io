@@ -41,9 +41,8 @@ We hold weekly Office Hours and twice monthly Open Community Working Meetings.
 
 Office Hours are every Tuesday at 15:00 UTC.
 
-Open Community Working Meetings follow two patterns:
-- First Friday of the month at 20:00 UTC.
-- Third Friday of the month at 15:00 UTC.
+Open Community Working Meetings are every First and Third Friday of the month at 12:00 PT.
+
 
 ## Need more?
 
