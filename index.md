@@ -5,7 +5,7 @@ permalink: /
 ---
 
 
-**JSON Schema** is a vocabulary that allows you to **annotate** and **validate** JSON documents. It enables the confident and reliable use of the JSON data format.
+**JSON Schema** is a declarative domain specific grammar and syntax that allows you to **annotate** and **validate** JSON documents. JSON Schema enables the confident and reliable use of the JSON data format.
 
 ## Mission
 
