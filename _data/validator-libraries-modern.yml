@@ -274,6 +274,14 @@
       date-draft:
       draft: [7, 6, 4]
       license: MIT
+- name: Scala
+  implementations:
+    - name: Reactive Core Circe JSON Validator
+      url: https://github.com/reactivecore/rc-circe-json-schema
+      notes: Based on Circe-Library -Early state and API may not be stable. Not yet produciton ready.
+      date-draft: [2020-12, 2019-09]
+      draft:
+      license: Apache License, Version 2.0
 - name: Objective-C
   implementations:
     - name: DSJSONSchemaValidation
