@@ -177,6 +177,12 @@
       date-draft: [2019-09, 2020-12]
       draft: [7, 6, 4]
       license: MIT
+    - name: JSON Schema Library
+      url: https://github.com/sagold/json-schema-library
+      notes: "Built for Node.js and browsers. Customizable json-validator and json-schema utilities for traversal, data generation and validation"
+      date-draft:
+      draft: [7, 6, 4]
+      license: MIT
     - name: vue-vuelidate-jsonschema
       url: https://github.com/mokkabonna/vue-vuelidate-jsonschema
       date-draft:
