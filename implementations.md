@@ -206,6 +206,13 @@ Various levels of support for UI generation primarily from the validation vocabu
 -   Java
     -   [jsongenerator](https://github.com/jimblackler/jsongenerator) *JSON Schema 2019-09, draft-07, -06, -04, -03* (Apache-2.0)
 
+Playgrounds
+-----------
+
+-   [jsonschema.dev](https://jsonschema.dev) - Draft 7, save and share
+-   [hyperjump](https://json-schema.hyperjump.io) - Drafts 4 - 2020-12, supports hyperschema
+-   [json-everything](https://json-everything.net/json-schema) - Drafts 6 - 2020-12 (with annotation support), sample data generation, runs .Net via WASM
+
 Utilities
 ---------
 
