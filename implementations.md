@@ -111,6 +111,7 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
 -   .NET
     -   [Json.NET](https://www.newtonsoft.com/jsonschema) (AGPL-3.0) - generates schemas from .NET types
     -   [NJsonSchema](https://github.com/RSuter/NJsonSchema/) - (Ms-PL) - generates schemas from .NET types, see issue [574](https://github.com/RSuter/NJsonSchema/issues/574) for draft-06+ support progress
+    -   [JsonSchema.Net.Generation](https://github.com/gregsdennis/json-everything) (MIT) - generates schemas from .NET types
 -   Go
     -   [jsonschema](https://github.com/invopop/jsonschema) - (MIT) - generate schemas from Go structs. Supports Draft 2020-12.
 -   PHP
@@ -201,6 +202,8 @@ Various levels of support for UI generation primarily from the validation vocabu
 
 #### Data from schemas
 
+-   .Net
+    -   [JsonSchema.Net.DataGeneration](https://github.com/gregsdennis/json-everything) (MIT) Data generation from JSON schemas, powered by the Bogus testing data generation library.
 -   Python
     -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  takes any schema, even with complex and interacting constraints, and returns a [Hypothesis](https://hypothesis.works/) strategy which can generate valid documents for testing.
 -   Java
