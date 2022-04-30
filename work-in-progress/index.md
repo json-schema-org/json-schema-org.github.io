@@ -22,7 +22,7 @@ These documents will be given the IETF identifiers `draft-bhutton-*-01`.
 ## RC-0 preview
 
 You can find RC-0 preview of the following documents:
-- [JSON Schema Core specificatoin](/draft/preview/2020-12-p1-rc-0/jsonschema-core.html)
+- [JSON Schema Core specification](/draft/preview/2020-12-p1-rc-0/jsonschema-core.html)
 - [JSON Schema Validation specification](/draft/preview/2020-12-p1-rc-0/jsonschema-validation.html)
 
 There are no changes to the Relative JSON Pointer specification.
