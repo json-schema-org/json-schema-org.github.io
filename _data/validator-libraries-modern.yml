@@ -82,6 +82,12 @@
       date-draft:
       draft: [7, 6, 4]
       license: MIT
+- name: Erlang
+  implementations:
+    - name: JeSSE
+      url: https://github.com/for-GET/jesse
+      draft: [6, 4, 3]
+      license: "Apache 2.0"
 - name: Go
   implementations:
     - name: gojsonschema

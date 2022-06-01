@@ -53,12 +53,6 @@
       notes:
       draft: [4]
       license: BSL-1.0
-- name: Erlang
-  implementations:
-    - name: JeSSE
-      url: https://github.com/for-GET/jesse
-      draft: [4, 3]
-      license: "Apache 2.0"
 - name: Go
   implementations:
     - name: validate-json
