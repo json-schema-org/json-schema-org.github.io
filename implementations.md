@@ -208,6 +208,8 @@ Various levels of support for UI generation primarily from the validation vocabu
     -   [hypothesis-jsonschema](https://github.com/Zac-HD/hypothesis-jsonschema) (MPL) *draft-07, -06, -04*;  takes any schema, even with complex and interacting constraints, and returns a [Hypothesis](https://hypothesis.works/) strategy which can generate valid documents for testing.
 -   Java
     -   [jsongenerator](https://github.com/jimblackler/jsongenerator) *JSON Schema 2019-09, draft-07, -06, -04, -03* (Apache-2.0)
+-   Javascript / Node.js
+    -   [json-schema-faker](https://github.com/json-schema-faker/json-schema-faker) (MIT)
 
 Utilities
 ---------
