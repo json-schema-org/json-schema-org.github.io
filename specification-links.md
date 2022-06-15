@@ -249,19 +249,33 @@ For links to the somewhat more readably formatted versions on this web site, and
         draft&#8209;bhutton&#8209;relative&#8209;json&#8209;pointer&#8209;00
       </a></small></tt><br>
     </td>
-    <td>
+    <td rowspan="3">
       <tt><small>2020&#8209;12</small></tt>
     </td>
-    <td>
+    <td rowspan="3">
       Draft 2020-12
     </td>
-    <td>
+    <td rowspan="3">
       <small>
+      the&nbsp;<tt><small>draft&#8209;bhutton&#8209;*&#8209;01</small></tt> drafts were
+      bugfixes and/or clarifications without meta&#8209;schema or functional changes
+      <br />
       Milestone:
       <a href="https://github.com/json-schema-org/json-schema-spec/milestone/8">draft-08-patch-1</a>
       <br/>
       Changes and fixes as a result of discussion with the OpenAPI community. (Includes breaking changes.)
       </small>
+    </td>
+  </tr>
+  <tr><!-- This empty row keeps the row colors aligned properlty for the two "draft-2020-12" versions --></tr>
+  <tr>
+    <td>
+      <tt><small><a href="https://tools.ietf.org/html/draft-bhutton-json-schema-01">
+        draft&#8209;bhutton&#8209;json&#8209;schema&#8209;01
+      </a></small></tt><br>
+      <tt><small><a href="https://tools.ietf.org/html/draft-bhutton-json-schema-validation-01">
+        draft&#8209;bhutton&#8209;json&#8209;schema&#8209;validation&#8209;01
+      </a></small></tt><br>
     </td>
   </tr>
   <tr>
@@ -288,8 +302,8 @@ For links to the somewhat more readably formatted versions on this web site, and
 ### 2020-12
 
 - Specifications
-    - Core: [draft-bhutton-json-schema-00](https://tools.ietf.org/html/draft-bhutton-json-schema-00) ([changes](https://tools.ietf.org/html/draft-bhutton-json-schema-00#appendix-G))
-    - Validation: [draft-bhutton-json-schema-validation-00](https://tools.ietf.org/html/draft-bhutton-json-schema-validation-00) ([changes](https://tools.ietf.org/html/draft-bhutton-json-schema-validation-00#appendix-C))
+    - Core: [draft-bhutton-json-schema-01](https://tools.ietf.org/html/draft-bhutton-json-schema-01) ([changes](https://tools.ietf.org/html/draft-bhutton-json-schema-01#appendix-G))
+    - Validation: [draft-bhutton-json-schema-validation-01](https://tools.ietf.org/html/draft-bhutton-json-schema-validation-01) ([changes](https://tools.ietf.org/html/draft-bhutton-json-schema-validation-01#appendix-C))
     - Relative JSON Pointer: [draft-bhutton-relative-json-pointer-00](https://tools.ietf.org/html/draft-bhutton-relative-json-pointer-00) ([changes](https://tools.ietf.org/html/draft-bhutton-relative-json-pointer-00#appendix-A))
 - General use meta-schemas
     - [JSON Schema meta-schema](draft/2020-12/schema)
