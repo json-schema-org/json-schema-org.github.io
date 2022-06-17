@@ -64,7 +64,7 @@ We monitor the `jsonschema` tag on StackOverflow.
 
 ## Project Status
 
-2021-06-10: A patch release of Draft 2020-12 has been published with no functional changes.
+2022-06-10: A patch release of Draft 2020-12 has been published with no functional changes.
 
 The new IETF document IDs are of the form `draft-bhutton-*-01`.
 
