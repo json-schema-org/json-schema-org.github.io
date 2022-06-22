@@ -10,18 +10,18 @@
 [submodule "_includes/draft-03"]
 	path = _includes/draft-03
 	url = https://github.com/json-schema-org/json-schema-spec.git
-		branch = draft-03
+	branch = draft-03
 [submodule "_includes/draft-04"]
 	path = _includes/draft-04
 	url = https://github.com/json-schema-org/json-schema-spec.git
-		branch = draft-04
+	branch = draft-04
 [submodule "_includes/draft-05"]
 	path = _includes/draft-05
 	url = https://github.com/json-schema-org/json-schema-spec.git
 [submodule "_includes/draft-06"]
 	path = _includes/draft-06
 	url = https://github.com/json-schema-org/json-schema-spec.git
-		branch = draft-06
+	branch = draft-06
 [submodule "_includes/draft-07"]
 	path = _includes/draft-07
 	url = https://github.com/json-schema-org/json-schema-spec.git
