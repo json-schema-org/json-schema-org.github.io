@@ -23,8 +23,8 @@ Validation in any significant way.
 | [Relative JSON Pointers](draft/2020-12/relative-json-pointer.html)  | extends the JSON Pointer syntax for relative pointers |
 
 They are also available on the IETF main site:
-* [draft-bhutton-json-schema-00 (core)](https://tools.ietf.org/html/draft-bhutton-json-schema-00)
-* [draft-bhutton-json-schema-validation-00](https://tools.ietf.org/html/draft-bhutton-json-schema-validation-00)
+* [draft-bhutton-json-schema-01 (core)](https://tools.ietf.org/html/draft-bhutton-json-schema-01)
+* [draft-bhutton-json-schema-validation-01](https://tools.ietf.org/html/draft-bhutton-json-schema-validation-01)
 * [draft-bhutton-relative-json-pointer-00](https://tools.ietf.org/html/draft-bhutton-relative-json-pointer-00)
 
 Meta-schemas
