@@ -363,7 +363,7 @@
       draft: [7, 6, 4]
       notes: wraps [xeipuuv/gojsonschema](https://github.com/xeipuuv/gojsonschema)
     - name: valbuddy
-      license: Free and commercial versions
+      license: Free and commercial versions (proprietary)
       url: 'https://www.json-buddy.com/json-validator-command-line-tool.htm'
       date-draft:
       draft: [2019-09, 7, 6, 4]
