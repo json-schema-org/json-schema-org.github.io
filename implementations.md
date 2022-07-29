@@ -124,6 +124,8 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
     -   [jsonschema-generator](https://github.com/victools/jsonschema-generator) (Apache 2.0) - generates schemas from Java types *supports Draft 7 and Draft 2019-09*
 -   Scala
     -   [scala-jsonschema](https://github.com/andyglow/scala-jsonschema) (Apache 2.0) - generates schemad out of Scala case classes
+-   Ruby
+    -   [Shale](https://github.com/kgiszczak/shale) (MIT) - generates schema from Ruby models *supports Draft 2020-12*
 
 #### From data
 
@@ -175,6 +177,8 @@ are the only keywords that changed.
     - [schemafy](https://github.com/Marwes/schemafy/) - generates Rust types and serialization code from a JSON schema. *supports Draft 4*
 -   TypeScript
     - [jsongenerator](https://github.com/jimblackler/jsonschematypes/tree/master/codegen) *JSON Schema 2019-09, draft-07, -06, -04, -03* (Apache-2.0)
+-   Ruby
+    - [Shale](https://github.com/kgiszczak/shale) (MIT) - generates Ruby models from a JSON schema *supports Draft 2020-12*
 
 #### Web UI generation
 
