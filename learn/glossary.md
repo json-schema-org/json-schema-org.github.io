@@ -1,4 +1,7 @@
-# JSON Schema Glossary
+---
+layout: page
+title: JSON Schema Glossary
+---
 
 This document collects short explanations of terminology one may encounter within the JSON Schema community.
 
