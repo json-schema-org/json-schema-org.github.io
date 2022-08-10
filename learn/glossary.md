@@ -10,6 +10,8 @@ This page is not meant to be [normative](#normative), nor is it meant to contain
 It is meant to aid the understanding of those less familiar with formal language used within JSON Schema, or within specifications more broadly.
 (In fact, entries below make effort to avoid terminology like "normative" itself for reasons just mentioned.)
 
+If you encounter a term you wish were defined here, please feel free to [file an issue requesting it](https://github.com/json-schema-org/json-schema-org.github.io/issues/new?title=Add%20a%20glossary%20entry%20for%20).
+
 The entries on this page can be linked to via anchor links (e.g. `https://json-schema.org/learn/glossary.html#vocabulary`) when sharing a definition with others.
 
 ### draft
