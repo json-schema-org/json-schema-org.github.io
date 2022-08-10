@@ -33,6 +33,6 @@ Distinguishing between whether a document is normative or not is intended to cla
 JSON Schema's normative documents notably include its [specification](https://json-schema.org/specification.html).
 This page for instance, not being a normative document, is not able to proscribe new JSON Schema behavior not already covered by the specification.
 
-##### See also
+#### See also
 
 * [normative](https://developer.mozilla.org/en-US/docs/Glossary/Normative) and [non-normative](https://developer.mozilla.org/en-US/docs/Glossary/non-normative) in the Mozilla Glossary, and its links
