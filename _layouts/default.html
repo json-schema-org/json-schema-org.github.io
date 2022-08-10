@@ -12,7 +12,7 @@
       <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7I627Y&placement=json-schemaorg" id="_carbonads_js"></script>
       {% endif %}
       <div class="wrapper">
-        {{ content }}
+        {% include anchor_headings.html html=content anchorBody="#" %}
       </div>
     </main>
 
