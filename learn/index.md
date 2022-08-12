@@ -12,3 +12,4 @@ title: Learn
   * [card.schema.json](./examples/card.schema.json)
   * [geographical-location.schema.json](./examples/geographical-location.schema.json)
 * [Understanding JSON Schema](/understanding-json-schema/)
+* [JSON Schema Glossary](./glossary.md) which attempts to explain conversational terminology
