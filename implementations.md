@@ -240,7 +240,8 @@ the utility, and decided on a case-by-case basis.
 
 #### Schema draft migration
 
-_None currently support draft-06 or later._
+-   JavaScript
+    -    [AlterSchema](https://github.com/sourcemeta/alterschema) _JSON Schema 2020-12, 2019-09, draft-07, -06, -04_
 
 #### Format converters
 
