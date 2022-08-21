@@ -40,6 +40,9 @@ Validators
   {% for language in validator-libraries %}
   <li>
     {{language.name}} <a id="validator-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %}"></a>
+    {% if language.notes %}
+        {{ implementation.notes }}
+    {% endif %}
     <ul>
     {% for implementation in language.implementations %}
         <li>
