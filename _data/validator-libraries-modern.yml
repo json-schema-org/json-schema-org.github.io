@@ -11,14 +11,6 @@
       date-draft: [2019-09]
       draft: [7, 6, 4, 3]
       license: "AGPL-3.0-only"
-- name: C
-  implementations:
-    - name: WJElement
-      url: https://github.com/netmail-open/wjelement
-      date-draft:
-      draft: [4, 3]
-      license: LGPL-3.0
-      notes: "Draft-06+ progress: issue [17](https://github.com/netmail-open/wjelement/issues/17#issuecomment-390899432)"
 - name: C++
   implementations:
     - name: f5-json-schema
@@ -67,7 +59,7 @@
     - name: json-schema
       url: https://github.com/fisxoj/json-schema
       date-draft: [2019-09]
-      draft: [4, 6, 7]
+      draft: [7, 6, 4]
       license: LGPL
 - name: Elixir
   implementations:
@@ -75,12 +67,6 @@
       url: https://github.com/hrzndhrn/json_xema
       date-draft:
       draft: [7, 6, 4]
-      license: MIT
-    - name: Elixir JSON Schema validator
-      url: https://github.com/jonasschmidt/ex_json_schema
-      date-draft:
-      draft: [4]
-      notes: "Draft-06+ progress: issue [24](https://github.com/jonasschmidt/ex_json_schema/issues/24); branch [multi-draft-support](https://github.com/jonasschmidt/ex_json_schema/tree/multi-draft-support)"
       license: MIT
 - name: Erlang
   implementations:

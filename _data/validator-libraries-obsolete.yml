@@ -11,6 +11,14 @@
       date-draft: [2019-09]
       draft: [7, 6, 4]
       license: MIT
+- name: C
+  implementations:
+    - name: WJElement
+      url: https://github.com/netmail-open/wjelement
+      date-draft:
+      draft: [4, 3]
+      license: LGPL-3.0
+      notes: "Draft-06+ progress: issue [17](https://github.com/netmail-open/wjelement/issues/17#issuecomment-390899432)"
 - name: C++
   anchor-name: cpp
   implementations:
@@ -53,6 +61,14 @@
       notes:
       draft: [4]
       license: BSL-1.0
+- name: Elixir
+  implementations:
+    - name: Elixir JSON Schema validator
+      url: https://github.com/jonasschmidt/ex_json_schema
+      date-draft:
+      draft: [4]
+      notes: "Draft-06+ progress: issue [24](https://github.com/jonasschmidt/ex_json_schema/issues/24); branch [multi-draft-support](https://github.com/jonasschmidt/ex_json_schema/tree/multi-draft-support)"
+      license: MIT
 - name: Go
   implementations:
     - name: validate-json
