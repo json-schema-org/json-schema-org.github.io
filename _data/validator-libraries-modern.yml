@@ -109,19 +109,31 @@
       notes: includes custom validator support, rich error returns
 - name: Java
   implementations:
+    - name: Vert.x Json Schema
+      url: https://github.com/eclipse-vertx/vertx-json-schema
+      notes: Validator for Eclipse Vert.x project JSON types.
+      date-draft: [2020-12, 2019-09]
+      draft: [7]
+      license: Apache License, Version 2.0
+      notes: includes custom keywords support, custom dialect support, asynchronous validation
+    - name: jsonschemafriend
+      url: https://github.com/jimblackler/jsonschemafriend
+      notes:
+      date-draft: [2020-12, 2019-09]
+      draft: [7, 6, 4, 3]
+      license: Apache License 2.0
+    - name: networknt/json-schema-validator
+      url: https://github.com/networknt/json-schema-validator
+      notes: Support OpenAPI 3.0 with Jackson parser 
+      date-draft: [2020-12, 2019-09]
+      draft: [7, 6, 4]
+      license: Apache License 2.0
     - name: Snow
       url: https://github.com/ssilverman/snowy-json
       notes: Uses Maven for the project and Gson under the hood.
       date-draft: [2019-09]
       draft: [7, 6]
       license: GNU Affero General Public License v3.0
-    - name: Vert.x Json Schema
-      url: https://github.com/eclipse-vertx/vertx-json-schema
-      notes: Validator for Eclipse Vert.x project JSON types.
-      date-draft: [2019-09]
-      draft: [7]
-      license: Apache License, Version 2.0
-      notes: includes custom keywords support, custom dialect support, asynchronous validation
     - name: everit-org/json-schema
       url: https://github.com/everit-org/json-schema
       notes:
@@ -134,18 +146,7 @@
       date-draft:
       draft: [7, 6, 4]
       license: Apache License 2.0
-    - name: networknt/json-schema-validator
-      url: https://github.com/networknt/json-schema-validator
-      notes: Support OpenAPI 3.0 with Jackson parser 
-      date-draft: [2019-09]
-      draft: [7, 6, 4]
-      license: Apache License 2.0
-    - name: jsonschemafriend
-      url: https://github.com/jimblackler/jsonschemafriend
-      notes:
-      date-draft: [2019-09]
-      draft: [7, 6, 4, 3]
-      license: Apache License 2.0
+    
 - name: Kotlin
   implementations:
     - name: Medeia-validator
