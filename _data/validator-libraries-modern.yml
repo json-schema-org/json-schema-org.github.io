@@ -1,24 +1,18 @@
 - name: .NET
   anchor-name: dotnet
   implementations:
-    - name: Json.NET Schema
-      url: https://www.newtonsoft.com/jsonschema
-      date-draft: [2019-09]
-      draft: [7, 6, 4, 3]
-      license: "AGPL-3.0-only"
     - name: JsonSchema.Net
       url: https://github.com/gregsdennis/json-everything
       date-draft: [2020-12, 2019-09]
       draft: [7, 6]
       license: MIT
+    - name: Json.NET Schema
+      url: https://www.newtonsoft.com/jsonschema
+      date-draft: [2019-09]
+      draft: [7, 6, 4, 3]
+      license: "AGPL-3.0-only"
 - name: C
-  implementations:
-    - name: WJElement
-      url: https://github.com/netmail-open/wjelement
-      date-draft:
-      draft: [4, 3]
-      license: LGPL-3.0
-      notes: "Draft-06+ progress: issue [17](https://github.com/netmail-open/wjelement/issues/17#issuecomment-390899432)"
+  notes: No known implementations support draft-06 or later.
 - name: C++
   implementations:
     - name: f5-json-schema
@@ -67,16 +61,10 @@
     - name: json-schema
       url: https://github.com/fisxoj/json-schema
       date-draft: [2019-09]
-      draft: [4, 6, 7]
+      draft: [7, 6, 4]
       license: LGPL
 - name: Elixir
   implementations:
-    - name: Elixir JSON Schema validator
-      url: https://github.com/jonasschmidt/ex_json_schema
-      date-draft:
-      draft: [4]
-      notes: "Draft-06+ progress: issue [24](https://github.com/jonasschmidt/ex_json_schema/issues/24); branch [multi-draft-support](https://github.com/jonasschmidt/ex_json_schema/tree/multi-draft-support)"
-      license: MIT
     - name: JsonXema
       url: https://github.com/hrzndhrn/json_xema
       date-draft:
@@ -90,11 +78,6 @@
       license: "Apache 2.0"
 - name: Go
   implementations:
-    - name: gojsonschema
-      url: https://github.com/xeipuuv/gojsonschema
-      date-draft:
-      draft: [7, 6, 4]
-      license: "Apache 2.0"
     - name: santhosh-tekuri/jsonschema
       url: https://github.com/santhosh-tekuri/jsonschema
       notes: includes custom keywords, output formats
@@ -107,6 +90,11 @@
       draft: [7]
       license: MIT
       notes: includes custom validator support, rich error returns
+    - name: gojsonschema
+      url: https://github.com/xeipuuv/gojsonschema
+      date-draft:
+      draft: [7, 6, 4]
+      license: "Apache 2.0"
 - name: Java
   implementations:
     - name: Vert.x Json Schema
@@ -146,7 +134,6 @@
       date-draft:
       draft: [7, 6, 4]
       license: Apache License 2.0
-    
 - name: Kotlin
   implementations:
     - name: Medeia-validator
@@ -166,22 +153,22 @@
       license: MIT
 - name: JavaScript
   implementations:
+    - name: Hyperjump JSV
+      url: https://github.com/jdesrosiers/json-schema
+      notes: "Built for Node.js and browsers. Includes support for custom vocabularies."
+      date-draft: [2019-09, 2020-12]
+      draft: [7, 6, 4]
+      license: MIT
     - name: ajv
       url: https://github.com/ajv-validator/ajv
       notes: "for Node.js and browsers - supports [user-defined keywords](https://github.com/ajv-validator/ajv/blob/master/docs/keywords.md) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51)"
       date-draft: [2019-09, 2020-12]
       draft: [7, 6, 4]
       license: MIT
-    - name: djv
-      url: https://github.com/korzio/djv
-      notes: "for Node.js and browsers"
-      date-draft:
-      draft: [6, 4]
-      license: MIT
-    - name: Hyperjump JSV
-      url: https://github.com/jdesrosiers/json-schema
-      notes: "Built for Node.js and browsers. Includes support for custom vocabularies."
-      date-draft: [2019-09, 2020-12]
+    - name: "@cfworker/json-schema"
+      url: https://github.com/cfworker/cfworker/blob/master/packages/json-schema/README.md
+      notes: "Built for Cloudflare workers, browsers, and Node.js"
+      date-draft: [2019-09]
       draft: [7, 6, 4]
       license: MIT
     - name: JSON Schema Library
@@ -190,16 +177,16 @@
       date-draft:
       draft: [7, 6, 4]
       license: MIT
+    - name: djv
+      url: https://github.com/korzio/djv
+      notes: "for Node.js and browsers"
+      date-draft:
+      draft: [6, 4]
+      license: MIT
     - name: vue-vuelidate-jsonschema
       url: https://github.com/mokkabonna/vue-vuelidate-jsonschema
       date-draft:
       draft: [6]
-      license: MIT
-    - name: "@cfworker/json-schema"
-      url: https://github.com/cfworker/cfworker/blob/master/packages/json-schema/README.md
-      notes: "Built for Cloudflare workers, browsers, and Node.js"
-      date-draft: [2019-09]
-      draft: [7, 6, 4]
       license: MIT
 - name: Perl
   implementations:
@@ -322,11 +309,7 @@
       url: https://json-everything.net
       date-draft: [2020-12, 2019-09]
       draft: [7, 6]
-      notes: Powered by JsonSchema.Net; server-side validation
-    - name: jsonschema.dev
-      url: https://jsonschema.dev
-      draft: [7]
-      notes: Powered by ajv; client-side validation
+      notes: Powered by JsonSchema.Net in Blazor WASM for client-side validation
     - name: jschon.dev
       url: https://jschon.dev/
       date-draft: [2020-12, 2019-09]
@@ -336,6 +319,10 @@
       date-draft: [2019-09]
       draft: [7, 6, 4, 3]
       notes: Powered by JSON.Net; server-side validation
+    - name: jsonschema.dev
+      url: https://jsonschema.dev
+      draft: [7]
+      notes: Powered by ajv; client-side validation
     - name: JSON Schema Lint
       url: http://jsonschemalint.com/
       date-draft:
@@ -346,26 +333,26 @@
       draft: [7]
 - name: Command Line
   implementations:
-    - name: ajv-cli
-      license: MIT
-      url: 'https://www.npmjs.com/package/ajv-cli'
-      date-draft:
-      draft: [7, 6, 4]
-    - name: Polyglottal JSON Schema Validator
-      license: MIT
-      url: 'https://www.npmjs.com/package/pajv'
-      date-draft:
-      draft: [6, 4]
-      notes: can be used with YAML and many other formats besides JSON
-    - name: yajsv
-      license: MIT
-      url: 'https://github.com/neilpa/yajsv'
-      date-draft:
-      draft: [7, 6, 4]
-      notes: wraps [xeipuuv/gojsonschema](https://github.com/xeipuuv/gojsonschema)
     - name: valbuddy
       license: Free and commercial versions (proprietary)
       url: 'https://www.json-buddy.com/json-validator-command-line-tool.htm'
       date-draft:
       draft: [2019-09, 7, 6, 4]
       notes: JSONBuddy cli tool. Windows platform. Support for large data and streaming validation.
+    - name: ajv-cli
+      license: MIT
+      url: 'https://www.npmjs.com/package/ajv-cli'
+      date-draft:
+      draft: [7, 6, 4]
+    - name: yajsv
+      license: MIT
+      url: 'https://github.com/neilpa/yajsv'
+      date-draft:
+      draft: [7, 6, 4]
+      notes: wraps [xeipuuv/gojsonschema](https://github.com/xeipuuv/gojsonschema)
+    - name: Polyglottal JSON Schema Validator
+      license: MIT
+      url: 'https://www.npmjs.com/package/pajv'
+      date-draft:
+      draft: [6, 4]
+      notes: can be used with YAML and many other formats besides JSON
