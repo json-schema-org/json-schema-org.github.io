@@ -161,7 +161,7 @@
       license: MIT
     - name: ajv
       url: https://github.com/ajv-validator/ajv
-      notes: "for Node.js and browsers - supports [user-defined keywords](https://github.com/ajv-validator/ajv/blob/master/docs/keywords.md) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51); _Only specification-compliant when strict mode is **disabled.**_"
+      notes: "for Node.js and browsers - supports [user-defined keywords](https://github.com/ajv-validator/ajv/blob/master/docs/keywords.md) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51); _Only specification-compliant when [strict mode](https://ajv.js.org/strict-mode.html) is **disabled.**_"
       date-draft: [2019-09, 2020-12]
       draft: [7, 6, 4]
       license: MIT
