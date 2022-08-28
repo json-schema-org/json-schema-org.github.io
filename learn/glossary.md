@@ -24,6 +24,12 @@ While future drafts may introduce new behavior or changes to existing behavior, 
 
 The current list of drafts can be found [here](https://json-schema.org/specification-links.html#published-drafts).
 
+### keyword
+
+A property appearing within a [schema](#schema) object.
+
+The [JSON Schema specification](https://json-schema.org/specification.html) defines behavior for a large library of keywords which can be used to describe [instances](#instance).
+
 ### instance
 
 A piece of JSON data which is to be validated by a [schema](#schema).
@@ -32,6 +38,15 @@ JSON Schema can be used to validate JSON values of any type (as well as values f
 
 The JSON Schema specification makes no broad assumptions about the structure of instances themselves beyond those of the JSON specification itself.
 In particular it does not reserve any properties within a JSON object for its own use, or require parsers of JSON to support features beyond those already mandated of JSON implementations.
+
+### meta-schema
+
+A [schema](#schema) which is itself intended to describe other *schemas*.
+
+JSON Schema defines a language for describing any [instance](#instance) using a schema written in JSON.
+Since schemas are themselves JSON values, they may be opaquely treated as *instances*, and therefore described by other schemas.
+
+We refer to the schema-of-a-schema as a "meta-schema" to express this use.
 
 ### normative
 
