@@ -134,23 +134,6 @@
       date-draft:
       draft: [7, 6, 4]
       license: Apache License 2.0
-- name: Kotlin
-  implementations:
-    - name: Medeia-validator
-      url: https://github.com/worldturner/medeia-validator
-      notes: streaming validator for Kotlin and Java clients; works with Jackson and Gson
-      date-draft:
-      draft: [7, 6, 4]
-      license: Apache License 2.0
-    - name: json-kotlin-schema
-      url: https://github.com/pwall567/json-kotlin-schema
-      notes: |
-        Kotlin implementation of JSON Schema.
-        (Currently supports most of Draft 7; see the README for details.
-        Full compliance with Draft 7 and later drafts in progress.)
-      date-draft:
-      draft: [7]
-      license: MIT
 - name: JavaScript
   implementations:
     - name: Hyperjump JSV
@@ -187,6 +170,23 @@
       url: https://github.com/mokkabonna/vue-vuelidate-jsonschema
       date-draft:
       draft: [6]
+      license: MIT
+- name: Kotlin
+  implementations:
+    - name: Medeia-validator
+      url: https://github.com/worldturner/medeia-validator
+      notes: streaming validator for Kotlin and Java clients; works with Jackson and Gson
+      date-draft:
+      draft: [7, 6, 4]
+      license: Apache License 2.0
+    - name: json-kotlin-schema
+      url: https://github.com/pwall567/json-kotlin-schema
+      notes: |
+        Kotlin implementation of JSON Schema.
+        (Currently supports most of Draft 7; see the README for details.
+        Full compliance with Draft 7 and later drafts in progress.)
+      date-draft:
+      draft: [7]
       license: MIT
 - name: Perl
   implementations:
