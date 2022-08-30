@@ -39,34 +39,42 @@ Validators
 <ul>
   {% for language in validator-libraries %}
   <li>
-    {{language.name}} <a id="validator-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %}"></a>
+    <strong>{{language.name}}</strong><a id="validator-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %}"></a>
     {% if language.notes %}
-        {{ implementation.notes }}
+        <p>{{ language.notes }}</p>
     {% endif %}
     <ul>
     {% for implementation in language.implementations %}
-        <li>
+      <li>
         <a href="{{implementation.url}}">{{ implementation.name }}</a>
-
-        <em>
-        {% if implementation.date-draft %}
-            {{ implementation.date-draft | sort | reverse | join: ", "}}{% if implementation.draft %}, {% endif %}
-        {% endif %}
-        {% if implementation.draft %}
-            draft-0{{ implementation.draft | sort | reverse | join: ", -0" }}
-        {% endif %}
-        </em>
-
-        {{implementation.notes | markdownify | remove: '<p>' | remove: '</p>'}}
+        <ul>
+          <li><em>Supports:</em>
+            {% if implementation.date-draft %}
+                {{ implementation.date-draft | sort | reverse | join: ", " }}
+            {% endif %}
+            {% if implementation.draft %}
+                draft-0{{ implementation.draft | sort | reverse | join: ", -0" }}
+            {% endif %}
+          </li>
 
         {% if implementation.license %}
-            ({{ implementation.license | join: ", " }})
+          <li><em>License:</em>
+            {{ implementation.license | join: ", " }}
+          </li>
         {% endif %}
 
-        </li>
+        {% if implementation.notes %}
+          <li><em>Notes:</em>
+            {{ implementation.notes | markdownify | remove: '<p>' | remove: '</p>' }}
+          </li>
+        {% endif %}
+
+        </ul>
+      </li>
     {% endfor %}
     </ul>
   </li>
+  <p />
   {% endfor %}
 </ul>
 

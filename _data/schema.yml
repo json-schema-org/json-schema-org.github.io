@@ -1,0 +1,72 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://json-schema.org/implementations/schema
+type: array
+items:
+    $ref: "#/$defs/language"
+$defs:
+    language:
+        description: |
+            A group of implementations grouped by programming language or
+            runtime environment.
+        type: object
+        unevaluatedProperties: false
+        required: [name]
+        oneOf:
+          - required: [implementations]
+          - required: [notes]
+        properties:
+            name:
+                type: string
+            anchor-name:
+                type: string
+                description: A name suitable for us as an HTML id.
+            implementations:
+                description: |
+                    The list of implementations for this language/environment,
+                    sorted with those supporting the most recent
+                    drafts/versions first.
+                type: array
+                items:
+                    $ref: "#/$defs/implementation"
+            notes:
+                type: [string, "null"]
+    implementation:
+        description: |
+            An implementation and its associated information.
+        type: object
+        unevaluatedProperties: false
+        required: [name, url]
+        anyOf:
+          - required: [draft]
+          - required: [date-draft]
+        properties:
+            name:
+                description: The human-friendly name of the implementation
+                type: string
+            url:
+                description: |
+                    The URL of the implementation's repository or documentation
+                type: string
+                format: uri
+            draft:
+                description: The supported drafts (up through draft-07)
+                type: array
+                items:
+                    type: integer
+                    enum: [1, 2, 3, 4, 6, 7]
+            date-draft:
+                description: The supported drafts (2019-09+)
+                type: array
+                items:
+                    type: string
+                    enum: [2019-09, 2020-12]
+            license:
+                description: |
+                    The software license under which the implementation
+                    is available
+                type: string
+            notes:
+                description: |
+                    Additional information.  Overly promotional (or critical)
+                    wording should be avoided.
+                type: string
