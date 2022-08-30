@@ -44,7 +44,7 @@ In particular it does not reserve any properties within a JSON object for its ow
 A [schema](#schema) which is itself intended to describe other *schemas*.
 
 JSON Schema defines a language for describing any [instance](#instance) using a schema written in JSON.
-Since schemas are themselves JSON values, they may be opaquely treated as *instances*, and therefore described by other schemas.
+Since schemas are themselves JSON values, they may be also be treated as *instances*, and therefore described by other schemas.
 
 We refer to the schema-of-a-schema as a "meta-schema" to express this use.
 
