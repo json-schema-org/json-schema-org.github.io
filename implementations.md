@@ -57,6 +57,17 @@ Validators
             {% endif %}
           </li>
 
+        {% if implementation.compliance %}
+          <li><em>Compliance:</em>
+          {% if implementation.compliance.config.docs %}
+            This implementation <a href="{{ implementation.compliance.config.docs }}">documents</a> that you must
+          {% endif %}
+          {% if implementation.compliance.config.instructions %}
+            <strong>{{ implementation.compliance.config.instructions | markdownify | remove: '<p>' | remove: '</p>' }}</strong> to produce specification-compliant behavior.
+          </li>
+          {% endif %}
+        {% endif %}
+
         {% if implementation.license %}
           <li><em>License:</em>
             {{ implementation.license | join: ", " }}

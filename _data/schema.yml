@@ -95,6 +95,8 @@ $defs:
                     Additional information.  Overly promotional (or critical)
                     wording should be avoided.
                 type: string
+            compliance:
+                $ref: "#/$defs/compliance"
             last-updated:
                 description: |
                     The date (in whatever timezone was relevant at the time)
@@ -108,3 +110,49 @@ $defs:
                 type: string
                 format: date
                 pattern: '^\d\d\d\d-[01]\d-[0123]\d$'
+    compliance:
+        description: |
+            The compliance section notes aspects of an implementation's
+            _default configuration_ that are non-compliant with the
+            specification in ways that are _not necessarily_ detected
+            by the test suite.  This information is provided based on
+            implementation documentation.
+        type: object
+        unevaluatedProperties: false
+        properties:
+            constraints:
+                description: |
+                    A brief note of design constraints that impacted choices
+                    regarding compliance.  This includes things like
+                    targeting memory-constrained environments, or trading
+                    off features for performance.  It does not include
+                    opinions regarding the value (or lack thereof) of
+                    the specification requirements.
+                type: string
+            config:
+                description: |
+                    Documents how to configure an implementation to produce
+                    the most specification-compliant behavior if it does
+                    not do so by default.  The resulting configuration
+                    may still have incomplete compliance (such as not
+                    having implemented all keywords), but will not
+                    have additional behavior that contradicts the
+                    specification (such as modifying the instance
+                    by filling in default values).
+                type: object
+                unevaluatedProperties: false
+                required: [instructions]
+                properties:
+                    docs:
+                        description: |
+                            A link to the implementation's configuration
+                            documentation, ideally to whatever part addresses
+                            configuration and compliance.
+                        type: string
+                        format: uri
+                    instructions:
+                        description: |
+                            Instructions to configure for compliance.  Will
+                            appear in a sentence after "you must" and before
+                            "to produce specification-compliant behavior."
+                        type: string

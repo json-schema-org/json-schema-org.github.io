@@ -73,6 +73,11 @@
       date-draft: [2019-09]
       draft: [7, 6, 4]
       license: LGPL
+      compliance:
+        config:
+          docs: https://github.com/fisxoj/json-schema/blob/master/README.rst
+          instructions: |
+            set `resolve-remote-references` to `nil`
       last-updated: "2022-08-31"
 - name: Elixir
   implementations:
@@ -134,6 +139,10 @@
       date-draft: [2020-12, 2019-09]
       draft: [7, 6, 4]
       license: Apache License 2.0
+      compliance:
+        config:
+            docs: https://github.com/networknt/json-schema-validator/blob/master/doc/config.md
+            instructions: "set `handleNullableField` to `false`"
       last-updated: "2022-08-31"
     - name: Snow
       url: https://github.com/ssilverman/snowy-json
@@ -165,10 +174,14 @@
       last-updated: "2022-08-31"
     - name: ajv
       url: https://github.com/ajv-validator/ajv
-      notes: "for Node.js and browsers - supports [user-defined keywords](https://github.com/ajv-validator/ajv/blob/master/docs/keywords.md) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51); _Only specification-compliant when [strict mode](https://ajv.js.org/strict-mode.html) is **disabled.**_"
+      notes: "for Node.js and browsers - supports [user-defined keywords](https://github.com/ajv-validator/ajv/blob/master/docs/keywords.md) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51)"
       date-draft: [2019-09, 2020-12]
       draft: [7, 6, 4]
       license: MIT
+      compliance:
+        config:
+          docs: https://ajv.js.org/strict-mode.html
+          instructions: "set option `strict: false`"
       last-updated: "2022-08-31"
     - name: "@cfworker/json-schema"
       url: https://github.com/cfworker/cfworker/blob/master/packages/json-schema/README.md
@@ -249,6 +262,10 @@
       date-draft: [2020-12, 2019-09]
       draft: [7, 6]
       license: "Apache License 2.0"
+      compliance:
+        config:
+          docs: https://opis.io/json-schema/2.x/php-loader.html#parser-options
+          instructions: 'set several options to their "vanilla" values'
       last-updated: "2022-08-31"
     - name: Swaggest Json Schema
       url: https://github.com/swaggest/php-json-schema
@@ -386,6 +403,10 @@
       url: 'https://www.npmjs.com/package/ajv-cli'
       date-draft: [2020-12, 2019-09]
       draft: [7, 6, 4]
+      compliance:
+        config:
+          docs: https://github.com/ajv-validator/ajv-cli#ajv-options
+          instructions: "pass `--strict=false`"
       last-updated: "2022-08-31"
     - name: yajsv
       license: MIT
