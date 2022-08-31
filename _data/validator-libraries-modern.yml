@@ -48,7 +48,7 @@
     - name: json-schema
       url: https://github.com/luposlip/json-schema
       date-draft: []
-      draft: [7]
+      draft: [4, 6, 7]
       license: Apache License, Version 2.0
 - name: COM/ActiveX
   implementations:
@@ -104,7 +104,7 @@
         Validator for Eclipse Vert.x project JSON types.
         Includes custom keywords support, custom dialect support, asynchronous validation
       date-draft: [2020-12, 2019-09]
-      draft: [7]
+      draft: [4, 7]
       license: Apache License, Version 2.0
     - name: jsonschemafriend
       url: https://github.com/jimblackler/jsonschemafriend
@@ -184,7 +184,7 @@
         Kotlin implementation of JSON Schema.
         (Currently supports most of Draft 7; see the README for details.
         Full compliance with Draft 7 and later drafts in progress.)
-      date-draft: []
+      date-draft: [2019-09]
       draft: [7]
       license: MIT
 - name: Perl
@@ -201,7 +201,7 @@
       license: "GNU General Public License, Version 1 + The Artistic License 1.0"
     - name: JSON::Validator
       url: https://github.com/mojolicious/json-validator
-      date-draft: []
+      date-draft: [2019-09]
       draft: [7, 6, 4]
       license: "The Artistic License 2.0 (GPL Compatible)"
     - name: JSONSchema::Validator
@@ -213,7 +213,7 @@
   implementations:
     - name: Opis Json Schema
       url: https://github.com/opis/json-schema
-      date-draft: []
+      date-draft: [2020-12, 2019-09]
       draft: [7, 6]
       license: "Apache License 2.0"
     - name: Swaggest Json Schema
@@ -261,8 +261,8 @@
   implementations:
     - name: jsonschema-rs
       url: https://github.com/Stranger6667/jsonschema-rs
-      notes: Fast due to compiling schema into a validation tree
-      date-draft: []
+      notes: Fast due to compiling schema into a validation tree; 2019-09 and 2020-12 are partially supported
+      date-draft: [2019-09, 2020-12]
       draft: [7, 6, 4]
       license: MIT
 - name: Scala
