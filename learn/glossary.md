@@ -24,14 +24,29 @@ While future drafts may introduce new behavior or changes to existing behavior, 
 
 The current list of drafts can be found [here](https://json-schema.org/specification-links.html#published-drafts).
 
+### keyword
+
+A property appearing within a [schema](#schema) object.
+
+The [JSON Schema specification](https://json-schema.org/specification.html) defines behavior for a large library of keywords which can be used to describe [instances](#instance).
+
 ### instance
 
-A piece of JSON data which is to be validated by a [schema](#schema).
+A piece of JSON data which is to be described by a [schema](#schema).
 
-JSON Schema can be used to validate JSON values of any type (as well as values from many JSON-like formats which can be reasonably represented as JSON).
+JSON Schema can be used to describe JSON values of any type (as well as values from many JSON-like formats which can be reasonably represented as JSON).
 
 The JSON Schema specification makes no broad assumptions about the structure of instances themselves beyond those of the JSON specification itself.
 In particular it does not reserve any properties within a JSON object for its own use, or require parsers of JSON to support features beyond those already mandated of JSON implementations.
+
+### meta-schema
+
+A [schema](#schema) which is itself intended to describe other *schemas*.
+
+JSON Schema defines a language for describing any [instance](#instance) using a schema written in JSON.
+Since schemas are themselves JSON values, they may be also be treated as *instances*, and therefore described by other schemas.
+
+We refer to the schema-of-a-schema as a "meta-schema" to express this use.
 
 ### normative
 
@@ -48,9 +63,9 @@ This page for instance, not being a normative document, is not able to proscribe
 
 ### schema
 
-A document, written according to the proscribed structure of the JSON Schema specification, which can be used to validate [instances](#instance).
+A document, written according to the proscribed structure of the JSON Schema specification, which can be used to describe [instances](#instance).
 
-The rules constituting what schemas are *valid* JSON Schemas, as well as the rules governing their behavior when validating instances, are defined by the JSON Schema specification.
+The rules constituting which schemas are conformant, as well as the rules governing their behavior when validating instances, are defined by the [JSON Schema specification](https://json-schema.org/specification.html).
 
 Strictly speaking, according to the specification, schemas are themselves JSON documents, though it is somewhat common for them to be authored or maintained in other languages which are easily translated to JSON, such as YAML.
 
