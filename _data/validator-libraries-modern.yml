@@ -7,11 +7,13 @@
       date-draft: [2020-12, 2019-09]
       draft: [7, 6]
       license: MIT
+      last-updated: "2022-08-31"
     - name: Json.NET Schema
       url: https://www.newtonsoft.com/jsonschema
       date-draft: [2019-09]
       draft: [7, 6, 4, 3]
       license: "AGPL-3.0-only"
+      last-updated: "2022-08-31"
 - name: C
   notes: No known implementations support draft-06 or later.
 - name: C++
@@ -21,23 +23,27 @@
       date-draft: []
       draft: [7]
       license: Boost Software License 1.0
+      last-updated: "2022-08-31"
     - name: JSON schema validator for JSON for Modern C++
       url: https://github.com/pboettch/json-schema-validator
       date-draft: []
       draft: [7]
       license: MIT
+      last-updated: "2022-08-31"
     - name: Valijson
       url: https://github.com/tristanpenman/valijson
       notes: header-only library, works with many JSON parser implementations
       date-draft: []
       draft: [7]
       license: BSD-2-Clause
+      last-updated: "2022-08-31"
     - name: jsoncons
       url: https://github.com/danielaparker/jsoncons/blob/master/doc/ref/jsonschema/jsonschema.md
       notes: Header-only library
       date-draft: []
       draft: [7]
       license: Boost Software License 1.0
+      last-updated: "2022-08-31"
 - name: Clojure
   implementations:
     - name: jinx
@@ -45,11 +51,13 @@
       date-draft: []
       draft: [7]
       license: MIT
+      last-updated: "2022-08-31"
     - name: json-schema
       url: https://github.com/luposlip/json-schema
       date-draft: []
       draft: [4, 6, 7]
       license: Apache License, Version 2.0
+      last-updated: "2022-08-31"
 - name: COM/ActiveX
   implementations:
     - name: JSON Essentials for COM/ActiveX
@@ -57,6 +65,7 @@
       draft: [7]
       license: proprietary
       notes: Language independent, includes JSON DOM parser, REST ready, 4 licensing options for free and business uses. For Windows platform only.
+      last-updated: "2022-08-31"
 - name: Common Lisp
   implementations:
     - name: json-schema
@@ -64,6 +73,7 @@
       date-draft: [2019-09]
       draft: [7, 6, 4]
       license: LGPL
+      last-updated: "2022-08-31"
 - name: Elixir
   implementations:
     - name: JsonXema
@@ -71,12 +81,14 @@
       date-draft: []
       draft: [7, 6, 4]
       license: MIT
+      last-updated: "2022-08-31"
 - name: Erlang
   implementations:
     - name: JeSSE
       url: https://github.com/for-GET/jesse
       draft: [6, 4, 3]
       license: "Apache 2.0"
+      last-updated: "2022-08-31"
 - name: Go
   implementations:
     - name: santhosh-tekuri/jsonschema
@@ -85,17 +97,20 @@
       date-draft: [2020-12, 2019-09]
       draft: [7, 6, 4]
       license: Apache License 2.0
+      last-updated: "2022-08-31"
     - name: qri-io/jsonschema
       url: https://github.com/qri-io/jsonschema
       date-draft: [2019-09]
       draft: [7]
       license: MIT
       notes: includes custom validator support, rich error returns
+      last-updated: "2022-08-31"
     - name: gojsonschema
       url: https://github.com/xeipuuv/gojsonschema
       date-draft: []
       draft: [7, 6, 4]
       license: "Apache 2.0"
+      last-updated: "2022-08-31"
 - name: Java
   implementations:
     - name: Vert.x Json Schema
@@ -106,33 +121,39 @@
       date-draft: [2020-12, 2019-09]
       draft: [4, 7]
       license: Apache License, Version 2.0
+      last-updated: "2022-08-31"
     - name: jsonschemafriend
       url: https://github.com/jimblackler/jsonschemafriend
       date-draft: [2020-12, 2019-09]
       draft: [7, 6, 4, 3]
       license: Apache License 2.0
+      last-updated: "2022-08-31"
     - name: networknt/json-schema-validator
       url: https://github.com/networknt/json-schema-validator
       notes: Support OpenAPI 3.0 with Jackson parser 
       date-draft: [2020-12, 2019-09]
       draft: [7, 6, 4]
       license: Apache License 2.0
+      last-updated: "2022-08-31"
     - name: Snow
       url: https://github.com/ssilverman/snowy-json
       notes: Uses Maven for the project and Gson under the hood.
       date-draft: [2019-09]
       draft: [7, 6]
       license: GNU Affero General Public License v3.0
+      last-updated: "2022-08-31"
     - name: everit-org/json-schema
       url: https://github.com/everit-org/json-schema
       date-draft: []
       draft: [7, 6, 4]
       license: Apache License 2.0
+      last-updated: "2022-08-31"
     - name: Justify
       url: https://github.com/leadpony/justify
       date-draft: []
       draft: [7, 6, 4]
       license: Apache License 2.0
+      last-updated: "2022-08-31"
 - name: JavaScript
   implementations:
     - name: Hyperjump JSV
@@ -141,35 +162,41 @@
       date-draft: [2019-09, 2020-12]
       draft: [7, 6, 4]
       license: MIT
+      last-updated: "2022-08-31"
     - name: ajv
       url: https://github.com/ajv-validator/ajv
       notes: "for Node.js and browsers - supports [user-defined keywords](https://github.com/ajv-validator/ajv/blob/master/docs/keywords.md) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51); _Only specification-compliant when [strict mode](https://ajv.js.org/strict-mode.html) is **disabled.**_"
       date-draft: [2019-09, 2020-12]
       draft: [7, 6, 4]
       license: MIT
+      last-updated: "2022-08-31"
     - name: "@cfworker/json-schema"
       url: https://github.com/cfworker/cfworker/blob/master/packages/json-schema/README.md
       notes: "Built for Cloudflare workers, browsers, and Node.js"
       date-draft: [2019-09]
       draft: [7, 6, 4]
       license: MIT
+      last-updated: "2022-08-31"
     - name: JSON Schema Library
       url: https://github.com/sagold/json-schema-library
       notes: "Built for Node.js and browsers. Customizable json-validator and json-schema utilities for traversal, data generation and validation"
       date-draft: []
       draft: [7, 6, 4]
       license: MIT
+      last-updated: "2022-08-31"
     - name: djv
       url: https://github.com/korzio/djv
       notes: "for Node.js and browsers"
       date-draft: []
       draft: [6, 4]
       license: MIT
+      last-updated: "2022-08-31"
     - name: vue-vuelidate-jsonschema
       url: https://github.com/mokkabonna/vue-vuelidate-jsonschema
       date-draft: []
       draft: [6]
       license: MIT
+      last-updated: "2022-08-31"
 - name: Kotlin
   implementations:
     - name: Medeia-validator
@@ -178,6 +205,7 @@
       date-draft: []
       draft: [7, 6, 4]
       license: Apache License 2.0
+      last-updated: "2022-08-31"
     - name: json-kotlin-schema
       url: https://github.com/pwall567/json-kotlin-schema
       notes: |
@@ -187,6 +215,7 @@
       date-draft: [2019-09]
       draft: [7]
       license: MIT
+      last-updated: "2022-08-31"
 - name: Perl
   implementations:
     - name: JSON::Schema::Modern
@@ -194,21 +223,25 @@
       date-draft: [2019-09, 2020-12]
       draft: [7]
       license: "GNU General Public License, Version 1 + The Artistic License 1.0"
+      last-updated: "2022-08-31"
     - name: JSON::Schema::Tiny
       url: https://github.com/karenetheridge/JSON-Schema-Tiny
       date-draft: [2019-09, 2020-12]
       draft: [7]
       license: "GNU General Public License, Version 1 + The Artistic License 1.0"
+      last-updated: "2022-08-31"
     - name: JSON::Validator
       url: https://github.com/mojolicious/json-validator
       date-draft: [2019-09]
       draft: [7, 6, 4]
       license: "The Artistic License 2.0 (GPL Compatible)"
+      last-updated: "2022-08-31"
     - name: JSONSchema::Validator
       url: https://github.com/skbkontur/perl-jsonschema-validator
       date-draft: []
       draft: [7, 6, 4]
       license: MIT
+      last-updated: "2022-08-31"
 - name: PHP
   implementations:
     - name: Opis Json Schema
@@ -216,11 +249,13 @@
       date-draft: [2020-12, 2019-09]
       draft: [7, 6]
       license: "Apache License 2.0"
+      last-updated: "2022-08-31"
     - name: Swaggest Json Schema
       url: https://github.com/swaggest/php-json-schema
       date-draft: []
       draft: [7, 6, 4]
       license: "MIT"
+      last-updated: "2022-08-31"
 - name: Python
   implementations:
     - name: jschon
@@ -228,23 +263,27 @@
       date-draft: [2019-09, 2020-12]
       draft: []
       license: MIT
+      last-updated: "2022-08-31"
     - name: jsonschema
       url: https://github.com/Julian/jsonschema
       date-draft: [2019-09, 2020-12]
       draft: [7, 6, 4, 3]
       license: "MIT"
+      last-updated: "2022-08-31"
     - name: fastjsonschema
       url: https://github.com/horejsek/python-fastjsonschema
       notes: Great performance thanks to code generation.
       date-draft: []
       draft: [7, 6, 4]
       license: BSD-3-Clause
+      last-updated: "2022-08-31"
     - name: jsonschema-rs
       url: https://github.com/Stranger6667/jsonschema-rs/tree/master/bindings/python
       notes: Python bindings to Rust's jsonschema crate
       date-draft: []
       draft: [7, 6, 4]
       license: MIT
+      last-updated: "2022-08-31"
 - name: Ruby
   implementations:
     - name: JSONSchemer
@@ -252,11 +291,13 @@
       date-draft: []
       draft: [7, 6, 4]
       license: MIT
+      last-updated: "2022-08-31"
     - name: JSI
       url: https://rubydoc.info/gems/jsi
       date-draft: []
       draft: [7, 6, 4]
       license: AGPL-3.0
+      last-updated: "2022-08-31"
 - name: Rust
   implementations:
     - name: jsonschema-rs
@@ -265,6 +306,7 @@
       date-draft: [2019-09, 2020-12]
       draft: [7, 6, 4]
       license: MIT
+      last-updated: "2022-08-31"
 - name: Scala
   implementations:
     - name: Reactive Core Circe JSON Validator
@@ -273,6 +315,7 @@
       date-draft: [2020-12, 2019-09]
       draft: []
       license: Apache License, Version 2.0
+      last-updated: "2022-08-31"
 - name: Objective-C
   implementations:
     - name: DSJSONSchemaValidation
@@ -280,6 +323,7 @@
       date-draft: []
       draft: [7, 6, 4]
       license: MIT
+      last-updated: "2022-08-31"
 - name: Lua/LuaJIT
   implementations:
     - name: lua-resty-jsonschema
@@ -287,6 +331,7 @@
       date-draft: []
       draft: [7, 6, 4]
       license: MIT
+      last-updated: "2022-08-31"
 - name: Web (Online)
   implementations:
     - name: Hyperjump JSV
@@ -294,32 +339,39 @@
       date-draft: [2020-12, 2019-09]
       draft: [7, 6, 4]
       notes: Supports multiple schemas and multiple instances; client-side validation
+      last-updated: "2022-08-31"
     - name: json-everything
       url: https://json-everything.net
       date-draft: [2020-12, 2019-09]
       draft: [7, 6]
       notes: Powered by JsonSchema.Net in Blazor WASM for client-side validation
+      last-updated: "2022-08-31"
     - name: jschon.dev
       url: https://jschon.dev/
       date-draft: [2020-12, 2019-09]
       draft: []
+      last-updated: "2022-08-31"
     - name: JSON Schema Validator
       url: https://www.jsonschemavalidator.net/
       date-draft: [2019-09]
       draft: [7, 6, 4, 3]
       notes: Powered by JSON.Net; server-side validation
+      last-updated: "2022-08-31"
     - name: jsonschema.dev
       url: https://jsonschema.dev
       draft: [7]
       notes: Powered by ajv; client-side validation
+      last-updated: "2022-08-31"
     - name: JSON Schema Lint
       url: http://jsonschemalint.com/
       date-draft: []
       draft: [7, 6, 4, 3, 2, 1]
+      last-updated: "2022-08-31"
     - name: ExtendsClass's JSON Schema Validator
       url: https://extendsclass.com/json-schema-validator.html
       date-draft: []
       draft: [7]
+      last-updated: "2022-08-31"
 - name: Command Line
   implementations:
     - name: valbuddy
@@ -328,20 +380,24 @@
       date-draft: [2019-09]
       draft: [7, 6, 4]
       notes: JSONBuddy cli tool. Windows platform. Support for large data and streaming validation.
+      last-updated: "2022-08-31"
     - name: ajv-cli
       license: MIT
       url: 'https://www.npmjs.com/package/ajv-cli'
       date-draft: [2020-12, 2019-09]
       draft: [7, 6, 4]
+      last-updated: "2022-08-31"
     - name: yajsv
       license: MIT
       url: 'https://github.com/neilpa/yajsv'
       date-draft: []
       draft: [7, 6, 4]
       notes: wraps [xeipuuv/gojsonschema](https://github.com/xeipuuv/gojsonschema)
+      last-updated: "2022-08-31"
     - name: Polyglottal JSON Schema Validator
       license: MIT
       url: 'https://www.npmjs.com/package/pajv'
       date-draft: []
       draft: [6, 4]
       notes: can be used with YAML and many other formats besides JSON
+      last-updated: "2022-08-31"

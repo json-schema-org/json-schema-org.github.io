@@ -3,6 +3,23 @@ $id: https://json-schema.org/implementations/schema
 type: array
 items:
     $ref: "#/$defs/language"
+$comment: |
+    The following if/then ensures that if last-updated is used
+    anywhere, then it is required everywhere.  This allows it
+    to be required in the modern data files and unused in the
+    obsolete data files.
+if:
+   contains:
+       required: [implementations]
+       properties:
+           implementations:
+               contains:
+                   required: [last-updated]
+then:
+    properties:
+        implementations:
+            items:
+                required: [last-updated]
 $defs:
     language:
         description: |
@@ -28,6 +45,14 @@ $defs:
                 type: array
                 items:
                     $ref: "#/$defs/implementation"
+                $comment: |
+                    The following if/then ensures that if the first
+                if:
+                    prefixItems:
+                      - required: [last-updated]
+                then:
+                    items:
+                        required: [last-updated]
             notes:
                 type: [string, "null"]
     implementation:
@@ -70,3 +95,16 @@ $defs:
                     Additional information.  Overly promotional (or critical)
                     wording should be avoided.
                 type: string
+            last-updated:
+                description: |
+                    The date (in whatever timezone was relevant at the time)
+                    the information for this entry was last updated.  This
+                    should only be changed when the implementation's
+                    documentation has been checked against the entry, not
+                    when minor formatting or other updates are done.
+                $comment: |
+                    "pattern" does the validation work here, "format" is
+                    just for semantic clarity.
+                type: string
+                format: date
+                pattern: '^\d\d\d\d-[01]\d-[0123]\d$'

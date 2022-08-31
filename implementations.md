@@ -69,6 +69,12 @@ Validators
           </li>
         {% endif %}
 
+        {% if implementation.last-updated %}
+          <li><em>Information last updated:</em>
+            {{ implementation.last-updated }}
+          </li>
+        {% endif %}
+
         </ul>
       </li>
     {% endfor %}
@@ -337,6 +343,13 @@ Hyper-Schema
         {% if implementation.license %}
             ({{ implementation.license | join: ", " }})
         {% endif %}
+
+        {% if implementation.last-updated %}
+          <br />
+          <em>Information last updated:</em>
+          {{ implementation.last-updated }}
+        {% endif %}
+
 
         </li>
     {% endfor %}
