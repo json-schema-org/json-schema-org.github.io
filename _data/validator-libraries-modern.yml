@@ -52,7 +52,7 @@
       draft: [7]
       license: MIT
       last-updated: "2022-08-31"
-    - name: json-schema
+    - name: json-schema (luposlip)
       url: https://github.com/luposlip/json-schema
       date-draft: []
       draft: [4, 6, 7]
@@ -61,6 +61,7 @@
 - name: COM/ActiveX
   implementations:
     - name: JSON Essentials for COM/ActiveX
+      anchor-name: JSONEssentials
       url: https://pinery.systems/json-essentials-com/index.html
       draft: [7]
       license: proprietary
@@ -68,7 +69,7 @@
       last-updated: "2022-08-31"
 - name: Common Lisp
   implementations:
-    - name: json-schema
+    - name: json-schema (fisxoj)
       url: https://github.com/fisxoj/json-schema
       date-draft: [2019-09]
       draft: [7, 6, 4]
@@ -135,7 +136,7 @@
       last-updated: "2022-08-31"
     - name: networknt/json-schema-validator
       url: https://github.com/networknt/json-schema-validator
-      notes: Support OpenAPI 3.0 with Jackson parser 
+      notes: Support OpenAPI 3.0 with Jackson parser
       date-draft: [2020-12, 2019-09]
       draft: [7, 6, 4]
       license: Apache License 2.0
@@ -184,6 +185,7 @@
           instructions: "set option `strict: false`"
       last-updated: "2022-08-31"
     - name: "@cfworker/json-schema"
+      anchor-name: cfworker
       url: https://github.com/cfworker/cfworker/blob/master/packages/json-schema/README.md
       notes: "Built for Cloudflare workers, browsers, and Node.js"
       date-draft: [2019-09]
@@ -294,11 +296,13 @@
       draft: [7, 6, 4]
       license: BSD-3-Clause
       last-updated: "2022-08-31"
-    - name: jsonschema-rs
+    - name: jsonschema-rs (Python)
       url: https://github.com/Stranger6667/jsonschema-rs/tree/master/bindings/python
       notes: Python bindings to Rust's jsonschema crate
       date-draft: []
       draft: [7, 6, 4]
+      built-on:
+        name: jsonschema-rs
       license: MIT
       last-updated: "2022-08-31"
 - name: Ruby
@@ -351,43 +355,59 @@
       last-updated: "2022-08-31"
 - name: Web (Online)
   implementations:
-    - name: Hyperjump JSV
+    - name: Hyperjump JSV (online)
       url: https://json-schema.hyperjump.io
       date-draft: [2020-12, 2019-09]
       draft: [7, 6, 4]
       notes: Supports multiple schemas and multiple instances; client-side validation
+      built-on:
+        name: Hyperjump JSV
       last-updated: "2022-08-31"
     - name: json-everything
       url: https://json-everything.net
       date-draft: [2020-12, 2019-09]
       draft: [7, 6]
       notes: Powered by JsonSchema.Net in Blazor WASM for client-side validation
+      built-on:
+        name: JsonSchema.Net
       last-updated: "2022-08-31"
     - name: jschon.dev
       url: https://jschon.dev/
       date-draft: [2020-12, 2019-09]
       draft: []
+      built-on:
+        name: jschon
       last-updated: "2022-08-31"
     - name: JSON Schema Validator
       url: https://www.jsonschemavalidator.net/
       date-draft: [2019-09]
       draft: [7, 6, 4, 3]
-      notes: Powered by JSON.Net; server-side validation
+      notes: server-side validation
+      built-on:
+        name: Json.NET Schema
       last-updated: "2022-08-31"
     - name: jsonschema.dev
       url: https://jsonschema.dev
       draft: [7]
-      notes: Powered by ajv; client-side validation
+      notes: client-side validation
+      built-on:
+        name: ajv
       last-updated: "2022-08-31"
     - name: JSON Schema Lint
       url: http://jsonschemalint.com/
       date-draft: []
       draft: [7, 6, 4, 3, 2, 1]
+      built-on:
+        name: ajv
+      notes:  Uses JSV for draft-03 and earlier
       last-updated: "2022-08-31"
     - name: ExtendsClass's JSON Schema Validator
+      anchor-name: ExtendsClass
       url: https://extendsclass.com/json-schema-validator.html
       date-draft: []
       draft: [7]
+      built-on:
+        name: ajv
       last-updated: "2022-08-31"
 - name: Command Line
   implementations:
@@ -407,13 +427,16 @@
         config:
           docs: https://github.com/ajv-validator/ajv-cli#ajv-options
           instructions: "pass `--strict=false`"
+      built-on:
+        name: ajv
       last-updated: "2022-08-31"
     - name: yajsv
       license: MIT
       url: 'https://github.com/neilpa/yajsv'
       date-draft: []
       draft: [7, 6, 4]
-      notes: wraps [xeipuuv/gojsonschema](https://github.com/xeipuuv/gojsonschema)
+      built-on:
+        name: gojsonschema
       last-updated: "2022-08-31"
     - name: Polyglottal JSON Schema Validator
       license: MIT
@@ -422,3 +445,5 @@
       draft: [6, 4]
       notes: can be used with YAML and many other formats besides JSON
       last-updated: "2022-08-31"
+      built-on:
+        name: ajv

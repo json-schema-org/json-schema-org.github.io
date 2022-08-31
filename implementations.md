@@ -46,7 +46,8 @@ Validators
     <ul>
     {% for implementation in language.implementations %}
       <li>
-        <a href="{{implementation.url}}">{{ implementation.name }}</a>
+        <a name="{{ implementation.anchor-name | default: implementation.name }}"></a>
+        <a href="{{ implementation.url}}">{{ implementation.name }}</a>
         <ul>
           <li><em>Supports:</em>
             {% if implementation.date-draft %}
@@ -66,6 +67,12 @@ Validators
             <strong>{{ implementation.compliance.config.instructions | markdownify | remove: '<p>' | remove: '</p>' }}</strong> to produce specification-compliant behavior.
           </li>
           {% endif %}
+        {% endif %}
+
+        {% if implementation.built-on %}
+          <li><em>Built on:</em>
+            <a href="#{{ implementation.built-on.anchor-name | default: implementation.built-on.name }}">{{ implementation.built-on.name }}</a>
+          </li>
         {% endif %}
 
         {% if implementation.license %}

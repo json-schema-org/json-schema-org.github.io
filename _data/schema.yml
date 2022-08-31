@@ -31,12 +31,8 @@ $defs:
         oneOf:
           - required: [implementations]
           - required: [notes]
+        $ref: "#/$defs/name-and-anchor-name"
         properties:
-            name:
-                type: string
-            anchor-name:
-                type: string
-                description: A name suitable for us as an HTML id.
             implementations:
                 description: |
                     The list of implementations for this language/environment,
@@ -55,6 +51,30 @@ $defs:
                         required: [last-updated]
             notes:
                 type: [string, "null"]
+    name-and-anchor-name:
+        $comment: |
+            Require an anchor-name if the name is not suitable for
+            use as an anchor (HTML id attribute)
+        if:
+            required: [name]
+            not:
+                properties:
+                    name:
+                        $ref: "#/$defs/anchor-name"
+        then:
+            required: [anchor-name]
+        properties:
+            name:
+                type: string
+            anchor-name:
+                $ref: "#/$defs/anchor-name"
+    anchor-name:
+        description: |
+            A name suitable for us as an HTML id, if the regular name
+            is not a vald id.  The regex is looser than the HTML spec
+            but is based on what was already working on the page.
+        type: string
+        pattern: '^[A-Za-z][A-Za-z0-9+-_:./ ()]*$'
     implementation:
         description: |
             An implementation and its associated information.
@@ -64,10 +84,8 @@ $defs:
         anyOf:
           - required: [draft]
           - required: [date-draft]
+        $ref: "#/$defs/name-and-anchor-name"
         properties:
-            name:
-                description: The human-friendly name of the implementation
-                type: string
             url:
                 description: |
                     The URL of the implementation's repository or documentation
@@ -95,6 +113,13 @@ $defs:
                     Additional information.  Overly promotional (or critical)
                     wording should be avoided.
                 type: string
+            built-on:
+                description: |
+                    Indicates that this implementation is built on another
+                    implementation, typically to make it available through
+                    a web page, CLI, or a different programming language.
+                type: object
+                $ref: "#/$defs/name-and-anchor-name"
             compliance:
                 $ref: "#/$defs/compliance"
             last-updated:
