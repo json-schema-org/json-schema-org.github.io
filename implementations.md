@@ -26,7 +26,7 @@ Validators
 
 <nav class="intra" markdown="1">
 
-{% assign validator-libraries = site.data.validator-libraries-modern %}
+{% assign validator-libraries = site.data.validator-libraries-modern | sort: 'name' %}
 
 {% for language in validator-libraries %}
 -   [{{ language.name }}](#validator-{% if language.anchor-name %}{{ language.anchor-name }}{% else %}{{ language.name | downcase }}{% endif %})
@@ -50,10 +50,10 @@ Validators
 
         <em>
         {% if implementation.date-draft %}
-            {{ implementation.date-draft | join: ", "}}{% if implementation.draft %}, {% endif %}
+            {{ implementation.date-draft | sort | reverse | join: ", "}}{% if implementation.draft %}, {% endif %}
         {% endif %}
         {% if implementation.draft %}
-            draft-0{{ implementation.draft | join: ", -0" }}
+            draft-0{{ implementation.draft | sort | reverse | join: ", -0" }}
         {% endif %}
         </em>
 
