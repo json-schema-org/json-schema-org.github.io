@@ -4,8 +4,10 @@ sudo: false
 node_js:
 - node
 before_script:
-- npm install ajv-cli@3.1.0
+- npm install ajv-cli@5.0.0 ajv-formats@2.1.1
 - PATH="./node_modules/.bin/:$PATH"
 script:
 - bundle exec jekyll build
-- ajv test -s draft-07/schema -d "learn/examples/*.json" --valid --add-used-schema=false
+- ajv compile --spec=draft2020 --strict=false -s learn/examples/geographical-location.schema.json -s learn/examples/address.schema.json -s learn/examples/card.schema.json -s learn/examples/calendar.schema.json
+- ajv compile --spec=draft2020 --strict=false -c ajv-formats -s _data/schema.yml
+- ajv --spec=draft2020 --strict=false -c ajv-formats test -s _data/schema.yml -d "_data/*-libraries-*.yml" --valid
