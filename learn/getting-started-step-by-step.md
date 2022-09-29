@@ -50,10 +50,10 @@ We start with four properties called **keywords** which are expressed as [JSON](
 
 > Yes. the standard uses a JSON data document to describe data documents, most often that are also JSON data documents but could be in any number of other content types like `text/xml`.
 
-* The [`$schema`](https://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.8.1.1) keyword states that this schema is written according to a specific draft of the standard and used for a variety of reasons, primarily version control.
-* The [`$id`](https://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.8.2.1) keyword defines a URI for the schema, and the base URI that other URI references within the schema are resolved against.
-* The [`title`](https://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.9.1) and [`description`](https://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.9.1) annotation keywords are descriptive only. They do not add constraints to the data being validated. The intent of the schema is stated with these two keywords.
-* The [`type`](https://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.1.1) validation keyword defines the first constraint on our JSON data and in this case it has to be a JSON Object.
+* The [`$schema`](https://json-schema.org/draft/2020-12/json-schema-core.html#section-8.1.1) keyword states that this schema is written according to a specific draft of the standard and used for a variety of reasons, primarily version control.
+* The [`$id`](https://json-schema.org/draft/2020-12/json-schema-core.html#section-8.2.1) keyword defines a URI for the schema, and the base URI that other URI references within the schema are resolved against.
+* The [`title`](https://json-schema.org/draft/2020-12/json-schema-validation.html#section-9.1) and [`description`](https://json-schema.org/draft/2020-12/json-schema-validation.html#section-9.1) annotation keywords are descriptive only. They do not add constraints to the data being validated. The intent of the schema is stated with these two keywords.
+* The [`type`](https://json-schema.org/draft/2020-12/json-schema-validation.html#section-6.1.1) validation keyword defines the first constraint on our JSON data and in this case it has to be a JSON Object.
 
 ```json
 {
@@ -67,9 +67,9 @@ We start with four properties called **keywords** which are expressed as [JSON](
 
 We introduce the following pieces of terminology when we start the schema:
 
-* [Schema Keyword](https://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.8.1.1): `$schema` and `$id`.
-* [Schema Annotations](https://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.9.1): `title` and `description`.
-* [Validation Keyword](https://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.1.1): `type`.
+* [Schema Keyword](https://json-schema.org/draft/2020-12/json-schema-core.html#section-8.1.1): `$schema` and `$id`.
+* [Schema Annotations](https://json-schema.org/draft/2020-12/json-schema-validation.html#section-9.1): `title` and `description`.
+* [Validation Keyword](https://json-schema.org/draft/2020-12/json-schema-validation.html#section-6.1.1): `type`.
 
 ## <a name="properties"></a>Defining the properties
 
@@ -77,10 +77,10 @@ We introduce the following pieces of terminology when we start the schema:
 
 In JSON Schema terms, we update our schema to add:
 
-* The [`properties`](https://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.10.3.2.1) validation keyword.
+* The [`properties`](https://json-schema.org/draft/2020-12/json-schema-core.html#section-10.3.2.1) validation keyword.
 * The `productId` key.
   * `description` schema annotation and `type` validation keyword is noted -- we covered both of these in the previous section.
-* The [`required`](https://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.5.3) validation keyword listing `productId`.
+* The [`required`](https://json-schema.org/draft/2020-12/json-schema-validation.html#section-6.5.3) validation keyword listing `productId`.
 
 
 ```json
@@ -130,8 +130,8 @@ In JSON Schema terms, we update our schema to add:
 According to the store owner there are no free products. ;)
 
 * The `price` key is added with the usual `description` schema annotation and `type` validation keywords covered previously. It is also included in the array of keys defined by the `required` validation keyword.
-* We specify the value of `price` must be something other than zero using the [`exclusiveMinimum`](https://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.2.5) validation keyword.
-  * If we wanted to include zero as a valid price we would have specified the [`minimum`](https://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.2.4) validation keyword.
+* We specify the value of `price` must be something other than zero using the [`exclusiveMinimum`](https://json-schema.org/draft/2020-12/json-schema-validation.html#section-6.2.5) validation keyword.
+  * If we wanted to include zero as a valid price we would have specified the [`minimum`](https://json-schema.org/draft/2020-12/json-schema-validation.html#section-6.2.4) validation keyword.
 
 ```json
 {
@@ -172,9 +172,9 @@ Therefore:
 
 * The `tags` key is added with the usual annotations and keywords.
 * This time the `type` validation keyword is `array`.
-* We introduce the [`items`](https://json-schema.org/draft/2020-12/json-schema-core.html#rfc.section.10.3.1.2) validation keyword so we can define what appears in the array. In this case: `string` values via the `type` validation keyword.
-* The [`minItems`](https://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.4.2) validation keyword is used to make sure there is at least one item in the array.
-* The [`uniqueItems`](https://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.4.3) validation keyword notes all of the items in the array must be unique relative to one another.
+* We introduce the [`items`](https://json-schema.org/draft/2020-12/json-schema-core.html#section-10.3.1.2) validation keyword so we can define what appears in the array. In this case: `string` values via the `type` validation keyword.
+* The [`minItems`](https://json-schema.org/draft/2020-12/json-schema-validation.html#section-6.4.2) validation keyword is used to make sure there is at least one item in the array.
+* The [`uniqueItems`](https://json-schema.org/draft/2020-12/json-schema-validation.html#section-6.4.3) validation keyword notes all of the items in the array must be unique relative to one another.
 * We did not add this key to the `required` validation keyword array because it is optional.
 
 ```json
@@ -276,7 +276,7 @@ So far our JSON schema has been wholly self contained. It is very common to shar
 
 For this example we introduce a new JSON Schema resource and for both properties therein:
 * We use the `minimum` validation keyword noted earlier.
-* We add the [`maximum`](https://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.2.2) validation keyword.
+* We add the [`maximum`](https://json-schema.org/draft/2020-12/json-schema-validation.html#section-6.2.2) validation keyword.
 * Combined, these give us a range to use in validation.
 
 ```json
