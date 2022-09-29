@@ -30,7 +30,7 @@ They are also available on the IETF main site:
 Meta-schemas
 ------------
 
-The meta-schemas are schemas against which other schemas can be validated.It is self-descriptive: the JSON Schema meta-schema validates itself.
+The meta-schemas are schemas against which other schemas can be validated. It is self-descriptive: the JSON Schema meta-schema validates itself.
 
 The latest meta-schema is **2020-12**.  For an explanation of the change to date-based identifiers, see the [Specification Links](specification-links.html) page.
 
