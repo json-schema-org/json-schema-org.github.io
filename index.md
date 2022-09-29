@@ -41,8 +41,10 @@ We hold weekly Office Hours and twice monthly Open Community Working Meetings.
 
 Office Hours are every first Tuesday of the month at 15:00 UTC, and by appointment.
 
-Open Community Working Meetings are every First and Third Monday of the month at 14:00 PT.
+Open Community Working Meetings are every Monday at 14:00 PT.
 
+If either of these are cancelled or moved for any reason, we will aim to announce such via the Slack announcement channel and Twitter.
+See our [community calendar](https://calendar.google.com/calendar/u/0/embed?src=c_8r4g9r3etmrmt83fm2gljbatos@group.calendar.google.com) (and make sure to check the time zone).
 
 ## Need more?
 
@@ -110,6 +112,7 @@ Similarly to most specifications, the JSON schema specification will continue to
 
 When the _draft_ designation is dropped this may indicate that the frequency of releases and amount of changes in each release will decrease, but it won't indicate that no new releases will be made, or that all future releases will be backwards compatible.
 </details>
+
 ## Quickstart
 
 The JSON document being validated or described we call the *instance*, and the document containing the description is called the *schema*.
