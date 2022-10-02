@@ -20,6 +20,16 @@ permalink: /
 
 </div>
 
+## Announcements and Feedback Solicitation: Specification Process
+
+* The JSON Schema media types (`application/schema+json` and `application/schema-instance+json`) will be published as an [IETF RFC](https://datatracker.ietf.org/doc/draft-ietf-httpapi-rest-api-mediatypes/), which has already been adopted by the HTTP APIs working group.
+* As an [Incubation-status OpenJS Foundation project](https://openjsf.org/projects/#incubating), we continue to work through our governance [todo list](https://github.com/json-schema-org/community/issues/129) to move to either At-Large or Impact status.
+* The bulk of our specification will be published under a new process currently [under public discussion](https://github.com/orgs/json-schema-org/discussions/234).  All are encouraged to provide feedback!  Our goals with this process include:
+    * In the next release, offer stability guarantees for long-stable aspects of JSON Schema.
+    * Provide clarity regarding which other aspects are close to a stable form, and which are more experimental.
+    * Publish our specifications in a way similar to OpenAPI and AsyncAPI, which are also part of the Linux Foundation (the larger umbrella under which the OpenJS Foundation exists).
+* We are working on finding the right path for Relative JSON Pointer to reach standardization in the near future.  An IETF RFC currently remains the most likely path, although several details are still being worked out.
+
 ## What now?
 
 Learn, Get help, Shape the Community, Chat, with the JSON Schema team and Community!
@@ -78,40 +88,6 @@ We are using dates for meta-schemas, which are what implementations should use t
 so we will usually refer to `2020-12` (without the word "draft") on this web site.
 
 See the [Specification page](specification.html) for details about naming and numbering.
-
-### The Path to Standardization
-
-The JSON Schema project intends to shepherd all three draft series to either: RFC status, the equivalent within another standards body, and/or join a foundation and establish self publication rules.
-
-<details markdown="1">
-<summary>Read more</summary>
-
-Currently, we are continuing to improve our self-published Internet-Drafts. We are not actively pursuing joining a standards organisation.
-
-We have a few contacts related to each potential path, but if you have experience with such things and would like to help, please still contact us!
-
-In the meantime, publication of Internet-Draft documents can be tracked through the IETF:
-* [JSON Schema (core)](https://datatracker.ietf.org/doc/draft-bhutton-json-schema/)
-* [JSON Schema Validation](https://datatracker.ietf.org/doc/draft-bhutton-json-schema-validation/)
-* [Relative JSON Pointers](https://datatracker.ietf.org/doc/draft-bhutton-relative-json-pointer/)
-
-Internet-Drafts expire after six months, so our goal is to publish often enough to always have a set of unexpired drafts available.  There may be brief gaps as we wrap up each draft and finalize the text.
-</details>
-
-### Use of the _draft_ designation
-Releases of the JSON schema specification and meta schemas use the _draft_ designation primarily for historical reasons stemming from the relationship of this specification to IETF ([explained here](https://json-schema.org/specification-links.html#understanding-draft-names-and-numbers)).
-The use of this designation is under review but will continue until this review process completes to avoid changing the designation style multiple times.
-<details markdown="1">
-<summary>Read more</summary>
-
-The JSON schema project recognizes, condones, and advocates for the use of the JSON schema standard in production.
-
-Each release of the JSON schema specification is treated as a production release by the JSON schema project. All changes in each new release are made judiciously, with great care, thorough review and careful consideration of how the changes will impact existing users and implementations of the JSON schema specification.
-
-Similarly to most specifications, the JSON schema specification will continue to evolve, and not all releases will be backwards compatible. The intention, particularly for vocabularies such as validation which have been widely implemented, is to remain as compatible as possible from release to release. However, major changes can still occur given a clear enough need validated with the user community.
-
-When the _draft_ designation is dropped this may indicate that the frequency of releases and amount of changes in each release will decrease, but it won't indicate that no new releases will be made, or that all future releases will be backwards compatible.
-</details>
 
 ## Quickstart
 
