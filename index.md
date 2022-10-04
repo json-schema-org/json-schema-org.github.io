@@ -39,7 +39,7 @@ We hold weekly Office Hours and twice monthly Open Community Working Meetings.
     <a class="button border button-center" href="https://github.com/json-schema-org/community/discussions/35" target="_blank">👷 Open Community Working Meetings</a>
 </div>
 
-Office Hours are every first Tuesday of the month at 15:00 UTC, and by appointment.
+Office Hours are every first Tuesday of the month at 15:00 BST, and by appointment.
 
 Open Community Working Meetings are every Monday at 14:00 PT.
 
