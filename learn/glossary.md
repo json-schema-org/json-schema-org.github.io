@@ -14,6 +14,15 @@ If you encounter a term you wish were defined here, please feel free to [file an
 
 The entries on this page can be linked to via anchor links (e.g. `https://json-schema.org/learn/glossary.html#vocabulary`) when sharing a definition with others.
 
+### dialect
+
+A collection of [vocabularies](#vocabulary), along with an indication of whether supporting each vocabulary is required to process schemas written in the dialect.
+
+Dialects are identified by a URI, which [schemas](#schema) may then reference in their `$schema` [keyword](#keyword).
+Doing so identifies the schema as being written in the dialect, and thereby indicates which keywords are usable within it, along with their intended meaning.
+
+The JSON Schema specification [defines](https://json-schema.org/specification.html#general-purpose-meta-schema) a number of dialects, each of which enable vocabularies suitable for the dialect's specific use case.
+
 ### draft
 
 An individual release of the JSON Schema specification.
@@ -70,3 +79,18 @@ The rules constituting which schemas are conformant, as well as the rules govern
 Strictly speaking, according to the specification, schemas are themselves JSON documents, though it is somewhat common for them to be authored or maintained in other languages which are easily translated to JSON, such as YAML.
 
 In recent [drafts](#draft) of the specification, a schema is either a JSON object or a JSON boolean value.
+
+### vocabulary
+
+A collection of related [keywords](keyword), grouped to facilitate re-use.
+
+A vocabulary typically includes both a [meta-schema](#meta-schema) which formally defines the keywords it contains, as well as a prose document or specification which explains the semantics of its keywords in a way suitable for implementers and users of the vocabulary.
+
+Anyone can create and publish a vocabulary, and implementations generally will include facilities for extending themselves with support for additional vocabularies and their keywords.
+The JSON Schema specification includes a number of vocabularies which cover each of the keywords it defines.
+
+Vocabularies are identified by a URI which may be referenced via the `$vocabulary` keyword in order to enable the vocabulary within a [dialect](#dialect).
+
+#### See also
+
+* [`json-schema-vocabularies`](https://github.com/json-schema-org/json-schema-vocabularies), a repository which collects known third-party JSON Schema vocabularies
