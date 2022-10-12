@@ -84,7 +84,8 @@ In recent [drafts](#draft) of the specification, a schema is either a JSON objec
 
 A collection of related [keywords](keyword), grouped to facilitate re-use.
 
-A vocabulary typically includes both a [meta-schema](#meta-schema) which formally defines the keywords it contains, as well as a prose document or specification which explains the semantics of its keywords in a way suitable for implementers and users of the vocabulary.
+A vocabulary is specified by a prose document or specification which explains the semantics of its keywords in a way suitable for implementers and users of the vocabulary.
+It often also includes a [meta-schema](#meta-schema) (or multiple metaschemas) which define the syntax of its keywords.
 
 Anyone can create and publish a vocabulary, and implementations generally will include facilities for extending themselves with support for additional vocabularies and their keywords.
 The JSON Schema specification includes a number of vocabularies which cover each of the keywords it defines.
