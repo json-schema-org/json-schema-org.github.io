@@ -293,6 +293,9 @@ the utility, and decided on a case-by-case basis.
 -   Webpack
     -   [@cloudflare/json-schema-ref-loader](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-ref-loader) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), (BSD-3-Clause) Webpack loader for dereference-able schemas in JSON, JSON5, YAML, or JavaScript
     -   [@cloudflare/json-schema-apidoc-loader](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/json-schema-apidoc-loader) ([JSON Schema Tools](https://github.com/cloudflare/json-schema-tools)), Back-end for [@cloudflare/doca](https://github.com/cloudflare/json-schema-tools/tree/master/workspaces/doca), _draft-04, -06, -07, and Doca extensions_
+-   XSD
+    -   [Oxygen XSD to JSON Schema](https://www.oxygenxml.com/json_converter.html#xsd-to-json-schema) - Generate from an XSD file a similar JSON Schema structure.
+    -   [XSD to JSON Schema IntellJ plugin](https://plugins.jetbrains.com/plugin/19024-xsd-to-json-schema) - Plugin for converting an XML Schema (XSD) file to a JSON Schema file.
 
 #### Testing
 
@@ -307,7 +310,7 @@ the utility, and decided on a case-by-case basis.
 -   [JSONBuddy](https://www.json-buddy.com/) - *Text and grid-style JSON editor and validator with JSON schema analyzer, context sensitive entry-helpers and sample data generation based on JSON schema. Support for draft-4, draft-6, draft-7 and 2019-09. JSON Schema validation debugger: Step through the validation process and set breakpoints.*
 -   [JSONEditor Online](https://jsoneditoronline.org/) - *View, edit, format, and validate JSON online* Support draft-4, draft-6, and draft-7.
 -   [Liquid JSON Schema Editor](https://www.liquid-technologies.com/json-schema-editor) - *Graphical JSON Schema editor for draft-04, draft-06, draft-07 and 2019-09, with split source code and grphical editing. Includes validation of JSON files based on JSON Schema, JSON Sample Generator and JSON Schema Documentation Generator.*
--   [Oxygen JSON Editor](https://www.oxygenxml.com/xml_editor/json.html) - *JSON editor with a variety of editing features and helper views. Support for validation and editing JSON Schema draft-4, draft-6, and draft-7. Validation and editing of JSON files based on JSON Schema.*
+-   [Oxygen JSON Schema Editor](https://www.oxygenxml.com/xml_developer/json_schema_editor.html) - *JSON Schema editor with a variety of editing features and helper views (Design/Text/Author). Support for validation and editing JSON Schema draft-4, draft-6, and draft-7, 2019-09, 2020-12. Validation and editing of JSON files based on JSON Schema.*
 -   [Perseid Modeler](https://www.datensen.com/data-modeling/perseid-modeler-for-json-schema.html) - *a modeling tool for JSON Schema and OpenAPI. Key features include: visual JSON schema creation using tree and ERD-like diagrams, support for JSON schema structures including operators and conditions, import of existing schemas from files, creation of detailed HTML reports, export to PDF, script generation, and more. Supported versions: draft 4, 6, 7, 2019-09 and 2020-12*
 -   [Stoplight Studio](https://stoplight.io/) - *JSON Schema IDE (text-based and GUI) with support for JSON/YAML linting, which can also be based on JSON Schema rules via Spectral. Support for draft-4, draft-6 and draft-7.*
 -   [Visual Studio Code](https://code.visualstudio.com/) - *Schema driven code completion, hovers and validation for editing JSON files (including schemas)*
@@ -319,6 +322,7 @@ the utility, and decided on a case-by-case basis.
 - [jsonschematic](https://github.com/yanick/jsonschematic/) - Svelte-based schema viewer. Runs as a local web app. Supports draft-7.
 - [docson](https://github.com/lbovet/docson) - Javascript-based schema viewer.  Runs as a local web app. Supports draft-4.
 - [json-schema-for-humans](https://pypi.org/project/json-schema-for-humans/) - Generate HTML representation of a schema. Python-based. Supports draft-7.
+- [oXygen JSON Schema Documentation](https://www.oxygenxml.com/json_converter.html#generate-json-schema-documentation) - Generate JSON Schema documentation in HTML format including diagrams.
 - [wetzel](https://github.com/CesiumGS/wetzel) - Generates Markdown and AsciiDoc. With some limitations, supports draft-3, draft-4, draft-7, and 2020-12.
 
 Schema Repositories
