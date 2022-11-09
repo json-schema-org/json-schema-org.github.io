@@ -284,11 +284,11 @@
       license: MIT
       last-updated: "2022-08-31"
     - name: jsonschema
-      url: https://github.com/Julian/jsonschema
+      url: https://github.com/python-jsonschema/jsonschema
       date-draft: [2019-09, 2020-12]
       draft: [7, 6, 4, 3]
       license: "MIT"
-      last-updated: "2022-08-31"
+      last-updated: "2022-11-09"
     - name: fastjsonschema
       url: https://github.com/horejsek/python-fastjsonschema
       notes: Great performance thanks to code generation.
