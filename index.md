@@ -5,7 +5,7 @@ permalink: /
 ---
 
 
-**JSON Schema** is a declarative domain specific language that allows you to **annotate** and **validate** JSON documents. JSON Schema enables the confident and reliable use of the JSON data format.
+**JSON Schema** is a declarative language that allows you to **annotate** and **validate** JSON documents. JSON Schema enables the confident and reliable use of the JSON data format.
 
 
 ## Benefits
