@@ -4,8 +4,11 @@ title: JSON Schema
 permalink: /
 ---
 
+<div class="text-center">
+**JSON Schema** is a declarative language that allows you to **annotate** and **validate** JSON documents.
 
-**JSON Schema** is a declarative language that allows you to **annotate** and **validate** JSON documents. JSON Schema enables the confident and reliable use of the JSON data format.
+JSON Schema enables the confident and reliable use of the JSON data format.
+</div>
 
 
 ## Benefits
