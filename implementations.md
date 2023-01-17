@@ -319,6 +319,8 @@ the utility, and decided on a case-by-case basis.
 
 #### Documentation generators
 
+
+- [json-schema-static-docs]([https://github.com/yanick/jsonschematic/](https://tomcollins.github.io/json-schema-static-docs/)) - Generates human friendly markdown documentation from JSON Schema. Includes links between pages based on $ref values. Supports draft-7.
 - [jsonschematic](https://github.com/yanick/jsonschematic/) - Svelte-based schema viewer. Runs as a local web app. Supports draft-7.
 - [docson](https://github.com/lbovet/docson) - Javascript-based schema viewer.  Runs as a local web app. Supports draft-4.
 - [json-schema-for-humans](https://pypi.org/project/json-schema-for-humans/) - Generate HTML representation of a schema. Python-based. Supports draft-7.
