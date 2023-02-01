@@ -162,6 +162,8 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
     -   [scala-jsonschema](https://github.com/andyglow/scala-jsonschema) (Apache 2.0) - generates schemad out of Scala case classes
 -   Ruby
     -   [Shale](https://github.com/kgiszczak/shale) (MIT) - generates schema from Ruby models *supports Draft 2020-12*
+-   Rust
+    -   [Schemars](https://github.com/GREsau/schemars) (MIT) - generates schema from Rust code *supports Draft 7* 
 
 #### From data
 
