@@ -447,3 +447,13 @@
       last-updated: "2022-08-31"
       built-on:
         name: ajv
+- name: Github Actions
+  implementations:
+    - name: Validate JSON Action
+      license: MIT
+      url: 'https://github.com/OrRosenblatt/validate-json-action'
+      date-draft: [2019-09, 2020-12]
+      draft: []
+      built-on:
+        name: ajv
+      last-updated: "2023-02-01"
