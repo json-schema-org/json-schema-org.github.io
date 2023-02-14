@@ -194,6 +194,8 @@ are the only keywords that changed.
 
 #### Code generation
 
+-   Dotnet
+    -  [Corvus.JsonSchema](https://www.nuget.org/packages/Corvus.Json.JsonSchema.TypeGeneratorTool/) - generates an idiomatic dotnet type model from JSON Schema files, supporting all JSON Schema features, including property accessors, enumeration, common string `format`, and JSON document building/modification; over low-level `System.Text.Json` types. *supports Draft 6, Draft 7, Draft 2019-09 and Draft 2020-12*.
 -   Elm
     -  [json-schema-to-elm](https://github.com/dragonwasrobot/json-schema-to-elm) - generates Elm types, JSON decoders+encoders, and fuzz tests from one or more JSON Schema files, using [dragonwasrobot/json_schema](https://github.com/dragonwasrobot/json_schema) *supports Draft 7*
 -   Go

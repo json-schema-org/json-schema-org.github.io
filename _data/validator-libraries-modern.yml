@@ -14,6 +14,12 @@
       draft: [7, 6, 4, 3]
       license: "AGPL-3.0-only"
       last-updated: "2022-08-31"
+    - name: Corvus.JsonSchema
+      url: https://github.com/corvus-dotnet/corvus.jsonschema
+      date-draft: [2020-12, 2019-09]
+      draft: [7, 6]
+      license: Apache License, Version 2.0
+      last-updated: "2023-02-14"
 - name: C
   notes: No known implementations support draft-06 or later.
 - name: C++
