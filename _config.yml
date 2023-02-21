@@ -36,6 +36,7 @@ exclude:
 - Gemfile
 - node_modules
 - vendor
+- cache
 - docker-compose.yml
 
 plugins:
