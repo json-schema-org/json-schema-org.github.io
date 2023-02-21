@@ -36,6 +36,7 @@ exclude:
 - Gemfile
 - node_modules
 - vendor
+- docker-compose.yml
 
 plugins:
   - jekyll-relative-links
