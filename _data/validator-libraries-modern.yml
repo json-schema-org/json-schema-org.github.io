@@ -321,6 +321,12 @@
       last-updated: "2022-08-31"
 - name: Rust
   implementations:
+    - name: boon
+      url: https://github.com/santhosh-tekuri/boon
+      date-draft: [2020-12, 2019-09]
+      draft: [7, 6, 4]
+      license: Apache License 2.0
+      last-updated: "2023-02-22"
     - name: jsonschema-rs
       url: https://github.com/Stranger6667/jsonschema-rs
       notes: Fast due to compiling schema into a validation tree; 2019-09 and 2020-12 are partially supported
