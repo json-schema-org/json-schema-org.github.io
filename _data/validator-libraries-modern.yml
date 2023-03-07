@@ -14,6 +14,12 @@
       draft: [7, 6, 4, 3]
       license: "AGPL-3.0-only"
       last-updated: "2022-08-31"
+    - name: Corvus.JsonSchema
+      url: https://github.com/corvus-dotnet/corvus.jsonschema
+      date-draft: [2020-12, 2019-09]
+      draft: [7, 6]
+      license: Apache License, Version 2.0
+      last-updated: "2023-02-14"
 - name: C
   notes: No known implementations support draft-06 or later.
 - name: C++
@@ -321,6 +327,12 @@
       last-updated: "2022-08-31"
 - name: Rust
   implementations:
+    - name: boon
+      url: https://github.com/santhosh-tekuri/boon
+      date-draft: [2020-12, 2019-09]
+      draft: [7, 6, 4]
+      license: Apache License 2.0
+      last-updated: "2023-02-22"
     - name: jsonschema-rs
       url: https://github.com/Stranger6667/jsonschema-rs
       notes: Fast due to compiling schema into a validation tree; 2019-09 and 2020-12 are partially supported
@@ -447,3 +459,13 @@
       last-updated: "2022-08-31"
       built-on:
         name: ajv
+- name: Github Actions
+  implementations:
+    - name: Validate JSON Action
+      license: MIT
+      url: 'https://github.com/OrRosenblatt/validate-json-action'
+      date-draft: [2019-09, 2020-12]
+      draft: []
+      built-on:
+        name: ajv
+      last-updated: "2023-02-01"

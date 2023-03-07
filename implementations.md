@@ -162,6 +162,8 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
     -   [scala-jsonschema](https://github.com/andyglow/scala-jsonschema) (Apache 2.0) - generates schemad out of Scala case classes
 -   Ruby
     -   [Shale](https://github.com/kgiszczak/shale) (MIT) - generates schema from Ruby models *supports Draft 2020-12*
+-   Rust
+    -   [Schemars](https://github.com/GREsau/schemars) (MIT) - generates schema from Rust code *supports Draft 7* 
 
 #### From data
 
@@ -194,6 +196,8 @@ are the only keywords that changed.
 
 #### Code generation
 
+-   Dotnet
+    -  [Corvus.JsonSchema](https://www.nuget.org/packages/Corvus.Json.JsonSchema.TypeGeneratorTool/) - generates an idiomatic dotnet type model from JSON Schema files, supporting all JSON Schema features, including property accessors, enumeration, common string `format`, and JSON document building/modification; over low-level `System.Text.Json` types. *supports Draft 6, Draft 7, Draft 2019-09 and Draft 2020-12*.
 -   Elm
     -  [json-schema-to-elm](https://github.com/dragonwasrobot/json-schema-to-elm) - generates Elm types, JSON decoders+encoders, and fuzz tests from one or more JSON Schema files, using [dragonwasrobot/json_schema](https://github.com/dragonwasrobot/json_schema) *supports Draft 7*
 -   Go
@@ -286,6 +290,7 @@ the utility, and decided on a case-by-case basis.
 
 -   OpenAPI
     -   [JSON Schema to OpenAPI Schema](https://github.com/wework/json-schema-to-openapi-schema) _draft-04_ Draft-06 and -07 planned per README (MIT)
+    -   [OpenAPI specification to JSON Schema](https://github.com/instrumenta/openapi2jsonschema) Draft-07 (MIT)
 -   Orderly
     -   [Orderly](https://github.com/lloyd/orderly) (BSD-3-Clause)
 -   RAML
