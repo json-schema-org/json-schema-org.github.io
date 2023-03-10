@@ -194,10 +194,10 @@
       anchor-name: cfworker
       url: https://github.com/cfworker/cfworker/blob/master/packages/json-schema/README.md
       notes: "Built for Cloudflare workers, browsers, and Node.js"
-      date-draft: [2019-09]
-      draft: [7, 6, 4]
+      date-draft: [2019-09, 2020-12]
+      draft: [7, 4]
       license: MIT
-      last-updated: "2022-08-31"
+      last-updated: "2023-02-28"
     - name: JSON Schema Library
       url: https://github.com/sagold/json-schema-library
       notes: "Built for Node.js and browsers. Customizable json-validator and json-schema utilities for traversal, data generation and validation"
