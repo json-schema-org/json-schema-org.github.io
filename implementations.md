@@ -179,6 +179,10 @@ For example, the only incompatibilities between draft-04 and draft-06 involve `e
     -   [Liquid Online Tools](https://www.liquid-technologies.com/online-json-to-schema-converter) - infer JSON Schema from sample JSON data
     -   [quicktype.io](https://app.quicktype.io/#l=schema) - infer JSON Schema from samples, and generate TypeScript, C++, go, Java, C#, Swift, etc. types from JSON Schema
 
+#### From model
+
+-   [Dataspecer](https://dataspecer.com) - Generates JSON Schema (and JSON-LD context) from conceptual model *supports Draft 2020-12*
+
 Generators from schemas
 -----------------------
 
