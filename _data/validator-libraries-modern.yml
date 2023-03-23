@@ -218,6 +218,12 @@
       draft: [6]
       license: MIT
       last-updated: "2022-08-31"
+    - name: schema.js
+      url: https://github.com/nuxodin/schema.js
+      date-draft: [2020-12]
+      draft: []
+      license: MIT
+      last-updated: "2023-03-23"
 - name: Kotlin
   implementations:
     - name: Medeia-validator
