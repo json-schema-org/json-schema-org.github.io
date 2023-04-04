@@ -88,6 +88,12 @@
       last-updated: "2022-08-31"
 - name: Elixir
   implementations:
+    - name: Exonerate
+      url: https://hexdocs.pm/exonerate/Exonerate.html
+      date-draft: [2020-12, 2019-09]
+      draft: [7, 6, 4]
+      license: MIT
+      last-updated: "2023-04-04"
     - name: JsonXema
       url: https://github.com/hrzndhrn/json_xema
       date-draft: []
