@@ -151,6 +151,12 @@
             docs: https://github.com/networknt/json-schema-validator/blob/master/doc/config.md
             instructions: "set `handleNullableField` to `false`"
       last-updated: "2022-08-31"
+    - name: erosb/json-sKema
+      url: https://github.com/erosb/json-sKema
+      notes: Successor of the everit-org/json-schema library
+      date-draft: [2020-12]
+      license: MIT
+      last-updated: "2023-04-10"
     - name: Snow
       url: https://github.com/ssilverman/snowy-json
       notes: Uses Maven for the project and Gson under the hood.
