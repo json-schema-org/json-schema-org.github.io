@@ -223,6 +223,8 @@ are the only keywords that changed.
     - [statham](https://github.com/jacksmith15/statham-schema) (MIT) - generate type-annotated models from JSON Schema documents.
 -   Rust
     - [schemafy](https://github.com/Marwes/schemafy/) - generates Rust types and serialization code from a JSON schema. *supports Draft 4*
+-   Scala
+    - [json-schema-to-case-class](https://github.com/cchandurkar/json-schema-to-case-class#readme) (MIT) - NPM Package, [Web UI](https://cchandurkar.github.io/json-schema-to-case-class) and a CLI to generate Scala case classes from JSON Schema. *Supports JSON Schema 2019-09, draft-07, -06, -04, -03*
 -   TypeScript
     - [jsongenerator](https://github.com/jimblackler/jsonschematypes/tree/master/codegen) *JSON Schema 2019-09, draft-07, -06, -04, -03* (Apache-2.0)
 -   Ruby
