@@ -16,12 +16,15 @@ The entries on this page can be linked to via anchor links (e.g. `https://json-s
 
 ### dialect
 
-A collection of [vocabularies](#vocabulary), along with an indication of whether supporting each vocabulary is required to process schemas written in the dialect.
+A cohesive collection of [keywords](#keyword) available for use within a schema, often representing a use-case specific single release of the JSON Schema specification.
 
-Dialects are identified by a URI, which [schemas](#schema) may then reference in their `$schema` [keyword](#keyword).
+Dialects, particularly the 2019-09 and 2020-12 dialects, are often defined via a collection of [vocabularies](#vocabulary).
+
+Each dialect is identified by a URI, its *dialect identifier*, which [schemas](#schema) may then reference in their `$schema` [keyword](#keyword).
 Doing so identifies the schema as being written in the dialect, and thereby indicates which keywords are usable within it, along with their intended meaning.
 
-The JSON Schema specification [defines](https://json-schema.org/specification.html#general-purpose-meta-schema) a number of dialects, each of which enable vocabularies suitable for the dialect's specific use case.
+The JSON Schema specification defines a number of dialects, each of which enable vocabularies suitable for the dialect's specific use case.
+These vocabularies are [described](https://json-schema.org/specification.html#general-purpose-meta-schema) in meta-schemas.
 
 ### draft
 
@@ -82,7 +85,7 @@ In recent [drafts](#draft) of the specification, a schema is either a JSON objec
 
 ### vocabulary
 
-A collection of related [keywords](keyword), grouped to facilitate re-use.
+A tightly related collection of [keywords](keyword), grouped to facilitate re-use.
 
 A vocabulary is specified by a prose document or specification which explains the semantics of its keywords in a way suitable for implementers and users of the vocabulary.
 It often also includes a [meta-schema](#meta-schema) (or multiple metaschemas) which define the syntax of its keywords.
@@ -90,7 +93,7 @@ It often also includes a [meta-schema](#meta-schema) (or multiple metaschemas) w
 Anyone can create and publish a vocabulary, and implementations generally will include facilities for extending themselves with support for additional vocabularies and their keywords.
 The JSON Schema specification includes a number of vocabularies which cover each of the keywords it defines.
 
-Vocabularies are identified by a URI which may be referenced via the `$vocabulary` keyword in order to enable the vocabulary within a [dialect](#dialect).
+In some [dialects](#dialect) of JSON Schema, the `$vocabulary` keyword can be used to include the keywords defined by a vocabulary into the dialect, as well as to indicate whether implementations must specifically recognize the vocabulary in order to be able to process schemas written in the dialect or not.
 
 #### See also
 
