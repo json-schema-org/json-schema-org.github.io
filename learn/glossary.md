@@ -36,6 +36,18 @@ While future drafts may introduce new behavior or changes to existing behavior, 
 
 The current list of drafts can be found [here](https://json-schema.org/specification-links.html#published-drafts).
 
+### JSON
+
+A pervasive data interchange format used for representing and transmitting data as human readable text.
+JSON is extremely widely used, and parsers which can read and write it exist for essentially every commonly-used programming language.
+
+JSON Schema, distinctly, is built *on top* of JSON, in that JSON [schemas](#schema) are themselves JSON objects which describe other JSON objects.
+The two are, however, entirely different pieces of the conceptual puzzle, with JSON being a concrete format for *representing* data and JSON Schema being a way to *schematize* data which is written in the JSON format.
+
+The JSON format is an open format, with its own [homepage](https://www.json.org/), and specifications published in the [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf) and [RFC-8259](https://datatracker.ietf.org/doc/html/rfc8259) documents from ECMA and the IETF respectively.
+In particular, it is not managed or developed by the JSON Schema team, who simply make use of the format.
+
+
 ### keyword
 
 A property appearing within a [schema](#schema) object.
@@ -79,14 +91,14 @@ A document, written according to the proscribed structure of the JSON Schema spe
 
 The rules constituting which schemas are conformant, as well as the rules governing their behavior when validating instances, are defined by the [JSON Schema specification](https://json-schema.org/specification.html).
 
-Strictly speaking, according to the specification, schemas are themselves JSON documents, though it is somewhat common for them to be authored or maintained in other languages which are easily translated to JSON, such as YAML.
+Strictly speaking, according to the specification, schemas are themselves [JSON documents](#JSON), though it is somewhat common for them to be authored or maintained in other languages which are easily translated to JSON, such as YAML.
 
 In recent [drafts](#draft) of the specification, a schema is either a JSON object or a JSON boolean value.
 
 ### subschema
 
 A [schema](#schema) which is itself contained within a surrounding parent schema.
-Like schemas themselves, in recent [drafts](#draft) of JSON Schema, subschemas are either JSON objects or JSON boolean values.
+Like schemas themselves, in recent [drafts](#draft) of JSON Schema, subschemas are either [JSON](#JSON) objects or JSON boolean values.
 
 Within the JSON Schema specification and its [dialects](#dialect), a number of [keywords](#keyword) take subschemas as part of their values.
 For example, the `not` keyword takes a subschema value and inverts its result, succeeding whenever the subschema does not succeed, such that the [instance](#instance) `12` is invalid under `{"type": "string"}` but valid under `{"not": {"type": "string"}}`, where `{"type": "string"}` is a subschema contained in the full schema.
