@@ -41,8 +41,8 @@ The current list of drafts can be found [here](https://json-schema.org/specifica
 A pervasive data interchange format used for representing and transmitting data as human readable text.
 JSON is extremely widely used, and parsers which can read and write it exist for essentially every commonly-used programming language.
 
-JSON Schema, distinctly, is built *on top* of JSON, in that JSON [schemas](#schema) are themselves JSON objects which describe other JSON objects.
-The two are, however, entirely different pieces of the conceptual puzzle, with JSON being a concrete format for *representing* data and JSON Schema being a way to *schematize* data which is written in the JSON format.
+JSON Schema, distinctly, is built *on top* of JSON, in that JSON [schemas](#schema) are themselves JSON objects which describe JSON values.
+The two are, however, entirely different pieces of the conceptual puzzle, with JSON being a concrete format for *representing* data, and JSON Schema being a way to *schematize* data which is written in a JSON-compatible format.
 
 The JSON format is an open format, with its own [homepage](https://www.json.org/), and specifications published in the [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf) and [RFC-8259](https://datatracker.ietf.org/doc/html/rfc8259) documents from ECMA and the IETF respectively.
 In particular, it is not managed or developed by the JSON Schema team, who simply make use of the format.
