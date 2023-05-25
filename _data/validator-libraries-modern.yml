@@ -329,6 +329,15 @@
         name: jsonschema-rs
       license: MIT
       last-updated: "2022-08-31"
+    - name: pydantic
+      url: https://github.com/pydantic/pydantic
+      notes: Popular library that does data validation and serialization.
+      date-draft: [2020-12]
+      draft: []
+      built-on:
+        name: pydantic-core
+      license: MIT
+      last-updated: "2023-05-25"
 - name: Ruby
   implementations:
     - name: JSONSchemer
