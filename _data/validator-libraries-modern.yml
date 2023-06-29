@@ -182,6 +182,12 @@
       draft: [7, 6, 4]
       license: Apache License 2.0
       last-updated: "2022-08-31"
+    - name: json-schema (dev.harrel)
+      url: https://github.com/harrel56/json-schema
+      notes: JSON library agnostic implementation. Supports custom keywords.
+      date-draft: [ 2020-12 ]
+      license: MIT
+      last-updated: "2023-06-29"
 - name: JavaScript
   implementations:
     - name: Hyperjump JSV
