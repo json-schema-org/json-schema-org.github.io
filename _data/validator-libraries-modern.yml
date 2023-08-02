@@ -261,6 +261,15 @@
       draft: [7]
       license: MIT
       last-updated: "2022-08-31"
+    - name: json-schema-validator
+      url: https://github.com/OptimumCode/json-schema-validator
+      notes: |
+        Kotlin Muliplatform implementation of JSON schema to validate the JsonElement from kotlinx.serialization-json.
+        The library is 'work in progress' and new features/drafts will be added in the future.
+      date-draft: []
+      draft: [7]
+      license: MIT
+      last-updated: "2023-08-01"
 - name: Perl
   implementations:
     - name: JSON::Schema::Modern
