@@ -348,10 +348,10 @@
   implementations:
     - name: JSONSchemer
       url: https://github.com/davishmcclurg/json_schemer
-      date-draft: []
+      date-draft: [2020-12, 2019-09]
       draft: [7, 6, 4]
       license: MIT
-      last-updated: "2022-08-31"
+      last-updated: "2023-08-20"
     - name: JSI
       url: https://rubydoc.info/gems/jsi
       date-draft: []
