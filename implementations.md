@@ -50,10 +50,11 @@ Validators
         <a href="{{ implementation.url}}">{{ implementation.name }}</a>
         <ul>
           <li><em>Supports:</em>
-            {% if implementation.date-draft %}
+            {% if implementation.date-draft and implementation.date-draft != empty %}
                 {{ implementation.date-draft | sort | reverse | join: ", " }}
+                {%- if implementation.draft and implementation.draft != empty %}, {% endif %}
             {% endif %}
-            {% if implementation.draft %}
+            {% if implementation.draft and implementation.draft != empty %}
                 draft-0{{ implementation.draft | sort | reverse | join: ", -0" }}
             {% endif %}
           </li>
