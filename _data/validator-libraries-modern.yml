@@ -197,6 +197,20 @@
       draft: [7, 6, 4]
       license: MIT
       last-updated: "2022-08-31"
+    - name: "@exodus/schemasafe"
+      url: https://github.com/ExodusMovement/schemasafe
+      notes: |
+        For Node.js and browsers, with security and speed being the main focus. Pre-compiles schemas to JS functions.
+        [Supports OpenAPI `discriminator`](https://github.com/ExodusMovement/schemasafe/blob/master/doc/Discriminator-support.md).
+        Default behavior is hardened with additional schema coherence validation.
+      date-draft: [2020-12, 2019-09]
+      draft: [7, 6, 4]
+      license: MIT
+      compliance:
+        config:
+          docs: https://github.com/ExodusMovement/schemasafe/blob/master/doc/Options.md
+          instructions: "disable schema coherence checks and `format` assertion by setting option `mode: 'spec'`"
+      last-updated: "2023-08-29"
     - name: ajv
       url: https://github.com/ajv-validator/ajv
       notes: "for Node.js and browsers - supports [user-defined keywords](https://github.com/ajv-validator/ajv/blob/master/docs/keywords.md) and [$data reference](https://github.com/json-schema-org/json-schema-spec/issues/51)"
