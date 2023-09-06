@@ -207,6 +207,7 @@ are the only keywords that changed.
     -  [json-schema-to-elm](https://github.com/dragonwasrobot/json-schema-to-elm) - generates Elm types, JSON decoders+encoders, and fuzz tests from one or more JSON Schema files, using [dragonwasrobot/json_schema](https://github.com/dragonwasrobot/json_schema) *supports Draft 7*
 -   Go
     -  [go-jsonschema](https://git.sr.ht/~emersion/go-jsonschema) - generates Go types and helpers from JSON schema files *supports Draft 2020-12* 
+    - [protoc-gen-jsonschema](https://github.com/chrusty/protoc-gen-jsonschema) - Generates JSON schemas from protobuf proto v2 and v3 files.
 -   Java
     - [jsonCodeGen](https://github.com/schlothauer-wauer/jsoncodegen) (MIT) - Groovy based generation tasks from JSON schema. Already includes templates/generators for Java Beans, Swagger specification files and PlantUML diagrams.
     - [jsonschema2pojo](https://github.com/joelittlejohn/jsonschema2pojo) (Apache 2.0) - generates Java types from JSON Schema (or example JSON) and can annotate those types for data-binding with Jackson 2.x or Gson. *draft-07*
