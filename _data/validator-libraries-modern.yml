@@ -188,6 +188,12 @@
       date-draft: [ 2020-12 ]
       license: MIT
       last-updated: "2023-06-29"
+    - name: Zuunr JSON
+      url: https://bitbucket.org/zuunr/json
+      notes: Immutable JSON representation in Java + validation and filtering based on JSON Schema
+      date-draft: [ 2020-12 ]
+      license: Apache 2.0
+      last-updated: 2023-09-04  
 - name: JavaScript
   implementations:
     - name: Hyperjump JSV
