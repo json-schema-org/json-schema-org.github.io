@@ -224,7 +224,7 @@ are the only keywords that changed.
 -   Python
     - [yacg](https://github.com/OkieOth/yacg) (MIT) - parse JSON Schema and OpenApi files to build a meta model from them. This meta model can be used in Mako templates to generate source code, other schemas or plantUml.
     - [statham](https://github.com/jacksmith15/statham-schema) (MIT) - generate type-annotated models from JSON Schema documents.
-    - [OpenAPI JSON Schmea Generator](https://github.com/openapi-json-schema-tools/openapi-json-schema-generator) (Apache-2.0) - Allows auto-generation of API client libraries (SDK generation) given an OpenAPI document. This project focuses on making the output 100% compliant with openapi + JSON schema specs.
+    - [OpenAPI JSON Schema Generator](https://github.com/openapi-json-schema-tools/openapi-json-schema-generator) (Apache-2.0) - Allows auto-generation of API client libraries (SDK generation) given an OpenAPI document. This project focuses on making the output 100% compliant with openapi + JSON schema specs.
 -   Rust
     - [schemafy](https://github.com/Marwes/schemafy/) - generates Rust types and serialization code from a JSON schema. *supports Draft 4*
 -   Scala
