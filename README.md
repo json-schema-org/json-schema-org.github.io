@@ -1,3 +1,10 @@
+---
+📌 **Deprecation Notice** 📌
+
+This repository is now deprecated. To contribute to JSON Schema's website please use the new repository ➡️ [https://github.com/json-schema-org/website](https://github.com/json-schema-org/website).
+
+---
+
 # JSON Schema Website
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://github.com/json-schema-org/.github/blob/main/CODE_OF_CONDUCT.md)
